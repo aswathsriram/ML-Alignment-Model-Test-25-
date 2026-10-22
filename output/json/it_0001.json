@@ -1,0 +1,52 @@
+{
+  "id": "it_0001",
+  "audio_file": "it_0001.wav",
+  "language": "Italian (Italy)",
+  "spoken_form_transcription": "biglietto di andata e ritorno per bologna",
+  "synthetic": true,
+  "voice": {
+    "voice_id": "Xb7hH8MSUJpSbSDYk0k2",
+    "name": "Alice - Clear, Engaging Educator",
+    "gender": "female"
+  },
+  "tts_model": "eleven_multilingual_v2",
+  "sample_rate_hz": 16000,
+  "duration_seconds": 2.74,
+  "words": [
+    {
+      "word": "biglietto",
+      "start": 0.0,
+      "end": 0.546
+    },
+    {
+      "word": "di",
+      "start": 0.592,
+      "end": 0.662
+    },
+    {
+      "word": "andata",
+      "start": 0.697,
+      "end": 1.138
+    },
+    {
+      "word": "e",
+      "start": 1.173,
+      "end": 1.196
+    },
+    {
+      "word": "ritorno",
+      "start": 1.254,
+      "end": 1.707
+    },
+    {
+      "word": "per",
+      "start": 1.753,
+      "end": 1.881
+    },
+    {
+      "word": "bologna",
+      "start": 1.95,
+      "end": 2.74
+    }
+  ]
+}

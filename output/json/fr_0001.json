@@ -1,0 +1,42 @@
+{
+  "id": "fr_0001",
+  "audio_file": "fr_0001.wav",
+  "language": "French (France)",
+  "spoken_form_transcription": "rendez-vous jeudi à quinze heures",
+  "synthetic": true,
+  "voice": {
+    "voice_id": "EXAVITQu4vr4xnSDxMaL",
+    "name": "Sarah - Mature, Reassuring, Confident",
+    "gender": "female"
+  },
+  "tts_model": "eleven_multilingual_v2",
+  "sample_rate_hz": 16000,
+  "duration_seconds": 1.765,
+  "words": [
+    {
+      "word": "rendez-vous",
+      "start": 0.0,
+      "end": 0.569
+    },
+    {
+      "word": "jeudi",
+      "start": 0.604,
+      "end": 0.824
+    },
+    {
+      "word": "à",
+      "start": 0.882,
+      "end": 0.917
+    },
+    {
+      "word": "quinze",
+      "start": 0.964,
+      "end": 1.254
+    },
+    {
+      "word": "heures",
+      "start": 1.277,
+      "end": 1.765
+    }
+  ]
+}

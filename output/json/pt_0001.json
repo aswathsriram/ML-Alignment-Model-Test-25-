@@ -1,0 +1,37 @@
+{
+  "id": "pt_0001",
+  "audio_file": "pt_0001.wav",
+  "language": "Portuguese (Brazil)",
+  "spoken_form_transcription": "boa noite a todos",
+  "synthetic": true,
+  "voice": {
+    "voice_id": "WtA85syCrJwasGeHGH2p",
+    "name": "Ember - Energetic, Confident Protagonist",
+    "gender": "female"
+  },
+  "tts_model": "eleven_multilingual_v2",
+  "sample_rate_hz": 16000,
+  "duration_seconds": 1.3,
+  "words": [
+    {
+      "word": "boa",
+      "start": 0.0,
+      "end": 0.209
+    },
+    {
+      "word": "noite",
+      "start": 0.255,
+      "end": 0.499
+    },
+    {
+      "word": "a",
+      "start": 0.546,
+      "end": 0.569
+    },
+    {
+      "word": "todos",
+      "start": 0.65,
+      "end": 1.3
+    }
+  ]
+}

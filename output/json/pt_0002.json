@@ -1,0 +1,137 @@
+{
+  "id": "pt_0002",
+  "audio_file": "pt_0002.wav",
+  "language": "Portuguese (Brazil)",
+  "spoken_form_transcription": "a feira de artesanato acontece todo sábado na praça central das oito da manhã até as duas da tarde e a entrada é gratuita",
+  "synthetic": true,
+  "voice": {
+    "voice_id": "IKne3meq5aSn9XLyUdCD",
+    "name": "Charlie - Deep, Confident, Energetic",
+    "gender": "male"
+  },
+  "tts_model": "eleven_multilingual_v2",
+  "sample_rate_hz": 16000,
+  "duration_seconds": 7.848,
+  "words": [
+    {
+      "word": "a",
+      "start": 0.0,
+      "end": 0.081
+    },
+    {
+      "word": "feira",
+      "start": 0.174,
+      "end": 0.418
+    },
+    {
+      "word": "de",
+      "start": 0.464,
+      "end": 0.522
+    },
+    {
+      "word": "artesanato",
+      "start": 0.546,
+      "end": 1.149
+    },
+    {
+      "word": "acontece",
+      "start": 1.184,
+      "end": 1.66
+    },
+    {
+      "word": "todo",
+      "start": 1.776,
+      "end": 2.078
+    },
+    {
+      "word": "sábado",
+      "start": 2.136,
+      "end": 2.531
+    },
+    {
+      "word": "na",
+      "start": 2.577,
+      "end": 2.659
+    },
+    {
+      "word": "praça",
+      "start": 2.728,
+      "end": 3.019
+    },
+    {
+      "word": "central",
+      "start": 3.053,
+      "end": 3.437
+    },
+    {
+      "word": "das",
+      "start": 3.495,
+      "end": 3.646
+    },
+    {
+      "word": "oito",
+      "start": 3.727,
+      "end": 3.924
+    },
+    {
+      "word": "da",
+      "start": 3.971,
+      "end": 4.029
+    },
+    {
+      "word": "manhã",
+      "start": 4.075,
+      "end": 4.412
+    },
+    {
+      "word": "até",
+      "start": 4.737,
+      "end": 5.108
+    },
+    {
+      "word": "as",
+      "start": 5.166,
+      "end": 5.236
+    },
+    {
+      "word": "duas",
+      "start": 5.306,
+      "end": 5.503
+    },
+    {
+      "word": "da",
+      "start": 5.55,
+      "end": 5.631
+    },
+    {
+      "word": "tarde",
+      "start": 5.689,
+      "end": 6.072
+    },
+    {
+      "word": "e",
+      "start": 6.246,
+      "end": 6.397
+    },
+    {
+      "word": "a",
+      "start": 6.432,
+      "end": 6.455
+    },
+    {
+      "word": "entrada",
+      "start": 6.502,
+      "end": 6.931
+    },
+    {
+      "word": "é",
+      "start": 6.978,
+      "end": 7.001
+    },
+    {
+      "word": "gratuita",
+      "start": 7.047,
+      "end": 7.848
+    }
+  ]
+}

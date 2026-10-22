@@ -1,0 +1,162 @@
+{
+  "id": "fr_0005",
+  "audio_file": "fr_0005.wav",
+  "language": "French (France)",
+  "spoken_form_transcription": "elle referma doucement la porte de la cuisine posa son sac sur la table et regarda par la fenêtre la pluie qui tombait sur les toits du vieux quartier",
+  "synthetic": true,
+  "voice": {
+    "voice_id": "Xb7hH8MSUJpSbSDYk0k2",
+    "name": "Alice - Clear, Engaging Educator",
+    "gender": "female"
+  },
+  "tts_model": "eleven_multilingual_v2",
+  "sample_rate_hz": 16000,
+  "duration_seconds": 9.288,
+  "words": [
+    {
+      "word": "elle",
+      "start": 0.0,
+      "end": 0.197
+    },
+    {
+      "word": "referma",
+      "start": 0.232,
+      "end": 0.65
+    },
+    {
+      "word": "doucement",
+      "start": 0.731,
+      "end": 1.161
+    },
+    {
+      "word": "la",
+      "start": 1.184,
+      "end": 1.265
+    },
+    {
+      "word": "porte",
+      "start": 1.324,
+      "end": 1.649
+    },
+    {
+      "word": "de",
+      "start": 1.695,
+      "end": 1.765
+    },
+    {
+      "word": "la",
+      "start": 1.811,
+      "end": 1.869
+    },
+    {
+      "word": "cuisine",
+      "start": 1.939,
+      "end": 2.45
+    },
+    {
+      "word": "posa",
+      "start": 2.659,
+      "end": 2.961
+    },
+    {
+      "word": "son",
+      "start": 3.019,
+      "end": 3.158
+    },
+    {
+      "word": "sac",
+      "start": 3.228,
+      "end": 3.437
+    },
+    {
+      "word": "sur",
+      "start": 3.495,
+      "end": 3.622
+    },
+    {
+      "word": "la",
+      "start": 3.657,
+      "end": 3.727
+    },
+    {
+      "word": "table",
+      "start": 3.808,
+      "end": 4.238
+    },
+    {
+      "word": "et",
+      "start": 4.563,
+      "end": 4.737
+    },
+    {
+      "word": "regarda",
+      "start": 4.783,
+      "end": 5.213
+    },
+    {
+      "word": "par",
+      "start": 5.271,
+      "end": 5.41
+    },
+    {
+      "word": "la",
+      "start": 5.445,
+      "end": 5.503
+    },
+    {
+      "word": "fenêtre",
+      "start": 5.573,
+      "end": 6.107
+    },
+    {
+      "word": "la",
+      "start": 6.258,
+      "end": 6.385
+    },
+    {
+      "word": "pluie",
+      "start": 6.467,
+      "end": 6.757
+    },
+    {
+      "word": "qui",
+      "start": 6.78,
+      "end": 6.908
+    },
+    {
+      "word": "tombait",
+      "start": 6.989,
+      "end": 7.43
+    },
+    {
+      "word": "sur",
+      "start": 7.477,
+      "end": 7.628
+    },
+    {
+      "word": "les",
+      "start": 7.674,
+      "end": 7.767
+    },
+    {
+      "word": "toits",
+      "start": 7.814,
+      "end": 8.092
+    },
+    {
+      "word": "du",
+      "start": 8.115,
+      "end": 8.22
+    },
+    {
+      "word": "vieux",
+      "start": 8.266,
+      "end": 8.452
+    },
+    {
+      "word": "quartier",
+      "start": 8.487,
+      "end": 9.288
+    }
+  ]
+}

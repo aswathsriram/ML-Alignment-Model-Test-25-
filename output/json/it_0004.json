@@ -1,0 +1,117 @@
+{
+  "id": "it_0004",
+  "audio_file": "it_0004.wav",
+  "language": "Italian (Italy)",
+  "spoken_form_transcription": "il fatturato del gruppo ha raggiunto i quattordici milioni trecentoventimila euro con una crescita dell'otto per cento rispetto all'anno precedente",
+  "synthetic": true,
+  "voice": {
+    "voice_id": "rHWSYoq8UlV0YIBKMryp",
+    "name": "Jerry B - Effortless, Cool and Laid-Back",
+    "gender": "male"
+  },
+  "tts_model": "eleven_multilingual_v2",
+  "sample_rate_hz": 16000,
+  "duration_seconds": 9.752,
+  "words": [
+    {
+      "word": "il",
+      "start": 0.0,
+      "end": 0.139
+    },
+    {
+      "word": "fatturato",
+      "start": 0.174,
+      "end": 0.72
+    },
+    {
+      "word": "del",
+      "start": 0.766,
+      "end": 0.882
+    },
+    {
+      "word": "gruppo",
+      "start": 0.929,
+      "end": 1.382
+    },
+    {
+      "word": "ha",
+      "start": 1.498,
+      "end": 1.602
+    },
+    {
+      "word": "raggiunto",
+      "start": 1.672,
+      "end": 2.101
+    },
+    {
+      "word": "i",
+      "start": 2.125,
+      "end": 2.148
+    },
+    {
+      "word": "quattordici",
+      "start": 2.206,
+      "end": 2.937
+    },
+    {
+      "word": "milioni",
+      "start": 2.995,
+      "end": 3.437
+    },
+    {
+      "word": "trecentoventimila",
+      "start": 3.483,
+      "end": 4.656
+    },
+    {
+      "word": "euro",
+      "start": 4.748,
+      "end": 5.074
+    },
+    {
+      "word": "con",
+      "start": 5.457,
+      "end": 5.619
+    },
+    {
+      "word": "una",
+      "start": 5.7,
+      "end": 5.84
+    },
+    {
+      "word": "crescita",
+      "start": 5.898,
+      "end": 6.362
+    },
+    {
+      "word": "dell'otto",
+      "start": 6.42,
+      "end": 6.873
+    },
+    {
+      "word": "per",
+      "start": 6.92,
+      "end": 7.059
+    },
+    {
+      "word": "cento",
+      "start": 7.129,
+      "end": 7.593
+    },
+    {
+      "word": "rispetto",
+      "start": 7.802,
+      "end": 8.301
+    },
+    {
+      "word": "all'anno",
+      "start": 8.336,
+      "end": 8.696
+    },
+    {
+      "word": "precedente",
+      "start": 8.742,
+      "end": 9.752
+    }
+  ]
+}

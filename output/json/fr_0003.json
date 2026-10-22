@@ -1,0 +1,282 @@
+{
+  "id": "fr_0003",
+  "audio_file": "fr_0003.wav",
+  "language": "French (France)",
+  "spoken_form_transcription": "le conseil municipal de nantes a voté hier soir un budget de quarante-deux millions d'euros pour rénover les écoles primaires de la ville les travaux commenceront au printemps prochain et devraient durer environ trois ans selon l'adjointe chargée de l'éducation les familles seront informées des changements de calendrier dès le mois de janvier",
+  "synthetic": true,
+  "voice": {
+    "voice_id": "FGY2WhTYpPnrIDTdsKH5",
+    "name": "Laura - Enthusiast, Quirky Attitude",
+    "gender": "female"
+  },
+  "tts_model": "eleven_multilingual_v2",
+  "sample_rate_hz": 16000,
+  "duration_seconds": 17.276,
+  "words": [
+    {
+      "word": "le",
+      "start": 0.0,
+      "end": 0.151
+    },
+    {
+      "word": "conseil",
+      "start": 0.209,
+      "end": 0.522
+    },
+    {
+      "word": "municipal",
+      "start": 0.557,
+      "end": 1.057
+    },
+    {
+      "word": "de",
+      "start": 1.115,
+      "end": 1.173
+    },
+    {
+      "word": "nantes",
+      "start": 1.231,
+      "end": 1.591
+    },
+    {
+      "word": "a",
+      "start": 1.637,
+      "end": 1.707
+    },
+    {
+      "word": "voté",
+      "start": 1.788,
+      "end": 2.055
+    },
+    {
+      "word": "hier",
+      "start": 2.101,
+      "end": 2.252
+    },
+    {
+      "word": "soir",
+      "start": 2.334,
+      "end": 2.682
+    },
+    {
+      "word": "un",
+      "start": 2.763,
+      "end": 2.868
+    },
+    {
+      "word": "budget",
+      "start": 2.926,
+      "end": 3.216
+    },
+    {
+      "word": "de",
+      "start": 3.239,
+      "end": 3.32
+    },
+    {
+      "word": "quarante-deux",
+      "start": 3.379,
+      "end": 3.866
+    },
+    {
+      "word": "millions",
+      "start": 3.889,
+      "end": 4.203
+    },
+    {
+      "word": "d'euros",
+      "start": 4.238,
+      "end": 4.574
+    },
+    {
+      "word": "pour",
+      "start": 4.598,
+      "end": 4.76
+    },
+    {
+      "word": "rénover",
+      "start": 4.783,
+      "end": 5.143
+    },
+    {
+      "word": "les",
+      "start": 5.166,
+      "end": 5.271
+    },
+    {
+      "word": "écoles",
+      "start": 5.352,
+      "end": 5.619
+    },
+    {
+      "word": "primaires",
+      "start": 5.642,
+      "end": 6.049
+    },
+    {
+      "word": "de",
+      "start": 6.072,
+      "end": 6.13
+    },
+    {
+      "word": "la",
+      "start": 6.177,
+      "end": 6.235
+    },
+    {
+      "word": "ville",
+      "start": 6.304,
+      "end": 6.641
+    },
+    {
+      "word": "les",
+      "start": 7.152,
+      "end": 7.303
+    },
+    {
+      "word": "travaux",
+      "start": 7.338,
+      "end": 7.674
+    },
+    {
+      "word": "commenceront",
+      "start": 7.709,
+      "end": 8.208
+    },
+    {
+      "word": "au",
+      "start": 8.231,
+      "end": 8.29
+    },
+    {
+      "word": "printemps",
+      "start": 8.348,
+      "end": 8.719
+    },
+    {
+      "word": "prochain",
+      "start": 8.742,
+      "end": 9.172
+    },
+    {
+      "word": "et",
+      "start": 9.242,
+      "end": 9.369
+    },
+    {
+      "word": "devraient",
+      "start": 9.416,
+      "end": 9.741
+    },
+    {
+      "word": "durer",
+      "start": 9.764,
+      "end": 10.019
+    },
+    {
+      "word": "environ",
+      "start": 10.054,
+      "end": 10.368
+    },
+    {
+      "word": "trois",
+      "start": 10.437,
+      "end": 10.67
+    },
+    {
+      "word": "ans",
+      "start": 10.751,
+      "end": 10.89
+    },
+    {
+      "word": "selon",
+      "start": 10.925,
+      "end": 11.192
+    },
+    {
+      "word": "l'adjointe",
+      "start": 11.238,
+      "end": 11.726
+    },
+    {
+      "word": "chargée",
+      "start": 11.772,
+      "end": 12.086
+    },
+    {
+      "word": "de",
+      "start": 12.109,
+      "end": 12.167
+    },
+    {
+      "word": "l'éducation",
+      "start": 12.214,
+      "end": 12.899
+    },
+    {
+      "word": "les",
+      "start": 13.41,
+      "end": 13.537
+    },
+    {
+      "word": "familles",
+      "start": 13.572,
+      "end": 13.92
+    },
+    {
+      "word": "seront",
+      "start": 13.944,
+      "end": 14.257
+    },
+    {
+      "word": "informées",
+      "start": 14.315,
+      "end": 14.71
+    },
+    {
+      "word": "des",
+      "start": 14.733,
+      "end": 14.826
+    },
+    {
+      "word": "changements",
+      "start": 14.849,
+      "end": 15.244
+    },
+    {
+      "word": "de",
+      "start": 15.267,
+      "end": 15.337
+    },
+    {
+      "word": "calendrier",
+      "start": 15.383,
+      "end": 15.964
+    },
+    {
+      "word": "dès",
+      "start": 16.033,
+      "end": 16.161
+    },
+    {
+      "word": "le",
+      "start": 16.196,
+      "end": 16.254
+    },
+    {
+      "word": "mois",
+      "start": 16.3,
+      "end": 16.44
+    },
+    {
+      "word": "de",
+      "start": 16.463,
+      "end": 16.533
+    },
+    {
+      "word": "janvier",
+      "start": 16.579,
+      "end": 17.276
+    }
+  ]
+}

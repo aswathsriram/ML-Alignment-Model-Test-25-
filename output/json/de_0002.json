@@ -1,0 +1,127 @@
+{
+  "id": "de_0002",
+  "audio_file": "de_0002.wav",
+  "language": "German (Germany)",
+  "spoken_form_transcription": "der eintritt für erwachsene kostet zwölf euro kinder unter sechs jahren sind frei und studenten zahlen mit ausweis nur acht euro fünfzig",
+  "synthetic": true,
+  "voice": {
+    "voice_id": "CwhRBWXzGAHq8TQ4Fs17",
+    "name": "Roger - Laid-Back, Casual, Resonant",
+    "gender": "male"
+  },
+  "tts_model": "eleven_multilingual_v2",
+  "sample_rate_hz": 16000,
+  "duration_seconds": 8.824,
+  "words": [
+    {
+      "word": "der",
+      "start": 0.0,
+      "end": 0.313
+    },
+    {
+      "word": "eintritt",
+      "start": 0.395,
+      "end": 0.755
+    },
+    {
+      "word": "für",
+      "start": 0.789,
+      "end": 0.929
+    },
+    {
+      "word": "erwachsene",
+      "start": 0.964,
+      "end": 1.463
+    },
+    {
+      "word": "kostet",
+      "start": 1.521,
+      "end": 1.892
+    },
+    {
+      "word": "zwölf",
+      "start": 1.939,
+      "end": 2.287
+    },
+    {
+      "word": "euro",
+      "start": 2.403,
+      "end": 2.833
+    },
+    {
+      "word": "kinder",
+      "start": 3.646,
+      "end": 3.971
+    },
+    {
+      "word": "unter",
+      "start": 4.029,
+      "end": 4.238
+    },
+    {
+      "word": "sechs",
+      "start": 4.284,
+      "end": 4.493
+    },
+    {
+      "word": "jahren",
+      "start": 4.551,
+      "end": 4.748
+    },
+    {
+      "word": "sind",
+      "start": 4.807,
+      "end": 4.969
+    },
+    {
+      "word": "frei",
+      "start": 5.039,
+      "end": 5.422
+    },
+    {
+      "word": "und",
+      "start": 5.538,
+      "end": 5.654
+    },
+    {
+      "word": "studenten",
+      "start": 5.712,
+      "end": 6.188
+    },
+    {
+      "word": "zahlen",
+      "start": 6.235,
+      "end": 6.467
+    },
+    {
+      "word": "mit",
+      "start": 6.513,
+      "end": 6.641
+    },
+    {
+      "word": "ausweis",
+      "start": 6.711,
+      "end": 7.105
+    },
+    {
+      "word": "nur",
+      "start": 7.163,
+      "end": 7.303
+    },
+    {
+      "word": "acht",
+      "start": 7.361,
+      "end": 7.57
+    },
+    {
+      "word": "euro",
+      "start": 7.628,
+      "end": 7.848
+    },
+    {
+      "word": "fünfzig",
+      "start": 7.918,
+      "end": 8.824
+    }
+  ]
+}
