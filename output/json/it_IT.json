@@ -1,0 +1,693 @@
+{
+  "fileMetadata": {
+    "locale": "it_IT",
+    "workitemsCount": 5
+  },
+  "items": [
+    {
+      "id": "it_0001",
+      "name": "it_0001.wav",
+      "synthetic": true,
+      "transcript": "biglietto di andata e ritorno per bologna",
+      "source": {
+        "voice": {
+          "name": "Alice - Clear, Engaging Educator",
+          "gender": "female"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 2.74,
+        "words": [
+          {
+            "word": "biglietto",
+            "start": 0.0,
+            "end": 0.546
+          },
+          {
+            "word": "di",
+            "start": 0.592,
+            "end": 0.662
+          },
+          {
+            "word": "andata",
+            "start": 0.697,
+            "end": 1.138
+          },
+          {
+            "word": "e",
+            "start": 1.173,
+            "end": 1.196
+          },
+          {
+            "word": "ritorno",
+            "start": 1.254,
+            "end": 1.707
+          },
+          {
+            "word": "per",
+            "start": 1.753,
+            "end": 1.881
+          },
+          {
+            "word": "bologna",
+            "start": 1.95,
+            "end": 2.74
+          }
+        ]
+      }
+    },
+    {
+      "id": "it_0002",
+      "name": "it_0002.wav",
+      "synthetic": true,
+      "transcript": "il museo resterà aperto fino alle ventidue tutti i venerdì di luglio e agosto con ingresso ridotto a cinque euro dopo le diciannove",
+      "source": {
+        "voice": {
+          "name": "Donny - Upbeat and Friendly",
+          "gender": "male"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 9.288,
+        "words": [
+          {
+            "word": "il",
+            "start": 0.0,
+            "end": 0.151
+          },
+          {
+            "word": "museo",
+            "start": 0.186,
+            "end": 0.592
+          },
+          {
+            "word": "resterà",
+            "start": 0.708,
+            "end": 1.068
+          },
+          {
+            "word": "aperto",
+            "start": 1.091,
+            "end": 1.498
+          },
+          {
+            "word": "fino",
+            "start": 1.556,
+            "end": 1.765
+          },
+          {
+            "word": "alle",
+            "start": 1.788,
+            "end": 1.916
+          },
+          {
+            "word": "ventidue",
+            "start": 1.95,
+            "end": 2.566
+          },
+          {
+            "word": "tutti",
+            "start": 2.891,
+            "end": 3.251
+          },
+          {
+            "word": "i",
+            "start": 3.297,
+            "end": 3.32
+          },
+          {
+            "word": "venerdì",
+            "start": 3.367,
+            "end": 3.82
+          },
+          {
+            "word": "di",
+            "start": 3.936,
+            "end": 4.005
+          },
+          {
+            "word": "luglio",
+            "start": 4.04,
+            "end": 4.365
+          },
+          {
+            "word": "e",
+            "start": 4.435,
+            "end": 4.481
+          },
+          {
+            "word": "agosto",
+            "start": 4.516,
+            "end": 5.062
+          },
+          {
+            "word": "con",
+            "start": 5.503,
+            "end": 5.654
+          },
+          {
+            "word": "ingresso",
+            "start": 5.712,
+            "end": 6.095
+          },
+          {
+            "word": "ridotto",
+            "start": 6.142,
+            "end": 6.676
+          },
+          {
+            "word": "a",
+            "start": 6.792,
+            "end": 6.873
+          },
+          {
+            "word": "cinque",
+            "start": 6.92,
+            "end": 7.314
+          },
+          {
+            "word": "euro",
+            "start": 7.338,
+            "end": 7.686
+          },
+          {
+            "word": "dopo",
+            "start": 7.964,
+            "end": 8.301
+          },
+          {
+            "word": "le",
+            "start": 8.348,
+            "end": 8.417
+          },
+          {
+            "word": "diciannove",
+            "start": 8.464,
+            "end": 9.288
+          }
+        ]
+      }
+    },
+    {
+      "id": "it_0003",
+      "name": "it_0003.wav",
+      "synthetic": true,
+      "transcript": "buongiorno a tutti e bentornati in diretta oggi parliamo del traffico in città perché da lunedì partono i lavori sulla circonvallazione nord e per almeno due mesi ci saranno deviazioni importanti se state ascoltando dall'auto potete scriverci un messaggio e raccontarci com'è la situazione sulla vostra strada leggeremo i vostri messaggi in diretta subito dopo il notiziario",
+      "source": {
+        "voice": {
+          "name": "Matilda - Knowledgable, Professional",
+          "gender": "female"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 24.288,
+        "words": [
+          {
+            "word": "buongiorno",
+            "start": 0.0,
+            "end": 0.511
+          },
+          {
+            "word": "a",
+            "start": 0.534,
+            "end": 0.557
+          },
+          {
+            "word": "tutti",
+            "start": 0.604,
+            "end": 1.08
+          },
+          {
+            "word": "e",
+            "start": 1.196,
+            "end": 1.277
+          },
+          {
+            "word": "bentornati",
+            "start": 1.335,
+            "end": 1.892
+          },
+          {
+            "word": "in",
+            "start": 1.927,
+            "end": 1.985
+          },
+          {
+            "word": "diretta",
+            "start": 2.032,
+            "end": 2.601
+          },
+          {
+            "word": "oggi",
+            "start": 2.984,
+            "end": 3.297
+          },
+          {
+            "word": "parliamo",
+            "start": 3.344,
+            "end": 3.773
+          },
+          {
+            "word": "del",
+            "start": 3.82,
+            "end": 3.936
+          },
+          {
+            "word": "traffico",
+            "start": 3.982,
+            "end": 4.4
+          },
+          {
+            "word": "in",
+            "start": 4.435,
+            "end": 4.493
+          },
+          {
+            "word": "città",
+            "start": 4.528,
+            "end": 4.934
+          },
+          {
+            "word": "perché",
+            "start": 5.178,
+            "end": 5.468
+          },
+          {
+            "word": "da",
+            "start": 5.515,
+            "end": 5.573
+          },
+          {
+            "word": "lunedì",
+            "start": 5.608,
+            "end": 6.002
+          },
+          {
+            "word": "partono",
+            "start": 6.118,
+            "end": 6.502
+          },
+          {
+            "word": "i",
+            "start": 6.525,
+            "end": 6.548
+          },
+          {
+            "word": "lavori",
+            "start": 6.583,
+            "end": 6.954
+          },
+          {
+            "word": "sulla",
+            "start": 7.001,
+            "end": 7.198
+          },
+          {
+            "word": "circonvallazione",
+            "start": 7.245,
+            "end": 8.081
+          },
+          {
+            "word": "nord",
+            "start": 8.127,
+            "end": 8.44
+          },
+          {
+            "word": "e",
+            "start": 8.882,
+            "end": 9.056
+          },
+          {
+            "word": "per",
+            "start": 9.114,
+            "end": 9.242
+          },
+          {
+            "word": "almeno",
+            "start": 9.288,
+            "end": 9.59
+          },
+          {
+            "word": "due",
+            "start": 9.636,
+            "end": 9.764
+          },
+          {
+            "word": "mesi",
+            "start": 9.822,
+            "end": 10.17
+          },
+          {
+            "word": "ci",
+            "start": 10.286,
+            "end": 10.426
+          },
+          {
+            "word": "saranno",
+            "start": 10.472,
+            "end": 10.809
+          },
+          {
+            "word": "deviazioni",
+            "start": 10.855,
+            "end": 11.389
+          },
+          {
+            "word": "importanti",
+            "start": 11.413,
+            "end": 12.144
+          },
+          {
+            "word": "se",
+            "start": 12.748,
+            "end": 12.887
+          },
+          {
+            "word": "state",
+            "start": 12.934,
+            "end": 13.212
+          },
+          {
+            "word": "ascoltando",
+            "start": 13.247,
+            "end": 13.769
+          },
+          {
+            "word": "dall'auto",
+            "start": 13.816,
+            "end": 14.431
+          },
+          {
+            "word": "potete",
+            "start": 14.582,
+            "end": 14.953
+          },
+          {
+            "word": "scriverci",
+            "start": 14.988,
+            "end": 15.453
+          },
+          {
+            "word": "un",
+            "start": 15.499,
+            "end": 15.545
+          },
+          {
+            "word": "messaggio",
+            "start": 15.569,
+            "end": 16.184
+          },
+          {
+            "word": "e",
+            "start": 16.358,
+            "end": 16.451
+          },
+          {
+            "word": "raccontarci",
+            "start": 16.509,
+            "end": 17.148
+          },
+          {
+            "word": "com'è",
+            "start": 17.206,
+            "end": 17.45
+          },
+          {
+            "word": "la",
+            "start": 17.496,
+            "end": 17.566
+          },
+          {
+            "word": "situazione",
+            "start": 17.6,
+            "end": 18.297
+          },
+          {
+            "word": "sulla",
+            "start": 18.901,
+            "end": 19.191
+          },
+          {
+            "word": "vostra",
+            "start": 19.237,
+            "end": 19.551
+          },
+          {
+            "word": "strada",
+            "start": 19.586,
+            "end": 20.062
+          },
+          {
+            "word": "leggeremo",
+            "start": 20.387,
+            "end": 20.898
+          },
+          {
+            "word": "i",
+            "start": 20.921,
+            "end": 20.944
+          },
+          {
+            "word": "vostri",
+            "start": 20.979,
+            "end": 21.269
+          },
+          {
+            "word": "messaggi",
+            "start": 21.304,
+            "end": 21.734
+          },
+          {
+            "word": "in",
+            "start": 21.757,
+            "end": 21.803
+          },
+          {
+            "word": "diretta",
+            "start": 21.85,
+            "end": 22.395
+          },
+          {
+            "word": "subito",
+            "start": 22.546,
+            "end": 22.918
+          },
+          {
+            "word": "dopo",
+            "start": 22.964,
+            "end": 23.185
+          },
+          {
+            "word": "il",
+            "start": 23.208,
+            "end": 23.255
+          },
+          {
+            "word": "notiziario",
+            "start": 23.289,
+            "end": 24.288
+          }
+        ]
+      }
+    },
+    {
+      "id": "it_0004",
+      "name": "it_0004.wav",
+      "synthetic": true,
+      "transcript": "il fatturato del gruppo ha raggiunto i quattordici milioni trecentoventimila euro con una crescita dell'otto per cento rispetto all'anno precedente",
+      "source": {
+        "voice": {
+          "name": "Jerry B - Effortless, Cool and Laid-Back",
+          "gender": "male"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 9.752,
+        "words": [
+          {
+            "word": "il",
+            "start": 0.0,
+            "end": 0.139
+          },
+          {
+            "word": "fatturato",
+            "start": 0.174,
+            "end": 0.72
+          },
+          {
+            "word": "del",
+            "start": 0.766,
+            "end": 0.882
+          },
+          {
+            "word": "gruppo",
+            "start": 0.929,
+            "end": 1.382
+          },
+          {
+            "word": "ha",
+            "start": 1.498,
+            "end": 1.602
+          },
+          {
+            "word": "raggiunto",
+            "start": 1.672,
+            "end": 2.101
+          },
+          {
+            "word": "i",
+            "start": 2.125,
+            "end": 2.148
+          },
+          {
+            "word": "quattordici",
+            "start": 2.206,
+            "end": 2.937
+          },
+          {
+            "word": "milioni",
+            "start": 2.995,
+            "end": 3.437
+          },
+          {
+            "word": "trecentoventimila",
+            "start": 3.483,
+            "end": 4.656
+          },
+          {
+            "word": "euro",
+            "start": 4.748,
+            "end": 5.074
+          },
+          {
+            "word": "con",
+            "start": 5.457,
+            "end": 5.619
+          },
+          {
+            "word": "una",
+            "start": 5.7,
+            "end": 5.84
+          },
+          {
+            "word": "crescita",
+            "start": 5.898,
+            "end": 6.362
+          },
+          {
+            "word": "dell'otto",
+            "start": 6.42,
+            "end": 6.873
+          },
+          {
+            "word": "per",
+            "start": 6.92,
+            "end": 7.059
+          },
+          {
+            "word": "cento",
+            "start": 7.129,
+            "end": 7.593
+          },
+          {
+            "word": "rispetto",
+            "start": 7.802,
+            "end": 8.301
+          },
+          {
+            "word": "all'anno",
+            "start": 8.336,
+            "end": 8.696
+          },
+          {
+            "word": "precedente",
+            "start": 8.742,
+            "end": 9.752
+          }
+        ]
+      }
+    },
+    {
+      "id": "it_0005",
+      "name": "it_0005.wav",
+      "synthetic": true,
+      "transcript": "per informazioni potete mandare un s. m. s. al numero trecentoquaranta cinquecentododici sessantasette ottantotto",
+      "source": {
+        "voice": {
+          "name": "Lily - Velvety Actress",
+          "gender": "female"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 8.591,
+        "words": [
+          {
+            "word": "per",
+            "start": 0.0,
+            "end": 0.174
+          },
+          {
+            "word": "informazioni",
+            "start": 0.232,
+            "end": 1.01
+          },
+          {
+            "word": "potete",
+            "start": 1.045,
+            "end": 1.335
+          },
+          {
+            "word": "mandare",
+            "start": 1.382,
+            "end": 1.788
+          },
+          {
+            "word": "un",
+            "start": 1.846,
+            "end": 1.95
+          },
+          {
+            "word": "s.",
+            "start": 2.125,
+            "end": 2.519
+          },
+          {
+            "word": "m.",
+            "start": 2.844,
+            "end": 3.111
+          },
+          {
+            "word": "s.",
+            "start": 3.495,
+            "end": 3.866
+          },
+          {
+            "word": "al",
+            "start": 4.075,
+            "end": 4.214
+          },
+          {
+            "word": "numero",
+            "start": 4.261,
+            "end": 4.551
+          },
+          {
+            "word": "trecentoquaranta",
+            "start": 4.586,
+            "end": 5.573
+          },
+          {
+            "word": "cinquecentododici",
+            "start": 5.608,
+            "end": 6.676
+          },
+          {
+            "word": "sessantasette",
+            "start": 6.722,
+            "end": 7.43
+          },
+          {
+            "word": "ottantotto",
+            "start": 7.465,
+            "end": 8.591
+          }
+        ]
+      }
+    }
+  ]
+}

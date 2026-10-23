@@ -1,0 +1,763 @@
+{
+  "fileMetadata": {
+    "locale": "pt_BR",
+    "workitemsCount": 5
+  },
+  "items": [
+    {
+      "id": "pt_0001",
+      "name": "pt_0001.wav",
+      "synthetic": true,
+      "transcript": "boa noite a todos",
+      "source": {
+        "voice": {
+          "name": "Ember - Energetic, Confident Protagonist",
+          "gender": "female"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 1.3,
+        "words": [
+          {
+            "word": "boa",
+            "start": 0.0,
+            "end": 0.209
+          },
+          {
+            "word": "noite",
+            "start": 0.255,
+            "end": 0.499
+          },
+          {
+            "word": "a",
+            "start": 0.546,
+            "end": 0.569
+          },
+          {
+            "word": "todos",
+            "start": 0.65,
+            "end": 1.3
+          }
+        ]
+      }
+    },
+    {
+      "id": "pt_0002",
+      "name": "pt_0002.wav",
+      "synthetic": true,
+      "transcript": "a feira de artesanato acontece todo sábado na praça central das oito da manhã até as duas da tarde e a entrada é gratuita",
+      "source": {
+        "voice": {
+          "name": "Charlie - Deep, Confident, Energetic",
+          "gender": "male"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 7.848,
+        "words": [
+          {
+            "word": "a",
+            "start": 0.0,
+            "end": 0.081
+          },
+          {
+            "word": "feira",
+            "start": 0.174,
+            "end": 0.418
+          },
+          {
+            "word": "de",
+            "start": 0.464,
+            "end": 0.522
+          },
+          {
+            "word": "artesanato",
+            "start": 0.546,
+            "end": 1.149
+          },
+          {
+            "word": "acontece",
+            "start": 1.184,
+            "end": 1.66
+          },
+          {
+            "word": "todo",
+            "start": 1.776,
+            "end": 2.078
+          },
+          {
+            "word": "sábado",
+            "start": 2.136,
+            "end": 2.531
+          },
+          {
+            "word": "na",
+            "start": 2.577,
+            "end": 2.659
+          },
+          {
+            "word": "praça",
+            "start": 2.728,
+            "end": 3.019
+          },
+          {
+            "word": "central",
+            "start": 3.053,
+            "end": 3.437
+          },
+          {
+            "word": "das",
+            "start": 3.495,
+            "end": 3.646
+          },
+          {
+            "word": "oito",
+            "start": 3.727,
+            "end": 3.924
+          },
+          {
+            "word": "da",
+            "start": 3.971,
+            "end": 4.029
+          },
+          {
+            "word": "manhã",
+            "start": 4.075,
+            "end": 4.412
+          },
+          {
+            "word": "até",
+            "start": 4.737,
+            "end": 5.108
+          },
+          {
+            "word": "as",
+            "start": 5.166,
+            "end": 5.236
+          },
+          {
+            "word": "duas",
+            "start": 5.306,
+            "end": 5.503
+          },
+          {
+            "word": "da",
+            "start": 5.55,
+            "end": 5.631
+          },
+          {
+            "word": "tarde",
+            "start": 5.689,
+            "end": 6.072
+          },
+          {
+            "word": "e",
+            "start": 6.246,
+            "end": 6.397
+          },
+          {
+            "word": "a",
+            "start": 6.432,
+            "end": 6.455
+          },
+          {
+            "word": "entrada",
+            "start": 6.502,
+            "end": 6.931
+          },
+          {
+            "word": "é",
+            "start": 6.978,
+            "end": 7.001
+          },
+          {
+            "word": "gratuita",
+            "start": 7.047,
+            "end": 7.848
+          }
+        ]
+      }
+    },
+    {
+      "id": "pt_0003",
+      "name": "pt_0003.wav",
+      "synthetic": true,
+      "transcript": "e aí pessoal tudo bem com vocês hoje eu vou ensinar uma receita de bolo de cenoura com cobertura de chocolate que é muito fácil de fazer vocês vão precisar de três cenouras médias quatro ovos uma xícara de óleo duas xícaras de açúcar e duas xícaras e meia de farinha de trigo então vamos começar",
+      "source": {
+        "voice": {
+          "name": "Liam - Energetic, Social Media Creator",
+          "gender": "male"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 21.084,
+        "words": [
+          {
+            "word": "e",
+            "start": 0.0,
+            "end": 0.128
+          },
+          {
+            "word": "aí",
+            "start": 0.163,
+            "end": 0.267
+          },
+          {
+            "word": "pessoal",
+            "start": 0.313,
+            "end": 0.789
+          },
+          {
+            "word": "tudo",
+            "start": 1.173,
+            "end": 1.393
+          },
+          {
+            "word": "bem",
+            "start": 1.44,
+            "end": 1.556
+          },
+          {
+            "word": "com",
+            "start": 1.602,
+            "end": 1.683
+          },
+          {
+            "word": "vocês",
+            "start": 1.741,
+            "end": 2.229
+          },
+          {
+            "word": "hoje",
+            "start": 2.833,
+            "end": 3.17
+          },
+          {
+            "word": "eu",
+            "start": 3.193,
+            "end": 3.239
+          },
+          {
+            "word": "vou",
+            "start": 3.286,
+            "end": 3.402
+          },
+          {
+            "word": "ensinar",
+            "start": 3.437,
+            "end": 3.796
+          },
+          {
+            "word": "uma",
+            "start": 3.82,
+            "end": 3.936
+          },
+          {
+            "word": "receita",
+            "start": 3.994,
+            "end": 4.377
+          },
+          {
+            "word": "de",
+            "start": 4.435,
+            "end": 4.505
+          },
+          {
+            "word": "bolo",
+            "start": 4.586,
+            "end": 4.807
+          },
+          {
+            "word": "de",
+            "start": 4.853,
+            "end": 4.923
+          },
+          {
+            "word": "cenoura",
+            "start": 4.969,
+            "end": 5.457
+          },
+          {
+            "word": "com",
+            "start": 5.7,
+            "end": 5.84
+          },
+          {
+            "word": "cobertura",
+            "start": 5.886,
+            "end": 6.351
+          },
+          {
+            "word": "de",
+            "start": 6.385,
+            "end": 6.444
+          },
+          {
+            "word": "chocolate",
+            "start": 6.49,
+            "end": 7.036
+          },
+          {
+            "word": "que",
+            "start": 7.094,
+            "end": 7.163
+          },
+          {
+            "word": "é",
+            "start": 7.21,
+            "end": 7.256
+          },
+          {
+            "word": "muito",
+            "start": 7.314,
+            "end": 7.605
+          },
+          {
+            "word": "fácil",
+            "start": 7.663,
+            "end": 7.953
+          },
+          {
+            "word": "de",
+            "start": 7.976,
+            "end": 8.034
+          },
+          {
+            "word": "fazer",
+            "start": 8.081,
+            "end": 8.475
+          },
+          {
+            "word": "vocês",
+            "start": 9.172,
+            "end": 9.485
+          },
+          {
+            "word": "vão",
+            "start": 9.52,
+            "end": 9.625
+          },
+          {
+            "word": "precisar",
+            "start": 9.648,
+            "end": 10.089
+          },
+          {
+            "word": "de",
+            "start": 10.147,
+            "end": 10.217
+          },
+          {
+            "word": "três",
+            "start": 10.286,
+            "end": 10.519
+          },
+          {
+            "word": "cenouras",
+            "start": 10.542,
+            "end": 10.96
+          },
+          {
+            "word": "médias",
+            "start": 11.041,
+            "end": 11.54
+          },
+          {
+            "word": "quatro",
+            "start": 11.923,
+            "end": 12.33
+          },
+          {
+            "word": "ovos",
+            "start": 12.388,
+            "end": 12.736
+          },
+          {
+            "word": "uma",
+            "start": 13.119,
+            "end": 13.34
+          },
+          {
+            "word": "xícara",
+            "start": 13.398,
+            "end": 13.711
+          },
+          {
+            "word": "de",
+            "start": 13.758,
+            "end": 13.827
+          },
+          {
+            "word": "óleo",
+            "start": 13.944,
+            "end": 14.211
+          },
+          {
+            "word": "duas",
+            "start": 14.536,
+            "end": 14.838
+          },
+          {
+            "word": "xícaras",
+            "start": 14.896,
+            "end": 15.221
+          },
+          {
+            "word": "de",
+            "start": 15.244,
+            "end": 15.29
+          },
+          {
+            "word": "açúcar",
+            "start": 15.325,
+            "end": 15.778
+          },
+          {
+            "word": "e",
+            "start": 16.057,
+            "end": 16.184
+          },
+          {
+            "word": "duas",
+            "start": 16.266,
+            "end": 16.533
+          },
+          {
+            "word": "xícaras",
+            "start": 16.602,
+            "end": 17.02
+          },
+          {
+            "word": "e",
+            "start": 17.101,
+            "end": 17.218
+          },
+          {
+            "word": "meia",
+            "start": 17.334,
+            "end": 17.577
+          },
+          {
+            "word": "de",
+            "start": 17.624,
+            "end": 17.694
+          },
+          {
+            "word": "farinha",
+            "start": 17.752,
+            "end": 18.065
+          },
+          {
+            "word": "de",
+            "start": 18.112,
+            "end": 18.181
+          },
+          {
+            "word": "trigo",
+            "start": 18.228,
+            "end": 18.588
+          },
+          {
+            "word": "então",
+            "start": 19.4,
+            "end": 19.899
+          },
+          {
+            "word": "vamos",
+            "start": 19.981,
+            "end": 20.236
+          },
+          {
+            "word": "começar",
+            "start": 20.283,
+            "end": 21.084
+          }
+        ]
+      }
+    },
+    {
+      "id": "pt_0004",
+      "name": "pt_0004.wav",
+      "synthetic": true,
+      "transcript": "pra mais informações liga pra gente no onze nove oito sete seis cinco quatro três dois um ou manda uma mensagem no whatsapp",
+      "source": {
+        "voice": {
+          "name": "Will - Relaxed Optimist",
+          "gender": "male"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 8.127,
+        "words": [
+          {
+            "word": "pra",
+            "start": 0.0,
+            "end": 0.221
+          },
+          {
+            "word": "mais",
+            "start": 0.302,
+            "end": 0.546
+          },
+          {
+            "word": "informações",
+            "start": 0.604,
+            "end": 1.405
+          },
+          {
+            "word": "liga",
+            "start": 1.474,
+            "end": 1.66
+          },
+          {
+            "word": "pra",
+            "start": 1.695,
+            "end": 1.8
+          },
+          {
+            "word": "gente",
+            "start": 1.858,
+            "end": 2.113
+          },
+          {
+            "word": "no",
+            "start": 2.159,
+            "end": 2.241
+          },
+          {
+            "word": "onze",
+            "start": 2.322,
+            "end": 2.624
+          },
+          {
+            "word": "nove",
+            "start": 2.682,
+            "end": 3.065
+          },
+          {
+            "word": "oito",
+            "start": 3.158,
+            "end": 3.471
+          },
+          {
+            "word": "sete",
+            "start": 3.529,
+            "end": 3.878
+          },
+          {
+            "word": "seis",
+            "start": 3.936,
+            "end": 4.203
+          },
+          {
+            "word": "cinco",
+            "start": 4.226,
+            "end": 4.632
+          },
+          {
+            "word": "quatro",
+            "start": 4.679,
+            "end": 5.016
+          },
+          {
+            "word": "três",
+            "start": 5.062,
+            "end": 5.375
+          },
+          {
+            "word": "dois",
+            "start": 5.422,
+            "end": 5.654
+          },
+          {
+            "word": "um",
+            "start": 5.77,
+            "end": 5.886
+          },
+          {
+            "word": "ou",
+            "start": 6.211,
+            "end": 6.304
+          },
+          {
+            "word": "manda",
+            "start": 6.351,
+            "end": 6.513
+          },
+          {
+            "word": "uma",
+            "start": 6.536,
+            "end": 6.629
+          },
+          {
+            "word": "mensagem",
+            "start": 6.664,
+            "end": 7.129
+          },
+          {
+            "word": "no",
+            "start": 7.152,
+            "end": 7.21
+          },
+          {
+            "word": "whatsapp",
+            "start": 7.233,
+            "end": 8.127
+          }
+        ]
+      }
+    },
+    {
+      "id": "pt_0005",
+      "name": "pt_0005.wav",
+      "synthetic": true,
+      "transcript": "o prefeito anunciou nesta segunda-feira a construção de duas novas unidades básicas de saúde no bairro jardim das flores com investimento de três milhões e meio de reais",
+      "source": {
+        "voice": {
+          "name": "Eric - Smooth, Trustworthy",
+          "gender": "male"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 10.681,
+        "words": [
+          {
+            "word": "o",
+            "start": 0.0,
+            "end": 0.093
+          },
+          {
+            "word": "prefeito",
+            "start": 0.139,
+            "end": 0.615
+          },
+          {
+            "word": "anunciou",
+            "start": 0.639,
+            "end": 1.103
+          },
+          {
+            "word": "nesta",
+            "start": 1.173,
+            "end": 1.463
+          },
+          {
+            "word": "segunda-feira",
+            "start": 1.521,
+            "end": 2.322
+          },
+          {
+            "word": "a",
+            "start": 2.531,
+            "end": 2.624
+          },
+          {
+            "word": "construção",
+            "start": 2.694,
+            "end": 3.332
+          },
+          {
+            "word": "de",
+            "start": 3.379,
+            "end": 3.471
+          },
+          {
+            "word": "duas",
+            "start": 3.553,
+            "end": 3.855
+          },
+          {
+            "word": "novas",
+            "start": 3.924,
+            "end": 4.214
+          },
+          {
+            "word": "unidades",
+            "start": 4.284,
+            "end": 4.737
+          },
+          {
+            "word": "básicas",
+            "start": 4.807,
+            "end": 5.271
+          },
+          {
+            "word": "de",
+            "start": 5.306,
+            "end": 5.375
+          },
+          {
+            "word": "saúde",
+            "start": 5.445,
+            "end": 5.863
+          },
+          {
+            "word": "no",
+            "start": 5.898,
+            "end": 5.968
+          },
+          {
+            "word": "bairro",
+            "start": 6.026,
+            "end": 6.258
+          },
+          {
+            "word": "jardim",
+            "start": 6.316,
+            "end": 6.722
+          },
+          {
+            "word": "das",
+            "start": 6.769,
+            "end": 6.908
+          },
+          {
+            "word": "flores",
+            "start": 6.989,
+            "end": 7.442
+          },
+          {
+            "word": "com",
+            "start": 7.767,
+            "end": 7.895
+          },
+          {
+            "word": "investimento",
+            "start": 7.918,
+            "end": 8.545
+          },
+          {
+            "word": "de",
+            "start": 8.603,
+            "end": 8.684
+          },
+          {
+            "word": "três",
+            "start": 8.754,
+            "end": 9.067
+          },
+          {
+            "word": "milhões",
+            "start": 9.137,
+            "end": 9.497
+          },
+          {
+            "word": "e",
+            "start": 9.555,
+            "end": 9.578
+          },
+          {
+            "word": "meio",
+            "start": 9.636,
+            "end": 9.834
+          },
+          {
+            "word": "de",
+            "start": 9.88,
+            "end": 9.95
+          },
+          {
+            "word": "reais",
+            "start": 10.008,
+            "end": 10.681
+          }
+        ]
+      }
+    }
+  ]
+}

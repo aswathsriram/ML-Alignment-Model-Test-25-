@@ -4,7 +4,8 @@
 Run `python tts_to_wav.py all`. It reads the 25 ready transcripts in transcripts/*.jsonl
 (fr, de, it, pt, es — 5 each) and writes, per transcript:
 - output/wav/<id>.wav   (16 kHz mono)
-- output/json/<id>.json (transcript, language, voice, duration, word timings)
+- output/json/<locale>.json, one per language (de_DE, fr_FR, it_IT, pt_BR, es_ES): fileMetadata
+  (locale, workitemsCount) + one item per clip (id, name = <id>.wav, transcript, voice, duration, word timings)
 Each language's 5 files use 5 different ElevenLabs voices (picked automatically by the script).
 
 ## How to run it
@@ -19,7 +20,7 @@ Each language's 5 files use 5 different ElevenLabs voices (picked automatically 
 5. If it says the key was refused (401/403), stop and tell the user — don't retry in a loop.
 
 ## When finished
-- Check: 25 .wav and 25 .json in output/, each wav non-empty, each json valid.
+- Check: 25 .wav and 5 per-language .json in output/, each wav non-empty, each json valid, 25 items in total.
 - Commit ONLY the output/ folder (never .env) and push the branch, so the user can download it from GitHub.
 - Reply with a short table: id, voice name, duration.
 

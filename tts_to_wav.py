@@ -5,7 +5,8 @@ Uses only Python's standard library - nothing to install.
 
 Input  : transcripts/<lang>.jsonl   (already filled: fr, de, it, pt, es - 5 each)
 Output : output/wav/<id>.wav        16 kHz mono 16-bit audio      (25 files)
-         output/json/<id>.json      transcript, language, voice used, duration, word timings (25 files)
+         output/json/<locale>.json  one file per language (e.g. de_DE.json): fileMetadata + one item per
+                                    clip with transcript, voice used, duration, word timings
 
 Voices : the 5 transcripts of each language each get a DIFFERENT voice, picked automatically from
          your ElevenLabs account (voices verified for that language first, mixing female/male).
@@ -27,8 +28,7 @@ BASE = "https://api.elevenlabs.io/v1"
 MODEL = "eleven_multilingual_v2"
 SAMPLE_RATE = 16000
 VOICES_PER_LANG = 5
-LANG_NAME = {"fr": "French (France)", "de": "German (Germany)", "it": "Italian (Italy)",
-             "pt": "Portuguese (Brazil)", "es": "Spanish (Spain)"}
+LOCALE = {"fr": "fr_FR", "de": "de_DE", "it": "it_IT", "pt": "pt_BR", "es": "es_ES"}
 
 
 def load_env():
@@ -118,16 +118,25 @@ def word_times(alignment, words):
     return out
 
 
+def write_locale(path, locale, items):
+    items = sorted(items.values(), key=lambda it: it["id"])
+    doc = {"fileMetadata": {"locale": locale, "workitemsCount": len(items)}, "items": items}
+    path.write_text(json.dumps(doc, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
 def run(lang, key, fixed, limit):
     rows = [json.loads(l) for l in (HERE / "transcripts" / f"{lang}.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
     rows = rows[:limit] if limit else rows
     wav_dir, json_dir = HERE / "output" / "wav", HERE / "output" / "json"
     wav_dir.mkdir(parents=True, exist_ok=True); json_dir.mkdir(parents=True, exist_ok=True)
+    locale = LOCALE.get(lang, lang)
+    json_path = json_dir / f"{locale}.json"
+    done = {it["id"]: it for it in json.loads(json_path.read_text(encoding="utf-8"))["items"]} if json_path.exists() else {}
     pool = pick_voices(lang, key, fixed)
     print(f"[{lang}] voices: " + ", ".join(f"{v['name']} ({v['gender'] or '?'})" for v in pool))
     for i, row in enumerate(rows):
-        wav_path, json_path = wav_dir / f"{row['id']}.wav", json_dir / f"{row['id']}.json"
-        if wav_path.exists() and json_path.exists():
+        wav_path = wav_dir / f"{row['id']}.wav"
+        if wav_path.exists() and row["id"] in done:
             print(f"[{lang}] {row['id']} already done, skipping"); continue
         voice = pool[i % len(pool)]
         text = " ".join(row["words"])
@@ -137,13 +146,12 @@ def run(lang, key, fixed, limit):
         pcm = base64.b64decode(res["audio_base64"])
         with wave.open(str(wav_path), "wb") as w:
             w.setnchannels(1); w.setsampwidth(2); w.setframerate(SAMPLE_RATE); w.writeframes(pcm)
-        rec = {"id": row["id"], "audio_file": f"{row['id']}.wav", "language": LANG_NAME.get(lang, lang),
-               "spoken_form_transcription": text, "synthetic": True,
-               "voice": {"voice_id": voice["voice_id"], "name": voice["name"], "gender": voice["gender"]},
-               "tts_model": MODEL, "sample_rate_hz": SAMPLE_RATE,
-               "duration_seconds": round(len(pcm) / 2 / SAMPLE_RATE, 3),
-               "words": word_times(res.get("alignment") or {}, row["words"])}
-        json_path.write_text(json.dumps(rec, ensure_ascii=False, indent=2), encoding="utf-8")
+        done[row["id"]] = {"id": row["id"], "name": f"{row['id']}.wav", "synthetic": True, "transcript": text,
+                           "source": {"voice": {"name": voice["name"], "gender": voice["gender"]},
+                                      "sample_rate_hz": SAMPLE_RATE,
+                                      "duration_seconds": round(len(pcm) / 2 / SAMPLE_RATE, 3),
+                                      "words": word_times(res.get("alignment") or {}, row["words"])}}
+        write_locale(json_path, locale, done)
     print(f"[{lang}] done")
 
 
@@ -164,4 +172,5 @@ if __name__ == "__main__":
     for lang in langs:
         run(lang, key, fixed, a.limit)
     n = len(list((HERE / "output" / "wav").glob("*.wav")))
-    print(f"\nAll done: {n} .wav files in output/wav and {n} .json files in output/json")
+    m = len(list((HERE / "output" / "json").glob("*.json")))
+    print(f"\nAll done: {n} .wav files in output/wav and {m} per-language .json files in output/json")

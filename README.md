@@ -1,10 +1,11 @@
-# Synthetic audio test: 25 transcripts → 25 .wav + 25 .json
+# Synthetic audio test: 25 transcripts → 25 .wav + 5 per-language .json
 
 transcripts/ already holds the 25 transcripts (5 each: French, German, Italian, Portuguese, Spanish).
 Preview them in transcripts/ALL_TRANSCRIPTS_preview.csv.
 Running tts_to_wav.py turns them into:
   output/wav/<id>.wav    the audio (16 kHz mono)
-  output/json/<id>.json  transcript + language + voice used + duration (+ word timings)
+  output/json/<locale>.json  one per language (e.g. de_DE.json): one item per clip with its
+                             .wav name, transcript, voice used, duration and word timings
 
 ## A. Claude Code in the browser (claude.ai/code)
 1. GitHub: create a new PRIVATE repository (github.com/new), then "uploading an existing file" →

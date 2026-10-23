@@ -1,0 +1,758 @@
+{
+  "fileMetadata": {
+    "locale": "fr_FR",
+    "workitemsCount": 5
+  },
+  "items": [
+    {
+      "id": "fr_0001",
+      "name": "fr_0001.wav",
+      "synthetic": true,
+      "transcript": "rendez-vous jeudi à quinze heures",
+      "source": {
+        "voice": {
+          "name": "Sarah - Mature, Reassuring, Confident",
+          "gender": "female"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 1.765,
+        "words": [
+          {
+            "word": "rendez-vous",
+            "start": 0.0,
+            "end": 0.569
+          },
+          {
+            "word": "jeudi",
+            "start": 0.604,
+            "end": 0.824
+          },
+          {
+            "word": "à",
+            "start": 0.882,
+            "end": 0.917
+          },
+          {
+            "word": "quinze",
+            "start": 0.964,
+            "end": 1.254
+          },
+          {
+            "word": "heures",
+            "start": 1.277,
+            "end": 1.765
+          }
+        ]
+      }
+    },
+    {
+      "id": "fr_0002",
+      "name": "fr_0002.wav",
+      "synthetic": true,
+      "transcript": "la boulangerie de la place ouvre à sept heures du matin et ferme à dix-neuf heures trente sauf le dimanche où elle n'ouvre que le matin",
+      "source": {
+        "voice": {
+          "name": "Roger - Laid-Back, Casual, Resonant",
+          "gender": "male"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 6.176,
+        "words": [
+          {
+            "word": "la",
+            "start": 0.0,
+            "end": 0.163
+          },
+          {
+            "word": "boulangerie",
+            "start": 0.232,
+            "end": 0.673
+          },
+          {
+            "word": "de",
+            "start": 0.697,
+            "end": 0.755
+          },
+          {
+            "word": "la",
+            "start": 0.801,
+            "end": 0.871
+          },
+          {
+            "word": "place",
+            "start": 0.929,
+            "end": 1.173
+          },
+          {
+            "word": "ouvre",
+            "start": 1.196,
+            "end": 1.382
+          },
+          {
+            "word": "à",
+            "start": 1.405,
+            "end": 1.428
+          },
+          {
+            "word": "sept",
+            "start": 1.498,
+            "end": 1.672
+          },
+          {
+            "word": "heures",
+            "start": 1.707,
+            "end": 1.846
+          },
+          {
+            "word": "du",
+            "start": 1.869,
+            "end": 1.939
+          },
+          {
+            "word": "matin",
+            "start": 1.985,
+            "end": 2.334
+          },
+          {
+            "word": "et",
+            "start": 2.357,
+            "end": 2.426
+          },
+          {
+            "word": "ferme",
+            "start": 2.473,
+            "end": 2.717
+          },
+          {
+            "word": "à",
+            "start": 2.74,
+            "end": 2.763
+          },
+          {
+            "word": "dix-neuf",
+            "start": 2.833,
+            "end": 3.228
+          },
+          {
+            "word": "heures",
+            "start": 3.274,
+            "end": 3.448
+          },
+          {
+            "word": "trente",
+            "start": 3.483,
+            "end": 3.913
+          },
+          {
+            "word": "sauf",
+            "start": 3.982,
+            "end": 4.18
+          },
+          {
+            "word": "le",
+            "start": 4.238,
+            "end": 4.307
+          },
+          {
+            "word": "dimanche",
+            "start": 4.342,
+            "end": 4.748
+          },
+          {
+            "word": "où",
+            "start": 4.772,
+            "end": 4.818
+          },
+          {
+            "word": "elle",
+            "start": 4.865,
+            "end": 4.957
+          },
+          {
+            "word": "n'ouvre",
+            "start": 4.992,
+            "end": 5.259
+          },
+          {
+            "word": "que",
+            "start": 5.317,
+            "end": 5.399
+          },
+          {
+            "word": "le",
+            "start": 5.433,
+            "end": 5.492
+          },
+          {
+            "word": "matin",
+            "start": 5.538,
+            "end": 6.177
+          }
+        ]
+      }
+    },
+    {
+      "id": "fr_0003",
+      "name": "fr_0003.wav",
+      "synthetic": true,
+      "transcript": "le conseil municipal de nantes a voté hier soir un budget de quarante-deux millions d'euros pour rénover les écoles primaires de la ville les travaux commenceront au printemps prochain et devraient durer environ trois ans selon l'adjointe chargée de l'éducation les familles seront informées des changements de calendrier dès le mois de janvier",
+      "source": {
+        "voice": {
+          "name": "Laura - Enthusiast, Quirky Attitude",
+          "gender": "female"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 17.276,
+        "words": [
+          {
+            "word": "le",
+            "start": 0.0,
+            "end": 0.151
+          },
+          {
+            "word": "conseil",
+            "start": 0.209,
+            "end": 0.522
+          },
+          {
+            "word": "municipal",
+            "start": 0.557,
+            "end": 1.057
+          },
+          {
+            "word": "de",
+            "start": 1.115,
+            "end": 1.173
+          },
+          {
+            "word": "nantes",
+            "start": 1.231,
+            "end": 1.591
+          },
+          {
+            "word": "a",
+            "start": 1.637,
+            "end": 1.707
+          },
+          {
+            "word": "voté",
+            "start": 1.788,
+            "end": 2.055
+          },
+          {
+            "word": "hier",
+            "start": 2.101,
+            "end": 2.252
+          },
+          {
+            "word": "soir",
+            "start": 2.334,
+            "end": 2.682
+          },
+          {
+            "word": "un",
+            "start": 2.763,
+            "end": 2.868
+          },
+          {
+            "word": "budget",
+            "start": 2.926,
+            "end": 3.216
+          },
+          {
+            "word": "de",
+            "start": 3.239,
+            "end": 3.32
+          },
+          {
+            "word": "quarante-deux",
+            "start": 3.379,
+            "end": 3.866
+          },
+          {
+            "word": "millions",
+            "start": 3.889,
+            "end": 4.203
+          },
+          {
+            "word": "d'euros",
+            "start": 4.238,
+            "end": 4.574
+          },
+          {
+            "word": "pour",
+            "start": 4.598,
+            "end": 4.76
+          },
+          {
+            "word": "rénover",
+            "start": 4.783,
+            "end": 5.143
+          },
+          {
+            "word": "les",
+            "start": 5.166,
+            "end": 5.271
+          },
+          {
+            "word": "écoles",
+            "start": 5.352,
+            "end": 5.619
+          },
+          {
+            "word": "primaires",
+            "start": 5.642,
+            "end": 6.049
+          },
+          {
+            "word": "de",
+            "start": 6.072,
+            "end": 6.13
+          },
+          {
+            "word": "la",
+            "start": 6.177,
+            "end": 6.235
+          },
+          {
+            "word": "ville",
+            "start": 6.304,
+            "end": 6.641
+          },
+          {
+            "word": "les",
+            "start": 7.152,
+            "end": 7.303
+          },
+          {
+            "word": "travaux",
+            "start": 7.338,
+            "end": 7.674
+          },
+          {
+            "word": "commenceront",
+            "start": 7.709,
+            "end": 8.208
+          },
+          {
+            "word": "au",
+            "start": 8.231,
+            "end": 8.29
+          },
+          {
+            "word": "printemps",
+            "start": 8.348,
+            "end": 8.719
+          },
+          {
+            "word": "prochain",
+            "start": 8.742,
+            "end": 9.172
+          },
+          {
+            "word": "et",
+            "start": 9.242,
+            "end": 9.369
+          },
+          {
+            "word": "devraient",
+            "start": 9.416,
+            "end": 9.741
+          },
+          {
+            "word": "durer",
+            "start": 9.764,
+            "end": 10.019
+          },
+          {
+            "word": "environ",
+            "start": 10.054,
+            "end": 10.368
+          },
+          {
+            "word": "trois",
+            "start": 10.437,
+            "end": 10.67
+          },
+          {
+            "word": "ans",
+            "start": 10.751,
+            "end": 10.89
+          },
+          {
+            "word": "selon",
+            "start": 10.925,
+            "end": 11.192
+          },
+          {
+            "word": "l'adjointe",
+            "start": 11.238,
+            "end": 11.726
+          },
+          {
+            "word": "chargée",
+            "start": 11.772,
+            "end": 12.086
+          },
+          {
+            "word": "de",
+            "start": 12.109,
+            "end": 12.167
+          },
+          {
+            "word": "l'éducation",
+            "start": 12.214,
+            "end": 12.899
+          },
+          {
+            "word": "les",
+            "start": 13.41,
+            "end": 13.537
+          },
+          {
+            "word": "familles",
+            "start": 13.572,
+            "end": 13.92
+          },
+          {
+            "word": "seront",
+            "start": 13.944,
+            "end": 14.257
+          },
+          {
+            "word": "informées",
+            "start": 14.315,
+            "end": 14.71
+          },
+          {
+            "word": "des",
+            "start": 14.733,
+            "end": 14.826
+          },
+          {
+            "word": "changements",
+            "start": 14.849,
+            "end": 15.244
+          },
+          {
+            "word": "de",
+            "start": 15.267,
+            "end": 15.337
+          },
+          {
+            "word": "calendrier",
+            "start": 15.383,
+            "end": 15.964
+          },
+          {
+            "word": "dès",
+            "start": 16.033,
+            "end": 16.161
+          },
+          {
+            "word": "le",
+            "start": 16.196,
+            "end": 16.254
+          },
+          {
+            "word": "mois",
+            "start": 16.3,
+            "end": 16.44
+          },
+          {
+            "word": "de",
+            "start": 16.463,
+            "end": 16.533
+          },
+          {
+            "word": "janvier",
+            "start": 16.579,
+            "end": 17.276
+          }
+        ]
+      }
+    },
+    {
+      "id": "fr_0004",
+      "name": "fr_0004.wav",
+      "synthetic": true,
+      "transcript": "pour toute question appelez le zéro quatre soixante-douze dix-huit trente-cinq quatre-vingt-onze ou envoyez-nous un s. m. s. au six cent vingt",
+      "source": {
+        "voice": {
+          "name": "George - Warm, Captivating Storyteller",
+          "gender": "male"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 8.498,
+        "words": [
+          {
+            "word": "pour",
+            "start": 0.0,
+            "end": 0.232
+          },
+          {
+            "word": "toute",
+            "start": 0.29,
+            "end": 0.476
+          },
+          {
+            "word": "question",
+            "start": 0.511,
+            "end": 0.975
+          },
+          {
+            "word": "appelez",
+            "start": 1.045,
+            "end": 1.358
+          },
+          {
+            "word": "le",
+            "start": 1.393,
+            "end": 1.474
+          },
+          {
+            "word": "zéro",
+            "start": 1.521,
+            "end": 1.811
+          },
+          {
+            "word": "quatre",
+            "start": 1.869,
+            "end": 2.183
+          },
+          {
+            "word": "soixante-douze",
+            "start": 2.229,
+            "end": 2.879
+          },
+          {
+            "word": "dix-huit",
+            "start": 2.914,
+            "end": 3.309
+          },
+          {
+            "word": "trente-cinq",
+            "start": 3.344,
+            "end": 3.855
+          },
+          {
+            "word": "quatre-vingt-onze",
+            "start": 3.889,
+            "end": 4.772
+          },
+          {
+            "word": "ou",
+            "start": 5.016,
+            "end": 5.178
+          },
+          {
+            "word": "envoyez-nous",
+            "start": 5.224,
+            "end": 5.759
+          },
+          {
+            "word": "un",
+            "start": 5.782,
+            "end": 5.863
+          },
+          {
+            "word": "s.",
+            "start": 5.979,
+            "end": 6.2
+          },
+          {
+            "word": "m.",
+            "start": 6.444,
+            "end": 6.618
+          },
+          {
+            "word": "s.",
+            "start": 6.896,
+            "end": 7.187
+          },
+          {
+            "word": "au",
+            "start": 7.268,
+            "end": 7.419
+          },
+          {
+            "word": "six",
+            "start": 7.488,
+            "end": 7.674
+          },
+          {
+            "word": "cent",
+            "start": 7.697,
+            "end": 7.872
+          },
+          {
+            "word": "vingt",
+            "start": 7.918,
+            "end": 8.499
+          }
+        ]
+      }
+    },
+    {
+      "id": "fr_0005",
+      "name": "fr_0005.wav",
+      "synthetic": true,
+      "transcript": "elle referma doucement la porte de la cuisine posa son sac sur la table et regarda par la fenêtre la pluie qui tombait sur les toits du vieux quartier",
+      "source": {
+        "voice": {
+          "name": "Alice - Clear, Engaging Educator",
+          "gender": "female"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 9.288,
+        "words": [
+          {
+            "word": "elle",
+            "start": 0.0,
+            "end": 0.197
+          },
+          {
+            "word": "referma",
+            "start": 0.232,
+            "end": 0.65
+          },
+          {
+            "word": "doucement",
+            "start": 0.731,
+            "end": 1.161
+          },
+          {
+            "word": "la",
+            "start": 1.184,
+            "end": 1.265
+          },
+          {
+            "word": "porte",
+            "start": 1.324,
+            "end": 1.649
+          },
+          {
+            "word": "de",
+            "start": 1.695,
+            "end": 1.765
+          },
+          {
+            "word": "la",
+            "start": 1.811,
+            "end": 1.869
+          },
+          {
+            "word": "cuisine",
+            "start": 1.939,
+            "end": 2.45
+          },
+          {
+            "word": "posa",
+            "start": 2.659,
+            "end": 2.961
+          },
+          {
+            "word": "son",
+            "start": 3.019,
+            "end": 3.158
+          },
+          {
+            "word": "sac",
+            "start": 3.228,
+            "end": 3.437
+          },
+          {
+            "word": "sur",
+            "start": 3.495,
+            "end": 3.622
+          },
+          {
+            "word": "la",
+            "start": 3.657,
+            "end": 3.727
+          },
+          {
+            "word": "table",
+            "start": 3.808,
+            "end": 4.238
+          },
+          {
+            "word": "et",
+            "start": 4.563,
+            "end": 4.737
+          },
+          {
+            "word": "regarda",
+            "start": 4.783,
+            "end": 5.213
+          },
+          {
+            "word": "par",
+            "start": 5.271,
+            "end": 5.41
+          },
+          {
+            "word": "la",
+            "start": 5.445,
+            "end": 5.503
+          },
+          {
+            "word": "fenêtre",
+            "start": 5.573,
+            "end": 6.107
+          },
+          {
+            "word": "la",
+            "start": 6.258,
+            "end": 6.385
+          },
+          {
+            "word": "pluie",
+            "start": 6.467,
+            "end": 6.757
+          },
+          {
+            "word": "qui",
+            "start": 6.78,
+            "end": 6.908
+          },
+          {
+            "word": "tombait",
+            "start": 6.989,
+            "end": 7.43
+          },
+          {
+            "word": "sur",
+            "start": 7.477,
+            "end": 7.628
+          },
+          {
+            "word": "les",
+            "start": 7.674,
+            "end": 7.767
+          },
+          {
+            "word": "toits",
+            "start": 7.814,
+            "end": 8.092
+          },
+          {
+            "word": "du",
+            "start": 8.115,
+            "end": 8.22
+          },
+          {
+            "word": "vieux",
+            "start": 8.266,
+            "end": 8.452
+          },
+          {
+            "word": "quartier",
+            "start": 8.487,
+            "end": 9.288
+          }
+        ]
+      }
+    }
+  ]
+}
