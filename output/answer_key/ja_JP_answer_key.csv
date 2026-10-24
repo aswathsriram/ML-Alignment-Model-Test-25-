@@ -1,49 +1,49 @@
-﻿id,synthetic,category,error_type,word,correct_start,correct_end,given_word,given_start,given_end,description
-ja_0001,False,clean,,,,,,,,no planted errors
-ja_0002,False,planted_errors,boundary_shift,会議,2.72,3.08,会議,2.9,3.08,start moved +0.18s (in the middle of the word)
-ja_0002,False,planted_errors,boundary_shift,皆さん,6.29,6.69,皆さん,5.99,6.69,start moved -0.30s (before the word starts)
-ja_0002,False,planted_errors,boundary_shift,ください,8.42,8.81,ください,8.42,9.06,end moved +0.25s (after the word ends)
-ja_0002,False,planted_errors,cut_off,始まります,4.22,4.78,始まります,4.22,4.48,"end set to 4.48s, the word really ends at 4.78s, so it is cut off"
-ja_0003,True,clean,,,,,,,,no planted errors
-ja_0004,False,clean,,,,,,,,no planted errors
-ja_0005,False,clean,,,,,,,,no planted errors
-ja_0006,False,planted_errors,incorrect_transcription,玉ねぎ,1.57,2.14,にんじん,1.57,2.14,"audio says 玉ねぎ, transcript says にんじん"
-ja_0006,False,planted_errors,incorrect_transcription,五分,14.28,14.64,三分,14.28,14.64,"audio says 五分, transcript says 三分"
-ja_0006,False,planted_errors,boundary_shift,フライパン,3.42,4.12,フライパン,3.22,4.12,start moved -0.20s (before the word starts)
-ja_0006,False,planted_errors,boundary_shift,塩,10.51,10.92,塩,10.66,10.92,start moved +0.15s (in the middle of the word)
-ja_0007,False,clean,,,,,,,,no planted errors
-ja_0008,True,clean,,,,,,,,no planted errors
-ja_0009,False,clean,,,,,,,,no planted errors
-ja_0010,False,planted_errors,missing_segment,新しい,3.62,4.2,,,,新しい is spoken (3.62-4.20s) but has no segment
-ja_0010,False,planted_errors,hallucinated_segment,,,,なお,6.1,6.42,なお is never spoken; segment 6.10-6.42s is a pause
-ja_0010,False,planted_errors,boundary_shift,会議室,2.56,3.1,会議室,2.76,3.1,start moved +0.20s (in the middle of the word)
-ja_0011,False,clean,,,,,,,,no planted errors
-ja_0012,False,planted_errors,incorrect_transcription,十四号,3.38,4.059,十七号,3.38,4.059,"audio says 十四号, transcript says 十七号"
-ja_0012,False,planted_errors,incorrect_transcription,九州,5.5,6.0,四国,5.5,6.0,"audio says 九州, transcript says 四国"
-ja_0012,False,planted_errors,incorrect_transcription,朝,14.06,14.24,夜,14.06,14.24,"audio says 朝, transcript says 夜"
-ja_0012,False,planted_errors,missing_segment,大きな,16.04,16.52,,,,大きな is spoken (16.04-16.52s) but has no segment
-ja_0012,False,planted_errors,boundary_shift,沿岸部,8.84,9.36,沿岸部,8.49,9.36,start moved -0.35s (before the word starts)
-ja_0013,False,clean,,,,,,,,no planted errors
-ja_0014,True,clean,,,,,,,,no planted errors
-ja_0015,False,clean,,,,,,,,no planted errors
-ja_0016,False,clean,,,,,,,,no planted errors
-ja_0017,False,planted_errors,cut_off,動かなくて,5.0,5.62,動かなくて,5.0,5.28,"end set to 5.28s, the word really ends at 5.62s, so it is cut off"
-ja_0017,False,planted_errors,cut_off,できます,8.16,8.62,できます,8.16,8.36,"end set to 8.36s, the word really ends at 8.62s, so it is cut off"
-ja_0017,False,planted_errors,boundary_shift,交換,7.31,7.72,交換,6.91,7.72,start moved -0.40s (before the word starts)
-ja_0017,False,planted_errors,boundary_shift,けど,2.28,2.71,けど,2.28,3.01,end moved +0.30s (after the word ends)
-ja_0018,False,clean,,,,,,,,no planted errors
-ja_0019,True,clean,,,,,,,,no planted errors
-ja_0020,False,clean,,,,,,,,no planted errors
-ja_0021,False,planted_errors,hallucinated_segment,,,,まず,4.3,4.62,まず is never spoken; segment 4.30-4.62s is a pause
-ja_0021,False,planted_errors,hallucinated_segment,,,,実は,13.42,13.76,実は is never spoken; segment 13.42-13.76s is a pause
-ja_0021,False,planted_errors,incorrect_transcription,酸素,12.4,12.64,窒素,12.4,12.64,"audio says 酸素, transcript says 窒素"
-ja_0021,False,planted_errors,boundary_shift,植物,5.18,5.84,植物,5.43,5.84,start moved +0.25s (in the middle of the word)
-ja_0021,False,planted_errors,boundary_shift,作ります,10.14,10.58,作ります,10.14,10.93,end moved +0.35s (after the word ends)
-ja_0022,False,clean,,,,,,,,no planted errors
-ja_0023,True,clean,,,,,,,,no planted errors
-ja_0024,False,clean,,,,,,,,no planted errors
-ja_0025,False,planted_errors,missing_segment,先ほど,2.22,2.86,,,,先ほど is spoken (2.22-2.86s) but has no segment
-ja_0025,False,planted_errors,missing_segment,もう,7.77,8.16,,,,もう is spoken (7.77-8.16s) but has no segment
-ja_0025,False,planted_errors,cut_off,いただけます,10.48,11.14,いただけます,10.48,10.74,"end set to 10.74s, the word really ends at 11.14s, so it is cut off"
-ja_0025,False,planted_errors,boundary_shift,まだ,4.85,5.2,まだ,4.65,5.2,start moved -0.20s (before the word starts)
-ja_0025,False,planted_errors,boundary_shift,二十分,8.16,8.6,二十分,8.34,8.6,start moved +0.18s (in the middle of the word)
+﻿file,voice_type,status,error_type,word,correct_start,correct_end,given_word,given_start,given_end,description
+ja_0001.wav,human,clean,,,,,,,,no planted errors
+ja_0002.wav,human,has_errors,boundary_shift,会議,2.72,3.08,会議,2.9,3.08,start moved +0.18s (in the middle of the word)
+ja_0002.wav,human,has_errors,boundary_shift,皆さん,6.29,6.69,皆さん,5.99,6.69,start moved -0.30s (before the word starts)
+ja_0002.wav,human,has_errors,boundary_shift,ください,8.42,8.81,ください,8.42,9.06,end moved +0.25s (after the word ends)
+ja_0002.wav,human,has_errors,cut_off,始まります,4.22,4.78,始まります,4.22,4.48,"end set to 4.48s, the word really ends at 4.78s, so it is cut off"
+ja_0003.wav,synthetic,clean,,,,,,,,no planted errors
+ja_0004.wav,human,clean,,,,,,,,no planted errors
+ja_0005.wav,human,clean,,,,,,,,no planted errors
+ja_0006.wav,human,has_errors,incorrect_transcription,玉ねぎ,1.57,2.14,にんじん,1.57,2.14,"audio says 玉ねぎ, transcript says にんじん"
+ja_0006.wav,human,has_errors,incorrect_transcription,五分,14.28,14.64,三分,14.28,14.64,"audio says 五分, transcript says 三分"
+ja_0006.wav,human,has_errors,boundary_shift,フライパン,3.42,4.12,フライパン,3.22,4.12,start moved -0.20s (before the word starts)
+ja_0006.wav,human,has_errors,boundary_shift,塩,10.51,10.92,塩,10.66,10.92,start moved +0.15s (in the middle of the word)
+ja_0007.wav,human,clean,,,,,,,,no planted errors
+ja_0008.wav,synthetic,clean,,,,,,,,no planted errors
+ja_0009.wav,human,clean,,,,,,,,no planted errors
+ja_0010.wav,human,has_errors,missing_segment,新しい,3.62,4.2,,,,新しい is spoken (3.62-4.20s) but has no segment
+ja_0010.wav,human,has_errors,hallucinated_segment,,,,なお,6.1,6.42,なお is never spoken; segment 6.10-6.42s is a pause
+ja_0010.wav,human,has_errors,boundary_shift,会議室,2.56,3.1,会議室,2.76,3.1,start moved +0.20s (in the middle of the word)
+ja_0011.wav,human,clean,,,,,,,,no planted errors
+ja_0012.wav,human,has_errors,incorrect_transcription,十四号,3.38,4.059,十七号,3.38,4.059,"audio says 十四号, transcript says 十七号"
+ja_0012.wav,human,has_errors,incorrect_transcription,九州,5.5,6.0,四国,5.5,6.0,"audio says 九州, transcript says 四国"
+ja_0012.wav,human,has_errors,incorrect_transcription,朝,14.06,14.24,夜,14.06,14.24,"audio says 朝, transcript says 夜"
+ja_0012.wav,human,has_errors,missing_segment,大きな,16.04,16.52,,,,大きな is spoken (16.04-16.52s) but has no segment
+ja_0012.wav,human,has_errors,boundary_shift,沿岸部,8.84,9.36,沿岸部,8.49,9.36,start moved -0.35s (before the word starts)
+ja_0013.wav,human,clean,,,,,,,,no planted errors
+ja_0014.wav,synthetic,clean,,,,,,,,no planted errors
+ja_0015.wav,human,clean,,,,,,,,no planted errors
+ja_0016.wav,human,clean,,,,,,,,no planted errors
+ja_0017.wav,human,has_errors,cut_off,動かなくて,5.0,5.62,動かなくて,5.0,5.28,"end set to 5.28s, the word really ends at 5.62s, so it is cut off"
+ja_0017.wav,human,has_errors,cut_off,できます,8.16,8.62,できます,8.16,8.36,"end set to 8.36s, the word really ends at 8.62s, so it is cut off"
+ja_0017.wav,human,has_errors,boundary_shift,交換,7.31,7.72,交換,6.91,7.72,start moved -0.40s (before the word starts)
+ja_0017.wav,human,has_errors,boundary_shift,けど,2.28,2.71,けど,2.28,3.01,end moved +0.30s (after the word ends)
+ja_0018.wav,human,clean,,,,,,,,no planted errors
+ja_0019.wav,synthetic,clean,,,,,,,,no planted errors
+ja_0020.wav,human,clean,,,,,,,,no planted errors
+ja_0021.wav,human,has_errors,hallucinated_segment,,,,まず,4.3,4.62,まず is never spoken; segment 4.30-4.62s is a pause
+ja_0021.wav,human,has_errors,hallucinated_segment,,,,実は,13.42,13.76,実は is never spoken; segment 13.42-13.76s is a pause
+ja_0021.wav,human,has_errors,incorrect_transcription,酸素,12.4,12.64,窒素,12.4,12.64,"audio says 酸素, transcript says 窒素"
+ja_0021.wav,human,has_errors,boundary_shift,植物,5.18,5.84,植物,5.43,5.84,start moved +0.25s (in the middle of the word)
+ja_0021.wav,human,has_errors,boundary_shift,作ります,10.14,10.58,作ります,10.14,10.93,end moved +0.35s (after the word ends)
+ja_0022.wav,human,clean,,,,,,,,no planted errors
+ja_0023.wav,synthetic,clean,,,,,,,,no planted errors
+ja_0024.wav,human,clean,,,,,,,,no planted errors
+ja_0025.wav,human,has_errors,missing_segment,先ほど,2.22,2.86,,,,先ほど is spoken (2.22-2.86s) but has no segment
+ja_0025.wav,human,has_errors,missing_segment,もう,7.77,8.16,,,,もう is spoken (7.77-8.16s) but has no segment
+ja_0025.wav,human,has_errors,cut_off,いただけます,10.48,11.14,いただけます,10.48,10.74,"end set to 10.74s, the word really ends at 11.14s, so it is cut off"
+ja_0025.wav,human,has_errors,boundary_shift,まだ,4.85,5.2,まだ,4.65,5.2,start moved -0.20s (before the word starts)
+ja_0025.wav,human,has_errors,boundary_shift,二十分,8.16,8.6,二十分,8.34,8.6,start moved +0.18s (in the middle of the word)

@@ -28,12 +28,14 @@ Running tts_to_wav.py turns them into:
 ## Japanese alignment test set (ja_JP)
 25 Japanese clips, each with its own native Japanese ElevenLabs voice:
   output/wav/ja_0001.wav … ja_0025.wav       16 kHz mono
-  output/json/ja_JP.json                     the test file, same format as the other languages
+  output/json/ja_JP.json                     the test file, same format as the other languages, with no
+                                             "synthetic" field: inspectors have to tell by listening
   output/answer_key/                         keep these away from whoever inspects the files:
-    ja_JP_answer_key.csv / .json             which files are clean, and every planted mistake
+    ja_JP_answer_key.pdf / .json / .csv      per file: human or synthetic voice, clean or not, and every
+                                             planted mistake (word, correct vs given times)
     ja_JP_clean.json                         the fully correct alignment of all 25 files
-- 20 files sound human ("synthetic": false): breaths, sighs, uneven pauses (eleven_v4 with audio tags).
-- 5 files are synthetic ("synthetic": true): no breaths, exactly 0.16 s of silence between every word.
+- 20 files sound human: breaths, sighs, uneven pauses (eleven_v4 with audio tags).
+- 5 files are synthetic: no breaths, exactly 0.16 s of silence between every word.
 - 18 files are clean. 7 files have planted mistakes: boundary shifts, cut-off words, incorrect
   transcription, missing segments and hallucinated segments.
 Rebuild: python make_japanese.py  (audio + clean alignment; --check runs speech-to-text on every clip)

@@ -3,9 +3,12 @@
 Plant deliberate mistakes in 7 of the 25 Japanese files; the other 18 stay exactly as the clean alignment.
 
 Input  : output/answer_key/ja_JP_clean.json      correct alignment (from make_japanese.py)
-Output : output/json/ja_JP.json                  the test file: 18 clean items + 7 items with planted mistakes
-         output/answer_key/ja_JP_answer_key.json every planted mistake: file, type, word, correct vs given
-         output/answer_key/ja_JP_answer_key.csv  the same as a table
+Output : output/json/ja_JP.json                  the test file: 18 clean items + 7 items with planted mistakes;
+                                                 no "synthetic" field, so it does not give anything away
+         output/answer_key/ja_JP_answer_key.json per file: human or synthetic voice, clean or not, and every
+                                                 planted mistake (type, word, correct vs given)
+         output/answer_key/ja_JP_answer_key.pdf  the same, to read
+         output/answer_key/ja_JP_answer_key.csv  the same, one row per mistake
 
 Mistake types (word indices refer to the clean alignment):
   boundary_shift          start/end moved before the word starts, into its middle, or past its end
@@ -16,7 +19,7 @@ Mistake types (word indices refer to the clean alignment):
 
 Run    : python inject_errors_ja.py
 """
-import csv, json, pathlib
+import csv, glob, html, json, os, pathlib, shutil, subprocess, tempfile
 from tts_to_wav import write_locale
 
 HERE = pathlib.Path(__file__).parent
@@ -125,36 +128,124 @@ def inject(item, plan):
     return out, errors
 
 
+LABEL = {"boundary_shift": "Boundary shift", "cut_off": "Cut-off word", "incorrect_transcription": "Incorrect transcription",
+         "missing_segment": "Missing segment", "hallucinated_segment": "Hallucinated segment"}
+MEANING = {"boundary_shift": "start or end moved before the word starts, into its middle, or past its end",
+           "cut_off": "end placed in the middle of the word, so the word is cut off",
+           "incorrect_transcription": "the word is spoken, but the transcript says a different word",
+           "missing_segment": "the word is spoken, but there is no segment and it is not in the transcript",
+           "hallucinated_segment": "a segment and transcript word for something never spoken (placed in a pause)"}
+
+
+def for_test(item):
+    """The test file carries nothing that gives the answer away."""
+    out = json.loads(json.dumps(item))
+    out.pop("synthetic", None)
+    return out
+
+
+def chromium():
+    found = [os.environ.get("CHROME", "")] + sorted(glob.glob("/opt/pw-browsers/chromium-*/chrome-linux/chrome"))
+    found += [shutil.which(n) or "" for n in ("chromium", "chromium-browser", "google-chrome")]
+    return next((c for c in found if c and os.path.exists(c)), None)
+
+
+def answer_key_html(key, meta):
+    e = html.escape
+    t = lambda w: f"{w['start']:.2f}–{w['end']:.2f}" if w else "—"
+    rows = "".join(
+        f"<tr><td>{e(k['name'])}</td><td>{k['voice_type']}</td>"
+        f"<td class='{k['status']}'>{'Clean' if k['status'] == 'clean' else 'Has errors'}</td>"
+        f"<td>{e(', '.join(f'{n}× {LABEL[x]}' for x, n in k['error_summary'].items()) or '—')}</td>"
+        f"<td>{k['duration_seconds']:.2f}</td><td>{e(k['voice'])}</td></tr>" for k in key)
+    detail = ""
+    for k in key:
+        if not k["errors"]:
+            continue
+        er = "".join(
+            f"<tr><td>{LABEL[x['type']]}</td><td>{e((x['correct'] or x['given'])['word'])}</td>"
+            f"<td>{t(x['correct'])}</td><td>{e(x['given']['word']) if x['given'] else '—'}</td><td>{t(x['given'])}</td>"
+            f"<td>{e(x['description'])}</td></tr>" for x in k["errors"])
+        detail += (f"<section><h3>{e(k['name'])} <span>{k['voice_type']} voice · {len(k['errors'])} errors</span></h3>"
+                   f"<p><b>Correct transcript:</b> {e(k['correct_transcript'])}<br>"
+                   f"<b>Transcript in the test file:</b> {e(k['given_transcript'])}</p>"
+                   f"<table><tr><th>Type</th><th>Word</th><th>Correct (s)</th><th>Given word</th><th>Given (s)</th>"
+                   f"<th>What is wrong</th></tr>{er}</table></section>")
+    legend = "".join(f"<li><b>{LABEL[x]}</b>: {MEANING[x]} ({meta['errors_by_type'].get(x, 0)})</li>" for x in LABEL)
+    return f"""<!doctype html><html lang="ja"><head><meta charset="utf-8"><title>{LOCALE} answer key</title><style>
+@page {{ size: A4; margin: 14mm 12mm; }}
+body {{ font-family: "IPAGothic", "IPAPGothic", "Noto Sans CJK JP", sans-serif; font-size: 9.5pt; color: #1a1a1a; }}
+h1 {{ font-size: 17pt; margin: 0 0 2mm; }} h2 {{ font-size: 12.5pt; margin: 7mm 0 2mm; }}
+h3 {{ font-size: 10.5pt; margin: 5mm 0 1.5mm; }} h3 span {{ font-weight: normal; color: #555; font-size: 9pt; }}
+p {{ margin: 1mm 0 2mm; line-height: 1.5; }} ul {{ margin: 1mm 0; padding-left: 5mm; }} li {{ margin: 0.8mm 0; }}
+table {{ border-collapse: collapse; width: 100%; }} th, td {{ border: 0.3mm solid #c8c8c8; padding: 1.1mm 1.6mm; text-align: left; vertical-align: top; }}
+th {{ background: #f0f0f0; }} td.clean {{ color: #1d6b32; font-weight: bold; }} td.has_errors {{ color: #a3261b; font-weight: bold; }}
+section {{ break-inside: avoid; }} .summary b {{ font-size: 11pt; }}
+</style></head><body>
+<h1>Japanese alignment test set ({LOCALE}) — answer key</h1>
+<p>Test file: <code>output/json/{LOCALE}.json</code> · audio: <code>output/wav/ja_0001.wav … ja_0025.wav</code> (16 kHz mono).
+Keep this document away from whoever inspects the files.</p>
+<p class="summary"><b>{meta['files']}</b> files · <b>{meta['clean']}</b> clean · <b>{meta['with_errors']}</b> with planted errors
+({meta['errors']} errors in total) · <b>{meta['synthetic']}</b> synthetic voice · <b>{meta['human']}</b> human-sounding voice</p>
+<ul><li><b>Human-sounding</b>: breathing, sighs and uneven pauses, like a person speaking.</li>
+<li><b>Synthetic</b>: robotic — no breathing or sighs, exactly the same 0.16 s silence between every word.</li></ul>
+<h2>Error types</h2><ul>{legend}</ul>
+<h2>All files</h2>
+<table><tr><th>File</th><th>Voice type</th><th>Status</th><th>Planted errors</th><th>Duration (s)</th><th>Voice</th></tr>{rows}</table>
+<h2>Errors, file by file</h2>
+<p>Times are in seconds. "Correct" is the true alignment; "Given" is what the test file says.</p>
+{detail}
+</body></html>"""
+
+
 if __name__ == "__main__":
     clean = json.loads((KEY_DIR / f"{LOCALE}_clean.json").read_text(encoding="utf-8"))["items"]
     test, key = {}, []
     for item in clean:
         plan = PLAN.get(item["id"])
         out, errors = inject(item, plan) if plan else (item, [])
-        test[item["id"]] = out
-        key.append({"id": item["id"], "name": item["name"], "synthetic": item["synthetic"],
-                    "voice": item["source"]["voice"]["name"],
-                    "category": "planted_errors" if errors else "clean",
+        test[item["id"]] = for_test(out)
+        summary = {}
+        for x in errors:
+            summary[x["type"]] = summary.get(x["type"], 0) + 1
+        key.append({"id": item["id"], "name": item["name"],
+                    "voice_type": "synthetic" if item["synthetic"] else "human",
+                    "status": "has_errors" if errors else "clean", "error_count": len(errors),
+                    "error_summary": summary, "voice": item["source"]["voice"]["name"],
+                    "duration_seconds": item["source"]["duration_seconds"],
                     "correct_transcript": item["transcript"], "given_transcript": out["transcript"],
                     "errors": errors})
     write_locale(HERE / "output" / "json" / f"{LOCALE}.json", LOCALE, test)
-    (KEY_DIR / f"{LOCALE}_answer_key.json").write_text(json.dumps(
-        {"fileMetadata": {"locale": LOCALE, "files": len(key),
-                          "clean": sum(k["category"] == "clean" for k in key),
-                          "with_planted_errors": sum(k["category"] != "clean" for k in key),
-                          "synthetic": sum(k["synthetic"] for k in key)},
-         "files": key}, ensure_ascii=False, indent=2), encoding="utf-8")
+    by_type = {}
+    for k in key:
+        for x, n in k["error_summary"].items():
+            by_type[x] = by_type.get(x, 0) + n
+    meta = {"locale": LOCALE, "files": len(key), "clean": sum(k["status"] == "clean" for k in key),
+            "with_errors": sum(k["status"] != "clean" for k in key), "errors": sum(k["error_count"] for k in key),
+            "errors_by_type": by_type, "synthetic": sum(k["voice_type"] == "synthetic" for k in key),
+            "human": sum(k["voice_type"] == "human" for k in key),
+            "error_types": MEANING}
+    (KEY_DIR / f"{LOCALE}_answer_key.json").write_text(json.dumps({"fileMetadata": meta, "files": key},
+                                                                  ensure_ascii=False, indent=2), encoding="utf-8")
     with open(KEY_DIR / f"{LOCALE}_answer_key.csv", "w", newline="", encoding="utf-8-sig") as fh:
         wr = csv.writer(fh)
-        wr.writerow(["id", "synthetic", "category", "error_type", "word", "correct_start", "correct_end",
+        wr.writerow(["file", "voice_type", "status", "error_type", "word", "correct_start", "correct_end",
                      "given_word", "given_start", "given_end", "description"])
         for k in key:
             if not k["errors"]:
-                wr.writerow([k["id"], k["synthetic"], k["category"], "", "", "", "", "", "", "", "no planted errors"])
-            for e in k["errors"]:
-                c, g = e["correct"] or {}, e["given"] or {}
-                wr.writerow([k["id"], k["synthetic"], k["category"], e["type"], c.get("word", ""), c.get("start", ""),
-                             c.get("end", ""), g.get("word", ""), g.get("start", ""), g.get("end", ""), e["description"]])
-    n = sum(len(k["errors"]) for k in key)
-    print(f"{len(key)} files: {sum(k['category'] == 'clean' for k in key)} clean, "
-          f"{sum(k['category'] != 'clean' for k in key)} with {n} planted errors")
+                wr.writerow([k["name"], k["voice_type"], k["status"], "", "", "", "", "", "", "", "no planted errors"])
+            for x in k["errors"]:
+                c, g = x["correct"] or {}, x["given"] or {}
+                wr.writerow([k["name"], k["voice_type"], k["status"], x["type"], c.get("word", ""), c.get("start", ""),
+                             c.get("end", ""), g.get("word", ""), g.get("start", ""), g.get("end", ""), x["description"]])
+    browser = chromium()
+    if browser:
+        with tempfile.TemporaryDirectory() as tmp:
+            page = pathlib.Path(tmp) / "key.html"
+            page.write_text(answer_key_html(key, meta), encoding="utf-8")
+            pdf = KEY_DIR / f"{LOCALE}_answer_key.pdf"
+            subprocess.run([browser, "--headless", "--no-sandbox", "--disable-gpu", "--no-pdf-header-footer",
+                            f"--print-to-pdf={pdf}", page.as_uri()], check=True, capture_output=True)
+    else:
+        print("No Chromium found: answer key PDF not written (JSON and CSV are).")
+    print(f"{len(key)} files: {meta['clean']} clean, {meta['with_errors']} with {meta['errors']} planted errors")

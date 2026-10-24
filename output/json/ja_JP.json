@@ -7,7 +7,6 @@
     {
       "id": "ja_0001",
       "name": "ja_0001.wav",
-      "synthetic": false,
       "transcript": "すみません駅はどこですか",
       "source": {
         "voice": {
@@ -53,7 +52,6 @@
     {
       "id": "ja_0002",
       "name": "ja_0002.wav",
-      "synthetic": false,
       "transcript": "えっと今日の会議は少し遅れて始まりますので皆さん先に資料を読んでおいてください",
       "source": {
         "voice": {
@@ -149,7 +147,6 @@
     {
       "id": "ja_0003",
       "name": "ja_0003.wav",
-      "synthetic": true,
       "transcript": "本日は晴れ時々曇り最高気温は二十三度の予想です",
       "source": {
         "voice": {
@@ -230,7 +227,6 @@
     {
       "id": "ja_0004",
       "name": "ja_0004.wav",
-      "synthetic": false,
       "transcript": "みなさんこんにちは今週も始まりました暮らしのラジオです今日はですね冬に向けて部屋を暖かくするちょっとしたコツを三つご紹介したいと思います最後まで聞いてくださいね",
       "source": {
         "voice": {
@@ -411,7 +407,6 @@
     {
       "id": "ja_0005",
       "name": "ja_0005.wav",
-      "synthetic": false,
       "transcript": "ありがとうございました",
       "source": {
         "voice": {
@@ -437,7 +432,6 @@
     {
       "id": "ja_0006",
       "name": "ja_0006.wav",
-      "synthetic": false,
       "transcript": "まずにんじんを薄く切ってフライパンで弱火で十分ほど炒めますあめ色になったらトマトの缶詰を入れて塩をひとつまみ加えてくださいそのまま三分くらい煮込んだらソースの完成です",
       "source": {
         "voice": {
@@ -618,7 +612,6 @@
     {
       "id": "ja_0007",
       "name": "ja_0007.wav",
-      "synthetic": false,
       "transcript": "もしもし山田ですけどあの来週の予約の件でお電話しました水曜日の午後ってまだ空いてますか",
       "source": {
         "voice": {
@@ -739,7 +732,6 @@
     {
       "id": "ja_0008",
       "name": "ja_0008.wav",
-      "synthetic": true,
       "transcript": "まもなく二番線に東京行きの電車が参ります危ないですから黄色い線の内側までお下がりください",
       "source": {
         "voice": {
@@ -850,7 +842,6 @@
     {
       "id": "ja_0009",
       "name": "ja_0009.wav",
-      "synthetic": false,
       "transcript": "昨日久しぶりに実家に帰ったら母が好物の煮物を作ってくれててなんかすごくほっとしました",
       "source": {
         "voice": {
@@ -961,7 +952,6 @@
     {
       "id": "ja_0010",
       "name": "ja_0010.wav",
-      "synthetic": false,
       "transcript": "このあと二時から三階の会議室でシステムの説明会を行いますなお参加される方はノートパソコンを持ってきてください",
       "source": {
         "voice": {
@@ -1092,7 +1082,6 @@
     {
       "id": "ja_0011",
       "name": "ja_0011.wav",
-      "synthetic": false,
       "transcript": "はいわかりましたすぐ行きます",
       "source": {
         "voice": {
@@ -1128,7 +1117,6 @@
     {
       "id": "ja_0012",
       "name": "ja_0012.wav",
-      "synthetic": false,
       "transcript": "気象庁によりますと大型の台風十七号は今夜遅くに四国南部に接近する見込みです沿岸部では高波に十分注意してくださいまた明日の夜にかけて交通機関に影響が出るおそれがあります",
       "source": {
         "voice": {
@@ -1359,7 +1347,6 @@
     {
       "id": "ja_0013",
       "name": "ja_0013.wav",
-      "synthetic": false,
       "transcript": "この道をまっすぐ行って二つ目の信号を右に曲がると左側にコンビニが見えてきますよ",
       "source": {
         "voice": {
@@ -1475,7 +1462,6 @@
     {
       "id": "ja_0014",
       "name": "ja_0014.wav",
-      "synthetic": true,
       "transcript": "お客様にご案内いたします当店は午後九時で閉店となりますお会計は一階のレジをご利用ください本日もご来店いただき誠にありがとうございました",
       "source": {
         "voice": {
@@ -1626,7 +1612,6 @@
     {
       "id": "ja_0015",
       "name": "ja_0015.wav",
-      "synthetic": false,
       "transcript": "そうですね熱はもう下がっていますが念のため三日ほどは無理をしないでゆっくり休んでください",
       "source": {
         "voice": {
@@ -1742,7 +1727,6 @@
     {
       "id": "ja_0016",
       "name": "ja_0016.wav",
-      "synthetic": false,
       "transcript": "え本当にそれちょっと信じられないんですけど",
       "source": {
         "voice": {
@@ -1798,7 +1782,6 @@
     {
       "id": "ja_0017",
       "name": "ja_0017.wav",
-      "synthetic": false,
       "transcript": "先週買った掃除機なんですけど電源を入れても全然動かなくて交換ってできますか",
       "source": {
         "voice": {
@@ -1889,7 +1872,6 @@
     {
       "id": "ja_0018",
       "name": "ja_0018.wav",
-      "synthetic": false,
       "transcript": "子供の頃夏休みになると毎年祖父の家に泊まりに行っていました朝早く起きて川で魚を捕ったり夜は縁側でスイカを食べたりして本当に楽しかったです",
       "source": {
         "voice": {
@@ -2085,7 +2067,6 @@
     {
       "id": "ja_0019",
       "name": "ja_0019.wav",
-      "synthetic": true,
       "transcript": "ご注文を確認いたしますハンバーガーセットが二つとアイスコーヒーが一つでよろしいでしょうか",
       "source": {
         "voice": {
@@ -2186,7 +2167,6 @@
     {
       "id": "ja_0020",
       "name": "ja_0020.wav",
-      "synthetic": false,
       "transcript": "認証コードはエスエムエスで届きますので六桁の数字を入力してください",
       "source": {
         "voice": {
@@ -2282,7 +2262,6 @@
     {
       "id": "ja_0021",
       "name": "ja_0021.wav",
-      "synthetic": false,
       "transcript": "今日は光合成の仕組みについて説明しますまず植物は太陽の光を使って水と二酸化炭素から糖を作りますそのときに窒素が出るんですね実はこれが私たちが呼吸できる理由の一つなんです",
       "source": {
         "voice": {
@@ -2513,7 +2492,6 @@
     {
       "id": "ja_0022",
       "name": "ja_0022.wav",
-      "synthetic": false,
       "transcript": "うーんどうしようかな",
       "source": {
         "voice": {
@@ -2549,7 +2527,6 @@
     {
       "id": "ja_0023",
       "name": "ja_0023.wav",
-      "synthetic": true,
       "transcript": "次は新宿新宿です",
       "source": {
         "voice": {
@@ -2590,7 +2567,6 @@
     {
       "id": "ja_0024",
       "name": "ja_0024.wav",
-      "synthetic": false,
       "transcript": "週末は天気が良さそうだからみんなで公園にお弁当を持って行こうよ",
       "source": {
         "voice": {
@@ -2681,7 +2657,6 @@
     {
       "id": "ja_0025",
       "name": "ja_0025.wav",
-      "synthetic": false,
       "transcript": "あのすみません注文したパスタなんですがまだ来ていないみたいで二十分くらい待っているんですけど確認していただけますか",
       "source": {
         "voice": {
