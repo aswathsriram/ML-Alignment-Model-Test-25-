@@ -33,5 +33,8 @@ Format: {"id": "fr_0006", "language": "fr", "words": ["...", "..."]} one per lin
 transcripts/ja.jsonl also has "style" (natural/synthetic), "voice_id" and "tts_text" (the text sent to
 ElevenLabs, with breath/sigh tags; it must spell exactly the transcript once tags and punctuation are removed).
 `python make_japanese.py` makes the audio and the clean alignment (output/answer_key/ja_JP_clean.json);
-`python inject_errors_ja.py` writes output/json/ja_JP.json with the planted mistakes in its PLAN and the
-answer key. Clean files must stay identical to the clean alignment.
+`python inject_errors_ja.py` writes output/json/ja_JP.json (items: id, name, start, end, transcript, source —
+no "synthetic" field) with the injections in its PLAN, and the answer key (JSON in the user's decoy-corpus
+style, PDF, CSV). The user's aligner re-aligns words on ingest, so boundary mismatches must also be planted on
+the segment start/end. Planted boundary mismatches are intended: never "fix" them. Clean files must stay
+identical to the clean alignment.

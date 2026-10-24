@@ -28,15 +28,19 @@ Running tts_to_wav.py turns them into:
 ## Japanese alignment test set (ja_JP)
 25 Japanese clips, each with its own native Japanese ElevenLabs voice:
   output/wav/ja_0001.wav … ja_0025.wav       16 kHz mono
-  output/json/ja_JP.json                     the test file, same format as the other languages, with no
-                                             "synthetic" field: inspectors have to tell by listening
+  output/json/ja_JP.json                     the file to ingest: sample format, plus a segment "start"/"end"
+                                             (playing area) per item; no "synthetic" field
   output/answer_key/                         keep these away from whoever inspects the files:
-    ja_JP_answer_key.pdf / .json / .csv      per file: human or synthetic voice, clean or not, and every
-                                             planted mistake (word, correct vs given times)
+    ja_JP_answer_key.json                    decoy-corpus style: gold vs decoy text, segment and word timings,
+                                             and every injection (family, rule, detect, word, context, offset)
+    ja_JP_answer_key.pdf / .csv              the same, to read / one row per injection
     ja_JP_clean.json                         the fully correct alignment of all 25 files
 - 20 files sound human: breaths, sighs, uneven pauses (eleven_v4 with audio tags).
-- 5 files are synthetic: no breaths, exactly 0.16 s of silence between every word.
-- 18 files are clean. 7 files have planted mistakes: boundary shifts, cut-off words, incorrect
-  transcription, missing segments and hallucinated segments.
+- 5 files are synthetic (answer key: whole-audio tag synthetic_speech): no breaths, exactly 0.16 s of
+  silence between every word.
+- 18 files are clean: segment = first word's start to last word's end. 7 files carry 48 injections:
+  segment start/end moved 200 ms / 500 ms / 1 s (SB-START, SB-END; the aligner cannot re-align these),
+  word boundaries moved 200 ms / 500 ms / 1 s or cut off (WB-SHIFT, WB-CUT), incorrect transcription
+  (WS-SUB), missing segments (WD) and hallucinated segments (WH).
 Rebuild: python make_japanese.py  (audio + clean alignment; --check runs speech-to-text on every clip)
-         python inject_errors_ja.py  (plants the mistakes listed in its PLAN)
+         python inject_errors_ja.py  (plants the injections listed in its PLAN, writes the answer key)
