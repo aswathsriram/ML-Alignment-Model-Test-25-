@@ -28,3 +28,10 @@ Each language's 5 files use 5 different ElevenLabs voices (picked automatically 
 New transcripts follow the rules in samples/ (real examples) — spoken form, lowercase, no punctuation,
 numbers as words, letters as "s. m. s.", no tags, every transcript new, each clip under 30 s.
 Format: {"id": "fr_0006", "language": "fr", "words": ["...", "..."]} one per line in transcripts/<lang>.jsonl.
+
+## Japanese alignment test set
+transcripts/ja.jsonl also has "style" (natural/synthetic), "voice_id" and "tts_text" (the text sent to
+ElevenLabs, with breath/sigh tags; it must spell exactly the transcript once tags and punctuation are removed).
+`python make_japanese.py` makes the audio and the clean alignment (output/answer_key/ja_JP_clean.json);
+`python inject_errors_ja.py` writes output/json/ja_JP.json with the planted mistakes in its PLAN and the
+answer key. Clean files must stay identical to the clean alignment.

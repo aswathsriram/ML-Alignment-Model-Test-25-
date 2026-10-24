@@ -1,0 +1,690 @@
+{
+  "fileMetadata": {
+    "locale": "ja_JP",
+    "files": 25,
+    "clean": 18,
+    "with_planted_errors": 7,
+    "synthetic": 5
+  },
+  "files": [
+    {
+      "id": "ja_0001",
+      "name": "ja_0001.wav",
+      "synthetic": false,
+      "voice": "Kyoko - Warm, Clear and Natural",
+      "category": "clean",
+      "correct_transcript": "すみません駅はどこですか",
+      "given_transcript": "すみません駅はどこですか",
+      "errors": []
+    },
+    {
+      "id": "ja_0002",
+      "name": "ja_0002.wav",
+      "synthetic": false,
+      "voice": "Asahi - Calm and Natural",
+      "category": "planted_errors",
+      "correct_transcript": "えっと今日の会議は少し遅れて始まりますので皆さん先に資料を読んでおいてください",
+      "given_transcript": "えっと今日の会議は少し遅れて始まりますので皆さん先に資料を読んでおいてください",
+      "errors": [
+        {
+          "type": "boundary_shift",
+          "word_index_in_clean": 3,
+          "correct": {
+            "word": "会議",
+            "start": 2.72,
+            "end": 3.08
+          },
+          "given": {
+            "word": "会議",
+            "start": 2.9,
+            "end": 3.08
+          },
+          "description": "start moved +0.18s (in the middle of the word)"
+        },
+        {
+          "type": "boundary_shift",
+          "word_index_in_clean": 9,
+          "correct": {
+            "word": "皆さん",
+            "start": 6.29,
+            "end": 6.69
+          },
+          "given": {
+            "word": "皆さん",
+            "start": 5.99,
+            "end": 6.69
+          },
+          "description": "start moved -0.30s (before the word starts)"
+        },
+        {
+          "type": "boundary_shift",
+          "word_index_in_clean": 15,
+          "correct": {
+            "word": "ください",
+            "start": 8.42,
+            "end": 8.81
+          },
+          "given": {
+            "word": "ください",
+            "start": 8.42,
+            "end": 9.06
+          },
+          "description": "end moved +0.25s (after the word ends)"
+        },
+        {
+          "type": "cut_off",
+          "word_index_in_clean": 7,
+          "correct": {
+            "word": "始まります",
+            "start": 4.22,
+            "end": 4.78
+          },
+          "given": {
+            "word": "始まります",
+            "start": 4.22,
+            "end": 4.48
+          },
+          "description": "end set to 4.48s, the word really ends at 4.78s, so it is cut off"
+        }
+      ]
+    },
+    {
+      "id": "ja_0003",
+      "name": "ja_0003.wav",
+      "synthetic": true,
+      "voice": "Saori - Warm, Clear and Measured",
+      "category": "clean",
+      "correct_transcript": "本日は晴れ時々曇り最高気温は二十三度の予想です",
+      "given_transcript": "本日は晴れ時々曇り最高気温は二十三度の予想です",
+      "errors": []
+    },
+    {
+      "id": "ja_0004",
+      "name": "ja_0004.wav",
+      "synthetic": false,
+      "voice": "Kaori - Relatable and Friendly Voice",
+      "category": "clean",
+      "correct_transcript": "みなさんこんにちは今週も始まりました暮らしのラジオです今日はですね冬に向けて部屋を暖かくするちょっとしたコツを三つご紹介したいと思います最後まで聞いてくださいね",
+      "given_transcript": "みなさんこんにちは今週も始まりました暮らしのラジオです今日はですね冬に向けて部屋を暖かくするちょっとしたコツを三つご紹介したいと思います最後まで聞いてくださいね",
+      "errors": []
+    },
+    {
+      "id": "ja_0005",
+      "name": "ja_0005.wav",
+      "synthetic": false,
+      "voice": "Hiro - Calm, Measured and Husky",
+      "category": "clean",
+      "correct_transcript": "ありがとうございました",
+      "given_transcript": "ありがとうございました",
+      "errors": []
+    },
+    {
+      "id": "ja_0006",
+      "name": "ja_0006.wav",
+      "synthetic": false,
+      "voice": "Fumi - Inviting, Balanced and Soft",
+      "category": "planted_errors",
+      "correct_transcript": "まず玉ねぎを薄く切ってフライパンで弱火で十分ほど炒めますあめ色になったらトマトの缶詰を入れて塩をひとつまみ加えてくださいそのまま五分くらい煮込んだらソースの完成です",
+      "given_transcript": "まずにんじんを薄く切ってフライパンで弱火で十分ほど炒めますあめ色になったらトマトの缶詰を入れて塩をひとつまみ加えてくださいそのまま三分くらい煮込んだらソースの完成です",
+      "errors": [
+        {
+          "type": "incorrect_transcription",
+          "word_index_in_clean": 1,
+          "correct": {
+            "word": "玉ねぎ",
+            "start": 1.57,
+            "end": 2.14
+          },
+          "given": {
+            "word": "にんじん",
+            "start": 1.57,
+            "end": 2.14
+          },
+          "description": "audio says 玉ねぎ, transcript says にんじん"
+        },
+        {
+          "type": "incorrect_transcription",
+          "word_index_in_clean": 26,
+          "correct": {
+            "word": "五分",
+            "start": 14.28,
+            "end": 14.64
+          },
+          "given": {
+            "word": "三分",
+            "start": 14.28,
+            "end": 14.64
+          },
+          "description": "audio says 五分, transcript says 三分"
+        },
+        {
+          "type": "boundary_shift",
+          "word_index_in_clean": 5,
+          "correct": {
+            "word": "フライパン",
+            "start": 3.42,
+            "end": 4.12
+          },
+          "given": {
+            "word": "フライパン",
+            "start": 3.22,
+            "end": 4.12
+          },
+          "description": "start moved -0.20s (before the word starts)"
+        },
+        {
+          "type": "boundary_shift",
+          "word_index_in_clean": 20,
+          "correct": {
+            "word": "塩",
+            "start": 10.51,
+            "end": 10.92
+          },
+          "given": {
+            "word": "塩",
+            "start": 10.66,
+            "end": 10.92
+          },
+          "description": "start moved +0.15s (in the middle of the word)"
+        }
+      ]
+    },
+    {
+      "id": "ja_0007",
+      "name": "ja_0007.wav",
+      "synthetic": false,
+      "voice": "Makoto - Japanese male",
+      "category": "clean",
+      "correct_transcript": "もしもし山田ですけどあの来週の予約の件でお電話しました水曜日の午後ってまだ空いてますか",
+      "given_transcript": "もしもし山田ですけどあの来週の予約の件でお電話しました水曜日の午後ってまだ空いてますか",
+      "errors": []
+    },
+    {
+      "id": "ja_0008",
+      "name": "ja_0008.wav",
+      "synthetic": true,
+      "voice": "Kenzo - Calm, Soft and Measured",
+      "category": "clean",
+      "correct_transcript": "まもなく二番線に東京行きの電車が参ります危ないですから黄色い線の内側までお下がりください",
+      "given_transcript": "まもなく二番線に東京行きの電車が参ります危ないですから黄色い線の内側までお下がりください",
+      "errors": []
+    },
+    {
+      "id": "ja_0009",
+      "name": "ja_0009.wav",
+      "synthetic": false,
+      "voice": "Morioki - Calm, Measured and Muffled",
+      "category": "clean",
+      "correct_transcript": "昨日久しぶりに実家に帰ったら母が好物の煮物を作ってくれててなんかすごくほっとしました",
+      "given_transcript": "昨日久しぶりに実家に帰ったら母が好物の煮物を作ってくれててなんかすごくほっとしました",
+      "errors": []
+    },
+    {
+      "id": "ja_0010",
+      "name": "ja_0010.wav",
+      "synthetic": false,
+      "voice": "Tatsuki - Friendly, Smooth and Natural",
+      "category": "planted_errors",
+      "correct_transcript": "このあと二時から三階の会議室で新しいシステムの説明会を行います参加される方はノートパソコンを持ってきてください",
+      "given_transcript": "このあと二時から三階の会議室でシステムの説明会を行いますなお参加される方はノートパソコンを持ってきてください",
+      "errors": [
+        {
+          "type": "missing_segment",
+          "word_index_in_clean": 7,
+          "correct": {
+            "word": "新しい",
+            "start": 3.62,
+            "end": 4.2
+          },
+          "given": null,
+          "description": "新しい is spoken (3.62-4.20s) but has no segment"
+        },
+        {
+          "type": "hallucinated_segment",
+          "word_index_in_clean": 13,
+          "correct": null,
+          "given": {
+            "word": "なお",
+            "start": 6.1,
+            "end": 6.42
+          },
+          "description": "なお is never spoken; segment 6.10-6.42s is a pause"
+        },
+        {
+          "type": "boundary_shift",
+          "word_index_in_clean": 5,
+          "correct": {
+            "word": "会議室",
+            "start": 2.56,
+            "end": 3.1
+          },
+          "given": {
+            "word": "会議室",
+            "start": 2.76,
+            "end": 3.1
+          },
+          "description": "start moved +0.20s (in the middle of the word)"
+        }
+      ]
+    },
+    {
+      "id": "ja_0011",
+      "name": "ja_0011.wav",
+      "synthetic": false,
+      "voice": "Aya - Friendly Casual Japanese Voice",
+      "category": "clean",
+      "correct_transcript": "はいわかりましたすぐ行きます",
+      "given_transcript": "はいわかりましたすぐ行きます",
+      "errors": []
+    },
+    {
+      "id": "ja_0012",
+      "name": "ja_0012.wav",
+      "synthetic": false,
+      "voice": "Koichi - Japanese Deep Calm Narrator",
+      "category": "planted_errors",
+      "correct_transcript": "気象庁によりますと大型の台風十四号は今夜遅くに九州南部に接近する見込みです沿岸部では高波に十分注意してくださいまた明日の朝にかけて交通機関に大きな影響が出るおそれがあります",
+      "given_transcript": "気象庁によりますと大型の台風十七号は今夜遅くに四国南部に接近する見込みです沿岸部では高波に十分注意してくださいまた明日の夜にかけて交通機関に影響が出るおそれがあります",
+      "errors": [
+        {
+          "type": "incorrect_transcription",
+          "word_index_in_clean": 7,
+          "correct": {
+            "word": "十四号",
+            "start": 3.38,
+            "end": 4.059
+          },
+          "given": {
+            "word": "十七号",
+            "start": 3.38,
+            "end": 4.059
+          },
+          "description": "audio says 十四号, transcript says 十七号"
+        },
+        {
+          "type": "incorrect_transcription",
+          "word_index_in_clean": 12,
+          "correct": {
+            "word": "九州",
+            "start": 5.5,
+            "end": 6.0
+          },
+          "given": {
+            "word": "四国",
+            "start": 5.5,
+            "end": 6.0
+          },
+          "description": "audio says 九州, transcript says 四国"
+        },
+        {
+          "type": "incorrect_transcription",
+          "word_index_in_clean": 31,
+          "correct": {
+            "word": "朝",
+            "start": 14.06,
+            "end": 14.24
+          },
+          "given": {
+            "word": "夜",
+            "start": 14.06,
+            "end": 14.24
+          },
+          "description": "audio says 朝, transcript says 夜"
+        },
+        {
+          "type": "missing_segment",
+          "word_index_in_clean": 37,
+          "correct": {
+            "word": "大きな",
+            "start": 16.04,
+            "end": 16.52
+          },
+          "given": null,
+          "description": "大きな is spoken (16.04-16.52s) but has no segment"
+        },
+        {
+          "type": "boundary_shift",
+          "word_index_in_clean": 19,
+          "correct": {
+            "word": "沿岸部",
+            "start": 8.84,
+            "end": 9.36
+          },
+          "given": {
+            "word": "沿岸部",
+            "start": 8.49,
+            "end": 9.36
+          },
+          "description": "start moved -0.35s (before the word starts)"
+        }
+      ]
+    },
+    {
+      "id": "ja_0013",
+      "name": "ja_0013.wav",
+      "synthetic": false,
+      "voice": "Ishibashi - Inviting, Natural and Smoky",
+      "category": "clean",
+      "correct_transcript": "この道をまっすぐ行って二つ目の信号を右に曲がると左側にコンビニが見えてきますよ",
+      "given_transcript": "この道をまっすぐ行って二つ目の信号を右に曲がると左側にコンビニが見えてきますよ",
+      "errors": []
+    },
+    {
+      "id": "ja_0014",
+      "name": "ja_0014.wav",
+      "synthetic": true,
+      "voice": "Konoha - Professional JP Explainer",
+      "category": "clean",
+      "correct_transcript": "お客様にご案内いたします当店は午後九時で閉店となりますお会計は一階のレジをご利用ください本日もご来店いただき誠にありがとうございました",
+      "given_transcript": "お客様にご案内いたします当店は午後九時で閉店となりますお会計は一階のレジをご利用ください本日もご来店いただき誠にありがとうございました",
+      "errors": []
+    },
+    {
+      "id": "ja_0015",
+      "name": "ja_0015.wav",
+      "synthetic": false,
+      "voice": "Shohei - Warm, Clear and Husky",
+      "category": "clean",
+      "correct_transcript": "そうですね熱はもう下がっていますが念のため三日ほどは無理をしないでゆっくり休んでください",
+      "given_transcript": "そうですね熱はもう下がっていますが念のため三日ほどは無理をしないでゆっくり休んでください",
+      "errors": []
+    },
+    {
+      "id": "ja_0016",
+      "name": "ja_0016.wav",
+      "synthetic": false,
+      "voice": "Chii-chan - Neutral and Clear",
+      "category": "clean",
+      "correct_transcript": "え本当にそれちょっと信じられないんですけど",
+      "given_transcript": "え本当にそれちょっと信じられないんですけど",
+      "errors": []
+    },
+    {
+      "id": "ja_0017",
+      "name": "ja_0017.wav",
+      "synthetic": false,
+      "voice": "Daisuke - Serious, Balanced and Guttural",
+      "category": "planted_errors",
+      "correct_transcript": "先週買った掃除機なんですけど電源を入れても全然動かなくて交換ってできますか",
+      "given_transcript": "先週買った掃除機なんですけど電源を入れても全然動かなくて交換ってできますか",
+      "errors": [
+        {
+          "type": "cut_off",
+          "word_index_in_clean": 10,
+          "correct": {
+            "word": "動かなくて",
+            "start": 5.0,
+            "end": 5.62
+          },
+          "given": {
+            "word": "動かなくて",
+            "start": 5.0,
+            "end": 5.28
+          },
+          "description": "end set to 5.28s, the word really ends at 5.62s, so it is cut off"
+        },
+        {
+          "type": "cut_off",
+          "word_index_in_clean": 13,
+          "correct": {
+            "word": "できます",
+            "start": 8.16,
+            "end": 8.62
+          },
+          "given": {
+            "word": "できます",
+            "start": 8.16,
+            "end": 8.36
+          },
+          "description": "end set to 8.36s, the word really ends at 8.62s, so it is cut off"
+        },
+        {
+          "type": "boundary_shift",
+          "word_index_in_clean": 11,
+          "correct": {
+            "word": "交換",
+            "start": 7.31,
+            "end": 7.72
+          },
+          "given": {
+            "word": "交換",
+            "start": 6.91,
+            "end": 7.72
+          },
+          "description": "start moved -0.40s (before the word starts)"
+        },
+        {
+          "type": "boundary_shift",
+          "word_index_in_clean": 4,
+          "correct": {
+            "word": "けど",
+            "start": 2.28,
+            "end": 2.71
+          },
+          "given": {
+            "word": "けど",
+            "start": 2.28,
+            "end": 3.01
+          },
+          "description": "end moved +0.30s (after the word ends)"
+        }
+      ]
+    },
+    {
+      "id": "ja_0018",
+      "name": "ja_0018.wav",
+      "synthetic": false,
+      "voice": "Satomi - Calm, Smooth and Clear",
+      "category": "clean",
+      "correct_transcript": "子供の頃夏休みになると毎年祖父の家に泊まりに行っていました朝早く起きて川で魚を捕ったり夜は縁側でスイカを食べたりして本当に楽しかったです",
+      "given_transcript": "子供の頃夏休みになると毎年祖父の家に泊まりに行っていました朝早く起きて川で魚を捕ったり夜は縁側でスイカを食べたりして本当に楽しかったです",
+      "errors": []
+    },
+    {
+      "id": "ja_0019",
+      "name": "ja_0019.wav",
+      "synthetic": true,
+      "voice": "Nao",
+      "category": "clean",
+      "correct_transcript": "ご注文を確認いたしますハンバーガーセットが二つとアイスコーヒーが一つでよろしいでしょうか",
+      "given_transcript": "ご注文を確認いたしますハンバーガーセットが二つとアイスコーヒーが一つでよろしいでしょうか",
+      "errors": []
+    },
+    {
+      "id": "ja_0020",
+      "name": "ja_0020.wav",
+      "synthetic": false,
+      "voice": "Akari - Bright & Natural Japanese Female",
+      "category": "clean",
+      "correct_transcript": "認証コードはエスエムエスで届きますので六桁の数字を入力してください",
+      "given_transcript": "認証コードはエスエムエスで届きますので六桁の数字を入力してください",
+      "errors": []
+    },
+    {
+      "id": "ja_0021",
+      "name": "ja_0021.wav",
+      "synthetic": false,
+      "voice": "Yuma Uchida - Calm, Clear and Measured",
+      "category": "planted_errors",
+      "correct_transcript": "今日は光合成の仕組みについて説明します植物は太陽の光を使って水と二酸化炭素から糖を作りますそのときに酸素が出るんですねこれが私たちが呼吸できる理由の一つなんです",
+      "given_transcript": "今日は光合成の仕組みについて説明しますまず植物は太陽の光を使って水と二酸化炭素から糖を作りますそのときに窒素が出るんですね実はこれが私たちが呼吸できる理由の一つなんです",
+      "errors": [
+        {
+          "type": "hallucinated_segment",
+          "word_index_in_clean": 9,
+          "correct": null,
+          "given": {
+            "word": "まず",
+            "start": 4.3,
+            "end": 4.62
+          },
+          "description": "まず is never spoken; segment 4.30-4.62s is a pause"
+        },
+        {
+          "type": "hallucinated_segment",
+          "word_index_in_clean": 31,
+          "correct": null,
+          "given": {
+            "word": "実は",
+            "start": 13.42,
+            "end": 13.76
+          },
+          "description": "実は is never spoken; segment 13.42-13.76s is a pause"
+        },
+        {
+          "type": "incorrect_transcription",
+          "word_index_in_clean": 26,
+          "correct": {
+            "word": "酸素",
+            "start": 12.4,
+            "end": 12.64
+          },
+          "given": {
+            "word": "窒素",
+            "start": 12.4,
+            "end": 12.64
+          },
+          "description": "audio says 酸素, transcript says 窒素"
+        },
+        {
+          "type": "boundary_shift",
+          "word_index_in_clean": 9,
+          "correct": {
+            "word": "植物",
+            "start": 5.18,
+            "end": 5.84
+          },
+          "given": {
+            "word": "植物",
+            "start": 5.43,
+            "end": 5.84
+          },
+          "description": "start moved +0.25s (in the middle of the word)"
+        },
+        {
+          "type": "boundary_shift",
+          "word_index_in_clean": 22,
+          "correct": {
+            "word": "作ります",
+            "start": 10.14,
+            "end": 10.58
+          },
+          "given": {
+            "word": "作ります",
+            "start": 10.14,
+            "end": 10.93
+          },
+          "description": "end moved +0.35s (after the word ends)"
+        }
+      ]
+    },
+    {
+      "id": "ja_0022",
+      "name": "ja_0022.wav",
+      "synthetic": false,
+      "voice": "Mio Yuki - Calm and Natural",
+      "category": "clean",
+      "correct_transcript": "うーんどうしようかな",
+      "given_transcript": "うーんどうしようかな",
+      "errors": []
+    },
+    {
+      "id": "ja_0023",
+      "name": "ja_0023.wav",
+      "synthetic": true,
+      "voice": "Harune - Japanese Professional Narration",
+      "category": "clean",
+      "correct_transcript": "次は新宿新宿です",
+      "given_transcript": "次は新宿新宿です",
+      "errors": []
+    },
+    {
+      "id": "ja_0024",
+      "name": "ja_0024.wav",
+      "synthetic": false,
+      "voice": "Hadou - Inviting, Clear and Measured",
+      "category": "clean",
+      "correct_transcript": "週末は天気が良さそうだからみんなで公園にお弁当を持って行こうよ",
+      "given_transcript": "週末は天気が良さそうだからみんなで公園にお弁当を持って行こうよ",
+      "errors": []
+    },
+    {
+      "id": "ja_0025",
+      "name": "ja_0025.wav",
+      "synthetic": false,
+      "voice": "Yoko Honda - Soft female voice",
+      "category": "planted_errors",
+      "correct_transcript": "あのすみません先ほど注文したパスタなんですがまだ来ていないみたいでもう二十分くらい待っているんですけど確認していただけますか",
+      "given_transcript": "あのすみません注文したパスタなんですがまだ来ていないみたいで二十分くらい待っているんですけど確認していただけますか",
+      "errors": [
+        {
+          "type": "missing_segment",
+          "word_index_in_clean": 2,
+          "correct": {
+            "word": "先ほど",
+            "start": 2.22,
+            "end": 2.86
+          },
+          "given": null,
+          "description": "先ほど is spoken (2.22-2.86s) but has no segment"
+        },
+        {
+          "type": "missing_segment",
+          "word_index_in_clean": 12,
+          "correct": {
+            "word": "もう",
+            "start": 7.77,
+            "end": 8.16
+          },
+          "given": null,
+          "description": "もう is spoken (7.77-8.16s) but has no segment"
+        },
+        {
+          "type": "cut_off",
+          "word_index_in_clean": 21,
+          "correct": {
+            "word": "いただけます",
+            "start": 10.48,
+            "end": 11.14
+          },
+          "given": {
+            "word": "いただけます",
+            "start": 10.48,
+            "end": 10.74
+          },
+          "description": "end set to 10.74s, the word really ends at 11.14s, so it is cut off"
+        },
+        {
+          "type": "boundary_shift",
+          "word_index_in_clean": 7,
+          "correct": {
+            "word": "まだ",
+            "start": 4.85,
+            "end": 5.2
+          },
+          "given": {
+            "word": "まだ",
+            "start": 4.65,
+            "end": 5.2
+          },
+          "description": "start moved -0.20s (before the word starts)"
+        },
+        {
+          "type": "boundary_shift",
+          "word_index_in_clean": 13,
+          "correct": {
+            "word": "二十分",
+            "start": 8.16,
+            "end": 8.6
+          },
+          "given": {
+            "word": "二十分",
+            "start": 8.34,
+            "end": 8.6
+          },
+          "description": "start moved +0.18s (in the middle of the word)"
+        }
+      ]
+    }
+  ]
+}
