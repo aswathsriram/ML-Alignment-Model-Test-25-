@@ -1,28 +1,43 @@
 #!/usr/bin/env python3
 """
-Japanese test set: 25 .wav + clean (correct) word alignment, with ElevenLabs. Standard library only.
+Test set of 25 .wav + clean (correct) word alignment, with ElevenLabs. Standard library only.
+Languages: ja (Japanese, files in output/) and de (German, files in german/).
 
-Input  : transcripts/ja.jsonl  {"id", "language", "words", "style", "voice_id", "tts_text"}
+Input  : <transcripts>.jsonl  {"id", "language", "words", "style", "voice_id", "tts_text"}
            style "natural"   -> eleven_v4 with [breathes]/[sighs]/... tags and natural pauses (human-like)
            style "synthetic" -> eleven_v4 at full stability, no tags, then every word is cut out and
                                 re-joined with exactly the same silence between words (robotic, even timing)
-Output : output/wav/<id>.wav                     16 kHz mono 16-bit
-         output/answer_key/ja_JP_clean.json      the CORRECT alignment (same format as output/json)
+Output : <out>/wav/<id>.wav                      16 kHz mono 16-bit
+         <out>/answer_key/<locale>_clean.json    the CORRECT alignment (same format as <out>/json)
+         with --export: <out>/json/<locale>.json  (ingest file, no "synthetic" field) and
+                        <out>/answer_key/<locale>_voice_key.json/.csv  (which files are synthetic)
 Word timings come from ElevenLabs forced alignment of the audio against the transcript, then corrected
 where it lets a pause run into a word or stops short of speech (see snap()).
-Deliberate mistakes are added afterwards by inject_errors_ja.py.
+Japanese: deliberate mistakes are added afterwards by inject_errors_ja.py.
 
-Run    : python make_japanese.py            (clips already made are skipped)
-         python make_japanese.py --check    (speech-to-text of every clip, to confirm audio = transcript)
+Run    : python make_japanese.py [--lang de]            (clips already made are skipped)
+         python make_japanese.py [--lang de] --check    (speech-to-text of every clip: audio = transcript?)
+         python make_japanese.py --lang de --export     (write the ingest file and the voice key)
 """
-import argparse, array, base64, json, math, os, pathlib, sys, time, uuid, wave
+import argparse, array, base64, csv, json, math, os, pathlib, re, sys, time, uuid, wave
 import urllib.request, urllib.error
 from tts_to_wav import BASE, SAMPLE_RATE, call, load_env, ssl_context, write_locale
 
 HERE = pathlib.Path(__file__).parent
-LOCALE = "ja_JP"
-WAV_DIR = HERE / "output" / "wav"
-CLEAN = HERE / "output" / "answer_key" / f"{LOCALE}_clean.json"
+LANGS = {   # locale, word separator in transcripts, transcripts file, output folder
+    "ja": {"locale": "ja_JP", "sep": "", "transcripts": "transcripts/ja.jsonl", "out": "output"},
+    "de": {"locale": "de_DE", "sep": " ", "transcripts": "german/transcripts.jsonl", "out": "german"},
+}
+LANG, LOCALE, SEP, OUT, WAV_DIR, CLEAN = None, None, None, None, None, None
+
+
+def configure(lang):
+    global LANG, LOCALE, SEP, OUT, WAV_DIR, CLEAN
+    c = LANGS[lang]
+    LANG, LOCALE, SEP, OUT = lang, c["locale"], c["sep"], HERE / c["out"]
+    WAV_DIR, CLEAN = OUT / "wav", OUT / "answer_key" / f"{LOCALE}_clean.json"
+
+
 NATURAL = {"model_id": "eleven_v4"}
 SYNTHETIC = {"model_id": "eleven_v4",                # v2 misreads Japanese too often
              "voice_settings": {"stability": 1.0, "similarity_boost": 0.75, "style": 0.0, "use_speaker_boost": False}}
@@ -63,8 +78,8 @@ def wav_bytes(pcm):
 
 
 def align(pcm, words):
-    """Forced alignment on the unspaced transcript; characters are mapped back onto words."""
-    res = post_file("/forced-alignment", {"text": "".join(words)}, wav_bytes(pcm))
+    """Forced alignment on the transcript (Japanese unspaced); characters are mapped back onto words."""
+    res = post_file("/forced-alignment", {"text": SEP.join(words)}, wav_bytes(pcm))
     chars = [c for c in res.get("characters", []) if c["text"].strip()]
     if "".join(c["text"] for c in chars) != "".join(words):
         sys.exit(f"Forced alignment returned different text: {''.join(c['text'] for c in chars)}")
@@ -106,7 +121,7 @@ def snap(pcm, times):
                 while j < len(f) and f[j] < sil:
                     j += 1
                 rest_loud = j < b and max(f[j:b]) >= loud           # speech again before the word's end
-                geminate = "っ" in w["word"] or "ッ" in w["word"]     # っ is a real silent hold inside the word
+                geminate = "っ" in w["word"] or "ッ" in w["word"]     # Japanese っ: a real silent hold in the word
                 if j - k >= run_len and max(f[a:k]) >= loud and not (rest_loud and geminate):
                     w["end"] = round(k * FRAME, 3)
                     if i + 1 < len(times):
@@ -176,14 +191,17 @@ def retime(pcm, times):
 
 
 def voice_info(ids):
-    info, page = {}, 0
-    while set(ids) - set(info) and page < 10:
-        r = call("GET", "/shared-voices", KEY, params={"language": "ja", "page_size": 100, "page": page})
-        for v in r.get("voices", []):
-            info[v["voice_id"]] = {"name": v.get("name", ""), "gender": v.get("gender", "")}
-        if not r.get("has_more"):
-            break
-        page += 1
+    info = {}
+    for sort in (None, "usage_character_count_1y"):            # voices were picked from both listings
+        page = 0
+        while set(ids) - set(info) and page < 10:
+            params = {"language": LANG, "page_size": 100, "page": page, **({"sort": sort} if sort else {})}
+            r = call("GET", "/shared-voices", KEY, params=params)
+            for v in r.get("voices", []):
+                info[v["voice_id"]] = {"name": v.get("name", ""), "gender": v.get("gender", "")}
+            if not r.get("has_more"):
+                break
+            page += 1
     return info
 
 
@@ -211,7 +229,7 @@ def make(rows):
             pcm, times = retime(pcm, times)
         wav_path.write_bytes(wav_bytes(pcm))
         done[row["id"]] = {"id": row["id"], "name": wav_path.name, "synthetic": synthetic,
-                           "transcript": "".join(row["words"]),
+                           "transcript": SEP.join(row["words"]),
                            "source": {"voice": voice, "sample_rate_hz": SAMPLE_RATE,
                                       "duration_seconds": round(len(pcm) / 2 / SAMPLE_RATE, 3), "words": times}}
         write_locale(CLEAN, LOCALE, done)
@@ -219,19 +237,46 @@ def make(rows):
 
 def check(rows):
     """Speech-to-text each clip and compare with its transcript (spoken numbers/fillers may be written differently)."""
+    norm = lambda t: " ".join(re.sub(r"[、。！？…,.!?;:\"„“”‚‘’()\[\]–-]", " ",       # drop event tags like (seufzt)
+                                     re.sub(r"\([^)]*\)|\[[^\]]*\]", " ", t.lower())).split()).replace(" ", "" if not SEP else " ")
     for row in rows:
-        res = post_file("/speech-to-text", {"model_id": "scribe_v1", "language_code": "ja"},
+        res = post_file("/speech-to-text", {"model_id": "scribe_v1", "language_code": LANG},
                         (WAV_DIR / f"{row['id']}.wav").read_bytes())
-        heard = "".join(c for c in res.get("text", "") if c not in "、。！？… ")
-        mark = "OK  " if heard == "".join(row["words"]) else "DIFF"
-        print(f"{mark} {row['id']}\n     transcript: {''.join(row['words'])}\n     heard     : {heard}")
+        heard, said = norm(res.get("text", "")), norm(SEP.join(row["words"]))
+        mark = "OK  " if heard == said else "DIFF"
+        print(f"{mark} {row['id']}\n     transcript: {said}\n     heard     : {heard}")
+
+
+def export(rows):
+    """Ingest file without the "synthetic" field, and a separate key saying which files are synthetic."""
+    items = {it["id"]: it for it in json.loads(CLEAN.read_text(encoding="utf-8"))["items"]}
+    assert sorted(items) == sorted(r["id"] for r in rows), "make the clips first"
+    test = {i: {k: v for k, v in it.items() if k != "synthetic"} for i, it in items.items()}
+    (OUT / "json").mkdir(parents=True, exist_ok=True)
+    write_locale(OUT / "json" / f"{LOCALE}.json", LOCALE, test)
+    key = [{"file": it["name"], "voice_type": "synthetic" if it["synthetic"] else "human",
+            "whole_audio_tag": "synthetic_speech" if it["synthetic"] else "none",
+            "voice": it["source"]["voice"]["name"], "gender": it["source"]["voice"]["gender"],
+            "duration_seconds": it["source"]["duration_seconds"], "words": len(it["source"]["words"])}
+           for _, it in sorted(items.items())]
+    meta = {"locale": LOCALE, "files": len(key), "synthetic": sum(k["voice_type"] == "synthetic" for k in key),
+            "human": sum(k["voice_type"] == "human" for k in key), "planted_errors": 0}
+    (OUT / "answer_key" / f"{LOCALE}_voice_key.json").write_text(
+        json.dumps({"fileMetadata": meta, "files": key}, ensure_ascii=False, indent=2), encoding="utf-8")
+    with open(OUT / "answer_key" / f"{LOCALE}_voice_key.csv", "w", newline="", encoding="utf-8-sig") as fh:
+        wr = csv.DictWriter(fh, fieldnames=list(key[0]))
+        wr.writeheader(); wr.writerows(key)
+    print(f"{len(key)} files: {meta['synthetic']} synthetic, {meta['human']} human -> {OUT / 'json' / (LOCALE + '.json')}")
 
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser()
+    p.add_argument("--lang", choices=sorted(LANGS), default="ja")
     p.add_argument("--check", action="store_true")
+    p.add_argument("--export", action="store_true")
     a = p.parse_args()
+    configure(a.lang)
     load_env()
     KEY = os.environ.get("ELEVENLABS_API_KEY", "").strip()
-    rows = [json.loads(l) for l in (HERE / "transcripts" / "ja.jsonl").read_text(encoding="utf-8").splitlines() if l.strip()]
-    check(rows) if a.check else make(rows)
+    rows = [json.loads(l) for l in (HERE / LANGS[a.lang]["transcripts"]).read_text(encoding="utf-8").splitlines() if l.strip()]
+    check(rows) if a.check else export(rows) if a.export else make(rows)

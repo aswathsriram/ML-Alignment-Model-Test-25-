@@ -166,7 +166,7 @@ if __name__ == "__main__":
         key = ""
     if not key:
         print("No ELEVENLABS_API_KEY set - sending requests without a key (expects a network secret).")
-    langs = sorted(f.stem for f in (HERE / "transcripts").glob("*.jsonl")) if a.langs == ["all"] else a.langs
+    langs = sorted(f.stem for f in (HERE / "transcripts").glob("*.jsonl") if f.stem in LOCALE) if a.langs == ["all"] else a.langs
     vf = HERE / "voices.json"
     fixed = json.loads(vf.read_text(encoding="utf-8")) if vf.exists() else {}
     for lang in langs:

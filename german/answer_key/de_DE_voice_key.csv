@@ -1,0 +1,26 @@
+﻿file,voice_type,whole_audio_tag,voice,gender,duration_seconds,words
+de_0101.wav,human,none,Susi - Effortless and Confident,female,3.52,7
+de_0102.wav,synthetic,synthetic_speech,Otto - Casual and Normal,male,10.19,20
+de_0103.wav,human,none,Ben - Effortless and Casual,male,10.48,27
+de_0104.wav,human,none,Lea - Clear and Feminine,female,14.16,35
+de_0105.wav,synthetic,synthetic_speech,"Annika - Calm, Confident and Pleasant",female,9.01,15
+de_0106.wav,human,none,Mark - Interesting and Fun,male,9.6,25
+de_0107.wav,human,none,Carola - Sharp and Clear,female,11.68,27
+de_0108.wav,human,none,Stephan - Warm and Friendly,male,2.96,5
+de_0109.wav,synthetic,synthetic_speech,Leonie - Clear and Engaging,female,7.16,12
+de_0110.wav,human,none,"Ava - Youthful, Authentic and Friendly",female,13.6,35
+de_0111.wav,human,none,Marc - Pleasant and Interesting,male,12.96,30
+de_0112.wav,synthetic,synthetic_speech,Petra - Confident and Pleasant,female,11.75,22
+de_0113.wav,human,none,Johannes - Clear and Neutral,male,4.56,11
+de_0114.wav,human,none,Luisa - Confident and Patient,female,14.64,35
+de_0115.wav,human,none,Gruber - Clear and Modest,male,5.84,14
+de_0116.wav,synthetic,synthetic_speech,Laura - Sharp and Professional,female,9.54,17
+de_0117.wav,human,none,Mila - Confident and Opinionated,female,7.52,14
+de_0118.wav,human,none,Christian Plasa - Soft and Mild,male,12.4,32
+de_0119.wav,synthetic,synthetic_speech,Nils - Clear and Neutral,male,9.9,17
+de_0120.wav,human,none,Carla Blum - Confident and Informative,female,9.36,25
+de_0121.wav,human,none,Peter - Personal and Smooth,male,4.24,8
+de_0122.wav,synthetic,synthetic_speech,Yvonne - Casual and Natural,female,13.13,25
+de_0123.wav,human,none,David - Charming and Soft,male,14.32,34
+de_0124.wav,human,none,Louisa - Warm and Hopeful,female,6.32,16
+de_0125.wav,synthetic,synthetic_speech,Tristan Medersburg - Trustworthy,male,8.14,16

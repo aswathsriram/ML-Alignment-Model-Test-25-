@@ -1,0 +1,3028 @@
+{
+  "fileMetadata": {
+    "locale": "de_DE",
+    "workitemsCount": 25
+  },
+  "items": [
+    {
+      "id": "de_0101",
+      "name": "de_0101.wav",
+      "synthetic": false,
+      "transcript": "entschuldigung wo finde ich hier die toiletten",
+      "source": {
+        "voice": {
+          "name": "Susi - Effortless and Confident",
+          "gender": "female"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 3.52,
+        "words": [
+          {
+            "word": "entschuldigung",
+            "start": 0.76,
+            "end": 1.36
+          },
+          {
+            "word": "wo",
+            "start": 1.78,
+            "end": 2.1
+          },
+          {
+            "word": "finde",
+            "start": 2.1,
+            "end": 2.36
+          },
+          {
+            "word": "ich",
+            "start": 2.36,
+            "end": 2.46
+          },
+          {
+            "word": "hier",
+            "start": 2.48,
+            "end": 2.62
+          },
+          {
+            "word": "die",
+            "start": 2.62,
+            "end": 2.74
+          },
+          {
+            "word": "toiletten",
+            "start": 2.74,
+            "end": 3.28
+          }
+        ]
+      }
+    },
+    {
+      "id": "de_0102",
+      "name": "de_0102.wav",
+      "synthetic": true,
+      "transcript": "bitte beachten sie die abfahrt des zuges nach münchen verzögert sich um etwa fünfzehn minuten wir bitten um ihr verständnis",
+      "source": {
+        "voice": {
+          "name": "Otto - Casual and Normal",
+          "gender": "male"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 10.19,
+        "words": [
+          {
+            "word": "bitte",
+            "start": 0.3,
+            "end": 0.59
+          },
+          {
+            "word": "beachten",
+            "start": 0.75,
+            "end": 1.29
+          },
+          {
+            "word": "sie",
+            "start": 1.45,
+            "end": 1.6
+          },
+          {
+            "word": "die",
+            "start": 1.76,
+            "end": 1.96
+          },
+          {
+            "word": "abfahrt",
+            "start": 2.12,
+            "end": 2.5
+          },
+          {
+            "word": "des",
+            "start": 2.66,
+            "end": 2.92
+          },
+          {
+            "word": "zuges",
+            "start": 3.08,
+            "end": 3.42
+          },
+          {
+            "word": "nach",
+            "start": 3.58,
+            "end": 3.84
+          },
+          {
+            "word": "münchen",
+            "start": 4.0,
+            "end": 4.5
+          },
+          {
+            "word": "verzögert",
+            "start": 4.66,
+            "end": 5.2
+          },
+          {
+            "word": "sich",
+            "start": 5.36,
+            "end": 5.58
+          },
+          {
+            "word": "um",
+            "start": 5.74,
+            "end": 5.88
+          },
+          {
+            "word": "etwa",
+            "start": 6.04,
+            "end": 6.38
+          },
+          {
+            "word": "fünfzehn",
+            "start": 6.54,
+            "end": 7.08
+          },
+          {
+            "word": "minuten",
+            "start": 7.24,
+            "end": 7.71
+          },
+          {
+            "word": "wir",
+            "start": 7.87,
+            "end": 7.97
+          },
+          {
+            "word": "bitten",
+            "start": 8.13,
+            "end": 8.45
+          },
+          {
+            "word": "um",
+            "start": 8.61,
+            "end": 8.73
+          },
+          {
+            "word": "ihr",
+            "start": 8.89,
+            "end": 8.99
+          },
+          {
+            "word": "verständnis",
+            "start": 9.15,
+            "end": 9.89
+          }
+        ]
+      }
+    },
+    {
+      "id": "de_0103",
+      "name": "de_0103.wav",
+      "synthetic": false,
+      "transcript": "ähm also ich hab gestern versucht dich anzurufen aber irgendwie bin ich immer nur auf der mailbox gelandet ruf mich einfach zurück wenn du zeit hast ja",
+      "source": {
+        "voice": {
+          "name": "Ben - Effortless and Casual",
+          "gender": "male"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 10.48,
+        "words": [
+          {
+            "word": "ähm",
+            "start": 0.44,
+            "end": 0.78
+          },
+          {
+            "word": "also",
+            "start": 1.21,
+            "end": 1.64
+          },
+          {
+            "word": "ich",
+            "start": 1.93,
+            "end": 2.14
+          },
+          {
+            "word": "hab",
+            "start": 2.14,
+            "end": 2.32
+          },
+          {
+            "word": "gestern",
+            "start": 2.32,
+            "end": 2.64
+          },
+          {
+            "word": "versucht",
+            "start": 2.68,
+            "end": 3.04
+          },
+          {
+            "word": "dich",
+            "start": 3.04,
+            "end": 3.26
+          },
+          {
+            "word": "anzurufen",
+            "start": 3.26,
+            "end": 4.04
+          },
+          {
+            "word": "aber",
+            "start": 4.04,
+            "end": 4.37
+          },
+          {
+            "word": "irgendwie",
+            "start": 5.7,
+            "end": 6.1
+          },
+          {
+            "word": "bin",
+            "start": 6.1,
+            "end": 6.24
+          },
+          {
+            "word": "ich",
+            "start": 6.24,
+            "end": 6.38
+          },
+          {
+            "word": "immer",
+            "start": 6.38,
+            "end": 6.56
+          },
+          {
+            "word": "nur",
+            "start": 6.56,
+            "end": 6.68
+          },
+          {
+            "word": "auf",
+            "start": 6.68,
+            "end": 6.8
+          },
+          {
+            "word": "der",
+            "start": 6.8,
+            "end": 6.94
+          },
+          {
+            "word": "mailbox",
+            "start": 6.94,
+            "end": 7.34
+          },
+          {
+            "word": "gelandet",
+            "start": 7.36,
+            "end": 7.8
+          },
+          {
+            "word": "ruf",
+            "start": 8.35,
+            "end": 8.62
+          },
+          {
+            "word": "mich",
+            "start": 8.62,
+            "end": 8.76
+          },
+          {
+            "word": "einfach",
+            "start": 8.76,
+            "end": 9.08
+          },
+          {
+            "word": "zurück",
+            "start": 9.08,
+            "end": 9.32
+          },
+          {
+            "word": "wenn",
+            "start": 9.34,
+            "end": 9.46
+          },
+          {
+            "word": "du",
+            "start": 9.46,
+            "end": 9.62
+          },
+          {
+            "word": "zeit",
+            "start": 9.62,
+            "end": 9.84
+          },
+          {
+            "word": "hast",
+            "start": 9.84,
+            "end": 10.08
+          },
+          {
+            "word": "ja",
+            "start": 10.08,
+            "end": 10.25
+          }
+        ]
+      }
+    },
+    {
+      "id": "de_0104",
+      "name": "de_0104.wav",
+      "synthetic": false,
+      "transcript": "herzlich willkommen zu unserer führung durch die altstadt wir beginnen hier am marktplatz der schon im dreizehnten jahrhundert angelegt wurde bitte bleiben sie in der gruppe und wenn sie fragen haben melden sie sich einfach",
+      "source": {
+        "voice": {
+          "name": "Lea - Clear and Feminine",
+          "gender": "female"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 14.16,
+        "words": [
+          {
+            "word": "herzlich",
+            "start": 1.04,
+            "end": 1.48
+          },
+          {
+            "word": "willkommen",
+            "start": 1.5,
+            "end": 2.04
+          },
+          {
+            "word": "zu",
+            "start": 2.04,
+            "end": 2.16
+          },
+          {
+            "word": "unserer",
+            "start": 2.16,
+            "end": 2.5
+          },
+          {
+            "word": "führung",
+            "start": 2.56,
+            "end": 2.94
+          },
+          {
+            "word": "durch",
+            "start": 2.94,
+            "end": 3.08
+          },
+          {
+            "word": "die",
+            "start": 3.12,
+            "end": 3.3
+          },
+          {
+            "word": "altstadt",
+            "start": 3.3,
+            "end": 3.75
+          },
+          {
+            "word": "wir",
+            "start": 4.18,
+            "end": 4.32
+          },
+          {
+            "word": "beginnen",
+            "start": 4.32,
+            "end": 4.64
+          },
+          {
+            "word": "hier",
+            "start": 4.72,
+            "end": 4.98
+          },
+          {
+            "word": "am",
+            "start": 4.98,
+            "end": 5.16
+          },
+          {
+            "word": "marktplatz",
+            "start": 5.16,
+            "end": 6.02
+          },
+          {
+            "word": "der",
+            "start": 6.02,
+            "end": 6.16
+          },
+          {
+            "word": "schon",
+            "start": 6.16,
+            "end": 6.34
+          },
+          {
+            "word": "im",
+            "start": 6.34,
+            "end": 6.5
+          },
+          {
+            "word": "dreizehnten",
+            "start": 6.5,
+            "end": 7.16
+          },
+          {
+            "word": "jahrhundert",
+            "start": 7.16,
+            "end": 7.68
+          },
+          {
+            "word": "angelegt",
+            "start": 7.68,
+            "end": 8.14
+          },
+          {
+            "word": "wurde",
+            "start": 8.18,
+            "end": 8.44
+          },
+          {
+            "word": "bitte",
+            "start": 10.08,
+            "end": 10.3
+          },
+          {
+            "word": "bleiben",
+            "start": 10.32,
+            "end": 10.64
+          },
+          {
+            "word": "sie",
+            "start": 10.64,
+            "end": 10.74
+          },
+          {
+            "word": "in",
+            "start": 10.74,
+            "end": 10.84
+          },
+          {
+            "word": "der",
+            "start": 10.84,
+            "end": 10.96
+          },
+          {
+            "word": "gruppe",
+            "start": 10.98,
+            "end": 11.37
+          },
+          {
+            "word": "und",
+            "start": 11.57,
+            "end": 11.8
+          },
+          {
+            "word": "wenn",
+            "start": 11.86,
+            "end": 12.0
+          },
+          {
+            "word": "sie",
+            "start": 12.0,
+            "end": 12.1
+          },
+          {
+            "word": "fragen",
+            "start": 12.14,
+            "end": 12.5
+          },
+          {
+            "word": "haben",
+            "start": 12.5,
+            "end": 12.98
+          },
+          {
+            "word": "melden",
+            "start": 12.98,
+            "end": 13.24
+          },
+          {
+            "word": "sie",
+            "start": 13.26,
+            "end": 13.36
+          },
+          {
+            "word": "sich",
+            "start": 13.4,
+            "end": 13.6
+          },
+          {
+            "word": "einfach",
+            "start": 13.6,
+            "end": 13.91
+          }
+        ]
+      }
+    },
+    {
+      "id": "de_0105",
+      "name": "de_0105.wav",
+      "synthetic": true,
+      "transcript": "ihr kontostand beträgt dreihundertzwölf euro und vierzig cent für weitere informationen drücken sie die eins",
+      "source": {
+        "voice": {
+          "name": "Annika - Calm, Confident and Pleasant",
+          "gender": "female"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 9.01,
+        "words": [
+          {
+            "word": "ihr",
+            "start": 0.3,
+            "end": 0.47
+          },
+          {
+            "word": "kontostand",
+            "start": 0.63,
+            "end": 1.23
+          },
+          {
+            "word": "beträgt",
+            "start": 1.39,
+            "end": 1.84
+          },
+          {
+            "word": "dreihundertzwölf",
+            "start": 2.0,
+            "end": 3.0
+          },
+          {
+            "word": "euro",
+            "start": 3.16,
+            "end": 3.58
+          },
+          {
+            "word": "und",
+            "start": 3.74,
+            "end": 3.96
+          },
+          {
+            "word": "vierzig",
+            "start": 4.12,
+            "end": 4.6
+          },
+          {
+            "word": "cent",
+            "start": 4.76,
+            "end": 5.06
+          },
+          {
+            "word": "für",
+            "start": 5.22,
+            "end": 5.36
+          },
+          {
+            "word": "weitere",
+            "start": 5.52,
+            "end": 5.92
+          },
+          {
+            "word": "informationen",
+            "start": 6.08,
+            "end": 6.98
+          },
+          {
+            "word": "drücken",
+            "start": 7.14,
+            "end": 7.46
+          },
+          {
+            "word": "sie",
+            "start": 7.62,
+            "end": 7.74
+          },
+          {
+            "word": "die",
+            "start": 7.9,
+            "end": 8.14
+          },
+          {
+            "word": "eins",
+            "start": 8.3,
+            "end": 8.71
+          }
+        ]
+      }
+    },
+    {
+      "id": "de_0106",
+      "name": "de_0106.wav",
+      "synthetic": false,
+      "transcript": "na ja ehrlich gesagt hat mir der film nicht so gut gefallen die geschichte war ganz okay aber das ende war mir einfach zu vorhersehbar",
+      "source": {
+        "voice": {
+          "name": "Mark - Interesting and Fun",
+          "gender": "male"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 9.6,
+        "words": [
+          {
+            "word": "na",
+            "start": 0.91,
+            "end": 1.22
+          },
+          {
+            "word": "ja",
+            "start": 1.22,
+            "end": 1.65
+          },
+          {
+            "word": "ehrlich",
+            "start": 1.96,
+            "end": 2.22
+          },
+          {
+            "word": "gesagt",
+            "start": 2.24,
+            "end": 2.62
+          },
+          {
+            "word": "hat",
+            "start": 2.62,
+            "end": 2.78
+          },
+          {
+            "word": "mir",
+            "start": 2.78,
+            "end": 2.86
+          },
+          {
+            "word": "der",
+            "start": 2.86,
+            "end": 2.98
+          },
+          {
+            "word": "film",
+            "start": 3.02,
+            "end": 3.26
+          },
+          {
+            "word": "nicht",
+            "start": 3.26,
+            "end": 3.46
+          },
+          {
+            "word": "so",
+            "start": 3.46,
+            "end": 3.58
+          },
+          {
+            "word": "gut",
+            "start": 3.58,
+            "end": 3.72
+          },
+          {
+            "word": "gefallen",
+            "start": 3.76,
+            "end": 4.18
+          },
+          {
+            "word": "die",
+            "start": 4.8,
+            "end": 4.9
+          },
+          {
+            "word": "geschichte",
+            "start": 4.9,
+            "end": 5.3
+          },
+          {
+            "word": "war",
+            "start": 5.3,
+            "end": 5.42
+          },
+          {
+            "word": "ganz",
+            "start": 5.42,
+            "end": 5.62
+          },
+          {
+            "word": "okay",
+            "start": 5.62,
+            "end": 6.26
+          },
+          {
+            "word": "aber",
+            "start": 6.26,
+            "end": 6.77
+          },
+          {
+            "word": "das",
+            "start": 7.14,
+            "end": 7.42
+          },
+          {
+            "word": "ende",
+            "start": 7.42,
+            "end": 7.7
+          },
+          {
+            "word": "war",
+            "start": 7.7,
+            "end": 7.84
+          },
+          {
+            "word": "mir",
+            "start": 7.84,
+            "end": 7.94
+          },
+          {
+            "word": "einfach",
+            "start": 7.96,
+            "end": 8.38
+          },
+          {
+            "word": "zu",
+            "start": 8.38,
+            "end": 8.58
+          },
+          {
+            "word": "vorhersehbar",
+            "start": 8.62,
+            "end": 9.4
+          }
+        ]
+      }
+    },
+    {
+      "id": "de_0107",
+      "name": "de_0107.wav",
+      "synthetic": false,
+      "transcript": "für den teig brauchen sie zweihundertfünfzig gramm mehl zwei eier und eine prise salz alles gut verrühren und dann etwa eine halbe stunde im kühlschrank ruhen lassen",
+      "source": {
+        "voice": {
+          "name": "Carola - Sharp and Clear",
+          "gender": "female"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 11.68,
+        "words": [
+          {
+            "word": "für",
+            "start": 0.84,
+            "end": 0.98
+          },
+          {
+            "word": "den",
+            "start": 0.98,
+            "end": 1.16
+          },
+          {
+            "word": "teig",
+            "start": 1.16,
+            "end": 1.44
+          },
+          {
+            "word": "brauchen",
+            "start": 1.5,
+            "end": 1.94
+          },
+          {
+            "word": "sie",
+            "start": 1.94,
+            "end": 2.19
+          },
+          {
+            "word": "zweihundertfünfzig",
+            "start": 2.26,
+            "end": 3.24
+          },
+          {
+            "word": "gramm",
+            "start": 3.26,
+            "end": 3.54
+          },
+          {
+            "word": "mehl",
+            "start": 3.54,
+            "end": 3.85
+          },
+          {
+            "word": "zwei",
+            "start": 4.26,
+            "end": 4.62
+          },
+          {
+            "word": "eier",
+            "start": 4.62,
+            "end": 5.08
+          },
+          {
+            "word": "und",
+            "start": 5.08,
+            "end": 5.38
+          },
+          {
+            "word": "eine",
+            "start": 5.38,
+            "end": 5.58
+          },
+          {
+            "word": "prise",
+            "start": 5.6,
+            "end": 5.96
+          },
+          {
+            "word": "salz",
+            "start": 5.96,
+            "end": 6.32
+          },
+          {
+            "word": "alles",
+            "start": 7.15,
+            "end": 7.42
+          },
+          {
+            "word": "gut",
+            "start": 7.46,
+            "end": 7.62
+          },
+          {
+            "word": "verrühren",
+            "start": 7.66,
+            "end": 8.38
+          },
+          {
+            "word": "und",
+            "start": 8.38,
+            "end": 8.58
+          },
+          {
+            "word": "dann",
+            "start": 8.58,
+            "end": 8.9
+          },
+          {
+            "word": "etwa",
+            "start": 8.9,
+            "end": 9.2
+          },
+          {
+            "word": "eine",
+            "start": 9.2,
+            "end": 9.48
+          },
+          {
+            "word": "halbe",
+            "start": 9.48,
+            "end": 9.82
+          },
+          {
+            "word": "stunde",
+            "start": 9.82,
+            "end": 10.24
+          },
+          {
+            "word": "im",
+            "start": 10.24,
+            "end": 10.36
+          },
+          {
+            "word": "kühlschrank",
+            "start": 10.4,
+            "end": 10.88
+          },
+          {
+            "word": "ruhen",
+            "start": 10.94,
+            "end": 11.2
+          },
+          {
+            "word": "lassen",
+            "start": 11.2,
+            "end": 11.49
+          }
+        ]
+      }
+    },
+    {
+      "id": "de_0108",
+      "name": "de_0108.wav",
+      "synthetic": false,
+      "transcript": "ja genau bis morgen dann",
+      "source": {
+        "voice": {
+          "name": "Stephan - Warm and Friendly",
+          "gender": "male"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 2.96,
+        "words": [
+          {
+            "word": "ja",
+            "start": 0.74,
+            "end": 1.04
+          },
+          {
+            "word": "genau",
+            "start": 1.2,
+            "end": 1.5
+          },
+          {
+            "word": "bis",
+            "start": 2.1,
+            "end": 2.26
+          },
+          {
+            "word": "morgen",
+            "start": 2.26,
+            "end": 2.56
+          },
+          {
+            "word": "dann",
+            "start": 2.56,
+            "end": 2.74
+          }
+        ]
+      }
+    },
+    {
+      "id": "de_0109",
+      "name": "de_0109.wav",
+      "synthetic": true,
+      "transcript": "in dreihundert metern links abbiegen danach der straße für zwei kilometer folgen",
+      "source": {
+        "voice": {
+          "name": "Leonie - Clear and Engaging",
+          "gender": "female"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 7.16,
+        "words": [
+          {
+            "word": "in",
+            "start": 0.3,
+            "end": 0.49
+          },
+          {
+            "word": "dreihundert",
+            "start": 0.65,
+            "end": 1.27
+          },
+          {
+            "word": "metern",
+            "start": 1.43,
+            "end": 2.03
+          },
+          {
+            "word": "links",
+            "start": 2.19,
+            "end": 2.57
+          },
+          {
+            "word": "abbiegen",
+            "start": 2.73,
+            "end": 3.23
+          },
+          {
+            "word": "danach",
+            "start": 3.39,
+            "end": 3.88
+          },
+          {
+            "word": "der",
+            "start": 4.04,
+            "end": 4.16
+          },
+          {
+            "word": "straße",
+            "start": 4.32,
+            "end": 4.78
+          },
+          {
+            "word": "für",
+            "start": 4.94,
+            "end": 5.18
+          },
+          {
+            "word": "zwei",
+            "start": 5.34,
+            "end": 5.6
+          },
+          {
+            "word": "kilometer",
+            "start": 5.76,
+            "end": 6.32
+          },
+          {
+            "word": "folgen",
+            "start": 6.48,
+            "end": 6.86
+          }
+        ]
+      }
+    },
+    {
+      "id": "de_0110",
+      "name": "de_0110.wav",
+      "synthetic": false,
+      "transcript": "hallo hier ist jana von der praxis doktor weber ich wollte ihnen nur kurz bescheid geben dass ihr termin am donnerstag leider ausfallen muss können sie uns vielleicht zurückrufen damit wir einen neuen termin vereinbaren",
+      "source": {
+        "voice": {
+          "name": "Ava - Youthful, Authentic and Friendly",
+          "gender": "female"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 13.6,
+        "words": [
+          {
+            "word": "hallo",
+            "start": 1.02,
+            "end": 1.49
+          },
+          {
+            "word": "hier",
+            "start": 1.84,
+            "end": 2.0
+          },
+          {
+            "word": "ist",
+            "start": 2.0,
+            "end": 2.2
+          },
+          {
+            "word": "jana",
+            "start": 2.2,
+            "end": 2.54
+          },
+          {
+            "word": "von",
+            "start": 2.6,
+            "end": 2.74
+          },
+          {
+            "word": "der",
+            "start": 2.74,
+            "end": 2.86
+          },
+          {
+            "word": "praxis",
+            "start": 2.86,
+            "end": 3.22
+          },
+          {
+            "word": "doktor",
+            "start": 3.24,
+            "end": 3.58
+          },
+          {
+            "word": "weber",
+            "start": 3.58,
+            "end": 3.88
+          },
+          {
+            "word": "ich",
+            "start": 4.95,
+            "end": 5.1
+          },
+          {
+            "word": "wollte",
+            "start": 5.1,
+            "end": 5.36
+          },
+          {
+            "word": "ihnen",
+            "start": 5.36,
+            "end": 5.56
+          },
+          {
+            "word": "nur",
+            "start": 5.56,
+            "end": 5.7
+          },
+          {
+            "word": "kurz",
+            "start": 5.74,
+            "end": 5.96
+          },
+          {
+            "word": "bescheid",
+            "start": 5.98,
+            "end": 6.42
+          },
+          {
+            "word": "geben",
+            "start": 6.46,
+            "end": 6.88
+          },
+          {
+            "word": "dass",
+            "start": 6.88,
+            "end": 7.04
+          },
+          {
+            "word": "ihr",
+            "start": 7.06,
+            "end": 7.16
+          },
+          {
+            "word": "termin",
+            "start": 7.22,
+            "end": 7.6
+          },
+          {
+            "word": "am",
+            "start": 7.6,
+            "end": 7.74
+          },
+          {
+            "word": "donnerstag",
+            "start": 7.74,
+            "end": 8.3
+          },
+          {
+            "word": "leider",
+            "start": 8.3,
+            "end": 8.6
+          },
+          {
+            "word": "ausfallen",
+            "start": 8.6,
+            "end": 9.12
+          },
+          {
+            "word": "muss",
+            "start": 9.12,
+            "end": 9.36
+          },
+          {
+            "word": "können",
+            "start": 9.92,
+            "end": 10.14
+          },
+          {
+            "word": "sie",
+            "start": 10.14,
+            "end": 10.26
+          },
+          {
+            "word": "uns",
+            "start": 10.26,
+            "end": 10.38
+          },
+          {
+            "word": "vielleicht",
+            "start": 10.4,
+            "end": 10.72
+          },
+          {
+            "word": "zurückrufen",
+            "start": 10.72,
+            "end": 11.25
+          },
+          {
+            "word": "damit",
+            "start": 11.29,
+            "end": 11.7
+          },
+          {
+            "word": "wir",
+            "start": 11.74,
+            "end": 11.88
+          },
+          {
+            "word": "einen",
+            "start": 11.88,
+            "end": 12.08
+          },
+          {
+            "word": "neuen",
+            "start": 12.08,
+            "end": 12.28
+          },
+          {
+            "word": "termin",
+            "start": 12.32,
+            "end": 12.6
+          },
+          {
+            "word": "vereinbaren",
+            "start": 12.64,
+            "end": 13.24
+          }
+        ]
+      }
+    },
+    {
+      "id": "de_0111",
+      "name": "de_0111.wav",
+      "synthetic": false,
+      "transcript": "also die zahlen für das dritte quartal sehen insgesamt ganz gut aus der umsatz ist um acht prozent gestiegen aber bei den kosten müssen wir ähm noch mal genauer hinschauen",
+      "source": {
+        "voice": {
+          "name": "Marc - Pleasant and Interesting",
+          "gender": "male"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 12.96,
+        "words": [
+          {
+            "word": "also",
+            "start": 0.72,
+            "end": 1.3
+          },
+          {
+            "word": "die",
+            "start": 1.62,
+            "end": 1.86
+          },
+          {
+            "word": "zahlen",
+            "start": 1.86,
+            "end": 2.22
+          },
+          {
+            "word": "für",
+            "start": 2.22,
+            "end": 2.36
+          },
+          {
+            "word": "das",
+            "start": 2.36,
+            "end": 2.52
+          },
+          {
+            "word": "dritte",
+            "start": 2.54,
+            "end": 2.8
+          },
+          {
+            "word": "quartal",
+            "start": 2.84,
+            "end": 3.42
+          },
+          {
+            "word": "sehen",
+            "start": 3.42,
+            "end": 3.74
+          },
+          {
+            "word": "insgesamt",
+            "start": 3.74,
+            "end": 4.22
+          },
+          {
+            "word": "ganz",
+            "start": 4.24,
+            "end": 4.44
+          },
+          {
+            "word": "gut",
+            "start": 4.48,
+            "end": 4.76
+          },
+          {
+            "word": "aus",
+            "start": 4.76,
+            "end": 4.97
+          },
+          {
+            "word": "der",
+            "start": 5.52,
+            "end": 5.68
+          },
+          {
+            "word": "umsatz",
+            "start": 5.68,
+            "end": 6.16
+          },
+          {
+            "word": "ist",
+            "start": 6.16,
+            "end": 6.32
+          },
+          {
+            "word": "um",
+            "start": 6.32,
+            "end": 6.56
+          },
+          {
+            "word": "acht",
+            "start": 6.56,
+            "end": 6.74
+          },
+          {
+            "word": "prozent",
+            "start": 6.76,
+            "end": 7.14
+          },
+          {
+            "word": "gestiegen",
+            "start": 7.18,
+            "end": 7.75
+          },
+          {
+            "word": "aber",
+            "start": 8.4,
+            "end": 8.62
+          },
+          {
+            "word": "bei",
+            "start": 8.62,
+            "end": 8.76
+          },
+          {
+            "word": "den",
+            "start": 8.76,
+            "end": 9.04
+          },
+          {
+            "word": "kosten",
+            "start": 9.04,
+            "end": 9.6
+          },
+          {
+            "word": "müssen",
+            "start": 9.6,
+            "end": 9.94
+          },
+          {
+            "word": "wir",
+            "start": 9.94,
+            "end": 10.46
+          },
+          {
+            "word": "ähm",
+            "start": 10.63,
+            "end": 11.03
+          },
+          {
+            "word": "noch",
+            "start": 11.29,
+            "end": 11.6
+          },
+          {
+            "word": "mal",
+            "start": 11.6,
+            "end": 11.74
+          },
+          {
+            "word": "genauer",
+            "start": 11.74,
+            "end": 12.18
+          },
+          {
+            "word": "hinschauen",
+            "start": 12.18,
+            "end": 12.7
+          }
+        ]
+      }
+    },
+    {
+      "id": "de_0112",
+      "name": "de_0112.wav",
+      "synthetic": true,
+      "transcript": "sehr geehrte fahrgäste aufgrund von bauarbeiten fährt die linie sieben heute nur bis zum hauptfriedhof bitte nutzen sie den ersatzverkehr mit bussen",
+      "source": {
+        "voice": {
+          "name": "Petra - Confident and Pleasant",
+          "gender": "female"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 11.75,
+        "words": [
+          {
+            "word": "sehr",
+            "start": 0.3,
+            "end": 0.62
+          },
+          {
+            "word": "geehrte",
+            "start": 0.78,
+            "end": 1.18
+          },
+          {
+            "word": "fahrgäste",
+            "start": 1.34,
+            "end": 1.96
+          },
+          {
+            "word": "aufgrund",
+            "start": 2.12,
+            "end": 2.51
+          },
+          {
+            "word": "von",
+            "start": 2.67,
+            "end": 2.89
+          },
+          {
+            "word": "bauarbeiten",
+            "start": 3.05,
+            "end": 3.93
+          },
+          {
+            "word": "fährt",
+            "start": 4.09,
+            "end": 4.29
+          },
+          {
+            "word": "die",
+            "start": 4.45,
+            "end": 4.59
+          },
+          {
+            "word": "linie",
+            "start": 4.75,
+            "end": 5.13
+          },
+          {
+            "word": "sieben",
+            "start": 5.29,
+            "end": 5.71
+          },
+          {
+            "word": "heute",
+            "start": 5.87,
+            "end": 6.25
+          },
+          {
+            "word": "nur",
+            "start": 6.41,
+            "end": 6.62
+          },
+          {
+            "word": "bis",
+            "start": 6.78,
+            "end": 6.92
+          },
+          {
+            "word": "zum",
+            "start": 7.08,
+            "end": 7.24
+          },
+          {
+            "word": "hauptfriedhof",
+            "start": 7.4,
+            "end": 8.09
+          },
+          {
+            "word": "bitte",
+            "start": 8.25,
+            "end": 8.53
+          },
+          {
+            "word": "nutzen",
+            "start": 8.69,
+            "end": 9.07
+          },
+          {
+            "word": "sie",
+            "start": 9.23,
+            "end": 9.33
+          },
+          {
+            "word": "den",
+            "start": 9.49,
+            "end": 9.669
+          },
+          {
+            "word": "ersatzverkehr",
+            "start": 9.829,
+            "end": 10.61
+          },
+          {
+            "word": "mit",
+            "start": 10.77,
+            "end": 10.93
+          },
+          {
+            "word": "bussen",
+            "start": 11.09,
+            "end": 11.45
+          }
+        ]
+      }
+    },
+    {
+      "id": "de_0113",
+      "name": "de_0113.wav",
+      "synthetic": false,
+      "transcript": "mensch ich hab meinen schlüssel schon wieder im büro liegen lassen",
+      "source": {
+        "voice": {
+          "name": "Johannes - Clear and Neutral",
+          "gender": "male"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 4.56,
+        "words": [
+          {
+            "word": "mensch",
+            "start": 0.63,
+            "end": 1.32
+          },
+          {
+            "word": "ich",
+            "start": 1.64,
+            "end": 1.8
+          },
+          {
+            "word": "hab",
+            "start": 1.8,
+            "end": 1.98
+          },
+          {
+            "word": "meinen",
+            "start": 1.98,
+            "end": 2.18
+          },
+          {
+            "word": "schlüssel",
+            "start": 2.18,
+            "end": 2.58
+          },
+          {
+            "word": "schon",
+            "start": 2.58,
+            "end": 2.94
+          },
+          {
+            "word": "wieder",
+            "start": 2.94,
+            "end": 3.28
+          },
+          {
+            "word": "im",
+            "start": 3.28,
+            "end": 3.4
+          },
+          {
+            "word": "büro",
+            "start": 3.4,
+            "end": 3.76
+          },
+          {
+            "word": "liegen",
+            "start": 3.76,
+            "end": 4.019
+          },
+          {
+            "word": "lassen",
+            "start": 4.019,
+            "end": 4.39
+          }
+        ]
+      }
+    },
+    {
+      "id": "de_0114",
+      "name": "de_0114.wav",
+      "synthetic": false,
+      "transcript": "als ich klein war haben wir jeden sommer bei meiner tante am bodensee verbracht wir sind morgens schwimmen gegangen haben eis gegessen und abends saßen alle zusammen im garten das war wirklich eine schöne zeit",
+      "source": {
+        "voice": {
+          "name": "Luisa - Confident and Patient",
+          "gender": "female"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 14.64,
+        "words": [
+          {
+            "word": "als",
+            "start": 1.07,
+            "end": 1.28
+          },
+          {
+            "word": "ich",
+            "start": 1.28,
+            "end": 1.38
+          },
+          {
+            "word": "klein",
+            "start": 1.42,
+            "end": 1.78
+          },
+          {
+            "word": "war",
+            "start": 1.78,
+            "end": 2.16
+          },
+          {
+            "word": "haben",
+            "start": 2.16,
+            "end": 2.4
+          },
+          {
+            "word": "wir",
+            "start": 2.4,
+            "end": 2.64
+          },
+          {
+            "word": "jeden",
+            "start": 2.64,
+            "end": 2.98
+          },
+          {
+            "word": "sommer",
+            "start": 2.98,
+            "end": 3.28
+          },
+          {
+            "word": "bei",
+            "start": 3.28,
+            "end": 3.42
+          },
+          {
+            "word": "meiner",
+            "start": 3.42,
+            "end": 3.64
+          },
+          {
+            "word": "tante",
+            "start": 3.7,
+            "end": 4.019
+          },
+          {
+            "word": "am",
+            "start": 4.019,
+            "end": 4.18
+          },
+          {
+            "word": "bodensee",
+            "start": 4.18,
+            "end": 4.62
+          },
+          {
+            "word": "verbracht",
+            "start": 4.66,
+            "end": 5.13
+          },
+          {
+            "word": "wir",
+            "start": 6.2,
+            "end": 6.32
+          },
+          {
+            "word": "sind",
+            "start": 6.32,
+            "end": 6.5
+          },
+          {
+            "word": "morgens",
+            "start": 6.5,
+            "end": 6.86
+          },
+          {
+            "word": "schwimmen",
+            "start": 6.86,
+            "end": 7.2
+          },
+          {
+            "word": "gegangen",
+            "start": 7.2,
+            "end": 7.82
+          },
+          {
+            "word": "haben",
+            "start": 7.88,
+            "end": 8.22
+          },
+          {
+            "word": "eis",
+            "start": 8.22,
+            "end": 8.44
+          },
+          {
+            "word": "gegessen",
+            "start": 8.46,
+            "end": 9.09
+          },
+          {
+            "word": "und",
+            "start": 9.25,
+            "end": 9.5
+          },
+          {
+            "word": "abends",
+            "start": 9.5,
+            "end": 9.8
+          },
+          {
+            "word": "saßen",
+            "start": 9.84,
+            "end": 10.24
+          },
+          {
+            "word": "alle",
+            "start": 10.24,
+            "end": 10.46
+          },
+          {
+            "word": "zusammen",
+            "start": 10.46,
+            "end": 10.86
+          },
+          {
+            "word": "im",
+            "start": 10.86,
+            "end": 11.0
+          },
+          {
+            "word": "garten",
+            "start": 11.0,
+            "end": 11.42
+          },
+          {
+            "word": "das",
+            "start": 12.68,
+            "end": 12.82
+          },
+          {
+            "word": "war",
+            "start": 12.86,
+            "end": 13.12
+          },
+          {
+            "word": "wirklich",
+            "start": 13.12,
+            "end": 13.52
+          },
+          {
+            "word": "eine",
+            "start": 13.52,
+            "end": 13.76
+          },
+          {
+            "word": "schöne",
+            "start": 13.76,
+            "end": 14.06
+          },
+          {
+            "word": "zeit",
+            "start": 14.16,
+            "end": 14.45
+          }
+        ]
+      }
+    },
+    {
+      "id": "de_0115",
+      "name": "de_0115.wav",
+      "synthetic": false,
+      "transcript": "grüß gott ich hätte gern zwei semmeln und ein stück von dem apfelstrudel bitte",
+      "source": {
+        "voice": {
+          "name": "Gruber - Clear and Modest",
+          "gender": "male"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 5.84,
+        "words": [
+          {
+            "word": "grüß",
+            "start": 0.94,
+            "end": 1.16
+          },
+          {
+            "word": "gott",
+            "start": 1.16,
+            "end": 1.41
+          },
+          {
+            "word": "ich",
+            "start": 2.03,
+            "end": 2.16
+          },
+          {
+            "word": "hätte",
+            "start": 2.16,
+            "end": 2.38
+          },
+          {
+            "word": "gern",
+            "start": 2.38,
+            "end": 2.72
+          },
+          {
+            "word": "zwei",
+            "start": 2.72,
+            "end": 3.08
+          },
+          {
+            "word": "semmeln",
+            "start": 3.08,
+            "end": 3.6
+          },
+          {
+            "word": "und",
+            "start": 3.6,
+            "end": 3.92
+          },
+          {
+            "word": "ein",
+            "start": 3.92,
+            "end": 4.1
+          },
+          {
+            "word": "stück",
+            "start": 4.1,
+            "end": 4.36
+          },
+          {
+            "word": "von",
+            "start": 4.36,
+            "end": 4.48
+          },
+          {
+            "word": "dem",
+            "start": 4.48,
+            "end": 4.68
+          },
+          {
+            "word": "apfelstrudel",
+            "start": 4.68,
+            "end": 5.34
+          },
+          {
+            "word": "bitte",
+            "start": 5.38,
+            "end": 5.62
+          }
+        ]
+      }
+    },
+    {
+      "id": "de_0116",
+      "name": "de_0116.wav",
+      "synthetic": true,
+      "transcript": "ihre bestellung mit der nummer vier sieben eins zwei wurde versendet und wird voraussichtlich am freitag zugestellt",
+      "source": {
+        "voice": {
+          "name": "Laura - Sharp and Professional",
+          "gender": "female"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 9.54,
+        "words": [
+          {
+            "word": "ihre",
+            "start": 0.3,
+            "end": 0.5
+          },
+          {
+            "word": "bestellung",
+            "start": 0.66,
+            "end": 1.2
+          },
+          {
+            "word": "mit",
+            "start": 1.36,
+            "end": 1.5
+          },
+          {
+            "word": "der",
+            "start": 1.66,
+            "end": 1.78
+          },
+          {
+            "word": "nummer",
+            "start": 1.94,
+            "end": 2.35
+          },
+          {
+            "word": "vier",
+            "start": 2.51,
+            "end": 2.87
+          },
+          {
+            "word": "sieben",
+            "start": 3.03,
+            "end": 3.37
+          },
+          {
+            "word": "eins",
+            "start": 3.53,
+            "end": 3.95
+          },
+          {
+            "word": "zwei",
+            "start": 4.11,
+            "end": 4.55
+          },
+          {
+            "word": "wurde",
+            "start": 4.71,
+            "end": 4.91
+          },
+          {
+            "word": "versendet",
+            "start": 5.07,
+            "end": 5.85
+          },
+          {
+            "word": "und",
+            "start": 6.01,
+            "end": 6.21
+          },
+          {
+            "word": "wird",
+            "start": 6.37,
+            "end": 6.51
+          },
+          {
+            "word": "voraussichtlich",
+            "start": 6.67,
+            "end": 7.45
+          },
+          {
+            "word": "am",
+            "start": 7.61,
+            "end": 7.77
+          },
+          {
+            "word": "freitag",
+            "start": 7.93,
+            "end": 8.45
+          },
+          {
+            "word": "zugestellt",
+            "start": 8.61,
+            "end": 9.24
+          }
+        ]
+      }
+    },
+    {
+      "id": "de_0117",
+      "name": "de_0117.wav",
+      "synthetic": false,
+      "transcript": "echt jetzt das hast du ganz allein geschafft wahnsinn das hätte ich nie gedacht",
+      "source": {
+        "voice": {
+          "name": "Mila - Confident and Opinionated",
+          "gender": "female"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 7.52,
+        "words": [
+          {
+            "word": "echt",
+            "start": 0.67,
+            "end": 1.04
+          },
+          {
+            "word": "jetzt",
+            "start": 1.04,
+            "end": 1.36
+          },
+          {
+            "word": "das",
+            "start": 1.74,
+            "end": 1.88
+          },
+          {
+            "word": "hast",
+            "start": 1.88,
+            "end": 2.06
+          },
+          {
+            "word": "du",
+            "start": 2.06,
+            "end": 2.28
+          },
+          {
+            "word": "ganz",
+            "start": 2.28,
+            "end": 2.6
+          },
+          {
+            "word": "allein",
+            "start": 2.6,
+            "end": 3.0
+          },
+          {
+            "word": "geschafft",
+            "start": 3.0,
+            "end": 3.48
+          },
+          {
+            "word": "wahnsinn",
+            "start": 4.71,
+            "end": 5.53
+          },
+          {
+            "word": "das",
+            "start": 5.77,
+            "end": 5.98
+          },
+          {
+            "word": "hätte",
+            "start": 5.98,
+            "end": 6.22
+          },
+          {
+            "word": "ich",
+            "start": 6.22,
+            "end": 6.5
+          },
+          {
+            "word": "nie",
+            "start": 6.5,
+            "end": 6.7
+          },
+          {
+            "word": "gedacht",
+            "start": 6.7,
+            "end": 7.14
+          }
+        ]
+      }
+    },
+    {
+      "id": "de_0118",
+      "name": "de_0118.wav",
+      "synthetic": false,
+      "transcript": "kurz zum wetter am wochenende wird es ziemlich ungemütlich es bleibt grau und regnerisch und die temperaturen liegen nur bei acht bis zehn grad erst ab dienstag soll es wieder freundlicher werden",
+      "source": {
+        "voice": {
+          "name": "Christian Plasa - Soft and Mild",
+          "gender": "male"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 12.4,
+        "words": [
+          {
+            "word": "kurz",
+            "start": 0.7,
+            "end": 0.98
+          },
+          {
+            "word": "zum",
+            "start": 0.98,
+            "end": 1.14
+          },
+          {
+            "word": "wetter",
+            "start": 1.14,
+            "end": 1.6
+          },
+          {
+            "word": "am",
+            "start": 2.03,
+            "end": 2.24
+          },
+          {
+            "word": "wochenende",
+            "start": 2.24,
+            "end": 2.78
+          },
+          {
+            "word": "wird",
+            "start": 2.78,
+            "end": 2.94
+          },
+          {
+            "word": "es",
+            "start": 2.94,
+            "end": 3.24
+          },
+          {
+            "word": "ziemlich",
+            "start": 3.24,
+            "end": 3.72
+          },
+          {
+            "word": "ungemütlich",
+            "start": 3.72,
+            "end": 4.36
+          },
+          {
+            "word": "es",
+            "start": 5.1,
+            "end": 5.2
+          },
+          {
+            "word": "bleibt",
+            "start": 5.24,
+            "end": 5.5
+          },
+          {
+            "word": "grau",
+            "start": 5.5,
+            "end": 5.9
+          },
+          {
+            "word": "und",
+            "start": 5.9,
+            "end": 6.08
+          },
+          {
+            "word": "regnerisch",
+            "start": 6.08,
+            "end": 6.81
+          },
+          {
+            "word": "und",
+            "start": 6.91,
+            "end": 7.02
+          },
+          {
+            "word": "die",
+            "start": 7.06,
+            "end": 7.18
+          },
+          {
+            "word": "temperaturen",
+            "start": 7.18,
+            "end": 7.92
+          },
+          {
+            "word": "liegen",
+            "start": 7.92,
+            "end": 8.16
+          },
+          {
+            "word": "nur",
+            "start": 8.16,
+            "end": 8.3
+          },
+          {
+            "word": "bei",
+            "start": 8.3,
+            "end": 8.58
+          },
+          {
+            "word": "acht",
+            "start": 8.58,
+            "end": 8.78
+          },
+          {
+            "word": "bis",
+            "start": 8.82,
+            "end": 9.12
+          },
+          {
+            "word": "zehn",
+            "start": 9.12,
+            "end": 9.36
+          },
+          {
+            "word": "grad",
+            "start": 9.38,
+            "end": 9.72
+          },
+          {
+            "word": "erst",
+            "start": 10.2,
+            "end": 10.4
+          },
+          {
+            "word": "ab",
+            "start": 10.4,
+            "end": 10.52
+          },
+          {
+            "word": "dienstag",
+            "start": 10.54,
+            "end": 11.04
+          },
+          {
+            "word": "soll",
+            "start": 11.04,
+            "end": 11.18
+          },
+          {
+            "word": "es",
+            "start": 11.18,
+            "end": 11.26
+          },
+          {
+            "word": "wieder",
+            "start": 11.3,
+            "end": 11.48
+          },
+          {
+            "word": "freundlicher",
+            "start": 11.52,
+            "end": 12.0
+          },
+          {
+            "word": "werden",
+            "start": 12.0,
+            "end": 12.26
+          }
+        ]
+      }
+    },
+    {
+      "id": "de_0119",
+      "name": "de_0119.wav",
+      "synthetic": true,
+      "transcript": "willkommen bei der kundenhotline ihr anruf wird in kürze entgegengenommen die aktuelle wartezeit beträgt etwa drei minuten",
+      "source": {
+        "voice": {
+          "name": "Nils - Clear and Neutral",
+          "gender": "male"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 9.9,
+        "words": [
+          {
+            "word": "willkommen",
+            "start": 0.3,
+            "end": 0.87
+          },
+          {
+            "word": "bei",
+            "start": 1.03,
+            "end": 1.17
+          },
+          {
+            "word": "der",
+            "start": 1.33,
+            "end": 1.51
+          },
+          {
+            "word": "kundenhotline",
+            "start": 1.67,
+            "end": 2.44
+          },
+          {
+            "word": "ihr",
+            "start": 2.6,
+            "end": 2.79
+          },
+          {
+            "word": "anruf",
+            "start": 2.95,
+            "end": 3.33
+          },
+          {
+            "word": "wird",
+            "start": 3.49,
+            "end": 3.71
+          },
+          {
+            "word": "in",
+            "start": 3.87,
+            "end": 4.03
+          },
+          {
+            "word": "kürze",
+            "start": 4.19,
+            "end": 4.57
+          },
+          {
+            "word": "entgegengenommen",
+            "start": 4.73,
+            "end": 5.55
+          },
+          {
+            "word": "die",
+            "start": 5.71,
+            "end": 5.87
+          },
+          {
+            "word": "aktuelle",
+            "start": 6.03,
+            "end": 6.49
+          },
+          {
+            "word": "wartezeit",
+            "start": 6.65,
+            "end": 7.29
+          },
+          {
+            "word": "beträgt",
+            "start": 7.45,
+            "end": 7.89
+          },
+          {
+            "word": "etwa",
+            "start": 8.05,
+            "end": 8.45
+          },
+          {
+            "word": "drei",
+            "start": 8.61,
+            "end": 8.91
+          },
+          {
+            "word": "minuten",
+            "start": 9.07,
+            "end": 9.6
+          }
+        ]
+      }
+    },
+    {
+      "id": "de_0120",
+      "name": "de_0120.wav",
+      "synthetic": false,
+      "transcript": "bitte schicken sie mir die unterlagen per e-mail an info at becker minus bau punkt d. e. ich schaue sie mir dann bis montag an",
+      "source": {
+        "voice": {
+          "name": "Carla Blum - Confident and Informative",
+          "gender": "female"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 9.36,
+        "words": [
+          {
+            "word": "bitte",
+            "start": 1.1,
+            "end": 1.34
+          },
+          {
+            "word": "schicken",
+            "start": 1.34,
+            "end": 1.64
+          },
+          {
+            "word": "sie",
+            "start": 1.64,
+            "end": 1.76
+          },
+          {
+            "word": "mir",
+            "start": 1.76,
+            "end": 1.9
+          },
+          {
+            "word": "die",
+            "start": 1.9,
+            "end": 2.06
+          },
+          {
+            "word": "unterlagen",
+            "start": 2.06,
+            "end": 2.64
+          },
+          {
+            "word": "per",
+            "start": 2.64,
+            "end": 2.9
+          },
+          {
+            "word": "e-mail",
+            "start": 2.9,
+            "end": 3.42
+          },
+          {
+            "word": "an",
+            "start": 3.42,
+            "end": 3.76
+          },
+          {
+            "word": "info",
+            "start": 3.76,
+            "end": 4.26
+          },
+          {
+            "word": "at",
+            "start": 4.26,
+            "end": 4.48
+          },
+          {
+            "word": "becker",
+            "start": 4.52,
+            "end": 4.94
+          },
+          {
+            "word": "minus",
+            "start": 4.94,
+            "end": 5.3
+          },
+          {
+            "word": "bau",
+            "start": 5.34,
+            "end": 5.68
+          },
+          {
+            "word": "punkt",
+            "start": 5.68,
+            "end": 5.96
+          },
+          {
+            "word": "d.",
+            "start": 5.96,
+            "end": 6.22
+          },
+          {
+            "word": "e.",
+            "start": 6.22,
+            "end": 6.38
+          },
+          {
+            "word": "ich",
+            "start": 7.35,
+            "end": 7.5
+          },
+          {
+            "word": "schaue",
+            "start": 7.5,
+            "end": 7.78
+          },
+          {
+            "word": "sie",
+            "start": 7.78,
+            "end": 7.9
+          },
+          {
+            "word": "mir",
+            "start": 7.9,
+            "end": 8.06
+          },
+          {
+            "word": "dann",
+            "start": 8.06,
+            "end": 8.26
+          },
+          {
+            "word": "bis",
+            "start": 8.26,
+            "end": 8.48
+          },
+          {
+            "word": "montag",
+            "start": 8.48,
+            "end": 8.96
+          },
+          {
+            "word": "an",
+            "start": 8.96,
+            "end": 9.1
+          }
+        ]
+      }
+    },
+    {
+      "id": "de_0121",
+      "name": "de_0121.wav",
+      "synthetic": false,
+      "transcript": "hm keine ahnung frag doch mal den thomas",
+      "source": {
+        "voice": {
+          "name": "Peter - Personal and Smooth",
+          "gender": "male"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 4.24,
+        "words": [
+          {
+            "word": "hm",
+            "start": 0.76,
+            "end": 0.96
+          },
+          {
+            "word": "keine",
+            "start": 1.48,
+            "end": 1.9
+          },
+          {
+            "word": "ahnung",
+            "start": 1.9,
+            "end": 2.28
+          },
+          {
+            "word": "frag",
+            "start": 2.92,
+            "end": 3.1
+          },
+          {
+            "word": "doch",
+            "start": 3.12,
+            "end": 3.3
+          },
+          {
+            "word": "mal",
+            "start": 3.3,
+            "end": 3.42
+          },
+          {
+            "word": "den",
+            "start": 3.42,
+            "end": 3.58
+          },
+          {
+            "word": "thomas",
+            "start": 3.58,
+            "end": 4.0
+          }
+        ]
+      }
+    },
+    {
+      "id": "de_0122",
+      "name": "de_0122.wav",
+      "synthetic": true,
+      "transcript": "achtung eine durchsage der flug l. h. vier fünf sechs nach lissabon ist jetzt zum einsteigen bereit bitte begeben sie sich zum ausgang b. zwölf",
+      "source": {
+        "voice": {
+          "name": "Yvonne - Casual and Natural",
+          "gender": "female"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 13.13,
+        "words": [
+          {
+            "word": "achtung",
+            "start": 0.3,
+            "end": 0.99
+          },
+          {
+            "word": "eine",
+            "start": 1.15,
+            "end": 1.37
+          },
+          {
+            "word": "durchsage",
+            "start": 1.53,
+            "end": 2.15
+          },
+          {
+            "word": "der",
+            "start": 2.31,
+            "end": 2.47
+          },
+          {
+            "word": "flug",
+            "start": 2.63,
+            "end": 3.09
+          },
+          {
+            "word": "l.",
+            "start": 3.25,
+            "end": 3.45
+          },
+          {
+            "word": "h.",
+            "start": 3.61,
+            "end": 3.96
+          },
+          {
+            "word": "vier",
+            "start": 4.12,
+            "end": 4.39
+          },
+          {
+            "word": "fünf",
+            "start": 4.55,
+            "end": 4.87
+          },
+          {
+            "word": "sechs",
+            "start": 5.03,
+            "end": 5.43
+          },
+          {
+            "word": "nach",
+            "start": 5.59,
+            "end": 5.81
+          },
+          {
+            "word": "lissabon",
+            "start": 5.97,
+            "end": 6.67
+          },
+          {
+            "word": "ist",
+            "start": 6.83,
+            "end": 7.03
+          },
+          {
+            "word": "jetzt",
+            "start": 7.19,
+            "end": 7.49
+          },
+          {
+            "word": "zum",
+            "start": 7.65,
+            "end": 7.85
+          },
+          {
+            "word": "einsteigen",
+            "start": 8.01,
+            "end": 8.49
+          },
+          {
+            "word": "bereit",
+            "start": 8.65,
+            "end": 9.03
+          },
+          {
+            "word": "bitte",
+            "start": 9.19,
+            "end": 9.39
+          },
+          {
+            "word": "begeben",
+            "start": 9.55,
+            "end": 9.95
+          },
+          {
+            "word": "sie",
+            "start": 10.11,
+            "end": 10.25
+          },
+          {
+            "word": "sich",
+            "start": 10.41,
+            "end": 10.65
+          },
+          {
+            "word": "zum",
+            "start": 10.81,
+            "end": 11.05
+          },
+          {
+            "word": "ausgang",
+            "start": 11.21,
+            "end": 11.75
+          },
+          {
+            "word": "b.",
+            "start": 11.91,
+            "end": 12.25
+          },
+          {
+            "word": "zwölf",
+            "start": 12.41,
+            "end": 12.83
+          }
+        ]
+      }
+    },
+    {
+      "id": "de_0123",
+      "name": "de_0123.wav",
+      "synthetic": false,
+      "transcript": "ich arbeite jetzt seit ungefähr fünf jahren als krankenpfleger die schichten sind manchmal echt anstrengend gerade nachts aber wenn man sieht dass es den patienten besser geht dann weiß man wofür man das macht",
+      "source": {
+        "voice": {
+          "name": "David - Charming and Soft",
+          "gender": "male"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 14.32,
+        "words": [
+          {
+            "word": "ich",
+            "start": 1.15,
+            "end": 1.38
+          },
+          {
+            "word": "arbeite",
+            "start": 1.38,
+            "end": 1.76
+          },
+          {
+            "word": "jetzt",
+            "start": 1.76,
+            "end": 2.02
+          },
+          {
+            "word": "seit",
+            "start": 2.02,
+            "end": 2.24
+          },
+          {
+            "word": "ungefähr",
+            "start": 2.24,
+            "end": 2.82
+          },
+          {
+            "word": "fünf",
+            "start": 2.82,
+            "end": 3.16
+          },
+          {
+            "word": "jahren",
+            "start": 3.16,
+            "end": 3.52
+          },
+          {
+            "word": "als",
+            "start": 3.52,
+            "end": 3.68
+          },
+          {
+            "word": "krankenpfleger",
+            "start": 3.72,
+            "end": 4.52
+          },
+          {
+            "word": "die",
+            "start": 5.62,
+            "end": 5.76
+          },
+          {
+            "word": "schichten",
+            "start": 5.76,
+            "end": 6.16
+          },
+          {
+            "word": "sind",
+            "start": 6.16,
+            "end": 6.34
+          },
+          {
+            "word": "manchmal",
+            "start": 6.34,
+            "end": 6.8
+          },
+          {
+            "word": "echt",
+            "start": 6.8,
+            "end": 7.1
+          },
+          {
+            "word": "anstrengend",
+            "start": 7.1,
+            "end": 7.83
+          },
+          {
+            "word": "gerade",
+            "start": 8.06,
+            "end": 8.46
+          },
+          {
+            "word": "nachts",
+            "start": 8.46,
+            "end": 8.98
+          },
+          {
+            "word": "aber",
+            "start": 8.98,
+            "end": 9.3
+          },
+          {
+            "word": "wenn",
+            "start": 9.94,
+            "end": 10.1
+          },
+          {
+            "word": "man",
+            "start": 10.1,
+            "end": 10.32
+          },
+          {
+            "word": "sieht",
+            "start": 10.32,
+            "end": 10.52
+          },
+          {
+            "word": "dass",
+            "start": 10.54,
+            "end": 10.7
+          },
+          {
+            "word": "es",
+            "start": 10.7,
+            "end": 10.8
+          },
+          {
+            "word": "den",
+            "start": 10.82,
+            "end": 10.96
+          },
+          {
+            "word": "patienten",
+            "start": 10.98,
+            "end": 11.54
+          },
+          {
+            "word": "besser",
+            "start": 11.56,
+            "end": 11.88
+          },
+          {
+            "word": "geht",
+            "start": 11.9,
+            "end": 12.26
+          },
+          {
+            "word": "dann",
+            "start": 12.53,
+            "end": 12.74
+          },
+          {
+            "word": "weiß",
+            "start": 12.74,
+            "end": 13.04
+          },
+          {
+            "word": "man",
+            "start": 13.04,
+            "end": 13.2
+          },
+          {
+            "word": "wofür",
+            "start": 13.2,
+            "end": 13.5
+          },
+          {
+            "word": "man",
+            "start": 13.5,
+            "end": 13.64
+          },
+          {
+            "word": "das",
+            "start": 13.64,
+            "end": 13.84
+          },
+          {
+            "word": "macht",
+            "start": 13.84,
+            "end": 14.1
+          }
+        ]
+      }
+    },
+    {
+      "id": "de_0124",
+      "name": "de_0124.wav",
+      "synthetic": false,
+      "transcript": "kannst du auf dem heimweg noch milch und brot mitbringen ach und vergiss die tomaten nicht",
+      "source": {
+        "voice": {
+          "name": "Louisa - Warm and Hopeful",
+          "gender": "female"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 6.32,
+        "words": [
+          {
+            "word": "kannst",
+            "start": 0.72,
+            "end": 0.96
+          },
+          {
+            "word": "du",
+            "start": 0.96,
+            "end": 1.04
+          },
+          {
+            "word": "auf",
+            "start": 1.04,
+            "end": 1.18
+          },
+          {
+            "word": "dem",
+            "start": 1.18,
+            "end": 1.38
+          },
+          {
+            "word": "heimweg",
+            "start": 1.38,
+            "end": 1.78
+          },
+          {
+            "word": "noch",
+            "start": 1.78,
+            "end": 2.02
+          },
+          {
+            "word": "milch",
+            "start": 2.02,
+            "end": 2.26
+          },
+          {
+            "word": "und",
+            "start": 2.26,
+            "end": 2.42
+          },
+          {
+            "word": "brot",
+            "start": 2.42,
+            "end": 2.7
+          },
+          {
+            "word": "mitbringen",
+            "start": 2.7,
+            "end": 3.12
+          },
+          {
+            "word": "ach",
+            "start": 4.1,
+            "end": 4.54
+          },
+          {
+            "word": "und",
+            "start": 4.54,
+            "end": 4.98
+          },
+          {
+            "word": "vergiss",
+            "start": 4.98,
+            "end": 5.24
+          },
+          {
+            "word": "die",
+            "start": 5.28,
+            "end": 5.4
+          },
+          {
+            "word": "tomaten",
+            "start": 5.4,
+            "end": 5.86
+          },
+          {
+            "word": "nicht",
+            "start": 5.86,
+            "end": 6.1
+          }
+        ]
+      }
+    },
+    {
+      "id": "de_0125",
+      "name": "de_0125.wav",
+      "synthetic": true,
+      "transcript": "die ausstellung ist täglich von zehn bis achtzehn uhr geöffnet am montag bleibt das museum geschlossen",
+      "source": {
+        "voice": {
+          "name": "Tristan Medersburg - Trustworthy",
+          "gender": "male"
+        },
+        "sample_rate_hz": 16000,
+        "duration_seconds": 8.14,
+        "words": [
+          {
+            "word": "die",
+            "start": 0.3,
+            "end": 0.47
+          },
+          {
+            "word": "ausstellung",
+            "start": 0.63,
+            "end": 1.17
+          },
+          {
+            "word": "ist",
+            "start": 1.33,
+            "end": 1.55
+          },
+          {
+            "word": "täglich",
+            "start": 1.71,
+            "end": 2.11
+          },
+          {
+            "word": "von",
+            "start": 2.27,
+            "end": 2.53
+          },
+          {
+            "word": "zehn",
+            "start": 2.69,
+            "end": 3.01
+          },
+          {
+            "word": "bis",
+            "start": 3.17,
+            "end": 3.41
+          },
+          {
+            "word": "achtzehn",
+            "start": 3.57,
+            "end": 3.99
+          },
+          {
+            "word": "uhr",
+            "start": 4.15,
+            "end": 4.31
+          },
+          {
+            "word": "geöffnet",
+            "start": 4.47,
+            "end": 5.01
+          },
+          {
+            "word": "am",
+            "start": 5.17,
+            "end": 5.34
+          },
+          {
+            "word": "montag",
+            "start": 5.5,
+            "end": 5.92
+          },
+          {
+            "word": "bleibt",
+            "start": 6.08,
+            "end": 6.28
+          },
+          {
+            "word": "das",
+            "start": 6.44,
+            "end": 6.6
+          },
+          {
+            "word": "museum",
+            "start": 6.76,
+            "end": 7.16
+          },
+          {
+            "word": "geschlossen",
+            "start": 7.32,
+            "end": 7.84
+          }
+        ]
+      }
+    }
+  ]
+}

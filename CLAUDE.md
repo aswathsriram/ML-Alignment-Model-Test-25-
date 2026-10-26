@@ -38,3 +38,8 @@ no "synthetic" field) with the injections in its PLAN, and the answer key (JSON 
 style, PDF, CSV). The user's aligner re-aligns words on ingest, so boundary mismatches must also be planted on
 the segment start/end. Planted boundary mismatches are intended: never "fix" them. Clean files must stay
 identical to the clean alignment.
+
+## German test set (german/)
+25 clean files (8 synthetic, 17 human-sounding), no planted errors. Same generator: `python make_japanese.py
+--lang de` (audio + german/answer_key/de_DE_clean.json), then `--lang de --export` writes german/json/de_DE.json
+(no "synthetic" field) and german/answer_key/de_DE_voice_key.json/.csv. Transcripts: german/transcripts.jsonl.

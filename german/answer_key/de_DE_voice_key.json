@@ -1,0 +1,236 @@
+{
+  "fileMetadata": {
+    "locale": "de_DE",
+    "files": 25,
+    "synthetic": 8,
+    "human": 17,
+    "planted_errors": 0
+  },
+  "files": [
+    {
+      "file": "de_0101.wav",
+      "voice_type": "human",
+      "whole_audio_tag": "none",
+      "voice": "Susi - Effortless and Confident",
+      "gender": "female",
+      "duration_seconds": 3.52,
+      "words": 7
+    },
+    {
+      "file": "de_0102.wav",
+      "voice_type": "synthetic",
+      "whole_audio_tag": "synthetic_speech",
+      "voice": "Otto - Casual and Normal",
+      "gender": "male",
+      "duration_seconds": 10.19,
+      "words": 20
+    },
+    {
+      "file": "de_0103.wav",
+      "voice_type": "human",
+      "whole_audio_tag": "none",
+      "voice": "Ben - Effortless and Casual",
+      "gender": "male",
+      "duration_seconds": 10.48,
+      "words": 27
+    },
+    {
+      "file": "de_0104.wav",
+      "voice_type": "human",
+      "whole_audio_tag": "none",
+      "voice": "Lea - Clear and Feminine",
+      "gender": "female",
+      "duration_seconds": 14.16,
+      "words": 35
+    },
+    {
+      "file": "de_0105.wav",
+      "voice_type": "synthetic",
+      "whole_audio_tag": "synthetic_speech",
+      "voice": "Annika - Calm, Confident and Pleasant",
+      "gender": "female",
+      "duration_seconds": 9.01,
+      "words": 15
+    },
+    {
+      "file": "de_0106.wav",
+      "voice_type": "human",
+      "whole_audio_tag": "none",
+      "voice": "Mark - Interesting and Fun",
+      "gender": "male",
+      "duration_seconds": 9.6,
+      "words": 25
+    },
+    {
+      "file": "de_0107.wav",
+      "voice_type": "human",
+      "whole_audio_tag": "none",
+      "voice": "Carola - Sharp and Clear",
+      "gender": "female",
+      "duration_seconds": 11.68,
+      "words": 27
+    },
+    {
+      "file": "de_0108.wav",
+      "voice_type": "human",
+      "whole_audio_tag": "none",
+      "voice": "Stephan - Warm and Friendly",
+      "gender": "male",
+      "duration_seconds": 2.96,
+      "words": 5
+    },
+    {
+      "file": "de_0109.wav",
+      "voice_type": "synthetic",
+      "whole_audio_tag": "synthetic_speech",
+      "voice": "Leonie - Clear and Engaging",
+      "gender": "female",
+      "duration_seconds": 7.16,
+      "words": 12
+    },
+    {
+      "file": "de_0110.wav",
+      "voice_type": "human",
+      "whole_audio_tag": "none",
+      "voice": "Ava - Youthful, Authentic and Friendly",
+      "gender": "female",
+      "duration_seconds": 13.6,
+      "words": 35
+    },
+    {
+      "file": "de_0111.wav",
+      "voice_type": "human",
+      "whole_audio_tag": "none",
+      "voice": "Marc - Pleasant and Interesting",
+      "gender": "male",
+      "duration_seconds": 12.96,
+      "words": 30
+    },
+    {
+      "file": "de_0112.wav",
+      "voice_type": "synthetic",
+      "whole_audio_tag": "synthetic_speech",
+      "voice": "Petra - Confident and Pleasant",
+      "gender": "female",
+      "duration_seconds": 11.75,
+      "words": 22
+    },
+    {
+      "file": "de_0113.wav",
+      "voice_type": "human",
+      "whole_audio_tag": "none",
+      "voice": "Johannes - Clear and Neutral",
+      "gender": "male",
+      "duration_seconds": 4.56,
+      "words": 11
+    },
+    {
+      "file": "de_0114.wav",
+      "voice_type": "human",
+      "whole_audio_tag": "none",
+      "voice": "Luisa - Confident and Patient",
+      "gender": "female",
+      "duration_seconds": 14.64,
+      "words": 35
+    },
+    {
+      "file": "de_0115.wav",
+      "voice_type": "human",
+      "whole_audio_tag": "none",
+      "voice": "Gruber - Clear and Modest",
+      "gender": "male",
+      "duration_seconds": 5.84,
+      "words": 14
+    },
+    {
+      "file": "de_0116.wav",
+      "voice_type": "synthetic",
+      "whole_audio_tag": "synthetic_speech",
+      "voice": "Laura - Sharp and Professional",
+      "gender": "female",
+      "duration_seconds": 9.54,
+      "words": 17
+    },
+    {
+      "file": "de_0117.wav",
+      "voice_type": "human",
+      "whole_audio_tag": "none",
+      "voice": "Mila - Confident and Opinionated",
+      "gender": "female",
+      "duration_seconds": 7.52,
+      "words": 14
+    },
+    {
+      "file": "de_0118.wav",
+      "voice_type": "human",
+      "whole_audio_tag": "none",
+      "voice": "Christian Plasa - Soft and Mild",
+      "gender": "male",
+      "duration_seconds": 12.4,
+      "words": 32
+    },
+    {
+      "file": "de_0119.wav",
+      "voice_type": "synthetic",
+      "whole_audio_tag": "synthetic_speech",
+      "voice": "Nils - Clear and Neutral",
+      "gender": "male",
+      "duration_seconds": 9.9,
+      "words": 17
+    },
+    {
+      "file": "de_0120.wav",
+      "voice_type": "human",
+      "whole_audio_tag": "none",
+      "voice": "Carla Blum - Confident and Informative",
+      "gender": "female",
+      "duration_seconds": 9.36,
+      "words": 25
+    },
+    {
+      "file": "de_0121.wav",
+      "voice_type": "human",
+      "whole_audio_tag": "none",
+      "voice": "Peter - Personal and Smooth",
+      "gender": "male",
+      "duration_seconds": 4.24,
+      "words": 8
+    },
+    {
+      "file": "de_0122.wav",
+      "voice_type": "synthetic",
+      "whole_audio_tag": "synthetic_speech",
+      "voice": "Yvonne - Casual and Natural",
+      "gender": "female",
+      "duration_seconds": 13.13,
+      "words": 25
+    },
+    {
+      "file": "de_0123.wav",
+      "voice_type": "human",
+      "whole_audio_tag": "none",
+      "voice": "David - Charming and Soft",
+      "gender": "male",
+      "duration_seconds": 14.32,
+      "words": 34
+    },
+    {
+      "file": "de_0124.wav",
+      "voice_type": "human",
+      "whole_audio_tag": "none",
+      "voice": "Louisa - Warm and Hopeful",
+      "gender": "female",
+      "duration_seconds": 6.32,
+      "words": 16
+    },
+    {
+      "file": "de_0125.wav",
+      "voice_type": "synthetic",
+      "whole_audio_tag": "synthetic_speech",
+      "voice": "Tristan Medersburg - Trustworthy",
+      "gender": "male",
+      "duration_seconds": 8.14,
+      "words": 16
+    }
+  ]
+}
