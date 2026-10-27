@@ -43,3 +43,10 @@ identical to the clean alignment.
 25 clean files (8 synthetic, 17 human-sounding), no planted errors. Same generator: `python make_japanese.py
 --lang de` (audio + german/answer_key/de_DE_clean.json), then `--lang de --export` writes german/json/de_DE.json
 (no "synthetic" field) and german/answer_key/de_DE_voice_key.json/.csv. Transcripts: german/transcripts.jsonl.
+
+## Forced-alignment decoy packages (alignment_decoys/)
+20 files per locale (de_DE es_ES it_IT pt_BR fr_FR), every file with 3-5 planted errors, 3 synthetic per locale
+(synthetic is never visible in the pre-fill). Transcripts come from alignment_decoys/decoy_spec.txt via
+build_transcripts.py and must follow that locale's Forced_Alignment_Guidelines PDF. Audio: `python make_japanese.py
+--lang decoy-<locale>`; packages: `python alignment_decoys/build_alignment_decoys.py` (self-test must pass:
+every injection MISSED on the decoy, CAUGHT on gold). Planted errors are intended: never "fix" them.

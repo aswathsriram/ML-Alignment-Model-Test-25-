@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 Test set of 25 .wav + clean (correct) word alignment, with ElevenLabs. Standard library only.
-Languages: ja (Japanese, files in output/) and de (German, files in german/).
+Languages: ja (Japanese, files in output/), de (German, files in german/), and decoy-<locale> (the alignment
+decoy sets for de_DE, es_ES, it_IT, pt_BR, fr_FR: audio + clean alignment in alignment_decoys/build/<locale>/).
 
 Input  : <transcripts>.jsonl  {"id", "language", "words", "style", "voice_id", "tts_text"}
            style "natural"   -> eleven_v4 with [breathes]/[sighs]/... tags and natural pauses (human-like)
@@ -24,9 +25,11 @@ import urllib.request, urllib.error
 from tts_to_wav import BASE, SAMPLE_RATE, call, load_env, ssl_context, write_locale
 
 HERE = pathlib.Path(__file__).parent
-LANGS = {   # locale, word separator in transcripts, transcripts file, output folder
+LANGS = {   # locale, word separator in transcripts, transcripts file, output folder (code: ElevenLabs language)
     "ja": {"locale": "ja_JP", "sep": "", "transcripts": "transcripts/ja.jsonl", "out": "output"},
     "de": {"locale": "de_DE", "sep": " ", "transcripts": "german/transcripts.jsonl", "out": "german"},
+    **{f"decoy-{loc}": {"code": loc[:2], "locale": loc, "sep": " ", "transcripts": f"alignment_decoys/{loc}/transcripts.jsonl",
+                        "out": f"alignment_decoys/build/{loc}"} for loc in ("de_DE", "es_ES", "it_IT", "pt_BR", "fr_FR")},
 }
 LANG, LOCALE, SEP, OUT, WAV_DIR, CLEAN = None, None, None, None, None, None
 
@@ -34,7 +37,7 @@ LANG, LOCALE, SEP, OUT, WAV_DIR, CLEAN = None, None, None, None, None, None
 def configure(lang):
     global LANG, LOCALE, SEP, OUT, WAV_DIR, CLEAN
     c = LANGS[lang]
-    LANG, LOCALE, SEP, OUT = lang, c["locale"], c["sep"], HERE / c["out"]
+    LANG, LOCALE, SEP, OUT = c.get("code", lang), c["locale"], c["sep"], HERE / c["out"]
     WAV_DIR, CLEAN = OUT / "wav", OUT / "answer_key" / f"{LOCALE}_clean.json"
 
 
@@ -173,9 +176,28 @@ def snap(pcm, times):
     return times
 
 
+def quietest(src, a, b, step=0.005):
+    """Time of the quietest 5 ms window between a and b (where two run-together words are best cut apart)."""
+    n, best, best_t = int(step * SAMPLE_RATE), None, (a + b) / 2
+    t = a
+    while t + step <= b:
+        seg = src[int(t * SAMPLE_RATE):int(t * SAMPLE_RATE) + n]
+        e = sum(x * x for x in seg)
+        if best is None or e < best:
+            best, best_t = e, t + step / 2
+        t += step
+    return round(best_t, 3)
+
+
 def retime(pcm, times):
     """Cut each word out and rejoin with identical silences: perfectly even, machine-like timing."""
     src = array.array("h", pcm)
+    times = [dict(t) for t in times]
+    for a, b in zip(times, times[1:]):                    # run-together words: cut at the quietest point nearby,
+        if b["start"] - a["end"] < 0.02:                  # so no word keeps a piece of its neighbour
+            mid = (a["end"] + b["start"]) / 2
+            cut = quietest(src, max(a["start"] + 0.02, mid - 0.05), min(b["end"] - 0.02, mid + 0.05))
+            a["end"] = b["start"] = cut
     sil = lambda s: array.array("h", bytes(2 * int(round(s * SAMPLE_RATE))))
     out, new = sil(EDGE), []
     f = int(FADE * SAMPLE_RATE)

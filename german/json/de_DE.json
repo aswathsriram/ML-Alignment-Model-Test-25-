@@ -2292,7 +2292,7 @@
     {
       "id": "de_0120",
       "name": "de_0120.wav",
-      "transcript": "bitte schicken sie mir die unterlagen per e-mail an info at becker minus bau punkt d. e. ich schaue sie mir dann bis montag an",
+      "transcript": "bitte schicken sie mir die unterlagen per e mail an info at becker minus bau punkt d. e. ich schaue sie mir dann bis montag an",
       "source": {
         "voice": {
           "name": "Carla Blum - Confident and Informative",
@@ -2337,8 +2337,13 @@
             "end": 2.9
           },
           {
-            "word": "e-mail",
+            "word": "e",
             "start": 2.9,
+            "end": 3.04
+          },
+          {
+            "word": "mail",
+            "start": 3.04,
             "end": 3.42
           },
           {
