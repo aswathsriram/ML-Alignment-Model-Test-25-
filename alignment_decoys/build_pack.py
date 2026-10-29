@@ -11,7 +11,9 @@ where needed; each file is then filled up to 3-6 plants with new ones. Every pac
 plants are applied the way the pack describes, to prove the result is a valid alignment.
 
 Input  : alignment_decoys/alignment_decoys_<locale>.zip   (decoy_corpus.json: gold alignment + existing decoys)
-Output : alignment_decoys/packs/alignment-decoys-pack-<locale>-<date>.json
+Output : alignment_decoys/packs/our-files_not-in-platform_<locale>-<date>.json  (our files; the platform only
+         accepts decoys on its own reviewer-finalized files, so these need uploading and reviewing there first)
+         --fill <exported.json> <out.json>: fill the plants of a pack exported by the platform (imports as is)
 
 Run    : python alignment_decoys/build_pack.py de_DE 2026-10-29
 """
@@ -186,16 +188,18 @@ def fresh(W, dur, action, rng, cls=None):
 def apply(W, dur, plants):
     """Apply the plants as the pack describes and check the result is a valid alignment."""
     chips = [dict(w=x["w"], s=x["s"], e=x["e"], i=x["i"]) for x in W]
+    moved = set()
     for p in plants:
         if p["action"] == "move":
             k, d = p["word"], p["shift_ms"] / 1000
+            moved.add(k)
             if p["edge"] == "start":
                 if k > 0 and touching(chips[k - 1]["e"], chips[k]["s"]):
-                    chips[k - 1]["e"] = round(chips[k]["s"] + d, 3)
+                    chips[k - 1]["e"] = round(chips[k]["s"] + d, 3); moved.add(k - 1)
                 chips[k]["s"] = round(chips[k]["s"] + d, 3)
             else:
                 if k + 1 < len(chips) and touching(chips[k]["e"], chips[k + 1]["s"]):
-                    chips[k + 1]["s"] = round(chips[k]["e"] + d, 3)
+                    chips[k + 1]["s"] = round(chips[k]["e"] + d, 3); moved.add(k + 1)
                 chips[k]["e"] = round(chips[k]["e"] + d, 3)
     for p in plants:
         if p["action"] == "remove":
@@ -212,7 +216,8 @@ def apply(W, dur, plants):
     timed.sort(key=lambda c: c["s"])
     for c in timed:
         assert 0 <= c["s"] < c["e"] <= dur + 1e-9, c
-        assert c["e"] - c["s"] >= KEEP - 1e-9, c
+        if c["i"] in moved:                                  # a moved word keeps >= 60 ms (gold may be shorter)
+            assert c["e"] - c["s"] >= KEEP - 1e-9, c
     for a, b in zip(timed, timed[1:]):
         assert a["e"] <= b["s"] + 1e-9, (a, b)
     return timed
@@ -287,13 +292,69 @@ def build(loc, date):
         out.append({"decoy_ref": e["file_name"], "file_id": e["file_id"], "file_name": e["file_name"], "locale": loc,
                     "duration_s": f["dur"], "gold_fingerprint": fp, "words": W, "plants": final})
     pack = {"format": FORMAT, "instructions": INSTRUCTIONS, "decoys": out}
-    path = HERE / "packs" / f"alignment-decoys-pack-{loc}-{date}.json"
+    path = HERE / "packs" / f"our-files_not-in-platform_{loc}-{date}.json"     # needs the files in the platform first
     path.parent.mkdir(exist_ok=True)
     path.write_text(json.dumps(pack, ensure_ascii=False, indent=2), encoding="utf-8")
     return path, pack
 
 
+FILL_ORDER = [("move", "obvious"), ("add", None), ("join", None), ("remove", None), ("move", "moderate"),
+              ("move", "subtle")]
+
+
+def fill(template_path, out_path):
+    """Fill the empty `plants` of a pack exported by the platform (reviewer-finalized files) and change
+    nothing else: the platform only accepts decoys on its own finalized alignments."""
+    pack = json.loads(pathlib.Path(template_path).read_text(encoding="utf-8"))
+    for d in pack["decoys"]:
+        W, dur = d["words"], d["duration_s"]
+        rng = random.Random(f"{SEED}-{d['file_id']}")
+        target = min(6, max(3, len(W) // 4))
+        plants, taken = [], []
+        for action, cls in FILL_ORDER:
+            if len(plants) >= target:
+                break
+            cands = [c for c in fresh(W, dur, action, rng, cls) if spaced(taken, c[1])]
+            if action == "move" and not cands:
+                for c2, _, _ in MOVE_CLASSES:
+                    cands = [c for c in fresh(W, dur, action, rng, c2) if spaced(taken, c[1])]
+                    if cands:
+                        break
+            if not cands:
+                continue
+            # spread the mistakes over the file: prefer the candidate farthest from those already placed
+            far = max(min((abs(min(c[1]) - min(t)) for t in taken), default=0) for c in cands)
+            plant, aff, note = rng.choice([c for c in cands if min((abs(min(c[1]) - min(t)) for t in taken), default=0) >= far * 0.6])
+            plants.append(dict(plant, note=note.replace(" · new", ""))); taken.append(aff)
+        while len(plants) < 3:                                   # short file: top up with any valid action
+            cands = [c for a in ("move", "remove", "add", "join") for c in fresh(W, dur, a, rng, "moderate")
+                     if spaced(taken, c[1])]
+            if not cands:
+                raise SystemExit(f"{d['file_name']}: cannot place 3 mistakes under the pack rules")
+            plant, aff, note = rng.choice(cands)
+            plants.append(dict(plant, note=note.replace(" · new", ""))); taken.append(aff)
+        ranked = sorted(range(len(plants)), key=lambda i: -obviousness(plants[i], W))
+        crit = set(ranked[:2 if len(plants) >= 5 else 1])
+        final = []
+        for i, p in enumerate(plants):
+            q = {k: v for k, v in p.items() if k != "note"}
+            if i in crit:
+                q["critical"] = True
+            q["note"] = p["note"]
+            final.append(q)
+        final.sort(key=lambda p: p.get("word", p.get("after_word")))
+        apply(W, dur, final)
+        d["plants"] = final
+    pathlib.Path(out_path).write_text(json.dumps(pack, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return pack
+
+
 if __name__ == "__main__":
+    if sys.argv[1:2] == ["--fill"]:                             # python build_pack.py --fill exported.json filled.json
+        pack = fill(sys.argv[2], sys.argv[3])
+        for d in pack["decoys"]:
+            print(d["file_name"], len(d["plants"]), "plants:", [p["action"] for p in d["plants"]])
+        sys.exit(0)
     loc = sys.argv[1] if len(sys.argv) > 1 else "de_DE"
     date = sys.argv[2] if len(sys.argv) > 2 else "2026-10-29"
     path, pack = build(loc, date)

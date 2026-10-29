@@ -33,7 +33,13 @@ python alignment_decoys/build_alignment_decoys.py            # plan + inject + p
 
 ## align-decoys/v1 packs (`packs/`)
 
-`packs/alignment-decoys-pack-<locale>-<date>.json` is the same set in the `align-decoys/v1` pack format: per file
-the correct alignment (`words`: i, w, s, e) and 3–6 `plants` (`move` / `remove` / `add` / `join`) that the platform
-applies itself. Decoys from the zip that fit the pack rules are carried over; the rest are re-planned.
-Build: `python alignment_decoys/build_pack.py de_DE 2026-10-29`.
+The platform only accepts decoys on its OWN files whose alignment a reviewer has finalized: it looks each decoy up
+by `file_id` (and `gold_fingerprint`). So the working flow is: export a pack from the platform, fill its `plants`,
+import it back unchanged otherwise.
+
+- `alignment-decoys-pack-de_DE-2026-10-29.json` — the pack exported by the platform with its plants filled
+  (6 plants, nothing else changed). This one imports.
+  Fill any exported pack: `python alignment_decoys/build_pack.py --fill exported.json filled.json`
+- `our-files_not-in-platform_de_DE-2026-10-29.json` — our 20 German files in pack format (90 plants). The platform
+  rejects these ("Not a reviewer-finalized alignment") until the 20 audio files are uploaded there, aligned and
+  reviewer-finalized; then export them as a pack and fill it with `--fill`.
