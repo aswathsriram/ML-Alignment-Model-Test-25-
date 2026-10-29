@@ -30,3 +30,10 @@ python alignment_decoys/build_alignment_decoys.py            # plan + inject + p
 ```
 
 `build/` (audio and intermediate files) is not committed; the zips contain everything.
+
+## align-decoys/v1 packs (`packs/`)
+
+`packs/alignment-decoys-pack-<locale>-<date>.json` is the same set in the `align-decoys/v1` pack format: per file
+the correct alignment (`words`: i, w, s, e) and 3–6 `plants` (`move` / `remove` / `add` / `join`) that the platform
+applies itself. Decoys from the zip that fit the pack rules are carried over; the rest are re-planned.
+Build: `python alignment_decoys/build_pack.py de_DE 2026-10-29`.

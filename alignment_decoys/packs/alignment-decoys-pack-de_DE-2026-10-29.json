@@ -1,0 +1,3165 @@
+{
+  "format": "align-decoys/v1",
+  "instructions": [
+    "`words` is the CORRECT alignment, approved by a reviewer: i = index, w = word, s / e = start / end in seconds. Never change it.",
+    "Fill each decoy's `plants` with 3–6 deliberate mistakes an aligner can only find by listening.",
+    "move — {\"action\":\"move\",\"word\":12,\"edge\":\"start\"|\"end\",\"shift_ms\":-300}: moves one edge of word 12. Positive = later. A neighbour touching that edge moves with it. Use 150–700 ms (150–250 subtle, 250–450 moderate, 450+ obvious). Never push an edge past the far edge of the neighbouring word, before 0 or past the audio end.",
+    "remove — {\"action\":\"remove\",\"word\":40}: the word keeps its text in the transcript but loses its timing (an aligner must add it back).",
+    "add — {\"action\":\"add\",\"after_word\":20,\"text\":\"the\"}: an extra chip in the pause after word 20 (the pause must be at least 0.35 s). Use a word from the same sentence, e.g. a repeat of the word before.",
+    "join — {\"action\":\"join\",\"word\":7}: words 7 and 8 become one chip. Only where words are separated by spaces (NOT ja_JP or zh_CN), and only when the true boundary is at least 0.2 s away from the middle of the joined chip.",
+    "Keep mistakes at least 3 words apart. Never touch a tag word (text starting with [ or <).",
+    "Mark the 1–2 most obvious mistakes \"critical\": true (must-catch). Optional \"note\" is for you only.",
+    "Return the SAME JSON with only the `plants` arrays filled. Do not add, remove or edit any other field."
+  ],
+  "decoys": [
+    {
+      "decoy_ref": "37aeec6e-2f3f-48ba-a802-93840f60d3a1_002.wav",
+      "file_id": "cm0u9fe4csjmmtf57eqeidbnv",
+      "file_name": "37aeec6e-2f3f-48ba-a802-93840f60d3a1_002.wav",
+      "locale": "de_DE",
+      "duration_s": 6.88,
+      "gold_fingerprint": "68712389",
+      "words": [
+        {
+          "i": 0,
+          "w": "kannst",
+          "s": 0.92,
+          "e": 1.14
+        },
+        {
+          "i": 1,
+          "w": "du",
+          "s": 1.16,
+          "e": 1.28
+        },
+        {
+          "i": 2,
+          "w": "bitte",
+          "s": 1.28,
+          "e": 1.52
+        },
+        {
+          "i": 3,
+          "w": "die",
+          "s": 1.52,
+          "e": 1.64
+        },
+        {
+          "i": 4,
+          "w": "seite",
+          "s": 1.64,
+          "e": 1.98
+        },
+        {
+          "i": 5,
+          "w": "zweiundvierzig",
+          "s": 1.98,
+          "e": 2.78
+        },
+        {
+          "i": 6,
+          "w": "aufschlagen",
+          "s": 2.78,
+          "e": 3.38
+        },
+        {
+          "i": 7,
+          "w": "da",
+          "s": 3.8,
+          "e": 3.94
+        },
+        {
+          "i": 8,
+          "w": "steht",
+          "s": 3.94,
+          "e": 4.12
+        },
+        {
+          "i": 9,
+          "w": "die",
+          "s": 4.14,
+          "e": 4.3
+        },
+        {
+          "i": 10,
+          "w": "ganze",
+          "s": 4.3,
+          "e": 4.66
+        },
+        {
+          "i": 11,
+          "w": "erklärung",
+          "s": 4.66,
+          "e": 5.22
+        },
+        {
+          "i": 12,
+          "w": "zum",
+          "s": 5.28,
+          "e": 5.46
+        },
+        {
+          "i": 13,
+          "w": "thema",
+          "s": 5.46,
+          "e": 5.76
+        },
+        {
+          "i": 14,
+          "w": "photosynthese",
+          "s": 5.78,
+          "e": 6.62
+        }
+      ],
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": -640,
+          "critical": true,
+          "note": "kannst start 640 ms earlier (obvious) · new"
+        },
+        {
+          "action": "add",
+          "after_word": 6,
+          "text": "aufschlagen",
+          "note": "extra 'aufschlagen' in the 0.42 s pause after it · new"
+        },
+        {
+          "action": "join",
+          "word": 13,
+          "note": "thema + photosynthese as one chip · new"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "593810cb-2d63-47d1-8ef9-02b8fe987f86_025.wav",
+      "file_id": "cm1g22lxt325esvob4qrsmb3x",
+      "file_name": "593810cb-2d63-47d1-8ef9-02b8fe987f86_025.wav",
+      "locale": "de_DE",
+      "duration_s": 11.26,
+      "gold_fingerprint": "fdd2c20f",
+      "words": [
+        {
+          "i": 0,
+          "w": "willkommen",
+          "s": 0.3,
+          "e": 0.828
+        },
+        {
+          "i": 1,
+          "w": "im",
+          "s": 0.988,
+          "e": 1.092
+        },
+        {
+          "i": 2,
+          "w": "kundenservice",
+          "s": 1.252,
+          "e": 1.98
+        },
+        {
+          "i": 3,
+          "w": "der",
+          "s": 2.14,
+          "e": 2.317
+        },
+        {
+          "i": 4,
+          "w": "stadtwerke",
+          "s": 2.477,
+          "e": 3.08
+        },
+        {
+          "i": 5,
+          "w": "für",
+          "s": 3.24,
+          "e": 3.36
+        },
+        {
+          "i": 6,
+          "w": "fragen",
+          "s": 3.52,
+          "e": 3.833
+        },
+        {
+          "i": 7,
+          "w": "zu",
+          "s": 3.993,
+          "e": 4.142
+        },
+        {
+          "i": 8,
+          "w": "ihrer",
+          "s": 4.302,
+          "e": 4.527
+        },
+        {
+          "i": 9,
+          "w": "rechnung",
+          "s": 4.687,
+          "e": 5.198
+        },
+        {
+          "i": 10,
+          "w": "drücken",
+          "s": 5.358,
+          "e": 5.692
+        },
+        {
+          "i": 11,
+          "w": "sie",
+          "s": 5.852,
+          "e": 5.967
+        },
+        {
+          "i": 12,
+          "w": "die",
+          "s": 6.127,
+          "e": 6.387
+        },
+        {
+          "i": 13,
+          "w": "zwei",
+          "s": 6.547,
+          "e": 6.79
+        },
+        {
+          "i": 14,
+          "w": "für",
+          "s": 6.95,
+          "e": 7.068
+        },
+        {
+          "i": 15,
+          "w": "alle",
+          "s": 7.228,
+          "e": 7.517
+        },
+        {
+          "i": 16,
+          "w": "anderen",
+          "s": 7.677,
+          "e": 7.968
+        },
+        {
+          "i": 17,
+          "w": "anliegen",
+          "s": 8.128,
+          "e": 8.703
+        },
+        {
+          "i": 18,
+          "w": "bleiben",
+          "s": 8.863,
+          "e": 9.168
+        },
+        {
+          "i": 19,
+          "w": "sie",
+          "s": 9.328,
+          "e": 9.43
+        },
+        {
+          "i": 20,
+          "w": "bitte",
+          "s": 9.59,
+          "e": 9.828
+        },
+        {
+          "i": 21,
+          "w": "in",
+          "s": 9.988,
+          "e": 10.077
+        },
+        {
+          "i": 22,
+          "w": "der",
+          "s": 10.237,
+          "e": 10.377
+        },
+        {
+          "i": 23,
+          "w": "leitung",
+          "s": 10.537,
+          "e": 10.96
+        }
+      ],
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": 510,
+          "critical": true,
+          "note": "kundenservice start 510 ms later (obvious) · new"
+        },
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "start",
+          "shift_ms": -150,
+          "note": "fragen start 150 ms earlier (subtle) · new"
+        },
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "end",
+          "shift_ms": -440,
+          "critical": true,
+          "note": "rechnung end 440 ms earlier (moderate) · new"
+        },
+        {
+          "action": "move",
+          "word": 13,
+          "edge": "start",
+          "shift_ms": 150,
+          "note": "zwei start 150 ms later (subtle) · new"
+        },
+        {
+          "action": "move",
+          "word": 19,
+          "edge": "start",
+          "shift_ms": -150,
+          "note": "sie start 150 ms earlier (subtle) · new"
+        },
+        {
+          "action": "move",
+          "word": 23,
+          "edge": "start",
+          "shift_ms": 330,
+          "note": "leitung start 330 ms later (moderate) · new"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "8c3111b3-2e62-489a-ada6-de59f2e9e5d4_010.wav",
+      "file_id": "cm2u5nh8nywd272hf76gwr3u6",
+      "file_name": "8c3111b3-2e62-489a-ada6-de59f2e9e5d4_010.wav",
+      "locale": "de_DE",
+      "duration_s": 8.08,
+      "gold_fingerprint": "184d69ea",
+      "words": [
+        {
+          "i": 0,
+          "w": "wir",
+          "s": 1.28,
+          "e": 1.42
+        },
+        {
+          "i": 1,
+          "w": "haben",
+          "s": 1.42,
+          "e": 1.64
+        },
+        {
+          "i": 2,
+          "w": "im",
+          "s": 1.64,
+          "e": 1.82
+        },
+        {
+          "i": 3,
+          "w": "kurs",
+          "s": 1.82,
+          "e": 2.1
+        },
+        {
+          "i": 4,
+          "w": "heute",
+          "s": 2.1,
+          "e": 2.52
+        },
+        {
+          "i": 5,
+          "w": "über",
+          "s": 2.52,
+          "e": 2.7
+        },
+        {
+          "i": 6,
+          "w": "die",
+          "s": 2.7,
+          "e": 2.78
+        },
+        {
+          "i": 7,
+          "w": "geschichte",
+          "s": 2.8,
+          "e": 3.26
+        },
+        {
+          "i": 8,
+          "w": "der",
+          "s": 3.26,
+          "e": 3.38
+        },
+        {
+          "i": 9,
+          "w": "stadt",
+          "s": 3.38,
+          "e": 3.6
+        },
+        {
+          "i": 10,
+          "w": "gesprochen",
+          "s": 3.64,
+          "e": 4.27
+        },
+        {
+          "i": 11,
+          "w": "äh",
+          "s": 4.64,
+          "e": 4.7
+        },
+        {
+          "i": 12,
+          "w": "vor",
+          "s": 4.84,
+          "e": 5.0
+        },
+        {
+          "i": 13,
+          "w": "allem",
+          "s": 5.0,
+          "e": 5.32
+        },
+        {
+          "i": 14,
+          "w": "über",
+          "s": 5.32,
+          "e": 5.48
+        },
+        {
+          "i": 15,
+          "w": "die",
+          "s": 5.48,
+          "e": 5.66
+        },
+        {
+          "i": 16,
+          "w": "zeit",
+          "s": 5.66,
+          "e": 6.02
+        },
+        {
+          "i": 17,
+          "w": "nach",
+          "s": 6.02,
+          "e": 6.34
+        },
+        {
+          "i": 18,
+          "w": "neunzehnhundertfünfundvierzig",
+          "s": 6.34,
+          "e": 7.7
+        }
+      ],
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": -600,
+          "note": "wir start 600 ms earlier (obvious) · from ALN-DE-0016-3 (BND-MAJOR, as is)"
+        },
+        {
+          "action": "remove",
+          "word": 7,
+          "critical": true,
+          "note": "geschichte loses its timing · from ALN-DE-0016-2 (missing segment)"
+        },
+        {
+          "action": "join",
+          "word": 10,
+          "note": "gesprochen + äh as one chip · new"
+        },
+        {
+          "action": "move",
+          "word": 17,
+          "edge": "end",
+          "shift_ms": -200,
+          "note": "nach end 200 ms earlier (subtle); touching next word moves with it · from ALN-DE-0016-4 (BND-MAJOR, as is)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "e5215448-696b-4552-a1b2-37ac177d1cf9_025.wav",
+      "file_id": "cm51813tvbj692t3dtp83updo",
+      "file_name": "e5215448-696b-4552-a1b2-37ac177d1cf9_025.wav",
+      "locale": "de_DE",
+      "duration_s": 8.94,
+      "gold_fingerprint": "089fec7c",
+      "words": [
+        {
+          "i": 0,
+          "w": "achtung",
+          "s": 0.3,
+          "e": 0.797
+        },
+        {
+          "i": 1,
+          "w": "an",
+          "s": 0.957,
+          "e": 1.172
+        },
+        {
+          "i": 2,
+          "w": "gleis",
+          "s": 1.332,
+          "e": 1.64
+        },
+        {
+          "i": 3,
+          "w": "sieben",
+          "s": 1.8,
+          "e": 2.14
+        },
+        {
+          "i": 4,
+          "w": "der",
+          "s": 2.3,
+          "e": 2.522
+        },
+        {
+          "i": 5,
+          "w": "regionalexpress",
+          "s": 2.682,
+          "e": 3.613
+        },
+        {
+          "i": 6,
+          "w": "nach",
+          "s": 3.773,
+          "e": 3.98
+        },
+        {
+          "i": 7,
+          "w": "hannover",
+          "s": 4.14,
+          "e": 4.78
+        },
+        {
+          "i": 8,
+          "w": "fährt",
+          "s": 4.94,
+          "e": 5.16
+        },
+        {
+          "i": 9,
+          "w": "heute",
+          "s": 5.32,
+          "e": 5.733
+        },
+        {
+          "i": 10,
+          "w": "ausnahmsweise",
+          "s": 5.893,
+          "e": 6.8
+        },
+        {
+          "i": 11,
+          "w": "von",
+          "s": 6.96,
+          "e": 7.152
+        },
+        {
+          "i": 12,
+          "w": "gleis",
+          "s": 7.312,
+          "e": 7.742
+        },
+        {
+          "i": 13,
+          "w": "neun",
+          "s": 7.902,
+          "e": 8.342
+        },
+        {
+          "i": 14,
+          "w": "ab",
+          "s": 8.502,
+          "e": 8.64
+        }
+      ],
+      "plants": [
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": 470,
+          "note": "regionalexpress start 470 ms later (obvious) · new"
+        },
+        {
+          "action": "remove",
+          "word": 8,
+          "critical": true,
+          "note": "fährt loses its timing · from ALN-DE-0011-2 (missing segment)"
+        },
+        {
+          "action": "move",
+          "word": 13,
+          "edge": "end",
+          "shift_ms": -250,
+          "note": "neun end 250 ms earlier (subtle) · from ALN-DE-0011-4 (BND-MAJOR, as is)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "abd9c635-d8cf-4dd4-8ce2-339ba58ab17d_019.wav",
+      "file_id": "cm7g815i2bwewrlqwh0q1at3f",
+      "file_name": "abd9c635-d8cf-4dd4-8ce2-339ba58ab17d_019.wav",
+      "locale": "de_DE",
+      "duration_s": 6.88,
+      "gold_fingerprint": "e128ae24",
+      "words": [
+        {
+          "i": 0,
+          "w": "naja",
+          "s": 0.91,
+          "e": 1.75
+        },
+        {
+          "i": 1,
+          "w": "so",
+          "s": 1.83,
+          "e": 2.18
+        },
+        {
+          "i": 2,
+          "w": "schlimm",
+          "s": 2.18,
+          "e": 2.44
+        },
+        {
+          "i": 3,
+          "w": "war",
+          "s": 2.44,
+          "e": 2.58
+        },
+        {
+          "i": 4,
+          "w": "das",
+          "s": 2.58,
+          "e": 2.72
+        },
+        {
+          "i": 5,
+          "w": "jetzt",
+          "s": 2.72,
+          "e": 3.0
+        },
+        {
+          "i": 6,
+          "w": "auch",
+          "s": 3.0,
+          "e": 3.16
+        },
+        {
+          "i": 7,
+          "w": "wieder",
+          "s": 3.16,
+          "e": 3.42
+        },
+        {
+          "i": 8,
+          "w": "nicht",
+          "s": 3.42,
+          "e": 3.62
+        },
+        {
+          "i": 9,
+          "w": "wir",
+          "s": 4.25,
+          "e": 4.38
+        },
+        {
+          "i": 10,
+          "w": "haben",
+          "s": 4.38,
+          "e": 4.56
+        },
+        {
+          "i": 11,
+          "w": "halt",
+          "s": 4.56,
+          "e": 4.74
+        },
+        {
+          "i": 12,
+          "w": "ein",
+          "s": 4.74,
+          "e": 4.92
+        },
+        {
+          "i": 13,
+          "w": "bisschen",
+          "s": 4.98,
+          "e": 5.38
+        },
+        {
+          "i": 14,
+          "w": "mehr",
+          "s": 5.38,
+          "e": 5.56
+        },
+        {
+          "i": 15,
+          "w": "bezahlt",
+          "s": 5.56,
+          "e": 6.0
+        },
+        {
+          "i": 16,
+          "w": "als",
+          "s": 6.0,
+          "e": 6.12
+        },
+        {
+          "i": 17,
+          "w": "geplant",
+          "s": 6.14,
+          "e": 6.62
+        }
+      ],
+      "plants": [
+        {
+          "action": "join",
+          "word": 0,
+          "critical": true,
+          "note": "naja + so as one chip · new"
+        },
+        {
+          "action": "remove",
+          "word": 4,
+          "note": "das loses its timing · new"
+        },
+        {
+          "action": "add",
+          "after_word": 8,
+          "text": "nicht",
+          "note": "extra 'nicht' in the 0.63 s pause after it · new"
+        },
+        {
+          "action": "move",
+          "word": 13,
+          "edge": "end",
+          "shift_ms": -180,
+          "note": "bisschen end 180 ms earlier (subtle); touching next word moves with it · new"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "d227ccc0-db1f-4d3e-a842-4472090a4d86_006.wav",
+      "file_id": "cmbd9m3w5k8qr2zh83hxi8hs6",
+      "file_name": "d227ccc0-db1f-4d3e-a842-4472090a4d86_006.wav",
+      "locale": "de_DE",
+      "duration_s": 9.44,
+      "gold_fingerprint": "8d66f6eb",
+      "words": [
+        {
+          "i": 0,
+          "w": "tja",
+          "s": 0.8,
+          "e": 1.34
+        },
+        {
+          "i": 1,
+          "w": "also",
+          "s": 1.78,
+          "e": 2.36
+        },
+        {
+          "i": 2,
+          "w": "ehrlich",
+          "s": 2.36,
+          "e": 2.64
+        },
+        {
+          "i": 3,
+          "w": "gesagt",
+          "s": 2.68,
+          "e": 3.02
+        },
+        {
+          "i": 4,
+          "w": "bin",
+          "s": 3.06,
+          "e": 3.2
+        },
+        {
+          "i": 5,
+          "w": "ich",
+          "s": 3.2,
+          "e": 3.32
+        },
+        {
+          "i": 6,
+          "w": "mir",
+          "s": 3.32,
+          "e": 3.44
+        },
+        {
+          "i": 7,
+          "w": "nicht",
+          "s": 3.44,
+          "e": 3.7
+        },
+        {
+          "i": 8,
+          "w": "sicher",
+          "s": 3.7,
+          "e": 4.04
+        },
+        {
+          "i": 9,
+          "w": "ob",
+          "s": 4.04,
+          "e": 4.18
+        },
+        {
+          "i": 10,
+          "w": "ich",
+          "s": 4.18,
+          "e": 4.3
+        },
+        {
+          "i": 11,
+          "w": "am",
+          "s": 4.3,
+          "e": 4.42
+        },
+        {
+          "i": 12,
+          "w": "wochenende",
+          "s": 4.42,
+          "e": 4.94
+        },
+        {
+          "i": 13,
+          "w": "zeit",
+          "s": 4.94,
+          "e": 5.26
+        },
+        {
+          "i": 14,
+          "w": "habe",
+          "s": 5.26,
+          "e": 5.6
+        },
+        {
+          "i": 15,
+          "w": "ich",
+          "s": 7.28,
+          "e": 7.52
+        },
+        {
+          "i": 16,
+          "w": "sag",
+          "s": 7.52,
+          "e": 7.7
+        },
+        {
+          "i": 17,
+          "w": "dir",
+          "s": 7.7,
+          "e": 7.84
+        },
+        {
+          "i": 18,
+          "w": "einfach",
+          "s": 7.84,
+          "e": 8.119
+        },
+        {
+          "i": 19,
+          "w": "am",
+          "s": 8.119,
+          "e": 8.24
+        },
+        {
+          "i": 20,
+          "w": "freitag",
+          "s": 8.28,
+          "e": 8.62
+        },
+        {
+          "i": 21,
+          "w": "bescheid",
+          "s": 8.64,
+          "e": 9.06
+        }
+      ],
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 0,
+          "text": "tja",
+          "note": "extra 'tja' in the 0.44 s pause after it · new"
+        },
+        {
+          "action": "remove",
+          "word": 7,
+          "critical": true,
+          "note": "nicht loses its timing · new"
+        },
+        {
+          "action": "join",
+          "word": 11,
+          "note": "am + wochenende as one chip · new"
+        },
+        {
+          "action": "remove",
+          "word": 15,
+          "critical": true,
+          "note": "ich loses its timing · new"
+        },
+        {
+          "action": "move",
+          "word": 21,
+          "edge": "start",
+          "shift_ms": 320,
+          "note": "bescheid start 320 ms later (moderate) · new"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "3c22e70f-f236-4a91-80ce-d08f62be798d_015.wav",
+      "file_id": "cmg4qjpdrv9ocxv2sk9ps4xck",
+      "file_name": "3c22e70f-f236-4a91-80ce-d08f62be798d_015.wav",
+      "locale": "de_DE",
+      "duration_s": 8.32,
+      "gold_fingerprint": "c9549b4a",
+      "words": [
+        {
+          "i": 0,
+          "w": "ähm",
+          "s": 0.89,
+          "e": 1.45
+        },
+        {
+          "i": 1,
+          "w": "ich",
+          "s": 1.66,
+          "e": 1.86
+        },
+        {
+          "i": 2,
+          "w": "glaub",
+          "s": 2.12,
+          "e": 2.42
+        },
+        {
+          "i": 3,
+          "w": "ich",
+          "s": 2.42,
+          "e": 2.5
+        },
+        {
+          "i": 4,
+          "w": "hab",
+          "s": 2.52,
+          "e": 2.7
+        },
+        {
+          "i": 5,
+          "w": "meinen",
+          "s": 2.7,
+          "e": 2.96
+        },
+        {
+          "i": 6,
+          "w": "geldbeutel",
+          "s": 2.96,
+          "e": 3.52
+        },
+        {
+          "i": 7,
+          "w": "im",
+          "s": 3.52,
+          "e": 3.66
+        },
+        {
+          "i": 8,
+          "w": "restaurant",
+          "s": 3.66,
+          "e": 4.16
+        },
+        {
+          "i": 9,
+          "w": "liegen",
+          "s": 4.16,
+          "e": 4.42
+        },
+        {
+          "i": 10,
+          "w": "lassen",
+          "s": 4.42,
+          "e": 4.77
+        },
+        {
+          "i": 11,
+          "w": "kannst",
+          "s": 6.32,
+          "e": 6.52
+        },
+        {
+          "i": 12,
+          "w": "du",
+          "s": 6.52,
+          "e": 6.62
+        },
+        {
+          "i": 13,
+          "w": "da",
+          "s": 6.62,
+          "e": 6.7
+        },
+        {
+          "i": 14,
+          "w": "bitte",
+          "s": 6.9,
+          "e": 7.14
+        },
+        {
+          "i": 15,
+          "w": "mal",
+          "s": 7.14,
+          "e": 7.26
+        },
+        {
+          "i": 16,
+          "w": "kurz",
+          "s": 7.3,
+          "e": 7.56
+        },
+        {
+          "i": 17,
+          "w": "anrufen",
+          "s": 7.56,
+          "e": 8.11
+        }
+      ],
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": -630,
+          "critical": true,
+          "note": "ähm start 630 ms earlier (obvious) · new"
+        },
+        {
+          "action": "remove",
+          "word": 5,
+          "note": "meinen loses its timing · from ALN-DE-0004-2 (missing segment)"
+        },
+        {
+          "action": "add",
+          "after_word": 10,
+          "text": "lassen",
+          "note": "extra 'lassen' in the 1.55 s pause after it · new"
+        },
+        {
+          "action": "move",
+          "word": 14,
+          "edge": "start",
+          "shift_ms": -150,
+          "note": "bitte start 150 ms earlier (subtle) · from ALN-DE-0004-5 (BND-MAJOR, as is)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "0b8bb2da-3389-45bf-8005-5fdf2187747e_040.wav",
+      "file_id": "cmhge2jc97036i0sqr7gf6ej3",
+      "file_name": "0b8bb2da-3389-45bf-8005-5fdf2187747e_040.wav",
+      "locale": "de_DE",
+      "duration_s": 7.36,
+      "gold_fingerprint": "e10142b1",
+      "words": [
+        {
+          "i": 0,
+          "w": "ach",
+          "s": 0.83,
+          "e": 1.1
+        },
+        {
+          "i": 1,
+          "w": "so",
+          "s": 1.1,
+          "e": 1.53
+        },
+        {
+          "i": 2,
+          "w": "ja",
+          "s": 1.73,
+          "e": 2.06
+        },
+        {
+          "i": 3,
+          "w": "das",
+          "s": 2.58,
+          "e": 2.78
+        },
+        {
+          "i": 4,
+          "w": "hast",
+          "s": 2.78,
+          "e": 2.96
+        },
+        {
+          "i": 5,
+          "w": "du",
+          "s": 2.96,
+          "e": 3.2
+        },
+        {
+          "i": 6,
+          "w": "wirklich",
+          "s": 3.2,
+          "e": 3.66
+        },
+        {
+          "i": 7,
+          "w": "weise",
+          "s": 3.66,
+          "e": 4.0
+        },
+        {
+          "i": 8,
+          "w": "entschieden",
+          "s": 4.0,
+          "e": 4.49
+        },
+        {
+          "i": 9,
+          "w": "ich",
+          "s": 4.96,
+          "e": 5.14
+        },
+        {
+          "i": 10,
+          "w": "hätte",
+          "s": 5.14,
+          "e": 5.4
+        },
+        {
+          "i": 11,
+          "w": "mich",
+          "s": 5.4,
+          "e": 5.82
+        },
+        {
+          "i": 12,
+          "w": "ehrlich",
+          "s": 5.82,
+          "e": 6.04
+        },
+        {
+          "i": 13,
+          "w": "gesagt",
+          "s": 6.08,
+          "e": 6.48
+        },
+        {
+          "i": 14,
+          "w": "nicht",
+          "s": 6.48,
+          "e": 6.66
+        },
+        {
+          "i": 15,
+          "w": "getraut",
+          "s": 6.7,
+          "e": 7.17
+        }
+      ],
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": -270,
+          "note": "so end 270 ms earlier (moderate) · new"
+        },
+        {
+          "action": "remove",
+          "word": 4,
+          "critical": true,
+          "note": "hast loses its timing · new"
+        },
+        {
+          "action": "add",
+          "after_word": 8,
+          "text": "entschieden",
+          "note": "extra 'entschieden' in the 0.47 s pause after it · from ALN-DE-0005-1 (hallucinated 'so', now a repeat of the word before)"
+        },
+        {
+          "action": "move",
+          "word": 15,
+          "edge": "start",
+          "shift_ms": 350,
+          "note": "getraut start 350 ms later (moderate) · from ALN-DE-0005-3 (BND-MAJOR, as is)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "c487348f-05a6-415c-9461-a3f65352f7ea_026.wav",
+      "file_id": "cmhmj8pwny2tztd4gh5lhuorh",
+      "file_name": "c487348f-05a6-415c-9461-a3f65352f7ea_026.wav",
+      "locale": "de_DE",
+      "duration_s": 7.2,
+      "gold_fingerprint": "ff1eb462",
+      "words": [
+        {
+          "i": 0,
+          "w": "ähm",
+          "s": 0.74,
+          "e": 1.07
+        },
+        {
+          "i": 1,
+          "w": "entschuldigung",
+          "s": 1.25,
+          "e": 1.9
+        },
+        {
+          "i": 2,
+          "w": "wissen",
+          "s": 2.43,
+          "e": 2.8
+        },
+        {
+          "i": 3,
+          "w": "sie",
+          "s": 2.8,
+          "e": 2.98
+        },
+        {
+          "i": 4,
+          "w": "wo",
+          "s": 2.98,
+          "e": 3.12
+        },
+        {
+          "i": 5,
+          "w": "hier",
+          "s": 3.12,
+          "e": 3.26
+        },
+        {
+          "i": 6,
+          "w": "die",
+          "s": 3.26,
+          "e": 3.38
+        },
+        {
+          "i": 7,
+          "w": "nächste",
+          "s": 3.38,
+          "e": 3.68
+        },
+        {
+          "i": 8,
+          "w": "apotheke",
+          "s": 3.68,
+          "e": 4.28
+        },
+        {
+          "i": 9,
+          "w": "ist",
+          "s": 4.28,
+          "e": 4.48
+        },
+        {
+          "i": 10,
+          "w": "ich",
+          "s": 4.93,
+          "e": 5.08
+        },
+        {
+          "i": 11,
+          "w": "brauche",
+          "s": 5.1,
+          "e": 5.4
+        },
+        {
+          "i": 12,
+          "w": "dringend",
+          "s": 5.44,
+          "e": 5.82
+        },
+        {
+          "i": 13,
+          "w": "was",
+          "s": 5.86,
+          "e": 6.02
+        },
+        {
+          "i": 14,
+          "w": "gegen",
+          "s": 6.06,
+          "e": 6.3
+        },
+        {
+          "i": 15,
+          "w": "kopfschmerzen",
+          "s": 6.3,
+          "e": 7.04
+        }
+      ],
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 1,
+          "text": "entschuldigung",
+          "note": "extra 'entschuldigung' in the 0.53 s pause after it · from ALN-DE-0003-1 (hallucinated 'und', now a repeat of the word before)"
+        },
+        {
+          "action": "remove",
+          "word": 6,
+          "note": "die loses its timing · new"
+        },
+        {
+          "action": "remove",
+          "word": 9,
+          "critical": true,
+          "note": "ist loses its timing · from ALN-DE-0003-2 (missing segment)"
+        },
+        {
+          "action": "join",
+          "word": 14,
+          "note": "gegen + kopfschmerzen as one chip · new"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "7c78201b-b7e7-4549-bcb2-5c1104a83921_012.wav",
+      "file_id": "cmjtsajsnwlyj0vslw3rwr8pg",
+      "file_name": "7c78201b-b7e7-4549-bcb2-5c1104a83921_012.wav",
+      "locale": "de_DE",
+      "duration_s": 6.0,
+      "gold_fingerprint": "7cd75f64",
+      "words": [
+        {
+          "i": 0,
+          "w": "mm",
+          "s": 0.41,
+          "e": 0.68
+        },
+        {
+          "i": 1,
+          "w": "hm",
+          "s": 0.68,
+          "e": 0.85
+        },
+        {
+          "i": 2,
+          "w": "genau",
+          "s": 1.21,
+          "e": 1.61
+        },
+        {
+          "i": 3,
+          "w": "so",
+          "s": 1.92,
+          "e": 2.16
+        },
+        {
+          "i": 4,
+          "w": "machen",
+          "s": 2.16,
+          "e": 2.42
+        },
+        {
+          "i": 5,
+          "w": "wir",
+          "s": 2.42,
+          "e": 2.54
+        },
+        {
+          "i": 6,
+          "w": "das",
+          "s": 2.54,
+          "e": 2.67
+        },
+        {
+          "i": 7,
+          "w": "ich",
+          "s": 3.32,
+          "e": 3.44
+        },
+        {
+          "i": 8,
+          "w": "schick",
+          "s": 3.44,
+          "e": 3.6
+        },
+        {
+          "i": 9,
+          "w": "dir",
+          "s": 3.64,
+          "e": 3.76
+        },
+        {
+          "i": 10,
+          "w": "die",
+          "s": 3.76,
+          "e": 3.92
+        },
+        {
+          "i": 11,
+          "w": "unterlagen",
+          "s": 3.92,
+          "e": 4.46
+        },
+        {
+          "i": 12,
+          "w": "dann",
+          "s": 4.46,
+          "e": 4.64
+        },
+        {
+          "i": 13,
+          "w": "per",
+          "s": 4.64,
+          "e": 4.84
+        },
+        {
+          "i": 14,
+          "w": "e",
+          "s": 4.84,
+          "e": 4.98
+        },
+        {
+          "i": 15,
+          "w": "mail",
+          "s": 4.98,
+          "e": 5.36
+        },
+        {
+          "i": 16,
+          "w": "okay",
+          "s": 5.36,
+          "e": 5.66
+        }
+      ],
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 1,
+          "text": "hm",
+          "note": "extra 'hm' in the 0.36 s pause after it · new"
+        },
+        {
+          "action": "add",
+          "after_word": 6,
+          "text": "das",
+          "note": "extra 'das' in the 0.65 s pause after it · new"
+        },
+        {
+          "action": "remove",
+          "word": 12,
+          "critical": true,
+          "note": "dann loses its timing · from ALN-DE-0019-2 (missing segment)"
+        },
+        {
+          "action": "move",
+          "word": 16,
+          "edge": "start",
+          "shift_ms": -250,
+          "note": "okay start 250 ms earlier (subtle); touching previous word moves with it · new"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "068314c5-9d4d-41f5-86b6-9e71e7b7117a_038.wav",
+      "file_id": "cmlq7oaupfxji8hefo29f9ezf",
+      "file_name": "068314c5-9d4d-41f5-86b6-9e71e7b7117a_038.wav",
+      "locale": "de_DE",
+      "duration_s": 8.25,
+      "gold_fingerprint": "b2a208ee",
+      "words": [
+        {
+          "i": 0,
+          "w": "ihre",
+          "s": 0.3,
+          "e": 0.49
+        },
+        {
+          "i": 1,
+          "w": "paketsendung",
+          "s": 0.65,
+          "e": 1.447
+        },
+        {
+          "i": 2,
+          "w": "wird",
+          "s": 1.607,
+          "e": 1.847
+        },
+        {
+          "i": 3,
+          "w": "morgen",
+          "s": 2.007,
+          "e": 2.452
+        },
+        {
+          "i": 4,
+          "w": "zwischen",
+          "s": 2.612,
+          "e": 2.87
+        },
+        {
+          "i": 5,
+          "w": "zehn",
+          "s": 3.03,
+          "e": 3.302
+        },
+        {
+          "i": 6,
+          "w": "und",
+          "s": 3.462,
+          "e": 3.63
+        },
+        {
+          "i": 7,
+          "w": "vierzehn",
+          "s": 3.79,
+          "e": 4.148
+        },
+        {
+          "i": 8,
+          "w": "uhr",
+          "s": 4.308,
+          "e": 4.503
+        },
+        {
+          "i": 9,
+          "w": "zugestellt",
+          "s": 4.663,
+          "e": 5.31
+        },
+        {
+          "i": 10,
+          "w": "bitte",
+          "s": 5.47,
+          "e": 5.683
+        },
+        {
+          "i": 11,
+          "w": "halten",
+          "s": 5.843,
+          "e": 6.132
+        },
+        {
+          "i": 12,
+          "w": "sie",
+          "s": 6.292,
+          "e": 6.393
+        },
+        {
+          "i": 13,
+          "w": "ihren",
+          "s": 6.553,
+          "e": 6.808
+        },
+        {
+          "i": 14,
+          "w": "ausweis",
+          "s": 6.968,
+          "e": 7.39
+        },
+        {
+          "i": 15,
+          "w": "bereit",
+          "s": 7.55,
+          "e": 7.95
+        }
+      ],
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": 600,
+          "note": "paketsendung start 600 ms later (obvious) · from ALN-DE-0013-3 (BND-MAJOR, as is)"
+        },
+        {
+          "action": "remove",
+          "word": 4,
+          "critical": true,
+          "note": "zwischen loses its timing · new"
+        },
+        {
+          "action": "join",
+          "word": 9,
+          "note": "zugestellt + bitte as one chip · new"
+        },
+        {
+          "action": "move",
+          "word": 15,
+          "edge": "start",
+          "shift_ms": 180,
+          "note": "bereit start 180 ms later (subtle) · from ALN-DE-0013-4 (BND-MAJOR, as is)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "530d145a-a2b4-4b05-9471-2a2c6e73e1f0_026.wav",
+      "file_id": "cmo20md9d8t4gy3fbquvaozbm",
+      "file_name": "530d145a-a2b4-4b05-9471-2a2c6e73e1f0_026.wav",
+      "locale": "de_DE",
+      "duration_s": 7.84,
+      "gold_fingerprint": "218bc43c",
+      "words": [
+        {
+          "i": 0,
+          "w": "wir",
+          "s": 1.32,
+          "e": 1.44
+        },
+        {
+          "i": 1,
+          "w": "haben",
+          "s": 1.44,
+          "e": 1.68
+        },
+        {
+          "i": 2,
+          "w": "gestern",
+          "s": 1.68,
+          "e": 2.08
+        },
+        {
+          "i": 3,
+          "w": "einen",
+          "s": 2.08,
+          "e": 2.34
+        },
+        {
+          "i": 4,
+          "w": "laib",
+          "s": 2.34,
+          "e": 2.56
+        },
+        {
+          "i": 5,
+          "w": "brot",
+          "s": 2.6,
+          "e": 2.86
+        },
+        {
+          "i": 6,
+          "w": "beim",
+          "s": 2.9,
+          "e": 3.12
+        },
+        {
+          "i": 7,
+          "w": "bäcker",
+          "s": 3.12,
+          "e": 3.38
+        },
+        {
+          "i": 8,
+          "w": "um",
+          "s": 3.38,
+          "e": 3.5
+        },
+        {
+          "i": 9,
+          "w": "die",
+          "s": 3.5,
+          "e": 3.62
+        },
+        {
+          "i": 10,
+          "w": "ecke",
+          "s": 3.62,
+          "e": 3.86
+        },
+        {
+          "i": 11,
+          "w": "gekauft",
+          "s": 3.86,
+          "e": 4.58
+        },
+        {
+          "i": 12,
+          "w": "und",
+          "s": 4.58,
+          "e": 5.04
+        },
+        {
+          "i": 13,
+          "w": "ähm",
+          "s": 5.04,
+          "e": 5.2
+        },
+        {
+          "i": 14,
+          "w": "der",
+          "s": 5.41,
+          "e": 5.68
+        },
+        {
+          "i": 15,
+          "w": "war",
+          "s": 5.72,
+          "e": 5.89
+        },
+        {
+          "i": 16,
+          "w": "echt",
+          "s": 6.07,
+          "e": 6.64
+        },
+        {
+          "i": 17,
+          "w": "richtig",
+          "s": 6.64,
+          "e": 7.24
+        },
+        {
+          "i": 18,
+          "w": "lecker",
+          "s": 7.24,
+          "e": 7.56
+        }
+      ],
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": -210,
+          "note": "wir start 210 ms earlier (subtle) · new"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": 180,
+          "note": "brot start 180 ms later (subtle) · new"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": -560,
+          "critical": true,
+          "note": "gekauft end 560 ms earlier (obvious); touching next word moves with it · new"
+        },
+        {
+          "action": "move",
+          "word": 17,
+          "edge": "start",
+          "shift_ms": 350,
+          "note": "richtig start 350 ms later (moderate); touching previous word moves with it · from ALN-DE-0002-3 (BND-MAJOR, as is)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "8c5fd979-741c-404b-9920-2c78e92f5bc3_013.wav",
+      "file_id": "cmp0zdzpsnsgnkmzbarxpry1a",
+      "file_name": "8c5fd979-741c-404b-9920-2c78e92f5bc3_013.wav",
+      "locale": "de_DE",
+      "duration_s": 8.08,
+      "gold_fingerprint": "25f629a6",
+      "words": [
+        {
+          "i": 0,
+          "w": "also",
+          "s": 0.37,
+          "e": 1.0
+        },
+        {
+          "i": 1,
+          "w": "ähm",
+          "s": 1.0,
+          "e": 1.32
+        },
+        {
+          "i": 2,
+          "w": "ich",
+          "s": 1.65,
+          "e": 1.84
+        },
+        {
+          "i": 3,
+          "w": "wollte",
+          "s": 1.84,
+          "e": 2.08
+        },
+        {
+          "i": 4,
+          "w": "nur",
+          "s": 2.08,
+          "e": 2.22
+        },
+        {
+          "i": 5,
+          "w": "kurz",
+          "s": 2.22,
+          "e": 2.44
+        },
+        {
+          "i": 6,
+          "w": "bescheid",
+          "s": 2.46,
+          "e": 2.86
+        },
+        {
+          "i": 7,
+          "w": "sagen",
+          "s": 2.86,
+          "e": 3.2
+        },
+        {
+          "i": 8,
+          "w": "dass",
+          "s": 3.2,
+          "e": 3.38
+        },
+        {
+          "i": 9,
+          "w": "ich",
+          "s": 3.38,
+          "e": 3.5
+        },
+        {
+          "i": 10,
+          "w": "heute",
+          "s": 3.5,
+          "e": 3.74
+        },
+        {
+          "i": 11,
+          "w": "etwas",
+          "s": 3.74,
+          "e": 4.0
+        },
+        {
+          "i": 12,
+          "w": "später",
+          "s": 4.0,
+          "e": 4.4
+        },
+        {
+          "i": 13,
+          "w": "komme",
+          "s": 4.4,
+          "e": 4.69
+        },
+        {
+          "i": 14,
+          "w": "der",
+          "s": 6.08,
+          "e": 6.36
+        },
+        {
+          "i": 15,
+          "w": "zug",
+          "s": 6.36,
+          "e": 6.58
+        },
+        {
+          "i": 16,
+          "w": "hat",
+          "s": 6.58,
+          "e": 6.72
+        },
+        {
+          "i": 17,
+          "w": "mal",
+          "s": 6.72,
+          "e": 6.86
+        },
+        {
+          "i": 18,
+          "w": "wieder",
+          "s": 6.86,
+          "e": 7.08
+        },
+        {
+          "i": 19,
+          "w": "verspätung",
+          "s": 7.08,
+          "e": 7.7
+        }
+      ],
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": -350,
+          "note": "ähm start 350 ms earlier (moderate); touching previous word moves with it · new"
+        },
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "start",
+          "shift_ms": 180,
+          "note": "bescheid start 180 ms later (subtle) · from ALN-DE-0001-3 (BND-MAJOR, as is)"
+        },
+        {
+          "action": "remove",
+          "word": 10,
+          "critical": true,
+          "note": "heute loses its timing · new"
+        },
+        {
+          "action": "add",
+          "after_word": 13,
+          "text": "komme",
+          "note": "extra 'komme' in the 1.39 s pause after it · from ALN-DE-0001-1 (hallucinated 'so', now a repeat of the word before)"
+        },
+        {
+          "action": "remove",
+          "word": 18,
+          "critical": true,
+          "note": "wieder loses its timing · from ALN-DE-0001-2 (missing segment)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "df0824de-eef4-4d20-804f-a921a5937beb_027.wav",
+      "file_id": "cmpcjzk1zem6u1zuc7bumtz8f",
+      "file_name": "df0824de-eef4-4d20-804f-a921a5937beb_027.wav",
+      "locale": "de_DE",
+      "duration_s": 9.44,
+      "gold_fingerprint": "5ce8b8ac",
+      "words": [
+        {
+          "i": 0,
+          "w": "hallo",
+          "s": 0.94,
+          "e": 1.16
+        },
+        {
+          "i": 1,
+          "w": "frau",
+          "s": 1.2,
+          "e": 1.34
+        },
+        {
+          "i": 2,
+          "w": "becker",
+          "s": 1.38,
+          "e": 1.78
+        },
+        {
+          "i": 3,
+          "w": "hier",
+          "s": 2.01,
+          "e": 2.22
+        },
+        {
+          "i": 4,
+          "w": "ist",
+          "s": 2.22,
+          "e": 2.3
+        },
+        {
+          "i": 5,
+          "w": "die",
+          "s": 2.34,
+          "e": 2.46
+        },
+        {
+          "i": 6,
+          "w": "praxis",
+          "s": 2.5,
+          "e": 2.9
+        },
+        {
+          "i": 7,
+          "w": "doktor",
+          "s": 2.94,
+          "e": 3.28
+        },
+        {
+          "i": 8,
+          "w": "schulz",
+          "s": 3.28,
+          "e": 3.7
+        },
+        {
+          "i": 9,
+          "w": "ihr",
+          "s": 4.61,
+          "e": 4.84
+        },
+        {
+          "i": 10,
+          "w": "termin",
+          "s": 4.84,
+          "e": 5.24
+        },
+        {
+          "i": 11,
+          "w": "am",
+          "s": 5.24,
+          "e": 5.44
+        },
+        {
+          "i": 12,
+          "w": "dienstag",
+          "s": 5.44,
+          "e": 6.04
+        },
+        {
+          "i": 13,
+          "w": "muss",
+          "s": 6.04,
+          "e": 6.28
+        },
+        {
+          "i": 14,
+          "w": "leider",
+          "s": 6.28,
+          "e": 6.52
+        },
+        {
+          "i": 15,
+          "w": "verschoben",
+          "s": 6.56,
+          "e": 7.06
+        },
+        {
+          "i": 16,
+          "w": "werden",
+          "s": 7.06,
+          "e": 7.38
+        },
+        {
+          "i": 17,
+          "w": "rufen",
+          "s": 7.86,
+          "e": 8.2
+        },
+        {
+          "i": 18,
+          "w": "sie",
+          "s": 8.2,
+          "e": 8.3
+        },
+        {
+          "i": 19,
+          "w": "uns",
+          "s": 8.3,
+          "e": 8.44
+        },
+        {
+          "i": 20,
+          "w": "bitte",
+          "s": 8.48,
+          "e": 8.74
+        },
+        {
+          "i": 21,
+          "w": "zurück",
+          "s": 8.74,
+          "e": 9.08
+        }
+      ],
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": -500,
+          "critical": true,
+          "note": "hallo start 500 ms earlier (obvious) · from ALN-DE-0017-3 (BND-MAJOR, as is)"
+        },
+        {
+          "action": "remove",
+          "word": 5,
+          "critical": true,
+          "note": "die loses its timing · new"
+        },
+        {
+          "action": "join",
+          "word": 11,
+          "note": "am + dienstag as one chip · new"
+        },
+        {
+          "action": "add",
+          "after_word": 16,
+          "text": "werden",
+          "note": "extra 'werden' in the 0.48 s pause after it · from ALN-DE-0017-1 (hallucinated 'noch', now a repeat of the word before)"
+        },
+        {
+          "action": "move",
+          "word": 20,
+          "edge": "end",
+          "shift_ms": 270,
+          "note": "bitte end 270 ms later (moderate); touching next word moves with it · new"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "3c9958ab-538a-437e-a418-36dcf9d42243_004.wav",
+      "file_id": "cmsjttenwdwgv34dthkccgrsy",
+      "file_name": "3c9958ab-538a-437e-a418-36dcf9d42243_004.wav",
+      "locale": "de_DE",
+      "duration_s": 10.0,
+      "gold_fingerprint": "a5813238",
+      "words": [
+        {
+          "i": 0,
+          "w": "mein",
+          "s": 0.84,
+          "e": 1.1
+        },
+        {
+          "i": 1,
+          "w": "bruder",
+          "s": 1.12,
+          "e": 1.48
+        },
+        {
+          "i": 2,
+          "w": "wohnt",
+          "s": 1.48,
+          "e": 1.7
+        },
+        {
+          "i": 3,
+          "w": "jetzt",
+          "s": 1.7,
+          "e": 1.94
+        },
+        {
+          "i": 4,
+          "w": "in",
+          "s": 1.94,
+          "e": 2.08
+        },
+        {
+          "i": 5,
+          "w": "baden",
+          "s": 2.08,
+          "e": 2.38
+        },
+        {
+          "i": 6,
+          "w": "württemberg",
+          "s": 2.38,
+          "e": 2.98
+        },
+        {
+          "i": 7,
+          "w": "in",
+          "s": 3.3,
+          "e": 3.38
+        },
+        {
+          "i": 8,
+          "w": "so",
+          "s": 3.42,
+          "e": 3.54
+        },
+        {
+          "i": 9,
+          "w": "einem",
+          "s": 3.54,
+          "e": 3.82
+        },
+        {
+          "i": 10,
+          "w": "kleinen",
+          "s": 3.82,
+          "e": 4.2
+        },
+        {
+          "i": 11,
+          "w": "dorf",
+          "s": 4.2,
+          "e": 4.44
+        },
+        {
+          "i": 12,
+          "w": "bei",
+          "s": 4.46,
+          "e": 4.64
+        },
+        {
+          "i": 13,
+          "w": "stuttgart",
+          "s": 4.64,
+          "e": 5.17
+        },
+        {
+          "i": 14,
+          "w": "da",
+          "s": 6.04,
+          "e": 6.18
+        },
+        {
+          "i": 15,
+          "w": "ist",
+          "s": 6.18,
+          "e": 6.34
+        },
+        {
+          "i": 16,
+          "w": "es",
+          "s": 6.34,
+          "e": 6.66
+        },
+        {
+          "i": 17,
+          "w": "echt",
+          "s": 6.66,
+          "e": 6.96
+        },
+        {
+          "i": 18,
+          "w": "ruhig",
+          "s": 6.96,
+          "e": 7.46
+        },
+        {
+          "i": 19,
+          "w": "aber",
+          "s": 7.72,
+          "e": 8.14
+        },
+        {
+          "i": 20,
+          "w": "man",
+          "s": 8.14,
+          "e": 8.28
+        },
+        {
+          "i": 21,
+          "w": "braucht",
+          "s": 8.28,
+          "e": 8.72
+        },
+        {
+          "i": 22,
+          "w": "unbedingt",
+          "s": 8.72,
+          "e": 9.24
+        },
+        {
+          "i": 23,
+          "w": "ein",
+          "s": 9.24,
+          "e": 9.46
+        },
+        {
+          "i": 24,
+          "w": "auto",
+          "s": 9.46,
+          "e": 9.8
+        }
+      ],
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": -380,
+          "note": "mein start 380 ms earlier (moderate) · new"
+        },
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "start",
+          "shift_ms": 520,
+          "critical": true,
+          "note": "württemberg start 520 ms later (obvious); touching previous word moves with it · new"
+        },
+        {
+          "action": "move",
+          "word": 10,
+          "edge": "start",
+          "shift_ms": 280,
+          "note": "kleinen start 280 ms later (moderate); touching previous word moves with it · new"
+        },
+        {
+          "action": "move",
+          "word": 13,
+          "edge": "end",
+          "shift_ms": 680,
+          "critical": true,
+          "note": "stuttgart end 680 ms later (obvious) · new"
+        },
+        {
+          "action": "remove",
+          "word": 20,
+          "note": "man loses its timing · from ALN-DE-0020-2 (missing segment)"
+        },
+        {
+          "action": "move",
+          "word": 24,
+          "edge": "start",
+          "shift_ms": 280,
+          "note": "auto start 280 ms later (moderate); touching previous word moves with it · new"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "ccf67f74-e944-4fb7-9236-431d3052777a_036.wav",
+      "file_id": "cmuxi9e5ebnc4ra33vrtucx6o",
+      "file_name": "ccf67f74-e944-4fb7-9236-431d3052777a_036.wav",
+      "locale": "de_DE",
+      "duration_s": 8.72,
+      "gold_fingerprint": "33129ea1",
+      "words": [
+        {
+          "i": 0,
+          "w": "genau",
+          "s": 1.16,
+          "e": 1.85
+        },
+        {
+          "i": 1,
+          "w": "und",
+          "s": 1.89,
+          "e": 2.16
+        },
+        {
+          "i": 2,
+          "w": "dann",
+          "s": 2.16,
+          "e": 2.44
+        },
+        {
+          "i": 3,
+          "w": "gehst",
+          "s": 2.44,
+          "e": 2.62
+        },
+        {
+          "i": 4,
+          "w": "du",
+          "s": 2.64,
+          "e": 2.88
+        },
+        {
+          "i": 5,
+          "w": "einfach",
+          "s": 2.88,
+          "e": 3.24
+        },
+        {
+          "i": 6,
+          "w": "geradeaus",
+          "s": 3.24,
+          "e": 3.92
+        },
+        {
+          "i": 7,
+          "w": "bis",
+          "s": 3.94,
+          "e": 4.18
+        },
+        {
+          "i": 8,
+          "w": "zur",
+          "s": 4.18,
+          "e": 4.4
+        },
+        {
+          "i": 9,
+          "w": "ampel",
+          "s": 4.4,
+          "e": 4.9
+        },
+        {
+          "i": 10,
+          "w": "und",
+          "s": 4.9,
+          "e": 5.06
+        },
+        {
+          "i": 11,
+          "w": "biegst",
+          "s": 5.16,
+          "e": 5.56
+        },
+        {
+          "i": 12,
+          "w": "links",
+          "s": 5.56,
+          "e": 5.92
+        },
+        {
+          "i": 13,
+          "w": "ab",
+          "s": 5.92,
+          "e": 6.02
+        },
+        {
+          "i": 14,
+          "w": "das",
+          "s": 6.58,
+          "e": 6.76
+        },
+        {
+          "i": 15,
+          "w": "rathaus",
+          "s": 6.76,
+          "e": 7.26
+        },
+        {
+          "i": 16,
+          "w": "siehst",
+          "s": 7.26,
+          "e": 7.42
+        },
+        {
+          "i": 17,
+          "w": "du",
+          "s": 7.46,
+          "e": 7.56
+        },
+        {
+          "i": 18,
+          "w": "dann",
+          "s": 7.56,
+          "e": 7.7
+        },
+        {
+          "i": 19,
+          "w": "schon",
+          "s": 7.7,
+          "e": 7.9
+        },
+        {
+          "i": 20,
+          "w": "von",
+          "s": 7.9,
+          "e": 8.08
+        },
+        {
+          "i": 21,
+          "w": "weitem",
+          "s": 8.08,
+          "e": 8.48
+        }
+      ],
+      "plants": [
+        {
+          "action": "join",
+          "word": 0,
+          "critical": true,
+          "note": "genau + und as one chip · new"
+        },
+        {
+          "action": "join",
+          "word": 6,
+          "critical": true,
+          "note": "geradeaus + bis as one chip · new"
+        },
+        {
+          "action": "move",
+          "word": 12,
+          "edge": "start",
+          "shift_ms": 170,
+          "note": "links start 170 ms later (subtle); touching previous word moves with it · new"
+        },
+        {
+          "action": "move",
+          "word": 15,
+          "edge": "end",
+          "shift_ms": -350,
+          "note": "rathaus end 350 ms earlier (moderate); touching next word moves with it · from ALN-DE-0007-4 (BND-MAJOR, as is)"
+        },
+        {
+          "action": "move",
+          "word": 20,
+          "edge": "end",
+          "shift_ms": 150,
+          "note": "von end 150 ms later (subtle); touching next word moves with it · new"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "4d2510cf-e652-4133-8300-02b26edc9b1f_003.wav",
+      "file_id": "cmvewjpetnnxtbbdpmkrs3xhi",
+      "file_name": "4d2510cf-e652-4133-8300-02b26edc9b1f_003.wav",
+      "locale": "de_DE",
+      "duration_s": 9.68,
+      "gold_fingerprint": "d5ae8728",
+      "words": [
+        {
+          "i": 0,
+          "w": "also",
+          "s": 1.14,
+          "e": 1.71
+        },
+        {
+          "i": 1,
+          "w": "die",
+          "s": 1.97,
+          "e": 2.18
+        },
+        {
+          "i": 2,
+          "w": "miete",
+          "s": 2.18,
+          "e": 2.46
+        },
+        {
+          "i": 3,
+          "w": "kostet",
+          "s": 2.46,
+          "e": 2.94
+        },
+        {
+          "i": 4,
+          "w": "achthundertfünfzig",
+          "s": 2.94,
+          "e": 3.86
+        },
+        {
+          "i": 5,
+          "w": "euro",
+          "s": 3.86,
+          "e": 4.14
+        },
+        {
+          "i": 6,
+          "w": "im",
+          "s": 4.14,
+          "e": 4.26
+        },
+        {
+          "i": 7,
+          "w": "monat",
+          "s": 4.26,
+          "e": 4.74
+        },
+        {
+          "i": 8,
+          "w": "warm",
+          "s": 4.9,
+          "e": 5.28
+        },
+        {
+          "i": 9,
+          "w": "und",
+          "s": 5.61,
+          "e": 5.94
+        },
+        {
+          "i": 10,
+          "w": "die",
+          "s": 5.98,
+          "e": 6.1
+        },
+        {
+          "i": 11,
+          "w": "wohnung",
+          "s": 6.1,
+          "e": 6.42
+        },
+        {
+          "i": 12,
+          "w": "hat",
+          "s": 6.42,
+          "e": 6.6
+        },
+        {
+          "i": 13,
+          "w": "drei",
+          "s": 6.6,
+          "e": 6.88
+        },
+        {
+          "i": 14,
+          "w": "zimmer",
+          "s": 6.88,
+          "e": 7.14
+        },
+        {
+          "i": 15,
+          "w": "das",
+          "s": 7.66,
+          "e": 7.82
+        },
+        {
+          "i": 16,
+          "w": "ist",
+          "s": 7.82,
+          "e": 7.96
+        },
+        {
+          "i": 17,
+          "w": "für",
+          "s": 7.96,
+          "e": 8.08
+        },
+        {
+          "i": 18,
+          "w": "berlin",
+          "s": 8.08,
+          "e": 8.52
+        },
+        {
+          "i": 19,
+          "w": "eigentlich",
+          "s": 8.52,
+          "e": 8.9
+        },
+        {
+          "i": 20,
+          "w": "ganz",
+          "s": 8.94,
+          "e": 9.14
+        },
+        {
+          "i": 21,
+          "w": "okay",
+          "s": 9.14,
+          "e": 9.45
+        }
+      ],
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 470,
+          "note": "also start 470 ms later (obvious) · new"
+        },
+        {
+          "action": "join",
+          "word": 4,
+          "critical": true,
+          "note": "achthundertfünfzig + euro as one chip · new"
+        },
+        {
+          "action": "remove",
+          "word": 8,
+          "critical": true,
+          "note": "warm loses its timing · new"
+        },
+        {
+          "action": "add",
+          "after_word": 14,
+          "text": "zimmer",
+          "note": "extra 'zimmer' in the 0.52 s pause after it · new"
+        },
+        {
+          "action": "remove",
+          "word": 20,
+          "note": "ganz loses its timing · new"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "4d0d96a2-ab48-473b-9f74-e79bee28986f_015.wav",
+      "file_id": "cmwaz1zon0xop5h0k4tx1mc02",
+      "file_name": "4d0d96a2-ab48-473b-9f74-e79bee28986f_015.wav",
+      "locale": "de_DE",
+      "duration_s": 7.6,
+      "gold_fingerprint": "0e57901d",
+      "words": [
+        {
+          "i": 0,
+          "w": "tja",
+          "s": 0.76,
+          "e": 1.17
+        },
+        {
+          "i": 1,
+          "w": "das",
+          "s": 1.56,
+          "e": 1.74
+        },
+        {
+          "i": 2,
+          "w": "krankenhaus",
+          "s": 1.76,
+          "e": 2.38
+        },
+        {
+          "i": 3,
+          "w": "ist",
+          "s": 2.38,
+          "e": 2.56
+        },
+        {
+          "i": 4,
+          "w": "leider",
+          "s": 2.56,
+          "e": 2.84
+        },
+        {
+          "i": 5,
+          "w": "total",
+          "s": 2.84,
+          "e": 3.34
+        },
+        {
+          "i": 6,
+          "w": "überlastet",
+          "s": 3.34,
+          "e": 3.96
+        },
+        {
+          "i": 7,
+          "w": "und",
+          "s": 4.45,
+          "e": 4.62
+        },
+        {
+          "i": 8,
+          "w": "man",
+          "s": 4.62,
+          "e": 4.78
+        },
+        {
+          "i": 9,
+          "w": "wartet",
+          "s": 4.78,
+          "e": 5.1
+        },
+        {
+          "i": 10,
+          "w": "manchmal",
+          "s": 5.1,
+          "e": 5.54
+        },
+        {
+          "i": 11,
+          "w": "vier",
+          "s": 5.6,
+          "e": 5.92
+        },
+        {
+          "i": 12,
+          "w": "stunden",
+          "s": 5.92,
+          "e": 6.4
+        },
+        {
+          "i": 13,
+          "w": "in",
+          "s": 6.4,
+          "e": 6.5
+        },
+        {
+          "i": 14,
+          "w": "der",
+          "s": 6.5,
+          "e": 6.62
+        },
+        {
+          "i": 15,
+          "w": "notaufnahme",
+          "s": 6.62,
+          "e": 7.26
+        }
+      ],
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": 500,
+          "critical": true,
+          "note": "krankenhaus start 500 ms later (obvious) · from ALN-DE-0009-4 (BND-MAJOR, as is)"
+        },
+        {
+          "action": "add",
+          "after_word": 6,
+          "text": "überlastet",
+          "note": "extra 'überlastet' in the 0.49 s pause after it · from ALN-DE-0009-1 (hallucinated 'so', now a repeat of the word before)"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": 410,
+          "note": "vier end 410 ms later (moderate); touching next word moves with it · new"
+        },
+        {
+          "action": "move",
+          "word": 15,
+          "edge": "end",
+          "shift_ms": -300,
+          "note": "notaufnahme end 300 ms earlier (moderate) · from ALN-DE-0009-5 (BND-MAJOR, as is)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "754f90c9-2bcb-4802-92de-4b1c9bb5014c_030.wav",
+      "file_id": "cmxhlwow5ffx83slxsritnrc2",
+      "file_name": "754f90c9-2bcb-4802-92de-4b1c9bb5014c_030.wav",
+      "locale": "de_DE",
+      "duration_s": 8.24,
+      "gold_fingerprint": "a2e506fd",
+      "words": [
+        {
+          "i": 0,
+          "w": "naja",
+          "s": 0.77,
+          "e": 1.33
+        },
+        {
+          "i": 1,
+          "w": "ich",
+          "s": 1.68,
+          "e": 1.82
+        },
+        {
+          "i": 2,
+          "w": "hab",
+          "s": 1.82,
+          "e": 1.94
+        },
+        {
+          "i": 3,
+          "w": "dir",
+          "s": 1.96,
+          "e": 2.06
+        },
+        {
+          "i": 4,
+          "w": "doch",
+          "s": 2.06,
+          "e": 2.2
+        },
+        {
+          "i": 5,
+          "w": "gesagt",
+          "s": 2.22,
+          "e": 2.94
+        },
+        {
+          "i": 6,
+          "w": "das",
+          "s": 2.94,
+          "e": 3.14
+        },
+        {
+          "i": 7,
+          "w": "wetter",
+          "s": 3.14,
+          "e": 3.44
+        },
+        {
+          "i": 8,
+          "w": "am",
+          "s": 3.44,
+          "e": 3.6
+        },
+        {
+          "i": 9,
+          "w": "meer",
+          "s": 3.6,
+          "e": 3.86
+        },
+        {
+          "i": 10,
+          "w": "ist",
+          "s": 3.86,
+          "e": 4.0
+        },
+        {
+          "i": 11,
+          "w": "im",
+          "s": 4.0,
+          "e": 4.12
+        },
+        {
+          "i": 12,
+          "w": "april",
+          "s": 4.12,
+          "e": 4.46
+        },
+        {
+          "i": 13,
+          "w": "einfach",
+          "s": 4.52,
+          "e": 4.92
+        },
+        {
+          "i": 14,
+          "w": "nicht",
+          "s": 4.92,
+          "e": 5.12
+        },
+        {
+          "i": 15,
+          "w": "so",
+          "s": 5.12,
+          "e": 5.32
+        },
+        {
+          "i": 16,
+          "w": "toll",
+          "s": 5.32,
+          "e": 5.58
+        },
+        {
+          "i": 17,
+          "w": "nächstes",
+          "s": 6.29,
+          "e": 6.68
+        },
+        {
+          "i": 18,
+          "w": "mal",
+          "s": 6.68,
+          "e": 6.92
+        },
+        {
+          "i": 19,
+          "w": "fahren",
+          "s": 6.92,
+          "e": 7.18
+        },
+        {
+          "i": 20,
+          "w": "wir",
+          "s": 7.18,
+          "e": 7.3
+        },
+        {
+          "i": 21,
+          "w": "lieber",
+          "s": 7.3,
+          "e": 7.54
+        },
+        {
+          "i": 22,
+          "w": "im",
+          "s": 7.54,
+          "e": 7.7
+        },
+        {
+          "i": 23,
+          "w": "juli",
+          "s": 7.7,
+          "e": 8.02
+        }
+      ],
+      "plants": [
+        {
+          "action": "join",
+          "word": 0,
+          "note": "naja + ich as one chip · new"
+        },
+        {
+          "action": "join",
+          "word": 5,
+          "critical": true,
+          "note": "gesagt + das as one chip · new"
+        },
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "end",
+          "shift_ms": -190,
+          "note": "meer end 190 ms earlier (subtle); touching next word moves with it · new"
+        },
+        {
+          "action": "move",
+          "word": 13,
+          "edge": "start",
+          "shift_ms": 240,
+          "note": "einfach start 240 ms later (subtle) · new"
+        },
+        {
+          "action": "move",
+          "word": 16,
+          "edge": "end",
+          "shift_ms": 590,
+          "critical": true,
+          "note": "toll end 590 ms later (obvious) · new"
+        },
+        {
+          "action": "move",
+          "word": 23,
+          "edge": "start",
+          "shift_ms": 160,
+          "note": "juli start 160 ms later (subtle); touching previous word moves with it · new"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "02e795b5-7cec-4ea2-868e-d0f4c02967f6_021.wav",
+      "file_id": "cmxp1ir8qlwjbq7qlcyimbj1m",
+      "file_name": "02e795b5-7cec-4ea2-868e-d0f4c02967f6_021.wav",
+      "locale": "de_DE",
+      "duration_s": 8.48,
+      "gold_fingerprint": "656f1227",
+      "words": [
+        {
+          "i": 0,
+          "w": "ich",
+          "s": 0.92,
+          "e": 1.14
+        },
+        {
+          "i": 1,
+          "w": "arbeite",
+          "s": 1.14,
+          "e": 1.52
+        },
+        {
+          "i": 2,
+          "w": "bei",
+          "s": 1.52,
+          "e": 1.66
+        },
+        {
+          "i": 3,
+          "w": "der",
+          "s": 1.66,
+          "e": 1.94
+        },
+        {
+          "i": 4,
+          "w": "a.",
+          "s": 1.94,
+          "e": 2.16
+        },
+        {
+          "i": 5,
+          "w": "r.",
+          "s": 2.16,
+          "e": 2.34
+        },
+        {
+          "i": 6,
+          "w": "d.",
+          "s": 2.34,
+          "e": 2.56
+        },
+        {
+          "i": 7,
+          "w": "in",
+          "s": 2.56,
+          "e": 2.76
+        },
+        {
+          "i": 8,
+          "w": "köln",
+          "s": 2.76,
+          "e": 3.2
+        },
+        {
+          "i": 9,
+          "w": "und",
+          "s": 3.42,
+          "e": 3.58
+        },
+        {
+          "i": 10,
+          "w": "zwar",
+          "s": 3.58,
+          "e": 3.76
+        },
+        {
+          "i": 11,
+          "w": "in",
+          "s": 3.76,
+          "e": 3.86
+        },
+        {
+          "i": 12,
+          "w": "der",
+          "s": 3.86,
+          "e": 3.96
+        },
+        {
+          "i": 13,
+          "w": "redaktion",
+          "s": 3.96,
+          "e": 4.46
+        },
+        {
+          "i": 14,
+          "w": "für",
+          "s": 4.5,
+          "e": 4.66
+        },
+        {
+          "i": 15,
+          "w": "nachrichten",
+          "s": 4.66,
+          "e": 5.27
+        },
+        {
+          "i": 16,
+          "w": "das",
+          "s": 6.18,
+          "e": 6.36
+        },
+        {
+          "i": 17,
+          "w": "ist",
+          "s": 6.36,
+          "e": 6.56
+        },
+        {
+          "i": 18,
+          "w": "manchmal",
+          "s": 6.56,
+          "e": 7.08
+        },
+        {
+          "i": 19,
+          "w": "ziemlich",
+          "s": 7.08,
+          "e": 7.5
+        },
+        {
+          "i": 20,
+          "w": "stressig",
+          "s": 7.5,
+          "e": 8.06
+        }
+      ],
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": -460,
+          "critical": true,
+          "note": "ich start 460 ms earlier (obvious) · new"
+        },
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "end",
+          "shift_ms": 160,
+          "note": "der end 160 ms later (subtle); touching next word moves with it · new"
+        },
+        {
+          "action": "move",
+          "word": 8,
+          "edge": "start",
+          "shift_ms": 200,
+          "note": "köln start 200 ms later (subtle); touching previous word moves with it · from ALN-DE-0006-4 (BND-MAJOR, as is)"
+        },
+        {
+          "action": "remove",
+          "word": 14,
+          "critical": true,
+          "note": "für loses its timing · from ALN-DE-0006-2 (missing segment)"
+        },
+        {
+          "action": "move",
+          "word": 19,
+          "edge": "start",
+          "shift_ms": -330,
+          "note": "ziemlich start 330 ms earlier (moderate); touching previous word moves with it · new"
+        }
+      ]
+    }
+  ]
+}
