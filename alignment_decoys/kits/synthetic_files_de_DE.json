@@ -1,0 +1,18 @@
+{
+  "locale": "de_DE",
+  "note": "Entirely synthetic speech. In the kit they are tagged \"none\" so they import.",
+  "files": [
+    {
+      "decoy_id": "ALN-DE-0008",
+      "file_name": "593810cb-2d63-47d1-8ef9-02b8fe987f86_025.wav"
+    },
+    {
+      "decoy_id": "ALN-DE-0011",
+      "file_name": "e5215448-696b-4552-a1b2-37ac177d1cf9_025.wav"
+    },
+    {
+      "decoy_id": "ALN-DE-0013",
+      "file_name": "068314c5-9d4d-41f5-86b6-9e71e7b7117a_038.wav"
+    }
+  ]
+}

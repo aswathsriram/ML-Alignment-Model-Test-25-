@@ -223,7 +223,9 @@ def apply(W, dur, plants):
     return timed
 
 
-def build(loc, date):
+def plan(loc):
+    """Plant 3-6 pack-rule mistakes per file of a locale's decoy package (carry over what fits, re-plan the rest).
+    Returns, in the pre-fill's order: [{"e": corpus record, "W": gold words, "dur": seconds, "plants": [...]}]."""
     rng = random.Random(f"{SEED}-{loc}")
     z = zipfile.ZipFile(HERE / f"alignment_decoys_{loc}.zip")
     corpus = {e["file_id"]: e for e in json.loads(z.read(f"alignment_decoys_{loc}/decoy_corpus.json"))}
@@ -271,6 +273,26 @@ def build(loc, date):
             if not placed:
                 break
 
+    # 2b. a short file that ended with fewer than 3: search other combinations until 3 fit the spacing rule
+    for f in files:
+        if len(f["plants"]) >= 3:
+            continue
+        best = (f["plants"], f["taken"])
+        for attempt in range(300):
+            r2 = random.Random(f"{SEED}-{f['e']['file_id']}-{attempt}")
+            cands = [c for a in ACTION_SHARE for cls in ([m for m, _, _ in MOVE_CLASSES] if a == "move" else [None])
+                     for c in fresh(f["W"], f["dur"], a, r2, cls)]
+            r2.shuffle(cands)
+            plants, taken = [], []
+            for plant, aff, note in cands:
+                if len(plants) < f["target"] and spaced(taken, aff):
+                    plants.append(dict(plant, note=note)); taken.append(aff)
+            if len(plants) > len(best[0]):
+                best = (plants, taken)
+            if len(best[0]) >= 3:
+                break
+        f["plants"], f["taken"] = best
+
     # 3. critical: the 1-2 most obvious per file
     out = []
     for f in files:
@@ -287,10 +309,17 @@ def build(loc, date):
             final.append(q)
         final.sort(key=lambda p: p.get("word", p.get("after_word")))
         apply(W, f["dur"], final)
+        out.append({"e": f["e"], "W": W, "dur": f["dur"], "plants": final})
+    return out
+
+
+def build(loc, date):
+    out = []
+    for f in plan(loc):
+        W, e = f["W"], f["e"]
         fp = hashlib.sha256(json.dumps([[w["w"], w["s"], w["e"]] for w in W]).encode()).hexdigest()[:8]
-        e = f["e"]
         out.append({"decoy_ref": e["file_name"], "file_id": e["file_id"], "file_name": e["file_name"], "locale": loc,
-                    "duration_s": f["dur"], "gold_fingerprint": fp, "words": W, "plants": final})
+                    "duration_s": f["dur"], "gold_fingerprint": fp, "words": W, "plants": f["plants"]})
     pack = {"format": FORMAT, "instructions": INSTRUCTIONS, "decoys": out}
     path = HERE / "packs" / f"our-files_not-in-platform_{loc}-{date}.json"     # needs the files in the platform first
     path.parent.mkdir(exist_ok=True)

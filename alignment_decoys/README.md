@@ -43,3 +43,12 @@ import it back unchanged otherwise.
 - `our-files_not-in-platform_de_DE-2026-10-29.json` — our 20 German files in pack format (90 plants). The platform
   rejects these ("Not a reviewer-finalized alignment") until the 20 audio files are uploaded there, aligned and
   reviewer-finalized; then export them as a pack and fill it with `--fill`.
+
+## align-decoy-kit/v1 kits (`kits/`) — import with our own audio
+
+`kits/alignment_decoy_kit_<locale>.zip` = `decoy_corpus.json` (align-decoy-kit/v1) + `audio/` (20 clips). The platform
+imports these directly: no need for the files to exist there first. Only the four families the platform keeps are
+used (BND-MAJOR >= 150 ms, WD, WH, SEG-MERGE), 3-6 per clip, each clip with an A1 (must-catch).
+All 20 clips import: the platform skips clips tagged `synthetic_speech`, so every clip is tagged `none`; the
+entirely synthetic ones are listed in `kits/synthetic_files_<locale>.json`.
+Build: `python alignment_decoys/build_kit.py` (uses the same plan as `build_pack.py`).
