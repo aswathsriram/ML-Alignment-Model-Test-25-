@@ -1,0 +1,457 @@
+{
+  "format": "align-decoys/v1",
+  "instructions": [
+    "`words` is the CORRECT alignment, approved by a reviewer: i = index, w = word, s / e = start / end in seconds. Never change it.",
+    "Fill each decoy's `plants` with 3–6 deliberate mistakes an aligner can only find by listening.",
+    "move — {\"action\":\"move\",\"word\":12,\"edge\":\"start\"|\"end\",\"shift_ms\":-300}: moves one edge of word 12. Positive = later. A neighbour touching that edge moves with it. Use 150–700 ms (150–250 subtle, 250–450 moderate, 450+ obvious). Never push an edge past the far edge of the neighbouring word, before 0 or past the audio end.",
+    "remove — {\"action\":\"remove\",\"word\":40}: the word keeps its text in the transcript but loses its timing (an aligner must add it back).",
+    "add — {\"action\":\"add\",\"after_word\":20,\"text\":\"the\"}: an extra chip in the pause after word 20 (the pause must be at least 0.35 s). Use a word from the same sentence, e.g. a repeat of the word before.",
+    "join — {\"action\":\"join\",\"word\":7}: words 7 and 8 become one chip. Only where words are separated by spaces (NOT ja_JP or zh_CN), and only when the true boundary is at least 0.2 s away from the middle of the joined chip.",
+    "Keep mistakes at least 3 words apart. Never touch a tag word (text starting with [ or <).",
+    "Mark the 1–2 most obvious mistakes \"critical\": true (must-catch). Optional \"note\" is for you only.",
+    "Return the SAME JSON with only the `plants` arrays filled. Do not add, remove or edit any other field."
+  ],
+  "decoys": [
+    {
+      "decoy_ref": "e631da9d-c5cb-4535-a20c-296ae7b00fa4_053.wav",
+      "file_id": "cmty8waqw002qyspbozz5679z",
+      "file_name": "e631da9d-c5cb-4535-a20c-296ae7b00fa4_053.wav",
+      "locale": "de_DE",
+      "duration_s": 29.98687074829932,
+      "gold_fingerprint": "b86fb51f",
+      "words": [
+        {
+          "i": 0,
+          "w": "was",
+          "s": 0.04,
+          "e": 0.14
+        },
+        {
+          "i": 1,
+          "w": "er",
+          "s": 0.19,
+          "e": 0.24
+        },
+        {
+          "i": 2,
+          "w": "da",
+          "s": 0.3,
+          "e": 0.43
+        },
+        {
+          "i": 3,
+          "w": "habe",
+          "s": 0.43,
+          "e": 0.817
+        },
+        {
+          "i": 4,
+          "w": "fragte",
+          "s": 1.27,
+          "e": 1.617
+        },
+        {
+          "i": 5,
+          "w": "studer",
+          "s": 1.617,
+          "e": 2.23
+        },
+        {
+          "i": 6,
+          "w": "und",
+          "s": 2.866,
+          "e": 3.05
+        },
+        {
+          "i": 7,
+          "w": "deutete",
+          "s": 3.07,
+          "e": 3.521
+        },
+        {
+          "i": 8,
+          "w": "auf",
+          "s": 3.521,
+          "e": 3.74
+        },
+        {
+          "i": 9,
+          "w": "den",
+          "s": 3.75,
+          "e": 3.95
+        },
+        {
+          "i": 10,
+          "w": "wulst",
+          "s": 3.966,
+          "e": 4.51
+        },
+        {
+          "i": 11,
+          "w": "gilgen",
+          "s": 5.268,
+          "e": 5.661
+        },
+        {
+          "i": 12,
+          "w": "zuckte",
+          "s": 5.667,
+          "e": 5.999
+        },
+        {
+          "i": 13,
+          "w": "müde",
+          "s": 6.003,
+          "e": 6.17
+        },
+        {
+          "i": 14,
+          "w": "mit",
+          "s": 6.248,
+          "e": 6.4
+        },
+        {
+          "i": 15,
+          "w": "den",
+          "s": 6.401,
+          "e": 6.58
+        },
+        {
+          "i": 16,
+          "w": "achseln",
+          "s": 6.63,
+          "e": 7.16
+        },
+        {
+          "i": 17,
+          "w": "sein",
+          "s": 7.91,
+          "e": 8.106
+        },
+        {
+          "i": 18,
+          "w": "blaues",
+          "s": 8.109,
+          "e": 8.423
+        },
+        {
+          "i": 19,
+          "w": "hemd",
+          "s": 8.426,
+          "e": 8.743
+        },
+        {
+          "i": 20,
+          "w": "war",
+          "s": 8.753,
+          "e": 8.927
+        },
+        {
+          "i": 21,
+          "w": "vielfach",
+          "s": 8.947,
+          "e": 9.438
+        },
+        {
+          "i": 22,
+          "w": "geflickt",
+          "s": 9.441,
+          "e": 10.094
+        },
+        {
+          "i": 23,
+          "w": "auch",
+          "s": 10.407,
+          "e": 10.56
+        },
+        {
+          "i": 24,
+          "w": "mit",
+          "s": 10.56,
+          "e": 10.735
+        },
+        {
+          "i": 25,
+          "w": "andersfarbigen",
+          "s": 10.735,
+          "e": 11.527
+        },
+        {
+          "i": 26,
+          "w": "stoffresten",
+          "s": 11.529,
+          "e": 12.478
+        },
+        {
+          "i": 27,
+          "w": "er",
+          "s": 13.19,
+          "e": 13.302
+        },
+        {
+          "i": 28,
+          "w": "zuckte",
+          "s": 13.303,
+          "e": 13.646
+        },
+        {
+          "i": 29,
+          "w": "mit",
+          "s": 13.65,
+          "e": 13.8
+        },
+        {
+          "i": 30,
+          "w": "den",
+          "s": 13.801,
+          "e": 13.966
+        },
+        {
+          "i": 31,
+          "w": "achseln",
+          "s": 13.966,
+          "e": 14.685
+        },
+        {
+          "i": 32,
+          "w": "als",
+          "s": 14.8,
+          "e": 14.963
+        },
+        {
+          "i": 33,
+          "w": "wolle",
+          "s": 14.966,
+          "e": 15.175
+        },
+        {
+          "i": 34,
+          "w": "er",
+          "s": 15.175,
+          "e": 15.291
+        },
+        {
+          "i": 35,
+          "w": "sagen",
+          "s": 15.294,
+          "e": 15.792
+        },
+        {
+          "i": 36,
+          "w": "was",
+          "s": 16.61,
+          "e": 16.769
+        },
+        {
+          "i": 37,
+          "w": "fragst",
+          "s": 16.769,
+          "e": 17.093
+        },
+        {
+          "i": 38,
+          "w": "du",
+          "s": 17.11,
+          "e": 17.2
+        },
+        {
+          "i": 39,
+          "w": "so",
+          "s": 17.21,
+          "e": 17.35
+        },
+        {
+          "i": 40,
+          "w": "dumm",
+          "s": 17.35,
+          "e": 17.65
+        },
+        {
+          "i": 41,
+          "w": "seine",
+          "s": 18.321,
+          "e": 18.589
+        },
+        {
+          "i": 42,
+          "w": "hand",
+          "s": 18.589,
+          "e": 18.803
+        },
+        {
+          "i": 43,
+          "w": "verschwand",
+          "s": 18.804,
+          "e": 19.311
+        },
+        {
+          "i": 44,
+          "w": "unter",
+          "s": 19.311,
+          "e": 19.494
+        },
+        {
+          "i": 45,
+          "w": "dem",
+          "s": 19.502,
+          "e": 19.677
+        },
+        {
+          "i": 46,
+          "w": "schürzenlatz",
+          "s": 19.677,
+          "e": 20.652
+        },
+        {
+          "i": 47,
+          "w": "zog",
+          "s": 21.134,
+          "e": 21.399
+        },
+        {
+          "i": 48,
+          "w": "etwas",
+          "s": 21.399,
+          "e": 21.688
+        },
+        {
+          "i": 49,
+          "w": "hervor",
+          "s": 21.72,
+          "e": 22.24
+        },
+        {
+          "i": 50,
+          "w": "warf",
+          "s": 22.62,
+          "e": 22.804
+        },
+        {
+          "i": 51,
+          "w": "es",
+          "s": 22.804,
+          "e": 22.911
+        },
+        {
+          "i": 52,
+          "w": "auf",
+          "s": 22.911,
+          "e": 23.069
+        },
+        {
+          "i": 53,
+          "w": "den",
+          "s": 23.069,
+          "e": 23.273
+        },
+        {
+          "i": 54,
+          "w": "tisch",
+          "s": 23.274,
+          "e": 23.67
+        },
+        {
+          "i": 55,
+          "w": "zwei",
+          "s": 24.67,
+          "e": 25.056
+        },
+        {
+          "i": 56,
+          "w": "bündel",
+          "s": 25.056,
+          "e": 25.443
+        },
+        {
+          "i": 57,
+          "w": "banknoten",
+          "s": 25.447,
+          "e": 26.22
+        },
+        {
+          "i": 58,
+          "w": "studer",
+          "s": 26.9,
+          "e": 27.342
+        },
+        {
+          "i": 59,
+          "w": "hob",
+          "s": 27.342,
+          "e": 27.526
+        },
+        {
+          "i": 60,
+          "w": "sie",
+          "s": 27.526,
+          "e": 27.71
+        },
+        {
+          "i": 61,
+          "w": "auf",
+          "s": 27.71,
+          "e": 28.15
+        },
+        {
+          "i": 62,
+          "w": "blätterte",
+          "s": 28.7,
+          "e": 29.05
+        },
+        {
+          "i": 63,
+          "w": "sie",
+          "s": 29.129,
+          "e": 29.295
+        },
+        {
+          "i": 64,
+          "w": "durch",
+          "s": 29.295,
+          "e": 29.78
+        }
+      ],
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 5,
+          "text": "studer",
+          "note": "extra 'studer' in the 0.64 s pause after it"
+        },
+        {
+          "action": "join",
+          "word": 22,
+          "note": "geflickt + auch as one chip"
+        },
+        {
+          "action": "remove",
+          "word": 35,
+          "critical": true,
+          "note": "sagen loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 46,
+          "edge": "end",
+          "shift_ms": 350,
+          "note": "schürzenlatz end 350 ms later (moderate)"
+        },
+        {
+          "action": "move",
+          "word": 58,
+          "edge": "start",
+          "shift_ms": -640,
+          "critical": true,
+          "note": "studer start 640 ms earlier (obvious)"
+        },
+        {
+          "action": "move",
+          "word": 64,
+          "edge": "start",
+          "shift_ms": 170,
+          "note": "durch start 170 ms later (subtle); touching previous word moves with it"
+        }
+      ]
+    }
+  ]
+}
