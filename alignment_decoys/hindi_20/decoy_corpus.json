@@ -1,0 +1,8927 @@
+{
+  "format": "align-decoy-kit/v1",
+  "instructions": [
+    "Put this file (named decoy_corpus.json) and the audio files in one .zip. Any folder layout works; each decoy's `file_name` must match one audio file's name (wav, flac, mp3, m4a, ogg, opus, webm).",
+    "One record per clip in `decoys` (a bare list of records works too). Clips must be at most 6 minutes long. Only records with status \"ACTIVE\" are imported.",
+    "`decoy_id` must be unique and stable: importing the same decoy_id with the same correct alignment again adds nothing.",
+    "`locale` is the language key: en, es_ES, de_DE, fr_FR, it_IT, pt_BR, ja_JP, zh_CN, hi_IN or kr_KR. The language must have an aligner.",
+    "`gold_segments` is the CORRECT alignment, one entry per word in spoken order: word, start, end in seconds. No zero-length words, no overlaps, at least 8 words. Words starting with [ or < are tags and are never touched.",
+    "`injections` are the planted mistakes. `plain_offset` is the index of a word in gold_segments (the first word is 0). Put mistakes on different words, ideally at least 3 words apart.",
+    "BND-MAJOR — a moved word edge: plain_offset, edge (\"start\" | \"end\"), decoy {start, end} = that word's planted timings. The edge must move at least 150 ms (aligners get 100 ms tolerance). A neighbour it runs into gives way.",
+    "WD — a missing chip: plain_offset of the word that loses its timing (it stays in the transcript).",
+    "WH — an extra chip: word (its text), decoy {start, end} inside a pause, inserted_before_index = index of the word right after it (1 or more).",
+    "SEG-MERGE — two words in one chip: plain_offset of the first word; it is joined with the next. Space-separated languages only (not ja_JP or zh_CN).",
+    "band (A1 obvious, A2 medium, A3 subtle) and weight are yours; each clip's one or two heaviest A1 mistakes become must-catch.",
+    "Dropped on import, because aligners here only fix timings: word text changes (WS, G-ACCENT, G-CASE, G-NUM, G-PUNCT), zero-length chips (BND-ZERO), one word split over two chips (SEG-SPLIT), and edges moved under 150 ms. Clips with gold_whole_audio_tag \"synthetic_speech\" are skipped."
+  ],
+  "decoys": [
+    {
+      "decoy_id": "HI-EXISTING-cmv7zi88f0025djpbw7402fe6-6060d3a2",
+      "locale": "hi_IN",
+      "file_name": "8b05284117893e640bb52f0b0e9ba37e.audio.wav",
+      "duration_seconds": 29.212,
+      "status": "ACTIVE",
+      "gold_whole_audio_tag": "none",
+      "gold_segments": [
+        {
+          "word": "बिलियनों",
+          "start": 0.06,
+          "end": 0.54
+        },
+        {
+          "word": "dollar",
+          "start": 0.55,
+          "end": 0.92
+        },
+        {
+          "word": "की",
+          "start": 0.96,
+          "end": 1.06
+        },
+        {
+          "word": "कटौती",
+          "start": 1.17,
+          "end": 1.7
+        },
+        {
+          "word": "एक",
+          "start": 2.04,
+          "end": 2.31
+        },
+        {
+          "word": "धोखा",
+          "start": 2.39,
+          "end": 2.88
+        },
+        {
+          "word": "है",
+          "start": 2.96,
+          "end": 3.09
+        },
+        {
+          "word": "greens",
+          "start": 3.62,
+          "end": 3.9
+        },
+        {
+          "word": "का",
+          "start": 3.92,
+          "end": 4.05
+        },
+        {
+          "word": "कहना",
+          "start": 4.09,
+          "end": 4.38
+        },
+        {
+          "word": "है",
+          "start": 4.39,
+          "end": 4.6
+        },
+        {
+          "word": "कि",
+          "start": 4.62,
+          "end": 4.8
+        },
+        {
+          "word": "n.",
+          "start": 4.84,
+          "end": 4.93
+        },
+        {
+          "word": "d.",
+          "start": 4.93,
+          "end": 5.05
+        },
+        {
+          "word": "i.",
+          "start": 5.06,
+          "end": 5.19
+        },
+        {
+          "word": "s.",
+          "start": 5.19,
+          "end": 5.41
+        },
+        {
+          "word": "की",
+          "start": 5.54,
+          "end": 5.68
+        },
+        {
+          "word": "ऊँची",
+          "start": 5.71,
+          "end": 6.12
+        },
+        {
+          "word": "लागत",
+          "start": 6.18,
+          "end": 6.62
+        },
+        {
+          "word": "की",
+          "start": 6.68,
+          "end": 6.76
+        },
+        {
+          "word": "सारी",
+          "start": 6.96,
+          "end": 7.26
+        },
+        {
+          "word": "बहस",
+          "start": 7.3,
+          "end": 7.56
+        },
+        {
+          "word": "यह",
+          "start": 7.98,
+          "end": 8.16
+        },
+        {
+          "word": "भूल",
+          "start": 8.2,
+          "end": 8.46
+        },
+        {
+          "word": "जाती",
+          "start": 8.47,
+          "end": 8.8
+        },
+        {
+          "word": "है",
+          "start": 8.88,
+          "end": 9.08
+        },
+        {
+          "word": "कि",
+          "start": 9.12,
+          "end": 9.24
+        },
+        {
+          "word": "इस",
+          "start": 9.26,
+          "end": 9.54
+        },
+        {
+          "word": "योजना",
+          "start": 9.6,
+          "end": 9.98
+        },
+        {
+          "word": "में",
+          "start": 10.04,
+          "end": 10.15
+        },
+        {
+          "word": "दो",
+          "start": 10.46,
+          "end": 10.68
+        },
+        {
+          "word": "लाख",
+          "start": 10.7,
+          "end": 11.14
+        },
+        {
+          "word": "सत्तर",
+          "start": 11.16,
+          "end": 11.56
+        },
+        {
+          "word": "हज़ार",
+          "start": 11.57,
+          "end": 11.9
+        },
+        {
+          "word": "लोग",
+          "start": 11.9,
+          "end": 12.12
+        },
+        {
+          "word": "काम",
+          "start": 12.18,
+          "end": 12.4
+        },
+        {
+          "word": "करते",
+          "start": 12.48,
+          "end": 12.74
+        },
+        {
+          "word": "हैं",
+          "start": 12.82,
+          "end": 12.94
+        },
+        {
+          "word": "और",
+          "start": 13.3,
+          "end": 13.4
+        },
+        {
+          "word": "इस",
+          "start": 13.41,
+          "end": 13.57
+        },
+        {
+          "word": "योजना",
+          "start": 13.68,
+          "end": 14.06
+        },
+        {
+          "word": "ने",
+          "start": 14.12,
+          "end": 14.32
+        },
+        {
+          "word": "साल",
+          "start": 14.38,
+          "end": 14.58
+        },
+        {
+          "word": "दो",
+          "start": 14.58,
+          "end": 14.75
+        },
+        {
+          "word": "हज़ार",
+          "start": 14.75,
+          "end": 15.1
+        },
+        {
+          "word": "बीस",
+          "start": 15.1,
+          "end": 15.45
+        },
+        {
+          "word": "दो",
+          "start": 15.59,
+          "end": 15.78
+        },
+        {
+          "word": "हज़ार",
+          "start": 15.79,
+          "end": 16.15
+        },
+        {
+          "word": "इक्कीस",
+          "start": 16.17,
+          "end": 16.67
+        },
+        {
+          "word": "में",
+          "start": 16.7,
+          "end": 16.86
+        },
+        {
+          "word": "अर्थव्यवस्था",
+          "start": 17.11,
+          "end": 17.99
+        },
+        {
+          "word": "में",
+          "start": 18.0,
+          "end": 18.49
+        },
+        {
+          "word": "बावन",
+          "start": 18.51,
+          "end": 18.9
+        },
+        {
+          "word": "दशमलव",
+          "start": 18.91,
+          "end": 19.51
+        },
+        {
+          "word": "चार",
+          "start": 19.51,
+          "end": 19.99
+        },
+        {
+          "word": "billion",
+          "start": 20.0,
+          "end": 20.3
+        },
+        {
+          "word": "dollar",
+          "start": 20.3,
+          "end": 20.62
+        },
+        {
+          "word": "का",
+          "start": 20.65,
+          "end": 20.78
+        },
+        {
+          "word": "योगदान",
+          "start": 21.03,
+          "end": 21.56
+        },
+        {
+          "word": "किया",
+          "start": 21.66,
+          "end": 21.84
+        },
+        {
+          "word": "था",
+          "start": 21.92,
+          "end": 22.05
+        },
+        {
+          "word": "सांसद",
+          "start": 22.57,
+          "end": 23.0
+        },
+        {
+          "word": "steele",
+          "start": 23.07,
+          "end": 23.34
+        },
+        {
+          "word": "john",
+          "start": 23.41,
+          "end": 23.8
+        },
+        {
+          "word": "जो",
+          "start": 23.96,
+          "end": 24.06
+        },
+        {
+          "word": "कुछ",
+          "start": 24.2,
+          "end": 24.4
+        },
+        {
+          "word": "जो",
+          "start": 25.0,
+          "end": 25.24
+        },
+        {
+          "word": "खुद",
+          "start": 25.27,
+          "end": 25.54
+        },
+        {
+          "word": "भी",
+          "start": 25.6,
+          "end": 25.72
+        },
+        {
+          "word": "wheel-",
+          "start": 25.86,
+          "end": 26.23
+        },
+        {
+          "word": "wheelchair",
+          "start": 26.23,
+          "end": 26.96
+        },
+        {
+          "word": "प्रयोग",
+          "start": 27.06,
+          "end": 27.31
+        },
+        {
+          "word": "करते",
+          "start": 27.42,
+          "end": 27.68
+        },
+        {
+          "word": "हैं",
+          "start": 27.76,
+          "end": 27.86
+        },
+        {
+          "word": "का",
+          "start": 28.3,
+          "end": 28.4
+        },
+        {
+          "word": "कहना",
+          "start": 28.54,
+          "end": 28.88
+        },
+        {
+          "word": "है",
+          "start": 28.92,
+          "end": 29.1
+        }
+      ],
+      "injections": [
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f0025djpbw7402fe6-6060d3a2-010",
+          "family": "WD",
+          "band": "A1",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 22,
+            "word": "यह"
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f0025djpbw7402fe6-6060d3a2-012",
+          "family": "SEG-MERGE",
+          "band": "A2",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 33
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f0025djpbw7402fe6-6060d3a2-020",
+          "family": "WH",
+          "band": "A2",
+          "weight": 0.87719298,
+          "meta": {
+            "inserted_before_index": 66,
+            "word": "अचानक",
+            "decoy": {
+              "start": 24.58,
+              "end": 24.82
+            },
+            "audio_silence_verified": false
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f0025djpbw7402fe6-6060d3a2-013",
+          "family": "BND-MAJOR",
+          "band": "A1",
+          "weight": 1.54639175,
+          "meta": {
+            "plain_offset": 37,
+            "word": "हैं",
+            "edge": "end",
+            "shift_ms": 350,
+            "severity": "critical",
+            "decoy": {
+              "start": 12.82,
+              "end": 13.29
+            }
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f0025djpbw7402fe6-6060d3a2-007",
+          "family": "BND-MAJOR",
+          "band": "A2",
+          "weight": 1.03092784,
+          "meta": {
+            "plain_offset": 20,
+            "word": "सारी",
+            "edge": "end",
+            "shift_ms": -150,
+            "severity": "major",
+            "decoy": {
+              "start": 6.96,
+              "end": 7.11
+            }
+          }
+        }
+      ]
+    },
+    {
+      "decoy_id": "HI-EXISTING-cmv7zi88f0026djpbc49jadve-7c8af755",
+      "locale": "hi_IN",
+      "file_name": "a55c748d3b80fe95b128239a74e648ca.audio.wav",
+      "duration_seconds": 27.836,
+      "status": "ACTIVE",
+      "gold_whole_audio_tag": "none",
+      "gold_segments": [
+        {
+          "word": "grattan",
+          "start": 0.0,
+          "end": 0.44
+        },
+        {
+          "word": "institute",
+          "start": 0.44,
+          "end": 0.9
+        },
+        {
+          "word": "की",
+          "start": 0.94,
+          "end": 1.03
+        },
+        {
+          "word": "report",
+          "start": 1.03,
+          "end": 1.34
+        },
+        {
+          "word": "से",
+          "start": 1.34,
+          "end": 1.48
+        },
+        {
+          "word": "पता",
+          "start": 1.48,
+          "end": 1.72
+        },
+        {
+          "word": "चलता",
+          "start": 1.74,
+          "end": 1.91
+        },
+        {
+          "word": "है",
+          "start": 1.91,
+          "end": 2.2
+        },
+        {
+          "word": "कि",
+          "start": 2.37,
+          "end": 2.53
+        },
+        {
+          "word": "tax",
+          "start": 2.53,
+          "end": 2.81
+        },
+        {
+          "word": "break",
+          "start": 2.83,
+          "end": 3.22
+        },
+        {
+          "word": "से",
+          "start": 3.32,
+          "end": 3.659
+        },
+        {
+          "word": "budget",
+          "start": 3.66,
+          "end": 4.0
+        },
+        {
+          "word": "में",
+          "start": 4.0,
+          "end": 4.23
+        },
+        {
+          "word": "प्रति",
+          "start": 4.29,
+          "end": 4.62
+        },
+        {
+          "word": "वर्ष",
+          "start": 4.62,
+          "end": 4.94
+        },
+        {
+          "word": "पैंतालीस",
+          "start": 5.23,
+          "end": 5.88
+        },
+        {
+          "word": "billion",
+          "start": 5.88,
+          "end": 6.32
+        },
+        {
+          "word": "dollar",
+          "start": 6.32,
+          "end": 6.69
+        },
+        {
+          "word": "यानी",
+          "start": 6.69,
+          "end": 7.08
+        },
+        {
+          "word": "g",
+          "start": 7.08,
+          "end": 7.36
+        },
+        {
+          "word": "d",
+          "start": 7.36,
+          "end": 7.55
+        },
+        {
+          "word": "p",
+          "start": 7.59,
+          "end": 7.72
+        },
+        {
+          "word": "का",
+          "start": 7.72,
+          "end": 7.88
+        },
+        {
+          "word": "लगभग",
+          "start": 7.88,
+          "end": 8.28
+        },
+        {
+          "word": "दो",
+          "start": 8.42,
+          "end": 8.73
+        },
+        {
+          "word": "प्रतिशत",
+          "start": 8.73,
+          "end": 9.21
+        },
+        {
+          "word": "खर्च",
+          "start": 9.25,
+          "end": 9.62
+        },
+        {
+          "word": "होता",
+          "start": 9.64,
+          "end": 9.91
+        },
+        {
+          "word": "है",
+          "start": 9.91,
+          "end": 10.07
+        },
+        {
+          "word": "जिन",
+          "start": 10.49,
+          "end": 10.73
+        },
+        {
+          "word": "लोगों",
+          "start": 10.73,
+          "end": 11.05
+        },
+        {
+          "word": "को",
+          "start": 11.09,
+          "end": 11.32
+        },
+        {
+          "word": "इससे",
+          "start": 11.32,
+          "end": 11.68
+        },
+        {
+          "word": "सबसे",
+          "start": 11.72,
+          "end": 12.0
+        },
+        {
+          "word": "अधिक",
+          "start": 12.0,
+          "end": 12.25
+        },
+        {
+          "word": "लाभ",
+          "start": 12.25,
+          "end": 12.57
+        },
+        {
+          "word": "होता",
+          "start": 12.57,
+          "end": 12.84
+        },
+        {
+          "word": "है",
+          "start": 12.84,
+          "end": 13.05
+        },
+        {
+          "word": "वह",
+          "start": 13.35,
+          "end": 13.6
+        },
+        {
+          "word": "आय",
+          "start": 13.64,
+          "end": 13.92
+        },
+        {
+          "word": "अर्जित",
+          "start": 13.92,
+          "end": 14.28
+        },
+        {
+          "word": "करने",
+          "start": 14.31,
+          "end": 14.64
+        },
+        {
+          "word": "वाले",
+          "start": 14.64,
+          "end": 14.92
+        },
+        {
+          "word": "शीर्ष",
+          "start": 14.92,
+          "end": 15.36
+        },
+        {
+          "word": "बीस",
+          "start": 15.55,
+          "end": 15.87
+        },
+        {
+          "word": "प्रतिशत",
+          "start": 15.9,
+          "end": 16.27
+        },
+        {
+          "word": "में",
+          "start": 16.34,
+          "end": 16.43
+        },
+        {
+          "word": "आते",
+          "start": 16.43,
+          "end": 16.61
+        },
+        {
+          "word": "हैं",
+          "start": 16.62,
+          "end": 16.91
+        },
+        {
+          "word": "और",
+          "start": 17.17,
+          "end": 17.38
+        },
+        {
+          "word": "युवा",
+          "start": 17.38,
+          "end": 17.78
+        },
+        {
+          "word": "श्रमिकों",
+          "start": 17.78,
+          "end": 18.24
+        },
+        {
+          "word": "की",
+          "start": 18.24,
+          "end": 18.4
+        },
+        {
+          "word": "तुलना",
+          "start": 18.45,
+          "end": 18.77
+        },
+        {
+          "word": "में",
+          "start": 18.77,
+          "end": 19.01
+        },
+        {
+          "word": "प्रति",
+          "start": 19.36,
+          "end": 19.68
+        },
+        {
+          "word": "dollar",
+          "start": 19.68,
+          "end": 20.09
+        },
+        {
+          "word": "बहुत",
+          "start": 20.09,
+          "end": 20.39
+        },
+        {
+          "word": "कम",
+          "start": 20.47,
+          "end": 20.66
+        },
+        {
+          "word": "कर",
+          "start": 20.66,
+          "end": 20.93
+        },
+        {
+          "word": "चुक-",
+          "start": 21.02,
+          "end": 21.17
+        },
+        {
+          "word": "कर",
+          "start": 21.19,
+          "end": 21.41
+        },
+        {
+          "word": "चुका",
+          "start": 21.47,
+          "end": 21.75
+        },
+        {
+          "word": "रहे",
+          "start": 21.75,
+          "end": 21.99
+        },
+        {
+          "word": "हैं",
+          "start": 21.99,
+          "end": 22.16
+        },
+        {
+          "word": "think",
+          "start": 22.74,
+          "end": 22.96
+        },
+        {
+          "word": "tank",
+          "start": 23.05,
+          "end": 23.46
+        },
+        {
+          "word": "एक",
+          "start": 23.46,
+          "end": 23.6
+        },
+        {
+          "word": "सुधार",
+          "start": 23.61,
+          "end": 24.06
+        },
+        {
+          "word": "package",
+          "start": 24.1,
+          "end": 24.46
+        },
+        {
+          "word": "की",
+          "start": 24.5,
+          "end": 24.609
+        },
+        {
+          "word": "माँग",
+          "start": 24.61,
+          "end": 24.86
+        },
+        {
+          "word": "कर",
+          "start": 24.86,
+          "end": 25.02
+        },
+        {
+          "word": "रहा",
+          "start": 25.02,
+          "end": 25.25
+        },
+        {
+          "word": "है",
+          "start": 25.25,
+          "end": 25.57
+        },
+        {
+          "word": "उनका",
+          "start": 25.76,
+          "end": 26.08
+        },
+        {
+          "word": "कहना",
+          "start": 26.08,
+          "end": 26.4
+        },
+        {
+          "word": "है",
+          "start": 26.4,
+          "end": 26.62
+        },
+        {
+          "word": "कि",
+          "start": 26.89,
+          "end": 27.09
+        },
+        {
+          "word": "इससे",
+          "start": 27.12,
+          "end": 27.69
+        }
+      ],
+      "injections": [
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f0026djpbc49jadve-7c8af755-018",
+          "family": "WD",
+          "band": "A1",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 80,
+            "word": "इससे"
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f0026djpbc49jadve-7c8af755-017",
+          "family": "SEG-MERGE",
+          "band": "A2",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 76
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f0026djpbc49jadve-7c8af755-015",
+          "family": "WH",
+          "band": "A2",
+          "weight": 0.87719298,
+          "meta": {
+            "inserted_before_index": 66,
+            "word": "अचानक",
+            "decoy": {
+              "start": 22.33,
+              "end": 22.57
+            },
+            "audio_silence_verified": false
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f0026djpbc49jadve-7c8af755-013",
+          "family": "BND-MAJOR",
+          "band": "A1",
+          "weight": 1.54639175,
+          "meta": {
+            "plain_offset": 55,
+            "word": "में",
+            "edge": "end",
+            "shift_ms": 310,
+            "severity": "critical",
+            "decoy": {
+              "start": 18.77,
+              "end": 19.32
+            }
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f0026djpbc49jadve-7c8af755-005",
+          "family": "BND-MAJOR",
+          "band": "A2",
+          "weight": 1.03092784,
+          "meta": {
+            "plain_offset": 10,
+            "word": "break",
+            "edge": "start",
+            "shift_ms": 150,
+            "severity": "major",
+            "decoy": {
+              "start": 2.98,
+              "end": 3.22
+            }
+          }
+        }
+      ]
+    },
+    {
+      "decoy_id": "HI-EXISTING-cmv7zhuqd000edjpbosqlja1b-9bba8650",
+      "locale": "hi_IN",
+      "file_name": "7dccdee0bb6a899bc8169e5255506dc2.audio.wav",
+      "duration_seconds": 29.692,
+      "status": "ACTIVE",
+      "gold_whole_audio_tag": "none",
+      "gold_segments": [
+        {
+          "word": "r",
+          "start": 0.0,
+          "end": 0.22
+        },
+        {
+          "word": "k",
+          "start": 0.22,
+          "end": 0.34
+        },
+        {
+          "word": "पुरम",
+          "start": 0.34,
+          "end": 0.59
+        },
+        {
+          "word": "में",
+          "start": 0.59,
+          "end": 0.89
+        },
+        {
+          "word": "a",
+          "start": 0.89,
+          "end": 1.07
+        },
+        {
+          "word": "q",
+          "start": 1.07,
+          "end": 1.28
+        },
+        {
+          "word": "i",
+          "start": 1.28,
+          "end": 1.51
+        },
+        {
+          "word": "चार",
+          "start": 1.51,
+          "end": 1.741
+        },
+        {
+          "word": "सौ",
+          "start": 1.741,
+          "end": 1.87
+        },
+        {
+          "word": "सत्रह",
+          "start": 1.87,
+          "end": 2.241
+        },
+        {
+          "word": "आनंद",
+          "start": 2.32,
+          "end": 2.67
+        },
+        {
+          "word": "विहार",
+          "start": 2.67,
+          "end": 3.01
+        },
+        {
+          "word": "में",
+          "start": 3.01,
+          "end": 3.19
+        },
+        {
+          "word": "चार",
+          "start": 3.19,
+          "end": 3.421
+        },
+        {
+          "word": "सौ",
+          "start": 3.421,
+          "end": 3.581
+        },
+        {
+          "word": "तीस",
+          "start": 3.601,
+          "end": 3.882
+        },
+        {
+          "word": "और",
+          "start": 4.202,
+          "end": 4.41
+        },
+        {
+          "word": "airport",
+          "start": 4.41,
+          "end": 4.86
+        },
+        {
+          "word": "के",
+          "start": 4.86,
+          "end": 5.002
+        },
+        {
+          "word": "निकट",
+          "start": 5.002,
+          "end": 5.29
+        },
+        {
+          "word": "चार",
+          "start": 5.29,
+          "end": 5.562
+        },
+        {
+          "word": "सौ",
+          "start": 5.562,
+          "end": 5.74
+        },
+        {
+          "word": "तीन",
+          "start": 5.962,
+          "end": 6.28
+        },
+        {
+          "word": "पाया",
+          "start": 6.4,
+          "end": 6.67
+        },
+        {
+          "word": "गया",
+          "start": 6.67,
+          "end": 6.94
+        },
+        {
+          "word": "दिल्ली",
+          "start": 7.33,
+          "end": 7.66
+        },
+        {
+          "word": "और",
+          "start": 7.66,
+          "end": 7.85
+        },
+        {
+          "word": "उत्तर",
+          "start": 7.85,
+          "end": 8.183
+        },
+        {
+          "word": "भारत",
+          "start": 8.183,
+          "end": 8.503
+        },
+        {
+          "word": "के",
+          "start": 8.503,
+          "end": 8.66
+        },
+        {
+          "word": "अन्य",
+          "start": 8.66,
+          "end": 8.984
+        },
+        {
+          "word": "हिस्सों",
+          "start": 8.984,
+          "end": 9.33
+        },
+        {
+          "word": "में",
+          "start": 9.33,
+          "end": 9.55
+        },
+        {
+          "word": "हवा",
+          "start": 9.55,
+          "end": 9.81
+        },
+        {
+          "word": "की",
+          "start": 9.81,
+          "end": 9.964
+        },
+        {
+          "word": "गुणव-",
+          "start": 9.964,
+          "end": 10.22
+        },
+        {
+          "word": "गुणवत्ता",
+          "start": 10.38,
+          "end": 10.94
+        },
+        {
+          "word": "हर",
+          "start": 10.94,
+          "end": 11.2
+        },
+        {
+          "word": "साल",
+          "start": 11.23,
+          "end": 11.53
+        },
+        {
+          "word": "सर्दियों",
+          "start": 11.8,
+          "end": 12.22
+        },
+        {
+          "word": "से",
+          "start": 12.22,
+          "end": 12.365
+        },
+        {
+          "word": "पहले",
+          "start": 12.365,
+          "end": 12.685
+        },
+        {
+          "word": "खराब",
+          "start": 12.69,
+          "end": 13.025
+        },
+        {
+          "word": "हो",
+          "start": 13.025,
+          "end": 13.125
+        },
+        {
+          "word": "जाती",
+          "start": 13.125,
+          "end": 13.405
+        },
+        {
+          "word": "है",
+          "start": 13.405,
+          "end": 13.545
+        },
+        {
+          "word": "जब",
+          "start": 13.75,
+          "end": 14.05
+        },
+        {
+          "word": "ठंडी",
+          "start": 14.2,
+          "end": 14.586
+        },
+        {
+          "word": "हवा",
+          "start": 14.586,
+          "end": 14.89
+        },
+        {
+          "word": "वाहनों",
+          "start": 15.17,
+          "end": 15.746
+        },
+        {
+          "word": "उद्योग",
+          "start": 15.886,
+          "end": 16.49
+        },
+        {
+          "word": "निर्माण",
+          "start": 16.7,
+          "end": 17.28
+        },
+        {
+          "word": "धूल",
+          "start": 17.45,
+          "end": 17.9
+        },
+        {
+          "word": "और",
+          "start": 17.927,
+          "end": 18.127
+        },
+        {
+          "word": "पराली",
+          "start": 18.147,
+          "end": 18.547
+        },
+        {
+          "word": "जलने",
+          "start": 18.547,
+          "end": 18.88
+        },
+        {
+          "word": "से",
+          "start": 18.88,
+          "end": 19.008
+        },
+        {
+          "word": "निकलने",
+          "start": 19.008,
+          "end": 19.38
+        },
+        {
+          "word": "वाले",
+          "start": 19.38,
+          "end": 19.63
+        },
+        {
+          "word": "प्रदूषकों",
+          "start": 19.63,
+          "end": 20.188
+        },
+        {
+          "word": "को",
+          "start": 20.188,
+          "end": 20.328
+        },
+        {
+          "word": "trap",
+          "start": 20.49,
+          "end": 20.76
+        },
+        {
+          "word": "कर",
+          "start": 20.788,
+          "end": 20.948
+        },
+        {
+          "word": "लेती",
+          "start": 20.948,
+          "end": 21.209
+        },
+        {
+          "word": "है",
+          "start": 21.209,
+          "end": 21.36
+        },
+        {
+          "word": "इसी",
+          "start": 22.049,
+          "end": 22.28
+        },
+        {
+          "word": "के",
+          "start": 22.28,
+          "end": 22.449
+        },
+        {
+          "word": "साथ",
+          "start": 22.449,
+          "end": 22.78
+        },
+        {
+          "word": "पंद्रह",
+          "start": 23.03,
+          "end": 23.33
+        },
+        {
+          "word": "november",
+          "start": 23.33,
+          "end": 23.73
+        },
+        {
+          "word": "दो",
+          "start": 23.73,
+          "end": 23.85
+        },
+        {
+          "word": "हज़ार",
+          "start": 23.85,
+          "end": 24.17
+        },
+        {
+          "word": "तेईस",
+          "start": 24.17,
+          "end": 24.43
+        },
+        {
+          "word": "के",
+          "start": 24.48,
+          "end": 24.69
+        },
+        {
+          "word": "संक्षिप्त",
+          "start": 24.69,
+          "end": 25.09
+        },
+        {
+          "word": "समाचार",
+          "start": 25.09,
+          "end": 25.64
+        },
+        {
+          "word": "यहीं",
+          "start": 25.91,
+          "end": 26.191
+        },
+        {
+          "word": "समाप्त",
+          "start": 26.191,
+          "end": 26.51
+        },
+        {
+          "word": "होते",
+          "start": 26.51,
+          "end": 26.8
+        },
+        {
+          "word": "हैं",
+          "start": 26.8,
+          "end": 26.971
+        },
+        {
+          "word": "दीजिए",
+          "start": 27.23,
+          "end": 27.511
+        },
+        {
+          "word": "वृषाली",
+          "start": 27.511,
+          "end": 27.91
+        },
+        {
+          "word": "को",
+          "start": 27.91,
+          "end": 28.071
+        },
+        {
+          "word": "इजाज़त",
+          "start": 28.111,
+          "end": 28.58
+        },
+        {
+          "word": "नमस्कार",
+          "start": 28.93,
+          "end": 29.64
+        }
+      ],
+      "injections": [
+        {
+          "injection_id": "HI-EXISTING-cmv7zhuqd000edjpbosqlja1b-9bba8650-011",
+          "family": "WD",
+          "band": "A1",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 20,
+            "word": "चार"
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zhuqd000edjpbosqlja1b-9bba8650-012",
+          "family": "SEG-MERGE",
+          "band": "A2",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 23
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zhuqd000edjpbosqlja1b-9bba8650-018",
+          "family": "WH",
+          "band": "A2",
+          "weight": 0.87719298,
+          "meta": {
+            "inserted_before_index": 65,
+            "word": "अचानक",
+            "decoy": {
+              "start": 21.584,
+              "end": 21.824
+            },
+            "audio_silence_verified": false
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zhuqd000edjpbosqlja1b-9bba8650-010",
+          "family": "BND-MAJOR",
+          "band": "A1",
+          "weight": 1.54639175,
+          "meta": {
+            "plain_offset": 17,
+            "word": "airport",
+            "edge": "end",
+            "shift_ms": -320,
+            "severity": "critical",
+            "decoy": {
+              "start": 4.41,
+              "end": 4.54
+            }
+          }
+        }
+      ]
+    },
+    {
+      "decoy_id": "HI-EXISTING-cmv7zi88f002kdjpbi1izm8rc-760ce33d",
+      "locale": "hi_IN",
+      "file_name": "58b1e65386e1bf429d7038db6746b09f.audio.wav",
+      "duration_seconds": 23.484,
+      "status": "ACTIVE",
+      "gold_whole_audio_tag": "none",
+      "gold_segments": [
+        {
+          "word": "तो",
+          "start": 0.0,
+          "end": 0.14
+        },
+        {
+          "word": "eighteen",
+          "start": 0.16,
+          "end": 0.67
+        },
+        {
+          "word": "hundred",
+          "start": 0.67,
+          "end": 1.1
+        },
+        {
+          "word": "respect",
+          "start": 1.1,
+          "end": 1.68
+        },
+        {
+          "word": "को",
+          "start": 1.71,
+          "end": 1.91
+        },
+        {
+          "word": "one",
+          "start": 2.14,
+          "end": 2.41
+        },
+        {
+          "word": "eight",
+          "start": 2.54,
+          "end": 2.84
+        },
+        {
+          "word": "zero",
+          "start": 2.92,
+          "end": 3.32
+        },
+        {
+          "word": "zero",
+          "start": 3.32,
+          "end": 3.62
+        },
+        {
+          "word": "seven",
+          "start": 4.29,
+          "end": 4.6
+        },
+        {
+          "word": "three",
+          "start": 4.6,
+          "end": 4.89
+        },
+        {
+          "word": "seven",
+          "start": 4.98,
+          "end": 5.31
+        },
+        {
+          "word": "seven",
+          "start": 5.67,
+          "end": 5.98
+        },
+        {
+          "word": "three",
+          "start": 5.98,
+          "end": 6.19
+        },
+        {
+          "word": "two",
+          "start": 6.23,
+          "end": 6.43
+        },
+        {
+          "word": "पर",
+          "start": 6.43,
+          "end": 6.6
+        },
+        {
+          "word": "call",
+          "start": 6.62,
+          "end": 6.85
+        },
+        {
+          "word": "करें",
+          "start": 6.88,
+          "end": 7.1
+        },
+        {
+          "word": "आपातकाल",
+          "start": 7.32,
+          "end": 7.92
+        },
+        {
+          "word": "की",
+          "start": 7.92,
+          "end": 8.08
+        },
+        {
+          "word": "स्थिति",
+          "start": 8.08,
+          "end": 8.35
+        },
+        {
+          "word": "में",
+          "start": 8.35,
+          "end": 8.51
+        },
+        {
+          "word": "triple",
+          "start": 8.76,
+          "end": 9.08
+        },
+        {
+          "word": "zero",
+          "start": 9.08,
+          "end": 9.33
+        },
+        {
+          "word": "पर",
+          "start": 9.39,
+          "end": 9.56
+        },
+        {
+          "word": "phone",
+          "start": 9.74,
+          "end": 9.98
+        },
+        {
+          "word": "करें",
+          "start": 9.98,
+          "end": 10.31
+        },
+        {
+          "word": "दूसरी",
+          "start": 11.4,
+          "end": 11.77
+        },
+        {
+          "word": "ओर",
+          "start": 11.77,
+          "end": 12.12
+        },
+        {
+          "word": "अ-",
+          "start": 12.12,
+          "end": 12.29
+        },
+        {
+          "word": "greens",
+          "start": 12.62,
+          "end": 12.97
+        },
+        {
+          "word": "की",
+          "start": 13.0,
+          "end": 13.14
+        },
+        {
+          "word": "माँग",
+          "start": 13.14,
+          "end": 13.5
+        },
+        {
+          "word": "है",
+          "start": 13.5,
+          "end": 13.68
+        },
+        {
+          "word": "कि",
+          "start": 13.68,
+          "end": 13.84
+        },
+        {
+          "word": "सरकार",
+          "start": 13.84,
+          "end": 14.39
+        },
+        {
+          "word": "के",
+          "start": 14.46,
+          "end": 14.71
+        },
+        {
+          "word": "प्रस्तावित",
+          "start": 14.76,
+          "end": 15.41
+        },
+        {
+          "word": "बदलावों",
+          "start": 15.41,
+          "end": 15.91
+        },
+        {
+          "word": "का",
+          "start": 15.91,
+          "end": 16.1
+        },
+        {
+          "word": "समर्थन",
+          "start": 16.1,
+          "end": 16.58
+        },
+        {
+          "word": "करने",
+          "start": 16.58,
+          "end": 16.91
+        },
+        {
+          "word": "के",
+          "start": 16.94,
+          "end": 17.08
+        },
+        {
+          "word": "लिए",
+          "start": 17.08,
+          "end": 17.53
+        },
+        {
+          "word": "ऊँची",
+          "start": 17.64,
+          "end": 18.12
+        },
+        {
+          "word": "आय",
+          "start": 18.17,
+          "end": 18.39
+        },
+        {
+          "word": "वाले",
+          "start": 18.39,
+          "end": 18.73
+        },
+        {
+          "word": "superannuation",
+          "start": 18.73,
+          "end": 19.93
+        },
+        {
+          "word": "खातों",
+          "start": 19.99,
+          "end": 20.47
+        },
+        {
+          "word": "पर",
+          "start": 20.52,
+          "end": 20.72
+        },
+        {
+          "word": "अधिक",
+          "start": 20.82,
+          "end": 21.13
+        },
+        {
+          "word": "दर",
+          "start": 21.13,
+          "end": 21.37
+        },
+        {
+          "word": "से",
+          "start": 21.4,
+          "end": 21.54
+        },
+        {
+          "word": "tax",
+          "start": 21.64,
+          "end": 21.95
+        },
+        {
+          "word": "लागू",
+          "start": 22.2,
+          "end": 22.6
+        },
+        {
+          "word": "किया",
+          "start": 22.6,
+          "end": 22.89
+        },
+        {
+          "word": "जाए",
+          "start": 22.89,
+          "end": 23.14
+        }
+      ],
+      "injections": [
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f002kdjpbi1izm8rc-760ce33d-017",
+          "family": "WD",
+          "band": "A1",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 52,
+            "word": "से"
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f002kdjpbi1izm8rc-760ce33d-004",
+          "family": "SEG-MERGE",
+          "band": "A2",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 6
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f002kdjpbi1izm8rc-760ce33d-003",
+          "family": "WH",
+          "band": "A2",
+          "weight": 0.87719298,
+          "meta": {
+            "inserted_before_index": 5,
+            "word": "अचानक",
+            "decoy": {
+              "start": 1.95,
+              "end": 2.1
+            },
+            "audio_silence_verified": false
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f002kdjpbi1izm8rc-760ce33d-002",
+          "family": "BND-MAJOR",
+          "band": "A1",
+          "weight": 1.54639175,
+          "meta": {
+            "plain_offset": 3,
+            "word": "respect",
+            "edge": "end",
+            "shift_ms": -320,
+            "severity": "critical",
+            "decoy": {
+              "start": 1.1,
+              "end": 1.36
+            }
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f002kdjpbi1izm8rc-760ce33d-008",
+          "family": "BND-MAJOR",
+          "band": "A2",
+          "weight": 1.03092784,
+          "meta": {
+            "plain_offset": 21,
+            "word": "में",
+            "edge": "end",
+            "shift_ms": 250,
+            "severity": "major",
+            "decoy": {
+              "start": 8.35,
+              "end": 8.76
+            }
+          }
+        }
+      ]
+    },
+    {
+      "decoy_id": "HI-EXISTING-cmv7zi88f0021djpb8wfdo4xv-15427ae7",
+      "locale": "hi_IN",
+      "file_name": "03045da9648e6494691eb523306b6ddf.audio.wav",
+      "duration_seconds": 24.188,
+      "status": "ACTIVE",
+      "gold_whole_audio_tag": "none",
+      "gold_segments": [
+        {
+          "word": "इन",
+          "start": 0.01,
+          "end": 0.14
+        },
+        {
+          "word": "प्रतिबंधों",
+          "start": 0.14,
+          "end": 0.73
+        },
+        {
+          "word": "में",
+          "start": 0.73,
+          "end": 1.04
+        },
+        {
+          "word": "australian",
+          "start": 1.04,
+          "end": 1.69
+        },
+        {
+          "word": "wine",
+          "start": 1.69,
+          "end": 2.01
+        },
+        {
+          "word": "पर",
+          "start": 2.074,
+          "end": 2.32
+        },
+        {
+          "word": "एक",
+          "start": 2.37,
+          "end": 2.55
+        },
+        {
+          "word": "सौ",
+          "start": 2.56,
+          "end": 2.85
+        },
+        {
+          "word": "सात",
+          "start": 2.93,
+          "end": 3.34
+        },
+        {
+          "word": "से",
+          "start": 3.48,
+          "end": 3.68
+        },
+        {
+          "word": "दो",
+          "start": 3.88,
+          "end": 4.1
+        },
+        {
+          "word": "सौ",
+          "start": 4.1,
+          "end": 4.32
+        },
+        {
+          "word": "बारह",
+          "start": 4.36,
+          "end": 4.7
+        },
+        {
+          "word": "प्रतिशत",
+          "start": 4.7,
+          "end": 5.12
+        },
+        {
+          "word": "के",
+          "start": 5.15,
+          "end": 5.34
+        },
+        {
+          "word": "tariff",
+          "start": 5.35,
+          "end": 5.66
+        },
+        {
+          "word": "शामिल",
+          "start": 5.66,
+          "end": 6.01
+        },
+        {
+          "word": "हैं",
+          "start": 6.01,
+          "end": 6.22
+        },
+        {
+          "word": "जिससे",
+          "start": 6.7,
+          "end": 7.19
+        },
+        {
+          "word": "ऑस्ट्रेलियाई",
+          "start": 7.19,
+          "end": 7.829
+        },
+        {
+          "word": "wine",
+          "start": 7.94,
+          "end": 8.26
+        },
+        {
+          "word": "का",
+          "start": 8.29,
+          "end": 8.5
+        },
+        {
+          "word": "चीन",
+          "start": 8.66,
+          "end": 8.99
+        },
+        {
+          "word": "के",
+          "start": 9.02,
+          "end": 9.17
+        },
+        {
+          "word": "साथ",
+          "start": 9.2,
+          "end": 9.43
+        },
+        {
+          "word": "कारोबार",
+          "start": 9.43,
+          "end": 10.03
+        },
+        {
+          "word": "एक",
+          "start": 10.15,
+          "end": 10.3
+        },
+        {
+          "word": "billion",
+          "start": 10.4,
+          "end": 10.71
+        },
+        {
+          "word": "dollar",
+          "start": 10.71,
+          "end": 11.09
+        },
+        {
+          "word": "से",
+          "start": 11.149,
+          "end": 11.27
+        },
+        {
+          "word": "घटकर",
+          "start": 11.33,
+          "end": 11.72
+        },
+        {
+          "word": "दस",
+          "start": 12.08,
+          "end": 12.3
+        },
+        {
+          "word": "million",
+          "start": 12.33,
+          "end": 12.81
+        },
+        {
+          "word": "ही",
+          "start": 12.81,
+          "end": 13.03
+        },
+        {
+          "word": "रह",
+          "start": 13.03,
+          "end": 13.2
+        },
+        {
+          "word": "गया",
+          "start": 13.2,
+          "end": 13.48
+        },
+        {
+          "word": "था",
+          "start": 13.48,
+          "end": 13.7
+        },
+        {
+          "word": "इससे",
+          "start": 14.06,
+          "end": 14.37
+        },
+        {
+          "word": "पहले",
+          "start": 14.37,
+          "end": 14.76
+        },
+        {
+          "word": "कूटनीतिक",
+          "start": 14.8,
+          "end": 15.32
+        },
+        {
+          "word": "चर्चाओं",
+          "start": 15.34,
+          "end": 15.79
+        },
+        {
+          "word": "की",
+          "start": 15.79,
+          "end": 15.94
+        },
+        {
+          "word": "सफलता",
+          "start": 15.94,
+          "end": 16.42
+        },
+        {
+          "word": "के",
+          "start": 16.42,
+          "end": 16.59
+        },
+        {
+          "word": "चलते",
+          "start": 16.59,
+          "end": 17.01
+        },
+        {
+          "word": "जौ",
+          "start": 17.3,
+          "end": 17.74
+        },
+        {
+          "word": "और",
+          "start": 17.76,
+          "end": 17.93
+        },
+        {
+          "word": "meat",
+          "start": 17.93,
+          "end": 18.21
+        },
+        {
+          "word": "पर",
+          "start": 18.3,
+          "end": 18.45
+        },
+        {
+          "word": "से",
+          "start": 18.45,
+          "end": 18.62
+        },
+        {
+          "word": "कुछ",
+          "start": 18.66,
+          "end": 18.859
+        },
+        {
+          "word": "प्रतिबंध",
+          "start": 18.86,
+          "end": 19.42
+        },
+        {
+          "word": "हटे",
+          "start": 19.6,
+          "end": 19.87
+        },
+        {
+          "word": "थे",
+          "start": 19.87,
+          "end": 20.09
+        },
+        {
+          "word": "हालाँकि",
+          "start": 20.38,
+          "end": 20.81
+        },
+        {
+          "word": "wine",
+          "start": 20.81,
+          "end": 21.22
+        },
+        {
+          "word": "और",
+          "start": 21.22,
+          "end": 21.43
+        },
+        {
+          "word": "lobster",
+          "start": 21.43,
+          "end": 21.98
+        },
+        {
+          "word": "पर",
+          "start": 22.04,
+          "end": 22.22
+        },
+        {
+          "word": "प्रतिबंध",
+          "start": 22.26,
+          "end": 22.9
+        },
+        {
+          "word": "अब",
+          "start": 22.9,
+          "end": 23.08
+        },
+        {
+          "word": "भी",
+          "start": 23.11,
+          "end": 23.29
+        },
+        {
+          "word": "बने",
+          "start": 23.29,
+          "end": 23.67
+        },
+        {
+          "word": "हुए",
+          "start": 23.7,
+          "end": 23.91
+        },
+        {
+          "word": "हैं",
+          "start": 23.91,
+          "end": 24.16
+        }
+      ],
+      "injections": [
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f0021djpb8wfdo4xv-15427ae7-016",
+          "family": "WD",
+          "band": "A1",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 53,
+            "word": "थे"
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f0021djpb8wfdo4xv-15427ae7-019",
+          "family": "SEG-MERGE",
+          "band": "A2",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 63
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f0021djpb8wfdo4xv-15427ae7-012",
+          "family": "WH",
+          "band": "A2",
+          "weight": 0.87719298,
+          "meta": {
+            "inserted_before_index": 45,
+            "word": "अचानक",
+            "decoy": {
+              "start": 17.05,
+              "end": 17.26
+            },
+            "audio_silence_verified": false
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f0021djpb8wfdo4xv-15427ae7-011",
+          "family": "BND-MAJOR",
+          "band": "A1",
+          "weight": 1.54639175,
+          "meta": {
+            "plain_offset": 42,
+            "word": "सफलता",
+            "edge": "start",
+            "shift_ms": 350,
+            "severity": "critical",
+            "decoy": {
+              "start": 16.29,
+              "end": 16.42
+            }
+          }
+        }
+      ]
+    },
+    {
+      "decoy_id": "HI-EXISTING-cmv7zi88f001rdjpbxybgtp0z-a717b788",
+      "locale": "hi_IN",
+      "file_name": "03c392504561f2b4b862da6bfe947f5c.audio.wav",
+      "duration_seconds": 29.468,
+      "status": "ACTIVE",
+      "gold_whole_audio_tag": "none",
+      "gold_segments": [
+        {
+          "word": "दस",
+          "start": 0.0,
+          "end": 0.25
+        },
+        {
+          "word": "million",
+          "start": 0.29,
+          "end": 0.62
+        },
+        {
+          "word": "dollar",
+          "start": 0.62,
+          "end": 1.14
+        },
+        {
+          "word": "तक",
+          "start": 1.34,
+          "end": 1.53
+        },
+        {
+          "word": "का",
+          "start": 1.64,
+          "end": 1.81
+        },
+        {
+          "word": "वेतन",
+          "start": 1.81,
+          "end": 2.2
+        },
+        {
+          "word": "चुराया",
+          "start": 2.31,
+          "end": 2.74
+        },
+        {
+          "word": "है",
+          "start": 2.74,
+          "end": 2.95
+        },
+        {
+          "word": "उनका",
+          "start": 3.41,
+          "end": 3.69
+        },
+        {
+          "word": "कहना",
+          "start": 3.69,
+          "end": 4.0
+        },
+        {
+          "word": "है",
+          "start": 4.0,
+          "end": 4.21
+        },
+        {
+          "word": "कि",
+          "start": 4.21,
+          "end": 4.45
+        },
+        {
+          "word": "इस",
+          "start": 4.46,
+          "end": 4.66
+        },
+        {
+          "word": "फ़ैसले",
+          "start": 4.7,
+          "end": 5.1
+        },
+        {
+          "word": "का",
+          "start": 5.13,
+          "end": 5.31
+        },
+        {
+          "word": "असर",
+          "start": 5.34,
+          "end": 5.7
+        },
+        {
+          "word": "क़रीब",
+          "start": 5.93,
+          "end": 6.28
+        },
+        {
+          "word": "चार",
+          "start": 6.31,
+          "end": 6.61
+        },
+        {
+          "word": "हज़ार",
+          "start": 6.61,
+          "end": 7.02
+        },
+        {
+          "word": "वर्तमान",
+          "start": 7.02,
+          "end": 7.66
+        },
+        {
+          "word": "और",
+          "start": 7.87,
+          "end": 8.14
+        },
+        {
+          "word": "भूतपूर्व",
+          "start": 8.17,
+          "end": 8.8
+        },
+        {
+          "word": "कर्मचारियों",
+          "start": 8.8,
+          "end": 9.52
+        },
+        {
+          "word": "पर",
+          "start": 9.55,
+          "end": 9.8
+        },
+        {
+          "word": "पड़ेगा",
+          "start": 9.93,
+          "end": 10.38
+        },
+        {
+          "word": "और",
+          "start": 11.45,
+          "end": 11.62
+        },
+        {
+          "word": "अब",
+          "start": 11.62,
+          "end": 11.86
+        },
+        {
+          "word": "अंतरराष्ट्रीय",
+          "start": 12.21,
+          "end": 12.81
+        },
+        {
+          "word": "समाचार",
+          "start": 12.82,
+          "end": 13.44
+        },
+        {
+          "word": "philippines",
+          "start": 14.1,
+          "end": 14.65
+        },
+        {
+          "word": "के",
+          "start": 14.73,
+          "end": 15.1
+        },
+        {
+          "word": "manila",
+          "start": 15.11,
+          "end": 15.66
+        },
+        {
+          "word": "में",
+          "start": 15.66,
+          "end": 15.96
+        },
+        {
+          "word": "एक",
+          "start": 15.96,
+          "end": 16.2
+        },
+        {
+          "word": "radio",
+          "start": 16.2,
+          "end": 16.56
+        },
+        {
+          "word": "पत्रकार",
+          "start": 16.56,
+          "end": 17.15
+        },
+        {
+          "word": "की",
+          "start": 17.15,
+          "end": 17.3
+        },
+        {
+          "word": "हत्या",
+          "start": 17.3,
+          "end": 17.66
+        },
+        {
+          "word": "के",
+          "start": 17.66,
+          "end": 17.85
+        },
+        {
+          "word": "बाद",
+          "start": 17.85,
+          "end": 18.22
+        },
+        {
+          "word": "media",
+          "start": 18.25,
+          "end": 18.69
+        },
+        {
+          "word": "house",
+          "start": 18.69,
+          "end": 19.0
+        },
+        {
+          "word": "सुरक्षा",
+          "start": 19.24,
+          "end": 19.8
+        },
+        {
+          "word": "की",
+          "start": 19.8,
+          "end": 19.94
+        },
+        {
+          "word": "माँग",
+          "start": 19.94,
+          "end": 20.25
+        },
+        {
+          "word": "कर",
+          "start": 20.27,
+          "end": 20.44
+        },
+        {
+          "word": "रहे",
+          "start": 20.45,
+          "end": 20.68
+        },
+        {
+          "word": "हैं",
+          "start": 20.69,
+          "end": 20.97
+        },
+        {
+          "word": "तिरसठ",
+          "start": 21.48,
+          "end": 21.89
+        },
+        {
+          "word": "वर्षीय",
+          "start": 21.9,
+          "end": 22.43
+        },
+        {
+          "word": "announcer",
+          "start": 22.43,
+          "end": 23.07
+        },
+        {
+          "word": "percival",
+          "start": 23.1,
+          "end": 23.63
+        },
+        {
+          "word": "mabasa",
+          "start": 23.63,
+          "end": 24.12
+        },
+        {
+          "word": "को",
+          "start": 24.14,
+          "end": 24.35
+        },
+        {
+          "word": "manila",
+          "start": 24.35,
+          "end": 24.88
+        },
+        {
+          "word": "के",
+          "start": 24.88,
+          "end": 25.05
+        },
+        {
+          "word": "las",
+          "start": 25.3,
+          "end": 25.56
+        },
+        {
+          "word": "pinas",
+          "start": 25.57,
+          "end": 25.98
+        },
+        {
+          "word": "रिहायशी",
+          "start": 25.98,
+          "end": 26.56
+        },
+        {
+          "word": "इलाक़े",
+          "start": 26.56,
+          "end": 27.1
+        },
+        {
+          "word": "में",
+          "start": 27.1,
+          "end": 27.54
+        },
+        {
+          "word": "दो",
+          "start": 27.61,
+          "end": 27.85
+        },
+        {
+          "word": "हत्यारों",
+          "start": 27.85,
+          "end": 28.44
+        },
+        {
+          "word": "ने",
+          "start": 28.44,
+          "end": 28.68
+        },
+        {
+          "word": "मार",
+          "start": 28.68,
+          "end": 28.85
+        },
+        {
+          "word": "डाला",
+          "start": 28.86,
+          "end": 29.16
+        },
+        {
+          "word": "है",
+          "start": 29.16,
+          "end": 29.44
+        }
+      ],
+      "injections": [
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f001rdjpbxybgtp0z-a717b788-019",
+          "family": "WD",
+          "band": "A1",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 43,
+            "word": "की"
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f001rdjpbxybgtp0z-a717b788-017",
+          "family": "SEG-MERGE",
+          "band": "A2",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 36
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f001rdjpbxybgtp0z-a717b788-010",
+          "family": "WH",
+          "band": "A2",
+          "weight": 0.87719298,
+          "meta": {
+            "inserted_before_index": 20,
+            "word": "अचानक",
+            "decoy": {
+              "start": 7.7,
+              "end": 7.83
+            },
+            "audio_silence_verified": false
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f001rdjpbxybgtp0z-a717b788-018",
+          "family": "BND-MAJOR",
+          "band": "A1",
+          "weight": 1.54639175,
+          "meta": {
+            "plain_offset": 40,
+            "word": "media",
+            "edge": "start",
+            "shift_ms": 350,
+            "severity": "critical",
+            "decoy": {
+              "start": 18.6,
+              "end": 18.69
+            }
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f001rdjpbxybgtp0z-a717b788-022",
+          "family": "BND-MAJOR",
+          "band": "A2",
+          "weight": 1.03092784,
+          "meta": {
+            "plain_offset": 55,
+            "word": "के",
+            "edge": "end",
+            "shift_ms": 250,
+            "severity": "major",
+            "decoy": {
+              "start": 24.88,
+              "end": 25.3
+            }
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f001rdjpbxybgtp0z-a717b788-023",
+          "family": "BND-MAJOR",
+          "band": "A2",
+          "weight": 1.03092784,
+          "meta": {
+            "plain_offset": 65,
+            "word": "डाला",
+            "edge": "end",
+            "shift_ms": -150,
+            "severity": "major",
+            "decoy": {
+              "start": 28.86,
+              "end": 29.01
+            }
+          }
+        }
+      ]
+    },
+    {
+      "decoy_id": "HI-EXISTING-cmv7zijww0032djpb4l9e833y-acaf759a",
+      "locale": "hi_IN",
+      "file_name": "084164845e293c00cdcc83c07c31d71e.audio.wav",
+      "duration_seconds": 29.404,
+      "status": "ACTIVE",
+      "gold_whole_audio_tag": "none",
+      "gold_segments": [
+        {
+          "word": "ठंडे",
+          "start": 0.0,
+          "end": 0.31
+        },
+        {
+          "word": "राज्यों",
+          "start": 0.31,
+          "end": 0.76
+        },
+        {
+          "word": "को",
+          "start": 0.79,
+          "end": 0.94
+        },
+        {
+          "word": "भी",
+          "start": 0.94,
+          "end": 1.12
+        },
+        {
+          "word": "अपनी",
+          "start": 1.12,
+          "end": 1.46
+        },
+        {
+          "word": "चपेट",
+          "start": 1.5,
+          "end": 1.88
+        },
+        {
+          "word": "में",
+          "start": 1.89,
+          "end": 2.06
+        },
+        {
+          "word": "ले",
+          "start": 2.06,
+          "end": 2.23
+        },
+        {
+          "word": "लिया",
+          "start": 2.23,
+          "end": 2.48
+        },
+        {
+          "word": "है",
+          "start": 2.48,
+          "end": 2.72
+        },
+        {
+          "word": "अरुणाचल",
+          "start": 3.48,
+          "end": 4.03
+        },
+        {
+          "word": "प्रदेश",
+          "start": 4.03,
+          "end": 4.38
+        },
+        {
+          "word": "के",
+          "start": 4.41,
+          "end": 4.62
+        },
+        {
+          "word": "ईटानगर",
+          "start": 4.62,
+          "end": 5.28
+        },
+        {
+          "word": "और",
+          "start": 5.28,
+          "end": 5.44
+        },
+        {
+          "word": "पासीघाट",
+          "start": 5.5,
+          "end": 6.14
+        },
+        {
+          "word": "में",
+          "start": 6.14,
+          "end": 6.44
+        },
+        {
+          "word": "तापमान",
+          "start": 6.78,
+          "end": 7.36
+        },
+        {
+          "word": "क्रमशः",
+          "start": 7.43,
+          "end": 7.94
+        },
+        {
+          "word": "चालीस",
+          "start": 7.94,
+          "end": 8.43
+        },
+        {
+          "word": "दशमलव",
+          "start": 8.43,
+          "end": 8.89
+        },
+        {
+          "word": "पाँच",
+          "start": 8.96,
+          "end": 9.23
+        },
+        {
+          "word": "और",
+          "start": 9.7,
+          "end": 9.87
+        },
+        {
+          "word": "उनतालीस",
+          "start": 9.87,
+          "end": 10.51
+        },
+        {
+          "word": "दशमलव",
+          "start": 10.51,
+          "end": 11.0
+        },
+        {
+          "word": "छह",
+          "start": 11.05,
+          "end": 11.3
+        },
+        {
+          "word": "degree",
+          "start": 11.3,
+          "end": 11.61
+        },
+        {
+          "word": "celsius",
+          "start": 11.61,
+          "end": 12.14
+        },
+        {
+          "word": "दर्ज",
+          "start": 12.44,
+          "end": 12.75
+        },
+        {
+          "word": "किया",
+          "start": 12.81,
+          "end": 13.02
+        },
+        {
+          "word": "गया",
+          "start": 13.02,
+          "end": 13.37
+        },
+        {
+          "word": "गर्मी",
+          "start": 14.27,
+          "end": 14.66
+        },
+        {
+          "word": "के",
+          "start": 14.66,
+          "end": 14.83
+        },
+        {
+          "word": "क़हर",
+          "start": 14.83,
+          "end": 15.11
+        },
+        {
+          "word": "के",
+          "start": 15.11,
+          "end": 15.24
+        },
+        {
+          "word": "अलावा",
+          "start": 15.24,
+          "end": 15.78
+        },
+        {
+          "word": "आग",
+          "start": 15.78,
+          "end": 16.05
+        },
+        {
+          "word": "लगने",
+          "start": 16.05,
+          "end": 16.39
+        },
+        {
+          "word": "की",
+          "start": 16.4,
+          "end": 16.6
+        },
+        {
+          "word": "लगातार",
+          "start": 16.6,
+          "end": 17.18
+        },
+        {
+          "word": "बढ़ती",
+          "start": 17.19,
+          "end": 17.56
+        },
+        {
+          "word": "घटनाओं",
+          "start": 17.57,
+          "end": 18.03
+        },
+        {
+          "word": "ने",
+          "start": 18.03,
+          "end": 18.28
+        },
+        {
+          "word": "देश",
+          "start": 18.61,
+          "end": 18.95
+        },
+        {
+          "word": "को",
+          "start": 18.98,
+          "end": 19.15
+        },
+        {
+          "word": "झकझोर",
+          "start": 19.15,
+          "end": 19.62
+        },
+        {
+          "word": "कर",
+          "start": 19.64,
+          "end": 19.77
+        },
+        {
+          "word": "रख",
+          "start": 19.77,
+          "end": 19.97
+        },
+        {
+          "word": "दिया",
+          "start": 19.98,
+          "end": 20.28
+        },
+        {
+          "word": "है",
+          "start": 20.28,
+          "end": 20.49
+        },
+        {
+          "word": "रविवार",
+          "start": 21.28,
+          "end": 21.8
+        },
+        {
+          "word": "को",
+          "start": 21.83,
+          "end": 22.07
+        },
+        {
+          "word": "पूर्वी",
+          "start": 22.13,
+          "end": 22.48
+        },
+        {
+          "word": "दिल्ली",
+          "start": 22.48,
+          "end": 22.81
+        },
+        {
+          "word": "के",
+          "start": 22.84,
+          "end": 23.02
+        },
+        {
+          "word": "विवेक",
+          "start": 23.02,
+          "end": 23.42
+        },
+        {
+          "word": "विहार",
+          "start": 23.43,
+          "end": 23.95
+        },
+        {
+          "word": "स्थित",
+          "start": 23.96,
+          "end": 24.47
+        },
+        {
+          "word": "baby",
+          "start": 24.76,
+          "end": 25.13
+        },
+        {
+          "word": "care",
+          "start": 25.14,
+          "end": 25.45
+        },
+        {
+          "word": "centre",
+          "start": 25.45,
+          "end": 25.75
+        },
+        {
+          "word": "में",
+          "start": 25.75,
+          "end": 26.02
+        },
+        {
+          "word": "आग",
+          "start": 26.02,
+          "end": 26.25
+        },
+        {
+          "word": "लगने",
+          "start": 26.25,
+          "end": 26.55
+        },
+        {
+          "word": "से",
+          "start": 26.55,
+          "end": 26.84
+        },
+        {
+          "word": "सात",
+          "start": 27.26,
+          "end": 27.56
+        },
+        {
+          "word": "नवजात",
+          "start": 27.56,
+          "end": 28.12
+        },
+        {
+          "word": "शिशुओं",
+          "start": 28.16,
+          "end": 28.54
+        },
+        {
+          "word": "की",
+          "start": 28.57,
+          "end": 28.7
+        },
+        {
+          "word": "मौत",
+          "start": 28.7,
+          "end": 28.93
+        },
+        {
+          "word": "हो",
+          "start": 28.93,
+          "end": 29.07
+        },
+        {
+          "word": "गई",
+          "start": 29.07,
+          "end": 29.38
+        }
+      ],
+      "injections": [
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww0032djpb4l9e833y-acaf759a-020",
+          "family": "WD",
+          "band": "A1",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 68,
+            "word": "की"
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww0032djpb4l9e833y-acaf759a-010",
+          "family": "SEG-MERGE",
+          "band": "A2",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 42
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww0032djpb4l9e833y-acaf759a-011",
+          "family": "WH",
+          "band": "A2",
+          "weight": 0.87719298,
+          "meta": {
+            "inserted_before_index": 50,
+            "word": "अचानक",
+            "decoy": {
+              "start": 20.765,
+              "end": 21.005
+            },
+            "audio_silence_verified": false
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww0032djpb4l9e833y-acaf759a-006",
+          "family": "BND-MAJOR",
+          "band": "A1",
+          "weight": 1.54639175,
+          "meta": {
+            "plain_offset": 16,
+            "word": "में",
+            "edge": "end",
+            "shift_ms": 320,
+            "severity": "critical",
+            "decoy": {
+              "start": 6.14,
+              "end": 6.76
+            }
+          }
+        }
+      ]
+    },
+    {
+      "decoy_id": "HI-EXISTING-cmv7zi88f001ldjpb3q2tbubl-d0f898ef",
+      "locale": "hi_IN",
+      "file_name": "0c845744581c4df0bc648ad42fe796a2.audio.wav",
+      "duration_seconds": 27.004,
+      "status": "ACTIVE",
+      "gold_whole_audio_tag": "none",
+      "gold_segments": [
+        {
+          "word": "एक",
+          "start": 0.04,
+          "end": 0.3
+        },
+        {
+          "word": "तीन",
+          "start": 0.42,
+          "end": 0.68
+        },
+        {
+          "word": "एक",
+          "start": 0.8,
+          "end": 1.0
+        },
+        {
+          "word": "एक",
+          "start": 1.03,
+          "end": 1.43
+        },
+        {
+          "word": "एक",
+          "start": 1.5,
+          "end": 1.82
+        },
+        {
+          "word": "चार",
+          "start": 1.83,
+          "end": 2.06
+        },
+        {
+          "word": "पर",
+          "start": 2.16,
+          "end": 2.3
+        },
+        {
+          "word": "phone",
+          "start": 2.32,
+          "end": 2.52
+        },
+        {
+          "word": "करें",
+          "start": 2.6,
+          "end": 2.8
+        },
+        {
+          "word": "या",
+          "start": 3.15,
+          "end": 3.28
+        },
+        {
+          "word": "kids",
+          "start": 3.35,
+          "end": 3.6
+        },
+        {
+          "word": "helpline",
+          "start": 3.66,
+          "end": 4.14
+        },
+        {
+          "word": "को",
+          "start": 4.24,
+          "end": 4.5
+        },
+        {
+          "word": "एक",
+          "start": 4.59,
+          "end": 4.94
+        },
+        {
+          "word": "आठ",
+          "start": 5.13,
+          "end": 5.46
+        },
+        {
+          "word": "शून्य",
+          "start": 5.63,
+          "end": 5.98
+        },
+        {
+          "word": "शून्य",
+          "start": 5.98,
+          "end": 6.48
+        },
+        {
+          "word": "पाँच",
+          "start": 6.83,
+          "end": 7.14
+        },
+        {
+          "word": "पाँच",
+          "start": 7.24,
+          "end": 7.6
+        },
+        {
+          "word": "एक",
+          "start": 7.98,
+          "end": 8.32
+        },
+        {
+          "word": "आठ",
+          "start": 8.48,
+          "end": 8.78
+        },
+        {
+          "word": "शून्य",
+          "start": 8.91,
+          "end": 9.26
+        },
+        {
+          "word": "शून्य",
+          "start": 9.27,
+          "end": 9.6
+        },
+        {
+          "word": "पर",
+          "start": 9.68,
+          "end": 9.82
+        },
+        {
+          "word": "phone",
+          "start": 9.84,
+          "end": 10.0
+        },
+        {
+          "word": "करें",
+          "start": 10.06,
+          "end": 10.33
+        },
+        {
+          "word": "यौन",
+          "start": 10.8,
+          "end": 11.04
+        },
+        {
+          "word": "उत्पीड़न",
+          "start": 11.04,
+          "end": 11.5
+        },
+        {
+          "word": "संबंधी",
+          "start": 11.54,
+          "end": 11.85
+        },
+        {
+          "word": "जानकारी",
+          "start": 11.86,
+          "end": 12.48
+        },
+        {
+          "word": "के",
+          "start": 12.53,
+          "end": 12.66
+        },
+        {
+          "word": "लिए",
+          "start": 12.68,
+          "end": 12.88
+        },
+        {
+          "word": "braveheart",
+          "start": 12.92,
+          "end": 13.44
+        },
+        {
+          "word": "से",
+          "start": 13.64,
+          "end": 13.86
+        },
+        {
+          "word": "एक",
+          "start": 14.04,
+          "end": 14.4
+        },
+        {
+          "word": "आठ",
+          "start": 14.51,
+          "end": 14.8
+        },
+        {
+          "word": "शून्य",
+          "start": 14.98,
+          "end": 15.26
+        },
+        {
+          "word": "शून्य",
+          "start": 15.27,
+          "end": 15.66
+        },
+        {
+          "word": "दो",
+          "start": 16.079,
+          "end": 16.219
+        },
+        {
+          "word": "सात",
+          "start": 16.4,
+          "end": 16.67
+        },
+        {
+          "word": "दो",
+          "start": 16.78,
+          "end": 16.94
+        },
+        {
+          "word": "आठ",
+          "start": 17.13,
+          "end": 17.44
+        },
+        {
+          "word": "तीन",
+          "start": 17.56,
+          "end": 17.76
+        },
+        {
+          "word": "एक",
+          "start": 17.94,
+          "end": 18.16
+        },
+        {
+          "word": "पर",
+          "start": 18.3,
+          "end": 18.42
+        },
+        {
+          "word": "संपर्क",
+          "start": 18.67,
+          "end": 19.06
+        },
+        {
+          "word": "करें",
+          "start": 19.13,
+          "end": 19.44
+        },
+        {
+          "word": "वहीं",
+          "start": 20.6,
+          "end": 20.84
+        },
+        {
+          "word": "new",
+          "start": 20.85,
+          "end": 21.04
+        },
+        {
+          "word": "south",
+          "start": 21.05,
+          "end": 21.34
+        },
+        {
+          "word": "wales",
+          "start": 21.37,
+          "end": 21.66
+        },
+        {
+          "word": "सरकार",
+          "start": 21.86,
+          "end": 22.32
+        },
+        {
+          "word": "विविध",
+          "start": 22.52,
+          "end": 22.76
+        },
+        {
+          "word": "पृष्ठभूमि",
+          "start": 22.86,
+          "end": 23.42
+        },
+        {
+          "word": "के",
+          "start": 23.5,
+          "end": 23.72
+        },
+        {
+          "word": "घरेलू",
+          "start": 23.73,
+          "end": 24.14
+        },
+        {
+          "word": "हिंसा",
+          "start": 24.15,
+          "end": 24.54
+        },
+        {
+          "word": "पीड़ितों",
+          "start": 24.58,
+          "end": 24.92
+        },
+        {
+          "word": "के",
+          "start": 24.93,
+          "end": 25.089
+        },
+        {
+          "word": "लिए",
+          "start": 25.09,
+          "end": 25.36
+        },
+        {
+          "word": "एक",
+          "start": 25.38,
+          "end": 25.649
+        },
+        {
+          "word": "नया",
+          "start": 25.65,
+          "end": 25.98
+        },
+        {
+          "word": "funding",
+          "start": 26.14,
+          "end": 26.44
+        },
+        {
+          "word": "package",
+          "start": 26.51,
+          "end": 26.86
+        }
+      ],
+      "injections": [
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f001ldjpb3q2tbubl-d0f898ef-013",
+          "family": "WD",
+          "band": "A1",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 44,
+            "word": "पर"
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f001ldjpb3q2tbubl-d0f898ef-019",
+          "family": "SEG-MERGE",
+          "band": "A2",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 59
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f001ldjpb3q2tbubl-d0f898ef-017",
+          "family": "WH",
+          "band": "A2",
+          "weight": 0.87719298,
+          "meta": {
+            "inserted_before_index": 52,
+            "word": "अचानक",
+            "decoy": {
+              "start": 22.36,
+              "end": 22.48
+            },
+            "audio_silence_verified": false
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f001ldjpb3q2tbubl-d0f898ef-018",
+          "family": "BND-MAJOR",
+          "band": "A1",
+          "weight": 1.54639175,
+          "meta": {
+            "plain_offset": 56,
+            "word": "हिंसा",
+            "edge": "end",
+            "shift_ms": -350,
+            "severity": "critical",
+            "decoy": {
+              "start": 24.15,
+              "end": 24.19
+            }
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f001ldjpb3q2tbubl-d0f898ef-003",
+          "family": "BND-MAJOR",
+          "band": "A2",
+          "weight": 1.03092784,
+          "meta": {
+            "plain_offset": 3,
+            "word": "एक",
+            "edge": "start",
+            "shift_ms": 210,
+            "severity": "major",
+            "decoy": {
+              "start": 1.24,
+              "end": 1.43
+            }
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f001ldjpb3q2tbubl-d0f898ef-008",
+          "family": "BND-MAJOR",
+          "band": "A2",
+          "weight": 1.03092784,
+          "meta": {
+            "plain_offset": 16,
+            "word": "शून्य",
+            "edge": "start",
+            "shift_ms": 160,
+            "severity": "major",
+            "decoy": {
+              "start": 6.14,
+              "end": 6.48
+            }
+          }
+        }
+      ]
+    },
+    {
+      "decoy_id": "HI-EXISTING-cmv7zijww003rdjpbfsr43det-c74da917",
+      "locale": "hi_IN",
+      "file_name": "11d903e1ab7e21a0796b91c36f91d6c9.audio.wav",
+      "duration_seconds": 23.004,
+      "status": "ACTIVE",
+      "gold_whole_audio_tag": "none",
+      "gold_segments": [
+        {
+          "word": "इस",
+          "start": 0.03,
+          "end": 0.23
+        },
+        {
+          "word": "christmas",
+          "start": 0.26,
+          "end": 0.66
+        },
+        {
+          "word": "पर",
+          "start": 0.72,
+          "end": 0.9
+        },
+        {
+          "word": "queensland",
+          "start": 0.92,
+          "end": 1.32
+        },
+        {
+          "word": "में",
+          "start": 1.32,
+          "end": 1.51
+        },
+        {
+          "word": "आए",
+          "start": 1.513,
+          "end": 1.81
+        },
+        {
+          "word": "भीषण",
+          "start": 1.81,
+          "end": 2.22
+        },
+        {
+          "word": "तूफ़ान",
+          "start": 2.23,
+          "end": 2.7
+        },
+        {
+          "word": "की",
+          "start": 2.7,
+          "end": 2.88
+        },
+        {
+          "word": "तीव्रता",
+          "start": 2.88,
+          "end": 3.38
+        },
+        {
+          "word": "इतनी",
+          "start": 3.38,
+          "end": 3.72
+        },
+        {
+          "word": "अधिक",
+          "start": 3.78,
+          "end": 4.12
+        },
+        {
+          "word": "थी",
+          "start": 4.14,
+          "end": 4.31
+        },
+        {
+          "word": "कि",
+          "start": 4.38,
+          "end": 4.5
+        },
+        {
+          "word": "इस",
+          "start": 4.53,
+          "end": 4.65
+        },
+        {
+          "word": "समय",
+          "start": 4.72,
+          "end": 5.04
+        },
+        {
+          "word": "पर",
+          "start": 5.08,
+          "end": 5.211
+        },
+        {
+          "word": "राज्य",
+          "start": 5.26,
+          "end": 5.62
+        },
+        {
+          "word": "भर",
+          "start": 5.65,
+          "end": 5.85
+        },
+        {
+          "word": "में",
+          "start": 5.85,
+          "end": 6.02
+        },
+        {
+          "word": "एक",
+          "start": 6.08,
+          "end": 6.32
+        },
+        {
+          "word": "लाख",
+          "start": 6.36,
+          "end": 6.77
+        },
+        {
+          "word": "तीस",
+          "start": 6.87,
+          "end": 7.07
+        },
+        {
+          "word": "हज़ार",
+          "start": 7.07,
+          "end": 7.57
+        },
+        {
+          "word": "घर",
+          "start": 7.85,
+          "end": 8.12
+        },
+        {
+          "word": "बिना",
+          "start": 8.4,
+          "end": 8.64
+        },
+        {
+          "word": "बिजली",
+          "start": 8.64,
+          "end": 8.97
+        },
+        {
+          "word": "के",
+          "start": 8.97,
+          "end": 9.11
+        },
+        {
+          "word": "हो",
+          "start": 9.11,
+          "end": 9.24
+        },
+        {
+          "word": "गए",
+          "start": 9.24,
+          "end": 9.41
+        },
+        {
+          "word": "थे",
+          "start": 9.43,
+          "end": 9.65
+        },
+        {
+          "word": "gold",
+          "start": 10.11,
+          "end": 10.39
+        },
+        {
+          "word": "coast",
+          "start": 10.42,
+          "end": 10.7
+        },
+        {
+          "word": "में",
+          "start": 10.71,
+          "end": 10.87
+        },
+        {
+          "word": "चक्रवाती",
+          "start": 10.87,
+          "end": 11.45
+        },
+        {
+          "word": "तूफ़ान",
+          "start": 11.5,
+          "end": 11.93
+        },
+        {
+          "word": "गुज़रने",
+          "start": 11.96,
+          "end": 12.36
+        },
+        {
+          "word": "के",
+          "start": 12.39,
+          "end": 12.54
+        },
+        {
+          "word": "बाद",
+          "start": 12.55,
+          "end": 12.86
+        },
+        {
+          "word": "कुछ",
+          "start": 12.9,
+          "end": 13.09
+        },
+        {
+          "word": "घर",
+          "start": 13.11,
+          "end": 13.37
+        },
+        {
+          "word": "christmas",
+          "start": 13.43,
+          "end": 13.82
+        },
+        {
+          "word": "के",
+          "start": 13.82,
+          "end": 14.0
+        },
+        {
+          "word": "बाद",
+          "start": 14.0,
+          "end": 14.26
+        },
+        {
+          "word": "से",
+          "start": 14.26,
+          "end": 14.43
+        },
+        {
+          "word": "ही",
+          "start": 14.43,
+          "end": 14.6
+        },
+        {
+          "word": "बिजली",
+          "start": 14.88,
+          "end": 15.22
+        },
+        {
+          "word": "के",
+          "start": 15.24,
+          "end": 15.36
+        },
+        {
+          "word": "बिना",
+          "start": 15.36,
+          "end": 15.68
+        },
+        {
+          "word": "अँधेरे",
+          "start": 15.73,
+          "end": 16.1
+        },
+        {
+          "word": "में",
+          "start": 16.1,
+          "end": 16.28
+        },
+        {
+          "word": "हैं",
+          "start": 16.28,
+          "end": 16.48
+        },
+        {
+          "word": "प्रशासन",
+          "start": 17.02,
+          "end": 17.42
+        },
+        {
+          "word": "का",
+          "start": 17.42,
+          "end": 17.56
+        },
+        {
+          "word": "कहना",
+          "start": 17.56,
+          "end": 17.95
+        },
+        {
+          "word": "है",
+          "start": 17.95,
+          "end": 18.16
+        },
+        {
+          "word": "कि",
+          "start": 18.2,
+          "end": 18.36
+        },
+        {
+          "word": "हर",
+          "start": 18.36,
+          "end": 18.64
+        },
+        {
+          "word": "घर",
+          "start": 18.69,
+          "end": 18.94
+        },
+        {
+          "word": "तक",
+          "start": 18.95,
+          "end": 19.1
+        },
+        {
+          "word": "बिजली",
+          "start": 19.15,
+          "end": 19.42
+        },
+        {
+          "word": "वापस",
+          "start": 19.42,
+          "end": 19.79
+        },
+        {
+          "word": "पहुँचाने",
+          "start": 19.81,
+          "end": 20.28
+        },
+        {
+          "word": "का",
+          "start": 20.28,
+          "end": 20.48
+        },
+        {
+          "word": "काम",
+          "start": 20.5,
+          "end": 20.7
+        },
+        {
+          "word": "अब",
+          "start": 21.03,
+          "end": 21.2
+        },
+        {
+          "word": "लगभग",
+          "start": 21.36,
+          "end": 21.75
+        },
+        {
+          "word": "पूरा",
+          "start": 21.95,
+          "end": 22.22
+        },
+        {
+          "word": "हो",
+          "start": 22.22,
+          "end": 22.38
+        },
+        {
+          "word": "चुका",
+          "start": 22.41,
+          "end": 22.71
+        },
+        {
+          "word": "है",
+          "start": 22.71,
+          "end": 22.97
+        }
+      ],
+      "injections": [
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww003rdjpbfsr43det-c74da917-011",
+          "family": "WD",
+          "band": "A1",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 27,
+            "word": "के"
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww003rdjpbfsr43det-c74da917-017",
+          "family": "SEG-MERGE",
+          "band": "A2",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 58
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww003rdjpbfsr43det-c74da917-010",
+          "family": "WH",
+          "band": "A2",
+          "weight": 0.87719298,
+          "meta": {
+            "inserted_before_index": 24,
+            "word": "अचानक",
+            "decoy": {
+              "start": 7.61,
+              "end": 7.81
+            },
+            "audio_silence_verified": false
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww003rdjpbfsr43det-c74da917-013",
+          "family": "BND-MAJOR",
+          "band": "A1",
+          "weight": 1.54639175,
+          "meta": {
+            "plain_offset": 36,
+            "word": "गुज़रने",
+            "edge": "start",
+            "shift_ms": 350,
+            "severity": "critical",
+            "decoy": {
+              "start": 12.31,
+              "end": 12.36
+            }
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww003rdjpbfsr43det-c74da917-015",
+          "family": "BND-MAJOR",
+          "band": "A2",
+          "weight": 1.03092784,
+          "meta": {
+            "plain_offset": 45,
+            "word": "ही",
+            "edge": "end",
+            "shift_ms": 280,
+            "severity": "major",
+            "decoy": {
+              "start": 14.43,
+              "end": 14.88
+            }
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww003rdjpbfsr43det-c74da917-008",
+          "family": "BND-MAJOR",
+          "band": "A2",
+          "weight": 1.03092784,
+          "meta": {
+            "plain_offset": 21,
+            "word": "लाख",
+            "edge": "end",
+            "shift_ms": -205,
+            "severity": "major",
+            "decoy": {
+              "start": 6.36,
+              "end": 6.565
+            }
+          }
+        }
+      ]
+    },
+    {
+      "decoy_id": "HI-EXISTING-cmv7zhuqd000kdjpbwovjgw35-33e8881c",
+      "locale": "hi_IN",
+      "file_name": "278ed2922236048bd5fce8c48a0b389c.audio.wav",
+      "duration_seconds": 28.188,
+      "status": "ACTIVE",
+      "gold_whole_audio_tag": "none",
+      "gold_segments": [
+        {
+          "word": "दो",
+          "start": 0.0,
+          "end": 0.28
+        },
+        {
+          "word": "साल",
+          "start": 0.28,
+          "end": 0.58
+        },
+        {
+          "word": "के",
+          "start": 0.6,
+          "end": 0.72
+        },
+        {
+          "word": "लिए",
+          "start": 0.72,
+          "end": 0.88
+        },
+        {
+          "word": "बढ़ाया",
+          "start": 0.88,
+          "end": 1.22
+        },
+        {
+          "word": "जाएगा",
+          "start": 1.22,
+          "end": 1.73
+        },
+        {
+          "word": "जिससे",
+          "start": 2.01,
+          "end": 2.3
+        },
+        {
+          "word": "new",
+          "start": 2.3,
+          "end": 2.62
+        },
+        {
+          "word": "south",
+          "start": 2.62,
+          "end": 2.86
+        },
+        {
+          "word": "wales",
+          "start": 2.88,
+          "end": 3.18
+        },
+        {
+          "word": "के",
+          "start": 3.25,
+          "end": 3.39
+        },
+        {
+          "word": "करदाताओं",
+          "start": 3.42,
+          "end": 4.1
+        },
+        {
+          "word": "को",
+          "start": 4.1,
+          "end": 4.39
+        },
+        {
+          "word": "सालाना",
+          "start": 4.66,
+          "end": 5.35
+        },
+        {
+          "word": "दो",
+          "start": 5.38,
+          "end": 5.6
+        },
+        {
+          "word": "सौ",
+          "start": 5.6,
+          "end": 5.8
+        },
+        {
+          "word": "million",
+          "start": 5.8,
+          "end": 6.08
+        },
+        {
+          "word": "dollar",
+          "start": 6.08,
+          "end": 6.42
+        },
+        {
+          "word": "से",
+          "start": 6.44,
+          "end": 6.61
+        },
+        {
+          "word": "अधिक",
+          "start": 6.68,
+          "end": 6.97
+        },
+        {
+          "word": "का",
+          "start": 7.04,
+          "end": 7.17
+        },
+        {
+          "word": "नुक़सान",
+          "start": 7.17,
+          "end": 7.549
+        },
+        {
+          "word": "हो",
+          "start": 7.55,
+          "end": 7.69
+        },
+        {
+          "word": "सकता",
+          "start": 7.69,
+          "end": 8.01
+        },
+        {
+          "word": "है",
+          "start": 8.011,
+          "end": 8.25
+        },
+        {
+          "word": "origin",
+          "start": 9.14,
+          "end": 9.58
+        },
+        {
+          "word": "energy",
+          "start": 9.581,
+          "end": 10.03
+        },
+        {
+          "word": "new",
+          "start": 10.03,
+          "end": 10.23
+        },
+        {
+          "word": "south",
+          "start": 10.23,
+          "end": 10.47
+        },
+        {
+          "word": "wales",
+          "start": 10.5,
+          "end": 10.7
+        },
+        {
+          "word": "सरकार",
+          "start": 10.71,
+          "end": 11.16
+        },
+        {
+          "word": "के",
+          "start": 11.19,
+          "end": 11.35
+        },
+        {
+          "word": "साथ",
+          "start": 11.35,
+          "end": 11.62
+        },
+        {
+          "word": "eraring",
+          "start": 12.07,
+          "end": 12.61
+        },
+        {
+          "word": "power",
+          "start": 12.63,
+          "end": 12.92
+        },
+        {
+          "word": "station",
+          "start": 12.92,
+          "end": 13.29
+        },
+        {
+          "word": "के",
+          "start": 13.29,
+          "end": 13.48
+        },
+        {
+          "word": "बारे",
+          "start": 13.48,
+          "end": 13.73
+        },
+        {
+          "word": "में",
+          "start": 13.73,
+          "end": 13.94
+        },
+        {
+          "word": "बातचीत",
+          "start": 13.96,
+          "end": 14.34
+        },
+        {
+          "word": "कर",
+          "start": 14.37,
+          "end": 14.53
+        },
+        {
+          "word": "रही",
+          "start": 14.53,
+          "end": 14.74
+        },
+        {
+          "word": "है",
+          "start": 14.74,
+          "end": 14.98
+        },
+        {
+          "word": "कहा",
+          "start": 15.7,
+          "end": 15.91
+        },
+        {
+          "word": "जा",
+          "start": 15.91,
+          "end": 16.11
+        },
+        {
+          "word": "रहा",
+          "start": 16.11,
+          "end": 16.31
+        },
+        {
+          "word": "है",
+          "start": 16.31,
+          "end": 16.56
+        },
+        {
+          "word": "कि",
+          "start": 16.83,
+          "end": 17.02
+        },
+        {
+          "word": "august",
+          "start": 17.03,
+          "end": 17.45
+        },
+        {
+          "word": "दो",
+          "start": 17.48,
+          "end": 17.64
+        },
+        {
+          "word": "हज़ार",
+          "start": 17.64,
+          "end": 17.99
+        },
+        {
+          "word": "पच्चीस",
+          "start": 17.99,
+          "end": 18.36
+        },
+        {
+          "word": "की",
+          "start": 18.36,
+          "end": 18.52
+        },
+        {
+          "word": "निर्धारित",
+          "start": 18.52,
+          "end": 19.2
+        },
+        {
+          "word": "सेवानिवृत्ति",
+          "start": 19.57,
+          "end": 20.43
+        },
+        {
+          "word": "के",
+          "start": 20.45,
+          "end": 20.66
+        },
+        {
+          "word": "परिणामस्वरूप",
+          "start": 20.7,
+          "end": 21.52
+        },
+        {
+          "word": "राज्य",
+          "start": 21.87,
+          "end": 22.31
+        },
+        {
+          "word": "में",
+          "start": 22.31,
+          "end": 22.55
+        },
+        {
+          "word": "बिजली",
+          "start": 22.59,
+          "end": 22.87
+        },
+        {
+          "word": "की",
+          "start": 22.87,
+          "end": 23.04
+        },
+        {
+          "word": "कमी",
+          "start": 23.11,
+          "end": 23.48
+        },
+        {
+          "word": "और",
+          "start": 23.52,
+          "end": 23.69
+        },
+        {
+          "word": "क़ीमतों",
+          "start": 23.72,
+          "end": 24.08
+        },
+        {
+          "word": "में",
+          "start": 24.08,
+          "end": 24.3
+        },
+        {
+          "word": "बढ़ोतरी",
+          "start": 24.3,
+          "end": 24.85
+        },
+        {
+          "word": "हो",
+          "start": 24.86,
+          "end": 25.0
+        },
+        {
+          "word": "सकती",
+          "start": 25.0,
+          "end": 25.33
+        },
+        {
+          "word": "है",
+          "start": 25.33,
+          "end": 25.56
+        },
+        {
+          "word": "australia",
+          "start": 26.61,
+          "end": 27.06
+        },
+        {
+          "word": "ने",
+          "start": 27.06,
+          "end": 27.28
+        },
+        {
+          "word": "अपनी",
+          "start": 27.3,
+          "end": 27.63
+        },
+        {
+          "word": "पहली",
+          "start": 27.74,
+          "end": 28.15
+        }
+      ],
+      "injections": [
+        {
+          "injection_id": "HI-EXISTING-cmv7zhuqd000kdjpbwovjgw35-33e8881c-014",
+          "family": "WD",
+          "band": "A1",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 38,
+            "word": "में"
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zhuqd000kdjpbwovjgw35-33e8881c-012",
+          "family": "SEG-MERGE",
+          "band": "A2",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 31
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zhuqd000kdjpbwovjgw35-33e8881c-015",
+          "family": "WH",
+          "band": "A2",
+          "weight": 0.87719298,
+          "meta": {
+            "inserted_before_index": 43,
+            "word": "अचानक",
+            "decoy": {
+              "start": 15.22,
+              "end": 15.46
+            },
+            "audio_silence_verified": false
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zhuqd000kdjpbwovjgw35-33e8881c-013",
+          "family": "BND-MAJOR",
+          "band": "A1",
+          "weight": 1.54639175,
+          "meta": {
+            "plain_offset": 35,
+            "word": "station",
+            "edge": "start",
+            "shift_ms": 320,
+            "severity": "critical",
+            "decoy": {
+              "start": 13.24,
+              "end": 13.29
+            }
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zhuqd000kdjpbwovjgw35-33e8881c-017",
+          "family": "BND-MAJOR",
+          "band": "A2",
+          "weight": 1.03092784,
+          "meta": {
+            "plain_offset": 46,
+            "word": "है",
+            "edge": "end",
+            "shift_ms": 260,
+            "severity": "major",
+            "decoy": {
+              "start": 16.31,
+              "end": 16.82
+            }
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zhuqd000kdjpbwovjgw35-33e8881c-022",
+          "family": "BND-MAJOR",
+          "band": "A2",
+          "weight": 1.03092784,
+          "meta": {
+            "plain_offset": 67,
+            "word": "सकती",
+            "edge": "end",
+            "shift_ms": -165,
+            "severity": "major",
+            "decoy": {
+              "start": 25.0,
+              "end": 25.165
+            }
+          }
+        }
+      ]
+    },
+    {
+      "decoy_id": "HI-EXISTING-cmv7zijww003sdjpbmnig66in-bafab526",
+      "locale": "hi_IN",
+      "file_name": "2d0799d3e47e7aeaedddc1d1933354e4.audio.wav",
+      "duration_seconds": 29.116,
+      "status": "ACTIVE",
+      "gold_whole_audio_tag": "none",
+      "gold_segments": [
+        {
+          "word": "क़ीमतों",
+          "start": 0.0,
+          "end": 0.43
+        },
+        {
+          "word": "को",
+          "start": 0.46,
+          "end": 0.68
+        },
+        {
+          "word": "और",
+          "start": 0.7,
+          "end": 0.92
+        },
+        {
+          "word": "भी",
+          "start": 0.92,
+          "end": 1.08
+        },
+        {
+          "word": "बढ़ा",
+          "start": 1.08,
+          "end": 1.29
+        },
+        {
+          "word": "रही",
+          "start": 1.29,
+          "end": 1.58
+        },
+        {
+          "word": "है",
+          "start": 1.58,
+          "end": 1.78
+        },
+        {
+          "word": "a",
+          "start": 2.24,
+          "end": 2.38
+        },
+        {
+          "word": "b",
+          "start": 2.38,
+          "end": 2.52
+        },
+        {
+          "word": "s",
+          "start": 2.52,
+          "end": 2.67
+        },
+        {
+          "word": "के",
+          "start": 2.7,
+          "end": 2.79
+        },
+        {
+          "word": "आँकड़ों",
+          "start": 2.79,
+          "end": 3.12
+        },
+        {
+          "word": "के",
+          "start": 3.12,
+          "end": 3.21
+        },
+        {
+          "word": "अनुसार",
+          "start": 3.21,
+          "end": 3.66
+        },
+        {
+          "word": "black",
+          "start": 3.7,
+          "end": 3.9
+        },
+        {
+          "word": "friday",
+          "start": 3.93,
+          "end": 4.29
+        },
+        {
+          "word": "की",
+          "start": 4.33,
+          "end": 4.41
+        },
+        {
+          "word": "इस",
+          "start": 4.41,
+          "end": 4.56
+        },
+        {
+          "word": "साल",
+          "start": 4.6,
+          "end": 4.83
+        },
+        {
+          "word": "की",
+          "start": 4.83,
+          "end": 5.01
+        },
+        {
+          "word": "sale",
+          "start": 5.12,
+          "end": 5.45
+        },
+        {
+          "word": "record",
+          "start": 5.45,
+          "end": 5.9
+        },
+        {
+          "word": "स्तर",
+          "start": 5.92,
+          "end": 6.1
+        },
+        {
+          "word": "पर",
+          "start": 6.11,
+          "end": 6.24
+        },
+        {
+          "word": "रही",
+          "start": 6.24,
+          "end": 6.46
+        },
+        {
+          "word": "थी",
+          "start": 6.46,
+          "end": 6.67
+        },
+        {
+          "word": "जिसमें",
+          "start": 6.93,
+          "end": 7.29
+        },
+        {
+          "word": "ऑस्ट्रेलियाइयों",
+          "start": 7.31,
+          "end": 8.11
+        },
+        {
+          "word": "ने",
+          "start": 8.11,
+          "end": 8.28
+        },
+        {
+          "word": "लगभग",
+          "start": 8.28,
+          "end": 8.63
+        },
+        {
+          "word": "छत्तीस",
+          "start": 8.65,
+          "end": 9.22
+        },
+        {
+          "word": "million",
+          "start": 9.23,
+          "end": 9.61
+        },
+        {
+          "word": "dollar",
+          "start": 9.61,
+          "end": 9.87
+        },
+        {
+          "word": "की",
+          "start": 9.92,
+          "end": 10.04
+        },
+        {
+          "word": "खरीदारी",
+          "start": 10.06,
+          "end": 10.6
+        },
+        {
+          "word": "की",
+          "start": 10.74,
+          "end": 10.91
+        },
+        {
+          "word": "थी",
+          "start": 10.91,
+          "end": 11.09
+        },
+        {
+          "word": "दूसरी",
+          "start": 12.21,
+          "end": 12.56
+        },
+        {
+          "word": "ओर",
+          "start": 12.56,
+          "end": 12.85
+        },
+        {
+          "word": "new",
+          "start": 12.89,
+          "end": 13.24
+        },
+        {
+          "word": "south",
+          "start": 13.24,
+          "end": 13.51
+        },
+        {
+          "word": "wales",
+          "start": 13.51,
+          "end": 13.94
+        },
+        {
+          "word": "anti",
+          "start": 13.95,
+          "end": 14.34
+        },
+        {
+          "word": "corruption",
+          "start": 14.34,
+          "end": 14.82
+        },
+        {
+          "word": "commission",
+          "start": 14.84,
+          "end": 15.22
+        },
+        {
+          "word": "यानी",
+          "start": 15.22,
+          "end": 15.48
+        },
+        {
+          "word": "icac",
+          "start": 15.52,
+          "end": 16.05
+        },
+        {
+          "word": "का",
+          "start": 16.1,
+          "end": 16.24
+        },
+        {
+          "word": "कहना",
+          "start": 16.37,
+          "end": 16.68
+        },
+        {
+          "word": "है",
+          "start": 16.68,
+          "end": 16.84
+        },
+        {
+          "word": "कि",
+          "start": 17.17,
+          "end": 17.32
+        },
+        {
+          "word": "पूर्व",
+          "start": 17.4,
+          "end": 17.7
+        },
+        {
+          "word": "premier",
+          "start": 17.84,
+          "end": 18.35
+        },
+        {
+          "word": "gladys",
+          "start": 18.38,
+          "end": 18.83
+        },
+        {
+          "word": "berejiklian",
+          "start": 19.04,
+          "end": 19.8
+        },
+        {
+          "word": "और",
+          "start": 19.83,
+          "end": 20.02
+        },
+        {
+          "word": "उनके",
+          "start": 20.02,
+          "end": 20.36
+        },
+        {
+          "word": "पूर्व",
+          "start": 20.38,
+          "end": 20.72
+        },
+        {
+          "word": "साथी",
+          "start": 20.73,
+          "end": 21.1
+        },
+        {
+          "word": "के",
+          "start": 21.1,
+          "end": 21.26
+        },
+        {
+          "word": "मामले",
+          "start": 21.26,
+          "end": 21.63
+        },
+        {
+          "word": "में",
+          "start": 21.63,
+          "end": 21.82
+        },
+        {
+          "word": "जारी",
+          "start": 21.82,
+          "end": 22.11
+        },
+        {
+          "word": "commission",
+          "start": 22.16,
+          "end": 22.59
+        },
+        {
+          "word": "की",
+          "start": 22.59,
+          "end": 22.77
+        },
+        {
+          "word": "जाँच",
+          "start": 22.79,
+          "end": 23.13
+        },
+        {
+          "word": "के",
+          "start": 23.13,
+          "end": 23.27
+        },
+        {
+          "word": "नतीजे",
+          "start": 23.27,
+          "end": 23.76
+        },
+        {
+          "word": "राज्य",
+          "start": 24.16,
+          "end": 24.5
+        },
+        {
+          "word": "में",
+          "start": 24.5,
+          "end": 24.67
+        },
+        {
+          "word": "होने",
+          "start": 24.67,
+          "end": 24.96
+        },
+        {
+          "word": "वाले",
+          "start": 24.96,
+          "end": 25.31
+        },
+        {
+          "word": "चुनावों",
+          "start": 25.31,
+          "end": 25.85
+        },
+        {
+          "word": "के",
+          "start": 25.87,
+          "end": 26.1
+        },
+        {
+          "word": "बाद",
+          "start": 26.15,
+          "end": 26.39
+        },
+        {
+          "word": "तक",
+          "start": 26.44,
+          "end": 26.62
+        },
+        {
+          "word": "नहीं",
+          "start": 26.66,
+          "end": 26.91
+        },
+        {
+          "word": "आ",
+          "start": 26.91,
+          "end": 27.08
+        },
+        {
+          "word": "सकेंगे",
+          "start": 27.08,
+          "end": 27.5
+        },
+        {
+          "word": "क्योंकि",
+          "start": 27.69,
+          "end": 27.91
+        },
+        {
+          "word": "ये",
+          "start": 27.91,
+          "end": 28.08
+        },
+        {
+          "word": "मामला",
+          "start": 28.08,
+          "end": 28.5
+        },
+        {
+          "word": "बहुत",
+          "start": 28.81,
+          "end": 29.08
+        }
+      ],
+      "injections": [
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww003sdjpbmnig66in-bafab526-009",
+          "family": "WD",
+          "band": "A1",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 49,
+            "word": "है"
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww003sdjpbmnig66in-bafab526-003",
+          "family": "SEG-MERGE",
+          "band": "A2",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 11
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww003sdjpbmnig66in-bafab526-002",
+          "family": "WH",
+          "band": "A2",
+          "weight": 0.87719298,
+          "meta": {
+            "inserted_before_index": 7,
+            "word": "अचानक",
+            "decoy": {
+              "start": 1.89,
+              "end": 2.13
+            },
+            "audio_silence_verified": false
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww003sdjpbmnig66in-bafab526-007",
+          "family": "BND-MAJOR",
+          "band": "A1",
+          "weight": 1.54639175,
+          "meta": {
+            "plain_offset": 34,
+            "word": "खरीदारी",
+            "edge": "end",
+            "shift_ms": -400,
+            "severity": "critical",
+            "decoy": {
+              "start": 10.06,
+              "end": 10.2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "decoy_id": "HI-EXISTING-cmv7zi88f002qdjpbgux09a13-051cf0fe",
+      "locale": "hi_IN",
+      "file_name": "4712158a27fc46ff3e35f0c9510c8eca.audio.wav",
+      "duration_seconds": 27.324,
+      "status": "ACTIVE",
+      "gold_whole_audio_tag": "none",
+      "gold_segments": [
+        {
+          "word": "नियमित",
+          "start": 0.03,
+          "end": 0.41
+        },
+        {
+          "word": "रूप",
+          "start": 0.41,
+          "end": 0.66
+        },
+        {
+          "word": "से",
+          "start": 0.69,
+          "end": 0.9
+        },
+        {
+          "word": "drugs",
+          "start": 0.91,
+          "end": 1.19
+        },
+        {
+          "word": "की",
+          "start": 1.24,
+          "end": 1.34
+        },
+        {
+          "word": "छापेमारी",
+          "start": 1.34,
+          "end": 1.93
+        },
+        {
+          "word": "कर",
+          "start": 1.95,
+          "end": 2.11
+        },
+        {
+          "word": "रही",
+          "start": 2.11,
+          "end": 2.42
+        },
+        {
+          "word": "है",
+          "start": 2.42,
+          "end": 2.6
+        },
+        {
+          "word": "इससे",
+          "start": 2.91,
+          "end": 3.22
+        },
+        {
+          "word": "पहले",
+          "start": 3.23,
+          "end": 3.65
+        },
+        {
+          "word": "police",
+          "start": 3.82,
+          "end": 4.12
+        },
+        {
+          "word": "ने",
+          "start": 4.12,
+          "end": 4.35
+        },
+        {
+          "word": "crime",
+          "start": 4.37,
+          "end": 4.67
+        },
+        {
+          "word": "branch",
+          "start": 4.67,
+          "end": 4.99
+        },
+        {
+          "word": "की",
+          "start": 4.99,
+          "end": 5.12
+        },
+        {
+          "word": "मदद",
+          "start": 5.12,
+          "end": 5.4
+        },
+        {
+          "word": "से",
+          "start": 5.464,
+          "end": 5.63
+        },
+        {
+          "word": "पुणे",
+          "start": 5.7,
+          "end": 6.0
+        },
+        {
+          "word": "के",
+          "start": 6.0,
+          "end": 6.19
+        },
+        {
+          "word": "विश्रांतवाडी",
+          "start": 6.46,
+          "end": 7.41
+        },
+        {
+          "word": "इलाक़े",
+          "start": 7.41,
+          "end": 7.8
+        },
+        {
+          "word": "से",
+          "start": 7.8,
+          "end": 7.98
+        },
+        {
+          "word": "सौ",
+          "start": 7.98,
+          "end": 8.3
+        },
+        {
+          "word": "करोड़",
+          "start": 8.3,
+          "end": 8.67
+        },
+        {
+          "word": "से",
+          "start": 8.67,
+          "end": 8.82
+        },
+        {
+          "word": "अधिक",
+          "start": 8.82,
+          "end": 9.05
+        },
+        {
+          "word": "के",
+          "start": 9.05,
+          "end": 9.21
+        },
+        {
+          "word": "drugs",
+          "start": 9.21,
+          "end": 9.48
+        },
+        {
+          "word": "ज़ब्त",
+          "start": 9.48,
+          "end": 9.73
+        },
+        {
+          "word": "किए",
+          "start": 9.73,
+          "end": 9.96
+        },
+        {
+          "word": "थे",
+          "start": 10.0,
+          "end": 10.19
+        },
+        {
+          "word": "इसके",
+          "start": 10.22,
+          "end": 10.46
+        },
+        {
+          "word": "बाद",
+          "start": 10.46,
+          "end": 10.84
+        },
+        {
+          "word": "अब",
+          "start": 10.84,
+          "end": 11.01
+        },
+        {
+          "word": "police",
+          "start": 11.08,
+          "end": 11.43
+        },
+        {
+          "word": "ने",
+          "start": 11.43,
+          "end": 11.62
+        },
+        {
+          "word": "दिल्ली",
+          "start": 11.66,
+          "end": 12.0
+        },
+        {
+          "word": "के",
+          "start": 12.0,
+          "end": 12.14
+        },
+        {
+          "word": "हौज़",
+          "start": 12.14,
+          "end": 12.39
+        },
+        {
+          "word": "खास",
+          "start": 12.4,
+          "end": 12.6
+        },
+        {
+          "word": "में",
+          "start": 12.6,
+          "end": 12.73
+        },
+        {
+          "word": "भी",
+          "start": 12.73,
+          "end": 12.87
+        },
+        {
+          "word": "छापेमारी",
+          "start": 12.87,
+          "end": 13.35
+        },
+        {
+          "word": "की",
+          "start": 13.42,
+          "end": 13.54
+        },
+        {
+          "word": "है",
+          "start": 13.54,
+          "end": 13.7
+        },
+        {
+          "word": "पुणे",
+          "start": 14.08,
+          "end": 14.34
+        },
+        {
+          "word": "से",
+          "start": 14.34,
+          "end": 14.45
+        },
+        {
+          "word": "अब",
+          "start": 14.45,
+          "end": 14.58
+        },
+        {
+          "word": "तक",
+          "start": 14.63,
+          "end": 14.82
+        },
+        {
+          "word": "ग्यारह",
+          "start": 14.82,
+          "end": 15.17
+        },
+        {
+          "word": "सौ",
+          "start": 15.17,
+          "end": 15.34
+        },
+        {
+          "word": "करोड़",
+          "start": 15.34,
+          "end": 15.58
+        },
+        {
+          "word": "रुपए",
+          "start": 15.58,
+          "end": 15.97
+        },
+        {
+          "word": "के",
+          "start": 15.971,
+          "end": 16.25
+        },
+        {
+          "word": "drugs",
+          "start": 16.27,
+          "end": 16.56
+        },
+        {
+          "word": "ज़ब्त",
+          "start": 16.68,
+          "end": 16.95
+        },
+        {
+          "word": "किए",
+          "start": 16.98,
+          "end": 17.17
+        },
+        {
+          "word": "जा",
+          "start": 17.17,
+          "end": 17.34
+        },
+        {
+          "word": "चुके",
+          "start": 17.37,
+          "end": 17.57
+        },
+        {
+          "word": "हैं",
+          "start": 17.57,
+          "end": 17.76
+        },
+        {
+          "word": "वहीं",
+          "start": 18.03,
+          "end": 18.28
+        },
+        {
+          "word": "दिल्ली",
+          "start": 18.28,
+          "end": 18.62
+        },
+        {
+          "word": "से",
+          "start": 18.63,
+          "end": 18.84
+        },
+        {
+          "word": "अब",
+          "start": 18.84,
+          "end": 19.02
+        },
+        {
+          "word": "तक",
+          "start": 19.04,
+          "end": 19.28
+        },
+        {
+          "word": "एक",
+          "start": 19.31,
+          "end": 19.52
+        },
+        {
+          "word": "हज़ार",
+          "start": 19.52,
+          "end": 19.91
+        },
+        {
+          "word": "करोड़",
+          "start": 19.91,
+          "end": 20.18
+        },
+        {
+          "word": "रुपए",
+          "start": 20.18,
+          "end": 20.51
+        },
+        {
+          "word": "के",
+          "start": 20.52,
+          "end": 20.66
+        },
+        {
+          "word": "drugs",
+          "start": 20.66,
+          "end": 20.92
+        },
+        {
+          "word": "बरामद",
+          "start": 20.94,
+          "end": 21.31
+        },
+        {
+          "word": "हुए",
+          "start": 21.31,
+          "end": 21.53
+        },
+        {
+          "word": "हैं",
+          "start": 21.53,
+          "end": 21.7
+        },
+        {
+          "word": "दोनों",
+          "start": 21.76,
+          "end": 22.05
+        },
+        {
+          "word": "शहरों",
+          "start": 22.05,
+          "end": 22.41
+        },
+        {
+          "word": "से",
+          "start": 22.41,
+          "end": 22.66
+        },
+        {
+          "word": "मिलाकर",
+          "start": 22.66,
+          "end": 23.22
+        },
+        {
+          "word": "के",
+          "start": 23.25,
+          "end": 23.48
+        },
+        {
+          "word": "अब",
+          "start": 23.49,
+          "end": 23.63
+        },
+        {
+          "word": "तक",
+          "start": 23.67,
+          "end": 23.84
+        },
+        {
+          "word": "तीन",
+          "start": 23.92,
+          "end": 24.14
+        },
+        {
+          "word": "हज़ार",
+          "start": 24.14,
+          "end": 24.52
+        },
+        {
+          "word": "करोड़",
+          "start": 24.55,
+          "end": 24.84
+        },
+        {
+          "word": "रुपए",
+          "start": 24.84,
+          "end": 25.18
+        },
+        {
+          "word": "के",
+          "start": 25.21,
+          "end": 25.34
+        },
+        {
+          "word": "drugs",
+          "start": 25.34,
+          "end": 25.68
+        },
+        {
+          "word": "बरामद",
+          "start": 25.87,
+          "end": 26.41
+        },
+        {
+          "word": "किए",
+          "start": 26.46,
+          "end": 26.7
+        },
+        {
+          "word": "जा",
+          "start": 26.7,
+          "end": 26.9
+        },
+        {
+          "word": "चुके",
+          "start": 26.9,
+          "end": 27.17
+        },
+        {
+          "word": "हैं",
+          "start": 27.17,
+          "end": 27.31
+        }
+      ],
+      "injections": [
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f002qdjpbgux09a13-051cf0fe-017",
+          "family": "WD",
+          "band": "A1",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 70,
+            "word": "के"
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f002qdjpbgux09a13-051cf0fe-011",
+          "family": "SEG-MERGE",
+          "band": "A2",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 49
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f002qdjpbgux09a13-051cf0fe-010",
+          "family": "BND-MAJOR",
+          "band": "A1",
+          "weight": 1.54639175,
+          "meta": {
+            "plain_offset": 46,
+            "word": "पुणे",
+            "edge": "start",
+            "shift_ms": -320,
+            "severity": "critical",
+            "decoy": {
+              "start": 13.76,
+              "end": 14.34
+            }
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f002qdjpbgux09a13-051cf0fe-005",
+          "family": "BND-MAJOR",
+          "band": "A2",
+          "weight": 1.03092784,
+          "meta": {
+            "plain_offset": 19,
+            "word": "के",
+            "edge": "end",
+            "shift_ms": 250,
+            "severity": "major",
+            "decoy": {
+              "start": 6.0,
+              "end": 6.44
+            }
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f002qdjpbgux09a13-051cf0fe-020",
+          "family": "BND-MAJOR",
+          "band": "A2",
+          "weight": 1.03092784,
+          "meta": {
+            "plain_offset": 87,
+            "word": "drugs",
+            "edge": "end",
+            "shift_ms": 160,
+            "severity": "major",
+            "decoy": {
+              "start": 25.34,
+              "end": 25.84
+            }
+          }
+        }
+      ]
+    },
+    {
+      "decoy_id": "HI-EXISTING-cmv7zijww003ldjpb8jtk8717-5fe805bd",
+      "locale": "hi_IN",
+      "file_name": "4de30967acd0679e14c09d7c0a83fbb2.audio.wav",
+      "duration_seconds": 29.468,
+      "status": "ACTIVE",
+      "gold_whole_audio_tag": "none",
+      "gold_segments": [
+        {
+          "word": "report",
+          "start": 0.0,
+          "end": 0.41
+        },
+        {
+          "word": "में",
+          "start": 0.451,
+          "end": 0.64
+        },
+        {
+          "word": "ये",
+          "start": 0.64,
+          "end": 0.84
+        },
+        {
+          "word": "भी",
+          "start": 0.84,
+          "end": 0.98
+        },
+        {
+          "word": "दावा",
+          "start": 0.98,
+          "end": 1.27
+        },
+        {
+          "word": "किया",
+          "start": 1.27,
+          "end": 1.53
+        },
+        {
+          "word": "गया",
+          "start": 1.53,
+          "end": 1.82
+        },
+        {
+          "word": "है",
+          "start": 1.82,
+          "end": 2.01
+        },
+        {
+          "word": "कि",
+          "start": 2.01,
+          "end": 2.23
+        },
+        {
+          "word": "ऐसा",
+          "start": 2.23,
+          "end": 2.54
+        },
+        {
+          "word": "करने",
+          "start": 2.55,
+          "end": 2.91
+        },
+        {
+          "word": "से",
+          "start": 2.93,
+          "end": 3.096
+        },
+        {
+          "word": "पूरे",
+          "start": 3.48,
+          "end": 3.91
+        },
+        {
+          "word": "australia",
+          "start": 3.91,
+          "end": 4.59
+        },
+        {
+          "word": "में",
+          "start": 4.59,
+          "end": 4.81
+        },
+        {
+          "word": "community",
+          "start": 5.17,
+          "end": 5.74
+        },
+        {
+          "word": "chemist",
+          "start": 5.8,
+          "end": 6.23
+        },
+        {
+          "word": "से",
+          "start": 6.35,
+          "end": 6.57
+        },
+        {
+          "word": "चार",
+          "start": 7.02,
+          "end": 7.38
+        },
+        {
+          "word": "दशमलव",
+          "start": 7.38,
+          "end": 7.9
+        },
+        {
+          "word": "पाँच",
+          "start": 7.99,
+          "end": 8.4
+        },
+        {
+          "word": "अरब",
+          "start": 8.4,
+          "end": 8.66
+        },
+        {
+          "word": "dollar",
+          "start": 8.67,
+          "end": 9.02
+        },
+        {
+          "word": "की",
+          "start": 9.03,
+          "end": 9.18
+        },
+        {
+          "word": "कटौती",
+          "start": 9.18,
+          "end": 9.63
+        },
+        {
+          "word": "की",
+          "start": 9.68,
+          "end": 9.9
+        },
+        {
+          "word": "जाएगी",
+          "start": 9.9,
+          "end": 10.36
+        },
+        {
+          "word": "और",
+          "start": 10.51,
+          "end": 10.75
+        },
+        {
+          "word": "साथ",
+          "start": 10.75,
+          "end": 11.02
+        },
+        {
+          "word": "ही",
+          "start": 11.02,
+          "end": 11.29
+        },
+        {
+          "word": "छह",
+          "start": 11.49,
+          "end": 11.86
+        },
+        {
+          "word": "सौ",
+          "start": 11.86,
+          "end": 12.11
+        },
+        {
+          "word": "पैंसठ",
+          "start": 12.11,
+          "end": 12.56
+        },
+        {
+          "word": "फ़ार्मेसियाँ",
+          "start": 12.57,
+          "end": 13.25
+        },
+        {
+          "word": "बंद",
+          "start": 13.251,
+          "end": 13.48
+        },
+        {
+          "word": "हो",
+          "start": 13.48,
+          "end": 13.66
+        },
+        {
+          "word": "सकती",
+          "start": 13.68,
+          "end": 14.0
+        },
+        {
+          "word": "हैं",
+          "start": 14.0,
+          "end": 14.21
+        },
+        {
+          "word": "pharmacy",
+          "start": 14.46,
+          "end": 14.91
+        },
+        {
+          "word": "guild",
+          "start": 14.91,
+          "end": 15.12
+        },
+        {
+          "word": "के",
+          "start": 15.127,
+          "end": 15.32
+        },
+        {
+          "word": "अध्यक्ष",
+          "start": 15.32,
+          "end": 15.88
+        },
+        {
+          "word": "trent",
+          "start": 16.12,
+          "end": 16.42
+        },
+        {
+          "word": "twomey",
+          "start": 16.48,
+          "end": 16.81
+        },
+        {
+          "word": "का",
+          "start": 16.81,
+          "end": 16.97
+        },
+        {
+          "word": "कहना",
+          "start": 16.97,
+          "end": 17.27
+        },
+        {
+          "word": "है",
+          "start": 17.27,
+          "end": 17.47
+        },
+        {
+          "word": "कि",
+          "start": 17.76,
+          "end": 17.94
+        },
+        {
+          "word": "ऐसा",
+          "start": 17.94,
+          "end": 18.23
+        },
+        {
+          "word": "करने",
+          "start": 18.23,
+          "end": 18.57
+        },
+        {
+          "word": "से",
+          "start": 18.58,
+          "end": 18.84
+        },
+        {
+          "word": "लोगों",
+          "start": 18.84,
+          "end": 19.2
+        },
+        {
+          "word": "को",
+          "start": 19.23,
+          "end": 19.44
+        },
+        {
+          "word": "asthma",
+          "start": 19.82,
+          "end": 20.35
+        },
+        {
+          "word": "जाँच",
+          "start": 20.35,
+          "end": 20.8
+        },
+        {
+          "word": "blister",
+          "start": 21.05,
+          "end": 21.57
+        },
+        {
+          "word": "pack",
+          "start": 21.59,
+          "end": 21.85
+        },
+        {
+          "word": "रक्त",
+          "start": 22.19,
+          "end": 22.61
+        },
+        {
+          "word": "और",
+          "start": 22.61,
+          "end": 22.83
+        },
+        {
+          "word": "वज़न",
+          "start": 22.84,
+          "end": 23.17
+        },
+        {
+          "word": "की",
+          "start": 23.17,
+          "end": 23.33
+        },
+        {
+          "word": "निगरानी",
+          "start": 23.33,
+          "end": 23.88
+        },
+        {
+          "word": "और",
+          "start": 24.19,
+          "end": 24.38
+        },
+        {
+          "word": "home",
+          "start": 24.38,
+          "end": 24.76
+        },
+        {
+          "word": "delivery",
+          "start": 24.76,
+          "end": 25.36
+        },
+        {
+          "word": "जैसी",
+          "start": 25.37,
+          "end": 25.7
+        },
+        {
+          "word": "मुफ़्त",
+          "start": 25.7,
+          "end": 26.08
+        },
+        {
+          "word": "सेवाओं",
+          "start": 26.08,
+          "end": 26.54
+        },
+        {
+          "word": "का",
+          "start": 26.56,
+          "end": 26.76
+        },
+        {
+          "word": "लाभ",
+          "start": 27.16,
+          "end": 27.57
+        },
+        {
+          "word": "उठाने",
+          "start": 27.57,
+          "end": 28.09
+        },
+        {
+          "word": "से",
+          "start": 28.11,
+          "end": 28.33
+        },
+        {
+          "word": "वंचित",
+          "start": 28.37,
+          "end": 28.73
+        },
+        {
+          "word": "रहना",
+          "start": 28.73,
+          "end": 29.06
+        },
+        {
+          "word": "होगा",
+          "start": 29.06,
+          "end": 29.45
+        }
+      ],
+      "injections": [
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww003ldjpb8jtk8717-5fe805bd-017",
+          "family": "WD",
+          "band": "A1",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 62,
+            "word": "और"
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww003ldjpb8jtk8717-5fe805bd-004",
+          "family": "SEG-MERGE",
+          "band": "A2",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 14
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww003ldjpb8jtk8717-5fe805bd-012",
+          "family": "WH",
+          "band": "A2",
+          "weight": 0.87719298,
+          "meta": {
+            "inserted_before_index": 47,
+            "word": "अचानक",
+            "decoy": {
+              "start": 17.51,
+              "end": 17.72
+            },
+            "audio_silence_verified": false
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww003ldjpb8jtk8717-5fe805bd-003",
+          "family": "BND-MAJOR",
+          "band": "A1",
+          "weight": 1.54639175,
+          "meta": {
+            "plain_offset": 11,
+            "word": "से",
+            "edge": "end",
+            "shift_ms": 320,
+            "severity": "critical",
+            "decoy": {
+              "start": 2.93,
+              "end": 3.416
+            }
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww003ldjpb8jtk8717-5fe805bd-005",
+          "family": "BND-MAJOR",
+          "band": "A2",
+          "weight": 1.03092784,
+          "meta": {
+            "plain_offset": 20,
+            "word": "पाँच",
+            "edge": "end",
+            "shift_ms": -205,
+            "severity": "major",
+            "decoy": {
+              "start": 7.99,
+              "end": 8.195
+            }
+          }
+        }
+      ]
+    },
+    {
+      "decoy_id": "HI-EXISTING-cmv7zijww003hdjpbdixg2q5m-41fae1ef",
+      "locale": "hi_IN",
+      "file_name": "4deb10680a9a63d312bf187a025518f9.audio.wav",
+      "duration_seconds": 27.868,
+      "status": "ACTIVE",
+      "gold_whole_audio_tag": "none",
+      "gold_segments": [
+        {
+          "word": "छब्बीस",
+          "start": 0.0,
+          "end": 0.68
+        },
+        {
+          "word": "महिलाओं",
+          "start": 0.68,
+          "end": 1.18
+        },
+        {
+          "word": "की",
+          "start": 1.2,
+          "end": 1.36
+        },
+        {
+          "word": "जान",
+          "start": 1.39,
+          "end": 1.75
+        },
+        {
+          "word": "जा",
+          "start": 1.87,
+          "end": 2.04
+        },
+        {
+          "word": "चुकी",
+          "start": 2.04,
+          "end": 2.38
+        },
+        {
+          "word": "है",
+          "start": 2.38,
+          "end": 2.65
+        },
+        {
+          "word": "वहीं",
+          "start": 2.95,
+          "end": 3.3
+        },
+        {
+          "word": "australian",
+          "start": 3.3,
+          "end": 3.86
+        },
+        {
+          "word": "defence",
+          "start": 3.86,
+          "end": 4.18
+        },
+        {
+          "word": "minister",
+          "start": 4.18,
+          "end": 4.78
+        },
+        {
+          "word": "richard",
+          "start": 5.01,
+          "end": 5.34
+        },
+        {
+          "word": "marles",
+          "start": 5.34,
+          "end": 5.72
+        },
+        {
+          "word": "ने",
+          "start": 5.72,
+          "end": 5.97
+        },
+        {
+          "word": "ukraine",
+          "start": 5.97,
+          "end": 6.38
+        },
+        {
+          "word": "के",
+          "start": 6.38,
+          "end": 6.48
+        },
+        {
+          "word": "लिए",
+          "start": 6.48,
+          "end": 6.85
+        },
+        {
+          "word": "सौ",
+          "start": 7.09,
+          "end": 7.4
+        },
+        {
+          "word": "million",
+          "start": 7.4,
+          "end": 7.76
+        },
+        {
+          "word": "dollar",
+          "start": 7.76,
+          "end": 8.08
+        },
+        {
+          "word": "के",
+          "start": 8.12,
+          "end": 8.41
+        },
+        {
+          "word": "सैन्य",
+          "start": 8.68,
+          "end": 9.05
+        },
+        {
+          "word": "सहायता",
+          "start": 9.08,
+          "end": 9.65
+        },
+        {
+          "word": "package",
+          "start": 9.66,
+          "end": 10.12
+        },
+        {
+          "word": "की",
+          "start": 10.12,
+          "end": 10.28
+        },
+        {
+          "word": "घोषणा",
+          "start": 10.281,
+          "end": 10.72
+        },
+        {
+          "word": "की",
+          "start": 10.75,
+          "end": 10.9
+        },
+        {
+          "word": "है",
+          "start": 10.9,
+          "end": 11.16
+        },
+        {
+          "word": "जिसमें",
+          "start": 11.42,
+          "end": 11.81
+        },
+        {
+          "word": "कि",
+          "start": 11.81,
+          "end": 12.13
+        },
+        {
+          "word": "short",
+          "start": 12.35,
+          "end": 12.69
+        },
+        {
+          "word": "range",
+          "start": 12.69,
+          "end": 13.07
+        },
+        {
+          "word": "air",
+          "start": 13.07,
+          "end": 13.3
+        },
+        {
+          "word": "defences",
+          "start": 13.3,
+          "end": 13.95
+        },
+        {
+          "word": "और",
+          "start": 14.2,
+          "end": 14.42
+        },
+        {
+          "word": "drone",
+          "start": 14.42,
+          "end": 14.74
+        },
+        {
+          "word": "भी",
+          "start": 14.77,
+          "end": 14.98
+        },
+        {
+          "word": "शामिल",
+          "start": 14.98,
+          "end": 15.44
+        },
+        {
+          "word": "है",
+          "start": 15.44,
+          "end": 15.73
+        },
+        {
+          "word": "साथ",
+          "start": 15.91,
+          "end": 16.122
+        },
+        {
+          "word": "ही",
+          "start": 16.14,
+          "end": 16.4
+        },
+        {
+          "word": "उन्होंने",
+          "start": 16.58,
+          "end": 17.0
+        },
+        {
+          "word": "हवा",
+          "start": 17.0,
+          "end": 17.33
+        },
+        {
+          "word": "से",
+          "start": 17.33,
+          "end": 17.56
+        },
+        {
+          "word": "ज़मीन",
+          "start": 17.56,
+          "end": 17.92
+        },
+        {
+          "word": "पर",
+          "start": 17.94,
+          "end": 18.12
+        },
+        {
+          "word": "वार",
+          "start": 18.13,
+          "end": 18.38
+        },
+        {
+          "word": "करने",
+          "start": 18.39,
+          "end": 18.7
+        },
+        {
+          "word": "वाले",
+          "start": 18.7,
+          "end": 19.11
+        },
+        {
+          "word": "सटीक",
+          "start": 19.32,
+          "end": 19.78
+        },
+        {
+          "word": "हथियारों",
+          "start": 19.78,
+          "end": 20.42
+        },
+        {
+          "word": "को",
+          "start": 20.47,
+          "end": 20.77
+        },
+        {
+          "word": "अलग",
+          "start": 20.993,
+          "end": 21.28
+        },
+        {
+          "word": "से",
+          "start": 21.32,
+          "end": 21.54
+        },
+        {
+          "word": "लाने",
+          "start": 21.54,
+          "end": 21.9
+        },
+        {
+          "word": "का",
+          "start": 21.94,
+          "end": 22.16
+        },
+        {
+          "word": "फ़ैसला",
+          "start": 22.2,
+          "end": 22.58
+        },
+        {
+          "word": "लिया",
+          "start": 22.58,
+          "end": 22.81
+        },
+        {
+          "word": "है",
+          "start": 22.81,
+          "end": 23.07
+        },
+        {
+          "word": "श्री",
+          "start": 23.28,
+          "end": 23.45
+        },
+        {
+          "word": "marles",
+          "start": 23.45,
+          "end": 23.74
+        },
+        {
+          "word": "का",
+          "start": 23.75,
+          "end": 23.89
+        },
+        {
+          "word": "कहना",
+          "start": 23.89,
+          "end": 24.2
+        },
+        {
+          "word": "है",
+          "start": 24.2,
+          "end": 24.37
+        },
+        {
+          "word": "कि",
+          "start": 24.4,
+          "end": 24.57
+        },
+        {
+          "word": "ukraine",
+          "start": 24.57,
+          "end": 24.97
+        },
+        {
+          "word": "की",
+          "start": 24.97,
+          "end": 25.12
+        },
+        {
+          "word": "सेना",
+          "start": 25.12,
+          "end": 25.43
+        },
+        {
+          "word": "के",
+          "start": 25.43,
+          "end": 25.56
+        },
+        {
+          "word": "लिए",
+          "start": 25.56,
+          "end": 25.9
+        },
+        {
+          "word": "ये",
+          "start": 26.12,
+          "end": 26.3
+        },
+        {
+          "word": "योगदान",
+          "start": 26.3,
+          "end": 26.88
+        },
+        {
+          "word": "आने",
+          "start": 27.14,
+          "end": 27.42
+        },
+        {
+          "word": "वाले",
+          "start": 27.42,
+          "end": 27.86
+        }
+      ],
+      "injections": [
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww003hdjpbdixg2q5m-41fae1ef-019",
+          "family": "WD",
+          "band": "A1",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 60,
+            "word": "marles"
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww003hdjpbdixg2q5m-41fae1ef-018",
+          "family": "SEG-MERGE",
+          "band": "A2",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 56
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww003hdjpbdixg2q5m-41fae1ef-012",
+          "family": "WH",
+          "band": "A2",
+          "weight": 0.87719298,
+          "meta": {
+            "inserted_before_index": 34,
+            "word": "अचानक",
+            "decoy": {
+              "start": 13.99,
+              "end": 14.16
+            },
+            "audio_silence_verified": false
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww003hdjpbdixg2q5m-41fae1ef-001",
+          "family": "BND-MAJOR",
+          "band": "A1",
+          "weight": 1.54639175,
+          "meta": {
+            "plain_offset": 0,
+            "word": "छब्बीस",
+            "edge": "start",
+            "shift_ms": 500,
+            "severity": "critical",
+            "decoy": {
+              "start": 0.5,
+              "end": 0.68
+            }
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww003hdjpbdixg2q5m-41fae1ef-015",
+          "family": "BND-MAJOR",
+          "band": "A2",
+          "weight": 1.03092784,
+          "meta": {
+            "plain_offset": 49,
+            "word": "सटीक",
+            "edge": "end",
+            "shift_ms": -230,
+            "severity": "major",
+            "decoy": {
+              "start": 19.32,
+              "end": 19.55
+            }
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww003hdjpbdixg2q5m-41fae1ef-020",
+          "family": "BND-MAJOR",
+          "band": "A2",
+          "weight": 1.03092784,
+          "meta": {
+            "plain_offset": 69,
+            "word": "लिए",
+            "edge": "end",
+            "shift_ms": 180,
+            "severity": "major",
+            "decoy": {
+              "start": 25.56,
+              "end": 26.08
+            }
+          }
+        }
+      ]
+    },
+    {
+      "decoy_id": "HI-EXISTING-cmv7zi88f002hdjpb066u0bgt-efb42fb7",
+      "locale": "hi_IN",
+      "file_name": "5500b3e2f8d5da7ab89c719a1ee28082.audio.wav",
+      "duration_seconds": 26.844,
+      "status": "ACTIVE",
+      "gold_whole_audio_tag": "none",
+      "gold_segments": [
+        {
+          "word": "और",
+          "start": 0.0,
+          "end": 0.2
+        },
+        {
+          "word": "roy",
+          "start": 0.2,
+          "end": 0.45
+        },
+        {
+          "word": "morgan",
+          "start": 0.45,
+          "end": 0.84
+        },
+        {
+          "word": "research",
+          "start": 0.84,
+          "end": 1.33
+        },
+        {
+          "word": "द्वारा",
+          "start": 1.33,
+          "end": 1.67
+        },
+        {
+          "word": "तैयार",
+          "start": 1.67,
+          "end": 2.07
+        },
+        {
+          "word": "किए",
+          "start": 2.1,
+          "end": 2.38
+        },
+        {
+          "word": "गए",
+          "start": 2.38,
+          "end": 2.6
+        },
+        {
+          "word": "साप्ताहिक",
+          "start": 2.66,
+          "end": 3.14
+        },
+        {
+          "word": "report",
+          "start": 3.14,
+          "end": 3.59
+        },
+        {
+          "word": "में",
+          "start": 3.59,
+          "end": 3.8
+        },
+        {
+          "word": "उपभोक्ता",
+          "start": 3.92,
+          "end": 4.61
+        },
+        {
+          "word": "विश्वास",
+          "start": 4.61,
+          "end": 5.14
+        },
+        {
+          "word": "अठहत्तर",
+          "start": 5.45,
+          "end": 6.02
+        },
+        {
+          "word": "दशमलव",
+          "start": 6.02,
+          "end": 6.52
+        },
+        {
+          "word": "एक",
+          "start": 6.56,
+          "end": 6.88
+        },
+        {
+          "word": "अंक",
+          "start": 6.88,
+          "end": 7.09
+        },
+        {
+          "word": "पर",
+          "start": 7.2,
+          "end": 7.39
+        },
+        {
+          "word": "गिर",
+          "start": 7.44,
+          "end": 7.65
+        },
+        {
+          "word": "आया",
+          "start": 7.65,
+          "end": 8.02
+        },
+        {
+          "word": "इसमें",
+          "start": 8.35,
+          "end": 8.68
+        },
+        {
+          "word": "पिछले",
+          "start": 8.69,
+          "end": 9.02
+        },
+        {
+          "word": "सप्ताह",
+          "start": 9.03,
+          "end": 9.5
+        },
+        {
+          "word": "की",
+          "start": 9.54,
+          "end": 9.68
+        },
+        {
+          "word": "तुलना",
+          "start": 9.7,
+          "end": 10.01
+        },
+        {
+          "word": "में",
+          "start": 10.01,
+          "end": 10.25
+        },
+        {
+          "word": "पाँच",
+          "start": 10.57,
+          "end": 10.83
+        },
+        {
+          "word": "दशमलव",
+          "start": 10.83,
+          "end": 11.33
+        },
+        {
+          "word": "पाँच",
+          "start": 11.41,
+          "end": 11.76
+        },
+        {
+          "word": "अंक",
+          "start": 11.76,
+          "end": 11.95
+        },
+        {
+          "word": "की",
+          "start": 11.95,
+          "end": 12.09
+        },
+        {
+          "word": "गिरावट",
+          "start": 12.1,
+          "end": 12.53
+        },
+        {
+          "word": "देखी",
+          "start": 12.53,
+          "end": 12.86
+        },
+        {
+          "word": "गई",
+          "start": 12.86,
+          "end": 13.04
+        },
+        {
+          "word": "है",
+          "start": 13.04,
+          "end": 13.28
+        },
+        {
+          "word": "पिछले",
+          "start": 13.78,
+          "end": 14.14
+        },
+        {
+          "word": "सप्ताह",
+          "start": 14.14,
+          "end": 14.61
+        },
+        {
+          "word": "के",
+          "start": 14.64,
+          "end": 14.79
+        },
+        {
+          "word": "ब्याज",
+          "start": 14.79,
+          "end": 15.1
+        },
+        {
+          "word": "दर",
+          "start": 15.13,
+          "end": 15.3
+        },
+        {
+          "word": "में",
+          "start": 15.3,
+          "end": 15.55
+        },
+        {
+          "word": "वृद्धि",
+          "start": 15.91,
+          "end": 16.26
+        },
+        {
+          "word": "के",
+          "start": 16.26,
+          "end": 16.45
+        },
+        {
+          "word": "बाद",
+          "start": 16.45,
+          "end": 16.7
+        },
+        {
+          "word": "से",
+          "start": 16.8,
+          "end": 16.92
+        },
+        {
+          "word": "ही",
+          "start": 16.92,
+          "end": 17.13
+        },
+        {
+          "word": "लोग",
+          "start": 17.42,
+          "end": 17.75
+        },
+        {
+          "word": "ऊँचे",
+          "start": 17.75,
+          "end": 18.25
+        },
+        {
+          "word": "mortgage",
+          "start": 18.25,
+          "end": 18.87
+        },
+        {
+          "word": "भुगतान",
+          "start": 18.89,
+          "end": 19.34
+        },
+        {
+          "word": "के",
+          "start": 19.36,
+          "end": 19.44
+        },
+        {
+          "word": "लिए",
+          "start": 19.44,
+          "end": 19.62
+        },
+        {
+          "word": "तैयार",
+          "start": 19.64,
+          "end": 20.03
+        },
+        {
+          "word": "हैं",
+          "start": 20.03,
+          "end": 20.28
+        },
+        {
+          "word": "वहीं",
+          "start": 20.67,
+          "end": 21.05
+        },
+        {
+          "word": "reserve",
+          "start": 21.31,
+          "end": 21.76
+        },
+        {
+          "word": "bank",
+          "start": 21.86,
+          "end": 22.12
+        },
+        {
+          "word": "ने",
+          "start": 22.12,
+          "end": 22.34
+        },
+        {
+          "word": "संकेत",
+          "start": 22.38,
+          "end": 22.78
+        },
+        {
+          "word": "दिया",
+          "start": 22.78,
+          "end": 23.09
+        },
+        {
+          "word": "है",
+          "start": 23.09,
+          "end": 23.3
+        },
+        {
+          "word": "कि",
+          "start": 23.57,
+          "end": 23.74
+        },
+        {
+          "word": "जल्द",
+          "start": 23.74,
+          "end": 24.04
+        },
+        {
+          "word": "ही",
+          "start": 24.04,
+          "end": 24.31
+        },
+        {
+          "word": "ब्याज",
+          "start": 24.33,
+          "end": 24.63
+        },
+        {
+          "word": "दरों",
+          "start": 24.7,
+          "end": 24.95
+        },
+        {
+          "word": "में",
+          "start": 24.95,
+          "end": 25.18
+        },
+        {
+          "word": "और",
+          "start": 25.2,
+          "end": 25.44
+        },
+        {
+          "word": "वृद्धि",
+          "start": 25.46,
+          "end": 25.77
+        },
+        {
+          "word": "की",
+          "start": 25.77,
+          "end": 25.96
+        },
+        {
+          "word": "संभावना",
+          "start": 26.0,
+          "end": 26.58
+        },
+        {
+          "word": "है",
+          "start": 26.58,
+          "end": 26.8
+        }
+      ],
+      "injections": [
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f002hdjpb066u0bgt-efb42fb7-007",
+          "family": "WD",
+          "band": "A1",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 17,
+            "word": "पर"
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f002hdjpb066u0bgt-efb42fb7-019",
+          "family": "SEG-MERGE",
+          "band": "A2",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 70
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f002hdjpb066u0bgt-efb42fb7-018",
+          "family": "WH",
+          "band": "A2",
+          "weight": 0.87719298,
+          "meta": {
+            "inserted_before_index": 61,
+            "word": "अचानक",
+            "decoy": {
+              "start": 23.34,
+              "end": 23.53
+            },
+            "audio_silence_verified": false
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f002hdjpb066u0bgt-efb42fb7-014",
+          "family": "BND-MAJOR",
+          "band": "A1",
+          "weight": 1.54639175,
+          "meta": {
+            "plain_offset": 40,
+            "word": "में",
+            "edge": "end",
+            "shift_ms": 330,
+            "severity": "critical",
+            "decoy": {
+              "start": 15.3,
+              "end": 15.88
+            }
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f002hdjpb066u0bgt-efb42fb7-010",
+          "family": "BND-MAJOR",
+          "band": "A2",
+          "weight": 1.03092784,
+          "meta": {
+            "plain_offset": 25,
+            "word": "में",
+            "edge": "end",
+            "shift_ms": 290,
+            "severity": "major",
+            "decoy": {
+              "start": 10.01,
+              "end": 10.54
+            }
+          }
+        }
+      ]
+    },
+    {
+      "decoy_id": "HI-EXISTING-cmv7zijww0036djpbpf5acffm-9d4ade62",
+      "locale": "hi_IN",
+      "file_name": "6b92991d54ad9b799fce5550a3480082.audio.wav",
+      "duration_seconds": 29.436,
+      "status": "ACTIVE",
+      "gold_whole_audio_tag": "none",
+      "gold_segments": [
+        {
+          "word": "सौ",
+          "start": 0.02,
+          "end": 0.22
+        },
+        {
+          "word": "million",
+          "start": 0.3,
+          "end": 0.6
+        },
+        {
+          "word": "dollar",
+          "start": 0.6,
+          "end": 0.94
+        },
+        {
+          "word": "का",
+          "start": 0.961,
+          "end": 1.101
+        },
+        {
+          "word": "जुर्माना",
+          "start": 1.141,
+          "end": 1.601
+        },
+        {
+          "word": "भी",
+          "start": 1.601,
+          "end": 1.721
+        },
+        {
+          "word": "लगाया",
+          "start": 1.721,
+          "end": 1.98
+        },
+        {
+          "word": "गया",
+          "start": 1.98,
+          "end": 2.15
+        },
+        {
+          "word": "था",
+          "start": 2.16,
+          "end": 2.361
+        },
+        {
+          "word": "queensland",
+          "start": 2.802,
+          "end": 3.282
+        },
+        {
+          "word": "सरकार",
+          "start": 3.282,
+          "end": 3.65
+        },
+        {
+          "word": "ने",
+          "start": 3.66,
+          "end": 3.8
+        },
+        {
+          "word": "भी",
+          "start": 3.81,
+          "end": 4.022
+        },
+        {
+          "word": "पिछले",
+          "start": 4.062,
+          "end": 4.4
+        },
+        {
+          "word": "माह",
+          "start": 4.4,
+          "end": 4.683
+        },
+        {
+          "word": "company",
+          "start": 4.763,
+          "end": 5.13
+        },
+        {
+          "word": "के",
+          "start": 5.14,
+          "end": 5.3
+        },
+        {
+          "word": "नाम",
+          "start": 5.31,
+          "end": 5.623
+        },
+        {
+          "word": "एक",
+          "start": 5.643,
+          "end": 5.77
+        },
+        {
+          "word": "कारण",
+          "start": 5.923,
+          "end": 6.18
+        },
+        {
+          "word": "बताओ",
+          "start": 6.18,
+          "end": 6.624
+        },
+        {
+          "word": "notice",
+          "start": 6.624,
+          "end": 6.964
+        },
+        {
+          "word": "जारी",
+          "start": 6.984,
+          "end": 7.304
+        },
+        {
+          "word": "कर",
+          "start": 7.324,
+          "end": 7.504
+        },
+        {
+          "word": "पूछा",
+          "start": 7.564,
+          "end": 7.904
+        },
+        {
+          "word": "था",
+          "start": 7.924,
+          "end": 8.084
+        },
+        {
+          "word": "कि",
+          "start": 8.445,
+          "end": 8.544
+        },
+        {
+          "word": "उनके",
+          "start": 8.545,
+          "end": 8.83
+        },
+        {
+          "word": "राज्य",
+          "start": 8.83,
+          "end": 9.17
+        },
+        {
+          "word": "में",
+          "start": 9.17,
+          "end": 9.385
+        },
+        {
+          "word": "company",
+          "start": 9.425,
+          "end": 9.865
+        },
+        {
+          "word": "को",
+          "start": 9.885,
+          "end": 10.025
+        },
+        {
+          "word": "casino",
+          "start": 10.04,
+          "end": 10.48
+        },
+        {
+          "word": "का",
+          "start": 10.48,
+          "end": 10.63
+        },
+        {
+          "word": "licence",
+          "start": 10.63,
+          "end": 11.186
+        },
+        {
+          "word": "क्यों",
+          "start": 11.386,
+          "end": 11.549
+        },
+        {
+          "word": "रखने",
+          "start": 11.56,
+          "end": 11.87
+        },
+        {
+          "word": "दिया",
+          "start": 11.87,
+          "end": 12.05
+        },
+        {
+          "word": "जाए",
+          "start": 12.06,
+          "end": 12.347
+        },
+        {
+          "word": "वहीं",
+          "start": 13.207,
+          "end": 13.467
+        },
+        {
+          "word": "alzheimer's",
+          "start": 13.587,
+          "end": 14.2
+        },
+        {
+          "word": "की",
+          "start": 14.21,
+          "end": 14.34
+        },
+        {
+          "word": "बीमारी",
+          "start": 14.34,
+          "end": 14.828
+        },
+        {
+          "word": "के",
+          "start": 14.848,
+          "end": 15.028
+        },
+        {
+          "word": "बेहतर",
+          "start": 15.168,
+          "end": 15.568
+        },
+        {
+          "word": "इलाज",
+          "start": 15.589,
+          "end": 15.989
+        },
+        {
+          "word": "के",
+          "start": 16.009,
+          "end": 16.14
+        },
+        {
+          "word": "लिए",
+          "start": 16.149,
+          "end": 16.409
+        },
+        {
+          "word": "एक",
+          "start": 16.489,
+          "end": 16.709
+        },
+        {
+          "word": "नई",
+          "start": 16.849,
+          "end": 17.109
+        },
+        {
+          "word": "दवा",
+          "start": 17.149,
+          "end": 17.449
+        },
+        {
+          "word": "ईजाद",
+          "start": 17.53,
+          "end": 17.86
+        },
+        {
+          "word": "की",
+          "start": 17.91,
+          "end": 18.02
+        },
+        {
+          "word": "गई",
+          "start": 18.03,
+          "end": 18.21
+        },
+        {
+          "word": "है",
+          "start": 18.22,
+          "end": 18.405
+        },
+        {
+          "word": "जिससे",
+          "start": 18.79,
+          "end": 19.11
+        },
+        {
+          "word": "मरीज़ों",
+          "start": 19.15,
+          "end": 19.56
+        },
+        {
+          "word": "की",
+          "start": 19.58,
+          "end": 19.771
+        },
+        {
+          "word": "बुद्धि",
+          "start": 19.871,
+          "end": 20.27
+        },
+        {
+          "word": "के",
+          "start": 20.28,
+          "end": 20.471
+        },
+        {
+          "word": "क्षीण",
+          "start": 20.571,
+          "end": 21.011
+        },
+        {
+          "word": "पड़ने",
+          "start": 21.051,
+          "end": 21.392
+        },
+        {
+          "word": "की",
+          "start": 21.392,
+          "end": 21.552
+        },
+        {
+          "word": "गति",
+          "start": 21.572,
+          "end": 21.85
+        },
+        {
+          "word": "को",
+          "start": 21.86,
+          "end": 22.052
+        },
+        {
+          "word": "धीमा",
+          "start": 22.412,
+          "end": 22.752
+        },
+        {
+          "word": "किया",
+          "start": 22.752,
+          "end": 22.96
+        },
+        {
+          "word": "जा",
+          "start": 22.96,
+          "end": 23.153
+        },
+        {
+          "word": "सकता",
+          "start": 23.153,
+          "end": 23.41
+        },
+        {
+          "word": "है",
+          "start": 23.41,
+          "end": 23.613
+        },
+        {
+          "word": "नई",
+          "start": 24.173,
+          "end": 24.35
+        },
+        {
+          "word": "दवा",
+          "start": 24.393,
+          "end": 24.673
+        },
+        {
+          "word": "lecanemab",
+          "start": 24.954,
+          "end": 25.614
+        },
+        {
+          "word": "की",
+          "start": 25.954,
+          "end": 26.154
+        },
+        {
+          "word": "इस",
+          "start": 26.274,
+          "end": 26.474
+        },
+        {
+          "word": "testing",
+          "start": 26.735,
+          "end": 27.215
+        },
+        {
+          "word": "में",
+          "start": 27.235,
+          "end": 27.415
+        },
+        {
+          "word": "दशकों",
+          "start": 27.575,
+          "end": 28.05
+        },
+        {
+          "word": "में",
+          "start": 28.07,
+          "end": 28.275
+        },
+        {
+          "word": "पहली",
+          "start": 28.295,
+          "end": 28.63
+        },
+        {
+          "word": "बार",
+          "start": 28.64,
+          "end": 28.956
+        },
+        {
+          "word": "कुछ",
+          "start": 29.056,
+          "end": 29.316
+        }
+      ],
+      "injections": [
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww0036djpbpf5acffm-9d4ade62-018",
+          "family": "WD",
+          "band": "A1",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 62,
+            "word": "की"
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww0036djpbpf5acffm-9d4ade62-019",
+          "family": "SEG-MERGE",
+          "band": "A2",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 69
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww0036djpbpf5acffm-9d4ade62-007",
+          "family": "WH",
+          "band": "A2",
+          "weight": 0.87719298,
+          "meta": {
+            "inserted_before_index": 26,
+            "word": "अचानक",
+            "decoy": {
+              "start": 8.144,
+              "end": 8.384
+            },
+            "audio_silence_verified": false
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww0036djpbpf5acffm-9d4ade62-003",
+          "family": "BND-MAJOR",
+          "band": "A1",
+          "weight": 1.54639175,
+          "meta": {
+            "plain_offset": 10,
+            "word": "सरकार",
+            "edge": "start",
+            "shift_ms": 320,
+            "severity": "critical",
+            "decoy": {
+              "start": 3.602,
+              "end": 3.65
+            }
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww0036djpbpf5acffm-9d4ade62-016",
+          "family": "BND-MAJOR",
+          "band": "A2",
+          "weight": 1.03092784,
+          "meta": {
+            "plain_offset": 50,
+            "word": "दवा",
+            "edge": "end",
+            "shift_ms": -150,
+            "severity": "major",
+            "decoy": {
+              "start": 17.149,
+              "end": 17.299
+            }
+          }
+        }
+      ]
+    },
+    {
+      "decoy_id": "HI-EXISTING-cmv7zijww0030djpblchn6whl-ddc9c776",
+      "locale": "hi_IN",
+      "file_name": "70e30f8ed29c4ee8b8a099b9c513232b.audio.wav",
+      "duration_seconds": 25.628,
+      "status": "ACTIVE",
+      "gold_whole_audio_tag": "none",
+      "gold_segments": [
+        {
+          "word": "एक",
+          "start": 0.0,
+          "end": 0.19
+        },
+        {
+          "word": "सौ",
+          "start": 0.19,
+          "end": 0.4
+        },
+        {
+          "word": "बाईस",
+          "start": 0.4,
+          "end": 0.83
+        },
+        {
+          "word": "million",
+          "start": 0.9,
+          "end": 1.29
+        },
+        {
+          "word": "dollar",
+          "start": 1.29,
+          "end": 1.66
+        },
+        {
+          "word": "के",
+          "start": 1.72,
+          "end": 1.95
+        },
+        {
+          "word": "payout",
+          "start": 2.01,
+          "end": 2.47
+        },
+        {
+          "word": "ना",
+          "start": 2.51,
+          "end": 2.78
+        },
+        {
+          "word": "देने",
+          "start": 2.78,
+          "end": 3.04
+        },
+        {
+          "word": "पड़े",
+          "start": 3.04,
+          "end": 3.28
+        },
+        {
+          "word": "elon",
+          "start": 3.77,
+          "end": 4.03
+        },
+        {
+          "word": "musk",
+          "start": 4.03,
+          "end": 4.26
+        },
+        {
+          "word": "का",
+          "start": 4.27,
+          "end": 4.42
+        },
+        {
+          "word": "कहना",
+          "start": 4.42,
+          "end": 4.72
+        },
+        {
+          "word": "है",
+          "start": 4.72,
+          "end": 4.93
+        },
+        {
+          "word": "कि",
+          "start": 4.93,
+          "end": 5.12
+        },
+        {
+          "word": "उन्हें",
+          "start": 5.12,
+          "end": 5.37
+        },
+        {
+          "word": "twitter",
+          "start": 5.37,
+          "end": 5.72
+        },
+        {
+          "word": "पर",
+          "start": 5.74,
+          "end": 5.96
+        },
+        {
+          "word": "fake",
+          "start": 6.02,
+          "end": 6.26
+        },
+        {
+          "word": "account",
+          "start": 6.26,
+          "end": 6.64
+        },
+        {
+          "word": "की",
+          "start": 6.66,
+          "end": 6.8
+        },
+        {
+          "word": "संख्या",
+          "start": 6.8,
+          "end": 7.24
+        },
+        {
+          "word": "की",
+          "start": 7.25,
+          "end": 7.43
+        },
+        {
+          "word": "गलत",
+          "start": 7.66,
+          "end": 7.97
+        },
+        {
+          "word": "जानकारी",
+          "start": 7.98,
+          "end": 8.46
+        },
+        {
+          "word": "दी",
+          "start": 8.46,
+          "end": 8.6
+        },
+        {
+          "word": "गई",
+          "start": 8.6,
+          "end": 8.79
+        },
+        {
+          "word": "थी",
+          "start": 8.79,
+          "end": 8.96
+        },
+        {
+          "word": "twitter",
+          "start": 9.4,
+          "end": 9.72
+        },
+        {
+          "word": "chief",
+          "start": 9.72,
+          "end": 10.0
+        },
+        {
+          "word": "executive",
+          "start": 10.1,
+          "end": 10.76
+        },
+        {
+          "word": "पारस",
+          "start": 10.85,
+          "end": 11.2
+        },
+        {
+          "word": "पराग",
+          "start": 11.51,
+          "end": 11.91
+        },
+        {
+          "word": "अग्रवाल",
+          "start": 11.91,
+          "end": 12.46
+        },
+        {
+          "word": "chief",
+          "start": 12.93,
+          "end": 13.2
+        },
+        {
+          "word": "uh",
+          "start": 13.25,
+          "end": 13.4
+        },
+        {
+          "word": "financial",
+          "start": 13.4,
+          "end": 13.94
+        },
+        {
+          "word": "official",
+          "start": 13.95,
+          "end": 14.59
+        },
+        {
+          "word": "officer",
+          "start": 14.71,
+          "end": 15.22
+        },
+        {
+          "word": "a",
+          "start": 15.25,
+          "end": 15.4
+        },
+        {
+          "word": "ned",
+          "start": 15.4,
+          "end": 15.6
+        },
+        {
+          "word": "segal",
+          "start": 15.8,
+          "end": 16.19
+        },
+        {
+          "word": "और",
+          "start": 16.51,
+          "end": 16.77
+        },
+        {
+          "word": "legal",
+          "start": 16.9,
+          "end": 17.36
+        },
+        {
+          "word": "affairs",
+          "start": 17.36,
+          "end": 17.76
+        },
+        {
+          "word": "and",
+          "start": 17.76,
+          "end": 17.94
+        },
+        {
+          "word": "policy",
+          "start": 17.98,
+          "end": 18.38
+        },
+        {
+          "word": "chief",
+          "start": 18.39,
+          "end": 18.7
+        },
+        {
+          "word": "विजया",
+          "start": 18.88,
+          "end": 19.34
+        },
+        {
+          "word": "गड्डे",
+          "start": 19.34,
+          "end": 19.71
+        },
+        {
+          "word": "company",
+          "start": 19.99,
+          "end": 20.44
+        },
+        {
+          "word": "के",
+          "start": 20.46,
+          "end": 20.62
+        },
+        {
+          "word": "takeover",
+          "start": 20.64,
+          "end": 21.1
+        },
+        {
+          "word": "के",
+          "start": 21.12,
+          "end": 21.31
+        },
+        {
+          "word": "बाद",
+          "start": 21.31,
+          "end": 21.57
+        },
+        {
+          "word": "निकाल",
+          "start": 21.62,
+          "end": 22.12
+        },
+        {
+          "word": "दिए",
+          "start": 22.12,
+          "end": 22.34
+        },
+        {
+          "word": "गए",
+          "start": 22.34,
+          "end": 22.57
+        },
+        {
+          "word": "थे",
+          "start": 22.57,
+          "end": 22.83
+        },
+        {
+          "word": "और",
+          "start": 24.09,
+          "end": 24.27
+        },
+        {
+          "word": "अब",
+          "start": 24.27,
+          "end": 24.44
+        },
+        {
+          "word": "अंतरराष्ट्रीय",
+          "start": 24.62,
+          "end": 25.23
+        },
+        {
+          "word": "खबरें",
+          "start": 25.23,
+          "end": 25.56
+        }
+      ],
+      "injections": [
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww0030djpblchn6whl-ddc9c776-008",
+          "family": "WD",
+          "band": "A1",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 18,
+            "word": "पर"
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww0030djpblchn6whl-ddc9c776-010",
+          "family": "SEG-MERGE",
+          "band": "A2",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 27
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww0030djpblchn6whl-ddc9c776-009",
+          "family": "WH",
+          "band": "A2",
+          "weight": 0.87719298,
+          "meta": {
+            "inserted_before_index": 24,
+            "word": "अचानक",
+            "decoy": {
+              "start": 7.47,
+              "end": 7.62
+            },
+            "audio_silence_verified": false
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww0030djpblchn6whl-ddc9c776-011",
+          "family": "BND-MAJOR",
+          "band": "A1",
+          "weight": 1.54639175,
+          "meta": {
+            "plain_offset": 31,
+            "word": "executive",
+            "edge": "end",
+            "shift_ms": -320,
+            "severity": "critical",
+            "decoy": {
+              "start": 10.1,
+              "end": 10.44
+            }
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww0030djpblchn6whl-ddc9c776-006",
+          "family": "BND-MAJOR",
+          "band": "A2",
+          "weight": 1.03092784,
+          "meta": {
+            "plain_offset": 13,
+            "word": "कहना",
+            "edge": "end",
+            "shift_ms": -150,
+            "severity": "major",
+            "decoy": {
+              "start": 4.42,
+              "end": 4.57
+            }
+          }
+        }
+      ]
+    },
+    {
+      "decoy_id": "HI-EXISTING-cmv7zi88f002idjpbal61ouxu-a851f1d6",
+      "locale": "hi_IN",
+      "file_name": "71316af3637ebcf888a8ff50345248a7.audio.wav",
+      "duration_seconds": 22.204,
+      "status": "ACTIVE",
+      "gold_whole_audio_tag": "none",
+      "gold_segments": [
+        {
+          "word": "ऐसे",
+          "start": 0.0,
+          "end": 0.29
+        },
+        {
+          "word": "में",
+          "start": 0.29,
+          "end": 0.51
+        },
+        {
+          "word": "अर्थशास्त्री",
+          "start": 0.51,
+          "end": 1.33
+        },
+        {
+          "word": "एक",
+          "start": 1.55,
+          "end": 1.72
+        },
+        {
+          "word": "और",
+          "start": 1.721,
+          "end": 1.96
+        },
+        {
+          "word": "दर",
+          "start": 1.96,
+          "end": 2.22
+        },
+        {
+          "word": "वृद्धि",
+          "start": 2.22,
+          "end": 2.57
+        },
+        {
+          "word": "की",
+          "start": 2.6,
+          "end": 2.91
+        },
+        {
+          "word": "भविष्यवाणी",
+          "start": 3.04,
+          "end": 3.96
+        },
+        {
+          "word": "कर",
+          "start": 4.05,
+          "end": 4.23
+        },
+        {
+          "word": "रहे",
+          "start": 4.23,
+          "end": 4.52
+        },
+        {
+          "word": "हैं",
+          "start": 4.52,
+          "end": 4.77
+        },
+        {
+          "word": "australia",
+          "start": 4.89,
+          "end": 5.482
+        },
+        {
+          "word": "के",
+          "start": 5.49,
+          "end": 5.7
+        },
+        {
+          "word": "सबसे",
+          "start": 5.71,
+          "end": 6.13
+        },
+        {
+          "word": "बड़े",
+          "start": 6.13,
+          "end": 6.42
+        },
+        {
+          "word": "fuel",
+          "start": 6.45,
+          "end": 6.67
+        },
+        {
+          "word": "retailers",
+          "start": 6.67,
+          "end": 7.21
+        },
+        {
+          "word": "में",
+          "start": 7.21,
+          "end": 7.38
+        },
+        {
+          "word": "से",
+          "start": 7.39,
+          "end": 7.56
+        },
+        {
+          "word": "एक",
+          "start": 7.56,
+          "end": 7.86
+        },
+        {
+          "word": "b",
+          "start": 8.096,
+          "end": 8.38
+        },
+        {
+          "word": "p",
+          "start": 8.38,
+          "end": 8.64
+        },
+        {
+          "word": "सौ",
+          "start": 8.92,
+          "end": 9.3
+        },
+        {
+          "word": "से",
+          "start": 9.3,
+          "end": 9.45
+        },
+        {
+          "word": "अधिक",
+          "start": 9.45,
+          "end": 9.83
+        },
+        {
+          "word": "वाहन",
+          "start": 9.83,
+          "end": 10.22
+        },
+        {
+          "word": "charging",
+          "start": 10.22,
+          "end": 10.66
+        },
+        {
+          "word": "point",
+          "start": 10.72,
+          "end": 11.0
+        },
+        {
+          "word": "स्थापित",
+          "start": 11.06,
+          "end": 11.4
+        },
+        {
+          "word": "करके",
+          "start": 11.45,
+          "end": 11.91
+        },
+        {
+          "word": "electric",
+          "start": 12.01,
+          "end": 12.5
+        },
+        {
+          "word": "कारों",
+          "start": 12.52,
+          "end": 12.833
+        },
+        {
+          "word": "के",
+          "start": 12.87,
+          "end": 13.01
+        },
+        {
+          "word": "लिए",
+          "start": 13.01,
+          "end": 13.34
+        },
+        {
+          "word": "अपने",
+          "start": 13.53,
+          "end": 13.89
+        },
+        {
+          "word": "service",
+          "start": 13.93,
+          "end": 14.28
+        },
+        {
+          "word": "स्टेशनों",
+          "start": 14.28,
+          "end": 14.84
+        },
+        {
+          "word": "को",
+          "start": 14.88,
+          "end": 15.02
+        },
+        {
+          "word": "बदल",
+          "start": 15.04,
+          "end": 15.33
+        },
+        {
+          "word": "रहा",
+          "start": 15.33,
+          "end": 15.58
+        },
+        {
+          "word": "है",
+          "start": 15.58,
+          "end": 15.88
+        },
+        {
+          "word": "उनका",
+          "start": 16.0,
+          "end": 16.3
+        },
+        {
+          "word": "कहना",
+          "start": 16.34,
+          "end": 16.66
+        },
+        {
+          "word": "है",
+          "start": 16.66,
+          "end": 16.88
+        },
+        {
+          "word": "कि",
+          "start": 16.91,
+          "end": 17.02
+        },
+        {
+          "word": "दो",
+          "start": 17.02,
+          "end": 17.2
+        },
+        {
+          "word": "हज़ार",
+          "start": 17.2,
+          "end": 17.52
+        },
+        {
+          "word": "पच्चीस",
+          "start": 17.56,
+          "end": 18.05
+        },
+        {
+          "word": "तक",
+          "start": 18.05,
+          "end": 18.26
+        },
+        {
+          "word": "b",
+          "start": 18.58,
+          "end": 18.83
+        },
+        {
+          "word": "p",
+          "start": 18.85,
+          "end": 19.02
+        },
+        {
+          "word": "पाँच",
+          "start": 19.08,
+          "end": 19.32
+        },
+        {
+          "word": "सौ",
+          "start": 19.32,
+          "end": 19.59
+        },
+        {
+          "word": "और",
+          "start": 19.61,
+          "end": 19.86
+        },
+        {
+          "word": "charging",
+          "start": 19.9,
+          "end": 20.4
+        },
+        {
+          "word": "base",
+          "start": 20.42,
+          "end": 20.67
+        },
+        {
+          "word": "लगाने",
+          "start": 20.67,
+          "end": 21.13
+        },
+        {
+          "word": "को",
+          "start": 21.15,
+          "end": 21.37
+        },
+        {
+          "word": "तैयार",
+          "start": 21.44,
+          "end": 21.83
+        },
+        {
+          "word": "है",
+          "start": 21.83,
+          "end": 22.15
+        }
+      ],
+      "injections": [
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f002idjpbal61ouxu-a851f1d6-018",
+          "family": "WD",
+          "band": "A1",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 51,
+            "word": "p"
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f002idjpbal61ouxu-a851f1d6-015",
+          "family": "SEG-MERGE",
+          "band": "A2",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 37
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f002idjpbal61ouxu-a851f1d6-011",
+          "family": "WH",
+          "band": "A2",
+          "weight": 0.87719298,
+          "meta": {
+            "inserted_before_index": 23,
+            "word": "अचानक",
+            "decoy": {
+              "start": 8.68,
+              "end": 8.88
+            },
+            "audio_silence_verified": false
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zi88f002idjpbal61ouxu-a851f1d6-012",
+          "family": "BND-MAJOR",
+          "band": "A1",
+          "weight": 1.54639175,
+          "meta": {
+            "plain_offset": 25,
+            "word": "अधिक",
+            "edge": "end",
+            "shift_ms": -320,
+            "severity": "critical",
+            "decoy": {
+              "start": 9.45,
+              "end": 9.51
+            }
+          }
+        }
+      ]
+    },
+    {
+      "decoy_id": "HI-EXISTING-cmv7zijww003vdjpb9f3nhgvv-84b019f1",
+      "locale": "hi_IN",
+      "file_name": "72496abe174ee09851adc0402d63cec7.audio.wav",
+      "duration_seconds": 28.7,
+      "status": "ACTIVE",
+      "gold_whole_audio_tag": "none",
+      "gold_segments": [
+        {
+          "word": "छियासी",
+          "start": 0.0,
+          "end": 0.41
+        },
+        {
+          "word": "दिन",
+          "start": 0.41,
+          "end": 0.69
+        },
+        {
+          "word": "शेष",
+          "start": 0.8,
+          "end": 1.15
+        },
+        {
+          "word": "हैं",
+          "start": 1.15,
+          "end": 1.34
+        },
+        {
+          "word": "ये",
+          "start": 1.76,
+          "end": 1.89
+        },
+        {
+          "word": "record",
+          "start": 1.89,
+          "end": 2.26
+        },
+        {
+          "word": "तब",
+          "start": 2.37,
+          "end": 2.54
+        },
+        {
+          "word": "बना",
+          "start": 2.54,
+          "end": 2.88
+        },
+        {
+          "word": "है",
+          "start": 2.88,
+          "end": 3.1
+        },
+        {
+          "word": "जब",
+          "start": 3.14,
+          "end": 3.32
+        },
+        {
+          "word": "पश्चिमी",
+          "start": 3.4,
+          "end": 3.86
+        },
+        {
+          "word": "new",
+          "start": 3.86,
+          "end": 4.07
+        },
+        {
+          "word": "south",
+          "start": 4.07,
+          "end": 4.34
+        },
+        {
+          "word": "wales",
+          "start": 4.34,
+          "end": 4.62
+        },
+        {
+          "word": "कई",
+          "start": 4.93,
+          "end": 5.24
+        },
+        {
+          "word": "इलाक़ों",
+          "start": 5.24,
+          "end": 5.74
+        },
+        {
+          "word": "में",
+          "start": 5.74,
+          "end": 6.0
+        },
+        {
+          "word": "बाढ़",
+          "start": 6.0,
+          "end": 6.34
+        },
+        {
+          "word": "की",
+          "start": 6.34,
+          "end": 6.443
+        },
+        {
+          "word": "स्थिति",
+          "start": 6.48,
+          "end": 6.98
+        },
+        {
+          "word": "और",
+          "start": 7.33,
+          "end": 7.64
+        },
+        {
+          "word": "खराब",
+          "start": 7.75,
+          "end": 8.14
+        },
+        {
+          "word": "होते",
+          "start": 8.22,
+          "end": 8.62
+        },
+        {
+          "word": "देख",
+          "start": 8.77,
+          "end": 9.02
+        },
+        {
+          "word": "रहा",
+          "start": 9.02,
+          "end": 9.31
+        },
+        {
+          "word": "है",
+          "start": 9.31,
+          "end": 9.52
+        },
+        {
+          "word": "पूर्व",
+          "start": 10.56,
+          "end": 10.82
+        },
+        {
+          "word": "reserve",
+          "start": 10.82,
+          "end": 11.2
+        },
+        {
+          "word": "bank",
+          "start": 11.2,
+          "end": 11.48
+        },
+        {
+          "word": "governor",
+          "start": 11.48,
+          "end": 12.1
+        },
+        {
+          "word": "bernie",
+          "start": 12.14,
+          "end": 12.51
+        },
+        {
+          "word": "fraser",
+          "start": 12.51,
+          "end": 12.84
+        },
+        {
+          "word": "का",
+          "start": 12.84,
+          "end": 13.0
+        },
+        {
+          "word": "कहना",
+          "start": 13.0,
+          "end": 13.32
+        },
+        {
+          "word": "है",
+          "start": 13.32,
+          "end": 13.56
+        },
+        {
+          "word": "कि",
+          "start": 13.56,
+          "end": 13.7
+        },
+        {
+          "word": "labor",
+          "start": 13.7,
+          "end": 14.04
+        },
+        {
+          "word": "सरकार",
+          "start": 14.04,
+          "end": 14.6
+        },
+        {
+          "word": "के",
+          "start": 14.68,
+          "end": 14.85
+        },
+        {
+          "word": "तीन",
+          "start": 15.09,
+          "end": 15.38
+        },
+        {
+          "word": "चरणों",
+          "start": 15.38,
+          "end": 15.79
+        },
+        {
+          "word": "में",
+          "start": 15.79,
+          "end": 15.94
+        },
+        {
+          "word": "होने",
+          "start": 15.94,
+          "end": 16.24
+        },
+        {
+          "word": "वाली",
+          "start": 16.24,
+          "end": 16.56
+        },
+        {
+          "word": "tax",
+          "start": 16.84,
+          "end": 17.16
+        },
+        {
+          "word": "कटौती",
+          "start": 17.2,
+          "end": 17.63
+        },
+        {
+          "word": "के",
+          "start": 17.63,
+          "end": 17.788
+        },
+        {
+          "word": "वादे",
+          "start": 17.84,
+          "end": 18.21
+        },
+        {
+          "word": "में",
+          "start": 18.211,
+          "end": 18.42
+        },
+        {
+          "word": "कोई",
+          "start": 18.65,
+          "end": 18.9
+        },
+        {
+          "word": "सच्चाई",
+          "start": 18.9,
+          "end": 19.47
+        },
+        {
+          "word": "नहीं",
+          "start": 19.47,
+          "end": 19.8
+        },
+        {
+          "word": "है",
+          "start": 19.8,
+          "end": 20.02
+        },
+        {
+          "word": "दो",
+          "start": 20.38,
+          "end": 20.54
+        },
+        {
+          "word": "हज़ार",
+          "start": 20.54,
+          "end": 20.85
+        },
+        {
+          "word": "अठारह",
+          "start": 20.85,
+          "end": 21.42
+        },
+        {
+          "word": "से",
+          "start": 21.48,
+          "end": 21.69
+        },
+        {
+          "word": "अब",
+          "start": 21.77,
+          "end": 22.04
+        },
+        {
+          "word": "आर्थिक",
+          "start": 22.13,
+          "end": 22.49
+        },
+        {
+          "word": "परिवेश",
+          "start": 22.54,
+          "end": 23.0
+        },
+        {
+          "word": "के",
+          "start": 23.0,
+          "end": 23.086
+        },
+        {
+          "word": "बदलने",
+          "start": 23.12,
+          "end": 23.58
+        },
+        {
+          "word": "के",
+          "start": 23.58,
+          "end": 23.78
+        },
+        {
+          "word": "बाद",
+          "start": 23.78,
+          "end": 24.16
+        },
+        {
+          "word": "इन",
+          "start": 24.39,
+          "end": 24.6
+        },
+        {
+          "word": "कटौतियों",
+          "start": 24.6,
+          "end": 25.34
+        },
+        {
+          "word": "की",
+          "start": 25.65,
+          "end": 25.86
+        },
+        {
+          "word": "सार्थकता",
+          "start": 25.93,
+          "end": 26.62
+        },
+        {
+          "word": "पर",
+          "start": 26.66,
+          "end": 26.89
+        },
+        {
+          "word": "सवाल",
+          "start": 27.04,
+          "end": 27.43
+        },
+        {
+          "word": "खड़े",
+          "start": 27.47,
+          "end": 27.78
+        },
+        {
+          "word": "किए",
+          "start": 27.84,
+          "end": 28.0
+        },
+        {
+          "word": "जा",
+          "start": 28.0,
+          "end": 28.17
+        },
+        {
+          "word": "रहे",
+          "start": 28.17,
+          "end": 28.46
+        },
+        {
+          "word": "हैं",
+          "start": 28.46,
+          "end": 28.68
+        }
+      ],
+      "injections": [
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww003vdjpb9f3nhgvv-84b019f1-011",
+          "family": "WD",
+          "band": "A1",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 38,
+            "word": "के"
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww003vdjpb9f3nhgvv-84b019f1-020",
+          "family": "SEG-MERGE",
+          "band": "A2",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 73
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww003vdjpb9f3nhgvv-84b019f1-012",
+          "family": "WH",
+          "band": "A2",
+          "weight": 0.87719298,
+          "meta": {
+            "inserted_before_index": 44,
+            "word": "अचानक",
+            "decoy": {
+              "start": 16.6,
+              "end": 16.8
+            },
+            "audio_silence_verified": false
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zijww003vdjpb9f3nhgvv-84b019f1-005",
+          "family": "BND-MAJOR",
+          "band": "A1",
+          "weight": 1.54639175,
+          "meta": {
+            "plain_offset": 10,
+            "word": "पश्चिमी",
+            "edge": "start",
+            "shift_ms": 400,
+            "severity": "critical",
+            "decoy": {
+              "start": 3.8,
+              "end": 3.86
+            }
+          }
+        }
+      ]
+    },
+    {
+      "decoy_id": "HI-EXISTING-cmv7zhuqd0014djpbzsyxrxp2-057b7015",
+      "locale": "hi_IN",
+      "file_name": "905742b8bbc3237e671f854ed487556c.audio.wav",
+      "duration_seconds": 28.444,
+      "status": "ACTIVE",
+      "gold_whole_audio_tag": "none",
+      "gold_segments": [
+        {
+          "word": "ये",
+          "start": 0.0,
+          "end": 0.12
+        },
+        {
+          "word": "बढ़ती",
+          "start": 0.12,
+          "end": 0.49
+        },
+        {
+          "word": "महँगाई",
+          "start": 0.49,
+          "end": 0.98
+        },
+        {
+          "word": "और",
+          "start": 0.98,
+          "end": 1.22
+        },
+        {
+          "word": "ब्याज",
+          "start": 1.22,
+          "end": 1.59
+        },
+        {
+          "word": "दरों",
+          "start": 1.59,
+          "end": 1.87
+        },
+        {
+          "word": "के",
+          "start": 1.87,
+          "end": 2.07
+        },
+        {
+          "word": "बावजूद",
+          "start": 2.102,
+          "end": 2.56
+        },
+        {
+          "word": "है",
+          "start": 2.56,
+          "end": 2.742
+        },
+        {
+          "word": "westpac",
+          "start": 3.2,
+          "end": 3.74
+        },
+        {
+          "word": "की",
+          "start": 3.8,
+          "end": 4.03
+        },
+        {
+          "word": "full",
+          "start": 4.083,
+          "end": 4.35
+        },
+        {
+          "word": "year",
+          "start": 4.35,
+          "end": 4.74
+        },
+        {
+          "word": "two",
+          "start": 4.82,
+          "end": 4.96
+        },
+        {
+          "word": "thousand",
+          "start": 4.96,
+          "end": 5.37
+        },
+        {
+          "word": "twenty",
+          "start": 5.37,
+          "end": 5.77
+        },
+        {
+          "word": "two",
+          "start": 5.77,
+          "end": 6.06
+        },
+        {
+          "word": "result",
+          "start": 6.06,
+          "end": 6.52
+        },
+        {
+          "word": "report",
+          "start": 6.57,
+          "end": 7.15
+        },
+        {
+          "word": "में",
+          "start": 7.15,
+          "end": 7.28
+        },
+        {
+          "word": "कहा",
+          "start": 7.28,
+          "end": 7.56
+        },
+        {
+          "word": "गया",
+          "start": 7.56,
+          "end": 7.847
+        },
+        {
+          "word": "है",
+          "start": 7.847,
+          "end": 8.09
+        },
+        {
+          "word": "कि",
+          "start": 8.45,
+          "end": 8.71
+        },
+        {
+          "word": "जहाँ",
+          "start": 8.87,
+          "end": 9.25
+        },
+        {
+          "word": "bank",
+          "start": 9.25,
+          "end": 9.92
+        },
+        {
+          "word": "का",
+          "start": 10.03,
+          "end": 10.21
+        },
+        {
+          "word": "सालाना",
+          "start": 10.22,
+          "end": 10.86
+        },
+        {
+          "word": "मुनाफ़ा",
+          "start": 10.92,
+          "end": 11.46
+        },
+        {
+          "word": "सालाना",
+          "start": 11.89,
+          "end": 12.23
+        },
+        {
+          "word": "मुनाफ़ा",
+          "start": 12.23,
+          "end": 12.711
+        },
+        {
+          "word": "पाँच",
+          "start": 12.75,
+          "end": 13.051
+        },
+        {
+          "word": "दशमल-",
+          "start": 13.051,
+          "end": 13.37
+        },
+        {
+          "word": "uh",
+          "start": 13.37,
+          "end": 13.57
+        },
+        {
+          "word": "दशमलव",
+          "start": 13.57,
+          "end": 14.032
+        },
+        {
+          "word": "सात",
+          "start": 14.04,
+          "end": 14.332
+        },
+        {
+          "word": "billion",
+          "start": 14.332,
+          "end": 14.67
+        },
+        {
+          "word": "dollar",
+          "start": 14.67,
+          "end": 14.95
+        },
+        {
+          "word": "दिखाया",
+          "start": 14.95,
+          "end": 15.32
+        },
+        {
+          "word": "गया",
+          "start": 15.32,
+          "end": 15.61
+        },
+        {
+          "word": "वहीं",
+          "start": 15.92,
+          "end": 16.26
+        },
+        {
+          "word": "ये",
+          "start": 16.29,
+          "end": 16.58
+        },
+        {
+          "word": "घोषणा",
+          "start": 16.58,
+          "end": 16.98
+        },
+        {
+          "word": "भी",
+          "start": 16.98,
+          "end": 17.19
+        },
+        {
+          "word": "की",
+          "start": 17.19,
+          "end": 17.4
+        },
+        {
+          "word": "गई",
+          "start": 17.4,
+          "end": 17.6
+        },
+        {
+          "word": "मुख्य",
+          "start": 18.16,
+          "end": 18.45
+        },
+        {
+          "word": "सचिव",
+          "start": 18.45,
+          "end": 18.87
+        },
+        {
+          "word": "peter",
+          "start": 18.93,
+          "end": 19.15
+        },
+        {
+          "word": "king",
+          "start": 19.15,
+          "end": 19.34
+        },
+        {
+          "word": "का",
+          "start": 19.34,
+          "end": 19.51
+        },
+        {
+          "word": "कहना",
+          "start": 19.51,
+          "end": 19.83
+        },
+        {
+          "word": "है",
+          "start": 19.83,
+          "end": 20.077
+        },
+        {
+          "word": "कि",
+          "start": 20.11,
+          "end": 20.28
+        },
+        {
+          "word": "कई",
+          "start": 20.35,
+          "end": 20.57
+        },
+        {
+          "word": "ग्राहकों",
+          "start": 20.57,
+          "end": 21.09
+        },
+        {
+          "word": "ने",
+          "start": 21.09,
+          "end": 21.278
+        },
+        {
+          "word": "corona",
+          "start": 21.358,
+          "end": 21.74
+        },
+        {
+          "word": "काल",
+          "start": 21.74,
+          "end": 21.99
+        },
+        {
+          "word": "में",
+          "start": 21.99,
+          "end": 22.199
+        },
+        {
+          "word": "बचत",
+          "start": 22.2,
+          "end": 22.55
+        },
+        {
+          "word": "करके",
+          "start": 22.55,
+          "end": 22.999
+        },
+        {
+          "word": "रक़म",
+          "start": 23.23,
+          "end": 23.53
+        },
+        {
+          "word": "जोड़ी",
+          "start": 23.53,
+          "end": 23.89
+        },
+        {
+          "word": "थी",
+          "start": 23.89,
+          "end": 24.1
+        },
+        {
+          "word": "इसलिए",
+          "start": 24.301,
+          "end": 24.75
+        },
+        {
+          "word": "वे",
+          "start": 24.99,
+          "end": 25.201
+        },
+        {
+          "word": "इस",
+          "start": 25.201,
+          "end": 25.4
+        },
+        {
+          "word": "समय",
+          "start": 25.4,
+          "end": 25.76
+        },
+        {
+          "word": "भुगतान",
+          "start": 25.76,
+          "end": 26.25
+        },
+        {
+          "word": "समय",
+          "start": 26.25,
+          "end": 26.53
+        },
+        {
+          "word": "पर",
+          "start": 26.53,
+          "end": 26.722
+        },
+        {
+          "word": "कर",
+          "start": 26.722,
+          "end": 26.923
+        },
+        {
+          "word": "पा",
+          "start": 26.923,
+          "end": 27.06
+        },
+        {
+          "word": "रहे",
+          "start": 27.06,
+          "end": 27.35
+        },
+        {
+          "word": "हैं",
+          "start": 27.35,
+          "end": 27.523
+        },
+        {
+          "word": "लेकिन",
+          "start": 27.87,
+          "end": 28.324
+        }
+      ],
+      "injections": [
+        {
+          "injection_id": "HI-EXISTING-cmv7zhuqd0014djpbzsyxrxp2-057b7015-014",
+          "family": "WD",
+          "band": "A1",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 43,
+            "word": "भी"
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zhuqd0014djpbzsyxrxp2-057b7015-022",
+          "family": "SEG-MERGE",
+          "band": "A2",
+          "weight": 0.83333333,
+          "meta": {
+            "plain_offset": 75
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zhuqd0014djpbzsyxrxp2-057b7015-020",
+          "family": "WH",
+          "band": "A2",
+          "weight": 0.87719298,
+          "meta": {
+            "inserted_before_index": 66,
+            "word": "अचानक",
+            "decoy": {
+              "start": 24.79,
+              "end": 24.95
+            },
+            "audio_silence_verified": false
+          }
+        },
+        {
+          "injection_id": "HI-EXISTING-cmv7zhuqd0014djpbzsyxrxp2-057b7015-008",
+          "family": "BND-MAJOR",
+          "band": "A2",
+          "weight": 1.03092784,
+          "meta": {
+            "plain_offset": 25,
+            "word": "bank",
+            "edge": "end",
+            "shift_ms": -212,
+            "severity": "major",
+            "decoy": {
+              "start": 9.25,
+              "end": 9.708
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
