@@ -1,25 +1,23 @@
-# Synthetic audio test: 25 transcripts → 25 .wav + 25 .json
+# Forced-alignment decoy packages
 
-transcripts/ already holds the 25 transcripts (5 each: French, German, Italian, Portuguese, Spanish).
-Preview them in transcripts/ALL_TRANSCRIPTS_preview.csv.
-Running tts_to_wav.py turns them into:
-  output/wav/<id>.wav    the audio (16 kHz mono)
-  output/json/<id>.json  transcript + language + voice used + duration (+ word timings)
+The latest deliverables are the five zips in `alignment_decoys/`, one per language:
 
-## A. Claude Code in the browser (claude.ai/code)
-1. GitHub: create a new PRIVATE repository (github.com/new), then "uploading an existing file" →
-   drag in everything from this folder (not .env). Commit.
-2. claude.ai/code: connect GitHub when asked, and install the Claude GitHub App on that repository.
-3. Environment (selector under the message box → settings icon on your environment):
-   - Network access: Custom → Allowed domains: api.elevenlabs.io
-     and tick "Also include default list of common package managers".
-   - Environment variables: ELEVENLABS_API_KEY=your_key
-   Save.
-4. Start a session on that repository and send:
-   "Follow CLAUDE.md: run the 5-file test, then all 25, then commit and push the output folder."
-5. Download: open the branch Claude pushed on GitHub → Code → Download ZIP → output/wav and output/json.
+| Zip | Language |
+|---|---|
+| `alignment_decoys/alignment_decoys_de_DE.zip` | German |
+| `alignment_decoys/alignment_decoys_es_ES.zip` | Spanish (Spain) |
+| `alignment_decoys/alignment_decoys_it_IT.zip` | Italian |
+| `alignment_decoys/alignment_decoys_pt_BR.zip` | Portuguese (Brazil) |
+| `alignment_decoys/alignment_decoys_fr_FR.zip` | French |
 
-## B. Or on your own computer (no GitHub needed)
-1. Install Python 3 (python.org).
-2. Copy .env.example to .env and put your key in: ELEVENLABS_API_KEY=sk_...
-3. In this folder:  python tts_to_wav.py all --limit 1   (test)   then   python tts_to_wav.py all
+Each zip holds 20 audio files, the pre-fill `alignment_prefill_<locale>.json` with the planted errors, the answer
+key and everything around it. Start with `README_DEVELOPER.md` inside the zip. Details: `alignment_decoys/README.md`.
+
+## Earlier sets
+
+The earlier sets (first 25 clips in five languages, the Japanese alignment test set, the 25 clean German files)
+were removed from this branch to keep downloads small. They are still in the git history at commit `7d5e4f0`:
+
+```bash
+git checkout 7d5e4f0 -- output german transcripts inject_errors_ja.py extract_samples.py voices.json
+```

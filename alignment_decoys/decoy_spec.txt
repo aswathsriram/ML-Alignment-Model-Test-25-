@@ -1,0 +1,106 @@
+# id|style|gender|tts_text|hints   (hints: ws:from>to:band ; num:word>digits ; cap:word ; cmp:word>part+part)
+== de_DE
+d01|natural|F|[breathes] Also, ähm, ich wollte nur kurz Bescheid sagen, dass ich heute etwas später komme. [exhales] Der Zug hat mal wieder Verspätung.|ws:später>früher:A1
+d02|natural|M|[breathes] Kannst du bitte die Seite zweiundvierzig aufschlagen? Da steht die ganze Erklärung zum Thema Photosynthese.|ws:seite>saite:A2;num:zweiundvierzig>42;cap:photosynthese
+d03|synthetic|F|Willkommen im Kundenservice der Stadtwerke. Für Fragen zu Ihrer Rechnung drücken Sie die Zwei. Für alle anderen Anliegen bleiben Sie bitte in der Leitung.|ws:zwei>drei:A1;cmp:kundenservice>kunden+service;cap:stadtwerke
+d04|natural|M|[sighs] Tja, das Krankenhaus ist leider total überlastet, und man wartet manchmal vier Stunden in der Notaufnahme.|cmp:krankenhaus>kranken+haus;cmp:notaufnahme>not+aufnahme;num:vier>4;cap:krankenhaus;ws:vier>fünf:A1
+d05|natural|F|[breathes] Mm hm, genau, so machen wir das. Ich schick dir die Unterlagen dann per E-Mail, okay?|ws:schick>schreib:A1;cap:unterlagen
+d06|natural|M|[breathes] Wir haben gestern einen Laib Brot beim Bäcker um die Ecke gekauft, und, ähm, der war echt richtig lecker.|ws:laib>leib:A2;cap:bäcker
+d07|natural|F|[inhales] Ich arbeite bei der A. R. D. in Köln, und zwar in der Redaktion für Nachrichten. [breathes] Das ist manchmal ziemlich stressig.|ws:köln>kiel:A1;cap:köln
+d08|natural|M|[breathes] Naja, ich hab dir doch gesagt, das Wetter am Meer ist im April einfach nicht so toll. Nächstes Mal fahren wir lieber im Juli.|ws:meer>mehr:A2;ws:juli>juni:A1;cap:april
+d09|natural|F|[breathes] Ähm, Entschuldigung, wissen Sie, wo hier die nächste Apotheke ist? Ich brauche dringend was gegen Kopfschmerzen.|cmp:kopfschmerzen>kopf+schmerzen;ws:nächste>letzte:A1;cap:apotheke
+d10|synthetic|M|Achtung an Gleis sieben: Der Regionalexpress nach Hannover fährt heute ausnahmsweise von Gleis neun ab.|num:sieben>7;num:neun>9;cmp:regionalexpress>regional+express;cap:hannover;ws:neun>zehn:A1
+d11|natural|M|[exhales] Ach so, ja, das hast du wirklich weise entschieden. Ich hätte mich, ehrlich gesagt, nicht getraut.|ws:weise>waise:A2
+d12|natural|F|[breathes] Mein Bruder wohnt jetzt in Baden-Württemberg, in so einem kleinen Dorf bei Stuttgart. [inhales] Da ist es echt ruhig, aber man braucht unbedingt ein Auto.|cap:stuttgart;ws:auto>fahrrad:A1
+d13|natural|M|[breathes] Also, die Miete kostet achthundertfünfzig Euro im Monat, warm, und die Wohnung hat drei Zimmer. Das ist für Berlin eigentlich ganz okay.|num:achthundertfünfzig>850;num:drei>3;cap:berlin;ws:drei>zwei:A1
+d14|natural|F|[sighs] Ähm, ich glaub, ich hab meinen Geldbeutel im Restaurant liegen lassen. [breathes] Kannst du da bitte mal kurz anrufen?|cmp:geldbeutel>geld+beutel;ws:restaurant>büro:A1;cap:geldbeutel
+d15|natural|M|[breathes] Genau, und dann gehst du einfach geradeaus bis zur Ampel und biegst links ab. Das Rathaus siehst du dann schon von weitem.|cmp:rathaus>rat+haus;ws:links>rechts:A1;cap:ampel
+d16|synthetic|F|Ihre Paketsendung wird morgen zwischen zehn und vierzehn Uhr zugestellt. Bitte halten Sie Ihren Ausweis bereit.|num:zehn>10;num:vierzehn>14;cmp:paketsendung>paket+sendung;ws:morgen>heute:A1;cap:ausweis
+d17|natural|F|[breathes] Tja, also ehrlich gesagt bin ich mir nicht sicher, ob ich am Wochenende Zeit habe. [exhales] Ich sag dir einfach am Freitag Bescheid.|cmp:wochenende>wochen+ende;ws:freitag>samstag:A1;cap:wochenende
+d18|natural|M|[breathes] Wir haben im Kurs heute über die Geschichte der Stadt gesprochen, äh, vor allem über die Zeit nach neunzehnhundertfünfundvierzig.|num:neunzehnhundertfünfundvierzig>1945;ws:stadt>staat:A2;cap:geschichte
+d19|natural|F|[breathes] Hallo Frau Becker, hier ist die Praxis Doktor Schulz. [inhales] Ihr Termin am Dienstag muss leider verschoben werden. Rufen Sie uns bitte zurück?|cap:becker;cap:schulz;ws:dienstag>donnerstag:A1
+d20|natural|M|[exhales] Naja, so schlimm war das jetzt auch wieder nicht. Wir haben halt ein bisschen mehr bezahlt als geplant.|ws:mehr>meer:A2;ws:bezahlt>gezahlt:A3
+== es_ES
+e01|natural|F|[breathes] Pues mira, la verdad es que no sé si voy a poder ir a la reunión del jueves. [exhales] Te lo confirmo mañana, ¿vale?|ws:jueves>viernes:A1
+e02|natural|M|[breathes] Hola, buenas. Quería preguntar por el piso de la calle Mayor, el de tres habitaciones. ¿Sigue disponible?|ws:hola>ola:A2;num:tres>3;cap:mayor
+e03|natural|F|[sighs] Eh, bueno, al final no compramos el coche, porque costaba casi veinte mil euros y no nos lo podíamos permitir.|num:veinte>20;ws:coche>piso:A1
+e04|natural|M|[breathes] Vaya, no me lo esperaba. Entonces, ¿el partido se juega el sábado por la tarde o el domingo?|ws:vaya>valla:A2;ws:tarde>noche:A1
+e05|synthetic|F|Bienvenido al servicio de atención al cliente. Para consultar su saldo, pulse uno. Para hablar con un agente, pulse dos.|num:dos>2;ws:dos>tres:A1
+e06|natural|M|[breathes] Mmm, a ver, déjame pensar. Creo que el museo abre a las diez, pero los lunes está cerrado.|num:diez>10;ws:lunes>martes:A1
+e07|natural|F|[breathes] Mi hermana trabaja en la R. T. V. E. desde hace unos años, en el departamento de informativos.|ws:hermana>prima:A1
+e08|natural|M|[exhales] Hombre, claro que sí. Si quieres, te echo una mano con la mudanza el fin de semana.|ws:echo>hecho:A2;ws:mudanza>limpieza:A1
+e09|natural|F|[breathes] Oye, ¿tú sabes si hay una farmacia de guardia por aquí cerca? Es que me duele muchísimo la cabeza.|ws:hay>ay:A2;ws:cabeza>muela:A1
+e10|natural|M|[breathes] El tren de las ocho y cuarto llegó con casi media hora de retraso, así que perdí la conexión a Valencia.|num:ocho>8;cap:valencia;ws:valencia>sevilla:A1
+e11|natural|F|[sighs] Bueno, pues nada, al final lo dejamos para la semana que viene, porque hoy estaba todo el mundo muy cansado.|ws:cansado>ocupado:A1
+e12|synthetic|M|Atención, por favor. El vuelo con destino a Lisboa embarcará por la puerta doce dentro de quince minutos.|num:doce>12;num:quince>15;cap:lisboa;ws:quince>cinco:A1
+e13|natural|M|[breathes] Pues yo creo que el tubo del baño está roto, porque sale agua por debajo del lavabo.|ws:tubo>tuvo:A2;ws:baño>salón:A1
+e14|natural|F|[breathes] Ayer fuimos a cenar a un restaurante nuevo en el centro, y la verdad es que la comida estaba buenísima.|ws:centro>puerto:A1
+e15|natural|M|[exhales] Claro, claro, ya te entiendo. Pero el profe dijo que el examen es el martes que viene, no el jueves.|ws:martes>miércoles:A1
+e16|natural|F|[breathes] Este, ¿me puedes pasar la sal, por favor? Y si queda, también un poco más de pan.|ws:pan>agua:A1
+e17|natural|M|[breathes] Mira, el piso tiene ochenta y siete metros cuadrados y una terraza pequeña, pero da a un patio muy tranquilo.|ws:tranquilo>ruidoso:A1;ws:pequeña>grande:A1
+e18|synthetic|F|Le recordamos que su cita con el doctor Ruiz es el día catorce a las once y media.|num:catorce>14;num:once>11;cap:ruiz;ws:once>doce:A1
+e19|natural|F|[breathes] Ah, ¿sí? No tenía ni idea de que te ibas a vivir a Barcelona. [inhales] ¡Qué ilusión!|cap:barcelona;ws:barcelona>bilbao:A1
+e20|natural|M|[breathes] Pues nada, que he perdido el autobús otra vez y voy a llegar tarde al trabajo. Lo siento muchísimo.|ws:autobús>metro:A1
+== it_IT
+i01|natural|F|[breathes] Allora, ehm, io domani non posso venire in ufficio, perché ho una visita dal medico alle dieci.|num:dieci>10;ws:domani>dopodomani:A1
+i02|synthetic|M|Benvenuti al servizio clienti. Per informazioni sul vostro ordine, premete uno. Per parlare con un operatore, premete due.|num:due>2;ws:due>tre:A1
+i03|natural|F|[breathes] Beh, sai, l'ultima volta che siamo andati al mare c'era un traffico incredibile sull'autostrada.|ws:mare>lago:A1
+i04|natural|M|[sighs] Mah, non lo so. Hanno detto che il treno per Bologna arriva con mezz'ora di ritardo.|ws:hanno>anno:A2;cap:bologna
+i05|natural|F|[breathes] Cioè, praticamente ho perso le chiavi di casa, e mio marito è in viaggio fino a venerdì.|ws:venerdì>giovedì:A1
+i06|natural|M|[breathes] Ho comprato un chilo di pane e due etti di prosciutto, ma ho dimenticato il latte.|ws:ho>o:A2;num:due>2;ws:latte>caffè:A1
+i07|natural|F|[breathes] Mia sorella lavora alla R. A. I. a Roma, nel reparto che si occupa dei telegiornali.|cap:roma;ws:sorella>cugina:A1
+i08|natural|M|[exhales] Dai, non ti preoccupare, ci penso io. Te lo porto io stasera, va bene?|ws:te>tè:A2;ws:stasera>domani:A1
+i09|synthetic|F|Il volo per Parigi partirà dall'uscita venti tra dieci minuti. Si prega di avere pronta la carta d'imbarco.|num:venti>20;num:dieci>10;cap:parigi;ws:parigi>londra:A1
+i10|natural|M|[breathes] Boh, secondo me l'uomo che abbiamo visto ieri al bar era proprio il nuovo vicino di casa.|ws:ieri>stamattina:A1
+i11|natural|F|[breathes] Ehm, scusi, sa dirmi dov'è la fermata dell'autobus? Devo andare in centro, vicino alla stazione.|ws:centro>periferia:A1
+i12|natural|M|[sighs] Guarda, la riunione è durata tre ore, e alla fine non abbiamo deciso praticamente niente.|num:tre>3;ws:tre>due:A1
+i13|natural|F|[breathes] Mm hm, sì, sì, ho capito. Allora ci vediamo lunedì mattina davanti all'ingresso della scuola.|ws:lunedì>martedì:A1
+i14|natural|M|[breathes] Ha detto che a cena viene anche la sua ragazza, quindi dobbiamo apparecchiare per sei.|ws:ha>a:A2;num:sei>6
+i15|synthetic|M|Gentili clienti, il negozio chiuderà tra quindici minuti. Vi invitiamo a recarvi alle casse.|num:quindici>15;ws:quindici>cinque:A1
+i16|natural|F|[breathes] Sto cercando un regalo per mia madre, qualcosa di carino ma non troppo costoso, capisci?|ws:madre>nonna:A1
+i17|natural|M|[exhales] Beh, purtroppo la macchina si è rotta di nuovo, quindi stamattina sono venuto in bici.|ws:bici>treno:A1
+i18|natural|F|[breathes] Ormai è l'una di notte, è troppo tardi per chiamare, dai. Gli scrivo un messaggio e domani mi risponde.|ws:l'una>luna:A2;ws:messaggio>email:A1
+i19|natural|M|[breathes] Hmm, il ristorante che mi hai consigliato era buonissimo, soprattutto la pasta al pesto.|ws:pesto>ragù:A1
+i20|natural|F|[breathes] Allora, il corso inizia alle nove e finisce verso mezzogiorno, con una pausa a metà mattina.|num:nove>9;ws:nove>otto:A1
+== pt_BR
+p01|natural|F|[breathes] Então, tipo, eu tô pensando em mudar de apartamento, porque o meu tá muito longe do trabalho.|ws:longe>perto:A1
+p02|natural|M|[breathes] Cê viu o jogo ontem? O time jogou muito mal no segundo tempo, né?|ws:ontem>domingo:A1
+p03|natural|F|[sighs] Ah, o conserto do carro ficou caríssimo, quase dois mil reais. Não tava esperando isso, não.|ws:conserto>concerto:A2;num:dois>2
+p04|natural|M|[breathes] Eu trabalho na Globo faz uns cinco anos, no setor de jornalismo, aqui no Rio de Janeiro.|cap:globo;cap:rio;num:cinco>5;ws:cinco>quinze:A1
+p05|natural|F|[breathes] É, então, a consulta foi remarcada pra quinta-feira às três da tarde, tudo bem pra você?|num:três>3;ws:quinta>sexta:A1
+p06|synthetic|M|Bem-vindo à central de atendimento. Para segunda via da conta, digite um. Para falar com um atendente, digite dois.|num:dois>2;ws:dois>três:A1
+p07|natural|F|[breathes] Minha irmã mora em Belo Horizonte, mas vem pra cá no Natal, junto com o marido e as crianças.|cap:natal;ws:natal>carnaval:A1
+p08|natural|M|[breathes] Mm hm, entendi. Então a sessão de cinema começa às oito, e a gente se encontra na frente do shopping.|ws:sessão>seção:A2;num:oito>8
+p09|natural|F|[exhales] Ué, mas você não disse que ia trazer a sobremesa? Eu não comprei nada, achei que tava tudo certo.|ws:sobremesa>bebida:A1
+p10|natural|M|[breathes] O ônibus atrasou de novo, aí eu cheguei atrasado na reunião e o chefe ficou bem chateado.|ws:chefe>cliente:A1
+p11|natural|F|[breathes] Hmm, eu acho que a sela do cavalo tá guardada no galpão, lá no fundo do sítio.|ws:sela>cela:A2;ws:galpão>porão:A1
+p12|natural|M|[breathes] Eita, esqueci completamente do aniversário da minha mãe! Preciso comprar um presente hoje mesmo.|ws:mãe>avó:A1
+p13|synthetic|F|Atenção, senhores passageiros. O voo para Salvador está previsto para embarcar no portão sete às dezoito horas.|num:sete>7;num:dezoito>18;cap:salvador;ws:sete>nove:A1
+p14|natural|F|[breathes] A gente fez um churrasco no sábado, e veio quase todo mundo, até o pessoal do trabalho.|ws:sábado>domingo:A1
+p15|natural|M|[sighs] Pô, o trânsito tava terrível hoje de manhã, levei quase uma hora e meia pra chegar.|ws:manhã>tarde:A1
+p16|natural|F|[breathes] Tipo assim, eu prefiro estudar à noite, porque de dia tem muito barulho aqui em casa.|ws:barulho>movimento:A1
+p17|natural|M|[breathes] Olha, o concerto da orquestra foi incrível, a gente ficou até o final, mesmo com a chuva.|ws:concerto>conserto:A2;ws:chuva>neve:A1
+p18|natural|F|[breathes] Ah, cê sabe se a farmácia aqui da esquina abre no domingo? Tô precisando de um remédio pra dor de cabeça.|ws:domingo>feriado:A1
+p19|synthetic|M|Sua encomenda foi enviada e deve chegar em até cinco dias úteis. Obrigado pela preferência.|num:cinco>5;ws:cinco>dez:A1
+p20|natural|M|[exhales] Pra ser sincero, eu não gostei muito do filme. A história é boa, mas o final é meio fraco, né?|ws:fraco>forte:A1
+== fr_FR
+f01|natural|F|[breathes] Alors, euh, je voulais juste te dire que je serai un peu en retard ce soir, le métro est encore en panne.|ws:soir>matin:A1
+f02|natural|M|[breathes] Ben, t'sé, j'ai pas vraiment envie de sortir ce week-end, franchement.|ws:sortir>travailler:A1
+f03|natural|F|[sighs] Bah, l'appartement est joli, mais le loyer est de neuf cents euros par mois, c'est un peu cher pour moi.|ws:joli>grand:A1
+f04|synthetic|M|Bienvenue sur le service client. Pour suivre votre commande, tapez un. Pour parler à un conseiller, tapez deux.|num:deux>2;ws:deux>trois:A1
+f05|natural|F|[breathes] J'ai vu ma mère hier, elle m'a dit qu'elle voulait aller à la mer cet été.|ws:mère>maire:A2;ws:mer>mère:A2
+f06|natural|M|[breathes] Hein? Tu veux dire que t'as perdu ton portefeuille dans le train de sept heures?|num:sept>7;ws:train>bus:A1
+f07|natural|F|[breathes] Mon frère travaille à T. F. un depuis trois ans, il s'occupe du journal du soir.|num:trois>3;ws:frère>cousin:A1
+f08|natural|M|[exhales] Ouais, ouais, d'accord. Mais il faut quand même prévenir le patron avant vendredi.|ws:vendredi>jeudi:A1
+f09|natural|F|[breathes] Euh, excusez-moi, vous savez où se trouve la pharmacie la plus proche? J'ai très mal à la tête.|ws:tête>gorge:A1
+f10|natural|M|[breathes] Il y a quatre-vingt-sept marches pour monter jusqu'en haut de la tour, c'est vraiment épuisant.|ws:épuisant>facile:A1
+f11|synthetic|F|Le train à destination de Lyon partira voie douze avec un retard d'environ vingt minutes.|num:douze>12;num:vingt>20;cap:lyon;ws:lyon>lille:A1
+f12|natural|M|[breathes] Bof, le film était pas terrible, j'ai failli m'endormir au milieu, franchement.|ws:terrible>génial:A1
+f13|natural|F|[sighs] Mm hm, d'accord, je vois. Donc on se retrouve devant la gare à midi, c'est ça?|ws:midi>minuit:A1
+f14|natural|M|[breathes] Je pense qu'on peut peut-être finir le projet avant la fin du mois, si tout le monde s'y met.|ws:peut>peu:A2
+f15|natural|F|[breathes] Ah, ben ça alors! Je savais pas que tu parlais aussi bien l'espagnol.|ws:l'espagnol>l'italien:A1
+f16|natural|M|[breathes] Le vert te va super bien, tu devrais porter cette veste plus souvent.|ws:vert>verre:A2;ws:veste>robe:A1
+f17|synthetic|M|Votre rendez-vous chez le docteur Martin est confirmé pour mardi prochain à quinze heures.|num:quinze>15;cap:martin;ws:mardi>mercredi:A1
+f18|natural|F|[breathes] Y'a un nouveau boulanger dans la rue, et ses croissants sont vraiment délicieux.|ws:croissants>gâteaux:A1
+f19|natural|M|[exhales] Aucune idée, honnêtement. Je crois qu'il est parti en vacances en Bretagne avec sa famille.|cap:bretagne;ws:bretagne>provence:A1
+f20|natural|F|[breathes] Hmm, je préfère prendre le vélo le matin, c'est plus rapide que la voiture en ville.|ws:vélo>bus:A1

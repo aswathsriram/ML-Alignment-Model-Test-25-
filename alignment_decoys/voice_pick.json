@@ -1,0 +1,732 @@
+{
+ "es": {
+  "female": [
+   {
+    "voice_id": "UOIqAnmS11Reiei1Ytkc",
+    "name": "Carolina - Natural, Neutral and Clear",
+    "gender": "female",
+    "accent": "peninsular",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "1eHrpOW5l98cxiSRjbzJ",
+    "name": "Raquel - Young, Bright and Cheerful",
+    "gender": "female",
+    "accent": "peninsular",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "h2cd3gvcqTp3m65Dysk7",
+    "name": "Carolina Ruiz - Nasal, Natural and Clear",
+    "gender": "female",
+    "accent": "peninsular",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "gD1IexrzCvsXPHUuT0s3",
+    "name": "Sara Martin  - Young and Reflective",
+    "gender": "female",
+    "accent": "peninsular",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "ERYLdjEaddaiN9sDjaMX",
+    "name": "Gabriela Sainz - Bright and Professional",
+    "gender": "female",
+    "accent": "peninsular",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "dNjJKg63Fr5AXwIdkATa",
+    "name": "Cristina - Empathetic Customer support",
+    "gender": "female",
+    "accent": "peninsular",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "kvVjNZvtnCv3Sl1Hr70T",
+    "name": "Flavia - Natural, Clear and Credible",
+    "gender": "female",
+    "accent": "peninsular",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "uQw4jpKzMLrZuo0RLPS9",
+    "name": "Laura  - Customer service",
+    "gender": "female",
+    "accent": "peninsular",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "FM3ChNOHGKKULNhmx5m2",
+    "name": "Lola Jaen - Calm, Reflective and Neutral",
+    "gender": "female",
+    "accent": "peninsular",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "kwNLkNjbQHMw9YUFZsHI",
+    "name": "Alejandra - Credible, Warm and Appealing",
+    "gender": "female",
+    "accent": "peninsular",
+    "use_case": "conversational"
+   }
+  ],
+  "male": [
+   {
+    "voice_id": "7QQzpAyzlKTVrRzQJmTE",
+    "name": "Dani - Hurried, Dynamic and Engaging",
+    "gender": "male",
+    "accent": "peninsular",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "7ilYbYb99yBZGMUUKSaf",
+    "name": "Alex - Smooth, Professional and Pleasant",
+    "gender": "male",
+    "accent": "peninsular",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "851ejYcv2BoNPjrkw93G",
+    "name": "Tony - Expressive, Fast and Spontaneous",
+    "gender": "male",
+    "accent": "peninsular",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "LlZr3QuzbW4WrPjgATHG",
+    "name": "Martin Osborne - Round and Polished",
+    "gender": "male",
+    "accent": "peninsular",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "5IDdqnXnlsZ1FCxoOFYg",
+    "name": "Jesus - Firm, Deep and Reassuring",
+    "gender": "male",
+    "accent": "peninsular",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "vLKc7bavj1pLAULAyi3r",
+    "name": "Rodrigo Angular - Natural and Friendly",
+    "gender": "male",
+    "accent": "peninsular",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "HIYif4jehvc9P9A8DYbX",
+    "name": "Pablo - Deep, Confident and Clear",
+    "gender": "male",
+    "accent": "peninsular",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "BPoDAH7n4gFrnGY27Jkj",
+    "name": "Frankie San Juan - Storyteller",
+    "gender": "male",
+    "accent": "",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "m8dLaNJTf2Faapk51VKn",
+    "name": "Pablo Fernández",
+    "gender": "male",
+    "accent": "peninsular",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "Xdk5eWaS3lO6Yz2HBOBv",
+    "name": "Gabriel Blanco - Measured and Relatable",
+    "gender": "male",
+    "accent": "peninsular",
+    "use_case": "conversational"
+   }
+  ]
+ },
+ "pt": {
+  "female": [
+   {
+    "voice_id": "GDzHdQOi6jjf8zaXhCYD",
+    "name": "Raquel - Expressive and Energetic",
+    "gender": "female",
+    "accent": "brazilian",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "RGymW84CSmfVugnA5tvA",
+    "name": "Roberta - Smooth and Confident",
+    "gender": "female",
+    "accent": "brazilian",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "7iqXtOF3wl3pomwXFY7G",
+    "name": "Fernanda - Formal, Polite and Direct",
+    "gender": "female",
+    "accent": "brazilian",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "GM2UA3fbsIaLHcswCDX9",
+    "name": "Nina M.",
+    "gender": "female",
+    "accent": "brazilian",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "mPDAoQyGzxBSkE0OAOKw",
+    "name": "Carla - Energetic and Confident",
+    "gender": "female",
+    "accent": "brazilian",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "cyD08lEy76q03ER1jZ7y",
+    "name": "Scheila - Serious and Direct",
+    "gender": "female",
+    "accent": "brazilian",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "GOkMqfyKMLVUcYfO2WbB",
+    "name": "Jenifer",
+    "gender": "female",
+    "accent": "brazilian",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "EsbcEfYoTFrRNrRCVEHp",
+    "name": "Gaucha - Engaging & Trusting",
+    "gender": "female",
+    "accent": "brazilian",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "QHXbC1UI61ujIZ9SUNGc",
+    "name": "Regi Piroli",
+    "gender": "female",
+    "accent": "brazilian",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "rthJ5Dw4ng8Orz8mYafh",
+    "name": "Luana - Stoic, Witty and Confident",
+    "gender": "female",
+    "accent": "brazilian",
+    "use_case": "conversational"
+   }
+  ],
+  "male": [
+   {
+    "voice_id": "7u8qsX4HQsSHJ0f8xsQZ",
+    "name": "João Pedro - Shy and Apologetic",
+    "gender": "male",
+    "accent": "brazilian",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "5p9IbzcK4R8rN1fpGdMF",
+    "name": "Davi - Friendly, Warm and Diplomatic",
+    "gender": "male",
+    "accent": "brazilian",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "lvkgCBi6spByiTZMPJEK",
+    "name": "Gabriel",
+    "gender": "male",
+    "accent": "brazilian",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "xWdpADtEio43ew1zGxUQ",
+    "name": "Matheus Santos - Friendly and Calm",
+    "gender": "male",
+    "accent": "brazilian",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "F7823wtD50WK1gnmgBk5",
+    "name": "Matheus Moretti - Urgent and Firm",
+    "gender": "male",
+    "accent": "brazilian",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "ec54d9BmuMSN4IinPrjv",
+    "name": "Will - Friendly, Inviting and Supportive",
+    "gender": "male",
+    "accent": "brazilian",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "Hmn4B9B77pf6ttydteJ8",
+    "name": "Kaique - Poetic, Soft and Gentle",
+    "gender": "male",
+    "accent": "brazilian",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "ETf5cmpNIbpSiXmBaR2m",
+    "name": "Samuel - Slow and Confident",
+    "gender": "male",
+    "accent": "brazilian",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "4J31DrhygVjvFsoj7BsM",
+    "name": "Eduardo S. - Brazilian Clear & Pro",
+    "gender": "male",
+    "accent": "brazilian",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "NKKvpecEshlHm99K9zn9",
+    "name": "Manoel Cota - Expressive and Direct",
+    "gender": "male",
+    "accent": "brazilian",
+    "use_case": "conversational"
+   }
+  ]
+ },
+ "fr": {
+  "female": [
+   {
+    "voice_id": "YxrwjAKoUKULGd0g8K9Y",
+    "name": "Lucie - Support Agent",
+    "gender": "female",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "d3AXX0BlgJHYFCuH9X88",
+    "name": "Emilie - Podcast Host",
+    "gender": "female",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "F1toM6PcP54s45kOOAyV",
+    "name": "Koraly - Expressive and Engaging",
+    "gender": "female",
+    "accent": "parisian",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "3C1zYzXNXNzrB66ON8rj",
+    "name": "Jade - Customer Service",
+    "gender": "female",
+    "accent": "parisian",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "lvQdCgwZfBuOzxyV5pxu",
+    "name": "Audia - Customer Support",
+    "gender": "female",
+    "accent": "parisian",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "WQKwBV2Uzw1gSGr69N8I",
+    "name": "Mylene - Spontaneous and Casual",
+    "gender": "female",
+    "accent": "parisian",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "HuLbOdhRlvQQN8oPP0AJ",
+    "name": "Claire - Customer service",
+    "gender": "female",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "fBpCO0Kf0krKLYGOu65w",
+    "name": "Émilie - Customer service advisor",
+    "gender": "female",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "FFXYdAYPzn8Tw8KiHZqg",
+    "name": "Ingrid - Warm, Calm and Authentic",
+    "gender": "female",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "6FXyooAOTqUK8m2HWm32",
+    "name": "Marine - Premium Conversational AI",
+    "gender": "female",
+    "accent": "parisian",
+    "use_case": "conversational"
+   }
+  ],
+  "male": [
+   {
+    "voice_id": "5Qfm4RqcAer0xoyWtoHC",
+    "name": "Maxime - Young and Casual",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "NyxenPOqNyllHIzSoPbJ",
+    "name": "Theo - Warm and Young",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "kENkNtk0xyzG09WW40xE",
+    "name": "Marcel - Warm and Conversational",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "1EmYoP3UnnnwhlJKovEy",
+    "name": "Anthony - Salesman",
+    "gender": "male",
+    "accent": "parisian",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "GPAQQPp9dazaB2bl4zg9",
+    "name": "Victor - Casual and Conversational",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "IbbR6Av0dWuQJS0b8JVT",
+    "name": "Hugo - Warm and Grounded",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "BVBq6HVJVdnwOMJOqvy9",
+    "name": "Nova - Deep and Calm",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "eOwAMwUJEGkP44SKOXIH",
+    "name": "Julien - Professional customer service",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "xlVRtVJbKuO2nwbbopa2",
+    "name": "Fabien - Calm and Collected",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "MIuhjMla9d1GsjEn0qCp",
+    "name": "Orion - Content Creator",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   }
+  ]
+ },
+ "it": {
+  "female": [
+   {
+    "voice_id": "QITiGyM4owEZrBEf0QV8",
+    "name": "Ginevra - Rich, Cheerful and Grounded",
+    "gender": "female",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "UnOINkXZ3yK4vVg3Iayj",
+    "name": "Beatrice - AI Agent",
+    "gender": "female",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "MuTiG4dbrEGYEy3XP4iP",
+    "name": "Rossana - Warm Italian Conversational ",
+    "gender": "female",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "3LTv5xMEHTJYUIMl1jBR",
+    "name": "Aurora - Clear & Supportive ",
+    "gender": "female",
+    "accent": "milanese",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "litDcG1avVppv4R90BLu",
+    "name": "Carla - Natural, Reflective & Narrative",
+    "gender": "female",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "SCxqy2fez0noVtp3USgs",
+    "name": "Cinzia",
+    "gender": "female",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "Ilze0lNihfxGj7pq9g7s",
+    "name": "Patty - Steady, Warm and Calm",
+    "gender": "female",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "6KQ52XTjdNd1FfUgGmV6",
+    "name": "Anna - Faint, Relaxed and Neutral",
+    "gender": "female",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "BrADZHWW7Di4Z7YPNjmK",
+    "name": "Roberta",
+    "gender": "female",
+    "accent": "romanesco",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "lFHyHlRLX5EFGKJ9tJ2M",
+    "name": "Valeria",
+    "gender": "female",
+    "accent": "standard",
+    "use_case": "conversational"
+   }
+  ],
+  "male": [
+   {
+    "voice_id": "GcAgjAjkhWsmUd4GlPiv",
+    "name": "Marco - Friendly, Calm and Warm",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "HhBRXe1sPBLe9D9lX1HC",
+    "name": "Raffaele Montini - Refined and Secure",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "DTGwzA4YLrWB1FAT6Uas",
+    "name": "Lorenzo - Youthful, Expressive & Inspiring",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "o5tUAYEqld5GJZ1Lv8uC",
+    "name": "Brando Vox – Expressive, Confident, Conversational",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "YWXroL1TL4NDznxN5Cy4",
+    "name": "Felice - Positive, Expressive and Clear",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "5wE9Co8DESyhUw0GgAHG",
+    "name": "Alessandro Zanierato",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "AZnmrjjEOG9CofMyOxaA",
+    "name": "Francesco - Warm and Expressive",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "OcIrXHpOMgy1jqfJ2I8o",
+    "name": "Criss - Radio Podcast",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "ZWinjzTTTpAtJ6MTQicA",
+    "name": "Tiberio Conti - The Real AI Agent",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "phmCOLF8U7RfPITZbJUs",
+    "name": "Stefano - Emilian accent",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   }
+  ]
+ },
+ "de": {
+  "female": [
+   {
+    "voice_id": "KXxZd16DiBqt82nbarJx",
+    "name": "Lucy Fennek -  Friendly and Open",
+    "gender": "female",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "otF9rqKzRHFgfwf6serQ",
+    "name": "Dana - Thoughtful and Interesting",
+    "gender": "female",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "NE7AIW5DoJ7lUosXV2KR",
+    "name": "Ela - Cheerful and Happy",
+    "gender": "female",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "6CS8keYmkwxkspesdyA7",
+    "name": "Ramona - Professional and Calm",
+    "gender": "female",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "MiVAi0PlB7YlXfCDRCkq",
+    "name": "Lucy - Positive and Motivated",
+    "gender": "female",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "mDRP1h6KfUD1XAUJxqr0",
+    "name": "Doreen - Clear and Dynamic",
+    "gender": "female",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "ZgahlWh5FVSG7MFjZwPE",
+    "name": "Anny - Soft and Girly",
+    "gender": "female",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "XFigb6fqZPxl2Q2dFOXN",
+    "name": "Nadine Convo - Your perfect conversation partner",
+    "gender": "female",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "MGG5Irb57ATHvyIeTEYo",
+    "name": "Maya - Supportive Agent",
+    "gender": "female",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "t6LrOJGOwJlvBxDA0qqG",
+    "name": "Miranda - Gentle and Playful",
+    "gender": "female",
+    "accent": "standard",
+    "use_case": "conversational"
+   }
+  ],
+  "male": [
+   {
+    "voice_id": "1h6gHcRvQugDNZgdAo9N",
+    "name": "Elias - Pleasant and Memorable",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "f64OyGck4gc2zk7QOs55",
+    "name": "Leo -  Emotional and Perfect",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "JNpQqni9iUx1Jxy9h0P1",
+    "name": "Timo - Confident and Mild",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "Dm2pqleCzqJpMQgIh5nm",
+    "name": "Alex - Reassuring and Soft",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "2HRQZj4BjKZ0bVgy6Ikf",
+    "name": "Titus -  Friendly and Professional",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "utkd5fchbspYG3Ld0zt0",
+    "name": "Dan - Radio Host & Moderator",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "MMwckqU477oQxnAk1SgA",
+    "name": "Ben - Conversational Voice",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "hn8GIqw1kDmBqpxl6PnS",
+    "name": "Rob – Your Virtual Assistant",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "MbbPUteESkJWr4IAaW35",
+    "name": "Felix - Direct and Clear",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   },
+   {
+    "voice_id": "vmVmHDKBkkCgbLVIOJRb",
+    "name": "Charlie Chatlin - Real & Casual",
+    "gender": "male",
+    "accent": "standard",
+    "use_case": "conversational"
+   }
+  ]
+ }
+}
