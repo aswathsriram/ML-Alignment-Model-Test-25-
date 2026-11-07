@@ -12,7 +12,8 @@ Output : spanish_fix/Updated_spanish_rebuilt.json      the file to upload (same 
    (the split point is placed in proportion to the words' lengths). The transcript always says exactly what the
    chips say, so a missing word is simply missing (nothing for the platform to flag).
 3. New errors to 3-6 per item where its length allows, at least 3 words apart, never on a tag:
-   boundary mismatch (150-700 ms; aligners get 100 ms tolerance), missing segment, hallucinated chip
+   boundary mismatch (minor 40-80 ms = A3, major 100-300 ms = A2, critical over 300 ms = A1), missing segment,
+   hallucinated chip
    (in a pause of at least 0.35 s, repeating the word before).
 Weights: boundary 50 points, missing 25, hallucinated 25; A1 3 : A2 2 : A3 1.
 
@@ -25,6 +26,9 @@ sys.path.insert(0, str(HERE.parent / "alignment_decoys"))
 import build_pack as bp                                              # noqa: E402
 
 bp.is_tag = lambda w: w["w"].startswith(("[", "<", "(("))            # Spanish tags: (()), ((word))
+bp.MIN_MS = 40                                                       # boundary sizes as agreed for these decoys
+bp.MOVE_CLASSES = [("minor", 40, 80), ("major", 100, 300), ("critical", 310, 700)]
+BAND_OF = {"minor": "A3", "major": "A2", "critical": "A1"}
 SEED = 20261107
 DIGITS = {"1": "uno", "2": "dos", "4": "cuatro", "5": "cinco", "6": "seis", "7": "siete", "12": "doce", "30": "treinta",
           "50": "cincuenta", "70": "setenta", "90": "noventa"}
@@ -109,7 +113,7 @@ def main():
             order = sorted(NEW_SHARE, key=lambda a: (have[a[0]] / total_new - a[1], rng.random()))
             placed = False
             for action, _ in order:
-                classes = [rng.choice(["subtle", "moderate", "obvious"])] if action == "move" else [None]
+                classes = [rng.choice(["minor", "major", "critical"])] if action == "move" else [None]
                 if action == "move":
                     classes += [c for c, _, _ in bp.MOVE_CLASSES if c not in classes]
                 for cls in classes:
@@ -139,7 +143,7 @@ def main():
                     words[k]["end"] = round(words[k]["end"] + d, 3)
                 cls = next(c for c, lo, hi in bp.MOVE_CLASSES if abs(p["shift_ms"]) <= hi)
                 rec["errors"].append({"family": "BND-MAJOR", "group": "BOUNDARY",
-                                      "band": {"obvious": "A1", "moderate": "A2", "subtle": "A3"}[cls], "word": words[k]["word"],
+                                      "band": BAND_OF[cls], "severity": cls, "word": words[k]["word"],
                                       "edge": p["edge"], "shift_ms": p["shift_ms"], "before": g,
                                       "after": {"start": words[k]["start"], "end": words[k]["end"]},
                                       "note": f"{p['edge']} {abs(p['shift_ms'])} ms {'early' if p['shift_ms'] < 0 else 'late'} ({cls})"})

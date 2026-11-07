@@ -16,12 +16,12 @@
           {
             "word": "nueve",
             "start": 0.001,
-            "end": 0.171
+            "end": 0.221
           },
           {
             "word": "siete",
             "start": 0.273,
-            "end": 0.5
+            "end": 0.67
           },
           {
             "word": "cuatro",
@@ -31,7 +31,7 @@
           {
             "word": "seis",
             "start": 1.263,
-            "end": 1.876
+            "end": 1.916
           }
         ]
       },
@@ -80,7 +80,7 @@
           },
           {
             "word": "dos",
-            "start": 1.965,
+            "start": 2.065,
             "end": 2.18
           }
         ]
@@ -147,7 +147,7 @@
           {
             "word": "uno",
             "start": 1.718,
-            "end": 1.99
+            "end": 2.16
           },
           {
             "word": "manuel",
@@ -157,12 +157,12 @@
           {
             "word": "rebollo",
             "start": 3.116,
-            "end": 3.73
+            "end": 3.67
           },
           {
             "word": "mañana",
             "start": 3.835,
-            "end": 4.144
+            "end": 4.354
           }
         ]
       },
@@ -179,8 +179,8 @@
         "words": [
           {
             "word": "mañana",
-            "start": 0.003,
-            "end": 0.424
+            "start": 0.333,
+            "end": 0.894
           }
         ]
       },
@@ -198,11 +198,11 @@
           {
             "word": "tercer",
             "start": 0.01,
-            "end": 0.137
+            "end": 0.807
           },
           {
             "word": "decanato",
-            "start": 0.137,
+            "start": 0.807,
             "end": 0.89
           }
         ]
@@ -233,11 +233,11 @@
           {
             "word": "uno",
             "start": 0.0,
-            "end": 0.165
+            "end": 0.315
           },
           {
             "word": "diecisiete",
-            "start": 0.165,
+            "start": 0.315,
             "end": 1.05
           }
         ]
@@ -273,11 +273,11 @@
           {
             "word": "y",
             "start": 0.54,
-            "end": 1.23
+            "end": 1.24
           },
           {
             "word": "nueve",
-            "start": 1.23,
+            "start": 1.24,
             "end": 1.34
           }
         ]
@@ -379,8 +379,8 @@
         "words": [
           {
             "word": "madre",
-            "start": 0.26,
-            "end": 0.32
+            "start": 0.03,
+            "end": 0.12
           },
           {
             "word": "de",
@@ -399,8 +399,8 @@
           },
           {
             "word": "gracia",
-            "start": 1.157,
-            "end": 1.521
+            "start": 1.287,
+            "end": 1.791
           }
         ]
       },
@@ -433,11 +433,11 @@
           {
             "word": "de",
             "start": 1.683,
-            "end": 2.06
+            "end": 1.92
           },
           {
             "word": "familias",
-            "start": 2.06,
+            "start": 1.92,
             "end": 2.687
           },
           {
@@ -500,7 +500,7 @@
           },
           {
             "word": "robert",
-            "start": 0.871,
+            "start": 0.711,
             "end": 0.999
           },
           {
@@ -529,16 +529,16 @@
           {
             "word": "nos",
             "start": 0.65,
-            "end": 0.83
+            "end": 0.87
           },
           {
             "word": "quedamos",
-            "start": 0.83,
-            "end": 1.04
+            "start": 0.87,
+            "end": 1.21
           },
           {
             "word": "mañana",
-            "start": 1.04,
+            "start": 1.21,
             "end": 1.39
           },
           {
@@ -586,8 +586,8 @@
           },
           {
             "word": "cuatro",
-            "start": 0.97,
-            "end": 1.181
+            "start": 0.77,
+            "end": 1.131
           }
         ]
       },
@@ -597,7 +597,7 @@
       "id": "8d47d7b1-2d22-4102-ab24-66c428e9e1bc",
       "name": "32287f67-7dfa-431a-b9bb-67cba8f8c545_005.wav",
       "locale": "es_ES",
-      "transcript": "como juzgadores no la no se merecen los ciento cuarenta mil mañana que ganan ellos como juzgadores",
+      "transcript": "como juzgadores no la merecen no se merecen ciento cuarenta mil mañana que ganan ellos como juzgadores",
       "source": {
         "duration_seconds": 5.37,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -615,12 +615,17 @@
           {
             "word": "no",
             "start": 0.66,
-            "end": 0.81
+            "end": 0.86
           },
           {
             "word": "la",
-            "start": 0.81,
+            "start": 0.86,
             "end": 0.993
+          },
+          {
+            "word": "merecen",
+            "start": 0.993,
+            "end": 1.55
           },
           {
             "word": "no",
@@ -634,13 +639,8 @@
           },
           {
             "word": "merecen",
-            "start": 1.99,
+            "start": 1.76,
             "end": 2.107
-          },
-          {
-            "word": "los",
-            "start": 2.112,
-            "end": 2.24
           },
           {
             "word": "ciento",
@@ -650,16 +650,16 @@
           {
             "word": "cuarenta",
             "start": 2.473,
-            "end": 2.542
+            "end": 2.812
           },
           {
             "word": "mil",
-            "start": 2.542,
-            "end": 3.002
+            "start": 2.812,
+            "end": 3.222
           },
           {
             "word": "mañana",
-            "start": 3.002,
+            "start": 3.222,
             "end": 3.314
           },
           {
@@ -708,7 +708,7 @@
           {
             "word": "santiago",
             "start": 0.395,
-            "end": 0.632
+            "end": 0.772
           },
           {
             "word": "de",
@@ -778,7 +778,7 @@
       "id": "701a27c9-5905-4482-8d7c-48d3a7663617",
       "name": "c7cd5121-7eec-499e-913e-b2a27e607090_905.wav",
       "locale": "es_ES",
-      "transcript": "tenemos invitado especial dado que estamos con vista a la guaira",
+      "transcript": "tenemos invitado especial que estamos con vista a la guaira",
       "source": {
         "duration_seconds": 4.893,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -799,18 +799,13 @@
             "end": 1.887
           },
           {
-            "word": "dado",
-            "start": 2.408,
-            "end": 2.78
-          },
-          {
             "word": "que",
             "start": 2.786,
             "end": 2.891
           },
           {
             "word": "estamos",
-            "start": 3.282,
+            "start": 2.892,
             "end": 3.359
           },
           {
@@ -821,11 +816,11 @@
           {
             "word": "vista",
             "start": 3.925,
-            "end": 4.296
+            "end": 4.006
           },
           {
             "word": "a",
-            "start": 4.296,
+            "start": 4.006,
             "end": 4.338
           },
           {
@@ -835,7 +830,7 @@
           },
           {
             "word": "guaira",
-            "start": 4.784,
+            "start": 4.554,
             "end": 4.893
           }
         ]
@@ -854,7 +849,7 @@
           {
             "word": "villavicencio",
             "start": 0.0,
-            "end": 0.71
+            "end": 0.87
           }
         ]
       },
@@ -889,8 +884,8 @@
         "words": [
           {
             "word": "tlacotepec",
-            "start": 0.061,
-            "end": 0.889
+            "start": 0.141,
+            "end": 1.119
           }
         ]
       },
@@ -900,7 +895,7 @@
       "id": "2920b2ba-2716-42fb-bccd-a9708435e68c",
       "name": "7e5855b6-1466-4c89-81ca-b1f378d01679_020.wav",
       "locale": "es_ES",
-      "transcript": "el de la y de los piretones que tiene zona de anfama",
+      "transcript": "el tema de la mamposteria y de los piretones que tiene zona de anfama",
       "source": {
         "duration_seconds": 4.922,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -911,14 +906,24 @@
             "end": 1.0
           },
           {
+            "word": "tema",
+            "start": 1.0,
+            "end": 1.25
+          },
+          {
             "word": "de",
             "start": 1.25,
-            "end": 1.37
+            "end": 1.49
           },
           {
             "word": "la",
-            "start": 1.37,
+            "start": 1.49,
             "end": 1.566
+          },
+          {
+            "word": "mamposteria",
+            "start": 1.566,
+            "end": 2.35
           },
           {
             "word": "y",
@@ -933,7 +938,7 @@
           {
             "word": "los",
             "start": 2.86,
-            "end": 2.974
+            "end": 3.014
           },
           {
             "word": "piretones",
@@ -973,7 +978,7 @@
       "id": "bf58dd7c-25ea-48c0-8fc2-07a8ab13abd6",
       "name": "3dc1bc7e-f90c-45cf-9c61-143d69728c96_076.wav",
       "locale": "es_ES",
-      "transcript": "traslada a lima a vivir a lima con la familia familia y termina la secundaria secundaria en el mañana salesianos de nuestra capital en lima",
+      "transcript": "traslada a lima a vivir a lima con la familia familia y termina la secundaria secundaria en el mañana salesianos de nuestra en lima",
       "source": {
         "duration_seconds": 7.18,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -1001,11 +1006,11 @@
           {
             "word": "vivir",
             "start": 0.81,
-            "end": 1.04
+            "end": 0.99
           },
           {
             "word": "a",
-            "start": 1.04,
+            "start": 0.99,
             "end": 1.15
           },
           {
@@ -1076,22 +1081,17 @@
           {
             "word": "salesianos",
             "start": 4.76,
-            "end": 4.85
+            "end": 5.42
           },
           {
             "word": "de",
-            "start": 4.85,
+            "start": 5.42,
             "end": 5.55
           },
           {
             "word": "nuestra",
             "start": 5.576,
             "end": 5.93
-          },
-          {
-            "word": "capital",
-            "start": 6.13,
-            "end": 6.57
           },
           {
             "word": "en",
@@ -1101,7 +1101,7 @@
           {
             "word": "lima",
             "start": 6.825,
-            "end": 6.93
+            "end": 7.14
           }
         ]
       },
@@ -1119,7 +1119,7 @@
           {
             "word": "seguimos",
             "start": 0.0,
-            "end": 0.69
+            "end": 0.49
           },
           {
             "word": "doce",
@@ -1129,11 +1129,11 @@
           {
             "word": "entre",
             "start": 1.357,
-            "end": 1.763
+            "end": 1.703
           },
           {
             "word": "dos",
-            "start": 1.763,
+            "start": 1.703,
             "end": 2.188
           },
           {
@@ -1143,7 +1143,7 @@
           },
           {
             "word": "seis",
-            "start": 2.665,
+            "start": 2.475,
             "end": 2.762
           },
           {
@@ -1204,11 +1204,11 @@
           {
             "word": "quince",
             "start": 1.128,
-            "end": 1.64
+            "end": 1.36
           },
           {
             "word": "vale",
-            "start": 1.655,
+            "start": 1.535,
             "end": 1.887
           }
         ]
@@ -1259,7 +1259,7 @@
       "id": "e859f03d-d7d5-4821-8dbb-a913150033dc",
       "name": "4f5bb8ce-c1f8-4667-a7a0-f123695d9ff4_187.wav",
       "locale": "es_ES",
-      "transcript": "mañana alcalde de chipiona",
+      "transcript": "mañana nuestro alcalde de chipiona",
       "source": {
         "duration_seconds": 1.366,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -1267,7 +1267,12 @@
           {
             "word": "mañana",
             "start": 0.002,
-            "end": 0.06
+            "end": 0.1
+          },
+          {
+            "word": "nuestro",
+            "start": 0.1,
+            "end": 0.3
           },
           {
             "word": "alcalde",
@@ -1282,7 +1287,7 @@
           {
             "word": "chipiona",
             "start": 0.785,
-            "end": 0.906
+            "end": 1.026
           }
         ]
       },
@@ -1292,7 +1297,7 @@
       "id": "35256dc6-03c6-4a02-b7a6-d8e4610e66ca",
       "name": "178c8542-d40b-4870-b9d5-82b13472400b_053.wav",
       "locale": "es_ES",
-      "transcript": "doce doce doce la copio tal cual eh mañana mismas fracciones lo ven no",
+      "transcript": "doce doce doce la copio tal cual eh mañana mismas fracciones lo no",
       "source": {
         "duration_seconds": 4.93,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -1330,11 +1335,11 @@
           {
             "word": "cual",
             "start": 2.304,
-            "end": 2.439
+            "end": 2.379
           },
           {
             "word": "eh",
-            "start": 2.439,
+            "start": 2.379,
             "end": 2.922
           },
           {
@@ -1350,17 +1355,12 @@
           {
             "word": "fracciones",
             "start": 3.71,
-            "end": 4.044
+            "end": 4.324
           },
           {
             "word": "lo",
             "start": 4.325,
             "end": 4.466
-          },
-          {
-            "word": "ven",
-            "start": 4.468,
-            "end": 4.712
           },
           {
             "word": "no",
@@ -1382,7 +1382,7 @@
         "words": [
           {
             "word": "es",
-            "start": 0.17,
+            "start": 0.22,
             "end": 0.307
           },
           {
@@ -1423,7 +1423,7 @@
           {
             "word": "siete",
             "start": 3.696,
-            "end": 3.868
+            "end": 4.248
           }
         ]
       },
@@ -1433,7 +1433,7 @@
       "id": "294c59ac-2134-40c5-8739-c5c39877dd04",
       "name": "6a865b03-4149-44f8-a69f-f2517eeb3587_164.wav",
       "locale": "es_ES",
-      "transcript": "de sucre de maragua",
+      "transcript": "de sucre sucre de maragua",
       "source": {
         "duration_seconds": 2.51,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -1441,7 +1441,12 @@
           {
             "word": "de",
             "start": 0.236,
-            "end": 0.916
+            "end": 0.836
+          },
+          {
+            "word": "sucre",
+            "start": 0.836,
+            "end": 1.237
           },
           {
             "word": "sucre",
@@ -1456,7 +1461,7 @@
           {
             "word": "maragua",
             "start": 1.77,
-            "end": 2.25
+            "end": 2.44
           }
         ]
       },
@@ -1473,7 +1478,7 @@
         "words": [
           {
             "word": "victoria",
-            "start": 0.232,
+            "start": 0.402,
             "end": 0.535
           }
         ]
@@ -1491,7 +1496,7 @@
         "words": [
           {
             "word": "perder",
-            "start": 0.3,
+            "start": 0.14,
             "end": 0.426
           },
           {
@@ -1538,7 +1543,7 @@
           {
             "word": "udt",
             "start": 0.029,
-            "end": 0.354
+            "end": 0.504
           }
         ]
       },
@@ -1576,7 +1581,7 @@
           {
             "word": "box",
             "start": 1.99,
-            "end": 2.115
+            "end": 2.265
           }
         ]
       },
@@ -1594,12 +1599,12 @@
           {
             "word": "que",
             "start": 0.001,
-            "end": 0.4
+            "end": 0.24
           },
           {
             "word": "hay",
-            "start": 0.4,
-            "end": 0.622
+            "start": 0.24,
+            "end": 0.682
           }
         ]
       },
@@ -1617,7 +1622,7 @@
           {
             "word": "ah",
             "start": 0.001,
-            "end": 0.04
+            "end": 0.1
           },
           {
             "word": "(())",
@@ -1631,7 +1636,7 @@
           },
           {
             "word": "anchura",
-            "start": 0.73,
+            "start": 0.55,
             "end": 1.163
           }
         ]
@@ -1670,7 +1675,7 @@
       "id": "2f263b10-49aa-449d-9524-b9e65497ad57",
       "name": "16b11860-edea-43ca-894b-38d549a49cc0_160.wav",
       "locale": "es_ES",
-      "transcript": "la quince la salida hacia la ciudad de santa marta",
+      "transcript": "la quince la salida la ciudad de santa marta",
       "source": {
         "duration_seconds": 2.93,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -1696,11 +1701,6 @@
             "end": 0.941
           },
           {
-            "word": "hacia",
-            "start": 1.101,
-            "end": 1.434
-          },
-          {
             "word": "la",
             "start": 1.434,
             "end": 1.528
@@ -1718,7 +1718,7 @@
           {
             "word": "santa",
             "start": 2.164,
-            "end": 2.296
+            "end": 2.556
           },
           {
             "word": "marta",
@@ -1810,12 +1810,12 @@
           {
             "word": "y",
             "start": 0.068,
-            "end": 0.406
+            "end": 0.156
           },
           {
             "word": "dijimos",
-            "start": 0.406,
-            "end": 0.498
+            "start": 0.156,
+            "end": 0.218
           },
           {
             "word": "sabes",
@@ -1855,11 +1855,11 @@
           {
             "word": "en",
             "start": 2.32,
-            "end": 2.56
+            "end": 2.39
           },
           {
             "word": "lista",
-            "start": 2.56,
+            "start": 2.39,
             "end": 2.7
           },
           {
@@ -1870,27 +1870,27 @@
           {
             "word": "espera",
             "start": 2.79,
-            "end": 2.992
+            "end": 2.942
           },
           {
             "word": "o",
-            "start": 2.992,
+            "start": 2.942,
             "end": 3.03
           },
           {
             "word": "hay",
             "start": 3.03,
-            "end": 3.51
+            "end": 3.22
           },
           {
             "word": "cinco",
-            "start": 3.51,
+            "start": 3.22,
             "end": 3.63
           },
           {
             "word": "mil",
             "start": 3.632,
-            "end": 3.885
+            "end": 3.705
           }
         ]
       },
@@ -1900,7 +1900,7 @@
       "id": "6312ea98-a357-4f8c-9929-6b2e8f18f960",
       "name": "418a5c35-43ce-469a-97a3-f8f375a6119f_191.wav",
       "locale": "es_ES",
-      "transcript": "y ((pus)) y pues pudo alimentar a cinco mil hombres podemos ver que se contaron que cinco mil hombres",
+      "transcript": "y ((pus)) y pues pudo alimentar a cinco mil hombres ver que solo se contaron que cinco mil hombres",
       "source": {
         "duration_seconds": 6.59,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -1928,12 +1928,12 @@
           {
             "word": "pudo",
             "start": 1.023,
-            "end": 1.107
+            "end": 1.347
           },
           {
             "word": "alimentar",
-            "start": 1.107,
-            "end": 2.05
+            "start": 1.347,
+            "end": 1.68
           },
           {
             "word": "a",
@@ -1948,17 +1948,12 @@
           {
             "word": "mil",
             "start": 2.632,
-            "end": 3.04
+            "end": 2.87
           },
           {
             "word": "hombres",
-            "start": 3.04,
+            "start": 2.87,
             "end": 3.406
-          },
-          {
-            "word": "podemos",
-            "start": 3.513,
-            "end": 3.901
           },
           {
             "word": "ver",
@@ -1969,6 +1964,11 @@
             "word": "que",
             "start": 4.155,
             "end": 4.267
+          },
+          {
+            "word": "solo",
+            "start": 4.334,
+            "end": 4.648
           },
           {
             "word": "se",
@@ -1998,7 +1998,7 @@
           {
             "word": "hombres",
             "start": 6.24,
-            "end": 6.5
+            "end": 6.34
           }
         ]
       },
@@ -2033,11 +2033,11 @@
           {
             "word": "x",
             "start": 0.1,
-            "end": 0.27
+            "end": 0.39
           },
           {
             "word": "d",
-            "start": 0.27,
+            "start": 0.39,
             "end": 1.34
           },
           {
@@ -2053,7 +2053,7 @@
           {
             "word": "fit",
             "start": 2.173,
-            "end": 2.283
+            "end": 2.433
           }
         ]
       },
@@ -2108,8 +2108,8 @@
           },
           {
             "word": "cinco",
-            "start": 0.734,
-            "end": 0.86
+            "start": 0.874,
+            "end": 1.17
           }
         ]
       },
@@ -2126,7 +2126,7 @@
         "words": [
           {
             "word": "escocia",
-            "start": 0.431,
+            "start": 0.271,
             "end": 0.8
           }
         ]
@@ -2187,8 +2187,8 @@
           },
           {
             "word": "cuatro",
-            "start": 0.33,
-            "end": 0.523
+            "start": 0.56,
+            "end": 0.753
           },
           {
             "word": "cuatro",
@@ -2256,7 +2256,7 @@
           {
             "word": "torres",
             "start": 2.76,
-            "end": 3.33
+            "end": 3.08
           }
         ]
       },
@@ -2345,12 +2345,12 @@
           },
           {
             "word": "en",
-            "start": 7.72,
-            "end": 8.18
+            "start": 7.79,
+            "end": 7.97
           },
           {
             "word": "sendero",
-            "start": 8.18,
+            "start": 7.97,
             "end": 8.679
           },
           {
@@ -2375,7 +2375,7 @@
           },
           {
             "word": "territorio",
-            "start": 10.16,
+            "start": 10.38,
             "end": 10.66
           },
           {
@@ -2454,12 +2454,12 @@
           {
             "word": "dios",
             "start": 2.085,
-            "end": 3.37
+            "end": 2.72
           },
           {
             "word": "ciento",
-            "start": 3.37,
-            "end": 3.673
+            "start": 2.72,
+            "end": 2.973
           },
           {
             "word": "cuarenta",
@@ -2496,7 +2496,7 @@
         "words": [
           {
             "word": "mañana",
-            "start": 0.054,
+            "start": 0.014,
             "end": 0.243
           },
           {
@@ -2507,21 +2507,21 @@
           {
             "word": "destinaba",
             "start": 0.379,
-            "end": 0.62
+            "end": 0.86
           },
           {
             "word": "en",
-            "start": 0.62,
+            "start": 0.86,
             "end": 0.984
           },
           {
             "word": "sus",
             "start": 0.984,
-            "end": 1.17
+            "end": 1.13
           },
           {
             "word": "presupuestos",
-            "start": 1.17,
+            "start": 1.13,
             "end": 1.949
           },
           {
@@ -2537,7 +2537,7 @@
           {
             "word": "turismo",
             "start": 2.803,
-            "end": 2.873
+            "end": 2.993
           },
           {
             "word": "cuarenta",
@@ -2552,11 +2552,11 @@
           {
             "word": "pocos",
             "start": 4.0,
-            "end": 4.087
+            "end": 4.277
           },
           {
             "word": "mil",
-            "start": 4.087,
+            "start": 4.277,
             "end": 4.415
           },
           {
@@ -2585,12 +2585,12 @@
           {
             "word": "un",
             "start": 0.072,
-            "end": 0.419
+            "end": 0.209
           },
           {
             "word": "ladito",
-            "start": 0.419,
-            "end": 0.499
+            "start": 0.209,
+            "end": 0.379
           },
           {
             "word": "de",
@@ -2627,7 +2627,7 @@
         "words": [
           {
             "word": "s.",
-            "start": 0.17,
+            "start": 0.01,
             "end": 0.24
           },
           {
@@ -2638,12 +2638,12 @@
           {
             "word": "t.",
             "start": 0.4,
-            "end": 0.635
+            "end": 0.695
           },
           {
             "word": "p.",
-            "start": 0.635,
-            "end": 0.7
+            "start": 0.695,
+            "end": 0.87
           }
         ]
       },
@@ -2653,7 +2653,7 @@
       "id": "57a2baa9-05ee-4326-9043-382f75936861",
       "name": "5e782313-cd73-4aad-917a-7959b53a01d0_053.wav",
       "locale": "es_ES",
-      "transcript": "yo estoy organizando bueno bueno a los cinco primeros cinco cinco",
+      "transcript": "yo estoy organizando bueno bueno a los cinco primeros cinco cinco cinco",
       "source": {
         "duration_seconds": 7.847,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -2710,6 +2710,11 @@
           },
           {
             "word": "cinco",
+            "start": 7.042,
+            "end": 7.28
+          },
+          {
+            "word": "cinco",
             "start": 7.363,
             "end": 7.776
           }
@@ -2721,25 +2726,20 @@
       "id": "92f33cd4-c69a-424d-8908-84b2d765e012",
       "name": "5b3c3a4b-ff04-4cf4-93ae-392e1de39249_074.wav",
       "locale": "es_ES",
-      "transcript": "diez veinte treinta cuarenta cincuenta",
+      "transcript": "diez veinte cuarenta cincuenta",
       "source": {
         "duration_seconds": 3.117,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
         "words": [
           {
             "word": "diez",
-            "start": 0.359,
+            "start": 0.069,
             "end": 0.43
           },
           {
             "word": "veinte",
             "start": 0.448,
             "end": 1.065
-          },
-          {
-            "word": "treinta",
-            "start": 1.15,
-            "end": 1.68
           },
           {
             "word": "cuarenta",
@@ -2749,7 +2749,7 @@
           {
             "word": "cincuenta",
             "start": 2.275,
-            "end": 2.847
+            "end": 3.117
           }
         ]
       },
@@ -2759,7 +2759,7 @@
       "id": "4ee91ee1-5841-4788-affb-89e4ec13f950",
       "name": "6b8ec67b-8327-442b-957f-76d7a12c1f78_739.wav",
       "locale": "es_ES",
-      "transcript": "numero doscientos treinta y dos mil doce doce recurso",
+      "transcript": "numero doscientos treinta y cinco dos mil doce doce recurso",
       "source": {
         "duration_seconds": 4.39,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -2782,7 +2782,12 @@
           {
             "word": "y",
             "start": 1.68,
-            "end": 1.77
+            "end": 1.95
+          },
+          {
+            "word": "cinco",
+            "start": 1.95,
+            "end": 2.12
           },
           {
             "word": "dos",
@@ -2835,7 +2840,7 @@
           {
             "word": "murcia",
             "start": 0.454,
-            "end": 0.77
+            "end": 0.95
           }
         ]
       },
@@ -2845,24 +2850,24 @@
       "id": "61627d16-27bc-4cde-a159-fbbbd565a142",
       "name": "441530fb-aeba-4bb6-8fa5-77c1f7f133c3_458.wav",
       "locale": "es_ES",
-      "transcript": "ya mañana ganaste en quito y me ganaste bien fajaste en quito tres cero sin apelaciones",
+      "transcript": "ya mañana ganaste en quito y me ganaste bien fajaste en quito tres sin apelaciones",
       "source": {
         "duration_seconds": 5.23,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
         "words": [
           {
             "word": "ya",
-            "start": 0.002,
+            "start": 0.052,
             "end": 0.143
           },
           {
             "word": "mañana",
             "start": 0.144,
-            "end": 0.53
+            "end": 0.23
           },
           {
             "word": "ganaste",
-            "start": 0.53,
+            "start": 0.23,
             "end": 0.6
           },
           {
@@ -2873,11 +2878,11 @@
           {
             "word": "quito",
             "start": 0.83,
-            "end": 0.986
+            "end": 0.936
           },
           {
             "word": "y",
-            "start": 0.986,
+            "start": 0.936,
             "end": 1.05
           },
           {
@@ -2916,18 +2921,13 @@
             "end": 3.19
           },
           {
-            "word": "cero",
-            "start": 3.191,
-            "end": 3.54
-          },
-          {
             "word": "sin",
             "start": 3.7,
-            "end": 4.701
+            "end": 4.271
           },
           {
             "word": "apelaciones",
-            "start": 4.701,
+            "start": 4.271,
             "end": 5.211
           }
         ]
@@ -2950,8 +2950,8 @@
           },
           {
             "word": "dominicana",
-            "start": 1.029,
-            "end": 1.131
+            "start": 0.439,
+            "end": 0.681
           }
         ]
       },
@@ -2989,7 +2989,7 @@
       "id": "21825f50-d78a-47b8-84fb-30ff04144ea7",
       "name": "e9dcf3cd-b48c-42a2-93e5-a80f9f66b796_025.wav",
       "locale": "es_ES",
-      "transcript": "osorio electricidad al lado juzgado",
+      "transcript": "osorio electricidad al lado del juzgado",
       "source": {
         "duration_seconds": 2.737,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -2997,12 +2997,12 @@
           {
             "word": "osorio",
             "start": 0.2,
-            "end": 0.56
+            "end": 0.72
           },
           {
             "word": "electricidad",
-            "start": 0.56,
-            "end": 1.401
+            "start": 0.72,
+            "end": 1.211
           },
           {
             "word": "al",
@@ -3015,8 +3015,13 @@
             "end": 1.95
           },
           {
+            "word": "del",
+            "start": 1.95,
+            "end": 2.12
+          },
+          {
             "word": "juzgado",
-            "start": 2.16,
+            "start": 2.12,
             "end": 2.637
           }
         ]
@@ -3027,7 +3032,7 @@
       "id": "ee55b896-d672-4f43-bf09-bd41f0571718",
       "name": "0048a8a8-f223-4487-9eae-dd3efc5eafef_228.wav",
       "locale": "es_ES",
-      "transcript": "jota jota corso",
+      "transcript": "jota corso",
       "source": {
         "duration_seconds": 1.56,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -3038,13 +3043,8 @@
             "end": 0.484
           },
           {
-            "word": "jota",
-            "start": 0.484,
-            "end": 1.067
-          },
-          {
             "word": "corso",
-            "start": 1.067,
+            "start": 0.917,
             "end": 1.54
           }
         ]
@@ -3073,7 +3073,7 @@
           {
             "word": "fisica",
             "start": 0.767,
-            "end": 0.89
+            "end": 1.06
           },
           {
             "word": "de",
@@ -3112,8 +3112,8 @@
           },
           {
             "word": "tres",
-            "start": 4.348,
-            "end": 4.45
+            "start": 4.418,
+            "end": 4.61
           }
         ]
       },
@@ -3131,12 +3131,12 @@
           {
             "word": "y",
             "start": 0.09,
-            "end": 0.24
+            "end": 0.32
           },
           {
             "word": "el",
-            "start": 0.24,
-            "end": 0.65
+            "start": 0.32,
+            "end": 0.4
           },
           {
             "word": "chino",
@@ -3203,7 +3203,7 @@
       "id": "4b8014b3-82a1-426c-8411-6ac4081b726c",
       "name": "41cdc9ed-63f3-4af3-b2cb-c320ff853297_012.wav",
       "locale": "es_ES",
-      "transcript": "mañana a y una k.",
+      "transcript": "mañana dos a y una k.",
       "source": {
         "duration_seconds": 1.262,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -3211,7 +3211,12 @@
           {
             "word": "mañana",
             "start": 0.032,
-            "end": 0.211
+            "end": 0.281
+          },
+          {
+            "word": "dos",
+            "start": 0.281,
+            "end": 0.368
           },
           {
             "word": "a",
@@ -3230,8 +3235,8 @@
           },
           {
             "word": "k.",
-            "start": 1.193,
-            "end": 1.262
+            "start": 1.043,
+            "end": 1.122
           }
         ]
       },
@@ -3241,7 +3246,7 @@
       "id": "854475df-7eb8-45a0-84a7-c7b087b159fc",
       "name": "32e2a7a1-7ae8-42a0-bd05-2308b1a00d0b_164.wav",
       "locale": "es_ES",
-      "transcript": "mañana pedro moya",
+      "transcript": "mañana moya",
       "source": {
         "duration_seconds": 1.01,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -3252,14 +3257,9 @@
             "end": 0.235
           },
           {
-            "word": "pedro",
-            "start": 0.276,
-            "end": 0.555
-          },
-          {
             "word": "moya",
             "start": 0.555,
-            "end": 0.626
+            "end": 1.006
           }
         ]
       },
@@ -3277,12 +3277,12 @@
           {
             "word": "c.",
             "start": 0.0,
-            "end": 0.249
+            "end": 0.189
           },
           {
             "word": "i.",
             "start": 0.25,
-            "end": 0.725
+            "end": 0.505
           },
           {
             "word": "s.",
@@ -3297,16 +3297,16 @@
           {
             "word": "n.",
             "start": 1.429,
-            "end": 1.678
+            "end": 1.628
           },
           {
             "word": "c.",
-            "start": 1.678,
-            "end": 2.04
+            "start": 1.628,
+            "end": 1.89
           },
           {
             "word": "i.",
-            "start": 2.04,
+            "start": 1.89,
             "end": 2.11
           }
         ]
@@ -3325,11 +3325,11 @@
           {
             "word": "y",
             "start": 0.04,
-            "end": 0.33
+            "end": 0.18
           },
           {
             "word": "desembocar",
-            "start": 0.33,
+            "start": 0.18,
             "end": 0.666
           },
           {
@@ -3387,8 +3387,8 @@
           },
           {
             "word": "o",
-            "start": 3.508,
-            "end": 4.085
+            "start": 3.818,
+            "end": 4.235
           },
           {
             "word": "r.",
@@ -3416,16 +3416,16 @@
           {
             "word": "eh",
             "start": 0.074,
-            "end": 0.42
+            "end": 0.28
           },
           {
             "word": "la",
-            "start": 0.42,
+            "start": 0.28,
             "end": 0.59
           },
           {
             "word": "paz",
-            "start": 0.92,
+            "start": 0.66,
             "end": 1.0
           }
         ]
@@ -3479,12 +3479,12 @@
           {
             "word": "mismo",
             "start": 3.611,
-            "end": 3.98
+            "end": 3.87
           },
           {
             "word": "estado",
-            "start": 3.98,
-            "end": 4.24
+            "start": 3.87,
+            "end": 4.55
           }
         ]
       },
@@ -3506,7 +3506,7 @@
           },
           {
             "word": "comillas",
-            "start": 0.752,
+            "start": 0.592,
             "end": 0.88
           }
         ]
@@ -3557,7 +3557,7 @@
         "words": [
           {
             "word": "treinta",
-            "start": 0.15,
+            "start": 0.28,
             "end": 0.35
           },
           {
@@ -3577,12 +3577,12 @@
           },
           {
             "word": "sesenta",
-            "start": 1.012,
-            "end": 1.11
+            "start": 0.812,
+            "end": 0.99
           },
           {
             "word": "y",
-            "start": 1.11,
+            "start": 0.99,
             "end": 1.23
           },
           {
@@ -3680,8 +3680,8 @@
           },
           {
             "word": "circuito",
-            "start": 2.887,
-            "end": 3.09
+            "start": 2.647,
+            "end": 3.04
           },
           {
             "word": "de",
@@ -3713,8 +3713,8 @@
           },
           {
             "word": "pesetas",
-            "start": 0.438,
-            "end": 0.94
+            "start": 0.288,
+            "end": 0.62
           }
         ]
       },
@@ -3792,7 +3792,7 @@
           {
             "word": "kramer",
             "start": 4.658,
-            "end": 4.97
+            "end": 4.79
           }
         ]
       },
@@ -3810,11 +3810,11 @@
           {
             "word": "alli",
             "start": 0.001,
-            "end": 0.17
+            "end": 0.13
           },
           {
             "word": "en",
-            "start": 0.17,
+            "start": 0.13,
             "end": 0.23
           },
           {
@@ -3868,7 +3868,7 @@
           {
             "word": "mañana",
             "start": 1.561,
-            "end": 2.528
+            "end": 2.688
           }
         ]
       },
@@ -3885,8 +3885,8 @@
         "words": [
           {
             "word": "mañana",
-            "start": 0.211,
-            "end": 0.279
+            "start": 0.001,
+            "end": 0.089
           },
           {
             "word": "((sa))",
@@ -3941,7 +3941,7 @@
       "id": "6a4e0c9e-aff1-4f81-85ee-51de7fd4cb67",
       "name": "279ee424-6995-40bb-9a6d-00a8b7ee402c_626.wav",
       "locale": "es_ES",
-      "transcript": "el colegial del trabajo en el gimnasio los andes",
+      "transcript": "el colegial del en el gimnasio los andes",
       "source": {
         "duration_seconds": 1.922,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -3962,13 +3962,8 @@
             "end": 0.64
           },
           {
-            "word": "trabajo",
-            "start": 0.64,
-            "end": 0.72
-          },
-          {
             "word": "en",
-            "start": 0.72,
+            "start": 0.95,
             "end": 1.03
           },
           {
@@ -3984,12 +3979,12 @@
           {
             "word": "los",
             "start": 1.47,
-            "end": 1.86
+            "end": 1.51
           },
           {
             "word": "andes",
-            "start": 1.86,
-            "end": 1.922
+            "start": 1.51,
+            "end": 1.762
           }
         ]
       },
@@ -3999,14 +3994,14 @@
       "id": "0a3dbc23-2915-44e3-a9d8-caf1f6b0c9a0",
       "name": "cca0a175-5a3d-4326-a8d0-26036fff806e_027.wav",
       "locale": "es_ES",
-      "transcript": "de la del e",
+      "transcript": "de la del cuadrante e",
       "source": {
         "duration_seconds": 1.924,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
         "words": [
           {
             "word": "de",
-            "start": 0.001,
+            "start": 0.061,
             "end": 0.15
           },
           {
@@ -4018,6 +4013,11 @@
             "word": "del",
             "start": 0.65,
             "end": 0.769
+          },
+          {
+            "word": "cuadrante",
+            "start": 0.77,
+            "end": 1.02
           },
           {
             "word": "e",
@@ -4032,7 +4032,7 @@
       "id": "dafae5ae-47bf-4b5b-9be9-d6c6aa88710f",
       "name": "05bbe589-ae03-4fa6-b245-446d879b63d7_111.wav",
       "locale": "es_ES",
-      "transcript": "hipozoospermia el volumen del eyaculado eh sea menor de uno coma cinco",
+      "transcript": "hipozoospermia el volumen del eyaculado eh sea menor de coma cinco",
       "source": {
         "duration_seconds": 5.22,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -4060,7 +4060,7 @@
           {
             "word": "eyaculado",
             "start": 2.072,
-            "end": 2.57
+            "end": 2.48
           },
           {
             "word": "eh",
@@ -4083,11 +4083,6 @@
             "end": 4.255
           },
           {
-            "word": "uno",
-            "start": 4.255,
-            "end": 4.445
-          },
-          {
             "word": "coma",
             "start": 4.453,
             "end": 4.603
@@ -4095,7 +4090,7 @@
           {
             "word": "cinco",
             "start": 4.729,
-            "end": 4.937
+            "end": 5.207
           }
         ]
       },
@@ -4105,7 +4100,7 @@
       "id": "b0139435-c702-4aa5-ac27-1b4b644e6e47",
       "name": "dbaf0a73-7b60-48c7-a098-266ca46f8cd3_632.wav",
       "locale": "es_ES",
-      "transcript": "de eh",
+      "transcript": "de olimpo eh",
       "source": {
         "duration_seconds": 0.973,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -4113,7 +4108,12 @@
           {
             "word": "de",
             "start": 0.0,
-            "end": 0.09
+            "end": 0.35
+          },
+          {
+            "word": "olimpo",
+            "start": 0.35,
+            "end": 0.73
           },
           {
             "word": "eh",
@@ -4147,12 +4147,12 @@
         "words": [
           {
             "word": "santa",
-            "start": 0.001,
+            "start": 0.171,
             "end": 0.38
           },
           {
             "word": "maria",
-            "start": 0.872,
+            "start": 0.432,
             "end": 1.085
           }
         ]
@@ -4171,7 +4171,7 @@
           {
             "word": "y",
             "start": 0.04,
-            "end": 0.175
+            "end": 0.215
           },
           {
             "word": "las",
@@ -4228,7 +4228,7 @@
           },
           {
             "word": "cinco",
-            "start": 0.53,
+            "start": 0.42,
             "end": 1.247
           }
         ]
@@ -4239,7 +4239,7 @@
       "id": "0acb5924-290c-4f77-869d-74628e16e5b1",
       "name": "13998813-0c5b-4176-90fe-5ae6e982653c_013.wav",
       "locale": "es_ES",
-      "transcript": "valencia valencia diecinueve de abril de mil novecientos noventa y siete",
+      "transcript": "valencia valencia diecinueve de abril de mil novecientos y siete",
       "source": {
         "duration_seconds": 4.152,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -4277,17 +4277,12 @@
           {
             "word": "mil",
             "start": 2.608,
-            "end": 2.947
+            "end": 2.737
           },
           {
             "word": "novecientos",
             "start": 3.037,
             "end": 3.351
-          },
-          {
-            "word": "noventa",
-            "start": 3.354,
-            "end": 3.645
           },
           {
             "word": "y",
@@ -4297,7 +4292,7 @@
           {
             "word": "siete",
             "start": 3.728,
-            "end": 4.082
+            "end": 3.832
           }
         ]
       },
@@ -4396,7 +4391,7 @@
       "id": "47df6420-7c96-4f1d-acad-901a828054a6",
       "name": "043c535c-314a-4a5b-b361-80ef35895299_017.wav",
       "locale": "es_ES",
-      "transcript": "y esto ya lo puede hacer la cricut joy extra pero no lo hace la cricut ese es es la diferencia principal de el cambio en el ancho que de la joy es once cuarenta y tres y la joy mañana es veintiuno punto cinco",
+      "transcript": "y esto ya lo puede hacer la cricut joy extra pero no lo hace la cricut joy ese es es la diferencia principal de el cambio en el ancho que de la joy es once cuarenta y tres y la joy mañana es veintiuno punto cinco",
       "source": {
         "duration_seconds": 15.1,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -4424,16 +4419,16 @@
           {
             "word": "puede",
             "start": 1.039,
-            "end": 1.119
+            "end": 1.309
           },
           {
             "word": "hacer",
-            "start": 1.119,
+            "start": 1.309,
             "end": 1.642
           },
           {
             "word": "la",
-            "start": 1.647,
+            "start": 1.727,
             "end": 1.813
           },
           {
@@ -4448,7 +4443,7 @@
           },
           {
             "word": "extra",
-            "start": 2.88,
+            "start": 2.42,
             "end": 2.944
           },
           {
@@ -4482,13 +4477,18 @@
             "end": 4.308
           },
           {
+            "word": "joy",
+            "start": 4.308,
+            "end": 4.6
+          },
+          {
             "word": "ese",
             "start": 4.676,
-            "end": 5.1
+            "end": 4.99
           },
           {
             "word": "es",
-            "start": 5.1,
+            "start": 4.99,
             "end": 5.25
           },
           {
@@ -4524,16 +4524,16 @@
           {
             "word": "cambio",
             "start": 8.161,
-            "end": 8.4
+            "end": 8.7
           },
           {
             "word": "en",
-            "start": 8.4,
-            "end": 8.82
+            "start": 8.7,
+            "end": 8.92
           },
           {
             "word": "el",
-            "start": 8.82,
+            "start": 8.92,
             "end": 9.05
           },
           {
@@ -4559,11 +4559,11 @@
           {
             "word": "joy",
             "start": 10.41,
-            "end": 10.5
+            "end": 10.73
           },
           {
             "word": "es",
-            "start": 10.5,
+            "start": 10.73,
             "end": 10.92
           },
           {
@@ -4598,7 +4598,7 @@
           },
           {
             "word": "joy",
-            "start": 12.835,
+            "start": 12.905,
             "end": 13.147
           },
           {
@@ -4614,7 +4614,7 @@
           {
             "word": "veintiuno",
             "start": 13.858,
-            "end": 14.36
+            "end": 13.95
           },
           {
             "word": "punto",
@@ -4642,7 +4642,7 @@
           {
             "word": "mañana",
             "start": 0.03,
-            "end": 0.175
+            "end": 0.345
           }
         ]
       },
@@ -4671,7 +4671,7 @@
         "words": [
           {
             "word": "doce",
-            "start": 0.24,
+            "start": 0.08,
             "end": 0.43
           }
         ]
@@ -4733,11 +4733,11 @@
           {
             "word": "a",
             "start": 0.781,
-            "end": 1.489
+            "end": 1.399
           },
           {
             "word": "b",
-            "start": 1.489,
+            "start": 1.399,
             "end": 1.553
           }
         ]
@@ -4820,7 +4820,7 @@
       "id": "ab58c719-922b-4cfa-b5c1-61ae600ac3d7",
       "name": "a403aeae-7dd8-4620-8579-1a45c831a4d6_034.wav",
       "locale": "es_ES",
-      "transcript": "menos tres uno y cero cero y finalmente con pe sub cuatro",
+      "transcript": "menos uno y cero cero y finalmente con pe sub cuatro",
       "source": {
         "duration_seconds": 4.76,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -4829,11 +4829,6 @@
             "word": "menos",
             "start": 0.001,
             "end": 0.33
-          },
-          {
-            "word": "tres",
-            "start": 0.35,
-            "end": 0.69
           },
           {
             "word": "uno",
@@ -4872,7 +4867,7 @@
           },
           {
             "word": "pe",
-            "start": 3.836,
+            "start": 3.796,
             "end": 3.933
           },
           {
@@ -4883,7 +4878,7 @@
           {
             "word": "cuatro",
             "start": 4.18,
-            "end": 4.76
+            "end": 4.27
           }
         ]
       },
@@ -4920,12 +4915,12 @@
           },
           {
             "word": "sesenta",
-            "start": 1.139,
-            "end": 1.21
+            "start": 1.349,
+            "end": 1.5
           },
           {
             "word": "y",
-            "start": 1.21,
+            "start": 1.5,
             "end": 1.59
           },
           {
@@ -4941,7 +4936,7 @@
       "id": "90f41199-8678-4287-bac3-4c0424261856",
       "name": "7bbcf16a-8a7e-4e3b-bf35-7117adf81d56_003.wav",
       "locale": "es_ES",
-      "transcript": "en la de nueva york",
+      "transcript": "en la ciudad de nueva york",
       "source": {
         "duration_seconds": 1.262,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -4949,12 +4944,17 @@
           {
             "word": "en",
             "start": 0.0,
-            "end": 0.1
+            "end": 0.06
           },
           {
             "word": "la",
-            "start": 0.1,
+            "start": 0.06,
             "end": 0.193
+          },
+          {
+            "word": "ciudad",
+            "start": 0.243,
+            "end": 0.55
           },
           {
             "word": "de",
@@ -4964,12 +4964,12 @@
           {
             "word": "nueva",
             "start": 0.85,
-            "end": 0.9
+            "end": 0.95
           },
           {
             "word": "york",
-            "start": 0.9,
-            "end": 1.002
+            "start": 0.95,
+            "end": 1.262
           }
         ]
       },
@@ -4986,7 +4986,7 @@
         "words": [
           {
             "word": "asociada",
-            "start": 0.3,
+            "start": 0.49,
             "end": 0.749
           },
           {
@@ -5035,12 +5035,12 @@
           {
             "word": "de",
             "start": 0.03,
-            "end": 0.172
+            "end": 0.222
           },
           {
             "word": "venezuela",
-            "start": 0.172,
-            "end": 0.258
+            "start": 0.222,
+            "end": 0.448
           }
         ]
       },
@@ -5050,7 +5050,7 @@
       "id": "5855b832-afa0-449c-b7b9-3897cfee24d0",
       "name": "92f03920-4f1e-42b6-8c81-daa7bdfb940d_001.wav",
       "locale": "es_ES",
-      "transcript": "porque es una muy conocida en nuestro y en mañana salamanca",
+      "transcript": "porque es una muy conocida en nuestro y en salamanca",
       "source": {
         "duration_seconds": 4.21,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -5101,13 +5101,8 @@
             "end": 3.254
           },
           {
-            "word": "mañana",
-            "start": 3.31,
-            "end": 3.716
-          },
-          {
             "word": "salamanca",
-            "start": 3.716,
+            "start": 3.466,
             "end": 4.177
           }
         ]
@@ -5125,7 +5120,7 @@
         "words": [
           {
             "word": "seguimos",
-            "start": 0.452,
+            "start": 0.112,
             "end": 0.62
           },
           {
@@ -5151,16 +5146,16 @@
           {
             "word": "este",
             "start": 2.14,
-            "end": 2.35
+            "end": 2.42
           },
           {
             "word": "bloque",
-            "start": 2.35,
-            "end": 2.45
+            "start": 2.42,
+            "end": 2.62
           },
           {
             "word": "se",
-            "start": 2.45,
+            "start": 2.62,
             "end": 2.69
           },
           {
@@ -5205,12 +5200,12 @@
         "words": [
           {
             "word": "en",
-            "start": 0.0,
-            "end": 0.624
+            "start": 0.12,
+            "end": 0.224
           },
           {
             "word": "ayacucho",
-            "start": 0.624,
+            "start": 0.224,
             "end": 1.12
           }
         ]
@@ -5221,7 +5216,7 @@
       "id": "df883bc8-7140-4f16-80ba-3eb65c6546e6",
       "name": "94fb0d48-2617-4367-9e09-9e5b9452ac5f_104.wav",
       "locale": "es_ES",
-      "transcript": "el de oros",
+      "transcript": "el seis de oros",
       "source": {
         "duration_seconds": 1.3,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -5232,13 +5227,18 @@
             "end": 0.22
           },
           {
+            "word": "seis",
+            "start": 0.22,
+            "end": 0.48
+          },
+          {
             "word": "de",
             "start": 0.48,
-            "end": 0.64
+            "end": 1.04
           },
           {
             "word": "oros",
-            "start": 0.64,
+            "start": 1.04,
             "end": 1.13
           }
         ]
@@ -5249,7 +5249,7 @@
       "id": "504866fa-11d3-4318-a9bb-9838b4cfbd4b",
       "name": "a5af416b-c804-446a-aa5e-942d418a7c86_015.wav",
       "locale": "es_ES",
-      "transcript": "scar h esta claro la scar l",
+      "transcript": "scar h esta la scar l",
       "source": {
         "duration_seconds": 2.35,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -5270,13 +5270,8 @@
             "end": 1.04
           },
           {
-            "word": "claro",
-            "start": 1.08,
-            "end": 1.44
-          },
-          {
             "word": "la",
-            "start": 1.5,
+            "start": 1.65,
             "end": 1.82
           },
           {
@@ -5287,7 +5282,7 @@
           {
             "word": "l",
             "start": 2.01,
-            "end": 2.33
+            "end": 2.07
           }
         ]
       },
@@ -5297,14 +5292,14 @@
       "id": "99223de4-a70b-4832-858e-ceea05628260",
       "name": "bcf44fff-35ac-491a-a0a1-1da6568ac8dd_006.wav",
       "locale": "es_ES",
-      "transcript": "que hay que acostumbrarse seguro bueno bueno la fecha nace en el ano ano setenta y cuatro y cuatro si si casi casi practicamente cincuenta anos casi (())",
+      "transcript": "que hay que acostumbrarse seguro bueno bueno la fecha nace en el ano ano setenta y cuatro setenta y cuatro si si casi casi practicamente cincuenta anos casi (())",
       "source": {
         "duration_seconds": 9.96,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
         "words": [
           {
             "word": "que",
-            "start": 0.0,
+            "start": 0.06,
             "end": 0.2
           },
           {
@@ -5388,6 +5383,11 @@
             "end": 5.68
           },
           {
+            "word": "setenta",
+            "start": 5.68,
+            "end": 5.904
+          },
+          {
             "word": "y",
             "start": 5.97,
             "end": 6.09
@@ -5430,12 +5430,12 @@
           {
             "word": "anos",
             "start": 9.41,
-            "end": 9.68
+            "end": 9.61
           },
           {
             "word": "casi",
-            "start": 9.68,
-            "end": 9.76
+            "start": 9.61,
+            "end": 9.92
           },
           {
             "word": "(())",
@@ -5458,17 +5458,17 @@
           {
             "word": "c",
             "start": 0.014,
-            "end": 0.15
+            "end": 0.1
           },
           {
             "word": "r",
-            "start": 0.15,
+            "start": 0.1,
             "end": 0.339
           },
           {
             "word": "m",
             "start": 0.348,
-            "end": 0.63
+            "end": 0.8
           }
         ]
       },
@@ -5478,7 +5478,7 @@
       "id": "9a559905-ea5c-4204-8bc0-6b49567d4618",
       "name": "ca77a577-0cbe-4af6-aafc-33927bc6e613_421.wav",
       "locale": "es_ES",
-      "transcript": "se unen a la siembra dal-",
+      "transcript": "se a la siembra dal-",
       "source": {
         "duration_seconds": 1.68,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -5486,12 +5486,7 @@
           {
             "word": "se",
             "start": 0.0,
-            "end": 0.31
-          },
-          {
-            "word": "unen",
-            "start": 0.31,
-            "end": 0.4
+            "end": 0.14
           },
           {
             "word": "a",
@@ -5506,11 +5501,11 @@
           {
             "word": "siembra",
             "start": 0.7,
-            "end": 1.02
+            "end": 1.12
           },
           {
             "word": "dal-",
-            "start": 1.02,
+            "start": 1.12,
             "end": 1.58
           }
         ]
@@ -5521,7 +5516,7 @@
       "id": "bcb0e37d-7167-45ca-8aab-1c63db0e2b1c",
       "name": "e7114bf8-46ce-4ad4-95bb-b1af0b24aa2b_161.wav",
       "locale": "es_ES",
-      "transcript": "y luego pues mi intencion es eh sobre este ano tengo que crecer crecer porque ahora son sesenta y seis euros de cuota pero en cuanto pase un ano nos vamos a los los a cuanto es creo que son trescientos veinte euros la cuota minima a pagar luego",
+      "transcript": "y luego pues mi intencion es eh sobre este ano tengo que crecer crecer porque ahora son sesenta y seis euros de cuota pero en cuanto pase un ano nos vamos a los los a cuanto es creo que son veinte euros la cuota minima a pagar luego",
       "source": {
         "duration_seconds": 14.063,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -5629,11 +5624,11 @@
           {
             "word": "euros",
             "start": 5.92,
-            "end": 6.0
+            "end": 6.16
           },
           {
             "word": "de",
-            "start": 6.0,
+            "start": 6.16,
             "end": 6.24
           },
           {
@@ -5654,11 +5649,11 @@
           {
             "word": "cuanto",
             "start": 6.8,
-            "end": 7.12
+            "end": 7.19
           },
           {
             "word": "pase",
-            "start": 7.12,
+            "start": 7.19,
             "end": 7.36
           },
           {
@@ -5724,12 +5719,7 @@
           {
             "word": "son",
             "start": 10.88,
-            "end": 11.68
-          },
-          {
-            "word": "trescientos",
-            "start": 11.68,
-            "end": 11.76
+            "end": 11.04
           },
           {
             "word": "veinte",
@@ -5754,11 +5744,11 @@
           {
             "word": "minima",
             "start": 12.74,
-            "end": 13.26
+            "end": 12.82
           },
           {
             "word": "a",
-            "start": 13.26,
+            "start": 12.82,
             "end": 13.3
           },
           {
@@ -5769,7 +5759,7 @@
           {
             "word": "luego",
             "start": 13.68,
-            "end": 13.763
+            "end": 14.063
           }
         ]
       },
@@ -5811,7 +5801,7 @@
           },
           {
             "word": "al",
-            "start": 2.72,
+            "start": 2.57,
             "end": 2.96
           },
           {
@@ -5831,7 +5821,7 @@
           },
           {
             "word": "florida",
-            "start": 3.47,
+            "start": 3.41,
             "end": 3.6
           },
           {
@@ -5842,11 +5832,11 @@
           {
             "word": "los",
             "start": 3.68,
-            "end": 3.93
+            "end": 3.76
           },
           {
             "word": "mañana",
-            "start": 3.93,
+            "start": 3.76,
             "end": 4.0
           },
           {
@@ -5890,15 +5880,20 @@
       "id": "d4e016b5-a9a2-4be6-b26c-4c46ba738fae",
       "name": "4ddc713b-accb-4643-8fc4-d3ae5d33321e_039.wav",
       "locale": "es_ES",
-      "transcript": "claro no no tiene sentido la cuesta cien- cuatrocientos ochenta pesos no",
+      "transcript": "claro claro no no tiene sentido la cuesta cien- cuatrocientos ochenta no",
       "source": {
         "duration_seconds": 4.86,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
         "words": [
           {
             "word": "claro",
-            "start": 0.04,
+            "start": 0.1,
             "end": 0.48
+          },
+          {
+            "word": "claro",
+            "start": 0.48,
+            "end": 0.66
           },
           {
             "word": "no",
@@ -5944,11 +5939,6 @@
             "word": "ochenta",
             "start": 3.884,
             "end": 4.16
-          },
-          {
-            "word": "pesos",
-            "start": 4.43,
-            "end": 4.56
           },
           {
             "word": "no",
@@ -6056,7 +6046,7 @@
       "id": "ac861ca4-e2a9-4c5d-934a-6c5ae7b91958",
       "name": "cea354fc-2116-4bb8-af77-eaf92a903258_034.wav",
       "locale": "es_ES",
-      "transcript": "mañana muchos barrios se inundan en este llueve y se y se inundan y que bueno la gestion no ha",
+      "transcript": "mañana muchos barrios se inundan en puerto este llueve y se y se inundan y que la gestion no ha",
       "source": {
         "duration_seconds": 5.18,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -6092,13 +6082,18 @@
             "end": 1.52
           },
           {
+            "word": "puerto",
+            "start": 1.52,
+            "end": 1.76
+          },
+          {
             "word": "este",
             "start": 1.76,
             "end": 2.0
           },
           {
             "word": "llueve",
-            "start": 2.16,
+            "start": 2.11,
             "end": 2.56
           },
           {
@@ -6109,21 +6104,21 @@
           {
             "word": "se",
             "start": 2.64,
-            "end": 2.96
+            "end": 2.8
           },
           {
             "word": "y",
-            "start": 2.96,
+            "start": 2.8,
             "end": 3.04
           },
           {
             "word": "se",
             "start": 3.04,
-            "end": 3.2
+            "end": 3.54
           },
           {
             "word": "inundan",
-            "start": 3.2,
+            "start": 3.54,
             "end": 3.68
           },
           {
@@ -6137,28 +6132,23 @@
             "end": 3.92
           },
           {
-            "word": "bueno",
-            "start": 3.92,
-            "end": 4.16
-          },
-          {
             "word": "la",
             "start": 4.16,
-            "end": 4.56
+            "end": 4.32
           },
           {
             "word": "gestion",
-            "start": 4.56,
+            "start": 4.32,
             "end": 4.67
           },
           {
             "word": "no",
             "start": 4.72,
-            "end": 4.88
+            "end": 4.98
           },
           {
             "word": "ha",
-            "start": 4.88,
+            "start": 4.98,
             "end": 5.18
           }
         ]
@@ -6169,7 +6159,7 @@
       "id": "2ec21726-afd8-46d1-a0d6-95a014d4168b",
       "name": "1bc79117-80b9-4aa5-9fc1-562ec0a485da_092.wav",
       "locale": "es_ES",
-      "transcript": "y falta el distrito uruapan",
+      "transcript": "y mañana falta el distrito uruapan",
       "source": {
         "duration_seconds": 2.08,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -6177,7 +6167,12 @@
           {
             "word": "y",
             "start": 0.07,
-            "end": 0.17
+            "end": 0.13
+          },
+          {
+            "word": "mañana",
+            "start": 0.13,
+            "end": 0.32
           },
           {
             "word": "falta",
@@ -6191,12 +6186,12 @@
           },
           {
             "word": "distrito",
-            "start": 1.34,
-            "end": 1.52
+            "start": 0.88,
+            "end": 1.9
           },
           {
             "word": "uruapan",
-            "start": 1.52,
+            "start": 1.9,
             "end": 2.08
           }
         ]
@@ -6207,7 +6202,7 @@
       "id": "d5fbfbc2-9a03-44b0-9b7d-61e485d08aaf",
       "name": "9dad1add-62a7-45fc-982c-cfc413b56939_476.wav",
       "locale": "es_ES",
-      "transcript": "en la ciudad de david un salvador salvador que es cristo el senor",
+      "transcript": "en la de david un salvador salvador que es cristo el senor",
       "source": {
         "duration_seconds": 5.49,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -6223,13 +6218,8 @@
             "end": 0.24
           },
           {
-            "word": "ciudad",
-            "start": 0.32,
-            "end": 0.44
-          },
-          {
             "word": "de",
-            "start": 0.44,
+            "start": 0.68,
             "end": 0.857
           },
           {
@@ -6270,12 +6260,12 @@
           {
             "word": "el",
             "start": 4.64,
-            "end": 4.88
+            "end": 4.73
           },
           {
             "word": "senor",
-            "start": 4.88,
-            "end": 5.13
+            "start": 4.73,
+            "end": 5.49
           }
         ]
       },
@@ -6871,7 +6861,7 @@
           {
             "word": "pertenece",
             "start": 1.91,
-            "end": 2.56
+            "end": 1.98
           },
           {
             "word": "al",
@@ -6891,7 +6881,7 @@
           {
             "word": "ica",
             "start": 3.28,
-            "end": 3.428
+            "end": 3.388
           }
         ]
       },
@@ -6908,12 +6898,12 @@
         "words": [
           {
             "word": "al",
-            "start": 0.0,
-            "end": 0.06
+            "start": 0.08,
+            "end": 0.22
           },
           {
             "word": "valor",
-            "start": 0.06,
+            "start": 0.22,
             "end": 0.53
           },
           {
@@ -6924,12 +6914,12 @@
           {
             "word": "ye",
             "start": 0.688,
-            "end": 0.85
+            "end": 0.81
           },
           {
             "word": "doce",
-            "start": 0.85,
-            "end": 1.043
+            "start": 0.81,
+            "end": 1.283
           }
         ]
       },
@@ -6951,8 +6941,8 @@
           },
           {
             "word": "cuatro",
-            "start": 0.67,
-            "end": 0.75
+            "start": 0.49,
+            "end": 0.71
           },
           {
             "word": "tres",
@@ -6984,8 +6974,8 @@
           },
           {
             "word": "hackenbeck",
-            "start": 0.72,
-            "end": 0.82
+            "start": 0.99,
+            "end": 1.21
           }
         ]
       },
@@ -7036,7 +7026,7 @@
           {
             "word": "colocando",
             "start": 0.0,
-            "end": 0.22
+            "end": 0.37
           },
           {
             "word": "turno",
@@ -7051,12 +7041,12 @@
           {
             "word": "sabana",
             "start": 1.98,
-            "end": 2.64
+            "end": 2.37
           },
           {
             "word": "grande",
-            "start": 2.64,
-            "end": 2.78
+            "start": 2.37,
+            "end": 2.45
           }
         ]
       },
@@ -7073,7 +7063,7 @@
         "words": [
           {
             "word": "voy",
-            "start": 0.07,
+            "start": 0.14,
             "end": 0.23
           },
           {
@@ -7099,7 +7089,7 @@
           {
             "word": "washington",
             "start": 1.36,
-            "end": 1.82
+            "end": 1.44
           }
         ]
       },
@@ -7109,7 +7099,7 @@
       "id": "6127f0be-c3fb-40f6-aa3c-404239b09d86",
       "name": "ab19e284-6b09-4f9e-9783-932b5e642fc7_114.wav",
       "locale": "es_ES",
-      "transcript": "la luisita fabrica de pastas artesanales artesanales tenemos las pastas tradicionales pero tambien innovamos con nuevas pastas y la luisita a la vanguardia la comarca para la region veinticinco mañana mayo cuatrocientos cincuenta y cinco viedma",
+      "transcript": "la luisita fabrica de pastas artesanales artesanales tenemos las pastas tradicionales pero tambien innovamos nuevas pastas y la luisita a la vanguardia desde la comarca para la region veinticinco mañana mayo cuatrocientos cincuenta y cinco viedma",
       "source": {
         "duration_seconds": 16.24,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -7117,11 +7107,11 @@
           {
             "word": "la",
             "start": 0.04,
-            "end": 0.61
+            "end": 0.24
           },
           {
             "word": "luisita",
-            "start": 0.61,
+            "start": 0.24,
             "end": 1.12
           },
           {
@@ -7177,17 +7167,12 @@
           {
             "word": "tambien",
             "start": 5.58,
-            "end": 6.34
+            "end": 6.08
           },
           {
             "word": "innovamos",
-            "start": 6.34,
+            "start": 6.08,
             "end": 6.55
-          },
-          {
-            "word": "con",
-            "start": 6.55,
-            "end": 6.8
           },
           {
             "word": "nuevas",
@@ -7227,7 +7212,12 @@
           {
             "word": "vanguardia",
             "start": 9.83,
-            "end": 10.64
+            "end": 10.69
+          },
+          {
+            "word": "desde",
+            "start": 10.72,
+            "end": 10.94
           },
           {
             "word": "la",
@@ -7237,21 +7227,21 @@
           {
             "word": "comarca",
             "start": 11.09,
-            "end": 11.52
+            "end": 11.34
           },
           {
             "word": "para",
-            "start": 11.52,
+            "start": 11.34,
             "end": 11.76
           },
           {
             "word": "la",
             "start": 11.76,
-            "end": 12.11
+            "end": 11.92
           },
           {
             "word": "region",
-            "start": 12.11,
+            "start": 11.92,
             "end": 12.48
           },
           {
@@ -7267,11 +7257,11 @@
           {
             "word": "mayo",
             "start": 13.36,
-            "end": 13.76
+            "end": 13.82
           },
           {
             "word": "cuatrocientos",
-            "start": 13.76,
+            "start": 13.82,
             "end": 14.46
           },
           {
@@ -7381,7 +7371,7 @@
           {
             "word": "purusque",
             "start": 0.88,
-            "end": 1.24
+            "end": 1.23
           }
         ]
       },
@@ -7414,7 +7404,7 @@
           {
             "word": "mañana",
             "start": 1.52,
-            "end": 1.724
+            "end": 1.804
           }
         ]
       },
@@ -7424,30 +7414,25 @@
       "id": "da53179b-5a0a-4ddf-81f2-92881c2abdda",
       "name": "a37cb1e9-9bfb-4ec1-b937-18768b2cacb9_051.wav",
       "locale": "es_ES",
-      "transcript": "pero supongamos que mañana treinta mil soles soles quiere decir que la no debe superar ese monto de treinta mil soles",
+      "transcript": "pero supongamos que treinta mil soles soles quiere decir que la ventanilla no debe superar ese monto de treinta mil soles",
       "source": {
         "duration_seconds": 7.14,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
         "words": [
           {
             "word": "pero",
-            "start": 0.03,
+            "start": 0.07,
             "end": 0.32
           },
           {
             "word": "supongamos",
             "start": 0.32,
-            "end": 0.46
+            "end": 0.88
           },
           {
             "word": "que",
-            "start": 0.46,
+            "start": 0.88,
             "end": 0.959
-          },
-          {
-            "word": "mañana",
-            "start": 0.96,
-            "end": 1.439
           },
           {
             "word": "treinta",
@@ -7490,8 +7475,13 @@
             "end": 3.6
           },
           {
+            "word": "ventanilla",
+            "start": 3.6,
+            "end": 4.2
+          },
+          {
             "word": "no",
-            "start": 4.16,
+            "start": 4.2,
             "end": 4.4
           },
           {
@@ -7502,7 +7492,7 @@
           {
             "word": "superar",
             "start": 4.86,
-            "end": 4.98
+            "end": 5.28
           },
           {
             "word": "ese",
@@ -7517,21 +7507,21 @@
           {
             "word": "de",
             "start": 6.0,
-            "end": 6.08
+            "end": 6.18
           },
           {
             "word": "treinta",
-            "start": 6.08,
+            "start": 6.18,
             "end": 6.528
           },
           {
             "word": "mil",
             "start": 6.528,
-            "end": 6.92
+            "end": 6.72
           },
           {
             "word": "soles",
-            "start": 6.92,
+            "start": 6.72,
             "end": 7.03
           }
         ]
@@ -7590,16 +7580,16 @@
           {
             "word": "te",
             "start": 2.32,
-            "end": 2.4
+            "end": 2.57
           },
           {
             "word": "estaran",
-            "start": 2.4,
-            "end": 3.02
+            "start": 2.57,
+            "end": 2.72
           },
           {
             "word": "dando",
-            "start": 3.02,
+            "start": 2.72,
             "end": 3.2
           },
           {
@@ -7664,8 +7654,8 @@
           },
           {
             "word": "carrito",
-            "start": 6.08,
-            "end": 6.16
+            "start": 6.32,
+            "end": 6.48
           },
           {
             "word": "son",
@@ -7710,7 +7700,7 @@
           {
             "word": "limpiadores",
             "start": 9.04,
-            "end": 9.24
+            "end": 9.45
           }
         ]
       },
@@ -7720,7 +7710,7 @@
       "id": "ac084aa5-a681-4d84-99d8-bad3e00eeaae",
       "name": "7521812a-cf13-4fe4-949a-d9eb99b76c9f_012.wav",
       "locale": "es_ES",
-      "transcript": "donde reconocemos el trabajo que hacen y los los invitamos a que siempre sigan garantizando la soberi- la soberania en nuestro territorio y en nuestro de boyaca",
+      "transcript": "donde reconocemos el trabajo que hacen y los los invitamos a que nos sigan garantizando la soberi- la soberania en nuestro territorio y en nuestro de boyaca",
       "source": {
         "duration_seconds": 13.52,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -7728,16 +7718,16 @@
           {
             "word": "donde",
             "start": 0.16,
-            "end": 0.72
+            "end": 1.13
           },
           {
             "word": "reconocemos",
-            "start": 0.72,
-            "end": 1.23
+            "start": 1.13,
+            "end": 1.67
           },
           {
             "word": "el",
-            "start": 1.23,
+            "start": 1.67,
             "end": 1.84
           },
           {
@@ -7786,9 +7776,9 @@
             "end": 4.95
           },
           {
-            "word": "siempre",
-            "start": 4.95,
-            "end": 5.6
+            "word": "nos",
+            "start": 5.76,
+            "end": 6.0
           },
           {
             "word": "sigan",
@@ -7802,7 +7792,7 @@
           },
           {
             "word": "la",
-            "start": 7.48,
+            "start": 7.64,
             "end": 7.81
           },
           {
@@ -7817,7 +7807,7 @@
           },
           {
             "word": "soberania",
-            "start": 9.13,
+            "start": 9.1,
             "end": 9.36
           },
           {
@@ -7833,7 +7823,7 @@
           {
             "word": "territorio",
             "start": 10.16,
-            "end": 11.04
+            "end": 11.0
           },
           {
             "word": "y",
@@ -7876,7 +7866,7 @@
           {
             "word": "santa",
             "start": 0.06,
-            "end": 0.25
+            "end": 0.37
           },
           {
             "word": "maria",
@@ -7899,16 +7889,16 @@
           {
             "word": "vale",
             "start": 0.0,
-            "end": 0.69
+            "end": 0.3
           },
           {
             "word": "soldado",
-            "start": 0.69,
-            "end": 0.75
+            "start": 0.3,
+            "end": 0.94
           },
           {
             "word": "punto",
-            "start": 0.75,
+            "start": 0.94,
             "end": 1.01
           },
           {
@@ -7949,7 +7939,7 @@
           {
             "word": "r",
             "start": 2.93,
-            "end": 3.05
+            "end": 3.18
           }
         ]
       },
@@ -7989,7 +7979,7 @@
         "words": [
           {
             "word": "vamos",
-            "start": 0.22,
+            "start": 0.0,
             "end": 0.43
           },
           {
@@ -8035,21 +8025,21 @@
           {
             "word": "noventa",
             "start": 3.242,
-            "end": 3.5
+            "end": 3.45
           },
           {
             "word": "y",
-            "start": 3.5,
+            "start": 3.45,
             "end": 3.63
           },
           {
             "word": "cinco",
             "start": 3.63,
-            "end": 4.15
+            "end": 3.92
           },
           {
             "word": "entramos",
-            "start": 4.15,
+            "start": 3.92,
             "end": 4.29
           },
           {
@@ -8060,11 +8050,11 @@
           {
             "word": "put",
             "start": 4.56,
-            "end": 4.96
+            "end": 5.01
           },
           {
             "word": "hasta",
-            "start": 4.96,
+            "start": 5.01,
             "end": 5.4
           },
           {
@@ -8110,16 +8100,16 @@
           {
             "word": "parada",
             "start": 7.52,
-            "end": 7.9
+            "end": 7.68
           },
           {
             "word": "muy",
-            "start": 7.9,
-            "end": 7.98
+            "start": 7.68,
+            "end": 8.14
           },
           {
             "word": "mañana",
-            "start": 7.98,
+            "start": 8.14,
             "end": 8.62
           },
           {
@@ -8178,7 +8168,7 @@
           {
             "word": "nadie",
             "start": 0.11,
-            "end": 0.31
+            "end": 0.18
           }
         ]
       },
@@ -8188,7 +8178,7 @@
       "id": "df66c4b6-ceb0-44a7-bf50-ecd967fed516",
       "name": "54518504-dc4f-4192-97ae-22a6207b02e0_004.wav",
       "locale": "es_ES",
-      "transcript": "aqui a tres de la ruta paraguay cero ocho ocho ramal que une cruce tacuati con tacuati tacuati sobre el arroyo lorito reitero tres kilometros de ruta cero ocho anoche o parte de esta madrugada madrugada mañana",
+      "transcript": "aqui a tres kilometros de la ruta paraguay cero ocho ocho ramal que une cruce tacuati con tacuati tacuati sobre el arroyo reitero tres kilometros de ruta cero ocho anoche o parte de esta madrugada madrugada mañana",
       "source": {
         "duration_seconds": 18.64,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -8196,7 +8186,7 @@
           {
             "word": "aqui",
             "start": 0.04,
-            "end": 0.32
+            "end": 0.44
           },
           {
             "word": "a",
@@ -8209,8 +8199,13 @@
             "end": 1.25
           },
           {
+            "word": "kilometros",
+            "start": 1.28,
+            "end": 1.72
+          },
+          {
             "word": "de",
-            "start": 2.27,
+            "start": 1.72,
             "end": 2.569
           },
           {
@@ -8276,7 +8271,7 @@
           {
             "word": "tacuati",
             "start": 7.92,
-            "end": 8.02
+            "end": 8.56
           },
           {
             "word": "tacuati",
@@ -8296,12 +8291,7 @@
           {
             "word": "arroyo",
             "start": 9.72,
-            "end": 10.23
-          },
-          {
-            "word": "lorito",
-            "start": 11.07,
-            "end": 11.824
+            "end": 10.8
           },
           {
             "word": "reitero",
@@ -8399,7 +8389,7 @@
           {
             "word": "rafael",
             "start": 0.32,
-            "end": 0.6
+            "end": 0.5
           }
         ]
       },
@@ -8507,16 +8497,16 @@
           {
             "word": "forestal",
             "start": 6.82,
-            "end": 7.21
+            "end": 7.52
           },
           {
             "word": "superior",
             "start": 7.83,
-            "end": 8.24
+            "end": 7.95
           },
           {
             "word": "al",
-            "start": 8.24,
+            "start": 7.95,
             "end": 8.4
           },
           {
@@ -8832,7 +8822,7 @@
       "id": "a9af44b3-8de4-4d07-802a-16c3bf4d7318",
       "name": "fc34fa44-4252-4210-9466-166ad4ae1e37_195.wav",
       "locale": "es_ES",
-      "transcript": "hay que consignar en caja agraria agraria cincuenta y cinco mil pesos usted lleva alla y le dan en diez minutos la cedula yo entonces soy el ciudadano de segunda categoria porque fui a a a crearla a que me la ordenaran me dijeron pague cincuenta mil mañana vengase dentro de ocho o quince dias dias de pronto porque venia el registrador y que hacer el acto eh para mostrarlo a la prensa",
+      "transcript": "hay que consignar en caja agraria agraria cincuenta y cinco mil pesos usted lleva alla y le dan en diez minutos la cedula yo entonces soy el ciudadano de segunda categoria porque fui a a a crearla a que me la ordenaran me dijeron pague cincuenta mil mañana vengase de ocho o quince dias dias de pronto porque venia el registrador y habia que hacer el acto eh para mostrarlo a la prensa",
       "source": {
         "duration_seconds": 18.32,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -8869,7 +8859,7 @@
           },
           {
             "word": "agraria",
-            "start": 1.9,
+            "start": 1.97,
             "end": 2.14
           },
           {
@@ -8880,16 +8870,16 @@
           {
             "word": "y",
             "start": 2.62,
-            "end": 2.89
+            "end": 2.7
           },
           {
             "word": "cinco",
-            "start": 2.89,
-            "end": 2.99
+            "start": 2.7,
+            "end": 2.94
           },
           {
             "word": "mil",
-            "start": 2.99,
+            "start": 2.94,
             "end": 3.12
           },
           {
@@ -9015,11 +9005,11 @@
           {
             "word": "a",
             "start": 8.14,
-            "end": 8.775
+            "end": 8.285
           },
           {
             "word": "crearla",
-            "start": 8.775,
+            "start": 8.285,
             "end": 9.298
           },
           {
@@ -9045,7 +9035,7 @@
           {
             "word": "ordenaran",
             "start": 9.68,
-            "end": 10.32
+            "end": 10.62
           },
           {
             "word": "me",
@@ -9081,11 +9071,6 @@
             "word": "vengase",
             "start": 11.76,
             "end": 12.08
-          },
-          {
-            "word": "dentro",
-            "start": 12.08,
-            "end": 12.25
           },
           {
             "word": "de",
@@ -9153,6 +9138,11 @@
             "end": 15.52
           },
           {
+            "word": "habia",
+            "start": 15.6,
+            "end": 15.9
+          },
+          {
             "word": "que",
             "start": 15.9,
             "end": 15.97
@@ -9170,11 +9160,11 @@
           {
             "word": "acto",
             "start": 16.23,
-            "end": 16.34
+            "end": 16.56
           },
           {
             "word": "eh",
-            "start": 16.34,
+            "start": 16.56,
             "end": 17.12
           },
           {
@@ -9217,13 +9207,13 @@
         "words": [
           {
             "word": "uno",
-            "start": 0.171,
+            "start": 0.001,
             "end": 0.32
           },
           {
             "word": "seis",
             "start": 0.38,
-            "end": 0.476
+            "end": 0.536
           }
         ]
       },
@@ -9233,7 +9223,7 @@
       "id": "645f8c81-7812-4a3d-b2b6-c54c858eab93",
       "name": "0cebc4ab-1d62-41e6-92c5-640f1c0df8c6_1168.wav",
       "locale": "es_ES",
-      "transcript": "eh g por h mañana es fea que aqui g por h g g por h me un miedo tremendo pero igual se puede si",
+      "transcript": "eh g por h aqui mañana es fea que aqui g h g g por h me daba un miedo tremendo pero se puede si",
       "source": {
         "duration_seconds": 6.8,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -9256,7 +9246,12 @@
           {
             "word": "h",
             "start": 0.51,
-            "end": 0.78
+            "end": 0.73
+          },
+          {
+            "word": "aqui",
+            "start": 0.73,
+            "end": 0.92
           },
           {
             "word": "mañana",
@@ -9289,24 +9284,19 @@
             "end": 3.12
           },
           {
-            "word": "por",
-            "start": 3.12,
-            "end": 3.36
-          },
-          {
             "word": "h",
             "start": 3.36,
-            "end": 3.6
+            "end": 3.44
           },
           {
             "word": "g",
-            "start": 3.6,
+            "start": 3.44,
             "end": 3.68
           },
           {
             "word": "g",
             "start": 3.76,
-            "end": 4.0
+            "end": 3.95
           },
           {
             "word": "por",
@@ -9324,29 +9314,29 @@
             "end": 4.48
           },
           {
+            "word": "daba",
+            "start": 4.48,
+            "end": 4.64
+          },
+          {
             "word": "un",
             "start": 4.64,
-            "end": 4.72
+            "end": 4.76
           },
           {
             "word": "miedo",
-            "start": 4.72,
+            "start": 4.76,
             "end": 5.11
           },
           {
             "word": "tremendo",
             "start": 5.11,
-            "end": 5.24
+            "end": 5.72
           },
           {
             "word": "pero",
-            "start": 5.24,
+            "start": 5.72,
             "end": 5.85
-          },
-          {
-            "word": "igual",
-            "start": 5.85,
-            "end": 6.071
           },
           {
             "word": "se",
@@ -9356,11 +9346,11 @@
           {
             "word": "puede",
             "start": 6.16,
-            "end": 6.7
+            "end": 6.48
           },
           {
             "word": "si",
-            "start": 6.7,
+            "start": 6.48,
             "end": 6.8
           }
         ]
@@ -9417,12 +9407,12 @@
           {
             "word": "en",
             "start": 0.213,
-            "end": 0.48
+            "end": 0.42
           },
           {
             "word": "algunos",
-            "start": 0.48,
-            "end": 0.96
+            "start": 0.42,
+            "end": 1.17
           },
           {
             "word": "en",
@@ -9477,16 +9467,16 @@
           {
             "word": "de",
             "start": 4.48,
-            "end": 4.88
+            "end": 4.98
           },
           {
             "word": "mañana",
-            "start": 4.88,
-            "end": 5.28
+            "start": 4.98,
+            "end": 5.12
           },
           {
             "word": "reunion",
-            "start": 5.28,
+            "start": 5.12,
             "end": 5.76
           }
         ]
@@ -9517,12 +9507,12 @@
           {
             "word": "dos",
             "start": 0.0,
-            "end": 0.479
+            "end": 0.419
           },
           {
             "word": "lucero",
             "start": 0.515,
-            "end": 0.87
+            "end": 1.12
           }
         ]
       },
@@ -9532,7 +9522,7 @@
       "id": "dc0b75e1-b322-40e8-a289-2fce7aeea61f",
       "name": "ac42d31b-8766-45b4-8dcc-ea6108e3b4eb_867.wav",
       "locale": "es_ES",
-      "transcript": "utilicemos normas tres veinticinco y tres ocho tres punto dos",
+      "transcript": "utilicemos normas tres veinticinco y tres tres punto dos",
       "source": {
         "duration_seconds": 3.28,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -9568,13 +9558,8 @@
             "end": 2.32
           },
           {
-            "word": "ocho",
-            "start": 2.32,
-            "end": 2.71
-          },
-          {
             "word": "tres",
-            "start": 2.71,
+            "start": 2.52,
             "end": 2.8
           },
           {
@@ -9584,7 +9569,7 @@
           },
           {
             "word": "dos",
-            "start": 2.96,
+            "start": 3.12,
             "end": 3.28
           }
         ]
@@ -9595,7 +9580,7 @@
       "id": "b957004a-a230-4aa4-8a22-31ea8db28668",
       "name": "45caca2e-b651-4531-92c3-940e142493b9_721.wav",
       "locale": "es_ES",
-      "transcript": "vamos a ir rapidamente a el futbol comunitario de matlapa",
+      "transcript": "vamos a ir rapidamente tambien a el futbol comunitario de matlapa",
       "source": {
         "duration_seconds": 3.67,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -9618,7 +9603,12 @@
           {
             "word": "rapidamente",
             "start": 0.4,
-            "end": 0.94
+            "end": 0.61
+          },
+          {
+            "word": "tambien",
+            "start": 0.61,
+            "end": 1.28
           },
           {
             "word": "a",
@@ -9642,13 +9632,13 @@
           },
           {
             "word": "de",
-            "start": 2.97,
+            "start": 2.91,
             "end": 3.04
           },
           {
             "word": "matlapa",
             "start": 3.04,
-            "end": 3.26
+            "end": 3.67
           }
         ]
       },
@@ -9658,7 +9648,7 @@
       "id": "098859b4-e83e-480c-aa5f-1fc8768b585e",
       "name": "2c75fcf7-637e-4398-afc8-dcb89019bdfb_021.wav",
       "locale": "es_ES",
-      "transcript": "mañana que tambien bien como estas tu como dicen en republica dominicana saludos saludos a la republica dominicana ya colombia y a venezuela",
+      "transcript": "mañana que tambien bien como estas tu como dicen en republica dominicana saludos saludos a la republica ya colombia y a venezuela",
       "source": {
         "duration_seconds": 8.72,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -9696,21 +9686,21 @@
           {
             "word": "tu",
             "start": 1.68,
-            "end": 1.74
+            "end": 1.92
           },
           {
             "word": "como",
-            "start": 1.74,
+            "start": 1.92,
             "end": 2.08
           },
           {
             "word": "dicen",
             "start": 2.08,
-            "end": 2.32
+            "end": 2.24
           },
           {
             "word": "en",
-            "start": 2.32,
+            "start": 2.24,
             "end": 2.4
           },
           {
@@ -9749,11 +9739,6 @@
             "end": 5.6
           },
           {
-            "word": "dominicana",
-            "start": 5.6,
-            "end": 6.48
-          },
-          {
             "word": "ya",
             "start": 6.48,
             "end": 6.64
@@ -9761,11 +9746,11 @@
           {
             "word": "colombia",
             "start": 6.64,
-            "end": 6.98
+            "end": 7.44
           },
           {
             "word": "y",
-            "start": 6.98,
+            "start": 7.44,
             "end": 7.52
           },
           {
@@ -9775,7 +9760,7 @@
           },
           {
             "word": "venezuela",
-            "start": 7.84,
+            "start": 7.91,
             "end": 8.72
           }
         ]
@@ -9808,8 +9793,8 @@
           },
           {
             "word": "pinas",
-            "start": 0.64,
-            "end": 0.87
+            "start": 0.7,
+            "end": 1.02
           }
         ]
       },
@@ -9910,12 +9895,12 @@
           {
             "word": "shu",
             "start": 0.3,
-            "end": 1.26
+            "end": 0.72
           },
           {
             "word": "shu",
-            "start": 1.26,
-            "end": 1.4
+            "start": 0.72,
+            "end": 0.89
           },
           {
             "word": "y",
@@ -9930,12 +9915,12 @@
           {
             "word": "sha",
             "start": 2.07,
-            "end": 2.4
+            "end": 2.44
           },
           {
             "word": "sha",
-            "start": 2.4,
-            "end": 2.56
+            "start": 2.44,
+            "end": 3.04
           }
         ]
       },
@@ -9953,7 +9938,7 @@
           {
             "word": "vease",
             "start": 0.0,
-            "end": 0.26
+            "end": 0.47
           }
         ]
       },
@@ -9970,7 +9955,7 @@
         "words": [
           {
             "word": "y",
-            "start": 0.21,
+            "start": 0.34,
             "end": 0.74
           },
           {
@@ -10026,7 +10011,7 @@
       "id": "7b69e03e-6bff-4380-ad8e-22cb086b4559",
       "name": "9eae8ca6-d38c-4b2c-a752-f5a7430def86_060.wav",
       "locale": "es_ES",
-      "transcript": "han aparecido en santuarios mañana de estos espetones consagrados son antiguas porque son excavaciones muy antiguas antiguas pero en el de hera en argos",
+      "transcript": "han aparecido en santuarios mañana muchos de estos espetones consagrados son antiguas porque son excavaciones muy antiguas antiguas pero en el santuario de hera en argos",
       "source": {
         "duration_seconds": 9.22,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -10034,16 +10019,16 @@
           {
             "word": "han",
             "start": 0.02,
-            "end": 0.3
+            "end": 0.15
           },
           {
             "word": "aparecido",
-            "start": 0.3,
-            "end": 0.56
+            "start": 0.15,
+            "end": 0.23
           },
           {
             "word": "en",
-            "start": 0.56,
+            "start": 0.23,
             "end": 0.64
           },
           {
@@ -10057,13 +10042,18 @@
             "end": 1.52
           },
           {
+            "word": "muchos",
+            "start": 1.52,
+            "end": 1.92
+          },
+          {
             "word": "de",
             "start": 1.92,
-            "end": 2.08
+            "end": 2.16
           },
           {
             "word": "estos",
-            "start": 2.08,
+            "start": 2.16,
             "end": 2.48
           },
           {
@@ -10132,6 +10122,11 @@
             "end": 7.68
           },
           {
+            "word": "santuario",
+            "start": 7.68,
+            "end": 8.16
+          },
+          {
             "word": "de",
             "start": 8.16,
             "end": 8.267
@@ -10139,16 +10134,16 @@
           {
             "word": "hera",
             "start": 8.267,
-            "end": 8.48
+            "end": 8.35
           },
           {
             "word": "en",
             "start": 8.56,
-            "end": 8.84
+            "end": 8.64
           },
           {
             "word": "argos",
-            "start": 8.84,
+            "start": 8.64,
             "end": 9.1
           }
         ]
@@ -10166,7 +10161,7 @@
         "words": [
           {
             "word": "ah",
-            "start": 0.19,
+            "start": 0.09,
             "end": 0.43
           },
           {
@@ -10207,7 +10202,7 @@
       "id": "5debdffa-1153-45ca-ac78-1053f8f26fcd",
       "name": "350343ff-c485-4bff-890c-64ffe4e9d01f_767.wav",
       "locale": "es_ES",
-      "transcript": "la gente de xalapa pendiente mañana del encuentro",
+      "transcript": "la gente de pendiente mañana encuentro",
       "source": {
         "duration_seconds": 2.45,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -10228,13 +10223,8 @@
             "end": 0.56
           },
           {
-            "word": "xalapa",
-            "start": 0.56,
-            "end": 1.14
-          },
-          {
             "word": "pendiente",
-            "start": 1.14,
+            "start": 0.96,
             "end": 1.52
           },
           {
@@ -10243,14 +10233,9 @@
             "end": 1.76
           },
           {
-            "word": "del",
-            "start": 1.76,
-            "end": 1.92
-          },
-          {
             "word": "encuentro",
             "start": 1.92,
-            "end": 2.08
+            "end": 2.44
           }
         ]
       },
@@ -10302,11 +10287,11 @@
           {
             "word": "zona",
             "start": 0.27,
-            "end": 0.36
+            "end": 0.6
           },
           {
             "word": "de",
-            "start": 0.36,
+            "start": 0.6,
             "end": 0.672
           },
           {
@@ -10788,11 +10773,11 @@
           {
             "word": "seis",
             "start": 0.28,
-            "end": 0.46
+            "end": 0.4
           },
           {
             "word": "uno",
-            "start": 0.46,
+            "start": 0.4,
             "end": 0.78
           },
           {
@@ -10803,7 +10788,7 @@
           {
             "word": "tres",
             "start": 1.1,
-            "end": 1.31
+            "end": 1.48
           },
           {
             "word": "trece",
@@ -10818,11 +10803,11 @@
           {
             "word": "y",
             "start": 2.12,
-            "end": 2.45
+            "end": 2.63
           },
           {
             "word": "nueve",
-            "start": 2.45,
+            "start": 2.63,
             "end": 2.72
           },
           {
@@ -10872,8 +10857,8 @@
           },
           {
             "word": "nueve",
-            "start": 5.41,
-            "end": 5.76
+            "start": 5.25,
+            "end": 5.44
           }
         ]
       },
@@ -10883,7 +10868,7 @@
       "id": "dcec4b22-66ef-43e9-bda4-e055ef957f56",
       "name": "280a8f54-a700-49a0-a59a-0afe688a0d4f_353.wav",
       "locale": "es_ES",
-      "transcript": "los que estuvieron la gente de urban villeta",
+      "transcript": "los que estuvieron fueron la gente de urban villeta",
       "source": {
         "duration_seconds": 3.72,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -10904,8 +10889,13 @@
             "end": 2.209
           },
           {
+            "word": "fueron",
+            "start": 2.21,
+            "end": 2.47
+          },
+          {
             "word": "la",
-            "start": 2.4,
+            "start": 2.47,
             "end": 2.55
           },
           {
@@ -10921,11 +10911,11 @@
           {
             "word": "urban",
             "start": 2.88,
-            "end": 3.3
+            "end": 3.07
           },
           {
             "word": "villeta",
-            "start": 3.3,
+            "start": 3.07,
             "end": 3.64
           }
         ]
@@ -10997,11 +10987,11 @@
           {
             "word": "se",
             "start": 0.12,
-            "end": 0.5
+            "end": 0.31
           },
           {
             "word": "proclaman",
-            "start": 0.5,
+            "start": 0.31,
             "end": 0.574
           },
           {
@@ -11016,8 +11006,8 @@
           },
           {
             "word": "huancayo",
-            "start": 1.02,
-            "end": 1.22
+            "start": 0.91,
+            "end": 1.4
           },
           {
             "word": "pues",
@@ -11044,7 +11034,7 @@
       "id": "3607b1d3-eca5-474a-b3bb-cc5cda4b5ad2",
       "name": "18f636f8-e84f-46c6-8715-01943a7b946f_011.wav",
       "locale": "es_ES",
-      "transcript": "tiene un costo de y nueve mil setecientos",
+      "transcript": "tiene un costo de treinta y nueve setecientos",
       "source": {
         "duration_seconds": 2.32,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -11067,7 +11057,12 @@
           {
             "word": "de",
             "start": 0.729,
-            "end": 0.88
+            "end": 0.96
+          },
+          {
+            "word": "treinta",
+            "start": 0.96,
+            "end": 1.17
           },
           {
             "word": "y",
@@ -11080,13 +11075,8 @@
             "end": 1.44
           },
           {
-            "word": "mil",
-            "start": 1.44,
-            "end": 2.03
-          },
-          {
             "word": "setecientos",
-            "start": 2.03,
+            "start": 1.6,
             "end": 2.32
           }
         ]
@@ -11109,8 +11099,8 @@
           },
           {
             "word": "menor",
-            "start": 0.36,
-            "end": 0.64
+            "start": 0.16,
+            "end": 0.6
           }
         ]
       },
@@ -11120,7 +11110,7 @@
       "id": "84c9fc23-044b-4134-9622-040e5dfc3a30",
       "name": "f6beb2e9-a03e-4eb6-8619-f408f84c4803_101.wav",
       "locale": "es_ES",
-      "transcript": "y que tenemos este dato sabemos que c vale cuatro noventa y nueve",
+      "transcript": "y ahora que tenemos este dato que c vale cuatro noventa y nueve",
       "source": {
         "duration_seconds": 5.01,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -11131,8 +11121,13 @@
             "end": 0.21
           },
           {
+            "word": "ahora",
+            "start": 0.21,
+            "end": 0.4
+          },
+          {
             "word": "que",
-            "start": 0.46,
+            "start": 0.4,
             "end": 0.58
           },
           {
@@ -11148,12 +11143,7 @@
           {
             "word": "dato",
             "start": 1.19,
-            "end": 1.66
-          },
-          {
-            "word": "sabemos",
-            "start": 1.66,
-            "end": 1.98
+            "end": 1.51
           },
           {
             "word": "que",
@@ -11246,11 +11236,11 @@
           {
             "word": "tres",
             "start": 2.88,
-            "end": 3.03
+            "end": 3.16
           },
           {
             "word": "tres",
-            "start": 3.03,
+            "start": 3.16,
             "end": 3.32
           }
         ]
@@ -11314,11 +11304,11 @@
           {
             "word": "pablo",
             "start": 4.53,
-            "end": 4.96
+            "end": 4.62
           },
           {
             "word": "mañana",
-            "start": 4.96,
+            "start": 4.62,
             "end": 5.04
           },
           {
@@ -11334,11 +11324,11 @@
           {
             "word": "la",
             "start": 5.52,
-            "end": 6.273
+            "end": 5.813
           },
           {
             "word": "lupa",
-            "start": 6.273,
+            "start": 5.813,
             "end": 6.4
           }
         ]
@@ -11369,7 +11359,7 @@
           {
             "word": "cuatrocientos",
             "start": 0.0,
-            "end": 0.74
+            "end": 0.7
           },
           {
             "word": "quinientos",
@@ -11384,7 +11374,7 @@
           {
             "word": "mañana",
             "start": 1.78,
-            "end": 1.92
+            "end": 1.96
           }
         ]
       },
@@ -11463,7 +11453,7 @@
           {
             "word": "pepe",
             "start": 0.0,
-            "end": 0.09
+            "end": 0.25
           }
         ]
       },
@@ -11481,11 +11471,11 @@
           {
             "word": "y",
             "start": 0.04,
-            "end": 0.34
+            "end": 0.11
           },
           {
             "word": "por",
-            "start": 0.34,
+            "start": 0.11,
             "end": 0.48
           },
           {
@@ -11505,7 +11495,7 @@
           },
           {
             "word": "once",
-            "start": 0.8,
+            "start": 0.75,
             "end": 0.96
           },
           {
@@ -11561,7 +11551,7 @@
           {
             "word": "once",
             "start": 3.44,
-            "end": 3.515
+            "end": 3.805
           }
         ]
       },
@@ -11571,7 +11561,7 @@
       "id": "a00eef1d-d9ca-43ff-b439-539ee91977f5",
       "name": "3d14d869-28f5-4dcb-a8f3-45ae6956cf11_1208.wav",
       "locale": "es_ES",
-      "transcript": "treinta y tres punto noventa y seis cie-",
+      "transcript": "treinta y tres noventa y seis cie-",
       "source": {
         "duration_seconds": 2.683,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -11592,14 +11582,9 @@
             "end": 1.28
           },
           {
-            "word": "punto",
-            "start": 1.281,
-            "end": 1.5
-          },
-          {
             "word": "noventa",
             "start": 1.5,
-            "end": 1.57
+            "end": 1.94
           },
           {
             "word": "y",
@@ -11608,7 +11593,7 @@
           },
           {
             "word": "seis",
-            "start": 2.08,
+            "start": 2.33,
             "end": 2.46
           },
           {
@@ -11624,7 +11609,7 @@
       "id": "610a4673-8b18-4f03-a6bc-b7acc6f652b5",
       "name": "cb4a068e-50d9-4a4e-9347-bf1531d357be_394.wav",
       "locale": "es_ES",
-      "transcript": "la calma la no es cierto",
+      "transcript": "la calma la baja no es cierto",
       "source": {
         "duration_seconds": 1.28,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -11642,7 +11627,12 @@
           {
             "word": "la",
             "start": 0.32,
-            "end": 0.48
+            "end": 0.64
+          },
+          {
+            "word": "baja",
+            "start": 0.64,
+            "end": 0.72
           },
           {
             "word": "no",
@@ -11656,8 +11646,8 @@
           },
           {
             "word": "cierto",
-            "start": 1.19,
-            "end": 1.28
+            "start": 0.93,
+            "end": 1.18
           }
         ]
       },
@@ -11674,8 +11664,8 @@
         "words": [
           {
             "word": "ubicado",
-            "start": 0.25,
-            "end": 0.63
+            "start": 0.06,
+            "end": 0.58
           },
           {
             "word": "en",
@@ -11768,7 +11758,7 @@
           {
             "word": "betel",
             "start": 0.46,
-            "end": 0.81
+            "end": 0.94
           }
         ]
       },
@@ -11778,7 +11768,7 @@
       "id": "780c3ce5-1a18-4c83-a2af-555c85143213",
       "name": "4c294d56-35f4-456b-930f-b0c99832bbff_562.wav",
       "locale": "es_ES",
-      "transcript": "la segunda mitad en el estadio nuevo colombino",
+      "transcript": "la segunda mitad en el estadio colombino",
       "source": {
         "duration_seconds": 2.84,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -11800,7 +11790,7 @@
           },
           {
             "word": "en",
-            "start": 1.2,
+            "start": 1.13,
             "end": 1.34
           },
           {
@@ -11814,14 +11804,9 @@
             "end": 1.77
           },
           {
-            "word": "nuevo",
-            "start": 1.811,
-            "end": 2.13
-          },
-          {
             "word": "colombino",
             "start": 2.13,
-            "end": 2.37
+            "end": 2.82
           }
         ]
       },
@@ -11838,8 +11823,8 @@
         "words": [
           {
             "word": "cuatro",
-            "start": 0.132,
-            "end": 0.28
+            "start": 0.082,
+            "end": 0.52
           },
           {
             "word": "u",
@@ -11877,7 +11862,7 @@
           {
             "word": "marfil",
             "start": 0.4,
-            "end": 0.68
+            "end": 0.78
           }
         ]
       },
@@ -11949,8 +11934,8 @@
           },
           {
             "word": "mañana",
-            "start": 6.45,
-            "end": 6.76
+            "start": 6.12,
+            "end": 6.5
           }
         ]
       },
@@ -11973,11 +11958,11 @@
           {
             "word": "mañana",
             "start": 0.52,
-            "end": 0.73
+            "end": 0.59
           },
           {
             "word": "empieza",
-            "start": 0.73,
+            "start": 0.59,
             "end": 1.2
           },
           {
@@ -12055,7 +12040,7 @@
         "words": [
           {
             "word": "una",
-            "start": 0.15,
+            "start": 0.07,
             "end": 0.21
           },
           {
@@ -12103,7 +12088,7 @@
         "words": [
           {
             "word": "mendeliana",
-            "start": 0.361,
+            "start": 0.131,
             "end": 0.769
           },
           {
@@ -12113,7 +12098,7 @@
           },
           {
             "word": "eh",
-            "start": 1.36,
+            "start": 1.32,
             "end": 1.48
           },
           {
@@ -12148,7 +12133,7 @@
           },
           {
             "word": "mendeliana",
-            "start": 3.04,
+            "start": 2.93,
             "end": 3.55
           }
         ]
@@ -12224,12 +12209,12 @@
         "words": [
           {
             "word": "calle",
-            "start": 0.001,
-            "end": 0.09
+            "start": 0.061,
+            "end": 0.24
           },
           {
             "word": "plan",
-            "start": 0.09,
+            "start": 0.24,
             "end": 0.409
           },
           {
@@ -12239,7 +12224,7 @@
           },
           {
             "word": "ayala",
-            "start": 0.531,
+            "start": 0.841,
             "end": 1.04
           }
         ]
@@ -12250,7 +12235,7 @@
       "id": "b33eb5ad-a64b-4240-87c3-cfc40e789902",
       "name": "bec4f400-4a2e-4407-8861-1c1d9954f15c_066.wav",
       "locale": "es_ES",
-      "transcript": "licenciada ((tanivet)) silva montes",
+      "transcript": "licenciada ((tanivet)) montes",
       "source": {
         "duration_seconds": 2.16,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -12266,13 +12251,8 @@
             "end": 1.26
           },
           {
-            "word": "silva",
-            "start": 1.34,
-            "end": 2.0
-          },
-          {
             "word": "montes",
-            "start": 2.0,
+            "start": 1.6,
             "end": 2.16
           }
         ]
@@ -12295,7 +12275,7 @@
       "id": "0e114a42-264e-4e1c-8196-8e376590d3be",
       "name": "dad610f0-2687-4a8d-b3ca-9b1626847a3e_728.wav",
       "locale": "es_ES",
-      "transcript": "la sagrada familia ocho cuatro cuatro",
+      "transcript": "la sagrada familia uno ocho cuatro cuatro",
       "source": {
         "duration_seconds": 2.5,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -12303,17 +12283,22 @@
           {
             "word": "la",
             "start": 0.0,
-            "end": 0.11
+            "end": 0.44
           },
           {
             "word": "sagrada",
-            "start": 0.11,
+            "start": 0.44,
             "end": 0.59
           },
           {
             "word": "familia",
             "start": 0.59,
             "end": 0.91
+          },
+          {
+            "word": "uno",
+            "start": 1.11,
+            "end": 1.4
           },
           {
             "word": "ocho",
@@ -12323,12 +12308,12 @@
           {
             "word": "cuatro",
             "start": 1.87,
-            "end": 2.14
+            "end": 2.06
           },
           {
             "word": "cuatro",
             "start": 2.15,
-            "end": 2.28
+            "end": 2.48
           }
         ]
       },
@@ -12338,7 +12323,7 @@
       "id": "77194dd2-b4d1-4387-bb54-db88d7c70275",
       "name": "46c2d424-cc38-4ccc-a89c-59acae3cb790_294.wav",
       "locale": "es_ES",
-      "transcript": "se la vuelvo a presentar senor te siga tres punto",
+      "transcript": "se la a presentar senor te digo siga tres punto",
       "source": {
         "duration_seconds": 3.04,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -12351,12 +12336,7 @@
           {
             "word": "la",
             "start": 0.13,
-            "end": 0.39
-          },
-          {
-            "word": "vuelvo",
-            "start": 0.39,
-            "end": 0.47
+            "end": 0.24
           },
           {
             "word": "a",
@@ -12377,6 +12357,11 @@
             "word": "te",
             "start": 1.17,
             "end": 1.23
+          },
+          {
+            "word": "digo",
+            "start": 1.23,
+            "end": 1.45
           },
           {
             "word": "siga",
@@ -12444,11 +12429,11 @@
           {
             "word": "parte",
             "start": 1.2,
-            "end": 1.31
+            "end": 1.28
           },
           {
             "word": "a",
-            "start": 1.31,
+            "start": 1.28,
             "end": 1.76
           },
           {
@@ -12469,11 +12454,11 @@
           {
             "word": "de",
             "start": 2.4,
-            "end": 2.7
+            "end": 2.65
           },
           {
             "word": "aqui",
-            "start": 2.7,
+            "start": 2.65,
             "end": 2.8
           },
           {
@@ -12519,11 +12504,11 @@
           {
             "word": "por",
             "start": 4.961,
-            "end": 5.12
+            "end": 5.04
           },
           {
             "word": "alla",
-            "start": 5.12,
+            "start": 5.04,
             "end": 5.28
           },
           {
@@ -12534,11 +12519,11 @@
           {
             "word": "no",
             "start": 5.387,
-            "end": 5.9
+            "end": 5.6
           },
           {
             "word": "volvere",
-            "start": 5.9,
+            "start": 5.6,
             "end": 6.0
           },
           {
@@ -12609,7 +12594,7 @@
           {
             "word": "triple",
             "start": 0.6,
-            "end": 0.726
+            "end": 0.746
           }
         ]
       },
@@ -12626,7 +12611,7 @@
         "words": [
           {
             "word": "impuestos",
-            "start": 0.13,
+            "start": 0.4,
             "end": 0.674
           },
           {
@@ -12707,14 +12692,14 @@
       "id": "8cb1aa98-3ce4-4426-a2d1-67e53f3b376b",
       "name": "ed188851-cd83-47eb-8cfa-5c9e9547fe8f_135.wav",
       "locale": "es_ES",
-      "transcript": "el el temporizador tres controla el tres tres y el cuatro",
+      "transcript": "el el temporizador tres controla el cinco tres y el cuatro",
       "source": {
         "duration_seconds": 3.44,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
         "words": [
           {
             "word": "el",
-            "start": 0.0,
+            "start": 0.12,
             "end": 0.24
           },
           {
@@ -12724,13 +12709,13 @@
           },
           {
             "word": "temporizador",
-            "start": 0.69,
+            "start": 0.53,
             "end": 1.12
           },
           {
             "word": "tres",
             "start": 1.17,
-            "end": 1.36
+            "end": 1.4
           },
           {
             "word": "controla",
@@ -12743,9 +12728,9 @@
             "end": 1.84
           },
           {
-            "word": "tres",
-            "start": 2.24,
-            "end": 2.48
+            "word": "cinco",
+            "start": 1.84,
+            "end": 2.16
           },
           {
             "word": "tres",
@@ -12760,11 +12745,11 @@
           {
             "word": "el",
             "start": 2.88,
-            "end": 3.28
+            "end": 2.96
           },
           {
             "word": "cuatro",
-            "start": 3.28,
+            "start": 2.96,
             "end": 3.44
           }
         ]
@@ -12783,12 +12768,12 @@
           {
             "word": "en",
             "start": 0.001,
-            "end": 0.16
+            "end": 0.27
           },
           {
             "word": "mañana",
-            "start": 0.16,
-            "end": 0.462
+            "start": 0.27,
+            "end": 0.812
           }
         ]
       },
@@ -12798,7 +12783,7 @@
       "id": "f55b6b3e-6a78-425e-8e98-56cfb9c6f3e1",
       "name": "0cebc4ab-1d62-41e6-92c5-640f1c0df8c6_1300.wav",
       "locale": "es_ES",
-      "transcript": "seis meses por regalar y cinco euros a todos los",
+      "transcript": "seis meses por regalar setenta y cinco euros a los",
       "source": {
         "duration_seconds": 2.88,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -12806,11 +12791,11 @@
           {
             "word": "seis",
             "start": 0.0,
-            "end": 0.33
+            "end": 0.35
           },
           {
             "word": "meses",
-            "start": 0.33,
+            "start": 0.35,
             "end": 0.44
           },
           {
@@ -12822,6 +12807,11 @@
             "word": "regalar",
             "start": 0.611,
             "end": 0.92
+          },
+          {
+            "word": "setenta",
+            "start": 1.161,
+            "end": 1.32
           },
           {
             "word": "y",
@@ -12844,13 +12834,8 @@
             "end": 2.125
           },
           {
-            "word": "todos",
-            "start": 2.125,
-            "end": 2.27
-          },
-          {
             "word": "los",
-            "start": 2.27,
+            "start": 2.55,
             "end": 2.88
           }
         ]
@@ -12861,7 +12846,7 @@
       "id": "68abb56d-2b4b-42f4-b977-a60e3f015fe7",
       "name": "94bf5503-d4be-4043-93d5-cb23779145ac_001.wav",
       "locale": "es_ES",
-      "transcript": "en la y veintiocho collins avenue",
+      "transcript": "en la setenta y veintiocho avenue",
       "source": {
         "duration_seconds": 3.16,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -12877,6 +12862,11 @@
             "end": 0.32
           },
           {
+            "word": "setenta",
+            "start": 0.32,
+            "end": 0.53
+          },
+          {
             "word": "y",
             "start": 0.84,
             "end": 0.94
@@ -12887,13 +12877,8 @@
             "end": 1.92
           },
           {
-            "word": "collins",
-            "start": 2.048,
-            "end": 3.03
-          },
-          {
             "word": "avenue",
-            "start": 3.03,
+            "start": 2.48,
             "end": 3.12
           }
         ]
@@ -12911,17 +12896,17 @@
         "words": [
           {
             "word": "casa",
-            "start": 0.0,
+            "start": 0.23,
             "end": 0.37
           },
           {
             "word": "de",
             "start": 0.37,
-            "end": 0.86
+            "end": 0.52
           },
           {
             "word": "oro",
-            "start": 0.86,
+            "start": 0.52,
             "end": 0.96
           }
         ]
@@ -12932,7 +12917,7 @@
       "id": "53a324c7-73dc-4a7e-bf4f-4cf492fcd44a",
       "name": "c29729ef-69c6-4326-9107-b1e340f7aad4_086.wav",
       "locale": "es_ES",
-      "transcript": "punto seis por ciento",
+      "transcript": "punto por ciento",
       "source": {
         "duration_seconds": 1.12,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -12943,18 +12928,13 @@
             "end": 0.25
           },
           {
-            "word": "seis",
-            "start": 0.25,
-            "end": 0.48
-          },
-          {
             "word": "por",
             "start": 0.62,
             "end": 0.72
           },
           {
             "word": "ciento",
-            "start": 1.01,
+            "start": 0.84,
             "end": 1.12
           }
         ]
@@ -12965,7 +12945,7 @@
       "id": "f6cb3f53-b12f-4de0-bcd8-f1ca48eb45cd",
       "name": "366a1723-229a-4ec7-8411-02e08e70ef72_779.wav",
       "locale": "es_ES",
-      "transcript": "vale ahora ahora si vvale carino muy bien no tengo muchas dudas yo muy bien a mi me ha salido un uno un uno un si procedente de un diez bien muy bien te te has visto mas o menos de alguna alguna manera",
+      "transcript": "vale ahora ahora si vvale carino ahora muy bien no tengo muchas dudas yo muy bien a mi me ha salido un uno un uno un uno si procedente de un diez muy bien te te has visto mas o menos de alguna alguna manera",
       "source": {
         "duration_seconds": 13.7,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -12978,11 +12958,11 @@
           {
             "word": "ahora",
             "start": 0.23,
-            "end": 1.02
+            "end": 0.8
           },
           {
             "word": "ahora",
-            "start": 1.02,
+            "start": 0.8,
             "end": 1.12
           },
           {
@@ -12998,7 +12978,12 @@
           {
             "word": "carino",
             "start": 1.6,
-            "end": 1.97
+            "end": 1.89
+          },
+          {
+            "word": "ahora",
+            "start": 1.89,
+            "end": 2.16
           },
           {
             "word": "muy",
@@ -13013,21 +12998,21 @@
           {
             "word": "no",
             "start": 2.64,
-            "end": 3.12
+            "end": 3.68
           },
           {
             "word": "tengo",
-            "start": 3.12,
+            "start": 3.68,
             "end": 4.0
           },
           {
             "word": "muchas",
             "start": 4.0,
-            "end": 4.38
+            "end": 4.34
           },
           {
             "word": "dudas",
-            "start": 4.38,
+            "start": 4.34,
             "end": 4.8
           },
           {
@@ -13068,17 +13053,17 @@
           {
             "word": "salido",
             "start": 5.76,
-            "end": 6.24
+            "end": 5.84
           },
           {
             "word": "un",
-            "start": 6.24,
+            "start": 5.84,
             "end": 6.32
           },
           {
             "word": "uno",
             "start": 6.32,
-            "end": 7.01
+            "end": 6.72
           },
           {
             "word": "un",
@@ -13094,6 +13079,11 @@
             "word": "un",
             "start": 7.84,
             "end": 8.08
+          },
+          {
+            "word": "uno",
+            "start": 8.08,
+            "end": 8.4
           },
           {
             "word": "si",
@@ -13121,11 +13111,6 @@
             "end": 9.84
           },
           {
-            "word": "bien",
-            "start": 10.04,
-            "end": 10.96
-          },
-          {
             "word": "muy",
             "start": 10.96,
             "end": 11.12
@@ -13148,11 +13133,11 @@
           {
             "word": "has",
             "start": 11.76,
-            "end": 11.92
+            "end": 11.99
           },
           {
             "word": "visto",
-            "start": 11.92,
+            "start": 11.99,
             "end": 12.15
           },
           {
@@ -13287,12 +13272,12 @@
           {
             "word": "digo",
             "start": 0.23,
-            "end": 0.62
+            "end": 0.47
           },
           {
             "word": "doce",
-            "start": 0.62,
-            "end": 0.69
+            "start": 0.47,
+            "end": 0.75
           },
           {
             "word": "mil",
@@ -13335,7 +13320,7 @@
           {
             "word": "sierva",
             "start": 0.18,
-            "end": 1.55
+            "end": 1.71
           }
         ]
       },
@@ -13357,8 +13342,8 @@
           },
           {
             "word": "norman",
-            "start": 0.649,
-            "end": 0.72
+            "start": 0.229,
+            "end": 0.46
           }
         ]
       },
@@ -13368,7 +13353,7 @@
       "id": "2433a76c-0f78-496d-b0a4-8cf5078ba1c6",
       "name": "5e65435d-1560-4f89-b1a0-28c02da18681_132.wav",
       "locale": "es_ES",
-      "transcript": "cero uno seis cuatro",
+      "transcript": "cero seis cuatro",
       "source": {
         "duration_seconds": 2.04,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -13377,11 +13362,6 @@
             "word": "cero",
             "start": 0.088,
             "end": 0.13
-          },
-          {
-            "word": "uno",
-            "start": 0.27,
-            "end": 0.93
           },
           {
             "word": "seis",
@@ -13472,7 +13452,7 @@
       "id": "000bd839-da03-44a7-8c88-0c8722e09144",
       "name": "cfe057f1-a8de-41ff-87d2-1f3f32a0d3fa_212.wav",
       "locale": "es_ES",
-      "transcript": "se ubican puntos consecutivos m n p mañana q no",
+      "transcript": "se ubican los puntos consecutivos m n p mañana q no",
       "source": {
         "duration_seconds": 5.79,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -13480,12 +13460,17 @@
           {
             "word": "se",
             "start": 0.05,
-            "end": 0.25
+            "end": 0.4
           },
           {
             "word": "ubican",
-            "start": 0.25,
+            "start": 0.4,
             "end": 0.85
+          },
+          {
+            "word": "los",
+            "start": 0.85,
+            "end": 1.12
           },
           {
             "word": "puntos",
@@ -13499,7 +13484,7 @@
           },
           {
             "word": "m",
-            "start": 3.13,
+            "start": 3.07,
             "end": 3.68
           },
           {
@@ -13509,7 +13494,7 @@
           },
           {
             "word": "p",
-            "start": 4.83,
+            "start": 4.58,
             "end": 4.93
           },
           {
@@ -13525,7 +13510,7 @@
           {
             "word": "no",
             "start": 5.5,
-            "end": 5.73
+            "end": 5.58
           }
         ]
       },
@@ -13535,15 +13520,15 @@
       "id": "827da940-33af-4862-8b59-1e60e38045c3",
       "name": "bd58e959-8105-46c7-b919-426326c70129_896.wav",
       "locale": "es_ES",
-      "transcript": "guarda a los estados unidos mañana guarda a nueva york",
+      "transcript": "guarda a los estados unidos guarda a nueva york",
       "source": {
         "duration_seconds": 2.82,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
         "words": [
           {
             "word": "guarda",
-            "start": 0.04,
-            "end": 0.18
+            "start": 0.0,
+            "end": 0.41
           },
           {
             "word": "a",
@@ -13566,11 +13551,6 @@
             "end": 1.52
           },
           {
-            "word": "mañana",
-            "start": 1.77,
-            "end": 1.88
-          },
-          {
             "word": "guarda",
             "start": 1.93,
             "end": 2.12
@@ -13583,12 +13563,12 @@
           {
             "word": "nueva",
             "start": 2.19,
-            "end": 2.43
+            "end": 2.37
           },
           {
             "word": "york",
             "start": 2.47,
-            "end": 2.54
+            "end": 2.82
           }
         ]
       },
@@ -13598,14 +13578,14 @@
       "id": "2e4b3e72-d6ac-459d-8041-177186b339b0",
       "name": "91d1d8c7-0dbd-49da-a309-ea2cce04b1c7_525.wav",
       "locale": "es_ES",
-      "transcript": "de esa medida del ciento cincuenta y uno cinco centimetros",
+      "transcript": "de esa medida cierto del ciento cincuenta y uno cinco centimetros",
       "source": {
         "duration_seconds": 4.64,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
         "words": [
           {
             "word": "de",
-            "start": 0.04,
+            "start": 0.12,
             "end": 0.188
           },
           {
@@ -13619,8 +13599,13 @@
             "end": 0.8
           },
           {
+            "word": "cierto",
+            "start": 0.88,
+            "end": 0.97
+          },
+          {
             "word": "del",
-            "start": 1.2,
+            "start": 0.97,
             "end": 1.52
           },
           {
@@ -13630,7 +13615,7 @@
           },
           {
             "word": "cincuenta",
-            "start": 2.5,
+            "start": 2.16,
             "end": 2.64
           },
           {
@@ -13661,7 +13646,7 @@
       "id": "cc940553-64cf-4c05-889b-4d7de4a03b30",
       "name": "896d8792-4609-48ef-b2b1-209f0bee03b3_267.wav",
       "locale": "es_ES",
-      "transcript": "a todo el mundo diga y le enviaron a tarso",
+      "transcript": "a todo el mundo diga y le a tarso",
       "source": {
         "duration_seconds": 2.548,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -13688,7 +13673,7 @@
           },
           {
             "word": "diga",
-            "start": 1.09,
+            "start": 0.98,
             "end": 1.24
           },
           {
@@ -13702,13 +13687,8 @@
             "end": 1.52
           },
           {
-            "word": "enviaron",
-            "start": 1.52,
-            "end": 1.59
-          },
-          {
             "word": "a",
-            "start": 1.59,
+            "start": 1.92,
             "end": 2.08
           },
           {
@@ -13724,7 +13704,7 @@
       "id": "a11b73e9-4190-4df3-b984-ecf58075865e",
       "name": "372dbd4c-0aae-485d-a8c6-ec0a95401da5_609.wav",
       "locale": "es_ES",
-      "transcript": "en ambito de la ciudad de aires",
+      "transcript": "en ambito de la ciudad de buenos aires",
       "source": {
         "duration_seconds": 1.74,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -13751,7 +13731,7 @@
           },
           {
             "word": "ciudad",
-            "start": 0.72,
+            "start": 0.76,
             "end": 0.87
           },
           {
@@ -13760,9 +13740,14 @@
             "end": 0.93
           },
           {
+            "word": "buenos",
+            "start": 0.93,
+            "end": 1.12
+          },
+          {
             "word": "aires",
             "start": 1.12,
-            "end": 1.56
+            "end": 1.4
           }
         ]
       },
@@ -13779,8 +13764,8 @@
         "words": [
           {
             "word": "fortaleza",
-            "start": 0.05,
-            "end": 0.44
+            "start": 0.64,
+            "end": 1.04
           }
         ]
       },
@@ -13790,7 +13775,7 @@
       "id": "7f0051c7-ef31-409b-95e4-828778e2355a",
       "name": "1184e4df-1a55-42c2-9a11-e2403f480264_038.wav",
       "locale": "es_ES",
-      "transcript": "en el recorrido por las comunidades indigenas de villa tamulte de las sabanas presentes los directores de la unidad modelo de fuerzas estatales de la region rural rural el director de la de honor y justicia y la directora de la unidad de perspectiva de genero ademas el funcionario visito las comunidades aniceto rancheria tocoal rovirosa la manga la estancia la ceiba y buena vista segunda seccion seccion y agradezco y agradecemos a nombre de nuestra comunidad",
+      "transcript": "en el recorrido por las indigenas de villa tamulte de las sabanas presentes los directores de la unidad modelo de fuerzas estatales de la region rural rural el director de la comision de honor y y la directora de la unidad de perspectiva de genero ademas el funcionario visito las comunidades aniceto rancheria tocoal rovirosa la manga la estancia la ceiba y buena vista segunda seccion seccion y agradezco y agradecemos a nombre de nuestra comunidad",
       "source": {
         "duration_seconds": 27.59,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -13819,11 +13804,6 @@
             "word": "las",
             "start": 0.88,
             "end": 1.12
-          },
-          {
-            "word": "comunidades",
-            "start": 1.12,
-            "end": 1.68
           },
           {
             "word": "indigenas",
@@ -13956,6 +13936,11 @@
             "end": 10.08
           },
           {
+            "word": "comision",
+            "start": 10.08,
+            "end": 10.48
+          },
+          {
             "word": "de",
             "start": 10.48,
             "end": 10.56
@@ -13968,12 +13953,7 @@
           {
             "word": "y",
             "start": 10.75,
-            "end": 11.34
-          },
-          {
-            "word": "justicia",
-            "start": 11.34,
-            "end": 11.44
+            "end": 10.8
           },
           {
             "word": "y",
@@ -14033,11 +14013,11 @@
           {
             "word": "el",
             "start": 15.04,
-            "end": 15.36
+            "end": 15.2
           },
           {
             "word": "funcionario",
-            "start": 15.36,
+            "start": 15.2,
             "end": 15.76
           },
           {
@@ -14062,7 +14042,7 @@
           },
           {
             "word": "rancheria",
-            "start": 17.91,
+            "start": 17.85,
             "end": 18.48
           },
           {
@@ -14153,11 +14133,11 @@
           {
             "word": "agradecemos",
             "start": 25.2,
-            "end": 25.3
+            "end": 25.92
           },
           {
             "word": "a",
-            "start": 25.3,
+            "start": 25.92,
             "end": 26.08
           },
           {
@@ -14173,11 +14153,11 @@
           {
             "word": "nuestra",
             "start": 26.48,
-            "end": 26.8
+            "end": 26.73
           },
           {
             "word": "comunidad",
-            "start": 26.8,
+            "start": 26.73,
             "end": 27.44
           }
         ]
@@ -14205,8 +14185,8 @@
           },
           {
             "word": "iniciar",
-            "start": 0.548,
-            "end": 1.04
+            "start": 0.358,
+            "end": 0.97
           }
         ]
       },
@@ -14229,11 +14209,11 @@
           {
             "word": "la",
             "start": 0.08,
-            "end": 0.82
+            "end": 0.5
           },
           {
             "word": "argentina",
-            "start": 0.82,
+            "start": 0.5,
             "end": 1.04
           }
         ]
@@ -14267,14 +14247,14 @@
       "id": "fe25ecd7-13bb-48ac-8d92-89d1699b3d12",
       "name": "8d68078e-6504-4019-a3b9-380df0c26490_051.wav",
       "locale": "es_ES",
-      "transcript": "numero de bandas si recuerdas bien las propiedades eh bueno se que estoy ingresando una mañana otra vez pero ya te va a ser muy comun comun si numero de bandas nos dice que uno entonces solamente ingreso un de banda",
+      "transcript": "numero de bandas si recuerdas bien las propiedades eh bueno se que estoy ingresando una mañana otra vez pero ya te va a ser muy comun comun si numero de bandas nos dice que uno entonces solamente un numero de banda",
       "source": {
         "duration_seconds": 12.71,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
         "words": [
           {
             "word": "numero",
-            "start": 0.24,
+            "start": 0.03,
             "end": 0.32
           },
           {
@@ -14285,7 +14265,7 @@
           {
             "word": "bandas",
             "start": 0.48,
-            "end": 1.0
+            "end": 0.64
           },
           {
             "word": "si",
@@ -14305,12 +14285,12 @@
           {
             "word": "las",
             "start": 2.48,
-            "end": 2.82
+            "end": 2.64
           },
           {
             "word": "propiedades",
-            "start": 2.82,
-            "end": 3.44
+            "start": 2.64,
+            "end": 3.38
           },
           {
             "word": "eh",
@@ -14335,11 +14315,11 @@
           {
             "word": "estoy",
             "start": 4.8,
-            "end": 5.22
+            "end": 5.04
           },
           {
             "word": "ingresando",
-            "start": 5.22,
+            "start": 5.04,
             "end": 5.44
           },
           {
@@ -14458,19 +14438,19 @@
             "end": 11.09
           },
           {
-            "word": "ingreso",
-            "start": 11.17,
-            "end": 11.68
-          },
-          {
             "word": "un",
             "start": 11.8,
             "end": 11.99
           },
           {
+            "word": "numero",
+            "start": 11.99,
+            "end": 12.24
+          },
+          {
             "word": "de",
             "start": 12.24,
-            "end": 12.32
+            "end": 12.59
           },
           {
             "word": "banda",
@@ -14492,12 +14472,12 @@
         "words": [
           {
             "word": "x",
-            "start": 0.241,
+            "start": 0.081,
             "end": 0.56
           },
           {
             "word": "y",
-            "start": 1.01,
+            "start": 0.64,
             "end": 1.119
           },
           {
@@ -14507,7 +14487,7 @@
           },
           {
             "word": "t",
-            "start": 1.391,
+            "start": 1.321,
             "end": 1.52
           }
         ]
@@ -14567,7 +14547,7 @@
           },
           {
             "word": "trelew",
-            "start": 1.92,
+            "start": 2.04,
             "end": 2.16
           }
         ]
@@ -14600,12 +14580,12 @@
           },
           {
             "word": "mañana",
-            "start": 1.24,
-            "end": 1.52
+            "start": 1.41,
+            "end": 1.47
           },
           {
             "word": "el",
-            "start": 1.52,
+            "start": 1.47,
             "end": 1.78
           },
           {
@@ -14641,7 +14621,7 @@
       "id": "22894442-706a-435f-b2e8-07d19049fb9b",
       "name": "e2a88b81-e31a-4403-a3cb-e243eef2465d_070.wav",
       "locale": "es_ES",
-      "transcript": "se refiere juan guillen mas exactamente a la san mañana arcangel",
+      "transcript": "se refiere juan guillen mas exactamente a la parroquia mañana arcangel",
       "source": {
         "duration_seconds": 4.66,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -14649,11 +14629,11 @@
           {
             "word": "se",
             "start": 0.0,
-            "end": 0.23
+            "end": 0.08
           },
           {
             "word": "refiere",
-            "start": 0.23,
+            "start": 0.08,
             "end": 0.8
           },
           {
@@ -14664,7 +14644,7 @@
           {
             "word": "guillen",
             "start": 1.12,
-            "end": 1.383
+            "end": 1.673
           },
           {
             "word": "mas",
@@ -14674,11 +14654,11 @@
           {
             "word": "exactamente",
             "start": 1.92,
-            "end": 2.64
+            "end": 2.54
           },
           {
             "word": "a",
-            "start": 2.64,
+            "start": 2.54,
             "end": 2.72
           },
           {
@@ -14687,9 +14667,9 @@
             "end": 2.88
           },
           {
-            "word": "san",
-            "start": 3.43,
-            "end": 3.663
+            "word": "parroquia",
+            "start": 2.882,
+            "end": 3.43
           },
           {
             "word": "mañana",
@@ -14699,7 +14679,7 @@
           {
             "word": "arcangel",
             "start": 4.0,
-            "end": 4.36
+            "end": 4.64
           }
         ]
       },
@@ -14717,16 +14697,16 @@
           {
             "word": "la",
             "start": 0.007,
-            "end": 0.16
+            "end": 0.08
           },
           {
             "word": "letra",
-            "start": 0.16,
+            "start": 0.08,
             "end": 0.537
           },
           {
             "word": "mañana",
-            "start": 0.72,
+            "start": 0.56,
             "end": 0.954
           }
         ]
@@ -14808,16 +14788,16 @@
           {
             "word": "la",
             "start": 2.0,
-            "end": 2.48
+            "end": 2.1
           },
           {
             "word": "letra",
-            "start": 2.48,
-            "end": 3.56
+            "start": 2.1,
+            "end": 3.02
           },
           {
             "word": "e",
-            "start": 3.56,
+            "start": 3.02,
             "end": 3.74
           },
           {
@@ -14828,7 +14808,7 @@
           {
             "word": "adrenalin",
             "start": 3.98,
-            "end": 4.96
+            "end": 4.47
           }
         ]
       },
@@ -14838,7 +14818,7 @@
       "id": "d625e485-a888-48d4-af16-90f6f22c13d9",
       "name": "f3cc3437-b77d-4bbe-8303-10a8292ab8f8_050.wav",
       "locale": "es_ES",
-      "transcript": "o cinco porciento",
+      "transcript": "o porciento",
       "source": {
         "duration_seconds": 1.111,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -14849,14 +14829,9 @@
             "end": 0.03
           },
           {
-            "word": "cinco",
-            "start": 0.052,
-            "end": 0.45
-          },
-          {
             "word": "porciento",
             "start": 0.45,
-            "end": 0.901
+            "end": 1.111
           }
         ]
       },
@@ -14909,7 +14884,7 @@
           {
             "word": "huerto",
             "start": 3.24,
-            "end": 3.68
+            "end": 3.54
           }
         ]
       },
@@ -14919,7 +14894,7 @@
       "id": "9122335e-315a-456d-b227-4d30abf8b1f5",
       "name": "bd3c9698-c8e4-4f98-95a5-337127aeb11a_002.wav",
       "locale": "es_ES",
-      "transcript": "uno punto millones para derechohabientes del infonavit infonavit y cien mil los de el ((foviste))",
+      "transcript": "uno punto millones para derechohabientes del infonavit infonavit y cien mil para los de el ((foviste))",
       "source": {
         "duration_seconds": 6.88,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -14980,8 +14955,13 @@
             "end": 5.36
           },
           {
+            "word": "para",
+            "start": 5.36,
+            "end": 5.58
+          },
+          {
             "word": "los",
-            "start": 5.66,
+            "start": 5.58,
             "end": 5.92
           },
           {
@@ -15007,20 +14987,15 @@
       "id": "3d8bda8a-a20b-42a5-9f01-e4767fa2cde9",
       "name": "af4fee3a-9fe8-43a6-b1bd-a08ba9d55c30_283.wav",
       "locale": "es_ES",
-      "transcript": "honduras nicaragua salvador guatemala",
+      "transcript": "honduras salvador guatemala",
       "source": {
         "duration_seconds": 3.78,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
         "words": [
           {
             "word": "honduras",
-            "start": 0.61,
+            "start": 0.12,
             "end": 0.72
-          },
-          {
-            "word": "nicaragua",
-            "start": 0.76,
-            "end": 1.68
           },
           {
             "word": "salvador",
@@ -15030,7 +15005,7 @@
           {
             "word": "guatemala",
             "start": 2.64,
-            "end": 3.39
+            "end": 3.73
           }
         ]
       },
@@ -15040,15 +15015,20 @@
       "id": "51ad4eda-5c90-44be-a42c-9b08aa009fd4",
       "name": "514baa10-c745-4fb8-8220-3a92e29709fd_006.wav",
       "locale": "es_ES",
-      "transcript": "tres nueve",
+      "transcript": "tres seis nueve",
       "source": {
         "duration_seconds": 2.447,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
         "words": [
           {
             "word": "tres",
-            "start": 0.04,
+            "start": 0.17,
             "end": 0.74
+          },
+          {
+            "word": "seis",
+            "start": 0.82,
+            "end": 1.76
           },
           {
             "word": "nueve",
@@ -15088,11 +15068,11 @@
           {
             "word": "santa",
             "start": 0.46,
-            "end": 0.62
+            "end": 1.09
           },
           {
             "word": "fe",
-            "start": 0.62,
+            "start": 1.09,
             "end": 1.28
           }
         ]
@@ -15140,8 +15120,8 @@
           },
           {
             "word": "cinco",
-            "start": 2.74,
-            "end": 2.81
+            "start": 2.99,
+            "end": 3.2
           },
           {
             "word": "lo",
@@ -15204,7 +15184,7 @@
           {
             "word": "dos",
             "start": 1.65,
-            "end": 1.74
+            "end": 1.88
           }
         ]
       },
@@ -15288,11 +15268,11 @@
           {
             "word": "luisa",
             "start": 0.64,
-            "end": 1.15
+            "end": 0.96
           },
           {
             "word": "alcalde",
-            "start": 1.15,
+            "start": 0.96,
             "end": 1.36
           },
           {
@@ -15408,7 +15388,7 @@
           {
             "word": "andy",
             "start": 7.36,
-            "end": 7.76
+            "end": 7.44
           },
           {
             "word": "hijo",
@@ -15423,7 +15403,7 @@
           {
             "word": "lopez",
             "start": 8.24,
-            "end": 8.32
+            "end": 8.8
           },
           {
             "word": "obrador",
@@ -15438,21 +15418,21 @@
           {
             "word": "jorge",
             "start": 10.16,
-            "end": 10.62
+            "end": 10.35
           },
           {
             "word": "garcia",
-            "start": 10.62,
+            "start": 10.35,
             "end": 11.28
           },
           {
             "word": "orozco",
             "start": 11.36,
-            "end": 11.51
+            "end": 11.92
           },
           {
             "word": "este",
-            "start": 11.51,
+            "start": 11.92,
             "end": 12.16
           },
           {
@@ -15538,11 +15518,11 @@
           {
             "word": "beltran",
             "start": 18.4,
-            "end": 18.8
+            "end": 18.97
           },
           {
             "word": "gana",
-            "start": 18.8,
+            "start": 18.97,
             "end": 19.12
           },
           {
@@ -15606,11 +15586,11 @@
           {
             "word": "mañana",
             "start": 0.13,
-            "end": 0.443
+            "end": 0.363
           },
           {
             "word": "guatemala",
-            "start": 0.66,
+            "start": 0.46,
             "end": 1.124
           }
         ]
@@ -15639,7 +15619,7 @@
           {
             "word": "citosol",
             "start": 0.4,
-            "end": 1.315
+            "end": 1.055
           },
           {
             "word": "hacia",
@@ -15677,7 +15657,7 @@
           {
             "word": "uno",
             "start": 0.05,
-            "end": 0.12
+            "end": 0.31
           },
           {
             "word": "dos",
@@ -15692,7 +15672,7 @@
       "id": "12cea749-e5a8-4ee0-aa85-905f2e191f10",
       "name": "fe9d9f16-47bf-495c-9121-6c498730a660_094.wav",
       "locale": "es_ES",
-      "transcript": "estamos hablando del municipio de puerto porque alli se ha cesado por el momento",
+      "transcript": "estamos hablando del municipio de puerto escondido porque alli se ha por el momento",
       "source": {
         "duration_seconds": 5.17,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -15700,21 +15680,21 @@
           {
             "word": "estamos",
             "start": 0.0,
-            "end": 0.59
+            "end": 0.23
           },
           {
             "word": "hablando",
-            "start": 0.59,
+            "start": 0.23,
             "end": 0.73
           },
           {
             "word": "del",
             "start": 0.73,
-            "end": 1.43
+            "end": 1.21
           },
           {
             "word": "municipio",
-            "start": 1.43,
+            "start": 1.21,
             "end": 1.9
           },
           {
@@ -15728,8 +15708,13 @@
             "end": 2.27
           },
           {
+            "word": "escondido",
+            "start": 2.32,
+            "end": 2.96
+          },
+          {
             "word": "porque",
-            "start": 2.78,
+            "start": 2.96,
             "end": 3.1
           },
           {
@@ -15748,13 +15733,8 @@
             "end": 3.6
           },
           {
-            "word": "cesado",
-            "start": 3.6,
-            "end": 4.16
-          },
-          {
             "word": "por",
-            "start": 4.195,
+            "start": 4.445,
             "end": 4.64
           },
           {
@@ -15782,7 +15762,7 @@
         "words": [
           {
             "word": "albarcas",
-            "start": 0.21,
+            "start": 0.07,
             "end": 0.56
           }
         ]
@@ -15801,11 +15781,11 @@
           {
             "word": "cuando",
             "start": 0.02,
-            "end": 0.1
+            "end": 0.21
           },
           {
             "word": "se",
-            "start": 0.1,
+            "start": 0.21,
             "end": 0.41
           },
           {
@@ -15848,7 +15828,7 @@
       "id": "8b260011-7559-4df7-9023-f8f6110c6ad1",
       "name": "12e149c1-50d4-4b2b-a6aa-ae927dcd17b4_024.wav",
       "locale": "es_ES",
-      "transcript": "pero usted le tira ahi esa tripletica le tira un mañana digo yo un peso es que usted tiene que jugarle un peso usted le puede jugar un peso hasta mil pesos",
+      "transcript": "pero usted le tira ahi esa tripletica le tira un mañana digo yo un peso es que usted que jugarle un peso le puede jugar desde un peso hasta mil pesos",
       "source": {
         "duration_seconds": 7.96,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -15886,7 +15866,7 @@
           {
             "word": "tripletica",
             "start": 1.68,
-            "end": 2.01
+            "end": 1.75
           },
           {
             "word": "le",
@@ -15906,11 +15886,11 @@
           {
             "word": "mañana",
             "start": 2.72,
-            "end": 2.83
+            "end": 2.99
           },
           {
             "word": "digo",
-            "start": 2.83,
+            "start": 2.99,
             "end": 3.28
           },
           {
@@ -15944,11 +15924,6 @@
             "end": 4.32
           },
           {
-            "word": "tiene",
-            "start": 4.32,
-            "end": 4.48
-          },
-          {
             "word": "que",
             "start": 4.48,
             "end": 4.56
@@ -15966,12 +15941,7 @@
           {
             "word": "peso",
             "start": 4.88,
-            "end": 5.0
-          },
-          {
-            "word": "usted",
-            "start": 5.0,
-            "end": 5.56
+            "end": 5.28
           },
           {
             "word": "le",
@@ -15987,6 +15957,11 @@
             "word": "jugar",
             "start": 5.76,
             "end": 6.0
+          },
+          {
+            "word": "desde",
+            "start": 6.0,
+            "end": 6.24
           },
           {
             "word": "un",
@@ -16011,7 +15986,7 @@
           {
             "word": "pesos",
             "start": 7.52,
-            "end": 7.73
+            "end": 7.66
           }
         ]
       },
@@ -16021,14 +15996,14 @@
       "id": "2ef41659-51e1-4fe6-9703-a3ff6702edcf",
       "name": "ea884fbd-ab26-4174-8597-8ea0b1889aed_017.wav",
       "locale": "es_ES",
-      "transcript": "dos d f dos",
+      "transcript": "dos d f adh dos",
       "source": {
         "duration_seconds": 1.96,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
         "words": [
           {
             "word": "dos",
-            "start": 0.0,
+            "start": 0.15,
             "end": 0.34
           },
           {
@@ -16039,7 +16014,12 @@
           {
             "word": "f",
             "start": 0.64,
-            "end": 0.87
+            "end": 0.82
+          },
+          {
+            "word": "adh",
+            "start": 0.82,
+            "end": 1.56
           },
           {
             "word": "dos",
@@ -16062,17 +16042,17 @@
           {
             "word": "h",
             "start": 0.06,
-            "end": 0.28
+            "end": 0.51
           },
           {
             "word": "co",
-            "start": 0.28,
+            "start": 0.51,
             "end": 0.68
           },
           {
             "word": "tres",
             "start": 0.72,
-            "end": 0.87
+            "end": 1.04
           }
         ]
       },
@@ -16135,7 +16115,7 @@
           {
             "word": "seis",
             "start": 3.62,
-            "end": 3.82
+            "end": 3.75
           },
           {
             "word": "treinta",
@@ -16150,11 +16130,11 @@
           {
             "word": "seis",
             "start": 4.53,
-            "end": 4.98
+            "end": 4.8
           },
           {
             "word": "treinta",
-            "start": 4.98,
+            "start": 4.8,
             "end": 5.36
           }
         ]
@@ -16165,14 +16145,14 @@
       "id": "1fb74587-9728-486f-bbeb-0e501e5b2a0d",
       "name": "98128de4-e2e0-48bb-8708-6e82ab5b26f3_800.wav",
       "locale": "es_ES",
-      "transcript": "gracias a radio info amba que en su web mañana amba punto punto ar",
+      "transcript": "gracias a radio info amba que en su sitio web mañana amba punto punto ar",
       "source": {
         "duration_seconds": 4.32,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
         "words": [
           {
             "word": "gracias",
-            "start": 0.03,
+            "start": 0.32,
             "end": 0.459
           },
           {
@@ -16183,11 +16163,11 @@
           {
             "word": "radio",
             "start": 0.62,
-            "end": 0.91
+            "end": 0.74
           },
           {
             "word": "info",
-            "start": 0.91,
+            "start": 0.74,
             "end": 1.07
           },
           {
@@ -16208,7 +16188,12 @@
           {
             "word": "su",
             "start": 1.664,
-            "end": 1.82
+            "end": 1.88
+          },
+          {
+            "word": "sitio",
+            "start": 1.88,
+            "end": 2.15
           },
           {
             "word": "web",
@@ -16248,7 +16233,7 @@
       "id": "e6b8ba0a-4896-4de6-b371-56a567a1bbd6",
       "name": "f48b5a83-c061-44eb-8d76-5288d1d39769_358.wav",
       "locale": "es_ES",
-      "transcript": "mañana cero cero siete del dos doce",
+      "transcript": "mañana cero siete del dos doce",
       "source": {
         "duration_seconds": 2.8,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -16256,17 +16241,12 @@
           {
             "word": "mañana",
             "start": 0.05,
-            "end": 0.43
+            "end": 0.75
           },
           {
             "word": "cero",
-            "start": 0.43,
+            "start": 0.75,
             "end": 1.07
-          },
-          {
-            "word": "cero",
-            "start": 1.07,
-            "end": 1.38
           },
           {
             "word": "siete",
@@ -16334,16 +16314,16 @@
           {
             "word": "mañana",
             "start": 2.08,
-            "end": 2.25
+            "end": 2.47
           },
           {
             "word": "y",
-            "start": 2.25,
-            "end": 2.56
+            "start": 2.47,
+            "end": 2.6
           },
           {
             "word": "x.",
-            "start": 2.56,
+            "start": 2.6,
             "end": 2.99
           },
           {
@@ -16354,7 +16334,7 @@
           {
             "word": "z",
             "start": 3.31,
-            "end": 3.4
+            "end": 3.63
           }
         ]
       },
@@ -16432,11 +16412,11 @@
           {
             "word": "los",
             "start": 3.28,
-            "end": 3.98
+            "end": 3.75
           },
           {
             "word": "periodicos",
-            "start": 3.98,
+            "start": 3.75,
             "end": 4.08
           },
           {
@@ -16452,12 +16432,12 @@
           {
             "word": "las",
             "start": 4.241,
-            "end": 4.32
+            "end": 4.68
           },
           {
             "word": "noticias",
-            "start": 4.32,
-            "end": 5.25
+            "start": 4.68,
+            "end": 4.88
           },
           {
             "word": "por",
@@ -16730,17 +16710,17 @@
           {
             "word": "el",
             "start": 0.16,
-            "end": 0.47
+            "end": 0.24
           },
           {
             "word": "atanasio",
-            "start": 0.47,
+            "start": 0.24,
             "end": 0.72
           },
           {
             "word": "girardot",
             "start": 0.8,
-            "end": 1.3
+            "end": 1.23
           }
         ]
       },
@@ -16750,7 +16730,7 @@
       "id": "62e15bf2-c7d1-47fe-9571-d67ce5a4c553",
       "name": "207a7a82-75d3-4e28-85c7-49e6e76d9eac_116.wav",
       "locale": "es_ES",
-      "transcript": "los salgado en miguel",
+      "transcript": "los salgado en san miguel",
       "source": {
         "duration_seconds": 1.48,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -16758,11 +16738,11 @@
           {
             "word": "los",
             "start": 0.0,
-            "end": 0.201
+            "end": 0.581
           },
           {
             "word": "salgado",
-            "start": 0.201,
+            "start": 0.581,
             "end": 0.67
           },
           {
@@ -16771,9 +16751,14 @@
             "end": 0.78
           },
           {
+            "word": "san",
+            "start": 0.78,
+            "end": 0.95
+          },
+          {
             "word": "miguel",
             "start": 0.95,
-            "end": 1.48
+            "end": 1.18
           }
         ]
       },
@@ -16790,7 +16775,7 @@
         "words": [
           {
             "word": "reina",
-            "start": 0.33,
+            "start": 0.52,
             "end": 0.58
           },
           {
@@ -16806,7 +16791,7 @@
           {
             "word": "paz",
             "start": 0.88,
-            "end": 1.06
+            "end": 1.45
           }
         ]
       },
@@ -16869,7 +16854,7 @@
       "id": "0bc1943e-f056-4fce-8fe0-519a523be5c5",
       "name": "99069c70-04c0-4834-b50a-e812c89d4d42_125.wav",
       "locale": "es_ES",
-      "transcript": "supongo a decirle mil novecientos noventa y cuatro",
+      "transcript": "supongo a decirle mil novecientos y cuatro",
       "source": {
         "duration_seconds": 2.059,
         "duration_basis": "max_supplied_alignment_end_lower_bound_not_measured_audio_duration",
@@ -16897,12 +16882,7 @@
           {
             "word": "novecientos",
             "start": 0.86,
-            "end": 1.03
-          },
-          {
-            "word": "noventa",
-            "start": 1.03,
-            "end": 1.71
+            "end": 1.33
           },
           {
             "word": "y",
@@ -16955,7 +16935,7 @@
           {
             "word": "ocho",
             "start": 2.59,
-            "end": 2.67
+            "end": 2.76
           }
         ]
       },
@@ -16972,12 +16952,12 @@
         "words": [
           {
             "word": "san",
-            "start": 0.22,
+            "start": 0.0,
             "end": 0.419
           },
           {
             "word": "miguel",
-            "start": 0.501,
+            "start": 0.581,
             "end": 0.72
           }
         ]
