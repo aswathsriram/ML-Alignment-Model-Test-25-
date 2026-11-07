@@ -8,12 +8,13 @@ Output : spanish_fix/Updated_spanish_rebuilt.json      the file to upload (same 
 
 1. Text errors removed: capitals -> lowercase, punctuation stripped, digits -> Spanish words
    (a spelled letter keeps its optional period; tags such as (()) are never touched).
-2. Existing missing segments and two-word chips are kept; the transcript always says exactly what the chips say,
-   so a missing word is simply missing (nothing for the platform to flag).
+2. Existing missing segments are kept. Two-word chips are NOT errors here: each is split back into one chip per word
+   (the split point is placed in proportion to the words' lengths). The transcript always says exactly what the
+   chips say, so a missing word is simply missing (nothing for the platform to flag).
 3. New errors to 3-6 per item where its length allows, at least 3 words apart, never on a tag:
    boundary mismatch (150-700 ms; aligners get 100 ms tolerance), missing segment, hallucinated chip
    (in a pause of at least 0.35 s, repeating the word before).
-Weights: boundary 50 points, missing / hallucinated / two-words-in-one-chip 50/3 each; A1 3 : A2 2 : A3 1.
+Weights: boundary 50 points, missing 25, hallucinated 25; A1 3 : A2 2 : A3 1.
 
 Run    : python spanish_fix/rebuild_spanish.py
 """
@@ -28,7 +29,7 @@ SEED = 20261107
 DIGITS = {"1": "uno", "2": "dos", "4": "cuatro", "5": "cinco", "6": "seis", "7": "siete", "12": "doce", "30": "treinta",
           "50": "cincuenta", "70": "setenta", "90": "noventa"}
 FUNC = set("el la los las un una y o que de del al en con por para se lo le me te mi su es no si ya muy pero yo tú".split())
-GROUP_POINTS = {"BOUNDARY": 50.0, "MISSING": 50 / 3, "HALLUCINATED": 50 / 3, "SEGMENTATION": 50 / 3}
+GROUP_POINTS = {"BOUNDARY": 50.0, "MISSING": 25.0, "HALLUCINATED": 25.0}
 BAND_FACTOR = {"A1": 3, "A2": 2, "A3": 1}
 NEW_SHARE = [("move", 0.60), ("remove", 0.20), ("add", 0.20)]
 
@@ -62,6 +63,20 @@ def main():
             new = " ".join(clean_text(t) for t in w["word"].split())
             if new != w["word"]:
                 rec["text_fixes"].append(f"{w['word']} -> {new}"); w["word"] = new
+        # no two-word chips: split each into one chip per word, time shared by word length
+        split = []
+        for w in words:
+            parts = w["word"].split()
+            if len(parts) > 1 and not w["word"].startswith("(("):
+                total, t = sum(len(x) for x in parts), w["start"]
+                for j, x in enumerate(parts):
+                    e = w["end"] if j == len(parts) - 1 else round(t + (w["end"] - w["start"]) * len(x) / total, 3)
+                    split.append({"word": x, "start": round(t, 3), "end": e}); t = e
+                rec["text_fixes"].append(f"split '{w['word']}' into {len(parts)} chips")
+            else:
+                split.append(w)
+        words[:] = split
+        item["source"]["words"] = words
         # repair the two broken overlaps (a chip over its neighbour / into a tag)
         for a, b in zip(words, words[1:]):
             if a["end"] > b["start"] + 1e-9:
@@ -84,11 +99,6 @@ def main():
                     rec["errors"].append({"family": "WD", "group": "MISSING", "band": band, "word": T[k], "kept_from_source": True,
                                           "note": f"'{T[k]}' is spoken before chip {nxt} but has no chip"})
                 taken.append({nxt - 1, nxt})
-        for ci, w in enumerate(words):
-            if " " in w["word"] and not w["word"].startswith("(("):
-                rec["errors"].append({"family": "SEG-MERGE", "group": "SEGMENTATION", "band": "A2", "chip_index": ci,
-                                      "word": w["word"], "kept_from_source": True, "note": "two words in one chip"})
-                taken.append({ci})
         # 3. new errors, on the chips as they are (W uses the pack builder's i/w/s/e shape)
         W = [{"i": i, "w": w["word"], "s": w["start"], "e": w["end"]} for i, w in enumerate(words)]
         dur = item["source"]["duration_seconds"]
@@ -168,8 +178,7 @@ def main():
     fam = collections.Counter(x["family"] for r in key for x in r["errors"])
     (HERE / "spanish_rebuilt_answer_key.json").write_text(json.dumps(
         {"locale": "es_ES", "items": len(key), "errors_by_family": dict(fam),
-         "weights": {"BOUNDARY": 50, "MISSING": 16.67, "HALLUCINATED": 16.67, "SEGMENTATION": 16.67,
-                     "band_factor": BAND_FACTOR},
+         "weights": {"BOUNDARY": 50, "MISSING": 25, "HALLUCINATED": 25, "band_factor": BAND_FACTOR},
          "note": "Boundary mismatches already in the source file cannot be listed: the correct timings were not supplied.",
          "items_detail": key}, ensure_ascii=False, indent=2), encoding="utf-8")
     per = collections.Counter(len(r["errors"]) for r in key)
