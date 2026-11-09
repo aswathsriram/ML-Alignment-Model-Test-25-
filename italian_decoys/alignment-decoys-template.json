@@ -1,0 +1,49 @@
+{
+  "format": "align-decoys/v1",
+  "instructions": [
+    "`words` is the CORRECT alignment, approved by a reviewer: i = index, w = word, s / e = start / end in seconds. Never change it.",
+    "Fill each decoy's `plants` with 3–6 deliberate mistakes an aligner can only find by listening — fewer on a short clip (even one), since mistakes must stay apart.",
+    "move — {\"action\":\"move\",\"word\":12,\"edge\":\"start\"|\"end\",\"shift_ms\":-300}: moves one edge of word 12. Positive = later. A neighbour touching that edge moves with it. Use 150–700 ms (150–250 subtle, 250–450 moderate, 450+ obvious). Never push an edge past the far edge of the neighbouring word, before 0 or past the audio end.",
+    "remove — {\"action\":\"remove\",\"word\":40}: the word keeps its text in the transcript but loses its timing (an aligner must add it back).",
+    "add — {\"action\":\"add\",\"after_word\":20,\"text\":\"the\"}: an extra chip in the pause after word 20 (the pause must be at least 0.35 s). Use a word from the same sentence, e.g. a repeat of the word before.",
+    "join — {\"action\":\"join\",\"word\":7}: words 7 and 8 become one chip. Only where words are separated by spaces (NOT ja_JP or zh_CN), and only when the true boundary is at least 0.2 s away from the middle of the joined chip.",
+    "Keep mistakes at least 3 words apart. Never touch a tag word (text starting with [ or <).",
+    "Mark the 1–2 most obvious mistakes \"critical\": true (must-catch). Optional \"note\" is for you only.",
+    "Return the SAME JSON with only the `plants` arrays filled. Do not add, remove or edit any other field."
+  ],
+  "decoys": [
+    {
+      "decoy_ref": "my-first-decoy",
+      "work_item_id": "<the file's workItemId — from a pack, or File lookup>",
+      "file_name": "<or the file name, if it has no workItemId>",
+      "plants": [
+        {
+          "action": "move",
+          "word": 12,
+          "edge": "end",
+          "shift_ms": 320,
+          "critical": true
+        },
+        {
+          "action": "move",
+          "word": 25,
+          "edge": "start",
+          "shift_ms": -180
+        },
+        {
+          "action": "remove",
+          "word": 40
+        },
+        {
+          "action": "add",
+          "after_word": 55,
+          "text": "the"
+        },
+        {
+          "action": "join",
+          "word": 70
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3644 @@
+{
+  "format": "align-decoys/v1",
+  "instructions": [
+    "`words` is the CORRECT alignment, approved by a reviewer: i = index, w = word, s / e = start / end in seconds. Never change it.",
+    "Fill each decoy's `plants` with 3–6 deliberate mistakes an aligner can only find by listening — fewer on a short clip (even one), since mistakes must stay apart.",
+    "move — {\"action\":\"move\",\"word\":12,\"edge\":\"start\"|\"end\",\"shift_ms\":-300}: moves one edge of word 12. Positive = later. A neighbour touching that edge moves with it. Use 150–700 ms (150–250 subtle, 250–450 moderate, 450+ obvious). Never push an edge past the far edge of the neighbouring word, before 0 or past the audio end.",
+    "remove — {\"action\":\"remove\",\"word\":40}: the word keeps its text in the transcript but loses its timing (an aligner must add it back).",
+    "add — {\"action\":\"add\",\"after_word\":20,\"text\":\"the\"}: an extra chip in the pause after word 20 (the pause must be at least 0.35 s). Use a word from the same sentence, e.g. a repeat of the word before.",
+    "join — {\"action\":\"join\",\"word\":7}: words 7 and 8 become one chip. Only where words are separated by spaces (NOT ja_JP or zh_CN), and only when the true boundary is at least 0.2 s away from the middle of the joined chip.",
+    "Keep mistakes at least 3 words apart. Never touch a tag word (text starting with [ or <).",
+    "Mark the 1–2 most obvious mistakes \"critical\": true (must-catch). Optional \"note\" is for you only.",
+    "Return the SAME JSON with only the `plants` arrays filled. Do not add, remove or edit any other field."
+  ],
+  "decoys": [
+    {
+      "decoy_ref": "it_001_000620.000-000920.000_00008.flac",
+      "work_item_id": "ca24dc13-1f39-48b0-bda4-9cd3ea83d7fc",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 17,
+          "text": "tardi",
+          "critical": true,
+          "note": "hallucinated word: extra 'tardi' in the 0.53 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 28,
+          "edge": "start",
+          "shift_ms": -70,
+          "note": "bitcoin start 70 ms early (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 42,
+          "edge": "end",
+          "shift_ms": 330,
+          "note": "dieci end 330 ms late (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_002_001800.000-002060.000_00002.flac",
+      "work_item_id": "cfbb8f28-8fd0-4e86-9149-eb07a377cb3f",
+      "plants": [
+        {
+          "action": "move",
+          "word": 15,
+          "edge": "start",
+          "shift_ms": -150,
+          "note": "di start 150 ms early (major boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 34,
+          "edge": "start",
+          "shift_ms": 430,
+          "note": "sempreverdi start 430 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 56,
+          "critical": true,
+          "note": "missing word: abbiamo loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_003_000000.000-000300.000_00006.flac",
+      "work_item_id": "0952a482-a0c5-462b-a7d1-d79ec9c1d80b",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 18,
+          "text": "comunicato",
+          "note": "hallucinated word: extra 'comunicato' in the 0.54 s pause after it"
+        },
+        {
+          "action": "remove",
+          "word": 32,
+          "critical": true,
+          "note": "missing word: eccetera loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 38,
+          "edge": "start",
+          "shift_ms": 40,
+          "note": "il start 40 ms late (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_004_000020.000-000210.000_00005.flac",
+      "work_item_id": "310cb49f-a4bf-4b88-ac38-3b78477a099f",
+      "plants": [
+        {
+          "action": "move",
+          "word": 28,
+          "edge": "end",
+          "shift_ms": -290,
+          "note": "bolsena end 290 ms early (major boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 34,
+          "critical": true,
+          "note": "missing word: siam loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 47,
+          "edge": "start",
+          "shift_ms": 110,
+          "note": "abbiamo start 110 ms late (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_005_000900.000-001200.000_00006.flac",
+      "work_item_id": "516b47f4-6cf8-4ac8-a00b-2b46b7cc6cf4",
+      "plants": [
+        {
+          "action": "move",
+          "word": 8,
+          "edge": "start",
+          "shift_ms": 670,
+          "critical": true,
+          "note": "al start 670 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 29,
+          "text": "approvazione",
+          "note": "hallucinated word: extra 'approvazione' in the 0.99 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 33,
+          "edge": "end",
+          "shift_ms": -50,
+          "note": "in end 50 ms early (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_006_001330.000-001410.000_00002.flac",
+      "work_item_id": "1971586b-23a8-47b3-b3bd-d257d0b05940",
+      "plants": [
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "end",
+          "shift_ms": 240,
+          "note": "palla end 240 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 85,
+          "critical": true,
+          "note": "missing word: fatta loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 92,
+          "edge": "start",
+          "shift_ms": 550,
+          "note": "sessantanove start 550 ms late (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_007_000420.000-000720.000_00004.flac",
+      "work_item_id": "08a227c8-00a6-4ecf-b6ac-439d3c37ac22",
+      "plants": [
+        {
+          "action": "move",
+          "word": 27,
+          "edge": "start",
+          "shift_ms": -80,
+          "note": "individuare start 80 ms early (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 30,
+          "edge": "start",
+          "shift_ms": 60,
+          "note": "osannati start 60 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 39,
+          "text": "quarticciolo",
+          "critical": true,
+          "note": "hallucinated word: extra 'quarticciolo' in the 0.62 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_008_002750.000-002840.000_00002.flac",
+      "work_item_id": "200ffe34-7066-4d1c-80f3-6598c66ab75d",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 4,
+          "critical": true,
+          "note": "missing word: bando loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": -340,
+          "note": "festival end 340 ms early (critical boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 20,
+          "text": "lavoro",
+          "note": "hallucinated word: extra 'lavoro' in the 0.35 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_010_000470.000-000730.000_00004.flac",
+      "work_item_id": "0568e5d0-ff43-4ebf-8ff4-8868a114fbfc",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 13,
+          "text": "menacca",
+          "note": "hallucinated word: extra 'menacca' in the 1.41 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 31,
+          "edge": "end",
+          "shift_ms": -650,
+          "critical": true,
+          "note": "eh end 650 ms early (critical boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 54,
+          "edge": "start",
+          "shift_ms": 180,
+          "note": "dato start 180 ms late (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_011_001360.000-001660.000_00001.flac",
+      "work_item_id": "d6e0f578-11df-4a11-86e3-ec8ec50d1030",
+      "plants": [
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "start",
+          "shift_ms": 140,
+          "note": "nome start 140 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 7,
+          "critical": true,
+          "note": "missing word: pertini loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_012_000020.000-000320.000_00001.flac",
+      "work_item_id": "5b90041d-aca9-415b-b331-ce5344c97395",
+      "plants": [
+        {
+          "action": "move",
+          "word": 8,
+          "edge": "end",
+          "shift_ms": 50,
+          "note": "mi end 50 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 29,
+          "text": "chiamata",
+          "critical": true,
+          "note": "hallucinated word: extra 'chiamata' in the 0.40 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 70,
+          "edge": "end",
+          "shift_ms": -40,
+          "note": "commozione end 40 ms early (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_013_000350.000-000650.000_00004.flac",
+      "work_item_id": "c4a59aea-8043-4258-a3f0-1fe0fdf30ec7",
+      "plants": [
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "end",
+          "shift_ms": -680,
+          "note": "raccontato end 680 ms early (critical boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 24,
+          "edge": "end",
+          "shift_ms": 190,
+          "note": "kenya end 190 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 63,
+          "critical": true,
+          "note": "missing word: integrato loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_015_000010.000-000310.000_00000.flac",
+      "work_item_id": "696f6c6d-6295-426f-81e5-c74765e077b6",
+      "plants": [
+        {
+          "action": "move",
+          "word": 31,
+          "edge": "start",
+          "shift_ms": -220,
+          "note": "como start 220 ms early (major boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 38,
+          "text": "legate",
+          "critical": true,
+          "note": "hallucinated word: extra 'legate' in the 0.46 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 76,
+          "edge": "end",
+          "shift_ms": -60,
+          "note": "di end 60 ms early (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_016_003020.000-003320.000_00003.flac",
+      "work_item_id": "dea23a8a-0d99-4fc1-ad7a-ba9b4a953f0f",
+      "plants": [
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": 40,
+          "note": "vero end 40 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 27,
+          "edge": "start",
+          "shift_ms": 440,
+          "note": "amministrazione start 440 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 33,
+          "critical": true,
+          "note": "missing word: che loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_018_000450.000-000750.000_00002.flac",
+      "work_item_id": "44b60818-6293-4e5f-80ca-86a0cabd272c",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 5,
+          "critical": true,
+          "note": "missing word: centosettantacinque loses its timing"
+        },
+        {
+          "action": "add",
+          "after_word": 19,
+          "text": "comunicazioni",
+          "note": "hallucinated word: extra 'comunicazioni' in the 0.67 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 25,
+          "edge": "end",
+          "shift_ms": 310,
+          "note": "variazione end 310 ms late (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_019_001680.000-001740.000_00001.flac",
+      "work_item_id": "9a168cac-768d-4779-b6f6-3a4a8d41ec97",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 4,
+          "critical": true,
+          "note": "missing word: vestito loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 28,
+          "edge": "start",
+          "shift_ms": -250,
+          "note": "con start 250 ms early (major boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 61,
+          "edge": "end",
+          "shift_ms": 70,
+          "note": "sì end 70 ms late (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_020_001250.000-001550.000_00011.flac",
+      "work_item_id": "41309d19-67ef-4d06-ae98-6bf91dc5ec77",
+      "plants": [
+        {
+          "action": "move",
+          "word": 27,
+          "edge": "end",
+          "shift_ms": -310,
+          "note": "almeno end 310 ms early (critical boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 32,
+          "text": "vista",
+          "critical": true,
+          "note": "hallucinated word: extra 'vista' in the 1.36 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 48,
+          "edge": "end",
+          "shift_ms": 240,
+          "note": "di end 240 ms late (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_021_003240.000-003540.000_00007.flac",
+      "work_item_id": "1831a66f-7d37-45c3-a0ab-900d477a98d5",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 50,
+          "text": "sole",
+          "critical": true,
+          "note": "hallucinated word: extra 'sole' in the 0.83 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 63,
+          "edge": "start",
+          "shift_ms": -350,
+          "note": "io start 350 ms early (critical boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 84,
+          "edge": "end",
+          "shift_ms": 260,
+          "note": "a end 260 ms late (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_022_002700.000-003000.000_00003.flac",
+      "work_item_id": "24c67cd7-7e00-4b11-80ae-68a780baac25",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 39,
+          "critical": true,
+          "note": "missing word: tesori loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 49,
+          "edge": "end",
+          "shift_ms": 70,
+          "note": "stava end 70 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 63,
+          "edge": "end",
+          "shift_ms": 60,
+          "note": "a end 60 ms late (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_023_002120.000-002420.000_00004.flac",
+      "work_item_id": "2ee9fd13-6fa3-4b9c-ac2e-00c1f8a94862",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 32,
+          "text": "anche",
+          "note": "hallucinated word: extra 'anche' in the 1.17 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 43,
+          "edge": "end",
+          "shift_ms": 140,
+          "note": "eh end 140 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 47,
+          "critical": true,
+          "note": "missing word: ci loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_024_000580.000-000780.000_00006.flac",
+      "work_item_id": "fe58b0a2-e0fb-4006-a45e-2b76a410b9d2",
+      "plants": [
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": 520,
+          "note": "si end 520 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 8,
+          "edge": "end",
+          "shift_ms": 560,
+          "critical": true,
+          "note": "milioni end 560 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 20,
+          "text": "milioni",
+          "note": "hallucinated word: extra 'milioni' in the 0.44 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_025_000900.000-001200.000_00010.flac",
+      "work_item_id": "c33df5bc-d015-4bb1-8f9d-680781f2ecf8",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 13,
+          "critical": true,
+          "note": "missing word: ovviamente loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 56,
+          "edge": "start",
+          "shift_ms": 70,
+          "note": "citava start 70 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 61,
+          "edge": "start",
+          "shift_ms": -300,
+          "note": "petito start 300 ms early (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_026_000530.000-000830.000_00000.flac",
+      "work_item_id": "f311c544-ac2b-444f-90fa-d388534d9b6a",
+      "plants": [
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": 140,
+          "note": "trovai start 140 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 35,
+          "text": "parole",
+          "critical": true,
+          "note": "hallucinated word: extra 'parole' in the 1.04 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 41,
+          "edge": "start",
+          "shift_ms": 50,
+          "note": "minuti start 50 ms late (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_027_001780.000-002040.000_00006.flac",
+      "work_item_id": "49ffc85d-afd7-4f93-b79d-8a599453c56b",
+      "plants": [
+        {
+          "action": "move",
+          "word": 26,
+          "edge": "start",
+          "shift_ms": -630,
+          "note": "ma start 630 ms early (critical boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 46,
+          "edge": "start",
+          "shift_ms": 40,
+          "note": "in start 40 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 61,
+          "critical": true,
+          "note": "missing word: usata loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_028_000000.000-000257.280_00004.flac",
+      "work_item_id": "da6bef00-7c68-49f1-a7b5-c533564f4f64",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 21,
+          "text": "euro",
+          "note": "hallucinated word: extra 'euro' in the 0.69 s pause after it"
+        },
+        {
+          "action": "remove",
+          "word": 39,
+          "critical": true,
+          "note": "missing word: anni loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 44,
+          "edge": "end",
+          "shift_ms": -180,
+          "note": "industry end 180 ms early (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_029_001920.000-002220.000_00004.flac",
+      "work_item_id": "2fd6a174-048b-412a-848b-d5f98e73646f",
+      "plants": [
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "end",
+          "shift_ms": 480,
+          "critical": true,
+          "note": "nel end 480 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 17,
+          "note": "missing word: ci loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 64,
+          "edge": "start",
+          "shift_ms": 430,
+          "note": "fatto start 430 ms late (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_030_002880.000-003180.000_00003.flac",
+      "work_item_id": "5da524cd-200c-47c7-95aa-aec09a42e4f8",
+      "plants": [
+        {
+          "action": "move",
+          "word": 38,
+          "edge": "end",
+          "shift_ms": -120,
+          "note": "restare end 120 ms early (major boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 45,
+          "edge": "start",
+          "shift_ms": 60,
+          "note": "superficiali start 60 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 52,
+          "text": "nell'incostanza",
+          "critical": true,
+          "note": "hallucinated word: extra 'nell'incostanza' in the 0.67 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_031_000300.000-000600.000_00006.flac",
+      "work_item_id": "9969e74b-f9a8-4710-a20f-cb9e4c724b99",
+      "plants": [
+        {
+          "action": "move",
+          "word": 49,
+          "edge": "end",
+          "shift_ms": -330,
+          "note": "regolamento end 330 ms early (critical boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 66,
+          "edge": "end",
+          "shift_ms": -70,
+          "note": "l'abbiamo end 70 ms early (minor boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 83,
+          "critical": true,
+          "note": "missing word: d'atto loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_032_000000.000-000300.000_00008.flac",
+      "work_item_id": "017b7b3d-6c79-4345-9364-ecf6a53d678b",
+      "plants": [
+        {
+          "action": "move",
+          "word": 19,
+          "edge": "end",
+          "shift_ms": 190,
+          "note": "adesso end 190 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 30,
+          "text": "biblico",
+          "critical": true,
+          "note": "hallucinated word: extra 'biblico' in the 1.17 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 45,
+          "edge": "end",
+          "shift_ms": -40,
+          "note": "fa end 40 ms early (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_033_000330.000-000630.000_00008.flac",
+      "work_item_id": "378e834c-4d75-4d9e-938c-4d43f983b3b6",
+      "plants": [
+        {
+          "action": "move",
+          "word": 33,
+          "edge": "start",
+          "shift_ms": -200,
+          "note": "come start 200 ms early (major boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 42,
+          "critical": true,
+          "note": "missing word: al loses its timing"
+        },
+        {
+          "action": "add",
+          "after_word": 64,
+          "text": "divide",
+          "note": "hallucinated word: extra 'divide' in the 0.41 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_034_000460.000-000760.000_00001.flac",
+      "work_item_id": "86859e6b-37f0-40f1-afda-fcbc91deb74f",
+      "plants": [
+        {
+          "action": "move",
+          "word": 21,
+          "edge": "end",
+          "shift_ms": 340,
+          "note": "di end 340 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 35,
+          "text": "autoconvocate",
+          "critical": true,
+          "note": "hallucinated word: extra 'autoconvocate' in the 0.76 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 40,
+          "edge": "end",
+          "shift_ms": -380,
+          "note": "eh end 380 ms early (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_035_000230.000-000530.000_00009.flac",
+      "work_item_id": "56de3aa7-0915-4529-8bc2-fa0ec5f197e7",
+      "plants": [
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "end",
+          "shift_ms": 110,
+          "note": "millenovecentoventotto end 110 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "end",
+          "shift_ms": 50,
+          "note": "trevisan end 50 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 14,
+          "critical": true,
+          "note": "missing word: dachau loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_036_000210.000-000460.000_00004.flac",
+      "work_item_id": "3484d2f6-cf29-4730-85b5-0dfc4b37514b",
+      "plants": [
+        {
+          "action": "move",
+          "word": 15,
+          "edge": "end",
+          "shift_ms": 200,
+          "note": "di end 200 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 19,
+          "critical": true,
+          "note": "missing word: che loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 24,
+          "edge": "start",
+          "shift_ms": -70,
+          "note": "roma start 70 ms early (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_037_002720.000-003020.000_00009.flac",
+      "work_item_id": "184a76ad-f6a8-4b77-b0d1-9468b1f6068d",
+      "plants": [
+        {
+          "action": "move",
+          "word": 21,
+          "edge": "end",
+          "shift_ms": 490,
+          "note": "servizio end 490 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 29,
+          "text": "corso",
+          "note": "hallucinated word: extra 'corso' in the 0.64 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 54,
+          "edge": "end",
+          "shift_ms": 540,
+          "critical": true,
+          "note": "buon end 540 ms late (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_038_003010.000-003310.000_00005.flac",
+      "work_item_id": "b1552f77-173f-4ea6-808e-cb677833a0d7",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 19,
+          "text": "sonnifero",
+          "note": "hallucinated word: extra 'sonnifero' in the 0.42 s pause after it"
+        },
+        {
+          "action": "remove",
+          "word": 58,
+          "critical": true,
+          "note": "missing word: va loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 61,
+          "edge": "start",
+          "shift_ms": 40,
+          "note": "nella start 40 ms late (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_040_000000.000-000280.000_00003.flac",
+      "work_item_id": "29894b6b-c27f-4d1d-956a-9dba51b86182",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 3,
+          "critical": true,
+          "note": "missing word: contro loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "start",
+          "shift_ms": 40,
+          "note": "veneravano start 40 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 34,
+          "edge": "start",
+          "shift_ms": -230,
+          "note": "infermiera start 230 ms early (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_041_001800.000-002100.000_00009.flac",
+      "work_item_id": "b350159e-aaec-4c10-b6ec-8a55c5bd4fc7",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 5,
+          "text": "il-",
+          "note": "hallucinated word: extra 'il-' in the 0.48 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 48,
+          "edge": "start",
+          "shift_ms": 540,
+          "critical": true,
+          "note": "basse start 540 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 52,
+          "edge": "end",
+          "shift_ms": -190,
+          "note": "che end 190 ms early (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_042_000040.000-000150.000_00001.flac",
+      "work_item_id": "feed66f3-d1aa-4368-8500-3e809d12ba15",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 11,
+          "text": "in",
+          "critical": true,
+          "note": "hallucinated word: extra 'in' in the 0.72 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 30,
+          "edge": "start",
+          "shift_ms": -40,
+          "note": "brianza start 40 ms early (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 34,
+          "edge": "start",
+          "shift_ms": 210,
+          "note": "già start 210 ms late (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_043_002950.000-003010.000_00000.flac",
+      "work_item_id": "a286c8c4-b7f4-4b3b-af93-73302e4e2514",
+      "plants": [
+        {
+          "action": "move",
+          "word": 13,
+          "edge": "end",
+          "shift_ms": -370,
+          "note": "pregevole end 370 ms early (critical boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 19,
+          "critical": true,
+          "note": "missing word: estrema loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 65,
+          "edge": "start",
+          "shift_ms": 100,
+          "note": "parenzo start 100 ms late (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_044_000650.000-000880.000_00007.flac",
+      "work_item_id": "a981dcc3-64be-48b6-93ea-08c990799c8f",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 28,
+          "text": "amiche",
+          "note": "hallucinated word: extra 'amiche' in the 0.58 s pause after it"
+        },
+        {
+          "action": "remove",
+          "word": 40,
+          "note": "missing word: quel loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 77,
+          "edge": "start",
+          "shift_ms": 470,
+          "critical": true,
+          "note": "diritto start 470 ms late (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_047_000000.000-000169.600_00004.flac",
+      "work_item_id": "66978345-5851-4fbc-81d3-417ae823dd88",
+      "plants": [
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": -200,
+          "note": "squadre end 200 ms early (major boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": -70,
+          "note": "non end 70 ms early (minor boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 38,
+          "critical": true,
+          "note": "missing word: massimo loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_048_000970.000-001080.000_00002.flac",
+      "work_item_id": "099407eb-a07c-4a17-8a1a-1b90d893948a",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 17,
+          "text": "muratura",
+          "note": "hallucinated word: extra 'muratura' in the 1.72 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 33,
+          "edge": "start",
+          "shift_ms": 60,
+          "note": "il start 60 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 55,
+          "edge": "end",
+          "shift_ms": -480,
+          "critical": true,
+          "note": "analisi end 480 ms early (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_049_001310.000-001610.000_00002.flac",
+      "work_item_id": "7fe7ce1a-e963-4ac2-8c91-3792b0337812",
+      "plants": [
+        {
+          "action": "move",
+          "word": 33,
+          "edge": "end",
+          "shift_ms": 520,
+          "critical": true,
+          "note": "hanno end 520 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 57,
+          "edge": "start",
+          "shift_ms": 50,
+          "note": "li start 50 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 69,
+          "text": "viaggio",
+          "note": "hallucinated word: extra 'viaggio' in the 0.38 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_050_002550.000-002850.000_00004.flac",
+      "work_item_id": "5de817dd-e64e-4228-a7a5-896a6efa7c5c",
+      "plants": [
+        {
+          "action": "move",
+          "word": 16,
+          "edge": "start",
+          "shift_ms": 610,
+          "critical": true,
+          "note": "se start 610 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 21,
+          "note": "missing word: vedere loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 27,
+          "edge": "start",
+          "shift_ms": -220,
+          "note": "la start 220 ms early (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_051_000090.000-000240.000_00003.flac",
+      "work_item_id": "b2cb68d3-aa25-4d6e-9d80-fdf24e6ffae0",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 14,
+          "text": "lui",
+          "note": "hallucinated word: extra 'lui' in the 0.47 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 28,
+          "edge": "start",
+          "shift_ms": 50,
+          "note": "stiamo start 50 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 46,
+          "critical": true,
+          "note": "missing word: cornacchione loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_052_000000.000-000300.000_00005.flac",
+      "work_item_id": "dc416b46-5dd5-4752-8ef1-72bbf7f54757",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": 40,
+          "note": "é end 40 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 17,
+          "edge": "end",
+          "shift_ms": 120,
+          "note": "per end 120 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 26,
+          "critical": true,
+          "note": "missing word: proprio loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_054_000000.000-000290.000_00003.flac",
+      "work_item_id": "a5175a8c-9518-4336-bdee-fe25600c883d",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 2,
+          "text": "leoni",
+          "note": "hallucinated word: extra 'leoni' in the 1.12 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 8,
+          "edge": "start",
+          "shift_ms": -620,
+          "critical": true,
+          "note": "benatti start 620 ms early (critical boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 12,
+          "edge": "start",
+          "shift_ms": -290,
+          "note": "baroni start 290 ms early (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_055_002100.000-002170.000_00001.flac",
+      "work_item_id": "c1d0d812-25d2-4422-b087-8776e6cff88a",
+      "plants": [
+        {
+          "action": "move",
+          "word": 25,
+          "edge": "end",
+          "shift_ms": -160,
+          "note": "premio end 160 ms early (major boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 31,
+          "text": "frase",
+          "critical": true,
+          "note": "hallucinated word: extra 'frase' in the 0.60 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 53,
+          "edge": "end",
+          "shift_ms": -50,
+          "note": "che end 50 ms early (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_056_001490.000-001650.000_00006.flac",
+      "work_item_id": "5748dfa7-bbf0-4dca-a9d2-2642179c3a0c",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 6,
+          "critical": true,
+          "note": "missing word: dei loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 15,
+          "edge": "start",
+          "shift_ms": 290,
+          "note": "venivano start 290 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 42,
+          "edge": "start",
+          "shift_ms": 410,
+          "note": "violenza start 410 ms late (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_057_002420.000-002480.000_00002.flac",
+      "work_item_id": "e1c0a203-6c5d-46fd-83e9-f2466472dbcb",
+      "plants": [
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "start",
+          "shift_ms": 380,
+          "note": "vocali start 380 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 11,
+          "critical": true,
+          "note": "missing word: tre loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 22,
+          "edge": "end",
+          "shift_ms": 40,
+          "note": "kolo end 40 ms late (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_058_000080.000-000160.000_00001.flac",
+      "work_item_id": "3e7f3727-89c1-47c6-9a3f-3b50039062be",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": -80,
+          "note": "un start 80 ms early (minor boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 48,
+          "critical": true,
+          "note": "missing word: stato loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 86,
+          "edge": "start",
+          "shift_ms": 100,
+          "note": "reggio start 100 ms late (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_059_000310.000-000610.000_00000.flac",
+      "work_item_id": "1b51a5ed-737d-4ebd-b076-164e35c7b052",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 2,
+          "text": "visti",
+          "note": "hallucinated word: extra 'visti' in the 0.71 s pause after it"
+        },
+        {
+          "action": "add",
+          "after_word": 17,
+          "text": "connazionali",
+          "note": "hallucinated word: extra 'connazionali' in the 0.74 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 53,
+          "edge": "end",
+          "shift_ms": -480,
+          "critical": true,
+          "note": "darwin end 480 ms early (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_060_000000.000-000300.000_00000.flac",
+      "work_item_id": "56121bbd-5744-4f86-864d-f66fe737ba35",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 4,
+          "text": "sono",
+          "note": "hallucinated word: extra 'sono' in the 0.55 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 19,
+          "edge": "end",
+          "shift_ms": 690,
+          "critical": true,
+          "note": "caso end 690 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 30,
+          "edge": "start",
+          "shift_ms": -70,
+          "note": "l'affermazio start 70 ms early (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_061_000300.000-000370.000_00002.flac",
+      "work_item_id": "73f11f15-468a-496d-85a4-86aaeb4dab0e",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 13,
+          "critical": true,
+          "note": "missing word: palermo loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 17,
+          "edge": "end",
+          "shift_ms": 370,
+          "note": "decina end 370 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 31,
+          "edge": "end",
+          "shift_ms": 250,
+          "note": "del end 250 ms late (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_062_002990.000-003260.000_00011.flac",
+      "work_item_id": "6877877b-31e9-443e-b4d8-ea99773c0307",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 33,
+          "text": "c'è",
+          "note": "hallucinated word: extra 'c'è' in the 0.65 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 56,
+          "edge": "start",
+          "shift_ms": -160,
+          "note": "senz'altro start 160 ms early (major boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 61,
+          "critical": true,
+          "note": "missing word: c'è loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_063_000150.000-000280.000_00001.flac",
+      "work_item_id": "7bc8f56f-2220-42f6-aa1a-a9c9bcd5b1cb",
+      "plants": [
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "start",
+          "shift_ms": -40,
+          "note": "e start 40 ms early (minor boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 9,
+          "text": "periferia",
+          "note": "hallucinated word: extra 'periferia' in the 0.43 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 16,
+          "edge": "end",
+          "shift_ms": -580,
+          "critical": true,
+          "note": "scampia end 580 ms early (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_064_000960.000-001030.000_00002.flac",
+      "work_item_id": "082d9215-2a4d-45e6-9472-dd2b32e56250",
+      "plants": [
+        {
+          "action": "move",
+          "word": 14,
+          "edge": "end",
+          "shift_ms": -70,
+          "note": "l'ho end 70 ms early (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 20,
+          "edge": "end",
+          "shift_ms": 290,
+          "note": "persona end 290 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 54,
+          "critical": true,
+          "note": "missing word: da loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_065_000030.000-000330.000_00005.flac",
+      "work_item_id": "16d4f433-f6df-4a50-9c4c-7636007ab4a5",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 12,
+          "text": "minore",
+          "note": "hallucinated word: extra 'minore' in the 0.82 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 25,
+          "edge": "start",
+          "shift_ms": -470,
+          "critical": true,
+          "note": "fra start 470 ms early (critical boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 32,
+          "edge": "end",
+          "shift_ms": 270,
+          "note": "via end 270 ms late (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_066_000920.000-001220.000_00011.flac",
+      "work_item_id": "0b474d26-5cc1-4011-98c9-2a7d8b3a2a64",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": 60,
+          "note": "cinque start 60 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 15,
+          "critical": true,
+          "note": "missing word: un loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 24,
+          "edge": "end",
+          "shift_ms": -250,
+          "note": "battista end 250 ms early (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_067_000300.000-000600.000_00010.flac",
+      "work_item_id": "d21f70e4-fa55-4276-b784-ef6c48bcfd02",
+      "plants": [
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "start",
+          "shift_ms": -370,
+          "note": "approfittato start 370 ms early (critical boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 38,
+          "critical": true,
+          "note": "missing word: purtroppo loses its timing"
+        },
+        {
+          "action": "add",
+          "after_word": 65,
+          "text": "governativo",
+          "note": "hallucinated word: extra 'governativo' in the 0.56 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_068_000170.000-000230.000_00001.flac",
+      "work_item_id": "3a5e9ca7-31c7-4f7f-97b7-aeb158d1d6c5",
+      "plants": [
+        {
+          "action": "move",
+          "word": 8,
+          "edge": "end",
+          "shift_ms": 60,
+          "note": "degli end 60 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 17,
+          "edge": "start",
+          "shift_ms": 660,
+          "note": "persone start 660 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 91,
+          "critical": true,
+          "note": "missing word: che loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_069_000550.000-000850.000_00005.flac",
+      "work_item_id": "b7dc52bb-00fc-4fd3-bbff-446c7c28dcc7",
+      "plants": [
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": -290,
+          "note": "festa end 290 ms early (major boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 17,
+          "text": "dicevo",
+          "critical": true,
+          "note": "hallucinated word: extra 'dicevo' in the 0.40 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 28,
+          "edge": "end",
+          "shift_ms": -70,
+          "note": "bagnolo end 70 ms early (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_070_000230.000-000530.000_00001.flac",
+      "work_item_id": "b4f83e1e-ccc3-4ae9-a257-8505ccdda7b1",
+      "plants": [
+        {
+          "action": "move",
+          "word": 44,
+          "edge": "start",
+          "shift_ms": -60,
+          "note": "soffice start 60 ms early (minor boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 47,
+          "text": "cuscini",
+          "critical": true,
+          "note": "hallucinated word: extra 'cuscini' in the 1.22 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 81,
+          "edge": "end",
+          "shift_ms": 230,
+          "note": "in end 230 ms late (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_071_000300.000-000600.000_00011.flac",
+      "work_item_id": "ebf0c266-6e05-4f14-bde0-70f164fed685",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 4,
+          "critical": true,
+          "note": "missing word: di loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "start",
+          "shift_ms": 380,
+          "note": "sera start 380 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 12,
+          "edge": "start",
+          "shift_ms": -350,
+          "note": "dei start 350 ms early (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_072_000600.000-000900.000_00008.flac",
+      "work_item_id": "08b49495-065a-45c8-af7a-a6059e6b0976",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 13,
+          "critical": true,
+          "note": "missing word: la loses its timing"
+        },
+        {
+          "action": "add",
+          "after_word": 39,
+          "text": "ankyu",
+          "note": "hallucinated word: extra 'ankyu' in the 0.46 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 73,
+          "edge": "start",
+          "shift_ms": -160,
+          "note": "al start 160 ms early (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_075_000000.000-000300.000_00001.flac",
+      "work_item_id": "be75f314-d041-4460-accd-8190265cbe9e",
+      "plants": [
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "start",
+          "shift_ms": 50,
+          "note": "però start 50 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 11,
+          "critical": true,
+          "note": "missing word: quindi loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 16,
+          "edge": "end",
+          "shift_ms": 80,
+          "note": "dalla end 80 ms late (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_076_001490.000-001640.000_00005.flac",
+      "work_item_id": "37374b5e-a8c4-45eb-9765-4b92a90b9dab",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 4,
+          "text": "insomma",
+          "note": "hallucinated word: extra 'insomma' in the 0.38 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "end",
+          "shift_ms": 430,
+          "critical": true,
+          "note": "di end 430 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 13,
+          "edge": "end",
+          "shift_ms": -300,
+          "note": "sentite end 300 ms early (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_077_000610.000-000810.000_00000.flac",
+      "work_item_id": "3bdc7ac2-cd30-4e41-b112-ee4fcaf9897f",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": -40,
+          "note": "sulla end 40 ms early (minor boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 5,
+          "critical": true,
+          "note": "missing word: pineta loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_078_000830.000-000980.000_00000.flac",
+      "work_item_id": "114a98c1-68c1-4ca9-a33a-d900bff58a16",
+      "plants": [
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "end",
+          "shift_ms": 280,
+          "note": "il end 280 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 24,
+          "edge": "start",
+          "shift_ms": 510,
+          "critical": true,
+          "note": "carmagnola start 510 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 58,
+          "text": "partita",
+          "note": "hallucinated word: extra 'partita' in the 0.57 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_079_000180.000-000480.000_00009.flac",
+      "work_item_id": "c7148665-d4a4-4227-a7f0-13b2472c7835",
+      "plants": [
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "end",
+          "shift_ms": -100,
+          "note": "ai end 100 ms early (major boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 21,
+          "critical": true,
+          "note": "missing word: cgl loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 50,
+          "edge": "end",
+          "shift_ms": -450,
+          "note": "cittá end 450 ms early (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_080_000310.000-000507.800_00007.flac",
+      "work_item_id": "17ae5b28-76d6-4293-b256-af3a45e68947",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": 40,
+          "note": "si start 40 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 19,
+          "edge": "end",
+          "shift_ms": -340,
+          "note": "niente end 340 ms early (critical boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 53,
+          "text": "una",
+          "critical": true,
+          "note": "hallucinated word: extra 'una' in the 1.15 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_081_000920.000-001220.000_00000.flac",
+      "work_item_id": "0026cb46-b6a8-49cf-bbda-3e861945c3ae",
+      "plants": [
+        {
+          "action": "move",
+          "word": 13,
+          "edge": "start",
+          "shift_ms": 50,
+          "note": "personali start 50 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 16,
+          "text": "lettera",
+          "note": "hallucinated word: extra 'lettera' in the 0.50 s pause after it"
+        },
+        {
+          "action": "remove",
+          "word": 34,
+          "critical": true,
+          "note": "missing word: invece loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_082_001200.000-001500.000_00008.flac",
+      "work_item_id": "ae075c0d-a90d-44e6-a02b-19a1ee29eb09",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": -120,
+          "note": "tutto end 120 ms early (major boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 29,
+          "edge": "start",
+          "shift_ms": -330,
+          "note": "a start 330 ms early (critical boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 67,
+          "text": "betlemme",
+          "critical": true,
+          "note": "hallucinated word: extra 'betlemme' in the 1.01 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_084_000010.000-000220.000_00002.flac",
+      "work_item_id": "f8742411-cc2b-46c7-b045-994db3d814aa",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 4,
+          "critical": true,
+          "note": "missing word: del loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 15,
+          "edge": "start",
+          "shift_ms": 60,
+          "note": "senso start 60 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 24,
+          "edge": "end",
+          "shift_ms": 200,
+          "note": "perche end 200 ms late (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_085_002540.000-002840.000_00015.flac",
+      "work_item_id": "3836d5af-c87e-4bc6-882e-e450f6ca8e38",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": 250,
+          "note": "amiamo start 250 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 12,
+          "text": "mondiale",
+          "note": "hallucinated word: extra 'mondiale' in the 2.20 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 18,
+          "edge": "start",
+          "shift_ms": -650,
+          "critical": true,
+          "note": "grazie start 650 ms early (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_088_000310.000-000610.000_00001.flac",
+      "work_item_id": "c6e3ca8e-6ce8-4129-bcbe-cb8dce3e1def",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 17,
+          "critical": true,
+          "note": "missing word: di loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 46,
+          "edge": "end",
+          "shift_ms": -390,
+          "note": "soltanto end 390 ms early (critical boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 51,
+          "edge": "end",
+          "shift_ms": -40,
+          "note": "musica end 40 ms early (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_089_001200.000-001500.000_00010.flac",
+      "work_item_id": "472f8ec4-f32b-4045-96e2-2cff13474c2e",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 10,
+          "critical": true,
+          "note": "missing word: filo loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 28,
+          "edge": "start",
+          "shift_ms": 80,
+          "note": "madre start 80 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 41,
+          "text": "anni",
+          "note": "hallucinated word: extra 'anni' in the 0.45 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_090_000300.000-000600.000_00000.flac",
+      "work_item_id": "19c4e1b2-932a-4df7-ab21-02331293448d",
+      "plants": [
+        {
+          "action": "move",
+          "word": 10,
+          "edge": "start",
+          "shift_ms": 150,
+          "note": "focale start 150 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 34,
+          "edge": "start",
+          "shift_ms": -150,
+          "note": "ma start 150 ms early (major boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 45,
+          "text": "regionali",
+          "critical": true,
+          "note": "hallucinated word: extra 'regionali' in the 0.42 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_091_000020.000-000240.000_00005.flac",
+      "work_item_id": "d9962ddb-71e6-496d-bef7-8afb432a072c",
+      "plants": [
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": -550,
+          "critical": true,
+          "note": "colombia end 550 ms early (critical boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 34,
+          "edge": "end",
+          "shift_ms": 40,
+          "note": "essere end 40 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 51,
+          "note": "missing word: stato loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_092_000300.000-000560.000_00002.flac",
+      "work_item_id": "9b1dc851-dfaa-4630-ba1a-720d68e96b65",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 27,
+          "text": "temi",
+          "note": "hallucinated word: extra 'temi' in the 0.55 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 35,
+          "edge": "start",
+          "shift_ms": 280,
+          "note": "colonnine start 280 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 39,
+          "edge": "end",
+          "shift_ms": 440,
+          "critical": true,
+          "note": "molto end 440 ms late (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_093_000010.000-000150.000_00000.flac",
+      "work_item_id": "0ea00924-2907-4579-b09d-f084aeb8a0a0",
+      "plants": [
+        {
+          "action": "move",
+          "word": 44,
+          "edge": "start",
+          "shift_ms": -370,
+          "note": "e start 370 ms early (critical boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 68,
+          "edge": "end",
+          "shift_ms": -70,
+          "note": "in end 70 ms early (minor boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 73,
+          "critical": true,
+          "note": "missing word: bologna loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_094_001220.000-001520.000_00001.flac",
+      "work_item_id": "3c571a1d-7733-4844-80db-0e43893ceae0",
+      "plants": [
+        {
+          "action": "move",
+          "word": 22,
+          "edge": "end",
+          "shift_ms": 190,
+          "note": "altro end 190 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 36,
+          "critical": true,
+          "note": "missing word: che loses its timing"
+        },
+        {
+          "action": "add",
+          "after_word": 48,
+          "text": "persone",
+          "note": "hallucinated word: extra 'persone' in the 0.43 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_095_000000.000-000152.000_00001.flac",
+      "work_item_id": "0038b862-97d8-45e8-be0b-3b9021a65855",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 3,
+          "note": "missing word: mio loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 12,
+          "edge": "start",
+          "shift_ms": 480,
+          "critical": true,
+          "note": "samaria start 480 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 61,
+          "edge": "end",
+          "shift_ms": 70,
+          "note": "sé end 70 ms late (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_096_001550.000-001850.000_00001.flac",
+      "work_item_id": "d98348ed-0209-4f83-814b-4160b0c8a323",
+      "plants": [
+        {
+          "action": "move",
+          "word": 15,
+          "edge": "end",
+          "shift_ms": 70,
+          "note": "un end 70 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 47,
+          "edge": "start",
+          "shift_ms": 150,
+          "note": "zona start 150 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 84,
+          "text": "appetita",
+          "critical": true,
+          "note": "hallucinated word: extra 'appetita' in the 0.94 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_097_001310.000-001610.000_00010.flac",
+      "work_item_id": "dd1466f3-8e25-4043-a78d-a7d6d4b9e8d7",
+      "plants": [
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "start",
+          "shift_ms": 50,
+          "note": "de start 50 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 25,
+          "edge": "end",
+          "shift_ms": 100,
+          "note": "sindaco end 100 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 43,
+          "critical": true,
+          "note": "missing word: alle loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_098_000990.000-001290.000_00000.flac",
+      "work_item_id": "e134c9ab-c8bd-4377-b80f-808ccf83ce2e",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 9,
+          "text": "lire",
+          "critical": true,
+          "note": "hallucinated word: extra 'lire' in the 0.64 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 19,
+          "edge": "start",
+          "shift_ms": -340,
+          "note": "dopo start 340 ms early (critical boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 48,
+          "edge": "end",
+          "shift_ms": 360,
+          "note": "regno end 360 ms late (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_099_001200.000-001340.000_00004.flac",
+      "work_item_id": "982f0de0-913f-4252-8476-ba87b65d7ce2",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 23,
+          "critical": true,
+          "note": "missing word: voce loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 45,
+          "edge": "start",
+          "shift_ms": 60,
+          "note": "settimana start 60 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 55,
+          "edge": "end",
+          "shift_ms": -110,
+          "note": "maldonado end 110 ms early (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_100_000180.000-000480.000_00000.flac",
+      "work_item_id": "d0f40c47-5f13-41ef-8c1f-05363d60f19e",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 5,
+          "text": "sesto",
+          "note": "hallucinated word: extra 'sesto' in the 0.70 s pause after it"
+        },
+        {
+          "action": "remove",
+          "word": 10,
+          "critical": true,
+          "note": "missing word: ventidue loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 14,
+          "edge": "start",
+          "shift_ms": 50,
+          "note": "millenovecentotre start 50 ms late (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_101_000940.000-001070.000_00004.flac",
+      "work_item_id": "9cac954a-8e6a-4bfd-b30c-8ec6886f083d",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 66,
+          "text": "sei",
+          "critical": true,
+          "note": "hallucinated word: extra 'sei' in the 0.51 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 84,
+          "edge": "start",
+          "shift_ms": 330,
+          "note": "lascio start 330 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 102,
+          "edge": "end",
+          "shift_ms": 130,
+          "note": "in end 130 ms late (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_102_000000.000-000300.000_00006.flac",
+      "work_item_id": "7a2910c9-6fad-4d5c-b6ca-5c4d690223e8",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 24,
+          "text": "euro",
+          "note": "hallucinated word: extra 'euro' in the 0.44 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 35,
+          "edge": "start",
+          "shift_ms": 690,
+          "critical": true,
+          "note": "coltivata start 690 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 40,
+          "edge": "end",
+          "shift_ms": -60,
+          "note": "poi end 60 ms early (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_103_000640.000-000830.000_00001.flac",
+      "work_item_id": "fc465a2a-9b66-4924-b07e-73ac04079654",
+      "plants": [
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "start",
+          "shift_ms": 230,
+          "note": "abito start 230 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 37,
+          "critical": true,
+          "note": "missing word: adulti loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 44,
+          "edge": "start",
+          "shift_ms": 300,
+          "note": "lenguas start 300 ms late (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_105_000400.000-000700.000_00001.flac",
+      "work_item_id": "62bcaa0c-dbe0-449e-a4b2-75150eee8017",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 0,
+          "text": "elul",
+          "note": "hallucinated word: extra 'elul' in the 1.20 s pause after it"
+        },
+        {
+          "action": "remove",
+          "word": 18,
+          "critical": true,
+          "note": "missing word: parleremo loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 34,
+          "edge": "end",
+          "shift_ms": 450,
+          "note": "vav end 450 ms late (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_106_000000.000-000110.000_00003.flac",
+      "work_item_id": "85166ae8-0646-42fb-8a75-527fd67a82db",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 12,
+          "text": "nazionale",
+          "note": "hallucinated word: extra 'nazionale' in the 0.99 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 23,
+          "edge": "end",
+          "shift_ms": -50,
+          "note": "ai end 50 ms early (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 62,
+          "edge": "start",
+          "shift_ms": 630,
+          "critical": true,
+          "note": "recuperati start 630 ms late (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_107_000850.000-001150.000_00011.flac",
+      "work_item_id": "78595d8c-2d54-4e7a-9254-80d3004d5ad0",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 6,
+          "critical": true,
+          "note": "missing word: il loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 13,
+          "edge": "end",
+          "shift_ms": -50,
+          "note": "felliniartusi end 50 ms early (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 18,
+          "edge": "start",
+          "shift_ms": 220,
+          "note": "punto start 220 ms late (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_108_000480.000-000750.000_00004.flac",
+      "work_item_id": "9e7930b4-b8bb-4a6d-8cb7-383a06300073",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "end",
+          "shift_ms": 60,
+          "note": "certenoli end 60 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 13,
+          "critical": true,
+          "note": "missing word: altri loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 29,
+          "edge": "start",
+          "shift_ms": -340,
+          "note": "e start 340 ms early (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_110_000820.000-000990.000_00006.flac",
+      "work_item_id": "bbff5d00-8ea0-4204-af67-182cec275aa7",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 10,
+          "text": "tiranno",
+          "critical": true,
+          "note": "hallucinated word: extra 'tiranno' in the 0.40 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 42,
+          "edge": "start",
+          "shift_ms": -300,
+          "note": "dal start 300 ms early (major boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 60,
+          "edge": "start",
+          "shift_ms": 130,
+          "note": "carcere start 130 ms late (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_111_001540.000-001840.000_00004.flac",
+      "work_item_id": "4a691a08-4555-4bb8-ada9-ba1aca8f98b6",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": -380,
+          "note": "trattati end 380 ms early (critical boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 8,
+          "critical": true,
+          "note": "missing word: esagerato loses its timing"
+        },
+        {
+          "action": "add",
+          "after_word": 34,
+          "text": "malati",
+          "note": "hallucinated word: extra 'malati' in the 0.66 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_112_000170.000-000470.000_00011.flac",
+      "work_item_id": "e4e29011-2ba3-4e39-998e-bbb0ae3fefaa",
+      "plants": [
+        {
+          "action": "move",
+          "word": 13,
+          "edge": "start",
+          "shift_ms": -60,
+          "note": "ho start 60 ms early (minor boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 25,
+          "critical": true,
+          "note": "missing word: ho loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 28,
+          "edge": "start",
+          "shift_ms": -40,
+          "note": "crea start 40 ms early (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_113_000600.000-000900.000_00001.flac",
+      "work_item_id": "19f4759b-a09c-4996-9114-705a77dcafe6",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": 180,
+          "note": "riguarda start 180 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 25,
+          "text": "comune",
+          "critical": true,
+          "note": "hallucinated word: extra 'comune' in the 0.74 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 41,
+          "edge": "start",
+          "shift_ms": 390,
+          "note": "cauzionale start 390 ms late (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_116_000030.000-000130.000_00001.flac",
+      "work_item_id": "4ab6cf5b-d11f-4dc1-8213-6144d38b8a4b",
+      "plants": [
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "start",
+          "shift_ms": 50,
+          "note": "nei start 50 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 19,
+          "edge": "end",
+          "shift_ms": -130,
+          "note": "finanziate end 130 ms early (major boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 56,
+          "text": "mezzogiorno",
+          "critical": true,
+          "note": "hallucinated word: extra 'mezzogiorno' in the 0.59 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_117_001220.000-001400.000_00001.flac",
+      "work_item_id": "4bd2796b-7a01-4b5b-a03e-5f717f6e892d",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing word: niente loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 12,
+          "edge": "end",
+          "shift_ms": 430,
+          "note": "la end 430 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 64,
+          "edge": "end",
+          "shift_ms": 320,
+          "note": "ha end 320 ms late (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_118_001150.000-001450.000_00011.flac",
+      "work_item_id": "bdefff56-3804-4135-aa95-8831aa0a145c",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "critical": true,
+          "note": "missing word: bologna loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 22,
+          "edge": "start",
+          "shift_ms": 190,
+          "note": "occupando start 190 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 28,
+          "text": "localmente",
+          "note": "hallucinated word: extra 'localmente' in the 0.54 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_119_001170.000-001470.000_00003.flac",
+      "work_item_id": "ba4c46bc-d7bc-41a2-b74b-be7f8671b871",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 48,
+          "text": "dell'ospedale",
+          "critical": true,
+          "note": "hallucinated word: extra 'dell'ospedale' in the 0.70 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 54,
+          "edge": "end",
+          "shift_ms": -150,
+          "note": "della end 150 ms early (major boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 63,
+          "edge": "start",
+          "shift_ms": 80,
+          "note": "prioritá start 80 ms late (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_120_000340.000-000640.000_00010.flac",
+      "work_item_id": "7fcec23e-3db8-4197-afd0-8cd1dd4617bf",
+      "plants": [
+        {
+          "action": "move",
+          "word": 18,
+          "edge": "end",
+          "shift_ms": -80,
+          "note": "di end 80 ms early (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 30,
+          "edge": "start",
+          "shift_ms": 380,
+          "note": "succede start 380 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 39,
+          "critical": true,
+          "note": "missing word: definirlo loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_121_001180.000-001340.000_00001.flac",
+      "work_item_id": "4f0fb8c8-ee78-4151-8f2f-b23b05ee6158",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 13,
+          "text": "zuhar",
+          "critical": true,
+          "note": "hallucinated word: extra 'zuhar' in the 0.39 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 22,
+          "edge": "end",
+          "shift_ms": 70,
+          "note": "vendetta end 70 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 32,
+          "edge": "end",
+          "shift_ms": -270,
+          "note": "alla end 270 ms early (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_122_002340.000-002440.000_00004.flac",
+      "work_item_id": "bc5d25dd-deba-4253-bd2d-bb2aae88e381",
+      "plants": [
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "end",
+          "shift_ms": -170,
+          "note": "invitiamo end 170 ms early (major boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "end",
+          "shift_ms": -500,
+          "note": "mercoledì end 500 ms early (critical boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 11,
+          "critical": true,
+          "note": "missing word: sei loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_123_000000.000-000300.000_00010.flac",
+      "work_item_id": "3477c2bc-aeb0-41a5-a8af-583a6966b5a4",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 14,
+          "critical": true,
+          "note": "missing word: comunale loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 18,
+          "edge": "end",
+          "shift_ms": -70,
+          "note": "cinquantanove end 70 ms early (minor boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 27,
+          "text": "municipale",
+          "note": "hallucinated word: extra 'municipale' in the 0.71 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_124_002480.000-002760.000_00001.flac",
+      "work_item_id": "ade4b8a6-edf0-4869-8d55-e8fa9d8ae024",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": 60,
+          "note": "eh end 60 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 48,
+          "edge": "start",
+          "shift_ms": 310,
+          "note": "ancora start 310 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 54,
+          "critical": true,
+          "note": "missing word: non loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_125_000180.000-000250.000_00001.flac",
+      "work_item_id": "3c9efddd-dbc7-4033-8b91-494b0523050d",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 49,
+          "text": "certo",
+          "note": "hallucinated word: extra 'certo' in the 0.95 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 61,
+          "edge": "start",
+          "shift_ms": -160,
+          "note": "giuda start 160 ms early (major boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 67,
+          "edge": "start",
+          "shift_ms": 470,
+          "critical": true,
+          "note": "custodito start 470 ms late (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_126_000820.000-000890.000_00003.flac",
+      "work_item_id": "567a4ace-42bc-4b53-bed0-a36f24b116bd",
+      "plants": [
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": 310,
+          "note": "terrorismo end 310 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 8,
+          "text": "corruzione",
+          "critical": true,
+          "note": "hallucinated word: extra 'corruzione' in the 0.65 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 21,
+          "edge": "start",
+          "shift_ms": 80,
+          "note": "grazie start 80 ms late (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_127_000300.000-000600.000_00001.flac",
+      "work_item_id": "a995435b-eb31-4765-9123-95185a324adc",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 21,
+          "critical": true,
+          "note": "missing word: obbligatoria loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 32,
+          "edge": "end",
+          "shift_ms": -40,
+          "note": "tutti end 40 ms early (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 41,
+          "edge": "start",
+          "shift_ms": -280,
+          "note": "a start 280 ms early (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_128_001280.000-001370.000_00002.flac",
+      "work_item_id": "cb8912b2-f442-46c5-b24f-b4c5faa0bf7d",
+      "plants": [
+        {
+          "action": "move",
+          "word": 20,
+          "edge": "start",
+          "shift_ms": 360,
+          "note": "stesso start 360 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 28,
+          "text": "modificata",
+          "note": "hallucinated word: extra 'modificata' in the 1.78 s pause after it"
+        },
+        {
+          "action": "remove",
+          "word": 57,
+          "critical": true,
+          "note": "missing word: generalità loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_129_000300.000-000600.000_00010.flac",
+      "work_item_id": "24cd5ae2-76ec-4fe1-b4d3-8b5ca3076fcd",
+      "plants": [
+        {
+          "action": "move",
+          "word": 30,
+          "edge": "start",
+          "shift_ms": 250,
+          "note": "chiesa start 250 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 37,
+          "critical": true,
+          "note": "missing word: con loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 58,
+          "edge": "start",
+          "shift_ms": -40,
+          "note": "anziani start 40 ms early (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_130_000840.000-001140.000_00010.flac",
+      "work_item_id": "f8dafefd-df08-424e-92eb-56b4f099b8fa",
+      "plants": [
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "end",
+          "shift_ms": -170,
+          "note": "si end 170 ms early (major boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 36,
+          "text": "del",
+          "note": "hallucinated word: extra 'del' in the 0.97 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 42,
+          "edge": "start",
+          "shift_ms": 530,
+          "critical": true,
+          "note": "amandó start 530 ms late (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_131_002560.000-002860.000_00008.flac",
+      "work_item_id": "2a6d1bde-6d0a-420a-b559-a639cae9fbe0",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "critical": true,
+          "note": "missing word: quindi loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "start",
+          "shift_ms": 250,
+          "note": "danimarca start 250 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 26,
+          "edge": "start",
+          "shift_ms": 60,
+          "note": "e start 60 ms late (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_132_000390.000-000690.000_00007.flac",
+      "work_item_id": "c8aa8848-54f5-41f0-9453-fad2021c5847",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 21,
+          "text": "e",
+          "note": "hallucinated word: extra 'e' in the 0.47 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 69,
+          "edge": "end",
+          "shift_ms": -560,
+          "critical": true,
+          "note": "però end 560 ms early (critical boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 83,
+          "edge": "end",
+          "shift_ms": -80,
+          "note": "panorama end 80 ms early (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_133_000040.000-000340.000_00010.flac",
+      "work_item_id": "d5af15ae-4ae5-44c2-8a38-e37c85d77cb8",
+      "plants": [
+        {
+          "action": "move",
+          "word": 12,
+          "edge": "end",
+          "shift_ms": 620,
+          "critical": true,
+          "note": "nessun end 620 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 25,
+          "text": "anche",
+          "note": "hallucinated word: extra 'anche' in the 0.72 s pause after it"
+        },
+        {
+          "action": "remove",
+          "word": 62,
+          "note": "missing word: hmm loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_135_001810.000-002110.000_00000.flac",
+      "work_item_id": "66398302-0523-400e-b6ab-b61c8b193518",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 8,
+          "text": "faccio",
+          "critical": true,
+          "note": "hallucinated word: extra 'faccio' in the 0.40 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 59,
+          "edge": "end",
+          "shift_ms": -290,
+          "note": "rigor- end 290 ms early (major boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 62,
+          "edge": "start",
+          "shift_ms": 120,
+          "note": "erano start 120 ms late (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_136_000920.000-001220.000_00006.flac",
+      "work_item_id": "ba7fd8b9-f4dc-4d3e-a18c-6b654afefbc5",
+      "plants": [
+        {
+          "action": "move",
+          "word": 48,
+          "edge": "start",
+          "shift_ms": 80,
+          "note": "vuol start 80 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 58,
+          "edge": "end",
+          "shift_ms": 520,
+          "note": "e end 520 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 65,
+          "critical": true,
+          "note": "missing word: come loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_138_001760.000-001820.000_00000.flac",
+      "work_item_id": "078d95a5-2730-4260-9c54-058f6c2d0c90",
+      "plants": [
+        {
+          "action": "move",
+          "word": 19,
+          "edge": "end",
+          "shift_ms": -120,
+          "note": "numero end 120 ms early (major boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 49,
+          "critical": true,
+          "note": "missing word: riga loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 57,
+          "edge": "start",
+          "shift_ms": 370,
+          "note": "virgola start 370 ms late (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_139_000120.000-000420.000_00006.flac",
+      "work_item_id": "c8f8cd2c-15c8-47cb-bd57-682a5e8c42ac",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 26,
+          "text": "foto",
+          "note": "hallucinated word: extra 'foto' in the 0.37 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 40,
+          "edge": "end",
+          "shift_ms": -40,
+          "note": "un end 40 ms early (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 62,
+          "edge": "start",
+          "shift_ms": -550,
+          "critical": true,
+          "note": "a start 550 ms early (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_140_000730.000-000990.000_00004.flac",
+      "work_item_id": "3833b60c-a624-42e8-8388-0b0298bb8743",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 18,
+          "text": "time",
+          "note": "hallucinated word: extra 'time' in the 0.43 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 53,
+          "edge": "end",
+          "shift_ms": -80,
+          "note": "guardiania end 80 ms early (minor boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 58,
+          "critical": true,
+          "note": "missing word: denuncia loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_141_001840.000-002140.000_00001.flac",
+      "work_item_id": "c1fddd65-6ce3-4770-a35c-4dd33346a1cd",
+      "plants": [
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "end",
+          "shift_ms": 160,
+          "note": "sta end 160 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 12,
+          "edge": "start",
+          "shift_ms": -350,
+          "note": "ha start 350 ms early (critical boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 38,
+          "critical": true,
+          "note": "missing word: spero loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_142_000300.000-000600.000_00008.flac",
+      "work_item_id": "01f8d234-f49e-4ebf-88b0-585a2610f668",
+      "plants": [
+        {
+          "action": "move",
+          "word": 44,
+          "edge": "start",
+          "shift_ms": -170,
+          "note": "i start 170 ms early (major boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 53,
+          "edge": "start",
+          "shift_ms": 80,
+          "note": "tagliare start 80 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 61,
+          "text": "altro",
+          "critical": true,
+          "note": "hallucinated word: extra 'altro' in the 0.40 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_143_003060.000-003360.000_00002.flac",
+      "work_item_id": "8fc6703c-69ef-4c5b-8973-f2061ee92291",
+      "plants": [
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "start",
+          "shift_ms": 440,
+          "critical": true,
+          "note": "perdere start 440 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 33,
+          "text": "noceto",
+          "note": "hallucinated word: extra 'noceto' in the 0.42 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 52,
+          "edge": "start",
+          "shift_ms": -70,
+          "note": "del start 70 ms early (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_144_000000.000-000300.000_00000.flac",
+      "work_item_id": "bdd94557-8a7c-4329-a626-2fb3fc010c06",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 7,
+          "critical": true,
+          "note": "missing word: della loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 22,
+          "edge": "start",
+          "shift_ms": 150,
+          "note": "gran start 150 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 79,
+          "edge": "start",
+          "shift_ms": 80,
+          "note": "litorale start 80 ms late (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_145_001270.000-001570.000_00000.flac",
+      "work_item_id": "f167e241-518b-44ca-b377-9b6befa2f1f9",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 17,
+          "text": "mondo",
+          "note": "hallucinated word: extra 'mondo' in the 0.53 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 77,
+          "edge": "end",
+          "shift_ms": 350,
+          "note": "ormai end 350 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 81,
+          "critical": true,
+          "note": "missing word: che loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_146_000000.000-000300.000_00006.flac",
+      "work_item_id": "c07dad40-c252-4b15-a4e7-4fd08eaa84c4",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": 360,
+          "note": "ehm end 360 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 24,
+          "edge": "start",
+          "shift_ms": -170,
+          "note": "eh start 170 ms early (major boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 37,
+          "critical": true,
+          "note": "missing word: da loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_147_000000.000-000300.000_00006.flac",
+      "work_item_id": "64892134-abfb-4711-a299-057c49242b8d",
+      "plants": [
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": 290,
+          "note": "più end 290 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 56,
+          "critical": true,
+          "note": "missing word: i- loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 77,
+          "edge": "start",
+          "shift_ms": 40,
+          "note": "careggi start 40 ms late (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_148_000040.000-000340.000_00004.flac",
+      "work_item_id": "c30bd88a-fa60-46d1-8efb-9e05bd9a0cf4",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 35,
+          "text": "italia",
+          "note": "hallucinated word: extra 'italia' in the 0.36 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 51,
+          "edge": "start",
+          "shift_ms": 50,
+          "note": "attestati start 50 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 64,
+          "edge": "end",
+          "shift_ms": -430,
+          "critical": true,
+          "note": "lo end 430 ms early (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_149_001000.000-001300.000_00011.flac",
+      "work_item_id": "dd004366-2b78-4c49-a0cc-46f090304e8b",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 23,
+          "text": "delinquenti",
+          "note": "hallucinated word: extra 'delinquenti' in the 0.45 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 43,
+          "edge": "start",
+          "shift_ms": 180,
+          "note": "nessuna start 180 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 53,
+          "edge": "end",
+          "shift_ms": -490,
+          "critical": true,
+          "note": "sociale end 490 ms early (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_150_003310.000-003566.540_00002.flac",
+      "work_item_id": "6059b74c-9450-415d-8e2a-bb86613bc95f",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 11,
+          "text": "no",
+          "note": "hallucinated word: extra 'no' in the 0.54 s pause after it"
+        },
+        {
+          "action": "remove",
+          "word": 28,
+          "critical": true,
+          "note": "missing word: chiedeva loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 57,
+          "edge": "start",
+          "shift_ms": -250,
+          "note": "barcollando start 250 ms early (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_151_000000.000-000140.000_00000.flac",
+      "work_item_id": "1a72b9a8-32e1-4bc8-81ea-f44fa70e06ff",
+      "plants": [
+        {
+          "action": "move",
+          "word": 14,
+          "edge": "start",
+          "shift_ms": -50,
+          "note": "progettazione start 50 ms early (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 26,
+          "edge": "end",
+          "shift_ms": 70,
+          "note": "ren- end 70 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 46,
+          "critical": true,
+          "note": "missing word: isolando loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_152_000010.000-000310.000_00000.flac",
+      "work_item_id": "c21e1e14-b45d-47d9-a970-dfd0ae7138fe",
+      "plants": [
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "end",
+          "shift_ms": 390,
+          "note": "e end 390 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 60,
+          "critical": true,
+          "note": "missing word: già loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 67,
+          "edge": "start",
+          "shift_ms": -290,
+          "note": "russo start 290 ms early (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_153_000300.000-000600.000_00002.flac",
+      "work_item_id": "504a4a0b-6a5f-4d2b-9628-545c8701cced",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 20,
+          "text": "allerta",
+          "note": "hallucinated word: extra 'allerta' in the 0.39 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 30,
+          "edge": "end",
+          "shift_ms": -80,
+          "note": "che end 80 ms early (minor boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 39,
+          "edge": "end",
+          "shift_ms": 540,
+          "critical": true,
+          "note": "tanti end 540 ms late (critical boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_154_002910.000-003190.000_00000.flac",
+      "work_item_id": "17d976d3-a956-4ce1-a9f0-2fdab3c8cfe2",
+      "plants": [
+        {
+          "action": "move",
+          "word": 17,
+          "edge": "start",
+          "shift_ms": 80,
+          "note": "decennio start 80 ms late (minor boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 86,
+          "text": "numero",
+          "critical": true,
+          "note": "hallucinated word: extra 'numero' in the 0.62 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 91,
+          "edge": "end",
+          "shift_ms": -160,
+          "note": "sono end 160 ms early (major boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_155_001740.000-002040.000_00002.flac",
+      "work_item_id": "ee03f7f5-a690-476f-9775-2046402ee335",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "critical": true,
+          "note": "missing word: territorio loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": 130,
+          "note": "altri start 130 ms late (major boundary mismatch)"
+        },
+        {
+          "action": "add",
+          "after_word": 59,
+          "text": "sito",
+          "note": "hallucinated word: extra 'sito' in the 0.37 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_156_000000.000-000300.000_00006.flac",
+      "work_item_id": "beee5932-b656-469a-9ebf-171f40110572",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 14,
+          "critical": true,
+          "note": "missing word: nulla loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 18,
+          "edge": "end",
+          "shift_ms": 510,
+          "note": "bonifica end 510 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 68,
+          "edge": "start",
+          "shift_ms": -70,
+          "note": "da start 70 ms early (minor boundary mismatch)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "it_157_000620.000-000920.000_00004.flac",
+      "work_item_id": "d24a42a1-de5a-49cf-92b4-c2abe6de67cc",
+      "plants": [
+        {
+          "action": "move",
+          "word": 13,
+          "edge": "end",
+          "shift_ms": 480,
+          "note": "e end 480 ms late (critical boundary mismatch)"
+        },
+        {
+          "action": "move",
+          "word": 38,
+          "edge": "end",
+          "shift_ms": -150,
+          "note": "milano end 150 ms early (major boundary mismatch)"
+        },
+        {
+          "action": "remove",
+          "word": 72,
+          "critical": true,
+          "note": "missing word: rispetto loses its timing"
+        }
+      ]
+    }
+  ]
+}
