@@ -1,0 +1,3110 @@
+{
+  "format": "align-decoys/v1",
+  "instructions": [
+    "`words` is the CORRECT alignment: i = index, w = word, s / e = start / end in seconds. Never change it.",
+    "Fill each decoy's `plants` with 3–6 deliberate mistakes an aligner can only find by listening — fewer on a short clip (even one), since mistakes must stay apart. Mix timing, text and structure mistakes.",
+    "move — {\"action\":\"move\",\"word\":12,\"edge\":\"start\"|\"end\",\"shift_ms\":-300}: moves one edge of word 12. Positive = later. A neighbour touching that edge moves with it. Use 150–700 ms (150–250 subtle, 250–450 moderate, 450+ obvious). Never push an edge past the far edge of the neighbouring word, before 0 or past the audio end.",
+    "overlap — {\"action\":\"overlap\",\"word\":12,\"edge\":\"end\",\"shift_ms\":250}: same as move, but the neighbour does NOT give way, so the two chips overlap (same-speaker overlap). The edge must end up inside the neighbour.",
+    "zero — {\"action\":\"zero\",\"word\":12}: the chip collapses to zero length at its start (\"edge\":\"end\" collapses it at its end). Only on a word at least 0.15 s long.",
+    "replace — {\"action\":\"replace\",\"word\":30,\"text\":\"…\"}: the chip and the transcript say `text` instead of the word. Use it for a word substitution, homophone, spelling slip, wrong name / entity, missing or wrong accent, wrong number form, a word from the wrong language, a truncated word written in full (or a full word written truncated), or a ((guess)) written without its brackets.",
+    "replace_unintelligible — {\"action\":\"replace_unintelligible\",\"word\":31,\"text\":\"…\"}: only on a word written (()) or ((guess)): invented text where the audio is unintelligible.",
+    "delete — {\"action\":\"delete\",\"word\":40}: the word is gone from the transcript AND has no chip (a deleted word, or a dropped filler / backchannel).",
+    "remove — {\"action\":\"remove\",\"word\":40}: the word keeps its text in the transcript but loses its chip (an aligner must add it back).",
+    "absorb — {\"action\":\"absorb\",\"word\":41,\"into\":\"previous\"|\"next\"}: the word (usually a filler) is deleted and its neighbour's chip stretches over its audio.",
+    "join — {\"action\":\"join\",\"word\":7,\"count\":2}: words 7, 8 (… up to count) become one chip — joined words, or spelled letters in one chip. Only where words are separated by spaces (NOT ja_JP or zh_CN), and only when the true boundary is at least 0.2 s away from the middle of the joined chip.",
+    "split — {\"action\":\"split\",\"word\":9,\"parts\":[\"dell'\",\"uscita\"]}: one word over several chips. `parts` is optional for a word with an apostrophe (split after it) or a hyphen (split at it); \"at\" (seconds) sets the split time of two parts.",
+    "add — {\"action\":\"add\",\"after_word\":20,\"text\":\"the\"}: an extra chip in the pause after word 20 (the pause must be at least 0.35 s). Use a word from the same sentence, e.g. a repeat of the word before.",
+    "add_noise — {\"action\":\"add_noise\",\"after_word\":20,\"text\":\"ah\",\"start\":8.1,\"end\":8.4}: an extra chip over a cough, breath or other noise; start and end in seconds are required.",
+    "set_flag — {\"action\":\"set_flag\",\"flag\":\"multi_speaker\"|\"overlap_speech\"|\"synthetic_speech\",\"value\":true}: the file is served with that answer set to `value`, the WRONG answer. `value` must be the opposite of the file's own answer in `file_answers` (synthetic_speech on non-English files only). A file whose answer is synthetic_speech true can carry no other mistake; one whose overlap_speech is true can't carry an overlap mistake.",
+    "Speakers can't be changed in word alignment, so there is no wrong-speaker mistake.",
+    "Keep mistakes at least 3 words apart — mistakes on neighbouring words are refused. Never touch a tag word (text starting with [ or <).",
+    "Mark the 1–2 most obvious mistakes \"critical\": true (must-catch). Optional \"note\" is for you only.",
+    "Instead of `plants`, a decoy may give `decoy_words`: the whole wrong alignment, [{\"w\":\"…\",\"s\":1.2,\"e\":1.5}, …] in spoken order. Every difference from `words` becomes a mistake. A word with no s / e is in the transcript with no chip; a word left out is gone from both; a retyped word changes the transcript too; extra, split and joined chips leave the transcript as it was. Copy tag words exactly. \"critical\": true on an entry makes the mistake on its word must-catch. `plants` may then hold only set_flag edits.",
+    "Return the SAME JSON with only `plants` (or `decoy_words`) filled. Do not add, remove or edit any other field."
+  ],
+  "decoys": [
+    {
+      "decoy_ref": "e79b8952-47b8-4dd8-b6e8-606971b4fd67_014.wav",
+      "work_item_id": "c2753228-5c39-4671-80d6-f422e0471cea",
+      "file_name": "e79b8952-47b8-4dd8-b6e8-606971b4fd67_014.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "start",
+          "shift_ms": -260,
+          "note": "boundary_start · major · vous start 260 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 24,
+          "text": "energetiques",
+          "note": "accent_missing · major · énergétiques -> energetiques"
+        },
+        {
+          "action": "replace",
+          "word": 27,
+          "text": "des",
+          "critical": true,
+          "note": "word_substitution · critical · de -> des"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "3eb93c7a-e41e-490a-9f56-6d8c83c2ea73_15055.wav",
+      "work_item_id": "059ca9ea-a7a8-4fa1-a641-7203327d2020",
+      "file_name": "3eb93c7a-e41e-490a-9f56-6d8c83c2ea73_15055.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": -80,
+          "critical": true,
+          "note": "boundary_end · minor · en end 80 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "b26c2698-3331-4efa-9a8c-5c6bbde14df1_109.wav",
+      "work_item_id": "8028c400-5146-4b3a-81cc-f419aa654b39",
+      "file_name": "b26c2698-3331-4efa-9a8c-5c6bbde14df1_109.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "note": "missing_segment · major · te keeps its text but has no chip"
+        },
+        {
+          "action": "delete",
+          "word": 9,
+          "critical": true,
+          "note": "word_deletion · critical · 'tout' gone from transcript and chips"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "020179f9-c0a4-4616-8aa9-ab738b4fc0ec_027.wav",
+      "work_item_id": "a7c1e202-a0d9-470e-b5a8-26b65b934bd8",
+      "file_name": "020179f9-c0a4-4616-8aa9-ab738b4fc0ec_027.wav",
+      "plants": [
+        {
+          "action": "overlap",
+          "word": 3,
+          "edge": "start",
+          "shift_ms": -430,
+          "note": "boundary_overlap · major · sous start 430 ms earlier, into l'insee"
+        },
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "end",
+          "shift_ms": -470,
+          "critical": true,
+          "note": "boundary_end · critical · logement end 470 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 25,
+          "edge": "end",
+          "shift_ms": 70,
+          "note": "boundary_end · minor · pour end 70 ms later"
+        },
+        {
+          "action": "add",
+          "after_word": 38,
+          "text": "euros",
+          "critical": true,
+          "note": "word_hallucination · major · extra 'euros' in the 0.41 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 71,
+          "edge": "end",
+          "shift_ms": 340,
+          "note": "boundary_end · critical · cent end 340 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 79,
+          "text": "souhètez",
+          "note": "spelling_slip · major · souhaitez -> souhètez"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "8cbbca69-fb47-4468-a5dc-a7b01f082c30_000.wav",
+      "work_item_id": "16812ea0-a489-4c40-a22a-4cef2ca5a6bf",
+      "file_name": "8cbbca69-fb47-4468-a5dc-a7b01f082c30_000.wav",
+      "plants": [
+        {
+          "action": "zero",
+          "word": 5,
+          "edge": "end",
+          "note": "zero_length · major · budget collapses to zero length at its end"
+        },
+        {
+          "action": "move",
+          "word": 13,
+          "edge": "start",
+          "shift_ms": -150,
+          "note": "boundary_start · major · la start 150 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 22,
+          "text": "fonctio-",
+          "critical": true,
+          "note": "truncation_introduced · critical · complete word fonctionnel written cut off as fonctio-"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "2fd5bf6b-0951-4340-98a5-64f618834488_018.wav",
+      "work_item_id": "17d64a9f-16ea-493b-8023-8d130641bba9",
+      "file_name": "2fd5bf6b-0951-4340-98a5-64f618834488_018.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 0,
+          "text": "est",
+          "critical": true,
+          "note": "word_substitution · critical · et -> est"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "c33094e3-eddd-452c-8953-5688b6199aa0_019.wav",
+      "work_item_id": "d3321463-70ad-4398-879c-cbf64767f8a6",
+      "file_name": "c33094e3-eddd-452c-8953-5688b6199aa0_019.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "start",
+          "shift_ms": 70,
+          "note": "boundary_start · minor · yeux start 70 ms later"
+        },
+        {
+          "action": "add",
+          "after_word": 7,
+          "text": "troubla",
+          "note": "word_hallucination · major · extra 'troubla' in the 0.47 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 15,
+          "edge": "end",
+          "shift_ms": 580,
+          "critical": true,
+          "note": "boundary_end · critical · femme end 580 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "66eac16a-2c49-48fe-ba90-b144b25e4692_016.wav",
+      "work_item_id": "0424f460-ffeb-4db5-9d15-84ac771d758c",
+      "file_name": "66eac16a-2c49-48fe-ba90-b144b25e4692_016.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "end",
+          "shift_ms": -270,
+          "note": "boundary_end · major · ryobi end 270 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 31,
+          "edge": "end",
+          "shift_ms": -580,
+          "note": "boundary_end · critical · d'élagage end 580 ms earlier"
+        },
+        {
+          "action": "delete",
+          "word": 34,
+          "critical": true,
+          "note": "word_deletion · critical · 'prix' gone from transcript and chips"
+        },
+        {
+          "action": "remove",
+          "word": 45,
+          "critical": true,
+          "note": "missing_segment · critical · centimes keeps its text but has no chip"
+        },
+        {
+          "action": "replace",
+          "word": 52,
+          "text": "qualite",
+          "note": "accent_missing · major · qualité -> qualite"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "d0d15616-c90e-4397-9f1a-64e326cb7dc5_003.wav",
+      "work_item_id": "29c60e20-3d23-4a93-b569-f95c1230a269",
+      "file_name": "d0d15616-c90e-4397-9f1a-64e326cb7dc5_003.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 5,
+          "text": "est",
+          "critical": true,
+          "note": "word_substitution · critical · et -> est"
+        },
+        {
+          "action": "replace",
+          "word": 10,
+          "text": "classique",
+          "note": "spelling_slip · major · classiques -> classique"
+        },
+        {
+          "action": "remove",
+          "word": 15,
+          "note": "missing_segment · critical · l'image keeps its text but has no chip"
+        },
+        {
+          "action": "move",
+          "word": 20,
+          "edge": "end",
+          "shift_ms": -40,
+          "note": "boundary_end · minor · de end 40 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "0637b60f-6777-4c06-8f12-cb45fa86b569_030.wav",
+      "work_item_id": "5ffdc1c1-0457-44d8-a5c7-7f91989e8c17",
+      "file_name": "0637b60f-6777-4c06-8f12-cb45fa86b569_030.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": 200,
+          "critical": true,
+          "note": "boundary_start · major · paris start 200 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "1e2d74f7-5704-4dce-96d0-c9786aa80e45_017.wav",
+      "work_item_id": "4ff96255-c464-4166-8a60-4dfb707159cf",
+      "file_name": "1e2d74f7-5704-4dce-96d0-c9786aa80e45_017.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": 110,
+          "note": "boundary_end · major · sur end 110 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 9,
+          "text": "unites",
+          "note": "accent_missing · major · unités -> unites"
+        },
+        {
+          "action": "replace",
+          "word": 14,
+          "text": "ça",
+          "critical": true,
+          "note": "colloquial_form · major · said 'cela', written 'ça'"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "c1469872-57fe-4e6d-b122-387d09b1027e_183.wav",
+      "work_item_id": "e0f6b902-f0c7-4497-b484-dc5f8cfbc0e9",
+      "file_name": "c1469872-57fe-4e6d-b122-387d09b1027e_183.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 0,
+          "critical": true,
+          "note": "word_deletion · critical · 'bolivia' gone from transcript and chips"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "d208a290-d4d4-4dfe-8fbe-504a976852d6_015.wav",
+      "work_item_id": "3fdba571-fc9a-4184-8e3a-e422032f5d76",
+      "file_name": "d208a290-d4d4-4dfe-8fbe-504a976852d6_015.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": -80,
+          "critical": true,
+          "note": "boundary_end · minor · oumma end 80 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "1e7f3586-8d84-44e3-83d5-0bc9d1619082_000.wav",
+      "work_item_id": "4827df8c-5af3-455f-aba5-9655caec93fb",
+      "file_name": "1e7f3586-8d84-44e3-83d5-0bc9d1619082_000.wav",
+      "plants": [
+        {
+          "action": "overlap",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": -250,
+          "critical": true,
+          "note": "boundary_overlap · major · à start 250 ms earlier, into hier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "784b7b59-88d2-4017-9eb4-1de9569e96b0_2424.wav",
+      "work_item_id": "6e16b5ab-08d6-4875-b27c-13319e4a7314",
+      "file_name": "784b7b59-88d2-4017-9eb4-1de9569e96b0_2424.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": 340,
+          "note": "boundary_start · critical · martin start 340 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 4,
+          "text": "les",
+          "critical": true,
+          "note": "word_substitution · critical · le -> les"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "d0956b94-3736-46fb-a203-ed39511f63c5_013.wav",
+      "work_item_id": "437c9ed5-6ed9-488e-b70c-5ba33429021e",
+      "file_name": "d0956b94-3736-46fb-a203-ed39511f63c5_013.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "start",
+          "shift_ms": -210,
+          "note": "boundary_start · major · au start 210 ms earlier"
+        },
+        {
+          "action": "add",
+          "after_word": 9,
+          "text": "kennedy",
+          "critical": true,
+          "note": "word_hallucination · major · extra 'kennedy' in the 0.39 s pause after it"
+        },
+        {
+          "action": "remove",
+          "word": 15,
+          "note": "missing_segment · major · paris keeps its text but has no chip"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "a1838ace-d23c-4939-9e25-4256b0d202a6_118.wav",
+      "work_item_id": "5feb7177-b600-45e9-9719-a80f977f39b2",
+      "file_name": "a1838ace-d23c-4939-9e25-4256b0d202a6_118.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 3,
+          "text": "meme",
+          "note": "accent_missing · major · même -> meme"
+        },
+        {
+          "action": "add",
+          "after_word": 9,
+          "text": "mali",
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'mali' in the 0.66 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 15,
+          "edge": "start",
+          "shift_ms": -500,
+          "note": "boundary_start · critical · avec start 500 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "8805099f-6829-4880-a29f-591c1ad7d8df_008.wav",
+      "work_item_id": "3212a328-39b3-4787-88e2-660a82f6b0b0",
+      "file_name": "8805099f-6829-4880-a29f-591c1ad7d8df_008.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 1,
+          "critical": true,
+          "note": "word_deletion · critical · 'deux' gone from transcript and chips"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "end",
+          "shift_ms": 60,
+          "note": "boundary_end · minor · pour end 60 ms later"
+        },
+        {
+          "action": "move",
+          "word": 15,
+          "edge": "end",
+          "shift_ms": -150,
+          "note": "boundary_end · major · r. end 150 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "59ad1058-6bcf-48fe-b64a-2f16b22c0e40_024.wav",
+      "work_item_id": "f419d871-40b4-4713-8497-e1c581fce91d",
+      "file_name": "59ad1058-6bcf-48fe-b64a-2f16b22c0e40_024.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 0,
+          "text": "il",
+          "critical": true,
+          "note": "word_substitution · critical · ils -> il"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "start",
+          "shift_ms": 50,
+          "note": "boundary_start · minor · une start 50 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 10,
+          "text": "pourrèt",
+          "note": "spelling_slip · major · pourrait -> pourrèt"
+        },
+        {
+          "action": "replace",
+          "word": 19,
+          "text": "italie-",
+          "critical": true,
+          "note": "truncation_introduced · critical · complete word italiennes written cut off as italie-"
+        },
+        {
+          "action": "zero",
+          "word": 33,
+          "edge": "end",
+          "note": "zero_length · major · quinze collapses to zero length at its end"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "3963857e-1bac-43a5-85c9-5d09ec71e508_000.wav",
+      "work_item_id": "6ae2024d-0ee7-4105-870e-950f4c5b3bf1",
+      "file_name": "3963857e-1bac-43a5-85c9-5d09ec71e508_000.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 4,
+          "text": "video",
+          "note": "accent_missing · major · vidéo -> video"
+        },
+        {
+          "action": "remove",
+          "word": 13,
+          "critical": true,
+          "note": "missing_segment · critical · machettes keeps its text but has no chip"
+        },
+        {
+          "action": "move",
+          "word": 20,
+          "edge": "start",
+          "shift_ms": 480,
+          "note": "boundary_start · critical · nkoaban start 480 ms later"
+        },
+        {
+          "action": "move",
+          "word": 33,
+          "edge": "start",
+          "shift_ms": 330,
+          "note": "boundary_start · critical · vidéo start 330 ms later"
+        },
+        {
+          "action": "delete",
+          "word": 46,
+          "critical": true,
+          "note": "word_deletion · critical · 'une' gone from transcript and chips"
+        },
+        {
+          "action": "move",
+          "word": 55,
+          "edge": "end",
+          "shift_ms": -220,
+          "note": "boundary_end · major · village end 220 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "bc5a4af0-4276-4369-8600-90e70b1095fa_001.wav",
+      "work_item_id": "ded0c1ba-7ea4-4e7d-acad-0c14ab52415c",
+      "file_name": "bc5a4af0-4276-4369-8600-90e70b1095fa_001.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "end",
+          "shift_ms": -40,
+          "note": "boundary_end · minor · village end 40 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 21,
+          "text": "là",
+          "critical": true,
+          "note": "word_substitution · critical · la -> là"
+        },
+        {
+          "action": "add",
+          "after_word": 33,
+          "text": "commencer",
+          "note": "word_hallucination · major · extra 'commencer' in the 0.58 s pause after it"
+        },
+        {
+          "action": "overlap",
+          "word": 38,
+          "edge": "end",
+          "shift_ms": 150,
+          "note": "boundary_overlap · major · de end 150 ms later, into septembre"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "000160ff-53fe-4ef3-a1d0-c8c2059428fc_000.wav",
+      "work_item_id": "4fa6f3c6-20e3-4f7d-9d16-a6a29693e933",
+      "file_name": "000160ff-53fe-4ef3-a1d0-c8c2059428fc_000.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 8,
+          "edge": "start",
+          "shift_ms": 520,
+          "critical": true,
+          "note": "boundary_start · critical · souvigny start 520 ms later"
+        },
+        {
+          "action": "move",
+          "word": 35,
+          "edge": "end",
+          "shift_ms": -80,
+          "note": "boundary_end · minor · comme end 80 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 44,
+          "edge": "end",
+          "shift_ms": 170,
+          "note": "boundary_end · major · des end 170 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 53,
+          "text": "parceles",
+          "note": "spelling_slip · major · parcelles -> parceles"
+        },
+        {
+          "action": "replace",
+          "word": 60,
+          "text": "prevues",
+          "note": "accent_missing · major · prévues -> prevues"
+        },
+        {
+          "action": "delete",
+          "word": 65,
+          "critical": true,
+          "note": "word_deletion · critical · 'ouverte' gone from transcript and chips"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "2f55952c-fded-4883-856b-cacc24789403_003.wav",
+      "work_item_id": "ec72577c-bc7f-402f-8180-31692c660753",
+      "file_name": "2f55952c-fded-4883-856b-cacc24789403_003.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing_segment · major · au keeps its text but has no chip"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "85570eb3-5c2b-422c-9956-5c8ffd61e482_028.wav",
+      "work_item_id": "4817127c-3c8e-46e5-b48c-7cfaea33b6fa",
+      "file_name": "85570eb3-5c2b-422c-9956-5c8ffd61e482_028.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": -100,
+          "note": "boundary_end · major · tous end 100 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "start",
+          "shift_ms": 490,
+          "note": "boundary_start · critical · transmission start 490 ms later"
+        },
+        {
+          "action": "replace_unintelligible",
+          "word": 14,
+          "text": "jatco",
+          "critical": true,
+          "note": "unintelligible_invented · critical · ((sat)) written as an invented 'jatco'"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "6b0dfd64-c14a-4aaf-b3df-21d5204bad88_000.wav",
+      "work_item_id": "b3e09cbb-823e-4831-b604-f04cd37d665e",
+      "file_name": "6b0dfd64-c14a-4aaf-b3df-21d5204bad88_000.wav",
+      "plants": [
+        {
+          "action": "zero",
+          "word": 1,
+          "edge": "end",
+          "note": "zero_length · critical · sème collapses to zero length at its end"
+        },
+        {
+          "action": "replace",
+          "word": 16,
+          "text": "de",
+          "critical": true,
+          "note": "word_substitution · critical · des -> de"
+        },
+        {
+          "action": "move",
+          "word": 21,
+          "edge": "end",
+          "shift_ms": -50,
+          "note": "boundary_end · minor · notamment end 50 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "ab4c2d3d-7aa4-4d1e-aa6f-2330b8be9669_005.wav",
+      "work_item_id": "d517a263-8b71-4479-80b6-119929c02742",
+      "file_name": "ab4c2d3d-7aa4-4d1e-aa6f-2330b8be9669_005.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 2,
+          "text": "gest-",
+          "critical": true,
+          "note": "truncation_introduced · critical · complete word gestion written cut off as gest-"
+        },
+        {
+          "action": "move",
+          "word": 20,
+          "edge": "end",
+          "shift_ms": 250,
+          "note": "boundary_end · major · six end 250 ms later"
+        },
+        {
+          "action": "add",
+          "after_word": 25,
+          "text": "d'absence",
+          "critical": true,
+          "note": "word_hallucination · major · extra 'd'absence' in the 0.41 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 29,
+          "edge": "start",
+          "shift_ms": 80,
+          "note": "boundary_start · minor · accident start 80 ms later"
+        },
+        {
+          "action": "remove",
+          "word": 33,
+          "note": "missing_segment · major · jour keeps its text but has no chip"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "4f26f332-15f9-47e4-8b79-9b34726b325c_003.wav",
+      "work_item_id": "971f84db-d47c-4aba-bf15-a45b33df2d7b",
+      "file_name": "4f26f332-15f9-47e4-8b79-9b34726b325c_003.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 4,
+          "text": "reponse",
+          "note": "accent_missing · major · réponse -> reponse"
+        },
+        {
+          "action": "delete",
+          "word": 10,
+          "critical": true,
+          "note": "word_deletion · critical · 'du' gone from transcript and chips"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "fc81d2b6-d43b-4e82-8f58-a886528df279_000.wav",
+      "work_item_id": "f490121a-16f5-424f-b493-1f47007e8335",
+      "file_name": "fc81d2b6-d43b-4e82-8f58-a886528df279_000.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "end",
+          "shift_ms": -390,
+          "note": "boundary_end · critical · chambre end 390 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 11,
+          "text": "là",
+          "critical": true,
+          "note": "word_substitution · critical · la -> là"
+        },
+        {
+          "action": "move",
+          "word": 17,
+          "edge": "start",
+          "shift_ms": -210,
+          "note": "boundary_start · major · juin start 210 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "8255f52a-67f7-4314-9f29-697b163187b5_003.wav",
+      "work_item_id": "77dab8e7-e6ee-4237-9d2e-c7e4e2bcce66",
+      "file_name": "8255f52a-67f7-4314-9f29-697b163187b5_003.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 2,
+          "text": "conecter",
+          "note": "spelling_slip · major · connecter -> conecter"
+        },
+        {
+          "action": "overlap",
+          "word": 5,
+          "edge": "end",
+          "shift_ms": 350,
+          "note": "boundary_overlap · major · puissante end 350 ms later, into vérité"
+        },
+        {
+          "action": "add",
+          "after_word": 26,
+          "text": "réveil",
+          "critical": true,
+          "note": "word_hallucination · major · extra 'réveil' in the 0.50 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 31,
+          "edge": "start",
+          "shift_ms": 40,
+          "note": "boundary_start · minor · endormir start 40 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "0796ae9f-9785-488a-930b-a0fcc1eb2c53_005.wav",
+      "work_item_id": "e5d862d1-f756-4010-9c83-3c33ba73d3e7",
+      "file_name": "0796ae9f-9785-488a-930b-a0fcc1eb2c53_005.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 2,
+          "note": "missing_segment · critical · focalise keeps its text but has no chip"
+        },
+        {
+          "action": "delete",
+          "word": 8,
+          "critical": true,
+          "note": "word_deletion · critical · 'manière' gone from transcript and chips"
+        },
+        {
+          "action": "move",
+          "word": 24,
+          "edge": "start",
+          "shift_ms": 380,
+          "note": "boundary_start · critical · premium start 380 ms later"
+        },
+        {
+          "action": "move",
+          "word": 32,
+          "edge": "start",
+          "shift_ms": 310,
+          "note": "boundary_start · critical · vidéo start 310 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "0d4086d6-dfed-4876-8023-6f8797164e97_001.wav",
+      "work_item_id": "e57ecf0f-c359-4284-b1d9-81cced6e1b52",
+      "file_name": "0d4086d6-dfed-4876-8023-6f8797164e97_001.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 60,
+          "critical": true,
+          "note": "boundary_start · minor · rue start 60 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "e986448d-9ed6-4c60-8408-d43d4947ae45_007.wav",
+      "work_item_id": "cb151b9d-eed8-4059-9536-3329e83c8fea",
+      "file_name": "e986448d-9ed6-4c60-8408-d43d4947ae45_007.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "end",
+          "shift_ms": -130,
+          "note": "boundary_end · major · chiffres end 130 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 17,
+          "text": "cela",
+          "critical": true,
+          "note": "colloquial_form · major · said 'ça', written 'cela'"
+        },
+        {
+          "action": "zero",
+          "word": 24,
+          "note": "zero_length · major · pas collapses to zero length at its start"
+        },
+        {
+          "action": "move",
+          "word": 41,
+          "edge": "start",
+          "shift_ms": 40,
+          "note": "boundary_start · minor · sept start 40 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 54,
+          "text": "a",
+          "note": "accent_missing · major · à -> a"
+        },
+        {
+          "action": "replace",
+          "word": 61,
+          "text": "peut",
+          "critical": true,
+          "note": "word_substitution · critical · peu -> peut"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "4c24c93f-60d3-49be-8bac-2c612cb70534_044.wav",
+      "work_item_id": "66dd31e3-a6aa-4d0c-a2d9-dd056539ca59",
+      "file_name": "4c24c93f-60d3-49be-8bac-2c612cb70534_044.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": -340,
+          "note": "boundary_start · critical · des start 340 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 8,
+          "text": "de",
+          "note": "word_substitution · critical · des -> de"
+        },
+        {
+          "action": "add",
+          "after_word": 15,
+          "text": "satellites",
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'satellites' in the 0.86 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "c2764b82-11dd-4b69-a644-a4dd0b2c7eca_048.wav",
+      "work_item_id": "677d1c2d-290c-4a12-8ec6-0eef9e2a34ff",
+      "file_name": "c2764b82-11dd-4b69-a644-a4dd0b2c7eca_048.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "critical": true,
+          "note": "missing_segment · major · coûte keeps its text but has no chip"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "666bc5d2-9eca-4f7f-ae5b-ae623027a0af_026.wav",
+      "work_item_id": "68547468-1da0-4cc7-afa9-bc0f2afe8085",
+      "file_name": "666bc5d2-9eca-4f7f-ae5b-ae623027a0af_026.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": 490,
+          "critical": true,
+          "note": "boundary_start · critical · angleterre start 490 ms later"
+        },
+        {
+          "action": "move",
+          "word": 14,
+          "edge": "start",
+          "shift_ms": 100,
+          "note": "boundary_start · major · ville start 100 ms later"
+        },
+        {
+          "action": "move",
+          "word": 30,
+          "edge": "start",
+          "shift_ms": 260,
+          "note": "boundary_start · major · sébastien start 260 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 41,
+          "text": "a",
+          "note": "accent_missing · major · à -> a"
+        },
+        {
+          "action": "replace",
+          "word": 47,
+          "text": "surnomé",
+          "note": "spelling_slip · major · surnommé -> surnomé"
+        },
+        {
+          "action": "delete",
+          "word": 53,
+          "critical": true,
+          "note": "word_deletion · critical · 'nom' gone from transcript and chips"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "73a2ea1b-43c0-4e44-ac8b-af77a70e1239_387.wav",
+      "work_item_id": "d61bb0e0-e065-40db-8080-f618533faee5",
+      "file_name": "73a2ea1b-43c0-4e44-ac8b-af77a70e1239_387.wav",
+      "plants": [
+        {
+          "action": "overlap",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": -170,
+          "note": "boundary_overlap · major · avez start 170 ms earlier, into combien"
+        },
+        {
+          "action": "move",
+          "word": 10,
+          "edge": "end",
+          "shift_ms": 60,
+          "note": "boundary_end · minor · meubles end 60 ms later"
+        },
+        {
+          "action": "move",
+          "word": 14,
+          "edge": "end",
+          "shift_ms": -380,
+          "note": "boundary_end · critical · quelques end 380 ms earlier"
+        },
+        {
+          "action": "add",
+          "after_word": 24,
+          "text": "investissement",
+          "critical": true,
+          "note": "word_hallucination · major · extra 'investissement' in the 0.48 s pause after it"
+        },
+        {
+          "action": "replace",
+          "word": 36,
+          "text": "vend-",
+          "critical": true,
+          "note": "truncation_introduced · critical · complete word vendra written cut off as vend-"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "89cd8734-abe5-404c-9347-efb46c4a1f4a_098.wav",
+      "work_item_id": "01d97d63-0107-4c85-b86f-d5f153d15dd8",
+      "file_name": "89cd8734-abe5-404c-9347-efb46c4a1f4a_098.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 6,
+          "text": "ses",
+          "critical": true,
+          "note": "word_substitution · critical · ces -> ses"
+        },
+        {
+          "action": "remove",
+          "word": 9,
+          "note": "missing_segment · major · risque keeps its text but has no chip"
+        },
+        {
+          "action": "move",
+          "word": 16,
+          "edge": "start",
+          "shift_ms": 80,
+          "note": "boundary_start · minor · de start 80 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "65046012-f380-40fc-a922-f152008b0c30_004.wav",
+      "work_item_id": "6142b0b8-b31e-4492-a5aa-c893f5215652",
+      "file_name": "65046012-f380-40fc-a922-f152008b0c30_004.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 0,
+          "text": "direction",
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'direction' in the 0.97 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "efc78303-ac00-47c0-ac39-31e22db23a40_025.wav",
+      "work_item_id": "95f18a4d-3c68-4915-af07-e497331f2621",
+      "file_name": "efc78303-ac00-47c0-ac39-31e22db23a40_025.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": -250,
+          "critical": true,
+          "note": "boundary_end · major · canoë end 250 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "5d49b574-c4f7-47b0-9460-494d99b92746_105.wav",
+      "work_item_id": "b154dfea-28b0-43f7-a719-88689805a22a",
+      "file_name": "5d49b574-c4f7-47b0-9460-494d99b92746_105.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 4,
+          "text": "reaffirmer",
+          "critical": true,
+          "note": "accent_missing · major · réaffirmer -> reaffirmer"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "7234952b-5407-4e6d-b022-cd9187691a83_040.wav",
+      "work_item_id": "82b3c0c6-c7ff-423b-8987-fe470e35d11c",
+      "file_name": "7234952b-5407-4e6d-b022-cd9187691a83_040.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 7,
+          "critical": true,
+          "note": "word_deletion · critical · 'neuf' gone from transcript and chips"
+        },
+        {
+          "action": "replace",
+          "word": 12,
+          "text": "nécesaire",
+          "note": "spelling_slip · major · nécessaire -> nécesaire"
+        },
+        {
+          "action": "move",
+          "word": 19,
+          "edge": "end",
+          "shift_ms": -350,
+          "note": "boundary_end · critical · histoire end 350 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 28,
+          "edge": "end",
+          "shift_ms": -200,
+          "note": "boundary_end · major · vie end 200 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "431c273d-bb61-461f-bcab-3d71bb10c87f_004.wav",
+      "work_item_id": "1d1c87ac-25c5-452c-afd3-781ed88e7656",
+      "file_name": "431c273d-bb61-461f-bcab-3d71bb10c87f_004.wav",
+      "plants": [
+        {
+          "action": "absorb",
+          "word": 7,
+          "into": "next",
+          "note": "filler_absorbed · major · 'euh' gone, faire stretched over it"
+        },
+        {
+          "action": "move",
+          "word": 17,
+          "edge": "end",
+          "shift_ms": -50,
+          "note": "boundary_end · minor · l'écoute end 50 ms earlier"
+        },
+        {
+          "action": "absorb",
+          "word": 29,
+          "into": "next",
+          "critical": true,
+          "note": "filler_absorbed · major · 'euh' gone, l'ensemble stretched over it"
+        },
+        {
+          "action": "move",
+          "word": 49,
+          "edge": "start",
+          "shift_ms": 190,
+          "note": "boundary_start · major · nos start 190 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 56,
+          "text": "a",
+          "critical": true,
+          "note": "word_substitution · critical · à -> a"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "0461b117-6d8a-4c6c-82d4-3ce06cba80d0_174.wav",
+      "work_item_id": "7912f16c-2cc1-4cf5-a456-1b4432ba6fb0",
+      "file_name": "0461b117-6d8a-4c6c-82d4-3ce06cba80d0_174.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 3,
+          "critical": true,
+          "note": "missing_segment · critical · unis keeps its text but has no chip"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "c5f6f888-601e-45ab-9fc5-ec1ce37085c1_041.wav",
+      "work_item_id": "c1cb7cce-9de0-4d01-abe8-5ac18bbc27e5",
+      "file_name": "c5f6f888-601e-45ab-9fc5-ec1ce37085c1_041.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 4,
+          "text": "malgre",
+          "note": "accent_missing · major · malgré -> malgre"
+        },
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "end",
+          "shift_ms": -600,
+          "critical": true,
+          "note": "boundary_end · critical · inflationniste end 600 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 16,
+          "edge": "start",
+          "shift_ms": 60,
+          "note": "boundary_start · minor · deux start 60 ms later"
+        },
+        {
+          "action": "delete",
+          "word": 27,
+          "critical": true,
+          "note": "word_deletion · critical · 'dix' gone from transcript and chips"
+        },
+        {
+          "action": "add",
+          "after_word": 50,
+          "text": "ebitda",
+          "note": "word_hallucination · major · extra 'ebitda' in the 0.39 s pause after it"
+        },
+        {
+          "action": "overlap",
+          "word": 56,
+          "edge": "end",
+          "shift_ms": 250,
+          "note": "boundary_overlap · major · de end 250 ms later, into dirhams"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "f031aa55-8eb4-4178-9450-af6d3b5b2598_123.wav",
+      "work_item_id": "3e8f50e8-5eb2-4ba4-85a0-4fb9f1358e9d",
+      "file_name": "f031aa55-8eb4-4178-9450-af6d3b5b2598_123.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "end",
+          "shift_ms": -220,
+          "critical": true,
+          "note": "boundary_end · major · bobo end 220 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "5b9918ea-ff5b-410c-9da5-e5c66445623b_489.wav",
+      "work_item_id": "51e5fa14-f8d9-4a61-98df-f7bb92375bfe",
+      "file_name": "5b9918ea-ff5b-410c-9da5-e5c66445623b_489.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 6,
+          "text": "une",
+          "critical": true,
+          "note": "word_substitution · critical · un -> une"
+        },
+        {
+          "action": "move",
+          "word": 15,
+          "edge": "start",
+          "shift_ms": 70,
+          "note": "boundary_start · minor · voix start 70 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 18,
+          "text": "precise",
+          "note": "accent_missing · major · précise -> precise"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "de5c2a7e-d378-4acb-a57c-748579106544_001.wav",
+      "work_item_id": "37967544-486c-4aeb-b657-e593917dcc0c",
+      "file_name": "de5c2a7e-d378-4acb-a57c-748579106544_001.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 4,
+          "note": "missing_segment · major · au keeps its text but has no chip"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "start",
+          "shift_ms": -430,
+          "critical": true,
+          "note": "boundary_start · critical · démocratique start 430 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "fb339ff6-31be-4f8c-9f6e-8f63a3d1fc71_024.wav",
+      "work_item_id": "524c674e-f2ca-4d1f-a1bb-efdfeb8636b7",
+      "file_name": "fb339ff6-31be-4f8c-9f6e-8f63a3d1fc71_024.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 4,
+          "critical": true,
+          "note": "word_deletion · critical · 'partis' gone from transcript and chips"
+        },
+        {
+          "action": "zero",
+          "word": 11,
+          "edge": "end",
+          "note": "zero_length · major · sont collapses to zero length at its end"
+        },
+        {
+          "action": "move",
+          "word": 29,
+          "edge": "start",
+          "shift_ms": 480,
+          "critical": true,
+          "note": "boundary_start · critical · dispersés start 480 ms later"
+        },
+        {
+          "action": "move",
+          "word": 33,
+          "edge": "start",
+          "shift_ms": -150,
+          "note": "boundary_start · major · de start 150 ms earlier"
+        },
+        {
+          "action": "add",
+          "after_word": 41,
+          "text": "l'abri",
+          "note": "word_hallucination · major · extra 'l'abri' in the 0.51 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "55f9ffcd-e701-4db3-a8d5-eaf3e9a50a61_003.wav",
+      "work_item_id": "f23d254a-07e7-4834-8514-90cf79e10d09",
+      "file_name": "55f9ffcd-e701-4db3-a8d5-eaf3e9a50a61_003.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "end",
+          "shift_ms": 60,
+          "note": "boundary_end · minor · alger end 60 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 14,
+          "text": "prude-",
+          "critical": true,
+          "note": "truncation_introduced · critical · complete word prudence written cut off as prude-"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "f031aa55-8eb4-4178-9450-af6d3b5b2598_069.wav",
+      "work_item_id": "ed488902-f96d-45d7-b2b4-7750065cbcba",
+      "file_name": "f031aa55-8eb4-4178-9450-af6d3b5b2598_069.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 5,
+          "text": "les",
+          "critical": true,
+          "note": "word_substitution · critical · le -> les"
+        },
+        {
+          "action": "replace",
+          "word": 8,
+          "text": "arondissement",
+          "note": "spelling_slip · major · arrondissement -> arondissement"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "044236b7-0d22-43f3-af9c-d803f026183a_015.wav",
+      "work_item_id": "3d6f97f7-195a-4053-a1ed-9cb3cbc81c3d",
+      "file_name": "044236b7-0d22-43f3-af9c-d803f026183a_015.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": 120,
+          "critical": true,
+          "note": "boundary_start · major · neuf start 120 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "07e7121c-0e96-45c4-9691-6558c50bf58b_2034.wav",
+      "work_item_id": "aba2c50d-a854-41af-81ab-be05835db7fd",
+      "file_name": "07e7121c-0e96-45c4-9691-6558c50bf58b_2034.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 3,
+          "critical": true,
+          "note": "word_deletion · critical · 'l'orient' gone from transcript and chips"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "8e6073cf-cfe3-4206-b25e-93c8fe30fb90_046.wav",
+      "work_item_id": "1581f643-e497-474e-a1c1-9f25b779e9db",
+      "file_name": "8e6073cf-cfe3-4206-b25e-93c8fe30fb90_046.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 9,
+          "text": "droit",
+          "note": "word_hallucination · major · extra 'droit' in the 0.44 s pause after it"
+        },
+        {
+          "action": "replace",
+          "word": 13,
+          "text": "a",
+          "note": "accent_missing · major · à -> a"
+        },
+        {
+          "action": "move",
+          "word": 19,
+          "edge": "start",
+          "shift_ms": 420,
+          "critical": true,
+          "note": "boundary_start · critical · professionnelle start 420 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 40,
+          "text": "ben",
+          "critical": true,
+          "note": "colloquial_form · major · said 'bien', written 'ben'"
+        },
+        {
+          "action": "move",
+          "word": 52,
+          "edge": "start",
+          "shift_ms": 40,
+          "note": "boundary_start · minor · dans start 40 ms later"
+        },
+        {
+          "action": "remove",
+          "word": 55,
+          "note": "missing_segment · major · j'ai keeps its text but has no chip"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "de057586-1e6a-46b9-8c6a-b83fa63270a7_013.wav",
+      "work_item_id": "8a8d8fe7-d5c2-4863-897e-7f7f9d394c05",
+      "file_name": "de057586-1e6a-46b9-8c6a-b83fa63270a7_013.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "start",
+          "shift_ms": 190,
+          "note": "boundary_start · major · cinquante start 190 ms later"
+        },
+        {
+          "action": "move",
+          "word": 25,
+          "edge": "end",
+          "shift_ms": -360,
+          "note": "boundary_end · critical · situation end 360 ms earlier"
+        },
+        {
+          "action": "overlap",
+          "word": 50,
+          "edge": "end",
+          "shift_ms": 220,
+          "note": "boundary_overlap · major · d'état end 220 ms later, into civil"
+        },
+        {
+          "action": "move",
+          "word": 55,
+          "edge": "start",
+          "shift_ms": 60,
+          "note": "boundary_start · minor · domicile start 60 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 63,
+          "text": "travèl",
+          "critical": true,
+          "note": "spelling_slip · major · travail -> travèl"
+        },
+        {
+          "action": "replace",
+          "word": 67,
+          "text": "est",
+          "critical": true,
+          "note": "word_substitution · critical · et -> est"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "a05aa3ba-5809-4e03-b640-88671b21d44b_229.wav",
+      "work_item_id": "e59b2650-82a9-4821-a48c-f7dba7285f08",
+      "file_name": "a05aa3ba-5809-4e03-b640-88671b21d44b_229.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 10,
+          "edge": "start",
+          "shift_ms": -50,
+          "note": "boundary_start · minor · donc start 50 ms earlier"
+        },
+        {
+          "action": "add",
+          "after_word": 16,
+          "text": "an",
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'an' in the 0.74 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 20,
+          "edge": "end",
+          "shift_ms": -310,
+          "note": "boundary_end · critical · logiciel end 310 ms earlier"
+        },
+        {
+          "action": "delete",
+          "word": 23,
+          "critical": true,
+          "note": "word_deletion · critical · 'deux' gone from transcript and chips"
+        },
+        {
+          "action": "remove",
+          "word": 65,
+          "note": "missing_segment · major · mais keeps its text but has no chip"
+        },
+        {
+          "action": "replace",
+          "word": 71,
+          "text": "rentabilite",
+          "note": "accent_missing · major · rentabilité -> rentabilite"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "36b043ac-fe7b-4a4e-bc83-7ceaf29f1794_000.wav",
+      "work_item_id": "3ee47a07-c404-4422-a448-23526ddc39f6",
+      "file_name": "36b043ac-fe7b-4a4e-bc83-7ceaf29f1794_000.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "end",
+          "shift_ms": -200,
+          "note": "boundary_end · major · africain end 200 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 20,
+          "edge": "end",
+          "shift_ms": 580,
+          "note": "boundary_end · critical · ouagadougou end 580 ms later"
+        },
+        {
+          "action": "move",
+          "word": 34,
+          "edge": "end",
+          "shift_ms": 110,
+          "note": "boundary_end · major · mille end 110 ms later"
+        },
+        {
+          "action": "zero",
+          "word": 58,
+          "note": "zero_length · critical · pari collapses to zero length at its start"
+        },
+        {
+          "action": "replace",
+          "word": 62,
+          "text": "burk-",
+          "critical": true,
+          "note": "truncation_introduced · critical · complete word burkina written cut off as burk-"
+        },
+        {
+          "action": "replace",
+          "word": 69,
+          "text": "dû",
+          "critical": true,
+          "note": "word_substitution · critical · du -> dû"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "97a306ad-9780-4bc7-be75-bae5be6ab8c5_095.wav",
+      "work_item_id": "cce814b4-1a60-4b55-aed5-432aca71782f",
+      "file_name": "97a306ad-9780-4bc7-be75-bae5be6ab8c5_095.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "end",
+          "shift_ms": -40,
+          "note": "boundary_end · minor · sont end 40 ms earlier"
+        },
+        {
+          "action": "remove",
+          "word": 11,
+          "note": "missing_segment · major · sont keeps its text but has no chip"
+        },
+        {
+          "action": "add",
+          "after_word": 15,
+          "text": "assumées",
+          "note": "word_hallucination · major · extra 'assumées' in the 0.41 s pause after it"
+        },
+        {
+          "action": "delete",
+          "word": 38,
+          "critical": true,
+          "note": "word_deletion · critical · 'vraiment' gone from transcript and chips"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "141e669d-c803-455f-8888-33467f4c596d_000.wav",
+      "work_item_id": "b04e5417-366e-42b6-98e9-337fcc64d719",
+      "file_name": "141e669d-c803-455f-8888-33467f4c596d_000.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 9,
+          "text": "diversite",
+          "note": "accent_missing · major · diversité -> diversite"
+        },
+        {
+          "action": "replace",
+          "word": 23,
+          "text": "des",
+          "critical": true,
+          "note": "word_substitution · critical · de -> des"
+        },
+        {
+          "action": "overlap",
+          "word": 32,
+          "edge": "end",
+          "shift_ms": 200,
+          "note": "boundary_overlap · major · l'avez end 200 ms later, into jamais"
+        },
+        {
+          "action": "move",
+          "word": 42,
+          "edge": "end",
+          "shift_ms": 140,
+          "note": "boundary_end · major · arts end 140 ms later"
+        },
+        {
+          "action": "move",
+          "word": 49,
+          "edge": "start",
+          "shift_ms": 540,
+          "critical": true,
+          "note": "boundary_start · critical · d'hier start 540 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "566fa16f-3696-444f-b964-671f9036194a_139.wav",
+      "work_item_id": "0eab02e3-3598-4ab0-a3a6-0cdecdc58462",
+      "file_name": "566fa16f-3696-444f-b964-671f9036194a_139.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "start",
+          "shift_ms": 60,
+          "note": "boundary_start · minor · cent start 60 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 9,
+          "text": "mèson",
+          "critical": true,
+          "note": "spelling_slip · major · maison -> mèson"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "be028146-a014-4a7e-98c9-40ae75a71666_119.wav",
+      "work_item_id": "514a84af-b463-4d69-99d0-7128bbec9d3d",
+      "file_name": "be028146-a014-4a7e-98c9-40ae75a71666_119.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 22,
+          "critical": true,
+          "note": "word_deletion · critical · 'numero' gone from transcript and chips"
+        },
+        {
+          "action": "move",
+          "word": 28,
+          "edge": "end",
+          "shift_ms": -50,
+          "note": "boundary_end · minor · neuf end 50 ms earlier"
+        },
+        {
+          "action": "remove",
+          "word": 33,
+          "note": "missing_segment · critical · collection keeps its text but has no chip"
+        },
+        {
+          "action": "move",
+          "word": 42,
+          "edge": "start",
+          "shift_ms": 210,
+          "note": "boundary_start · major · catholique start 210 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "c3e66595-ae03-4d5f-9710-f00b9c3d500c_043.wav",
+      "work_item_id": "437034dc-d0ad-488f-aefb-99cad3c7ae4b",
+      "file_name": "c3e66595-ae03-4d5f-9710-f00b9c3d500c_043.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 7,
+          "text": "europeenne",
+          "note": "accent_missing · major · européenne -> europeenne"
+        },
+        {
+          "action": "add",
+          "after_word": 14,
+          "text": "l'europe",
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'l'europe' in the 0.64 s pause after it"
+        },
+        {
+          "action": "replace",
+          "word": 18,
+          "text": "des",
+          "note": "word_substitution · critical · de -> des"
+        },
+        {
+          "action": "move",
+          "word": 31,
+          "edge": "end",
+          "shift_ms": -310,
+          "note": "boundary_end · critical · aboutir end 310 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "5848723f-f322-49c8-82ae-b5093461f174_003.wav",
+      "work_item_id": "80819184-19d9-4fdb-b67c-08520641a8b2",
+      "file_name": "5848723f-f322-49c8-82ae-b5093461f174_003.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": 80,
+          "note": "boundary_start · minor · faire start 80 ms later"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "start",
+          "shift_ms": 590,
+          "critical": true,
+          "note": "boundary_start · critical · protéinés start 590 ms later"
+        },
+        {
+          "action": "move",
+          "word": 21,
+          "edge": "end",
+          "shift_ms": 190,
+          "note": "boundary_end · major · lendemain end 190 ms later"
+        },
+        {
+          "action": "zero",
+          "word": 28,
+          "note": "zero_length · major · six collapses to zero length at its start"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "987089ab-7aaa-4fa9-9c6b-333bafe14d2c_005.wav",
+      "work_item_id": "1c9cdc9f-0193-42b2-a5f9-a9756d7c401a",
+      "file_name": "987089ab-7aaa-4fa9-9c6b-333bafe14d2c_005.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 4,
+          "text": "de",
+          "critical": true,
+          "note": "word_substitution · critical · des -> de"
+        },
+        {
+          "action": "remove",
+          "word": 8,
+          "note": "missing_segment · critical · huppées keeps its text but has no chip"
+        },
+        {
+          "action": "delete",
+          "word": 20,
+          "critical": true,
+          "note": "word_deletion · critical · 'été' gone from transcript and chips"
+        },
+        {
+          "action": "add",
+          "after_word": 27,
+          "text": "crise",
+          "note": "word_hallucination · major · extra 'crise' in the 0.42 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 32,
+          "edge": "end",
+          "shift_ms": 70,
+          "note": "boundary_end · minor · beaucoup end 70 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "108ad1dc-09cb-42bd-83e8-08b55d4e2310_149.wav",
+      "work_item_id": "81000b29-932c-4e6f-8b4d-e3ce2491cfc6",
+      "file_name": "108ad1dc-09cb-42bd-83e8-08b55d4e2310_149.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": -250,
+          "note": "boundary_start · major · vous start 250 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 7,
+          "text": "a",
+          "critical": true,
+          "note": "accent_missing · major · à -> a"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "dfffe989-2534-4b32-97de-025d3a883c78_072.wav",
+      "work_item_id": "98d99edb-ac16-43c4-8a51-9727fabac9bd",
+      "file_name": "dfffe989-2534-4b32-97de-025d3a883c78_072.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 2,
+          "text": "atend",
+          "note": "spelling_slip · major · attend -> atend"
+        },
+        {
+          "action": "overlap",
+          "word": 15,
+          "edge": "start",
+          "shift_ms": -160,
+          "note": "boundary_overlap · major · environnantes start 160 ms earlier, into régions"
+        },
+        {
+          "action": "move",
+          "word": 18,
+          "edge": "end",
+          "shift_ms": 530,
+          "critical": true,
+          "note": "boundary_end · critical · remplie end 530 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "6e44f0b8-c77c-4e1b-beed-31484c8e437a_002.wav",
+      "work_item_id": "e6139db9-40b4-41e3-95f6-a3fd82d1960a",
+      "file_name": "6e44f0b8-c77c-4e1b-beed-31484c8e437a_002.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 3,
+          "text": "des",
+          "critical": true,
+          "note": "word_substitution · critical · de -> des"
+        },
+        {
+          "action": "move",
+          "word": 16,
+          "edge": "start",
+          "shift_ms": 150,
+          "note": "boundary_start · major · prenant start 150 ms later"
+        },
+        {
+          "action": "move",
+          "word": 42,
+          "edge": "start",
+          "shift_ms": 520,
+          "note": "boundary_start · critical · accueillir start 520 ms later"
+        },
+        {
+          "action": "move",
+          "word": 59,
+          "edge": "end",
+          "shift_ms": 50,
+          "note": "boundary_end · minor · décidez end 50 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 67,
+          "text": "agen-",
+          "critical": true,
+          "note": "truncation_introduced · critical · complete word agences written cut off as agen-"
+        },
+        {
+          "action": "add",
+          "after_word": 76,
+          "text": "ordinateur",
+          "note": "word_hallucination · major · extra 'ordinateur' in the 0.50 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "3f5b978c-4cdf-410d-b783-9b1b282683ce_000.wav",
+      "work_item_id": "b6552596-b5b7-4f0a-a4d6-bcc91c2b3418",
+      "file_name": "3f5b978c-4cdf-410d-b783-9b1b282683ce_000.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": -60,
+          "note": "boundary_end · minor · syrien end 60 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 16,
+          "text": "sollicite",
+          "note": "accent_missing · major · sollicité -> sollicite"
+        },
+        {
+          "action": "delete",
+          "word": 23,
+          "critical": true,
+          "note": "word_deletion · critical · 'cette' gone from transcript and chips"
+        },
+        {
+          "action": "remove",
+          "word": 32,
+          "note": "missing_segment · major · serait keeps its text but has no chip"
+        },
+        {
+          "action": "replace",
+          "word": 50,
+          "text": "ouais",
+          "critical": true,
+          "note": "colloquial_form · major · said 'oui', written 'ouais'"
+        },
+        {
+          "action": "move",
+          "word": 69,
+          "edge": "end",
+          "shift_ms": 230,
+          "note": "boundary_end · major · la end 230 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "2216d28d-b150-42e0-acf9-36bed158470a_1439.wav",
+      "work_item_id": "4bf6d3a5-5518-4fa6-a968-f3610662f82c",
+      "file_name": "2216d28d-b150-42e0-acf9-36bed158470a_1439.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 8,
+          "edge": "start",
+          "shift_ms": 60,
+          "note": "boundary_start · minor · pour start 60 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 17,
+          "text": "tapisier",
+          "note": "spelling_slip · major · tapissier -> tapisier"
+        },
+        {
+          "action": "replace",
+          "word": 25,
+          "text": "a",
+          "critical": true,
+          "note": "word_substitution · critical · à -> a"
+        },
+        {
+          "action": "move",
+          "word": 29,
+          "edge": "end",
+          "shift_ms": -360,
+          "note": "boundary_end · critical · l'église end 360 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "313bbe1a-55a1-4fd1-b3bd-ee6785f4e91f_046.wav",
+      "work_item_id": "bae0dd15-d83f-491c-9e59-a71b6d0df558",
+      "file_name": "313bbe1a-55a1-4fd1-b3bd-ee6785f4e91f_046.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 6,
+          "text": "affaire",
+          "note": "word_hallucination · major · extra 'affaire' in the 0.48 s pause after it"
+        },
+        {
+          "action": "replace",
+          "word": 17,
+          "text": "deja",
+          "note": "accent_missing · major · déjà -> deja"
+        },
+        {
+          "action": "remove",
+          "word": 21,
+          "critical": true,
+          "note": "missing_segment · critical · l'enfant keeps its text but has no chip"
+        },
+        {
+          "action": "delete",
+          "word": 28,
+          "critical": true,
+          "note": "word_deletion · critical · 'trouvés' gone from transcript and chips"
+        },
+        {
+          "action": "move",
+          "word": 46,
+          "edge": "start",
+          "shift_ms": 210,
+          "note": "boundary_start · major · destination start 210 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "821eb806-4938-4337-ab63-a261a12fe342_043.wav",
+      "work_item_id": "a6d87d3f-4897-4022-ab4e-f4eeb9768b1f",
+      "file_name": "821eb806-4938-4337-ab63-a261a12fe342_043.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 440,
+          "critical": true,
+          "note": "boundary_start · critical · numéro start 440 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "3ebf991e-6531-435f-b16f-1240b33b993e_381.wav",
+      "work_item_id": "dc13d3b8-63a4-4cd4-a01e-4644315983dc",
+      "file_name": "3ebf991e-6531-435f-b16f-1240b33b993e_381.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 4,
+          "text": "les",
+          "critical": true,
+          "note": "word_substitution · critical · le -> les"
+        },
+        {
+          "action": "overlap",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": 450,
+          "critical": true,
+          "note": "boundary_overlap · major · et end 450 ms later, into benjamin"
+        },
+        {
+          "action": "zero",
+          "word": 15,
+          "note": "zero_length · major · sur collapses to zero length at its start"
+        },
+        {
+          "action": "move",
+          "word": 23,
+          "edge": "end",
+          "shift_ms": -100,
+          "note": "boundary_end · major · et end 100 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 41,
+          "edge": "end",
+          "shift_ms": 80,
+          "note": "boundary_end · minor · et end 80 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "f65c9474-ceb7-4b53-ae88-307be0b4d0ef_000.wav",
+      "work_item_id": "a5a1e312-8ab7-4556-a2fb-30e556f891d7",
+      "file_name": "f65c9474-ceb7-4b53-ae88-307be0b4d0ef_000.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": 80,
+          "critical": true,
+          "note": "boundary_end · minor · psaume end 80 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "29bf20d5-6761-4a55-bfe0-53833d6b07b0_030.wav",
+      "work_item_id": "e776427c-87bb-49a6-aa68-50db06abeabf",
+      "file_name": "29bf20d5-6761-4a55-bfe0-53833d6b07b0_030.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "note": "missing_segment · major · vais keeps its text but has no chip"
+        },
+        {
+          "action": "replace",
+          "word": 6,
+          "text": "numero",
+          "note": "accent_missing · major · numéro -> numero"
+        },
+        {
+          "action": "replace",
+          "word": 26,
+          "text": "pass-",
+          "critical": true,
+          "note": "truncation_introduced · critical · complete word passage written cut off as pass-"
+        },
+        {
+          "action": "move",
+          "word": 34,
+          "edge": "end",
+          "shift_ms": -460,
+          "note": "boundary_end · critical · écoutez end 460 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "863564ba-664c-49f8-b45b-7fe26bf90925_354.wav",
+      "work_item_id": "219bd902-8a8e-4a0c-b3ac-8607c77864df",
+      "file_name": "863564ba-664c-49f8-b45b-7fe26bf90925_354.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 1,
+          "critical": true,
+          "note": "word_deletion · critical · 'des' gone from transcript and chips"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "4e8a8f3b-eba1-4104-bea2-8369d684a32f_002.wav",
+      "work_item_id": "ee09c5a7-8877-4590-859d-d10453ff4476",
+      "file_name": "4e8a8f3b-eba1-4104-bea2-8369d684a32f_002.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": 260,
+          "note": "boundary_start · major · rendit start 260 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 7,
+          "text": "a",
+          "critical": true,
+          "note": "word_substitution · critical · à -> a"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "044236b7-0d22-43f3-af9c-d803f026183a_190.wav",
+      "work_item_id": "b11ac4e5-3889-43f1-b2db-f4c31b7f970b",
+      "file_name": "044236b7-0d22-43f3-af9c-d803f026183a_190.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "start",
+          "shift_ms": 230,
+          "critical": true,
+          "note": "boundary_start · major · douze start 230 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "bedcb425-480a-4568-a7be-02159d622a37_038.wav",
+      "work_item_id": "e461f7ee-6cba-4352-b6b7-16cb8e2441ce",
+      "file_name": "bedcb425-480a-4568-a7be-02159d622a37_038.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "end",
+          "shift_ms": -460,
+          "critical": true,
+          "note": "boundary_end · critical · maintenant end 460 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 8,
+          "text": "ben",
+          "note": "colloquial_form · major · said 'bien', written 'ben'"
+        },
+        {
+          "action": "add",
+          "after_word": 19,
+          "text": "trois",
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'trois' in the 0.64 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 26,
+          "edge": "start",
+          "shift_ms": 310,
+          "note": "boundary_start · critical · chaîne start 310 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 35,
+          "text": "manker",
+          "note": "spelling_slip · major · manquer -> manker"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "9c2759e6-c394-407c-b8c7-e766a478fa9b_072.wav",
+      "work_item_id": "044f8745-c366-4d88-ad00-58625aff18dc",
+      "file_name": "9c2759e6-c394-407c-b8c7-e766a478fa9b_072.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 14,
+          "note": "missing_segment · critical · générale keeps its text but has no chip"
+        },
+        {
+          "action": "move",
+          "word": 22,
+          "edge": "end",
+          "shift_ms": 80,
+          "note": "boundary_end · minor · t'être end 80 ms later"
+        },
+        {
+          "action": "add",
+          "after_word": 37,
+          "text": "curiosité",
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'curiosité' in the 0.77 s pause after it"
+        },
+        {
+          "action": "replace",
+          "word": 43,
+          "text": "voila",
+          "note": "accent_missing · major · voilà -> voila"
+        },
+        {
+          "action": "delete",
+          "word": 46,
+          "critical": true,
+          "note": "word_deletion · critical · 'occasion' gone from transcript and chips"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "5d8dd0ed-8b4a-4b17-8e3f-28be4fd16617_379.wav",
+      "work_item_id": "2545b1d9-947b-40b4-af43-110362d816fd",
+      "file_name": "5d8dd0ed-8b4a-4b17-8e3f-28be4fd16617_379.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "end",
+          "shift_ms": 40,
+          "note": "boundary_end · minor · peu end 40 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 6,
+          "text": "aux",
+          "critical": true,
+          "note": "word_substitution · critical · au -> aux"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "39d40f7c-2109-41a0-bb7e-55f61f1743c1_060.wav",
+      "work_item_id": "f0f657bf-954c-45fd-9670-691402425b0c",
+      "file_name": "39d40f7c-2109-41a0-bb7e-55f61f1743c1_060.wav",
+      "plants": [
+        {
+          "action": "overlap",
+          "word": 4,
+          "edge": "start",
+          "shift_ms": -380,
+          "note": "boundary_overlap · major · la start 380 ms earlier, into vanté"
+        },
+        {
+          "action": "replace",
+          "word": 16,
+          "text": "jeune",
+          "note": "spelling_slip · major · jeunes -> jeune"
+        },
+        {
+          "action": "move",
+          "word": 21,
+          "edge": "start",
+          "shift_ms": 400,
+          "critical": true,
+          "note": "boundary_start · critical · démonstration start 400 ms later"
+        },
+        {
+          "action": "move",
+          "word": 33,
+          "edge": "end",
+          "shift_ms": -230,
+          "note": "boundary_end · major · spécimen end 230 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "29788117-422f-43d7-ba3e-4350f4dbe570_036.wav",
+      "work_item_id": "2ea5a6e8-e1d3-454c-a800-29822910e58c",
+      "file_name": "29788117-422f-43d7-ba3e-4350f4dbe570_036.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "end",
+          "shift_ms": -60,
+          "note": "boundary_end · minor · encore end 60 ms earlier"
+        },
+        {
+          "action": "remove",
+          "word": 7,
+          "critical": true,
+          "note": "missing_segment · critical · illyrie keeps its text but has no chip"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "fb8c7b21-8674-40dc-a38e-1188342fe0a7_1039.wav",
+      "work_item_id": "7aa5f684-06af-4f42-9ad8-0e917fd13702",
+      "file_name": "fb8c7b21-8674-40dc-a38e-1188342fe0a7_1039.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 1,
+          "critical": true,
+          "note": "word_deletion · critical · 'sherrington' gone from transcript and chips"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "48d76fe1-3722-49df-8c54-34359e4b6b11_3520.wav",
+      "work_item_id": "153bbd0b-e259-4da6-a2c3-a43abe54cfe9",
+      "file_name": "48d76fe1-3722-49df-8c54-34359e4b6b11_3520.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 4,
+          "text": "gagne",
+          "critical": true,
+          "note": "accent_missing · major · gagné -> gagne"
+        },
+        {
+          "action": "move",
+          "word": 8,
+          "edge": "start",
+          "shift_ms": 140,
+          "note": "boundary_start · major · aujourd'hui start 140 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "72b9cbb3-84f5-4b4b-9316-0e88c34d8f96_067.wav",
+      "work_item_id": "01538a26-5091-4bd5-994f-52ac613b8859",
+      "file_name": "72b9cbb3-84f5-4b4b-9316-0e88c34d8f96_067.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 3,
+          "text": "et",
+          "critical": true,
+          "note": "word_substitution · critical · est -> et"
+        },
+        {
+          "action": "replace",
+          "word": 18,
+          "text": "beau-",
+          "note": "truncation_introduced · critical · complete word beauté written cut off as beau-"
+        },
+        {
+          "action": "move",
+          "word": 22,
+          "edge": "end",
+          "shift_ms": -380,
+          "note": "boundary_end · critical · quotidien end 380 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "fa54cfe5-4ed3-4c2b-8f65-2f7382ff9900_009.wav",
+      "work_item_id": "0c085292-9222-419a-844a-025743f03c2a",
+      "file_name": "fa54cfe5-4ed3-4c2b-8f65-2f7382ff9900_009.wav",
+      "plants": [
+        {
+          "action": "zero",
+          "word": 5,
+          "edge": "end",
+          "note": "zero_length · major · millions collapses to zero length at its end"
+        },
+        {
+          "action": "move",
+          "word": 14,
+          "edge": "start",
+          "shift_ms": -80,
+          "note": "boundary_start · minor · dans start 80 ms earlier"
+        },
+        {
+          "action": "add",
+          "after_word": 27,
+          "text": "sexes",
+          "critical": true,
+          "note": "word_hallucination · major · extra 'sexes' in the 0.37 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 32,
+          "edge": "start",
+          "shift_ms": -210,
+          "note": "boundary_start · major · de start 210 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "b834cd97-4073-4b2b-85ec-478d04a534f6_009.wav",
+      "work_item_id": "234072de-028a-4f44-8647-19d274ea1064",
+      "file_name": "b834cd97-4073-4b2b-85ec-478d04a534f6_009.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 8,
+          "edge": "start",
+          "shift_ms": 100,
+          "note": "boundary_start · major · l'un start 100 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 19,
+          "text": "ou",
+          "critical": true,
+          "note": "accent_missing · major · où -> ou"
+        },
+        {
+          "action": "remove",
+          "word": 22,
+          "note": "missing_segment · major · des keeps its text but has no chip"
+        },
+        {
+          "action": "move",
+          "word": 27,
+          "edge": "start",
+          "shift_ms": -360,
+          "note": "boundary_start · critical · des start 360 ms earlier"
+        },
+        {
+          "action": "delete",
+          "word": 43,
+          "critical": true,
+          "note": "word_deletion · critical · 'koupiansk' gone from transcript and chips"
+        },
+        {
+          "action": "overlap",
+          "word": 52,
+          "edge": "start",
+          "shift_ms": -170,
+          "note": "boundary_overlap · major · dans start 170 ms earlier, into d'autres"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "4087490a-69fb-4062-8d21-834a65edd1ae_027.wav",
+      "work_item_id": "61d295dc-eb38-40b3-893a-59a74e834800",
+      "file_name": "4087490a-69fb-4062-8d21-834a65edd1ae_027.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": -380,
+          "note": "boundary_end · critical · partirent end 380 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 4,
+          "text": "est",
+          "critical": true,
+          "note": "word_substitution · critical · et -> est"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "b8702879-2318-45b3-aff5-9f1b87032452_079.wav",
+      "work_item_id": "4623ba0d-9fa7-44cf-aa80-c4d23fcbc4cf",
+      "file_name": "b8702879-2318-45b3-aff5-9f1b87032452_079.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 5,
+          "text": "toulouse",
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'toulouse' in the 0.72 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "start",
+          "shift_ms": 60,
+          "note": "boundary_start · minor · activité start 60 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "2216d28d-b150-42e0-acf9-36bed158470a_1447.wav",
+      "work_item_id": "057a1242-63dc-4357-a5f4-17533f1da647",
+      "file_name": "2216d28d-b150-42e0-acf9-36bed158470a_1447.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 4,
+          "text": "katre",
+          "critical": true,
+          "note": "spelling_slip · major · quatre -> katre"
+        },
+        {
+          "action": "move",
+          "word": 12,
+          "edge": "start",
+          "shift_ms": -360,
+          "note": "boundary_start · critical · c'était start 360 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 22,
+          "text": "dine",
+          "note": "accent_missing · major · diné -> dine"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "caa55a3e-ee88-465a-981d-f77afec2ab96_022.wav",
+      "work_item_id": "5ead344f-4863-408d-bde4-9ce2eb2d5f14",
+      "file_name": "caa55a3e-ee88-465a-981d-f77afec2ab96_022.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 1,
+          "critical": true,
+          "note": "word_deletion · critical · 'pedro' gone from transcript and chips"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": 80,
+          "note": "boundary_start · minor · mars start 80 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "d1c31c0d-fba2-46d4-82fc-a01ab1b170cb_166.wav",
+      "work_item_id": "65a12581-20e9-4e02-a841-ab9b8964edd6",
+      "file_name": "d1c31c0d-fba2-46d4-82fc-a01ab1b170cb_166.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 13,
+          "edge": "start",
+          "shift_ms": -280,
+          "note": "boundary_start · major · à start 280 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 16,
+          "text": "un",
+          "critical": true,
+          "note": "word_substitution · critical · une -> un"
+        },
+        {
+          "action": "move",
+          "word": 27,
+          "edge": "start",
+          "shift_ms": -140,
+          "note": "boundary_start · major · hugo start 140 ms earlier"
+        },
+        {
+          "action": "add",
+          "after_word": 40,
+          "text": "croix",
+          "note": "word_hallucination · major · extra 'croix' in the 0.35 s pause after it"
+        },
+        {
+          "action": "remove",
+          "word": 49,
+          "critical": true,
+          "note": "missing_segment · critical · quelqu'un keeps its text but has no chip"
+        },
+        {
+          "action": "move",
+          "word": 67,
+          "edge": "start",
+          "shift_ms": 370,
+          "note": "boundary_start · critical · chaudières start 370 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "3727a552-b666-4f74-be42-369bc91257fa_140.wav",
+      "work_item_id": "f050964e-6ab3-4ccc-b3b1-6bdba18989ed",
+      "file_name": "3727a552-b666-4f74-be42-369bc91257fa_140.wav",
+      "plants": [
+        {
+          "action": "overlap",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": 160,
+          "note": "boundary_overlap · major · p end 160 ms later, into deux"
+        },
+        {
+          "action": "zero",
+          "word": 5,
+          "critical": true,
+          "note": "zero_length · major · du collapses to zero length at its start"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "3eb93c7a-e41e-490a-9f56-6d8c83c2ea73_13691.wav",
+      "work_item_id": "6ae23be7-3b8e-4bca-acae-3d98859bfcf9",
+      "file_name": "3eb93c7a-e41e-490a-9f56-6d8c83c2ea73_13691.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 40,
+          "note": "boundary_start · minor · tu start 40 ms later"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": 470,
+          "note": "boundary_end · critical · reposer end 470 ms later"
+        },
+        {
+          "action": "remove",
+          "word": 25,
+          "critical": true,
+          "note": "missing_segment · critical · pittoresque keeps its text but has no chip"
+        },
+        {
+          "action": "replace",
+          "word": 37,
+          "text": "ben",
+          "note": "colloquial_form · major · said 'bien', written 'ben'"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "6577fb31-ba1f-433f-a5b9-e784e559622f_086.wav",
+      "work_item_id": "07ec4b24-6b81-4d80-9d40-d2ab8f8fa093",
+      "file_name": "6577fb31-ba1f-433f-a5b9-e784e559622f_086.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "start",
+          "shift_ms": 140,
+          "note": "boundary_start · major · décidé start 140 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 23,
+          "text": "depenses",
+          "note": "accent_missing · major · dépenses -> depenses"
+        },
+        {
+          "action": "delete",
+          "word": 35,
+          "note": "word_deletion · critical · 'certain' gone from transcript and chips"
+        },
+        {
+          "action": "replace",
+          "word": 38,
+          "text": "leurs",
+          "critical": true,
+          "note": "word_substitution · critical · leur -> leurs"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "626a2ab0-00b2-4f32-849d-0a09a9c6bfb9_009.wav",
+      "work_item_id": "0cc91286-bf1e-478a-81a7-ee695d1402d0",
+      "file_name": "626a2ab0-00b2-4f32-849d-0a09a9c6bfb9_009.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 4,
+          "text": "indiké",
+          "note": "spelling_slip · major · indiqué -> indiké"
+        },
+        {
+          "action": "move",
+          "word": 18,
+          "edge": "end",
+          "shift_ms": -80,
+          "note": "boundary_end · minor · des end 80 ms earlier"
+        },
+        {
+          "action": "add",
+          "after_word": 28,
+          "text": "salariés",
+          "critical": true,
+          "note": "word_hallucination · major · extra 'salariés' in the 0.38 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 45,
+          "edge": "end",
+          "shift_ms": -40,
+          "note": "boundary_end · minor · deux end 40 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 68,
+          "edge": "end",
+          "shift_ms": -100,
+          "note": "boundary_end · major · au end 100 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 80,
+          "text": "condit-",
+          "critical": true,
+          "note": "truncation_introduced · critical · complete word conditions written cut off as condit-"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "6e44f0b8-c77c-4e1b-beed-31484c8e437a_000.wav",
+      "work_item_id": "9f3d71a7-e8bd-44dc-9111-3dbe12ad7482",
+      "file_name": "6e44f0b8-c77c-4e1b-beed-31484c8e437a_000.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 9,
+          "text": "ecole",
+          "note": "accent_missing · major · école -> ecole"
+        },
+        {
+          "action": "move",
+          "word": 15,
+          "edge": "start",
+          "shift_ms": 430,
+          "note": "boundary_start · critical · expliquer start 430 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 18,
+          "text": "a",
+          "critical": true,
+          "note": "word_substitution · critical · à -> a"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "e565d811-229d-4faa-9aa0-b650744e4638_114.wav",
+      "work_item_id": "b5cc97bb-8035-430d-a793-a999cb28fe42",
+      "file_name": "e565d811-229d-4faa-9aa0-b650744e4638_114.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing_segment · critical · en keeps its text but has no chip"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "395a2f9c-c024-4280-97c5-35d586e453ae_001.wav",
+      "work_item_id": "233b1222-29d9-4911-9e94-9b0737993fbe",
+      "file_name": "395a2f9c-c024-4280-97c5-35d586e453ae_001.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": 80,
+          "note": "boundary_start · minor · récompense start 80 ms later"
+        },
+        {
+          "action": "delete",
+          "word": 8,
+          "critical": true,
+          "note": "word_deletion · critical · 'pièces' gone from transcript and chips"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "efa61d6a-b3a8-41e0-a0a8-8d7d6e11090a_039.wav",
+      "work_item_id": "e0a776b2-5ddc-4c14-9387-99e092dca750",
+      "file_name": "efa61d6a-b3a8-41e0-a0a8-8d7d6e11090a_039.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "end",
+          "shift_ms": -460,
+          "critical": true,
+          "note": "boundary_end · critical · monjoie end 460 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 8,
+          "edge": "end",
+          "shift_ms": 190,
+          "note": "boundary_end · major · très end 190 ms later"
+        },
+        {
+          "action": "add",
+          "after_word": 20,
+          "text": "famille",
+          "note": "word_hallucination · major · extra 'famille' in the 0.39 s pause after it"
+        },
+        {
+          "action": "replace",
+          "word": 26,
+          "text": "scolère",
+          "note": "spelling_slip · major · scolaire -> scolère"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "78eccb81-fb2f-44a9-ad20-5b267c74c9ba_093.wav",
+      "work_item_id": "8ba58b07-0b2c-4075-96e0-730174ffabac",
+      "file_name": "78eccb81-fb2f-44a9-ad20-5b267c74c9ba_093.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing_segment · critical · roumanie keeps its text but has no chip"
+        },
+        {
+          "action": "replace",
+          "word": 7,
+          "text": "là",
+          "critical": true,
+          "note": "word_substitution · critical · la -> là"
+        },
+        {
+          "action": "overlap",
+          "word": 12,
+          "edge": "end",
+          "shift_ms": 300,
+          "note": "boundary_overlap · major · prise end 300 ms later, into par"
+        },
+        {
+          "action": "move",
+          "word": 30,
+          "edge": "start",
+          "shift_ms": -380,
+          "note": "boundary_start · critical · du start 380 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 33,
+          "edge": "end",
+          "shift_ms": 120,
+          "note": "boundary_end · major · pour end 120 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "362505c5-4cf3-4d78-9624-49b3a6c91577_057.wav",
+      "work_item_id": "369ff3d8-e25b-4e16-a5a2-f7fab9e7193c",
+      "file_name": "362505c5-4cf3-4d78-9624-49b3a6c91577_057.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 2,
+          "text": "tout",
+          "note": "word_hallucination · major · extra 'tout' in the 0.57 s pause after it"
+        },
+        {
+          "action": "delete",
+          "word": 7,
+          "critical": true,
+          "note": "word_deletion · critical · 'existe' gone from transcript and chips"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "start",
+          "shift_ms": 80,
+          "note": "boundary_start · minor · nom start 80 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "c1640111-2cd3-4138-8fb0-6f62b164de36_039.wav",
+      "work_item_id": "f2c3bfe4-0629-4114-b007-6d91dd9aa897",
+      "file_name": "c1640111-2cd3-4138-8fb0-6f62b164de36_039.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": 70,
+          "note": "boundary_end · minor · j'espère end 70 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 24,
+          "text": "video",
+          "note": "accent_missing · major · vidéo -> video"
+        },
+        {
+          "action": "replace",
+          "word": 28,
+          "text": "les",
+          "critical": true,
+          "note": "word_substitution · critical · le -> les"
+        },
+        {
+          "action": "move",
+          "word": 37,
+          "edge": "end",
+          "shift_ms": -160,
+          "note": "boundary_end · major · toutes end 160 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 43,
+          "text": "bonba-",
+          "critical": true,
+          "note": "truncation_introduced · critical · complete word bonbache written cut off as bonba-"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "28ac8dc4-3dbc-418f-86e3-b0fa83c228ae_008.wav",
+      "work_item_id": "64d03bbe-aee8-462f-abc0-9e3adc71490c",
+      "file_name": "28ac8dc4-3dbc-418f-86e3-b0fa83c228ae_008.wav",
+      "plants": [
+        {
+          "action": "zero",
+          "word": 4,
+          "critical": true,
+          "note": "zero_length · major · cap collapses to zero length at its start"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": 240,
+          "note": "boundary_end · major · son end 240 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "6f614102-b097-485a-a3a3-3f0ff764afe6_007.wav",
+      "work_item_id": "b213388a-34b8-4bb7-8c44-e1d1a1b3666a",
+      "file_name": "6f614102-b097-485a-a3a3-3f0ff764afe6_007.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 7,
+          "note": "missing_segment · major · avec keeps its text but has no chip"
+        },
+        {
+          "action": "replace",
+          "word": 10,
+          "text": "monetaire",
+          "note": "accent_missing · major · monétaire -> monetaire"
+        },
+        {
+          "action": "add",
+          "after_word": 14,
+          "text": "i",
+          "note": "word_hallucination · major · extra 'i' in the 0.40 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 28,
+          "edge": "end",
+          "shift_ms": -410,
+          "critical": true,
+          "note": "boundary_end · critical · l'économie end 410 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "b577abff-614f-4e60-9d3a-463216d2effa_105.wav",
+      "work_item_id": "28695b1c-b897-4011-bdf8-92e99b364e3f",
+      "file_name": "b577abff-614f-4e60-9d3a-463216d2effa_105.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": 50,
+          "critical": true,
+          "note": "boundary_start · minor · six start 50 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "586a7456-a55d-4d34-88ef-ee4a451a7ce2_011.wav",
+      "work_item_id": "0eeb13fb-cd94-4e1a-aa04-bceccea506ea",
+      "file_name": "586a7456-a55d-4d34-88ef-ee4a451a7ce2_011.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 4,
+          "critical": true,
+          "note": "word_deletion · critical · 'm.' gone from transcript and chips"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "dcdc7ae4-f97d-4770-b11d-dafcbca7247b_011.wav",
+      "work_item_id": "78a4b695-58c9-4843-8226-d61d7f5c350d",
+      "file_name": "dcdc7ae4-f97d-4770-b11d-dafcbca7247b_011.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 0,
+          "text": "ouais",
+          "critical": true,
+          "note": "colloquial_form · major · said 'oui', written 'ouais'"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "cc00ac50-e80f-4031-8e6d-2600188437a7_054.wav",
+      "work_item_id": "ded05e28-f936-4a97-9d60-ec5409c069b4",
+      "file_name": "cc00ac50-e80f-4031-8e6d-2600188437a7_054.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": 320,
+          "critical": true,
+          "note": "boundary_start · critical · sadique start 320 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "03e27bf4-5fb4-4a87-bf85-fc1de82d00a3_005.wav",
+      "work_item_id": "ab5ec1a6-e63a-475e-8780-bb95f72533c4",
+      "file_name": "03e27bf4-5fb4-4a87-bf85-fc1de82d00a3_005.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": -60,
+          "note": "boundary_end · minor · donc end 60 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 4,
+          "text": "cinkante",
+          "critical": true,
+          "note": "spelling_slip · major · cinquante -> cinkante"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "cc37c7b1-1593-4f1b-a910-9f805a5ee0ed_857.wav",
+      "work_item_id": "58462c3a-7315-4c46-839e-258f0c1763c9",
+      "file_name": "cc37c7b1-1593-4f1b-a910-9f805a5ee0ed_857.wav",
+      "plants": [
+        {
+          "action": "overlap",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": 160,
+          "critical": true,
+          "note": "boundary_overlap · major · prix end 160 ms later, into final"
+        }
+      ]
+    }
+  ]
+}
