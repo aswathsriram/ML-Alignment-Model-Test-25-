@@ -1,0 +1,5945 @@
+{
+  "format": "align-decoys/v1",
+  "instructions": [
+    "`words` is the CORRECT alignment: i = index, w = word, s / e = start / end in seconds. Never change it.",
+    "Fill each decoy's `plants` with 3–6 deliberate mistakes an aligner can only find by listening — fewer on a short clip (even one), since mistakes must stay apart. Mix timing, text and structure mistakes.",
+    "move — {\"action\":\"move\",\"word\":12,\"edge\":\"start\"|\"end\",\"shift_ms\":-300}: moves one edge of word 12. Positive = later. A neighbour touching that edge moves with it. Use 150–700 ms (150–250 subtle, 250–450 moderate, 450+ obvious). Never push an edge past the far edge of the neighbouring word, before 0 or past the audio end.",
+    "overlap — {\"action\":\"overlap\",\"word\":12,\"edge\":\"end\",\"shift_ms\":250}: same as move, but the neighbour does NOT give way, so the two chips overlap (same-speaker overlap). The edge must end up inside the neighbour.",
+    "zero — {\"action\":\"zero\",\"word\":12}: the chip collapses to zero length at its start (\"edge\":\"end\" collapses it at its end). Only on a word at least 0.15 s long.",
+    "replace — {\"action\":\"replace\",\"word\":30,\"text\":\"…\"}: the chip and the transcript say `text` instead of the word. Use it for a word substitution, homophone, spelling slip, wrong name / entity, missing or wrong accent, wrong number form, a word from the wrong language, a truncated word written in full (or a full word written truncated), or a ((guess)) written without its brackets.",
+    "replace_unintelligible — {\"action\":\"replace_unintelligible\",\"word\":31,\"text\":\"…\"}: only on a word written (()) or ((guess)): invented text where the audio is unintelligible.",
+    "delete — {\"action\":\"delete\",\"word\":40}: the word is gone from the transcript AND has no chip (a deleted word, or a dropped filler / backchannel).",
+    "remove — {\"action\":\"remove\",\"word\":40}: the word keeps its text in the transcript but loses its chip (an aligner must add it back).",
+    "absorb — {\"action\":\"absorb\",\"word\":41,\"into\":\"previous\"|\"next\"}: the word (usually a filler) is deleted and its neighbour's chip stretches over its audio.",
+    "join — {\"action\":\"join\",\"word\":7,\"count\":2}: words 7, 8 (… up to count) become one chip — joined words, or spelled letters in one chip. Only where words are separated by spaces (NOT ja_JP or zh_CN), and only when the true boundary is at least 0.2 s away from the middle of the joined chip.",
+    "split — {\"action\":\"split\",\"word\":9,\"parts\":[\"dell'\",\"uscita\"]}: one word over several chips. `parts` is optional for a word with an apostrophe (split after it) or a hyphen (split at it); \"at\" (seconds) sets the split time of two parts.",
+    "add — {\"action\":\"add\",\"after_word\":20,\"text\":\"the\"}: an extra chip in the pause after word 20 (the pause must be at least 0.35 s). Use a word from the same sentence, e.g. a repeat of the word before.",
+    "add_noise — {\"action\":\"add_noise\",\"after_word\":20,\"text\":\"ah\",\"start\":8.1,\"end\":8.4}: an extra chip over a cough, breath or other noise; start and end in seconds are required.",
+    "set_flag — {\"action\":\"set_flag\",\"flag\":\"multi_speaker\"|\"overlap_speech\"|\"synthetic_speech\",\"value\":true}: the file is served with that answer set to `value`, the WRONG answer. `value` must be the opposite of the file's own answer in `file_answers` (synthetic_speech on non-English files only). A file whose answer is synthetic_speech true can carry no other mistake; one whose overlap_speech is true can't carry an overlap mistake.",
+    "Speakers can't be changed in word alignment, so there is no wrong-speaker mistake.",
+    "Keep mistakes at least 3 words apart — mistakes on neighbouring words are refused. Never touch a tag word (text starting with [ or <).",
+    "Mark the 1–2 most obvious mistakes \"critical\": true (must-catch). Optional \"note\" is for you only.",
+    "Instead of `plants`, a decoy may give `decoy_words`: the whole wrong alignment, [{\"w\":\"…\",\"s\":1.2,\"e\":1.5}, …] in spoken order. Every difference from `words` becomes a mistake. A word with no s / e is in the transcript with no chip; a word left out is gone from both; a retyped word changes the transcript too; extra, split and joined chips leave the transcript as it was. Copy tag words exactly. \"critical\": true on an entry makes the mistake on its word must-catch. `plants` may then hold only set_flag edits.",
+    "Return the SAME JSON with only `plants` (or `decoy_words`) filled. Do not add, remove or edit any other field."
+  ],
+  "decoys": [
+    {
+      "decoy_ref": "HIDEC-001",
+      "file_id": "cmv7zhuqd000tdjpb2mny534s",
+      "file_name": "15b28a11af52b759daf37774607efa54.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 1,
+          "critical": true,
+          "note": "word_deletion · critical · 'उनकी' gone"
+        },
+        {
+          "action": "replace",
+          "word": 6,
+          "text": "क्या",
+          "critical": true,
+          "note": "word_substitution · critical · किया -> क्या"
+        },
+        {
+          "action": "overlap",
+          "word": 44,
+          "edge": "end",
+          "shift_ms": 78,
+          "note": "boundary_end · minor · end 78 ms later · overlaps कई"
+        },
+        {
+          "action": "overlap",
+          "word": 48,
+          "edge": "start",
+          "shift_ms": -55,
+          "note": "boundary_start · minor · start 55 ms earlier · overlaps से"
+        },
+        {
+          "action": "move",
+          "word": 56,
+          "edge": "start",
+          "shift_ms": 284,
+          "note": "boundary_start · critical · start 284 ms later"
+        },
+        {
+          "action": "move",
+          "word": 62,
+          "edge": "start",
+          "shift_ms": 140,
+          "note": "boundary_start · major · start 140 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-002",
+      "file_id": "cmv7zi88f002kdjpbi1izm8rc",
+      "file_name": "58b1e65386e1bf429d7038db6746b09f.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 1,
+          "text": "eightaen",
+          "critical": true,
+          "note": "entity_spelling · critical · eighteen -> eightaen"
+        },
+        {
+          "action": "replace",
+          "word": 7,
+          "text": "ज़ीरो",
+          "critical": true,
+          "note": "script_swap_latin_to_devanagari · critical · zero -> ज़ीरो"
+        },
+        {
+          "action": "move",
+          "word": 17,
+          "edge": "end",
+          "shift_ms": 62,
+          "note": "boundary_end · minor · end 62 ms later"
+        },
+        {
+          "action": "move",
+          "word": 37,
+          "edge": "end",
+          "shift_ms": -134,
+          "note": "boundary_end · major · end 134 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 47,
+          "edge": "start",
+          "shift_ms": -189,
+          "note": "boundary_start · critical · start 189 ms earlier · overlaps वाले"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-003",
+      "file_id": "cmv7zijww002zdjpbrzmtewig",
+      "file_name": "5a507a8de5f711128de3e161d5ba42f6.audio.wav",
+      "plants": [
+        {
+          "action": "add_noise",
+          "after_word": 1,
+          "text": "और",
+          "start": 1.09,
+          "end": 1.38,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'और' over 1.09-1.38; the Hindi decoy also shortens 'आज़ादी' to end at 1.09"
+        },
+        {
+          "action": "join",
+          "word": 6,
+          "count": 3,
+          "critical": true,
+          "note": "acronym_collapsed · critical · o. b. c. in one chip (Hindi decoy writes 'obc')"
+        },
+        {
+          "action": "overlap",
+          "word": 15,
+          "edge": "end",
+          "shift_ms": 97,
+          "note": "boundary_end · major · end 97 ms later · overlaps साल"
+        },
+        {
+          "action": "move",
+          "word": 41,
+          "edge": "start",
+          "shift_ms": -73,
+          "note": "boundary_start · minor · start 73 ms earlier"
+        },
+        {
+          "action": "overlap",
+          "word": 44,
+          "edge": "end",
+          "shift_ms": 136,
+          "note": "boundary_end · major · end 136 ms later · overlaps का"
+        },
+        {
+          "action": "move",
+          "word": 53,
+          "edge": "start",
+          "shift_ms": 298,
+          "note": "boundary_start · critical · start 298 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-004",
+      "file_id": "cmv7zijww003idjpb74t17epr",
+      "file_name": "688dff5b2704260e4314bcc59affe399.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 5,
+          "text": "join",
+          "critical": true,
+          "note": "truncation_completed · critical · j- -> join"
+        },
+        {
+          "action": "replace",
+          "word": 11,
+          "text": "मिल-",
+          "critical": true,
+          "note": "truncation_introduced · critical · मिलाके -> मिल-"
+        },
+        {
+          "action": "move",
+          "word": 16,
+          "edge": "end",
+          "shift_ms": 55,
+          "note": "boundary_end · minor · end 55 ms later"
+        },
+        {
+          "action": "move",
+          "word": 36,
+          "edge": "start",
+          "shift_ms": 266,
+          "note": "boundary_start · critical · start 266 ms later"
+        },
+        {
+          "action": "overlap",
+          "word": 89,
+          "edge": "end",
+          "shift_ms": 81,
+          "note": "boundary_end · major · end 81 ms later · overlaps forty"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-005",
+      "file_id": "cmv7zhuqc0001djpb0rj2pb4e",
+      "file_name": "71cdc64a901be0d9f3482eb78295df8b.audio.wav",
+      "plants": [
+        {
+          "action": "join",
+          "word": 1,
+          "count": 2,
+          "critical": true,
+          "note": "words_merged · critical · किस तरीक़े in one chip (Hindi decoy writes 'किसतरीक़े')"
+        },
+        {
+          "action": "split",
+          "word": 6,
+          "parts": [
+            "चला",
+            "ना"
+          ],
+          "at": 1.371,
+          "note": "word_split · critical · चलाना -> चला + ना"
+        },
+        {
+          "action": "replace",
+          "word": 20,
+          "text": "nahi",
+          "critical": true,
+          "note": "script_swap_devanagari_to_latin · critical · नहीं -> nahi"
+        },
+        {
+          "action": "overlap",
+          "word": 38,
+          "edge": "start",
+          "shift_ms": -290,
+          "note": "boundary_start · critical · start 290 ms earlier · overlaps market"
+        },
+        {
+          "action": "move",
+          "word": 67,
+          "edge": "end",
+          "shift_ms": -70,
+          "note": "boundary_end · minor · end 70 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 87,
+          "edge": "end",
+          "shift_ms": 82,
+          "note": "boundary_end · major · end 82 ms later"
+        },
+        {
+          "action": "move",
+          "word": 107,
+          "edge": "start",
+          "shift_ms": 252,
+          "note": "boundary_start · critical · start 252 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "set_flag",
+          "flag": "multi_speaker",
+          "value": false,
+          "note": "multiple_speakers_off · the file has several speakers; served as single-speaker"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-006",
+      "file_id": "cmv7zhuqd000edjpbosqlja1b",
+      "file_name": "7dccdee0bb6a899bc8169e5255506dc2.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 7,
+          "text": "पार",
+          "critical": true,
+          "note": "word_substitution · critical · चार -> पार"
+        },
+        {
+          "action": "move",
+          "word": 24,
+          "edge": "start",
+          "shift_ms": 143,
+          "note": "boundary_start · major · start 143 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "replace",
+          "word": 35,
+          "text": "गुणवत्ता",
+          "critical": true,
+          "note": "truncation_completed · critical · गुणव- -> गुणवत्ता"
+        },
+        {
+          "action": "move",
+          "word": 51,
+          "edge": "end",
+          "shift_ms": -156,
+          "note": "boundary_end · critical · end 156 ms earlier"
+        },
+        {
+          "action": "overlap",
+          "word": 55,
+          "edge": "start",
+          "shift_ms": -76,
+          "note": "boundary_start · minor · start 76 ms earlier · overlaps पराली"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-007",
+      "file_id": "cmv7zi88f0025djpbw7402fe6",
+      "file_name": "8b05284117893e640bb52f0b0e9ba37e.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "start",
+          "shift_ms": -54,
+          "note": "boundary_start · minor · start 54 ms earlier"
+        },
+        {
+          "action": "join",
+          "word": 12,
+          "count": 4,
+          "critical": true,
+          "note": "acronym_collapsed · critical · n. d. i. s. in one chip (Hindi decoy writes 'ndis')"
+        },
+        {
+          "action": "move",
+          "word": 21,
+          "edge": "end",
+          "shift_ms": -51,
+          "note": "boundary_end · minor · end 51 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 51,
+          "edge": "end",
+          "shift_ms": -303,
+          "note": "boundary_end · critical · end 303 ms earlier"
+        },
+        {
+          "action": "overlap",
+          "word": 58,
+          "edge": "end",
+          "shift_ms": 116,
+          "note": "boundary_end · major · end 116 ms later · overlaps किया"
+        },
+        {
+          "action": "replace",
+          "word": 69,
+          "text": "wheelchair",
+          "critical": true,
+          "note": "truncation_completed · critical · wheel- -> wheelchair"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-008",
+      "file_id": "cmv7zhuqd0014djpbzsyxrxp2",
+      "file_name": "905742b8bbc3237e671f854ed487556c.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 18,
+          "text": "रिपोर्ट",
+          "critical": true,
+          "note": "script_swap_latin_to_devanagari · critical · report -> रिपोर्ट"
+        },
+        {
+          "action": "delete",
+          "word": 33,
+          "critical": true,
+          "note": "filler_deleted · critical · 'uh' gone"
+        },
+        {
+          "action": "overlap",
+          "word": 38,
+          "edge": "start",
+          "shift_ms": -115,
+          "note": "boundary_start · major · start 115 ms earlier · overlaps dollar"
+        },
+        {
+          "action": "overlap",
+          "word": 45,
+          "edge": "start",
+          "shift_ms": -59,
+          "note": "boundary_start · minor · start 59 ms earlier · overlaps की"
+        },
+        {
+          "action": "move",
+          "word": 65,
+          "edge": "end",
+          "shift_ms": 148,
+          "note": "boundary_end · major · end 148 ms later"
+        },
+        {
+          "action": "move",
+          "word": 69,
+          "edge": "end",
+          "shift_ms": -180,
+          "note": "boundary_end · critical · end 180 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-009",
+      "file_id": "cmv7zi88f0026djpbc49jadve",
+      "file_name": "a55c748d3b80fe95b128239a74e648ca.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 2,
+          "critical": true,
+          "note": "word_deletion · critical · 'की' gone"
+        },
+        {
+          "action": "replace",
+          "word": 10,
+          "text": "breek",
+          "critical": true,
+          "note": "entity_spelling · critical · break -> breek"
+        },
+        {
+          "action": "move",
+          "word": 13,
+          "edge": "start",
+          "shift_ms": 45,
+          "note": "boundary_start · minor · start 45 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 43,
+          "edge": "start",
+          "shift_ms": 132,
+          "note": "boundary_start · major · start 132 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 52,
+          "edge": "end",
+          "shift_ms": -207,
+          "note": "boundary_end · critical · end 207 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 69,
+          "edge": "end",
+          "shift_ms": 166,
+          "note": "boundary_end · critical · end 166 ms later · overlaps package"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-010",
+      "file_id": "cmv7zi88f002cdjpbmquqm9i2",
+      "file_name": "b5b46ce5b3f175cc4bfa1b3d6f91114c.audio.wav",
+      "plants": [
+        {
+          "action": "add_noise",
+          "after_word": 8,
+          "text": "ये",
+          "start": 2.235,
+          "end": 2.47,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'ये' over 2.235-2.47; the Hindi decoy also shortens 'इतिहास' to end at 2.235"
+        },
+        {
+          "action": "overlap",
+          "word": 12,
+          "edge": "start",
+          "shift_ms": -53,
+          "note": "boundary_start · minor · start 53 ms earlier · overlaps सबसे"
+        },
+        {
+          "action": "overlap",
+          "word": 35,
+          "edge": "start",
+          "shift_ms": -90,
+          "note": "boundary_start · major · start 90 ms earlier · overlaps सौ"
+        },
+        {
+          "action": "join",
+          "word": 45,
+          "count": 2,
+          "critical": true,
+          "note": "acronym_collapsed · critical · m. d. in one chip (Hindi decoy writes 'md')"
+        },
+        {
+          "action": "overlap",
+          "word": 66,
+          "edge": "start",
+          "shift_ms": -253,
+          "note": "boundary_start · critical · start 253 ms earlier · overlaps डोंबिवली"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-011",
+      "file_id": "cmv7zi88f002adjpbxulqexc7",
+      "file_name": "dcb939b0e247e37243ea1d16928c1852.audio.wav",
+      "plants": [
+        {
+          "action": "join",
+          "word": 16,
+          "count": 3,
+          "critical": true,
+          "note": "acronym_collapsed · critical · a. d. f. in one chip (Hindi decoy writes 'adf')"
+        },
+        {
+          "action": "move",
+          "word": 23,
+          "edge": "start",
+          "shift_ms": 82,
+          "note": "boundary_start · major · start 82 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 26,
+          "text": "nahi",
+          "critical": true,
+          "note": "script_swap_devanagari_to_latin · critical · नहीं -> nahi"
+        },
+        {
+          "action": "overlap",
+          "word": 31,
+          "edge": "start",
+          "shift_ms": -62,
+          "note": "boundary_start · minor · start 62 ms earlier · overlaps south"
+        },
+        {
+          "action": "move",
+          "word": 50,
+          "edge": "end",
+          "shift_ms": -205,
+          "note": "boundary_end · critical · end 205 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 54,
+          "edge": "end",
+          "shift_ms": -57,
+          "note": "boundary_end · minor · end 57 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-012",
+      "file_id": "cmv7zhuqd000mdjpbqsyrw9o1",
+      "file_name": "e6c6d23608c22ad3ffe3ae82d0e5bfb6.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 3,
+          "text": "छब्-",
+          "critical": true,
+          "note": "truncation_introduced · critical · छब्बीस -> छब्-"
+        },
+        {
+          "action": "overlap",
+          "word": 10,
+          "edge": "start",
+          "shift_ms": -104,
+          "note": "boundary_start · major · start 104 ms earlier · overlaps के"
+        },
+        {
+          "action": "replace",
+          "word": 14,
+          "text": "नौ",
+          "critical": true,
+          "note": "truncation_completed · critical · न- -> नौ"
+        },
+        {
+          "action": "move",
+          "word": 41,
+          "edge": "start",
+          "shift_ms": 319,
+          "note": "boundary_start · critical · start 319 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 48,
+          "edge": "end",
+          "shift_ms": 121,
+          "note": "boundary_end · major · end 121 ms later · overlaps बढ़ते"
+        },
+        {
+          "action": "move",
+          "word": 79,
+          "edge": "start",
+          "shift_ms": 53,
+          "note": "boundary_start · minor · start 53 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-013",
+      "file_id": "cmv7zi88f002ddjpbsdxdygwx",
+      "file_name": "cbad89d6952a8aa104ca5c34a0cefaef.audio.wav",
+      "plants": [
+        {
+          "action": "join",
+          "word": 1,
+          "count": 2,
+          "critical": true,
+          "note": "words_merged · critical · और वहाँ in one chip (Hindi decoy writes 'औरवहाँ')"
+        },
+        {
+          "action": "split",
+          "word": 11,
+          "parts": [
+            "मज़",
+            "दूर"
+          ],
+          "at": 3.991,
+          "critical": true,
+          "note": "word_split · critical · मज़दूर -> मज़ + दूर"
+        },
+        {
+          "action": "overlap",
+          "word": 27,
+          "edge": "start",
+          "shift_ms": -173,
+          "note": "boundary_start · critical · start 173 ms earlier · overlaps मज़दूर"
+        },
+        {
+          "action": "overlap",
+          "word": 44,
+          "edge": "end",
+          "shift_ms": 148,
+          "note": "boundary_end · major · end 148 ms later · overlaps रुपये"
+        },
+        {
+          "action": "overlap",
+          "word": 57,
+          "edge": "start",
+          "shift_ms": -58,
+          "note": "boundary_start · minor · start 58 ms earlier · overlaps दिन"
+        },
+        {
+          "action": "overlap",
+          "word": 92,
+          "edge": "end",
+          "shift_ms": 295,
+          "note": "boundary_end · critical · end 295 ms later · overlaps करेगी"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-014",
+      "file_id": "cmv7zhuqd0006djpbgyrphvhh",
+      "file_name": "b34ae82851b3ed838d2bb6eb2b7610ca.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 3,
+          "text": "मिलियन",
+          "critical": true,
+          "note": "script_swap_latin_to_devanagari · critical · million -> मिलियन"
+        },
+        {
+          "action": "replace",
+          "word": 11,
+          "text": "मैं",
+          "critical": true,
+          "note": "word_substitution · critical · हैं -> मैं"
+        },
+        {
+          "action": "overlap",
+          "word": 36,
+          "edge": "start",
+          "shift_ms": -135,
+          "note": "boundary_start · major · start 135 ms earlier · overlaps हासिल"
+        },
+        {
+          "action": "move",
+          "word": 46,
+          "edge": "start",
+          "shift_ms": 67,
+          "note": "boundary_start · minor · start 67 ms later"
+        },
+        {
+          "action": "move",
+          "word": 59,
+          "edge": "end",
+          "shift_ms": 71,
+          "note": "boundary_end · minor · end 71 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-015",
+      "file_id": "cmv7zhuqd001cdjpbdoz4uxxx",
+      "file_name": "a8f06525504e0a83211ae5e8d710e662.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 1,
+          "critical": true,
+          "note": "word_deletion · critical · 'साल' gone"
+        },
+        {
+          "action": "replace",
+          "word": 6,
+          "text": "fundeeng",
+          "critical": true,
+          "note": "entity_spelling · critical · funding -> fundeeng"
+        },
+        {
+          "action": "move",
+          "word": 17,
+          "edge": "start",
+          "shift_ms": 220,
+          "note": "boundary_start · critical · start 220 ms later"
+        },
+        {
+          "action": "move",
+          "word": 24,
+          "edge": "start",
+          "shift_ms": 58,
+          "note": "boundary_start · minor · start 58 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 50,
+          "edge": "end",
+          "shift_ms": -295,
+          "note": "boundary_end · critical · end 295 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 53,
+          "edge": "start",
+          "shift_ms": 133,
+          "note": "boundary_start · major · start 133 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-016",
+      "file_id": "cmv7zi88f002edjpbpnrvordn",
+      "file_name": "d8f38d5b544d3f6f2714cc76eff94e2d.audio.wav",
+      "plants": [
+        {
+          "action": "add_noise",
+          "after_word": 5,
+          "text": "है",
+          "start": 1.421,
+          "end": 1.621,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'है' over 1.421-1.621; the Hindi decoy also shortens 'melbourne' to end at 1.421"
+        },
+        {
+          "action": "delete",
+          "word": 25,
+          "critical": true,
+          "note": "filler_deleted · critical · 'uh' gone"
+        },
+        {
+          "action": "move",
+          "word": 36,
+          "edge": "start",
+          "shift_ms": 98,
+          "note": "boundary_start · major · start 98 ms later"
+        },
+        {
+          "action": "move",
+          "word": 58,
+          "edge": "start",
+          "shift_ms": 135,
+          "note": "boundary_start · major · start 135 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 72,
+          "edge": "end",
+          "shift_ms": -174,
+          "note": "boundary_end · critical · end 174 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 78,
+          "edge": "end",
+          "shift_ms": -70,
+          "note": "boundary_end · minor · end 70 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-017",
+      "file_id": "cmv7zhuqd000qdjpb194ud0ff",
+      "file_name": "0cd1b1ef59b5eb0ee3abee5e6511f2e6.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 9,
+          "text": "अधि-",
+          "critical": true,
+          "note": "truncation_introduced · critical · अधिकतम -> अधि-"
+        },
+        {
+          "action": "replace",
+          "word": 18,
+          "text": "sakta",
+          "critical": true,
+          "note": "script_swap_devanagari_to_latin · critical · सकता -> sakta"
+        },
+        {
+          "action": "overlap",
+          "word": 23,
+          "edge": "start",
+          "shift_ms": -56,
+          "note": "boundary_start · minor · start 56 ms earlier · overlaps भी"
+        },
+        {
+          "action": "overlap",
+          "word": 29,
+          "edge": "end",
+          "shift_ms": 274,
+          "note": "boundary_end · critical · end 274 ms later · overlaps जबकि"
+        },
+        {
+          "action": "overlap",
+          "word": 51,
+          "edge": "start",
+          "shift_ms": -167,
+          "note": "boundary_start · critical · start 167 ms earlier · overlaps तापमान"
+        },
+        {
+          "action": "move",
+          "word": 56,
+          "edge": "end",
+          "shift_ms": -149,
+          "note": "boundary_end · major · end 149 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-018",
+      "file_id": "cmv7zi88f002qdjpbgux09a13",
+      "file_name": "4712158a27fc46ff3e35f0c9510c8eca.audio.wav",
+      "plants": [
+        {
+          "action": "split",
+          "word": 3,
+          "parts": [
+            "dr",
+            "ugs"
+          ],
+          "at": 1.05,
+          "critical": true,
+          "note": "word_split · critical · drugs -> dr + ugs"
+        },
+        {
+          "action": "join",
+          "word": 8,
+          "count": 2,
+          "critical": true,
+          "note": "words_merged · critical · है इससे in one chip (Hindi decoy writes 'हैइससे')"
+        },
+        {
+          "action": "overlap",
+          "word": 20,
+          "edge": "end",
+          "shift_ms": 108,
+          "note": "boundary_end · major · end 108 ms later · overlaps इलाक़े"
+        },
+        {
+          "action": "overlap",
+          "word": 37,
+          "edge": "start",
+          "shift_ms": -70,
+          "note": "boundary_start · minor · start 70 ms earlier · overlaps ने"
+        },
+        {
+          "action": "move",
+          "word": 61,
+          "edge": "end",
+          "shift_ms": -47,
+          "note": "boundary_end · minor · end 47 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 88,
+          "edge": "end",
+          "shift_ms": 239,
+          "note": "boundary_end · critical · end 239 ms later · overlaps किए"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-019",
+      "file_id": "cmv7zi88f0029djpb7d0m4x51",
+      "file_name": "c783e9b967da398b7cb291331b3a77a5.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 5,
+          "text": "यही",
+          "critical": true,
+          "note": "word_substitution · critical · रही -> यही"
+        },
+        {
+          "action": "move",
+          "word": 16,
+          "edge": "start",
+          "shift_ms": 188,
+          "note": "boundary_start · critical · start 188 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "delete",
+          "word": 48,
+          "critical": true,
+          "note": "filler_deleted · critical · 'uh' gone"
+        },
+        {
+          "action": "move",
+          "word": 54,
+          "edge": "start",
+          "shift_ms": -48,
+          "note": "boundary_start · minor · start 48 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 72,
+          "edge": "start",
+          "shift_ms": 100,
+          "note": "boundary_start · major · start 100 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-020",
+      "file_id": "cmv7zi88f002jdjpbt20q059x",
+      "file_name": "df9fbf499d74abd88cb2871a5f694397.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 1,
+          "critical": true,
+          "note": "word_deletion · critical · 'साल' gone"
+        },
+        {
+          "action": "replace",
+          "word": 24,
+          "text": "ऑस्ट्रेलिया",
+          "critical": true,
+          "note": "script_swap_latin_to_devanagari · critical · australia -> ऑस्ट्रेलिया"
+        },
+        {
+          "action": "move",
+          "word": 47,
+          "edge": "start",
+          "shift_ms": 61,
+          "note": "boundary_start · minor · start 61 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 59,
+          "edge": "end",
+          "shift_ms": 131,
+          "note": "boundary_end · major · end 131 ms later · overlaps अस्पतालों"
+        },
+        {
+          "action": "overlap",
+          "word": 63,
+          "edge": "start",
+          "shift_ms": -135,
+          "note": "boundary_start · major · start 135 ms earlier · overlaps माँग"
+        },
+        {
+          "action": "move",
+          "word": 71,
+          "edge": "end",
+          "shift_ms": -307,
+          "note": "boundary_end · critical · end 307 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-021",
+      "file_id": "cmv7zhuqc0004djpbdshjbbi4",
+      "file_name": "5218bdebfcc939492002318af67f34e2.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 2,
+          "text": "गुनवत्ता",
+          "critical": true,
+          "note": "entity_spelling · critical · गुणवत्ता -> गुनवत्ता"
+        },
+        {
+          "action": "add_noise",
+          "after_word": 7,
+          "text": "तो",
+          "start": 3.643,
+          "end": 3.823,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'तो' over 3.643-3.823; the Hindi decoy also shortens 'पैसे' to end at 3.643"
+        },
+        {
+          "action": "move",
+          "word": 13,
+          "edge": "end",
+          "shift_ms": -313,
+          "note": "boundary_end · critical · end 313 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 48,
+          "edge": "start",
+          "shift_ms": -138,
+          "note": "boundary_start · major · start 138 ms earlier · overlaps अधिक"
+        },
+        {
+          "action": "move",
+          "word": 53,
+          "edge": "end",
+          "shift_ms": -266,
+          "note": "boundary_end · critical · end 266 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 72,
+          "edge": "start",
+          "shift_ms": -59,
+          "note": "boundary_start · minor · start 59 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-022",
+      "file_id": "cmv7zhuqd000ndjpb4hrp0pn8",
+      "file_name": "c55666faf0beab5acf16cd60b9786c85.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 2,
+          "text": "स्वा-",
+          "critical": true,
+          "note": "truncation_introduced · critical · स्वास्थ्य -> स्वा-"
+        },
+        {
+          "action": "replace",
+          "word": 6,
+          "text": "sarkar",
+          "critical": true,
+          "note": "script_swap_devanagari_to_latin · critical · सरकार -> sarkar"
+        },
+        {
+          "action": "move",
+          "word": 25,
+          "edge": "end",
+          "shift_ms": -200,
+          "note": "boundary_end · critical · end 200 ms earlier"
+        },
+        {
+          "action": "overlap",
+          "word": 31,
+          "edge": "start",
+          "shift_ms": -78,
+          "note": "boundary_start · minor · start 78 ms earlier · overlaps देखभाल"
+        },
+        {
+          "action": "move",
+          "word": 45,
+          "edge": "end",
+          "shift_ms": 78,
+          "note": "boundary_end · minor · end 78 ms later"
+        },
+        {
+          "action": "move",
+          "word": 70,
+          "edge": "end",
+          "shift_ms": -93,
+          "note": "boundary_end · major · end 93 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-023",
+      "file_id": "cmv7zhuqd000udjpbjl3kfcyi",
+      "file_name": "dd3842a0b5986356a2f4df62be705fa0.audio.wav",
+      "plants": [
+        {
+          "action": "split",
+          "word": 2,
+          "parts": [
+            "se",
+            "nate"
+          ],
+          "at": 0.881,
+          "critical": true,
+          "note": "word_split · critical · senate -> se + nate"
+        },
+        {
+          "action": "join",
+          "word": 7,
+          "count": 2,
+          "critical": true,
+          "note": "words_merged · critical · हो गया in one chip (Hindi decoy writes 'होगया')"
+        },
+        {
+          "action": "move",
+          "word": 17,
+          "edge": "start",
+          "shift_ms": 231,
+          "note": "boundary_start · critical · start 231 ms later"
+        },
+        {
+          "action": "move",
+          "word": 20,
+          "edge": "start",
+          "shift_ms": 99,
+          "note": "boundary_start · major · start 99 ms later"
+        },
+        {
+          "action": "overlap",
+          "word": 31,
+          "edge": "start",
+          "shift_ms": -48,
+          "note": "boundary_start · minor · start 48 ms earlier · overlaps लोगों"
+        },
+        {
+          "action": "move",
+          "word": 53,
+          "edge": "end",
+          "shift_ms": -139,
+          "note": "boundary_end · major · end 139 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-024",
+      "file_id": "cmv7zijww002ydjpbxi5uzasp",
+      "file_name": "bc6dc1425151ac18147942f26203199e.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 4,
+          "text": "डिग्री",
+          "critical": true,
+          "note": "script_swap_latin_to_devanagari · critical · degree -> डिग्री"
+        },
+        {
+          "action": "replace",
+          "word": 12,
+          "text": "रूप",
+          "critical": true,
+          "note": "word_substitution · critical · धूप -> रूप"
+        },
+        {
+          "action": "move",
+          "word": 15,
+          "edge": "end",
+          "shift_ms": -274,
+          "note": "boundary_end · critical · end 274 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 30,
+          "edge": "end",
+          "shift_ms": 69,
+          "note": "boundary_end · minor · end 69 ms later · overlaps में"
+        },
+        {
+          "action": "move",
+          "word": 45,
+          "edge": "start",
+          "shift_ms": 124,
+          "note": "boundary_start · major · start 124 ms later"
+        },
+        {
+          "action": "move",
+          "word": 65,
+          "edge": "start",
+          "shift_ms": 213,
+          "note": "boundary_start · critical · start 213 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-025",
+      "file_id": "cmv7zhuqd001bdjpbesgqgcd4",
+      "file_name": "c6ad35e029d2556f7264b2cca26e8b05.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 1,
+          "critical": true,
+          "note": "word_deletion · critical · 'दान' gone"
+        },
+        {
+          "action": "replace",
+          "word": 6,
+          "text": "doller",
+          "critical": true,
+          "note": "entity_spelling · critical · dollar -> doller"
+        },
+        {
+          "action": "overlap",
+          "word": 42,
+          "edge": "start",
+          "shift_ms": -99,
+          "note": "boundary_start · major · start 99 ms earlier · overlaps हज़ार"
+        },
+        {
+          "action": "overlap",
+          "word": 49,
+          "edge": "end",
+          "shift_ms": 62,
+          "note": "boundary_end · minor · end 62 ms later · overlaps माँ"
+        },
+        {
+          "action": "move",
+          "word": 56,
+          "edge": "end",
+          "shift_ms": -48,
+          "note": "boundary_end · minor · end 48 ms earlier"
+        },
+        {
+          "action": "overlap",
+          "word": 73,
+          "edge": "end",
+          "shift_ms": 225,
+          "note": "boundary_end · critical · end 225 ms later · overlaps dollar"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-026",
+      "file_id": "cmv7zi88f001sdjpb7yab9mso",
+      "file_name": "db700b0cf4938608fc073c7e641bea6b.audio.wav",
+      "plants": [
+        {
+          "action": "add_noise",
+          "after_word": 1,
+          "text": "और",
+          "start": 0.645,
+          "end": 0.9,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'और' over 0.645-0.9; the Hindi decoy also shortens 'सुरक्षा' to end at 0.645"
+        },
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "start",
+          "shift_ms": 301,
+          "note": "boundary_start · critical · start 301 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 27,
+          "text": "karne",
+          "critical": true,
+          "note": "script_swap_devanagari_to_latin · critical · करने -> karne"
+        },
+        {
+          "action": "overlap",
+          "word": 32,
+          "edge": "end",
+          "shift_ms": 61,
+          "note": "boundary_end · minor · end 61 ms later · overlaps के"
+        },
+        {
+          "action": "overlap",
+          "word": 39,
+          "edge": "end",
+          "shift_ms": 146,
+          "note": "boundary_end · major · end 146 ms later · overlaps से"
+        },
+        {
+          "action": "move",
+          "word": 73,
+          "edge": "end",
+          "shift_ms": -140,
+          "note": "boundary_end · major · end 140 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-027",
+      "file_id": "cmv7zi88f002fdjpb0zq4vmdn",
+      "file_name": "641a430c8d38cfe08bb425de894d2290.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 1,
+          "text": "सरक-",
+          "note": "truncation_introduced · critical · सरकारों -> सरक-"
+        },
+        {
+          "action": "split",
+          "word": 6,
+          "parts": [
+            "बि",
+            "ठाकर"
+          ],
+          "at": 2.372,
+          "critical": true,
+          "note": "word_split · critical · बिठाकर -> बि + ठाकर"
+        },
+        {
+          "action": "move",
+          "word": 18,
+          "edge": "start",
+          "shift_ms": 46,
+          "note": "boundary_start · minor · start 46 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 65,
+          "edge": "start",
+          "shift_ms": -264,
+          "note": "boundary_start · critical · start 264 ms earlier · overlaps deputy"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-028",
+      "file_id": "cmv7zijww0036djpbpf5acffm",
+      "file_name": "6b92991d54ad9b799fce5550a3480082.audio.wav",
+      "plants": [
+        {
+          "action": "join",
+          "word": 1,
+          "count": 2,
+          "critical": true,
+          "note": "words_merged · critical · million dollar in one chip (Hindi decoy writes 'milliondollar')"
+        },
+        {
+          "action": "replace",
+          "word": 7,
+          "text": "आया",
+          "critical": true,
+          "note": "word_substitution · critical · गया -> आया"
+        },
+        {
+          "action": "move",
+          "word": 30,
+          "edge": "start",
+          "shift_ms": 90,
+          "note": "boundary_start · major · start 90 ms later"
+        },
+        {
+          "action": "move",
+          "word": 38,
+          "edge": "end",
+          "shift_ms": 67,
+          "note": "boundary_end · minor · end 67 ms later"
+        },
+        {
+          "action": "overlap",
+          "word": 51,
+          "edge": "start",
+          "shift_ms": -120,
+          "note": "boundary_start · major · start 120 ms earlier · overlaps दवा"
+        },
+        {
+          "action": "overlap",
+          "word": 75,
+          "edge": "start",
+          "shift_ms": -295,
+          "note": "boundary_start · critical · start 295 ms earlier · overlaps इस"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-029",
+      "file_id": "cmv7zhuqd0008djpbx3e9go5s",
+      "file_name": "de4fe53be3898e35745756f45c5f84e4.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 1,
+          "critical": true,
+          "note": "word_deletion · critical · 'इस' gone"
+        },
+        {
+          "action": "replace",
+          "word": 11,
+          "text": "पुलिस",
+          "critical": true,
+          "note": "script_swap_latin_to_devanagari · critical · police -> पुलिस"
+        },
+        {
+          "action": "move",
+          "word": 17,
+          "edge": "end",
+          "shift_ms": -61,
+          "note": "boundary_end · minor · end 61 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 26,
+          "edge": "start",
+          "shift_ms": -162,
+          "note": "boundary_start · critical · start 162 ms earlier · overlaps एक"
+        },
+        {
+          "action": "move",
+          "word": 42,
+          "edge": "start",
+          "shift_ms": 82,
+          "note": "boundary_start · major · start 82 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-030",
+      "file_id": "cmv7zijww003mdjpbxyudcetf",
+      "file_name": "1b5e030a71acac2ea45751a1826f58de.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 1,
+          "text": "क़ाणूनी",
+          "critical": true,
+          "note": "entity_spelling · critical · क़ानूनी -> क़ाणूनी"
+        },
+        {
+          "action": "add_noise",
+          "after_word": 6,
+          "text": "और",
+          "start": 2.135,
+          "end": 2.39,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'और' over 2.135-2.39; the Hindi decoy also shortens 'दशमलव' to end at 2.135"
+        },
+        {
+          "action": "move",
+          "word": 17,
+          "edge": "end",
+          "shift_ms": -64,
+          "note": "boundary_end · minor · end 64 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 32,
+          "edge": "end",
+          "shift_ms": -163,
+          "note": "boundary_end · critical · end 163 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 57,
+          "edge": "start",
+          "shift_ms": 276,
+          "note": "boundary_start · critical · start 276 ms later"
+        },
+        {
+          "action": "move",
+          "word": 62,
+          "edge": "start",
+          "shift_ms": 115,
+          "note": "boundary_start · major · start 115 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-031",
+      "file_id": "cmv7zhuqd001ddjpbrw75l79v",
+      "file_name": "255712617057580f99e3d1d67e750e9b.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 2,
+          "text": "क़ीम-",
+          "critical": true,
+          "note": "truncation_introduced · critical · क़ीमतों -> क़ीम-"
+        },
+        {
+          "action": "replace",
+          "word": 5,
+          "text": "karne",
+          "critical": true,
+          "note": "script_swap_devanagari_to_latin · critical · करने -> karne"
+        },
+        {
+          "action": "move",
+          "word": 15,
+          "edge": "end",
+          "shift_ms": 50,
+          "note": "boundary_end · minor · end 50 ms later"
+        },
+        {
+          "action": "overlap",
+          "word": 33,
+          "edge": "end",
+          "shift_ms": 57,
+          "note": "boundary_end · minor · end 57 ms later · overlaps के"
+        },
+        {
+          "action": "overlap",
+          "word": 43,
+          "edge": "end",
+          "shift_ms": 167,
+          "note": "boundary_end · critical · end 167 ms later · overlaps बारह"
+        },
+        {
+          "action": "move",
+          "word": 60,
+          "edge": "end",
+          "shift_ms": 144,
+          "note": "boundary_end · major · end 144 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-032",
+      "file_id": "cmv7zijww003ldjpb8jtk8717",
+      "file_name": "4de30967acd0679e14c09d7c0a83fbb2.audio.wav",
+      "plants": [
+        {
+          "action": "join",
+          "word": 1,
+          "count": 2,
+          "critical": true,
+          "note": "words_merged · critical · में ये in one chip (Hindi decoy writes 'मेंये')"
+        },
+        {
+          "action": "split",
+          "word": 13,
+          "parts": [
+            "au",
+            "stralia"
+          ],
+          "at": 4.25,
+          "critical": true,
+          "note": "word_split · critical · australia -> au + stralia"
+        },
+        {
+          "action": "move",
+          "word": 27,
+          "edge": "start",
+          "shift_ms": -78,
+          "note": "boundary_start · minor · start 78 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 41,
+          "edge": "end",
+          "shift_ms": -223,
+          "note": "boundary_end · critical · end 223 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 54,
+          "edge": "end",
+          "shift_ms": 105,
+          "note": "boundary_end · major · end 105 ms later"
+        },
+        {
+          "action": "move",
+          "word": 61,
+          "edge": "start",
+          "shift_ms": 93,
+          "note": "boundary_start · major · start 93 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-033",
+      "file_id": "cmv7zi88f002pdjpbc3kw5btl",
+      "file_name": "6546749a84103917b07a3a6222867cad.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": -247,
+          "note": "boundary_end · critical · end 247 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "replace",
+          "word": 5,
+          "text": "रिपोर्ट",
+          "critical": true,
+          "note": "script_swap_latin_to_devanagari · critical · report -> रिपोर्ट"
+        },
+        {
+          "action": "replace",
+          "word": 8,
+          "text": "आया",
+          "critical": true,
+          "note": "word_substitution · critical · गया -> आया"
+        },
+        {
+          "action": "overlap",
+          "word": 21,
+          "edge": "end",
+          "shift_ms": 56,
+          "note": "boundary_end · minor · end 56 ms later · overlaps की"
+        },
+        {
+          "action": "overlap",
+          "word": 31,
+          "edge": "start",
+          "shift_ms": -81,
+          "note": "boundary_start · major · start 81 ms earlier · overlaps इस"
+        },
+        {
+          "action": "move",
+          "word": 40,
+          "edge": "end",
+          "shift_ms": -232,
+          "note": "boundary_end · critical · end 232 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-034",
+      "file_id": "cmv7zijww003vdjpb9f3nhgvv",
+      "file_name": "72496abe174ee09851adc0402d63cec7.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 1,
+          "critical": true,
+          "note": "word_deletion · critical · 'दिन' gone"
+        },
+        {
+          "action": "replace",
+          "word": 5,
+          "text": "racord",
+          "critical": true,
+          "note": "entity_spelling · critical · record -> racord"
+        },
+        {
+          "action": "move",
+          "word": 17,
+          "edge": "start",
+          "shift_ms": 66,
+          "note": "boundary_start · minor · start 66 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 25,
+          "edge": "end",
+          "shift_ms": -55,
+          "note": "boundary_end · minor · end 55 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 65,
+          "edge": "start",
+          "shift_ms": 270,
+          "note": "boundary_start · critical · start 270 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 70,
+          "edge": "start",
+          "shift_ms": -134,
+          "note": "boundary_start · major · start 134 ms earlier · overlaps सवाल"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-035",
+      "file_id": "cmv7zijww003xdjpb1dfa0su6",
+      "file_name": "f214a8fedd190b768df83187c83e2884.audio.wav",
+      "plants": [
+        {
+          "action": "add_noise",
+          "after_word": 1,
+          "text": "तो",
+          "start": 0.535,
+          "end": 0.73,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'तो' over 0.535-0.73; the Hindi decoy also shortens 'क़ीमतों' to end at 0.535"
+        },
+        {
+          "action": "overlap",
+          "word": 14,
+          "edge": "end",
+          "shift_ms": 48,
+          "note": "boundary_end · minor · end 48 ms later · overlaps की"
+        },
+        {
+          "action": "replace",
+          "word": 30,
+          "text": "sarkar",
+          "critical": true,
+          "note": "script_swap_devanagari_to_latin · critical · सरकार -> sarkar"
+        },
+        {
+          "action": "move",
+          "word": 35,
+          "edge": "start",
+          "shift_ms": -306,
+          "note": "boundary_start · critical · start 306 ms earlier"
+        },
+        {
+          "action": "overlap",
+          "word": 58,
+          "edge": "start",
+          "shift_ms": -120,
+          "note": "boundary_start · major · start 120 ms earlier · overlaps केवल"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-036",
+      "file_id": "cmv7zijww0039djpbgokp830k",
+      "file_name": "f98d523b7f40a00f2a410bb57e9b511b.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 4,
+          "text": "अनु-",
+          "note": "truncation_introduced · critical · अनुसार -> अनु-"
+        },
+        {
+          "action": "split",
+          "word": 9,
+          "parts": [
+            "वि",
+            "त्त"
+          ],
+          "at": 4.065,
+          "critical": true,
+          "note": "word_split · critical · वित्त -> वि + त्त"
+        },
+        {
+          "action": "overlap",
+          "word": 35,
+          "edge": "start",
+          "shift_ms": -87,
+          "note": "boundary_start · major · start 87 ms earlier · overlaps दोगुना"
+        },
+        {
+          "action": "overlap",
+          "word": 66,
+          "edge": "end",
+          "shift_ms": 263,
+          "note": "boundary_end · critical · end 263 ms later · overlaps और"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-037",
+      "file_id": "cmv7zi88f0023djpbml7cwdcr",
+      "file_name": "2e7fdb4497d614d4f6d20b1824faede6.audio.wav",
+      "plants": [
+        {
+          "action": "join",
+          "word": 1,
+          "count": 2,
+          "critical": true,
+          "note": "words_merged · critical · तापमान तेईस in one chip (Hindi decoy writes 'तापमानतेईस')"
+        },
+        {
+          "action": "overlap",
+          "word": 19,
+          "edge": "start",
+          "shift_ms": -139,
+          "note": "boundary_start · major · start 139 ms earlier · overlaps अधिकतम"
+        },
+        {
+          "action": "move",
+          "word": 25,
+          "edge": "end",
+          "shift_ms": -291,
+          "note": "boundary_end · critical · end 291 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 34,
+          "text": "साठ",
+          "critical": true,
+          "note": "word_substitution · critical · साथ -> साठ"
+        },
+        {
+          "action": "move",
+          "word": 42,
+          "edge": "start",
+          "shift_ms": 77,
+          "note": "boundary_start · minor · start 77 ms later"
+        },
+        {
+          "action": "overlap",
+          "word": 77,
+          "edge": "start",
+          "shift_ms": -75,
+          "note": "boundary_start · minor · start 75 ms earlier · overlaps में"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-038",
+      "file_id": "cmv7zhuqd000adjpbymdert5v",
+      "file_name": "6e60922c21843493797cca41dc4df442.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 1,
+          "critical": true,
+          "note": "word_deletion · critical · 'आठ' gone"
+        },
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "start",
+          "shift_ms": 53,
+          "note": "boundary_start · minor · start 53 ms later"
+        },
+        {
+          "action": "delete",
+          "word": 17,
+          "critical": true,
+          "note": "filler_deleted · critical · 'uh' gone"
+        },
+        {
+          "action": "overlap",
+          "word": 49,
+          "edge": "start",
+          "shift_ms": -53,
+          "note": "boundary_start · minor · start 53 ms earlier · overlaps ही"
+        },
+        {
+          "action": "move",
+          "word": 62,
+          "edge": "start",
+          "shift_ms": 92,
+          "note": "boundary_start · major · start 92 ms later"
+        },
+        {
+          "action": "move",
+          "word": 67,
+          "edge": "end",
+          "shift_ms": -312,
+          "note": "boundary_end · critical · end 312 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-039",
+      "file_id": "cmv7zi88f001gdjpb9eq894t6",
+      "file_name": "9670aa173fda64380fa2279d7eb6a531.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 4,
+          "text": "डॉलर",
+          "critical": true,
+          "note": "script_swap_latin_to_devanagari · critical · dollar -> डॉलर"
+        },
+        {
+          "action": "replace",
+          "word": 8,
+          "text": "grent",
+          "critical": true,
+          "note": "entity_spelling · critical · grant -> grent"
+        },
+        {
+          "action": "overlap",
+          "word": 49,
+          "edge": "start",
+          "shift_ms": -120,
+          "note": "boundary_start · major · start 120 ms earlier · overlaps पोषित"
+        },
+        {
+          "action": "overlap",
+          "word": 59,
+          "edge": "start",
+          "shift_ms": -128,
+          "note": "boundary_start · major · start 128 ms earlier · overlaps chris"
+        },
+        {
+          "action": "move",
+          "word": 62,
+          "edge": "end",
+          "shift_ms": -246,
+          "note": "boundary_end · critical · end 246 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-040",
+      "file_id": "cmv7zhuqc0003djpb7chij6fi",
+      "file_name": "9c9222b03aab5eda3e6876a5b846b574.audio.wav",
+      "plants": [
+        {
+          "action": "add_noise",
+          "after_word": 1,
+          "text": "और",
+          "start": 0.655,
+          "end": 0.85,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'और' over 0.655-0.85; the Hindi decoy also shortens 'मंत्री' to end at 0.655"
+        },
+        {
+          "action": "replace",
+          "word": 10,
+          "text": "logon",
+          "critical": true,
+          "note": "script_swap_devanagari_to_latin · critical · लोगों -> logon"
+        },
+        {
+          "action": "move",
+          "word": 18,
+          "edge": "start",
+          "shift_ms": 144,
+          "note": "boundary_start · major · start 144 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 29,
+          "edge": "end",
+          "shift_ms": 196,
+          "note": "boundary_end · critical · end 196 ms later · overlaps company"
+        },
+        {
+          "action": "move",
+          "word": 39,
+          "edge": "start",
+          "shift_ms": 63,
+          "note": "boundary_start · minor · start 63 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 43,
+          "edge": "end",
+          "shift_ms": -172,
+          "note": "boundary_end · critical · end 172 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-041",
+      "file_id": "cmv7zhuqd000ydjpbulx9zfg2",
+      "file_name": "c6144b8e05223f786da5f7db60a42d5e.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 1,
+          "text": "विशे-",
+          "note": "truncation_introduced · critical · विशेषज्ञ -> विशे-"
+        },
+        {
+          "action": "split",
+          "word": 8,
+          "parts": [
+            "दु",
+            "निया"
+          ],
+          "at": 2.925,
+          "critical": true,
+          "note": "word_split · critical · दुनिया -> दु + निया"
+        },
+        {
+          "action": "overlap",
+          "word": 16,
+          "edge": "end",
+          "shift_ms": 84,
+          "note": "boundary_end · major · end 84 ms later · overlaps नहीं"
+        },
+        {
+          "action": "overlap",
+          "word": 33,
+          "edge": "start",
+          "shift_ms": -46,
+          "note": "boundary_start · minor · start 46 ms earlier · overlaps दो"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-042",
+      "file_id": "cmv7zi88f001wdjpbz4b0ecoj",
+      "file_name": "06240b2a39f188df8f856edabd5d29de.audio.wav",
+      "plants": [
+        {
+          "action": "join",
+          "word": 1,
+          "count": 2,
+          "critical": true,
+          "note": "words_merged · critical · ये जो in one chip (Hindi decoy writes 'येजो')"
+        },
+        {
+          "action": "replace",
+          "word": 5,
+          "text": "मैं",
+          "critical": true,
+          "note": "word_substitution · critical · हैं -> मैं"
+        },
+        {
+          "action": "overlap",
+          "word": 11,
+          "edge": "start",
+          "shift_ms": -118,
+          "note": "boundary_start · major · start 118 ms earlier · overlaps कोई"
+        },
+        {
+          "action": "move",
+          "word": 14,
+          "edge": "end",
+          "shift_ms": -63,
+          "note": "boundary_end · minor · end 63 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 64,
+          "edge": "start",
+          "shift_ms": 193,
+          "note": "boundary_start · critical · start 193 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-043",
+      "file_id": "cmv7zijww0031djpblbi8k73k",
+      "file_name": "1004fc4954773d35f30967a0323cd828.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 1,
+          "critical": true,
+          "note": "word_deletion · critical · 'शाम' gone"
+        },
+        {
+          "action": "replace",
+          "word": 7,
+          "text": "poolls",
+          "critical": true,
+          "note": "entity_spelling · critical · polls -> poolls"
+        },
+        {
+          "action": "move",
+          "word": 31,
+          "edge": "end",
+          "shift_ms": -256,
+          "note": "boundary_end · critical · end 256 ms earlier"
+        },
+        {
+          "action": "overlap",
+          "word": 34,
+          "edge": "start",
+          "shift_ms": -72,
+          "note": "boundary_start · minor · start 72 ms earlier · overlaps सरकार"
+        },
+        {
+          "action": "move",
+          "word": 48,
+          "edge": "end",
+          "shift_ms": -87,
+          "note": "boundary_end · major · end 87 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-044",
+      "file_id": "cmv7zijww003sdjpbmnig66in",
+      "file_name": "2d0799d3e47e7aeaedddc1d1933354e4.audio.wav",
+      "plants": [
+        {
+          "action": "add_noise",
+          "after_word": 11,
+          "text": "और",
+          "start": 2.955,
+          "end": 3.12,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'और' over 2.955-3.12; the Hindi decoy also shortens 'आँकड़ों' to end at 2.955"
+        },
+        {
+          "action": "move",
+          "word": 21,
+          "edge": "end",
+          "shift_ms": -71,
+          "note": "boundary_end · minor · end 71 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 27,
+          "edge": "end",
+          "shift_ms": -255,
+          "note": "boundary_end · critical · end 255 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "replace",
+          "word": 31,
+          "text": "मिलियन",
+          "critical": true,
+          "note": "script_swap_latin_to_devanagari · critical · million -> मिलियन"
+        },
+        {
+          "action": "move",
+          "word": 39,
+          "edge": "start",
+          "shift_ms": 112,
+          "note": "boundary_start · major · start 112 ms later"
+        },
+        {
+          "action": "move",
+          "word": 67,
+          "edge": "end",
+          "shift_ms": -292,
+          "note": "boundary_end · critical · end 292 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-045",
+      "file_id": "cmv7zi88f002hdjpb066u0bgt",
+      "file_name": "5500b3e2f8d5da7ab89c719a1ee28082.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 2,
+          "text": "mor-",
+          "critical": true,
+          "note": "truncation_introduced · critical · morgan -> mor-"
+        },
+        {
+          "action": "split",
+          "word": 8,
+          "parts": [
+            "सा",
+            "प्ताहिक"
+          ],
+          "at": 2.9,
+          "critical": true,
+          "note": "word_split · critical · साप्ताहिक -> सा + प्ताहिक"
+        },
+        {
+          "action": "overlap",
+          "word": 15,
+          "edge": "end",
+          "shift_ms": 63,
+          "note": "boundary_end · minor · end 63 ms later · overlaps अंक"
+        },
+        {
+          "action": "overlap",
+          "word": 21,
+          "edge": "end",
+          "shift_ms": 136,
+          "note": "boundary_end · major · end 136 ms later · overlaps सप्ताह"
+        },
+        {
+          "action": "move",
+          "word": 24,
+          "edge": "end",
+          "shift_ms": -52,
+          "note": "boundary_end · minor · end 52 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 27,
+          "edge": "end",
+          "shift_ms": 220,
+          "note": "boundary_end · critical · end 220 ms later · overlaps पाँच"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-046",
+      "file_id": "cmv7zhuqd000idjpbk87fjbsx",
+      "file_name": "960bb9d97c98745ab8e4cb6ec5db7af8.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 4,
+          "text": "lekin",
+          "critical": true,
+          "note": "script_swap_devanagari_to_latin · critical · लेकिन -> lekin"
+        },
+        {
+          "action": "join",
+          "word": 8,
+          "count": 2,
+          "note": "words_merged · critical · गढ़ मध्य in one chip (Hindi decoy writes 'गढ़मध्य')"
+        },
+        {
+          "action": "replace",
+          "word": 15,
+          "text": "पास",
+          "critical": true,
+          "note": "word_substitution · critical · खास -> पास"
+        },
+        {
+          "action": "move",
+          "word": 18,
+          "edge": "end",
+          "shift_ms": -45,
+          "note": "boundary_end · minor · end 45 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 27,
+          "edge": "end",
+          "shift_ms": -210,
+          "note": "boundary_end · critical · end 210 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 53,
+          "edge": "start",
+          "shift_ms": 82,
+          "note": "boundary_start · major · start 82 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 59,
+          "edge": "end",
+          "shift_ms": -141,
+          "note": "boundary_end · major · end 141 ms earlier"
+        },
+        {
+          "action": "set_flag",
+          "flag": "multi_speaker",
+          "value": false,
+          "note": "multiple_speakers_off · the file has several speakers; served as single-speaker"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-047",
+      "file_id": "cmv7zhuqd000gdjpb8x7gqz3j",
+      "file_name": "f9a9e8a06508526f623b60844e4c8f1e.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 1,
+          "critical": true,
+          "note": "word_deletion · critical · 'वे' gone"
+        },
+        {
+          "action": "replace",
+          "word": 21,
+          "text": "मिलियन",
+          "critical": true,
+          "note": "script_swap_latin_to_devanagari · critical · million -> मिलियन"
+        },
+        {
+          "action": "move",
+          "word": 38,
+          "edge": "end",
+          "shift_ms": -270,
+          "note": "boundary_end · critical · end 270 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 50,
+          "edge": "end",
+          "shift_ms": -91,
+          "note": "boundary_end · major · end 91 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 57,
+          "edge": "start",
+          "shift_ms": 63,
+          "note": "boundary_start · minor · start 63 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 65,
+          "edge": "end",
+          "shift_ms": 48,
+          "note": "boundary_end · minor · end 48 ms later · overlaps है"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-048",
+      "file_id": "cmv7zhuqd0018djpb2qybtzol",
+      "file_name": "0a1ecf8cd5d851d24e3ad021f9440519.audio.wav",
+      "plants": [
+        {
+          "action": "add_noise",
+          "after_word": 1,
+          "text": "का",
+          "start": 0.34,
+          "end": 0.5,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'का' over 0.34-0.5; the Hindi decoy also shortens 'हज़ार' to end at 0.34"
+        },
+        {
+          "action": "replace",
+          "word": 9,
+          "text": "दसमलव",
+          "critical": true,
+          "note": "entity_spelling · critical · दशमलव -> दसमलव"
+        },
+        {
+          "action": "move",
+          "word": 19,
+          "edge": "start",
+          "shift_ms": -170,
+          "note": "boundary_start · critical · start 170 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 41,
+          "edge": "end",
+          "shift_ms": -293,
+          "note": "boundary_end · critical · end 293 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 46,
+          "edge": "end",
+          "shift_ms": 52,
+          "note": "boundary_end · minor · end 52 ms later"
+        },
+        {
+          "action": "overlap",
+          "word": 49,
+          "edge": "start",
+          "shift_ms": -134,
+          "note": "boundary_start · major · start 134 ms earlier · overlaps स्वच्छ"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-049",
+      "file_id": "cmv7zhuqd000kdjpbwovjgw35",
+      "file_name": "278ed2922236048bd5fce8c48a0b389c.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 1,
+          "text": "saal",
+          "critical": true,
+          "note": "script_swap_devanagari_to_latin · critical · साल -> saal"
+        },
+        {
+          "action": "replace",
+          "word": 11,
+          "text": "करदा-",
+          "note": "truncation_introduced · critical · करदाताओं -> करदा-"
+        },
+        {
+          "action": "overlap",
+          "word": 26,
+          "edge": "start",
+          "shift_ms": -222,
+          "note": "boundary_start · critical · start 222 ms earlier · overlaps origin"
+        },
+        {
+          "action": "overlap",
+          "word": 35,
+          "edge": "start",
+          "shift_ms": -105,
+          "note": "boundary_start · major · start 105 ms earlier · overlaps power"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-050",
+      "file_id": "cmv7zijww002sdjpb9us6busp",
+      "file_name": "3c795bb6535f1dabb26dcfed89e5eefa.audio.wav",
+      "plants": [
+        {
+          "action": "split",
+          "word": 1,
+          "parts": [
+            "मा",
+            "मले"
+          ],
+          "at": 0.43,
+          "note": "word_split · critical · मामले -> मा + मले"
+        },
+        {
+          "action": "join",
+          "word": 6,
+          "count": 2,
+          "critical": true,
+          "note": "words_merged · critical · जारी किए in one chip (Hindi decoy writes 'जारीकिए')"
+        },
+        {
+          "action": "replace",
+          "word": 16,
+          "text": "चोई",
+          "critical": true,
+          "note": "word_substitution · critical · कोई -> चोई"
+        },
+        {
+          "action": "overlap",
+          "word": 24,
+          "edge": "end",
+          "shift_ms": 158,
+          "note": "boundary_end · critical · end 158 ms later · overlaps निजी"
+        },
+        {
+          "action": "move",
+          "word": 29,
+          "edge": "end",
+          "shift_ms": -51,
+          "note": "boundary_end · minor · end 51 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 33,
+          "edge": "end",
+          "shift_ms": 66,
+          "note": "boundary_end · minor · end 66 ms later · overlaps से"
+        },
+        {
+          "action": "move",
+          "word": 56,
+          "edge": "start",
+          "shift_ms": -108,
+          "note": "boundary_start · major · start 108 ms earlier"
+        },
+        {
+          "action": "set_flag",
+          "flag": "multi_speaker",
+          "value": false,
+          "note": "multiple_speakers_off · the file has several speakers; served as single-speaker"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-051",
+      "file_id": "cmv7zhuqd000wdjpbbejflleg",
+      "file_name": "3f8bdb61ae4acbf9394fa0153bd97130.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 1,
+          "critical": true,
+          "note": "word_deletion · critical · 'दंड' gone"
+        },
+        {
+          "action": "move",
+          "word": 8,
+          "edge": "end",
+          "shift_ms": -93,
+          "note": "boundary_end · major · end 93 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 25,
+          "edge": "end",
+          "shift_ms": 46,
+          "note": "boundary_end · minor · end 46 ms later · overlaps का"
+        },
+        {
+          "action": "overlap",
+          "word": 51,
+          "edge": "start",
+          "shift_ms": -135,
+          "note": "boundary_start · major · start 135 ms earlier · overlaps के"
+        },
+        {
+          "action": "overlap",
+          "word": 57,
+          "edge": "end",
+          "shift_ms": 159,
+          "note": "boundary_end · critical · end 159 ms later · overlaps को"
+        },
+        {
+          "action": "replace",
+          "word": 66,
+          "text": "डॉलर",
+          "critical": true,
+          "note": "script_swap_latin_to_devanagari · critical · dollar -> डॉलर"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-052",
+      "file_id": "cmv7zijww003hdjpbdixg2q5m",
+      "file_name": "4deb10680a9a63d312bf187a025518f9.audio.wav",
+      "plants": [
+        {
+          "action": "add_noise",
+          "after_word": 1,
+          "text": "है",
+          "start": 0.93,
+          "end": 1.18,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'है' over 0.93-1.18; the Hindi decoy also shortens 'महिलाओं' to end at 0.93"
+        },
+        {
+          "action": "replace",
+          "word": 8,
+          "text": "austrelian",
+          "critical": true,
+          "note": "entity_spelling · critical · australian -> austrelian"
+        },
+        {
+          "action": "move",
+          "word": 22,
+          "edge": "start",
+          "shift_ms": 68,
+          "note": "boundary_start · minor · start 68 ms later"
+        },
+        {
+          "action": "move",
+          "word": 33,
+          "edge": "end",
+          "shift_ms": 216,
+          "note": "boundary_end · critical · end 216 ms later"
+        },
+        {
+          "action": "move",
+          "word": 37,
+          "edge": "start",
+          "shift_ms": 301,
+          "note": "boundary_start · critical · start 301 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 62,
+          "edge": "start",
+          "shift_ms": -112,
+          "note": "boundary_start · major · start 112 ms earlier · overlaps का"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-053",
+      "file_id": "cmv7zijww003udjpbnlq2sv1k",
+      "file_name": "53917c58475b118763a02371fa3283af.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 1,
+          "text": "वर्-",
+          "note": "truncation_introduced · critical · वर्तमान -> वर्-"
+        },
+        {
+          "action": "move",
+          "word": 17,
+          "edge": "start",
+          "shift_ms": -53,
+          "note": "boundary_start · minor · start 53 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 30,
+          "text": "sarkar",
+          "critical": true,
+          "note": "script_swap_devanagari_to_latin · critical · सरकार -> sarkar"
+        },
+        {
+          "action": "move",
+          "word": 46,
+          "edge": "start",
+          "shift_ms": -115,
+          "note": "boundary_start · major · start 115 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-054",
+      "file_id": "cmv7zhuqd000vdjpba1vrbee3",
+      "file_name": "9857ce38b00e4113ce387fad0e74ade5.audio.wav",
+      "plants": [
+        {
+          "action": "split",
+          "word": 2,
+          "parts": [
+            "se",
+            "ptember"
+          ],
+          "at": 1.16,
+          "critical": true,
+          "note": "word_split · critical · september -> se + ptember"
+        },
+        {
+          "action": "join",
+          "word": 7,
+          "count": 2,
+          "critical": true,
+          "note": "words_merged · critical · एक सात in one chip (Hindi decoy writes 'एकसात')"
+        },
+        {
+          "action": "move",
+          "word": 32,
+          "edge": "end",
+          "shift_ms": -73,
+          "note": "boundary_end · minor · end 73 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 58,
+          "edge": "start",
+          "shift_ms": 91,
+          "note": "boundary_start · major · start 91 ms later"
+        },
+        {
+          "action": "overlap",
+          "word": 64,
+          "edge": "start",
+          "shift_ms": -197,
+          "note": "boundary_start · critical · start 197 ms earlier · overlaps नाज़ुक"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-055",
+      "file_id": "cmv7zhuqd0012djpb7dtn0bvv",
+      "file_name": "d51c324784c573458e0bcdc30f1171be.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 1,
+          "critical": true,
+          "note": "word_deletion · critical · 'दो' gone"
+        },
+        {
+          "action": "replace",
+          "word": 11,
+          "text": "धूप",
+          "critical": true,
+          "note": "word_substitution · critical · रूप -> धूप"
+        },
+        {
+          "action": "overlap",
+          "word": 17,
+          "edge": "start",
+          "shift_ms": -150,
+          "note": "boundary_start · major · start 150 ms earlier · overlaps low"
+        },
+        {
+          "action": "move",
+          "word": 24,
+          "edge": "start",
+          "shift_ms": 151,
+          "note": "boundary_start · critical · start 151 ms later"
+        },
+        {
+          "action": "overlap",
+          "word": 46,
+          "edge": "start",
+          "shift_ms": -65,
+          "note": "boundary_start · minor · start 65 ms earlier · overlaps का"
+        },
+        {
+          "action": "move",
+          "word": 61,
+          "edge": "start",
+          "shift_ms": 229,
+          "note": "boundary_start · critical · start 229 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-056",
+      "file_id": "cmv7zijww003tdjpbugxur0w9",
+      "file_name": "e7782f8b6f0b1cc401fff72e06dcb9fa.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 2,
+          "text": "medibenk",
+          "critical": true,
+          "note": "entity_spelling · critical · medibank -> medibenk"
+        },
+        {
+          "action": "overlap",
+          "word": 14,
+          "edge": "end",
+          "shift_ms": 45,
+          "note": "boundary_end · minor · end 45 ms later · overlaps हुई"
+        },
+        {
+          "action": "move",
+          "word": 26,
+          "edge": "end",
+          "shift_ms": -83,
+          "note": "boundary_end · major · end 83 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 31,
+          "edge": "end",
+          "shift_ms": -190,
+          "note": "boundary_end · critical · end 190 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 37,
+          "text": "मिलियन",
+          "critical": true,
+          "note": "script_swap_latin_to_devanagari · critical · million -> मिलियन"
+        },
+        {
+          "action": "move",
+          "word": 45,
+          "edge": "start",
+          "shift_ms": 60,
+          "note": "boundary_start · minor · start 60 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-057",
+      "file_id": "cmv7zijww003wdjpb0tw4ifge",
+      "file_name": "e8db3a8ce44e6da8556851f103550f6f.audio.wav",
+      "plants": [
+        {
+          "action": "add_noise",
+          "after_word": 1,
+          "text": "है",
+          "start": 0.645,
+          "end": 0.86,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'है' over 0.645-0.86; the Hindi decoy also shortens 'तापमान' to end at 0.645"
+        },
+        {
+          "action": "replace",
+          "word": 9,
+          "text": "sakta",
+          "note": "script_swap_devanagari_to_latin · critical · सकता -> sakta"
+        },
+        {
+          "action": "move",
+          "word": 23,
+          "edge": "end",
+          "shift_ms": 173,
+          "note": "boundary_end · critical · end 173 ms later"
+        },
+        {
+          "action": "overlap",
+          "word": 28,
+          "edge": "start",
+          "shift_ms": -149,
+          "note": "boundary_start · major · start 149 ms earlier · overlaps degree"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-058",
+      "file_id": "cmv7zi88f0021djpb8wfdo4xv",
+      "file_name": "03045da9648e6494691eb523306b6ddf.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 1,
+          "text": "प्रति-",
+          "critical": true,
+          "note": "truncation_introduced · critical · प्रतिबंधों -> प्रति-"
+        },
+        {
+          "action": "split",
+          "word": 13,
+          "parts": [
+            "प्र",
+            "तिशत"
+          ],
+          "at": 4.91,
+          "critical": true,
+          "note": "word_split · critical · प्रतिशत -> प्र + तिशत"
+        },
+        {
+          "action": "move",
+          "word": 28,
+          "edge": "end",
+          "shift_ms": -76,
+          "note": "boundary_end · minor · end 76 ms earlier"
+        },
+        {
+          "action": "overlap",
+          "word": 45,
+          "edge": "end",
+          "shift_ms": 75,
+          "note": "boundary_end · minor · end 75 ms later · overlaps और"
+        },
+        {
+          "action": "overlap",
+          "word": 51,
+          "edge": "start",
+          "shift_ms": -91,
+          "note": "boundary_start · major · start 91 ms earlier · overlaps कुछ"
+        },
+        {
+          "action": "move",
+          "word": 57,
+          "edge": "start",
+          "shift_ms": 304,
+          "note": "boundary_start · critical · start 304 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-059",
+      "file_id": "cmv7zi88f001odjpbq4e28pyq",
+      "file_name": "099923ce27e4264f3090b53bf984ef1a.audio.wav",
+      "plants": [
+        {
+          "action": "join",
+          "word": 1,
+          "count": 2,
+          "critical": true,
+          "note": "words_merged · critical · संवेदनशील लोगों in one chip (Hindi decoy writes 'संवेदनशीललोगों')"
+        },
+        {
+          "action": "replace",
+          "word": 10,
+          "text": "हुआ",
+          "critical": true,
+          "note": "word_substitution · critical · हुए -> हुआ"
+        },
+        {
+          "action": "move",
+          "word": 29,
+          "edge": "start",
+          "shift_ms": 203,
+          "note": "boundary_start · critical · start 203 ms later"
+        },
+        {
+          "action": "overlap",
+          "word": 32,
+          "edge": "start",
+          "shift_ms": -120,
+          "note": "boundary_start · major · start 120 ms earlier · overlaps सामुदायिक"
+        },
+        {
+          "action": "move",
+          "word": 35,
+          "edge": "end",
+          "shift_ms": -91,
+          "note": "boundary_end · major · end 91 ms earlier"
+        },
+        {
+          "action": "overlap",
+          "word": 59,
+          "edge": "end",
+          "shift_ms": 59,
+          "note": "boundary_end · minor · end 59 ms later · overlaps ये"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-060",
+      "file_id": "cmv7zi88f001xdjpb44w24he6",
+      "file_name": "09e0a1050597c8c93410341ec8ebe00e.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 2,
+          "critical": true,
+          "note": "word_deletion · critical · 'में' gone"
+        },
+        {
+          "action": "replace",
+          "word": 6,
+          "text": "अपराद",
+          "critical": true,
+          "note": "entity_spelling · critical · अपराध -> अपराद"
+        },
+        {
+          "action": "move",
+          "word": 20,
+          "edge": "end",
+          "shift_ms": -71,
+          "note": "boundary_end · minor · end 71 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 51,
+          "edge": "start",
+          "shift_ms": 169,
+          "note": "boundary_start · critical · start 169 ms later"
+        },
+        {
+          "action": "move",
+          "word": 58,
+          "edge": "start",
+          "shift_ms": 99,
+          "note": "boundary_start · major · start 99 ms later"
+        },
+        {
+          "action": "move",
+          "word": 63,
+          "edge": "start",
+          "shift_ms": -215,
+          "note": "boundary_start · critical · start 215 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-061",
+      "file_id": "cmv7zi88f001edjpbp4ym0nzr",
+      "file_name": "59e991ca34b5305275e2a27b511bf5c4.audio.wav",
+      "plants": [
+        {
+          "action": "add_noise",
+          "after_word": 2,
+          "text": "और",
+          "start": 0.835,
+          "end": 1.04,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'और' over 0.835-1.04; the Hindi decoy also shortens 'अड़तीस' to end at 0.835"
+        },
+        {
+          "action": "replace",
+          "word": 22,
+          "text": "sarkar",
+          "critical": true,
+          "note": "script_swap_devanagari_to_latin · critical · सरकार -> sarkar"
+        },
+        {
+          "action": "move",
+          "word": 37,
+          "edge": "start",
+          "shift_ms": 313,
+          "note": "boundary_start · critical · start 313 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 50,
+          "edge": "start",
+          "shift_ms": -61,
+          "note": "boundary_start · minor · start 61 ms earlier · overlaps प्रधानमंत्री"
+        },
+        {
+          "action": "overlap",
+          "word": 59,
+          "edge": "start",
+          "shift_ms": -61,
+          "note": "boundary_start · minor · start 61 ms earlier · overlaps के"
+        },
+        {
+          "action": "overlap",
+          "word": 69,
+          "edge": "end",
+          "shift_ms": 149,
+          "note": "boundary_end · major · end 149 ms later · overlaps और"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-062",
+      "file_id": "cmv7zhuqd0011djpb7uvis0dj",
+      "file_name": "6f4e722d869bb1f850e963c0c253d985.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 7,
+          "text": "संग-",
+          "critical": true,
+          "note": "truncation_introduced · critical · संगठित -> संग-"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": -95,
+          "note": "boundary_end · major · end 95 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 21,
+          "edge": "start",
+          "shift_ms": 112,
+          "note": "boundary_start · major · start 112 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "replace",
+          "word": 48,
+          "text": "बजट",
+          "critical": true,
+          "note": "script_swap_latin_to_devanagari · critical · budget -> बजट"
+        },
+        {
+          "action": "move",
+          "word": 58,
+          "edge": "start",
+          "shift_ms": 57,
+          "note": "boundary_start · minor · start 57 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 61,
+          "edge": "end",
+          "shift_ms": -281,
+          "note": "boundary_end · critical · end 281 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-063",
+      "file_id": "cmv7zi88f001udjpbjux4pfks",
+      "file_name": "97f132241b0ee6f4cff0156e2b2e9181.audio.wav",
+      "plants": [
+        {
+          "action": "split",
+          "word": 1,
+          "parts": [
+            "st",
+            "rawberry"
+          ],
+          "at": 0.445,
+          "critical": true,
+          "note": "word_split · critical · strawberry -> st + rawberry"
+        },
+        {
+          "action": "join",
+          "word": 6,
+          "count": 2,
+          "critical": true,
+          "note": "words_merged · critical · खरीदी गई in one chip (Hindi decoy writes 'खरीदीगई')"
+        },
+        {
+          "action": "move",
+          "word": 32,
+          "edge": "end",
+          "shift_ms": -312,
+          "note": "boundary_end · critical · end 312 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 48,
+          "edge": "end",
+          "shift_ms": -71,
+          "note": "boundary_end · minor · end 71 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 56,
+          "edge": "end",
+          "shift_ms": -142,
+          "note": "boundary_end · major · end 142 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 69,
+          "edge": "start",
+          "shift_ms": 245,
+          "note": "boundary_start · critical · start 245 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-064",
+      "file_id": "cmv7zijww003gdjpb8f4sa9hs",
+      "file_name": "dc5a8f2a39b8814a77db65cf5cf515d1.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 3,
+          "text": "डॉलर",
+          "critical": true,
+          "note": "script_swap_latin_to_devanagari · critical · dollar -> डॉलर"
+        },
+        {
+          "action": "replace",
+          "word": 12,
+          "text": "धूप",
+          "critical": true,
+          "note": "word_substitution · critical · रूप -> धूप"
+        },
+        {
+          "action": "overlap",
+          "word": 30,
+          "edge": "end",
+          "shift_ms": 49,
+          "note": "boundary_end · minor · end 49 ms later · overlaps murray"
+        },
+        {
+          "action": "move",
+          "word": 42,
+          "edge": "start",
+          "shift_ms": 162,
+          "note": "boundary_start · critical · start 162 ms later"
+        },
+        {
+          "action": "overlap",
+          "word": 49,
+          "edge": "start",
+          "shift_ms": -53,
+          "note": "boundary_start · minor · start 53 ms earlier · overlaps जा"
+        },
+        {
+          "action": "move",
+          "word": 76,
+          "edge": "end",
+          "shift_ms": -85,
+          "note": "boundary_end · major · end 85 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-065",
+      "file_id": "cmv7zi88f002ldjpbau9j3gnq",
+      "file_name": "f4dcd1240018e0ac6173894dd4ac58fb.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 1,
+          "critical": true,
+          "note": "word_deletion · critical · 'इससे' gone"
+        },
+        {
+          "action": "replace",
+          "word": 5,
+          "text": "beellion",
+          "note": "entity_spelling · critical · billion -> beellion"
+        },
+        {
+          "action": "add_noise",
+          "after_word": 10,
+          "text": "का",
+          "start": 4.71,
+          "end": 4.98,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'का' over 4.71-4.98; the Hindi decoy also shortens 'नुक़सान' to end at 4.71"
+        },
+        {
+          "action": "move",
+          "word": 14,
+          "edge": "end",
+          "shift_ms": -97,
+          "note": "boundary_end · major · end 97 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 30,
+          "edge": "start",
+          "shift_ms": -129,
+          "note": "boundary_start · major · start 129 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 45,
+          "edge": "end",
+          "shift_ms": -195,
+          "note": "boundary_end · critical · end 195 ms earlier"
+        },
+        {
+          "action": "overlap",
+          "word": 53,
+          "edge": "start",
+          "shift_ms": -72,
+          "note": "boundary_start · minor · start 72 ms earlier · overlaps impact"
+        },
+        {
+          "action": "set_flag",
+          "flag": "multi_speaker",
+          "value": false,
+          "note": "multiple_speakers_off · the file has several speakers; served as single-speaker"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-066",
+      "file_id": "cmv7zijww0032djpb4l9e833y",
+      "file_name": "084164845e293c00cdcc83c07c31d71e.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 1,
+          "text": "राज-",
+          "critical": true,
+          "note": "truncation_introduced · critical · राज्यों -> राज-"
+        },
+        {
+          "action": "move",
+          "word": 18,
+          "edge": "start",
+          "shift_ms": 78,
+          "note": "boundary_start · minor · start 78 ms later"
+        },
+        {
+          "action": "move",
+          "word": 37,
+          "edge": "start",
+          "shift_ms": 87,
+          "note": "boundary_start · major · start 87 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "replace",
+          "word": 43,
+          "text": "desh",
+          "critical": true,
+          "note": "script_swap_devanagari_to_latin · critical · देश -> desh"
+        },
+        {
+          "action": "move",
+          "word": 50,
+          "edge": "start",
+          "shift_ms": 183,
+          "note": "boundary_start · critical · start 183 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-067",
+      "file_id": "cmv7zi88f001ldjpb3q2tbubl",
+      "file_name": "0c845744581c4df0bc648ad42fe796a2.audio.wav",
+      "plants": [
+        {
+          "action": "join",
+          "word": 1,
+          "count": 2,
+          "critical": true,
+          "note": "words_merged · critical · तीन एक in one chip (Hindi decoy writes 'तीनएक')"
+        },
+        {
+          "action": "split",
+          "word": 11,
+          "parts": [
+            "he",
+            "lpline"
+          ],
+          "at": 3.9,
+          "critical": true,
+          "note": "word_split · critical · helpline -> he + lpline"
+        },
+        {
+          "action": "move",
+          "word": 32,
+          "edge": "start",
+          "shift_ms": 178,
+          "note": "boundary_start · critical · start 178 ms later"
+        },
+        {
+          "action": "overlap",
+          "word": 37,
+          "edge": "start",
+          "shift_ms": -119,
+          "note": "boundary_start · major · start 119 ms earlier · overlaps शून्य"
+        },
+        {
+          "action": "overlap",
+          "word": 47,
+          "edge": "end",
+          "shift_ms": 63,
+          "note": "boundary_end · minor · end 63 ms later · overlaps new"
+        },
+        {
+          "action": "move",
+          "word": 59,
+          "edge": "end",
+          "shift_ms": -59,
+          "note": "boundary_end · minor · end 59 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-068",
+      "file_id": "cmv7zhuqd000bdjpb01pmv968",
+      "file_name": "289a6ecd184beb2aa0f81dfa7bb2c5f4.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 2,
+          "text": "छत्तीस",
+          "critical": true,
+          "note": "word_substitution · critical · बत्तीस -> छत्तीस"
+        },
+        {
+          "action": "move",
+          "word": 14,
+          "edge": "end",
+          "shift_ms": -186,
+          "note": "boundary_end · critical · end 186 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 30,
+          "text": "फंडिंग",
+          "critical": true,
+          "note": "script_swap_latin_to_devanagari · critical · funding -> फंडिंग"
+        },
+        {
+          "action": "move",
+          "word": 35,
+          "edge": "end",
+          "shift_ms": -173,
+          "note": "boundary_end · critical · end 173 ms earlier"
+        },
+        {
+          "action": "overlap",
+          "word": 65,
+          "edge": "end",
+          "shift_ms": 99,
+          "note": "boundary_end · major · end 99 ms later · overlaps था"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-069",
+      "file_id": "cmv7zijww003fdjpbc28xtp4e",
+      "file_name": "73d3a72d047e566e5ef4c1197a4b9b3c.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 1,
+          "critical": true,
+          "note": "word_deletion · critical · 'की' gone"
+        },
+        {
+          "action": "replace",
+          "word": 5,
+          "text": "अस्रुपूरित",
+          "critical": true,
+          "note": "entity_spelling · critical · अश्रुपूरित -> अस्रुपूरित"
+        },
+        {
+          "action": "overlap",
+          "word": 18,
+          "edge": "start",
+          "shift_ms": -75,
+          "note": "boundary_start · minor · start 75 ms earlier · overlaps बेहद"
+        },
+        {
+          "action": "overlap",
+          "word": 29,
+          "edge": "end",
+          "shift_ms": 77,
+          "note": "boundary_end · minor · end 77 ms later · overlaps सौ"
+        },
+        {
+          "action": "move",
+          "word": 45,
+          "edge": "start",
+          "shift_ms": 292,
+          "note": "boundary_start · critical · start 292 ms later"
+        },
+        {
+          "action": "overlap",
+          "word": 65,
+          "edge": "end",
+          "shift_ms": 109,
+          "note": "boundary_end · major · end 109 ms later · overlaps और"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-070",
+      "file_id": "cmv7zi88f002bdjpb7sz0kw9p",
+      "file_name": "7a2d874ca0ac1b033479d9f5e1b8e417.audio.wav",
+      "plants": [
+        {
+          "action": "add_noise",
+          "after_word": 1,
+          "text": "ये",
+          "start": 0.785,
+          "end": 0.94,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'ये' over 0.785-0.94; the Hindi decoy also shortens 'में' to end at 0.785"
+        },
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "start",
+          "shift_ms": 149,
+          "note": "boundary_start · major · start 149 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 16,
+          "text": "saal",
+          "critical": true,
+          "note": "script_swap_devanagari_to_latin · critical · साल -> saal"
+        },
+        {
+          "action": "move",
+          "word": 30,
+          "edge": "end",
+          "shift_ms": -58,
+          "note": "boundary_end · minor · end 58 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 40,
+          "edge": "end",
+          "shift_ms": -299,
+          "note": "boundary_end · critical · end 299 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-071",
+      "file_id": "cmv7zi88f001ndjpbvmvrf2ol",
+      "file_name": "7f15481e1ef8e4de1d64eacd4a92bab5.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 6,
+          "text": "प्र-",
+          "critical": true,
+          "note": "truncation_introduced · critical · प्रदाता -> प्र-"
+        },
+        {
+          "action": "split",
+          "word": 10,
+          "parts": [
+            "दला",
+            "ली"
+          ],
+          "at": 3.72,
+          "critical": true,
+          "note": "word_split · critical · दलाली -> दला + ली"
+        },
+        {
+          "action": "move",
+          "word": 33,
+          "edge": "end",
+          "shift_ms": -308,
+          "note": "boundary_end · critical · end 308 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 44,
+          "edge": "end",
+          "shift_ms": 116,
+          "note": "boundary_end · major · end 116 ms later"
+        },
+        {
+          "action": "overlap",
+          "word": 47,
+          "edge": "end",
+          "shift_ms": 83,
+          "note": "boundary_end · major · end 83 ms later · overlaps सीटों"
+        },
+        {
+          "action": "overlap",
+          "word": 65,
+          "edge": "start",
+          "shift_ms": -45,
+          "note": "boundary_start · minor · start 45 ms earlier · overlaps संकीर्ण"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-072",
+      "file_id": "cmv7zijww0035djpb2o96r3bu",
+      "file_name": "89c091a723b857742bfd11f6b0c03248.audio.wav",
+      "plants": [
+        {
+          "action": "join",
+          "word": 1,
+          "count": 2,
+          "critical": true,
+          "note": "words_merged · critical · पड़ा था in one chip (Hindi decoy writes 'पड़ाथा')"
+        },
+        {
+          "action": "replace",
+          "word": 7,
+          "text": "हुई",
+          "critical": true,
+          "note": "word_substitution · critical · हुआ -> हुई"
+        },
+        {
+          "action": "move",
+          "word": 12,
+          "edge": "end",
+          "shift_ms": -159,
+          "note": "boundary_end · critical · end 159 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 38,
+          "edge": "end",
+          "shift_ms": 126,
+          "note": "boundary_end · major · end 126 ms later"
+        },
+        {
+          "action": "overlap",
+          "word": 53,
+          "edge": "start",
+          "shift_ms": -67,
+          "note": "boundary_start · minor · start 67 ms earlier · overlaps आत्महत्या"
+        },
+        {
+          "action": "move",
+          "word": 58,
+          "edge": "end",
+          "shift_ms": -199,
+          "note": "boundary_end · critical · end 199 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-073",
+      "file_id": "cmv7zijww0038djpb6rpr2pb4",
+      "file_name": "978819446bd6a101e75720ef29b120d1.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 1,
+          "critical": true,
+          "note": "word_deletion · critical · 'क़रीब' gone"
+        },
+        {
+          "action": "overlap",
+          "word": 44,
+          "edge": "end",
+          "shift_ms": 135,
+          "note": "boundary_end · major · end 135 ms later · overlaps है"
+        },
+        {
+          "action": "move",
+          "word": 48,
+          "edge": "start",
+          "shift_ms": -294,
+          "note": "boundary_start · critical · start 294 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 59,
+          "text": "मिलियन",
+          "critical": true,
+          "note": "script_swap_latin_to_devanagari · critical · million -> मिलियन"
+        },
+        {
+          "action": "move",
+          "word": 63,
+          "edge": "start",
+          "shift_ms": 72,
+          "note": "boundary_start · minor · start 72 ms later"
+        },
+        {
+          "action": "move",
+          "word": 68,
+          "edge": "end",
+          "shift_ms": 50,
+          "note": "boundary_end · minor · end 50 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-074",
+      "file_id": "cmv7zi88f001fdjpbz9k2ltfj",
+      "file_name": "a3eaa9c0fa2734c0968fe73ac75cbfe5.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 3,
+          "text": "दाँधलबाज़ी",
+          "critical": true,
+          "note": "entity_spelling · critical · धाँधलबाज़ी -> दाँधलबाज़ी"
+        },
+        {
+          "action": "add_noise",
+          "after_word": 7,
+          "text": "का",
+          "start": 4.271,
+          "end": 4.56,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'का' over 4.271-4.56; the Hindi decoy also shortens 'चिंताजनक' to end at 4.271"
+        },
+        {
+          "action": "move",
+          "word": 13,
+          "edge": "start",
+          "shift_ms": 183,
+          "note": "boundary_start · critical · start 183 ms later"
+        },
+        {
+          "action": "move",
+          "word": 49,
+          "edge": "end",
+          "shift_ms": -105,
+          "note": "boundary_end · major · end 105 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 57,
+          "edge": "end",
+          "shift_ms": -77,
+          "note": "boundary_end · minor · end 77 ms earlier"
+        },
+        {
+          "action": "overlap",
+          "word": 70,
+          "edge": "end",
+          "shift_ms": 138,
+          "note": "boundary_end · major · end 138 ms later · overlaps में"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-075",
+      "file_id": "cmv7zhuqd000ldjpboscydd11",
+      "file_name": "aa63b4634fad8e2b71ca054f23cf6a4b.audio.wav",
+      "plants": [
+        {
+          "action": "overlap",
+          "word": 6,
+          "edge": "end",
+          "shift_ms": 74,
+          "note": "boundary_end · minor · end 74 ms later · overlaps वाली"
+        },
+        {
+          "action": "replace",
+          "word": 13,
+          "text": "प्राथम-",
+          "critical": true,
+          "note": "truncation_introduced · critical · प्राथमिकताओं -> प्राथम-"
+        },
+        {
+          "action": "replace",
+          "word": 16,
+          "text": "karne",
+          "critical": true,
+          "note": "script_swap_devanagari_to_latin · critical · करने -> karne"
+        },
+        {
+          "action": "move",
+          "word": 33,
+          "edge": "start",
+          "shift_ms": 174,
+          "note": "boundary_start · critical · start 174 ms later"
+        },
+        {
+          "action": "move",
+          "word": 60,
+          "edge": "start",
+          "shift_ms": 176,
+          "note": "boundary_start · critical · start 176 ms later"
+        },
+        {
+          "action": "move",
+          "word": 73,
+          "edge": "start",
+          "shift_ms": -130,
+          "note": "boundary_start · major · start 130 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-076",
+      "file_id": "cmv7zhuqc0002djpbm31cj56p",
+      "file_name": "2d0cc6139f2ba02918ecd538dc93791e.audio.wav",
+      "plants": [
+        {
+          "action": "split",
+          "word": 2,
+          "parts": [
+            "लो",
+            "गों"
+          ],
+          "at": 0.985,
+          "critical": true,
+          "note": "word_split · critical · लोगों -> लो + गों"
+        },
+        {
+          "action": "join",
+          "word": 7,
+          "count": 2,
+          "critical": true,
+          "note": "words_merged · critical · में स्वेच्छा in one chip (Hindi decoy writes 'मेंस्वेच्छा')"
+        },
+        {
+          "action": "overlap",
+          "word": 25,
+          "edge": "start",
+          "shift_ms": -116,
+          "note": "boundary_start · major · start 116 ms earlier · overlaps दो"
+        },
+        {
+          "action": "move",
+          "word": 28,
+          "edge": "end",
+          "shift_ms": 74,
+          "note": "boundary_end · minor · end 74 ms later"
+        },
+        {
+          "action": "overlap",
+          "word": 48,
+          "edge": "start",
+          "shift_ms": -173,
+          "note": "boundary_start · critical · start 173 ms earlier · overlaps इस"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-077",
+      "file_id": "cmv7zhuqd000xdjpbqz8a2o8l",
+      "file_name": "94d63c35865494e638f6efd17196cfe9.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 1,
+          "text": "बिलियन",
+          "critical": true,
+          "note": "script_swap_latin_to_devanagari · critical · billion -> बिलियन"
+        },
+        {
+          "action": "replace",
+          "word": 5,
+          "text": "होते",
+          "critical": true,
+          "note": "word_substitution · critical · होने -> होते"
+        },
+        {
+          "action": "overlap",
+          "word": 25,
+          "edge": "end",
+          "shift_ms": 127,
+          "note": "boundary_end · major · end 127 ms later · overlaps के"
+        },
+        {
+          "action": "overlap",
+          "word": 44,
+          "edge": "end",
+          "shift_ms": 63,
+          "note": "boundary_end · minor · end 63 ms later · overlaps जा"
+        },
+        {
+          "action": "move",
+          "word": 56,
+          "edge": "start",
+          "shift_ms": 262,
+          "note": "boundary_start · critical · start 262 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 59,
+          "edge": "start",
+          "shift_ms": 55,
+          "note": "boundary_start · minor · start 55 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-078",
+      "file_id": "cmv7zi88f002odjpb5xb4uro0",
+      "file_name": "a594f08246489942dd01145c38afd1a9.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 1,
+          "critical": true,
+          "note": "word_deletion · critical · 'को' gone"
+        },
+        {
+          "action": "replace",
+          "word": 6,
+          "text": "बाजपा",
+          "critical": true,
+          "note": "entity_spelling · critical · भाजपा -> बाजपा"
+        },
+        {
+          "action": "overlap",
+          "word": 9,
+          "edge": "end",
+          "shift_ms": 57,
+          "note": "boundary_end · minor · end 57 ms later · overlaps ने"
+        },
+        {
+          "action": "overlap",
+          "word": 28,
+          "edge": "end",
+          "shift_ms": 242,
+          "note": "boundary_end · critical · end 242 ms later · overlaps किया"
+        },
+        {
+          "action": "overlap",
+          "word": 56,
+          "edge": "start",
+          "shift_ms": -133,
+          "note": "boundary_start · major · start 133 ms earlier · overlaps जो"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-079",
+      "file_id": "cmv7zhuqd001adjpb6imdbnwb",
+      "file_name": "dc1af3d23cec632d4517b805ec54d5cd.audio.wav",
+      "plants": [
+        {
+          "action": "add_noise",
+          "after_word": 2,
+          "text": "तो",
+          "start": 0.74,
+          "end": 0.98,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'तो' over 0.74-0.98; the Hindi decoy also shortens 'disaster' to end at 0.74"
+        },
+        {
+          "action": "replace",
+          "word": 17,
+          "text": "बर्-",
+          "note": "truncation_introduced · critical · बर्बाद -> बर्-"
+        },
+        {
+          "action": "overlap",
+          "word": 49,
+          "edge": "start",
+          "shift_ms": -270,
+          "note": "boundary_start · critical · start 270 ms earlier · overlaps वहीं"
+        },
+        {
+          "action": "move",
+          "word": 55,
+          "edge": "start",
+          "shift_ms": 130,
+          "note": "boundary_start · major · start 130 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-080",
+      "file_id": "cmv7zijww003cdjpbj76z99td",
+      "file_name": "e129ef53ea34eefff1a5caedec5d716a.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 8,
+          "text": "sarkar",
+          "critical": true,
+          "note": "script_swap_devanagari_to_latin · critical · सरकार -> sarkar"
+        },
+        {
+          "action": "split",
+          "word": 13,
+          "parts": [
+            "दवा",
+            "ओं"
+          ],
+          "at": 5.522,
+          "critical": true,
+          "note": "word_split · critical · दवाओं -> दवा + ओं"
+        },
+        {
+          "action": "overlap",
+          "word": 27,
+          "edge": "start",
+          "shift_ms": -45,
+          "note": "boundary_start · minor · start 45 ms earlier · overlaps script"
+        },
+        {
+          "action": "move",
+          "word": 49,
+          "edge": "end",
+          "shift_ms": -60,
+          "note": "boundary_end · minor · end 60 ms earlier"
+        },
+        {
+          "action": "overlap",
+          "word": 54,
+          "edge": "start",
+          "shift_ms": -134,
+          "note": "boundary_start · major · start 134 ms earlier · overlaps anthony"
+        },
+        {
+          "action": "move",
+          "word": 60,
+          "edge": "end",
+          "shift_ms": -190,
+          "note": "boundary_end · critical · end 190 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-081",
+      "file_id": "cmv7zijww003jdjpbdm6cqr85",
+      "file_name": "ed165d075d4e65f947f51b41c2a0785c.audio.wav",
+      "plants": [
+        {
+          "action": "join",
+          "word": 1,
+          "count": 2,
+          "critical": true,
+          "note": "words_merged · critical · disposable एकल in one chip (Hindi decoy writes 'disposableएकल')"
+        },
+        {
+          "action": "move",
+          "word": 16,
+          "edge": "end",
+          "shift_ms": -186,
+          "note": "boundary_end · critical · end 186 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "replace",
+          "word": 32,
+          "text": "धूप",
+          "critical": true,
+          "note": "word_substitution · critical · रूप -> धूप"
+        },
+        {
+          "action": "overlap",
+          "word": 41,
+          "edge": "end",
+          "shift_ms": 89,
+          "note": "boundary_end · major · end 89 ms later · overlaps की"
+        },
+        {
+          "action": "overlap",
+          "word": 55,
+          "edge": "end",
+          "shift_ms": 132,
+          "note": "boundary_end · major · end 132 ms later · overlaps है"
+        },
+        {
+          "action": "overlap",
+          "word": 67,
+          "edge": "end",
+          "shift_ms": 76,
+          "note": "boundary_end · minor · end 76 ms later · overlaps की"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-082",
+      "file_id": "cmv7zi88f001kdjpbggg9qf78",
+      "file_name": "f867dd87da3055d919c127cfa8b98343.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 1,
+          "critical": true,
+          "note": "word_deletion · critical · 'कहती' gone"
+        },
+        {
+          "action": "move",
+          "word": 18,
+          "edge": "start",
+          "shift_ms": 220,
+          "note": "boundary_start · critical · start 220 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 26,
+          "edge": "end",
+          "shift_ms": 60,
+          "note": "boundary_end · minor · end 60 ms later"
+        },
+        {
+          "action": "overlap",
+          "word": 37,
+          "edge": "start",
+          "shift_ms": -113,
+          "note": "boundary_start · major · start 113 ms earlier · overlaps के"
+        },
+        {
+          "action": "replace",
+          "word": 51,
+          "text": "बिलियन",
+          "critical": true,
+          "note": "script_swap_latin_to_devanagari · critical · billion -> बिलियन"
+        },
+        {
+          "action": "move",
+          "word": 54,
+          "edge": "end",
+          "shift_ms": -192,
+          "note": "boundary_end · critical · end 192 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-083",
+      "file_id": "cmv7zhuqd000hdjpbx0nar95h",
+      "file_name": "09c82dfceb81be8253436a596f5608a5.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 2,
+          "text": "चुणावी",
+          "critical": true,
+          "note": "entity_spelling · critical · चुनावी -> चुणावी"
+        },
+        {
+          "action": "add_noise",
+          "after_word": 7,
+          "text": "भी",
+          "start": 3.593,
+          "end": 3.803,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'भी' over 3.593-3.803; the Hindi decoy also shortens 'संदेह' to end at 3.593"
+        },
+        {
+          "action": "overlap",
+          "word": 17,
+          "edge": "end",
+          "shift_ms": 287,
+          "note": "boundary_end · critical · end 287 ms later · overlaps ज़िला"
+        },
+        {
+          "action": "move",
+          "word": 30,
+          "edge": "start",
+          "shift_ms": -66,
+          "note": "boundary_start · minor · start 66 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 47,
+          "edge": "end",
+          "shift_ms": -121,
+          "note": "boundary_end · major · end 121 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-084",
+      "file_id": "cmv7zijww003rdjpbfsr43det",
+      "file_name": "11d903e1ab7e21a0796b91c36f91d6c9.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 1,
+          "text": "chri-",
+          "critical": true,
+          "note": "truncation_introduced · critical · christmas -> chri-"
+        },
+        {
+          "action": "replace",
+          "word": 15,
+          "text": "samay",
+          "critical": true,
+          "note": "script_swap_devanagari_to_latin · critical · समय -> samay"
+        },
+        {
+          "action": "move",
+          "word": 21,
+          "edge": "start",
+          "shift_ms": 115,
+          "note": "boundary_start · major · start 115 ms later"
+        },
+        {
+          "action": "overlap",
+          "word": 41,
+          "edge": "end",
+          "shift_ms": 76,
+          "note": "boundary_end · minor · end 76 ms later · overlaps के"
+        },
+        {
+          "action": "move",
+          "word": 62,
+          "edge": "start",
+          "shift_ms": 152,
+          "note": "boundary_start · critical · start 152 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-085",
+      "file_id": "cmv7zijww002wdjpbndtqyr58",
+      "file_name": "26f5538ab8c52ff1c0dd25609009db4e.audio.wav",
+      "plants": [
+        {
+          "action": "join",
+          "word": 1,
+          "count": 2,
+          "critical": true,
+          "note": "words_merged · critical · सवाल भी in one chip (Hindi decoy writes 'सवालभी')"
+        },
+        {
+          "action": "split",
+          "word": 7,
+          "parts": [
+            "fe",
+            "deral"
+          ],
+          "at": 2.835,
+          "note": "word_split · critical · federal -> fe + deral"
+        },
+        {
+          "action": "move",
+          "word": 19,
+          "edge": "start",
+          "shift_ms": 88,
+          "note": "boundary_start · major · start 88 ms later"
+        },
+        {
+          "action": "overlap",
+          "word": 34,
+          "edge": "start",
+          "shift_ms": -77,
+          "note": "boundary_start · minor · start 77 ms earlier · overlaps australian"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-086",
+      "file_id": "cmv7zi88f001zdjpbwtqrmkob",
+      "file_name": "2ea1ae8061a41770a38ffda6c0088621.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 7,
+          "text": "मैं",
+          "critical": true,
+          "note": "word_substitution · critical · हैं -> मैं"
+        },
+        {
+          "action": "move",
+          "word": 27,
+          "edge": "start",
+          "shift_ms": 155,
+          "note": "boundary_start · critical · start 155 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 32,
+          "edge": "start",
+          "shift_ms": 83,
+          "note": "boundary_start · major · start 83 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 37,
+          "edge": "end",
+          "shift_ms": -226,
+          "note": "boundary_end · critical · end 226 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "replace",
+          "word": 48,
+          "text": "थ्री",
+          "critical": true,
+          "note": "script_swap_latin_to_devanagari · critical · three -> थ्री"
+        },
+        {
+          "action": "move",
+          "word": 63,
+          "edge": "end",
+          "shift_ms": 48,
+          "note": "boundary_end · minor · end 48 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-087",
+      "file_id": "cmv7zi88f001pdjpb43tmqzlg",
+      "file_name": "3975c304695d08081efa312fba0834fd.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 1,
+          "critical": true,
+          "note": "word_deletion · critical · 'सौ' gone"
+        },
+        {
+          "action": "overlap",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": 58,
+          "note": "boundary_end · minor · end 58 ms later · overlaps चुके"
+        },
+        {
+          "action": "move",
+          "word": 19,
+          "edge": "end",
+          "shift_ms": -314,
+          "note": "boundary_end · critical · end 314 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 34,
+          "edge": "end",
+          "shift_ms": 121,
+          "note": "boundary_end · major · end 121 ms later · overlaps स्वास्थ्य"
+        },
+        {
+          "action": "overlap",
+          "word": 44,
+          "edge": "end",
+          "shift_ms": 45,
+          "note": "boundary_end · minor · end 45 ms later · overlaps wales"
+        },
+        {
+          "action": "delete",
+          "word": 53,
+          "critical": true,
+          "note": "filler_deleted · critical · 'uh' gone"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-088",
+      "file_id": "cmv7zi88f002ndjpbd35tvdsp",
+      "file_name": "44490b2fadbaef739953d30b4cea53f7.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 1,
+          "text": "दसमलव",
+          "critical": true,
+          "note": "entity_spelling · critical · दशमलव -> दसमलव"
+        },
+        {
+          "action": "add_noise",
+          "after_word": 5,
+          "text": "का",
+          "start": 2.455,
+          "end": 2.63,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'का' over 2.455-2.63; the Hindi decoy also shortens 'जबकि' to end at 2.455"
+        },
+        {
+          "action": "move",
+          "word": 28,
+          "edge": "start",
+          "shift_ms": 55,
+          "note": "boundary_start · minor · start 55 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 52,
+          "edge": "start",
+          "shift_ms": 110,
+          "note": "boundary_start · major · start 110 ms later"
+        },
+        {
+          "action": "overlap",
+          "word": 55,
+          "edge": "end",
+          "shift_ms": 225,
+          "note": "boundary_end · critical · end 225 ms later · overlaps तीन"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-089",
+      "file_id": "cmv7zijww003qdjpb11pcos8v",
+      "file_name": "56395b9e9553ea5bf67c1960deddea97.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 1,
+          "text": "प्र-",
+          "note": "truncation_introduced · critical · प्रदान -> प्र-"
+        },
+        {
+          "action": "split",
+          "word": 5,
+          "parts": [
+            "स्कू",
+            "लों"
+          ],
+          "at": 1.82,
+          "critical": true,
+          "note": "word_split · critical · स्कूलों -> स्कू + लों"
+        },
+        {
+          "action": "replace",
+          "word": 9,
+          "text": "saal",
+          "critical": true,
+          "note": "script_swap_devanagari_to_latin · critical · साल -> saal"
+        },
+        {
+          "action": "move",
+          "word": 15,
+          "edge": "start",
+          "shift_ms": -121,
+          "note": "boundary_start · major · start 121 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 26,
+          "edge": "start",
+          "shift_ms": -117,
+          "note": "boundary_start · major · start 117 ms earlier"
+        },
+        {
+          "action": "overlap",
+          "word": 37,
+          "edge": "end",
+          "shift_ms": 77,
+          "note": "boundary_end · minor · end 77 ms later · overlaps में"
+        },
+        {
+          "action": "overlap",
+          "word": 54,
+          "edge": "start",
+          "shift_ms": -179,
+          "note": "boundary_start · critical · start 179 ms earlier · overlaps dollars"
+        },
+        {
+          "action": "set_flag",
+          "flag": "multi_speaker",
+          "value": false,
+          "note": "multiple_speakers_off · the file has several speakers; served as single-speaker"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-090",
+      "file_id": "cmv7zhuqd0016djpbbd2gwwzu",
+      "file_name": "afb1b687b9b8ef3f96f809fa14622abb.audio.wav",
+      "plants": [
+        {
+          "action": "join",
+          "word": 1,
+          "count": 2,
+          "critical": true,
+          "note": "words_merged · critical · प्रतिशत की in one chip (Hindi decoy writes 'प्रतिशतकी')"
+        },
+        {
+          "action": "overlap",
+          "word": 9,
+          "edge": "end",
+          "shift_ms": 99,
+          "note": "boundary_end · major · end 99 ms later · overlaps ये"
+        },
+        {
+          "action": "replace",
+          "word": 14,
+          "text": "पार",
+          "critical": true,
+          "note": "word_substitution · critical · चार -> पार"
+        },
+        {
+          "action": "overlap",
+          "word": 26,
+          "edge": "end",
+          "shift_ms": 190,
+          "note": "boundary_end · critical · end 190 ms later · overlaps australia"
+        },
+        {
+          "action": "move",
+          "word": 49,
+          "edge": "end",
+          "shift_ms": -73,
+          "note": "boundary_end · minor · end 73 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-091",
+      "file_id": "cmv7zi88f0020djpbrqdidjpf",
+      "file_name": "b0076661f84e21330d47c5a6623b87fd.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 3,
+          "critical": true,
+          "note": "word_deletion · critical · 'में' gone"
+        },
+        {
+          "action": "replace",
+          "word": 12,
+          "text": "पचाणवे",
+          "note": "entity_spelling · critical · पचानवे -> पचाणवे"
+        },
+        {
+          "action": "overlap",
+          "word": 24,
+          "edge": "start",
+          "shift_ms": -281,
+          "note": "boundary_start · critical · start 281 ms earlier · overlaps micro"
+        },
+        {
+          "action": "move",
+          "word": 48,
+          "edge": "start",
+          "shift_ms": 76,
+          "note": "boundary_start · minor · start 76 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-092",
+      "file_id": "cmv7zhuqd000rdjpbf3snod0h",
+      "file_name": "b114f80546f646f9c0b3a8214819db12.audio.wav",
+      "plants": [
+        {
+          "action": "add_noise",
+          "after_word": 2,
+          "text": "का",
+          "start": 0.695,
+          "end": 0.89,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'का' over 0.695-0.89; the Hindi decoy also shortens 'प्रतिशत' to end at 0.695"
+        },
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "start",
+          "shift_ms": -125,
+          "note": "boundary_start · major · start 125 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 10,
+          "edge": "end",
+          "shift_ms": 212,
+          "note": "boundary_end · critical · end 212 ms later"
+        },
+        {
+          "action": "move",
+          "word": 19,
+          "edge": "end",
+          "shift_ms": -116,
+          "note": "boundary_end · major · end 116 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 26,
+          "edge": "end",
+          "shift_ms": 60,
+          "note": "boundary_end · minor · end 60 ms later · overlaps वृद्धि"
+        },
+        {
+          "action": "replace",
+          "word": 34,
+          "text": "डॉलर",
+          "critical": true,
+          "note": "script_swap_latin_to_devanagari · critical · dollar -> डॉलर"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-093",
+      "file_id": "cmv7zi88f001idjpbsuovzx3v",
+      "file_name": "cc9cd2fcfea3d74aa204b71ee227466c.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 8,
+          "text": "आपात-",
+          "critical": true,
+          "note": "truncation_introduced · critical · आपातकालीन -> आपात-"
+        },
+        {
+          "action": "move",
+          "word": 14,
+          "edge": "start",
+          "shift_ms": -117,
+          "note": "boundary_start · major · start 117 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 21,
+          "text": "sarkar",
+          "critical": true,
+          "note": "script_swap_devanagari_to_latin · critical · सरकार -> sarkar"
+        },
+        {
+          "action": "move",
+          "word": 27,
+          "edge": "end",
+          "shift_ms": -173,
+          "note": "boundary_end · critical · end 173 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 31,
+          "edge": "start",
+          "shift_ms": -210,
+          "note": "boundary_start · critical · start 210 ms earlier · overlaps चलते"
+        },
+        {
+          "action": "move",
+          "word": 48,
+          "edge": "start",
+          "shift_ms": 49,
+          "note": "boundary_start · minor · start 49 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-094",
+      "file_id": "cmv7zijww003kdjpbzflo1ffq",
+      "file_name": "ccf365af2ac71f1ffeb670cac8179010.audio.wav",
+      "plants": [
+        {
+          "action": "split",
+          "word": 3,
+          "parts": [
+            "नि",
+            "देशक"
+          ],
+          "at": 1.46,
+          "critical": true,
+          "note": "word_split · critical · निदेशक -> नि + देशक"
+        },
+        {
+          "action": "join",
+          "word": 8,
+          "count": 2,
+          "critical": true,
+          "note": "words_merged · critical · है कि in one chip (Hindi decoy writes 'हैकि')"
+        },
+        {
+          "action": "move",
+          "word": 35,
+          "edge": "end",
+          "shift_ms": -104,
+          "note": "boundary_end · major · end 104 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 46,
+          "edge": "end",
+          "shift_ms": -279,
+          "note": "boundary_end · critical · end 279 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 56,
+          "edge": "end",
+          "shift_ms": 47,
+          "note": "boundary_end · minor · end 47 ms later · overlaps response"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-095",
+      "file_id": "cmv7zhuqc0000djpbt9m40hjo",
+      "file_name": "e42e3615baa89792842024d97e6759ec.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 6,
+          "text": "जाँच",
+          "critical": true,
+          "note": "word_substitution · critical · पाँच -> जाँच"
+        },
+        {
+          "action": "replace",
+          "word": 16,
+          "text": "ड्रग्स",
+          "critical": true,
+          "note": "script_swap_latin_to_devanagari · critical · drugs -> ड्रग्स"
+        },
+        {
+          "action": "overlap",
+          "word": 30,
+          "edge": "start",
+          "shift_ms": -310,
+          "note": "boundary_start · critical · start 310 ms earlier · overlaps अंतरराष्ट्रीय"
+        },
+        {
+          "action": "move",
+          "word": 44,
+          "edge": "end",
+          "shift_ms": -66,
+          "note": "boundary_end · minor · end 66 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 65,
+          "edge": "start",
+          "shift_ms": 95,
+          "note": "boundary_start · major · start 95 ms later"
+        },
+        {
+          "action": "move",
+          "word": 69,
+          "edge": "start",
+          "shift_ms": 69,
+          "note": "boundary_start · minor · start 69 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-096",
+      "file_id": "cmv7zijww003edjpb08y3unsx",
+      "file_name": "f64f59cf9def6dda1950eef47aed2b19.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 1,
+          "critical": true,
+          "note": "word_deletion · critical · 'पहली' gone"
+        },
+        {
+          "action": "replace",
+          "word": 5,
+          "text": "घोषना",
+          "note": "entity_spelling · critical · घोषणा -> घोषना"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": -259,
+          "note": "boundary_end · critical · end 259 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 54,
+          "edge": "start",
+          "shift_ms": 95,
+          "note": "boundary_start · major · start 95 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-097",
+      "file_id": "cmv7zi88f0024djpb1kvnw755",
+      "file_name": "031a36d735d7dbd9413b7f7f39f960b0.audio.wav",
+      "plants": [
+        {
+          "action": "add_noise",
+          "after_word": 1,
+          "text": "और",
+          "start": 0.56,
+          "end": 0.72,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'और' over 0.56-0.72; the Hindi decoy also shortens 'सीमा' to end at 0.56"
+        },
+        {
+          "action": "replace",
+          "word": 6,
+          "text": "migr-",
+          "critical": true,
+          "note": "truncation_introduced · critical · migration -> migr-"
+        },
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "end",
+          "shift_ms": -70,
+          "note": "boundary_end · minor · end 70 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 31,
+          "edge": "start",
+          "shift_ms": 59,
+          "note": "boundary_start · minor · start 59 ms later"
+        },
+        {
+          "action": "overlap",
+          "word": 40,
+          "edge": "end",
+          "shift_ms": 114,
+          "note": "boundary_end · major · end 114 ms later · overlaps के"
+        },
+        {
+          "action": "move",
+          "word": 60,
+          "edge": "start",
+          "shift_ms": 257,
+          "note": "boundary_start · critical · start 257 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-098",
+      "file_id": "cmv7zijww002udjpbyiychyq4",
+      "file_name": "1360a10e7f1c81657079baa0dfdb54e1.audio.wav",
+      "plants": [
+        {
+          "action": "split",
+          "word": 4,
+          "parts": [
+            "अठा",
+            "रह"
+          ],
+          "at": 1.415,
+          "critical": true,
+          "note": "word_split · critical · अठारह -> अठा + रह"
+        },
+        {
+          "action": "join",
+          "word": 9,
+          "count": 2,
+          "critical": true,
+          "note": "words_merged · critical · कुल सत्तर in one chip (Hindi decoy writes 'कुलसत्तर')"
+        },
+        {
+          "action": "overlap",
+          "word": 14,
+          "edge": "start",
+          "shift_ms": -275,
+          "note": "boundary_start · critical · start 275 ms earlier · overlaps सर्वश्रेष्ठ"
+        },
+        {
+          "action": "overlap",
+          "word": 29,
+          "edge": "end",
+          "shift_ms": 97,
+          "note": "boundary_end · major · end 97 ms later · overlaps रजत"
+        },
+        {
+          "action": "overlap",
+          "word": 43,
+          "edge": "end",
+          "shift_ms": 73,
+          "note": "boundary_end · minor · end 73 ms later · overlaps स्वर्ण"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-099",
+      "file_id": "cmv7zi88f001ydjpbyoqhkhih",
+      "file_name": "508841027fb46c6d464f6d4eb0a902cb.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 5,
+          "text": "बढ़ाने",
+          "critical": true,
+          "note": "word_substitution · critical · बनाने -> बढ़ाने"
+        },
+        {
+          "action": "replace",
+          "word": 24,
+          "text": "karne",
+          "critical": true,
+          "note": "script_swap_devanagari_to_latin · critical · करने -> karne"
+        },
+        {
+          "action": "overlap",
+          "word": 44,
+          "edge": "end",
+          "shift_ms": 199,
+          "note": "boundary_end · critical · end 199 ms later · overlaps one"
+        },
+        {
+          "action": "overlap",
+          "word": 47,
+          "edge": "start",
+          "shift_ms": -112,
+          "note": "boundary_start · major · start 112 ms earlier · overlaps eight"
+        },
+        {
+          "action": "move",
+          "word": 54,
+          "edge": "end",
+          "shift_ms": -120,
+          "note": "boundary_end · major · end 120 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 59,
+          "edge": "start",
+          "shift_ms": 64,
+          "note": "boundary_start · minor · start 64 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-100",
+      "file_id": "cmv7zhuqd0015djpb88wcpu4r",
+      "file_name": "74a706626a7144a7913eb6e1116ad805.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 7,
+          "text": "ज़ीरो",
+          "note": "script_swap_latin_to_devanagari · critical · zero -> ज़ीरो"
+        },
+        {
+          "action": "delete",
+          "word": 14,
+          "critical": true,
+          "note": "word_deletion · critical · 'two' gone"
+        },
+        {
+          "action": "move",
+          "word": 22,
+          "edge": "end",
+          "shift_ms": -311,
+          "note": "boundary_end · critical · end 311 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 56,
+          "edge": "start",
+          "shift_ms": 48,
+          "note": "boundary_start · minor · start 48 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-101",
+      "file_id": "cmv7zi88f001vdjpb221ah8oq",
+      "file_name": "76efb7d3dec1e316aad93650bae6a2d3.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 1,
+          "text": "woould",
+          "critical": true,
+          "note": "entity_spelling · critical · would -> woould"
+        },
+        {
+          "action": "delete",
+          "word": 16,
+          "critical": true,
+          "note": "filler_deleted · critical · 'uh' gone"
+        },
+        {
+          "action": "move",
+          "word": 24,
+          "edge": "end",
+          "shift_ms": -249,
+          "note": "boundary_end · critical · end 249 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 28,
+          "edge": "end",
+          "shift_ms": 63,
+          "note": "boundary_end · minor · end 63 ms later"
+        },
+        {
+          "action": "move",
+          "word": 34,
+          "edge": "end",
+          "shift_ms": 117,
+          "note": "boundary_end · major · end 117 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-102",
+      "file_id": "cmv7zi88f001mdjpbekx81h8m",
+      "file_name": "76f9301ecef60f8dbd990a68ec7bf736.audio.wav",
+      "plants": [
+        {
+          "action": "add_noise",
+          "after_word": 3,
+          "text": "और",
+          "start": 0.93,
+          "end": 1.15,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'और' over 0.93-1.15; the Hindi decoy also shortens 'बौछार' to end at 0.93"
+        },
+        {
+          "action": "replace",
+          "word": 8,
+          "text": "संभ-",
+          "critical": true,
+          "note": "truncation_introduced · critical · संभावना -> संभ-"
+        },
+        {
+          "action": "move",
+          "word": 16,
+          "edge": "end",
+          "shift_ms": 53,
+          "note": "boundary_end · minor · end 53 ms later"
+        },
+        {
+          "action": "move",
+          "word": 23,
+          "edge": "start",
+          "shift_ms": 300,
+          "note": "boundary_start · critical · start 300 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 31,
+          "edge": "start",
+          "shift_ms": -138,
+          "note": "boundary_start · major · start 138 ms earlier · overlaps यहीं"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-103",
+      "file_id": "cmv7zijww0034djpbuu36xnq6",
+      "file_name": "ef65c784861a1d5f37385b1e3985f770.audio.wav",
+      "plants": [
+        {
+          "action": "split",
+          "word": 2,
+          "parts": [
+            "इति",
+            "हास"
+          ],
+          "at": 1.11,
+          "critical": true,
+          "note": "word_split · critical · इतिहास -> इति + हास"
+        },
+        {
+          "action": "overlap",
+          "word": 13,
+          "edge": "end",
+          "shift_ms": 76,
+          "note": "boundary_end · minor · end 76 ms later · overlaps बताते"
+        },
+        {
+          "action": "overlap",
+          "word": 41,
+          "edge": "end",
+          "shift_ms": 102,
+          "note": "boundary_end · major · end 102 ms later · overlaps australia"
+        },
+        {
+          "action": "replace",
+          "word": 50,
+          "text": "saal",
+          "critical": true,
+          "note": "script_swap_devanagari_to_latin · critical · साल -> saal"
+        },
+        {
+          "action": "overlap",
+          "word": 57,
+          "edge": "start",
+          "shift_ms": -229,
+          "note": "boundary_start · critical · start 229 ms earlier · overlaps के"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-104",
+      "file_id": "cmv7zijww002vdjpboc6mnbc0",
+      "file_name": "f0c2e583892911c1d931187db406fcf8.audio.wav",
+      "plants": [
+        {
+          "action": "join",
+          "word": 1,
+          "count": 2,
+          "critical": true,
+          "note": "words_merged · critical · ने दो in one chip (Hindi decoy writes 'नेदो')"
+        },
+        {
+          "action": "replace",
+          "word": 9,
+          "text": "कुछ",
+          "critical": true,
+          "note": "word_substitution · critical · कुल -> कुछ"
+        },
+        {
+          "action": "overlap",
+          "word": 13,
+          "edge": "end",
+          "shift_ms": 117,
+          "note": "boundary_end · major · end 117 ms later · overlaps प्रदर्शन"
+        },
+        {
+          "action": "move",
+          "word": 46,
+          "edge": "start",
+          "shift_ms": 294,
+          "note": "boundary_start · critical · start 294 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 53,
+          "edge": "end",
+          "shift_ms": -78,
+          "note": "boundary_end · minor · end 78 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 61,
+          "edge": "start",
+          "shift_ms": -91,
+          "note": "boundary_start · major · start 91 ms earlier · overlaps korea"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-105",
+      "file_id": "cmv7zhuqd000jdjpb1b45r8sh",
+      "file_name": "0a4308085ec833b314e6edcb3fd75364.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 2,
+          "critical": true,
+          "note": "word_deletion · critical · 'इस' gone"
+        },
+        {
+          "action": "replace",
+          "word": 9,
+          "text": "डॉलर",
+          "critical": true,
+          "note": "script_swap_latin_to_devanagari · critical · dollar -> डॉलर"
+        },
+        {
+          "action": "move",
+          "word": 20,
+          "edge": "start",
+          "shift_ms": 79,
+          "note": "boundary_start · minor · start 79 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 66,
+          "edge": "start",
+          "shift_ms": 136,
+          "note": "boundary_start · major · start 136 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 71,
+          "edge": "start",
+          "shift_ms": 271,
+          "note": "boundary_start · critical · start 271 ms later"
+        },
+        {
+          "action": "move",
+          "word": 76,
+          "edge": "start",
+          "shift_ms": 237,
+          "note": "boundary_start · critical · start 237 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-106",
+      "file_id": "cmv7zi88f002idjpbal61ouxu",
+      "file_name": "71316af3637ebcf888a8ff50345248a7.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 2,
+          "text": "अर्थसास्त्री",
+          "critical": true,
+          "note": "entity_spelling · critical · अर्थशास्त्री -> अर्थसास्त्री"
+        },
+        {
+          "action": "add_noise",
+          "after_word": 6,
+          "text": "ये",
+          "start": 2.395,
+          "end": 2.57,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'ये' over 2.395-2.57; the Hindi decoy also shortens 'वृद्धि' to end at 2.395"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": -55,
+          "note": "boundary_end · minor · end 55 ms earlier"
+        },
+        {
+          "action": "overlap",
+          "word": 29,
+          "edge": "end",
+          "shift_ms": 53,
+          "note": "boundary_end · minor · end 53 ms later · overlaps करके"
+        },
+        {
+          "action": "overlap",
+          "word": 36,
+          "edge": "start",
+          "shift_ms": -142,
+          "note": "boundary_start · major · start 142 ms earlier · overlaps अपने"
+        },
+        {
+          "action": "move",
+          "word": 48,
+          "edge": "end",
+          "shift_ms": -299,
+          "note": "boundary_end · critical · end 299 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-107",
+      "file_id": "cmv7zijww003ddjpbx8kywkkn",
+      "file_name": "8a78650be0964143e2d44086b903ab4c.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 3,
+          "text": "mil-",
+          "critical": true,
+          "note": "truncation_introduced · critical · million -> mil-"
+        },
+        {
+          "action": "split",
+          "word": 9,
+          "parts": [
+            "मौ",
+            "जूदा"
+          ],
+          "at": 3.565,
+          "critical": true,
+          "note": "word_split · critical · मौजूदा -> मौ + जूदा"
+        },
+        {
+          "action": "move",
+          "word": 25,
+          "edge": "start",
+          "shift_ms": 102,
+          "note": "boundary_start · major · start 102 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 38,
+          "edge": "start",
+          "shift_ms": -69,
+          "note": "boundary_start · minor · start 69 ms earlier · overlaps करना"
+        },
+        {
+          "action": "move",
+          "word": 44,
+          "edge": "end",
+          "shift_ms": -192,
+          "note": "boundary_end · critical · end 192 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 60,
+          "edge": "end",
+          "shift_ms": -82,
+          "note": "boundary_end · major · end 82 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-108",
+      "file_id": "cmv7zijww003adjpbfyu4x43k",
+      "file_name": "962a08405803e226484db1e8718db157.audio.wav",
+      "plants": [
+        {
+          "action": "join",
+          "word": 1,
+          "count": 2,
+          "note": "words_merged · critical · की राजधानी in one chip (Hindi decoy writes 'कीराजधानी')"
+        },
+        {
+          "action": "move",
+          "word": 10,
+          "edge": "end",
+          "shift_ms": -159,
+          "note": "boundary_end · critical · end 159 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 20,
+          "edge": "start",
+          "shift_ms": 64,
+          "note": "boundary_start · minor · start 64 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "replace",
+          "word": 23,
+          "text": "मैं",
+          "critical": true,
+          "note": "word_substitution · critical · हैं -> मैं"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-109",
+      "file_id": "cmv7zijww0033djpbvg3hpfaz",
+      "file_name": "f68b1dad6caa98b1e223fd731dcf7936.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 2,
+          "critical": true,
+          "note": "word_deletion · critical · 'लोग' gone"
+        },
+        {
+          "action": "replace",
+          "word": 9,
+          "text": "eerth",
+          "critical": true,
+          "note": "entity_spelling · critical · earth -> eerth"
+        },
+        {
+          "action": "move",
+          "word": 13,
+          "edge": "start",
+          "shift_ms": 50,
+          "note": "boundary_start · minor · start 50 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 28,
+          "edge": "end",
+          "shift_ms": 136,
+          "note": "boundary_end · major · end 136 ms later · overlaps पर्यावरण"
+        },
+        {
+          "action": "overlap",
+          "word": 37,
+          "edge": "end",
+          "shift_ms": 239,
+          "note": "boundary_end · critical · end 239 ms later · overlaps देशों"
+        },
+        {
+          "action": "move",
+          "word": 50,
+          "edge": "start",
+          "shift_ms": 115,
+          "note": "boundary_start · major · start 115 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-110",
+      "file_id": "cmv7zijww003odjpb5pkky3pi",
+      "file_name": "3774a415be3c3bc3feafccd1e9671b64.audio.wav",
+      "plants": [
+        {
+          "action": "add_noise",
+          "after_word": 2,
+          "text": "है",
+          "start": 0.635,
+          "end": 0.8,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'है' over 0.635-0.8; the Hindi decoy also shortens 'नौ' to end at 0.635"
+        },
+        {
+          "action": "replace",
+          "word": 37,
+          "text": "sarkar",
+          "critical": true,
+          "note": "script_swap_devanagari_to_latin · critical · सरकार -> sarkar"
+        },
+        {
+          "action": "overlap",
+          "word": 47,
+          "edge": "start",
+          "shift_ms": -45,
+          "note": "boundary_start · minor · start 45 ms earlier · overlaps दी"
+        },
+        {
+          "action": "move",
+          "word": 52,
+          "edge": "end",
+          "shift_ms": -228,
+          "note": "boundary_end · critical · end 228 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 57,
+          "edge": "start",
+          "shift_ms": -52,
+          "note": "boundary_start · minor · start 52 ms earlier"
+        },
+        {
+          "action": "overlap",
+          "word": 63,
+          "edge": "start",
+          "shift_ms": -136,
+          "note": "boundary_start · major · start 136 ms earlier · overlaps आर्थिक"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-111",
+      "file_id": "cmv7zhuqd0010djpbvvdyraa1",
+      "file_name": "6c648870603eacd15721f5e8694f8496.audio.wav",
+      "plants": [
+        {
+          "action": "overlap",
+          "word": 13,
+          "edge": "start",
+          "shift_ms": -70,
+          "note": "boundary_start · minor · start 70 ms earlier · overlaps आय"
+        },
+        {
+          "action": "move",
+          "word": 18,
+          "edge": "start",
+          "shift_ms": -129,
+          "note": "boundary_start · major · start 129 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 23,
+          "text": "sakta",
+          "critical": true,
+          "note": "script_swap_devanagari_to_latin · critical · सकता -> sakta"
+        },
+        {
+          "action": "overlap",
+          "word": 28,
+          "edge": "end",
+          "shift_ms": 220,
+          "note": "boundary_end · critical · end 220 ms later · overlaps हैं"
+        },
+        {
+          "action": "move",
+          "word": 44,
+          "edge": "end",
+          "shift_ms": -245,
+          "note": "boundary_end · critical · end 245 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "replace",
+          "word": 47,
+          "text": "डॉलर",
+          "critical": true,
+          "note": "script_swap_latin_to_devanagari · critical · dollar -> डॉलर"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-112",
+      "file_id": "cmv7zi88f001tdjpbzj1c1pb2",
+      "file_name": "aa52bb48f2f58d40c3376eb4a60ca7a1.audio.wav",
+      "plants": [
+        {
+          "action": "split",
+          "word": 1,
+          "parts": [
+            "दश",
+            "मलव"
+          ],
+          "at": 0.67,
+          "critical": true,
+          "note": "word_split · critical · दशमलव -> दश + मलव"
+        },
+        {
+          "action": "replace",
+          "word": 5,
+          "text": "पंज-",
+          "critical": true,
+          "note": "truncation_introduced · critical · पंजीकृत -> पंज-"
+        },
+        {
+          "action": "move",
+          "word": 8,
+          "edge": "start",
+          "shift_ms": 117,
+          "note": "boundary_start · major · start 117 ms later"
+        },
+        {
+          "action": "overlap",
+          "word": 37,
+          "edge": "end",
+          "shift_ms": 299,
+          "note": "boundary_end · critical · end 299 ms later · overlaps intelligence"
+        },
+        {
+          "action": "overlap",
+          "word": 58,
+          "edge": "start",
+          "shift_ms": -68,
+          "note": "boundary_start · minor · start 68 ms earlier · overlaps होने"
+        },
+        {
+          "action": "overlap",
+          "word": 71,
+          "edge": "start",
+          "shift_ms": -134,
+          "note": "boundary_start · major · start 134 ms earlier · overlaps यह"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-113",
+      "file_id": "cmv7zi88f002mdjpbd4cab972",
+      "file_name": "b5ba2acfdc142ad880f2c8152b764f41.audio.wav",
+      "plants": [
+        {
+          "action": "join",
+          "word": 1,
+          "count": 2,
+          "note": "words_merged · critical · to parliament in one chip (Hindi decoy writes 'toparliament')"
+        },
+        {
+          "action": "replace",
+          "word": 8,
+          "text": "किए",
+          "critical": true,
+          "note": "word_substitution · critical · लिए -> किए"
+        },
+        {
+          "action": "overlap",
+          "word": 15,
+          "edge": "end",
+          "shift_ms": 304,
+          "note": "boundary_end · critical · end 304 ms later · overlaps portal"
+        },
+        {
+          "action": "move",
+          "word": 44,
+          "edge": "end",
+          "shift_ms": 63,
+          "note": "boundary_end · minor · end 63 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-114",
+      "file_id": "cmv7zi88f001rdjpbxybgtp0z",
+      "file_name": "03c392504561f2b4b862da6bfe947f5c.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 1,
+          "text": "मिलियन",
+          "critical": true,
+          "note": "script_swap_latin_to_devanagari · critical · million -> मिलियन"
+        },
+        {
+          "action": "delete",
+          "word": 5,
+          "critical": true,
+          "note": "word_deletion · critical · 'वेतन' gone"
+        },
+        {
+          "action": "overlap",
+          "word": 15,
+          "edge": "start",
+          "shift_ms": -48,
+          "note": "boundary_start · minor · start 48 ms earlier · overlaps का"
+        },
+        {
+          "action": "overlap",
+          "word": 21,
+          "edge": "end",
+          "shift_ms": 86,
+          "note": "boundary_end · major · end 86 ms later · overlaps कर्मचारियों"
+        },
+        {
+          "action": "overlap",
+          "word": 40,
+          "edge": "start",
+          "shift_ms": -140,
+          "note": "boundary_start · major · start 140 ms earlier · overlaps बाद"
+        },
+        {
+          "action": "move",
+          "word": 59,
+          "edge": "start",
+          "shift_ms": 170,
+          "note": "boundary_start · critical · start 170 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-115",
+      "file_id": "cmv7zijww003bdjpbvj0g3fbl",
+      "file_name": "3108e46672279245490399153ac7aba3.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 1,
+          "text": "hungar",
+          "note": "entity_spelling · critical · hunger -> hungar"
+        },
+        {
+          "action": "add_noise",
+          "after_word": 5,
+          "text": "का",
+          "start": 2.482,
+          "end": 2.722,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'का' over 2.482-2.722; the Hindi decoy also shortens 'पैमाने' to end at 2.482"
+        },
+        {
+          "action": "overlap",
+          "word": 15,
+          "edge": "end",
+          "shift_ms": 294,
+          "note": "boundary_end · critical · end 294 ms later · overlaps यानी"
+        },
+        {
+          "action": "overlap",
+          "word": 58,
+          "edge": "start",
+          "shift_ms": -75,
+          "note": "boundary_start · minor · start 75 ms earlier · overlaps तथा"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-116",
+      "file_id": "cmv7zi88f0028djpbboxzlwum",
+      "file_name": "57060394752e21f48bd8f24017495b22.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 3,
+          "text": "स्प-",
+          "critical": true,
+          "note": "truncation_introduced · critical · स्पष्ट -> स्प-"
+        },
+        {
+          "action": "split",
+          "word": 8,
+          "parts": [
+            "ऑस्ट्रे",
+            "लियाई"
+          ],
+          "at": 3.911,
+          "critical": true,
+          "note": "word_split · critical · ऑस्ट्रेलियाई -> ऑस्ट्रे + लियाई"
+        },
+        {
+          "action": "move",
+          "word": 14,
+          "edge": "start",
+          "shift_ms": 64,
+          "note": "boundary_start · minor · start 64 ms later"
+        },
+        {
+          "action": "move",
+          "word": 21,
+          "edge": "end",
+          "shift_ms": -109,
+          "note": "boundary_end · major · end 109 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 30,
+          "edge": "end",
+          "shift_ms": -83,
+          "note": "boundary_end · major · end 83 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 42,
+          "edge": "end",
+          "shift_ms": 252,
+          "note": "boundary_end · critical · end 252 ms later · overlaps महिला"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-117",
+      "file_id": "cmv7zi88f001qdjpb7x8l36n7",
+      "file_name": "a0136bc9a8d683e54fd7fe8344760b16.audio.wav",
+      "plants": [
+        {
+          "action": "join",
+          "word": 1,
+          "count": 2,
+          "note": "words_merged · critical · से किसान in one chip (Hindi decoy writes 'सेकिसान')"
+        },
+        {
+          "action": "overlap",
+          "word": 19,
+          "edge": "end",
+          "shift_ms": 63,
+          "note": "boundary_end · minor · end 63 ms later · overlaps की"
+        },
+        {
+          "action": "replace",
+          "word": 22,
+          "text": "sarkar",
+          "critical": true,
+          "note": "script_swap_devanagari_to_latin · critical · सरकार -> sarkar"
+        },
+        {
+          "action": "move",
+          "word": 51,
+          "edge": "end",
+          "shift_ms": 304,
+          "note": "boundary_end · critical · end 304 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-118",
+      "file_id": "cmv7zijww002tdjpbp6q97zoa",
+      "file_name": "c3e8491f80c6fceaee854eafcf4720bf.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 1,
+          "critical": true,
+          "note": "word_deletion · critical · 'की' gone"
+        },
+        {
+          "action": "replace",
+          "word": 10,
+          "text": "बनाने",
+          "critical": true,
+          "note": "word_substitution · critical · बढ़ाने -> बनाने"
+        },
+        {
+          "action": "overlap",
+          "word": 40,
+          "edge": "end",
+          "shift_ms": 134,
+          "note": "boundary_end · major · end 134 ms later · overlaps कर"
+        },
+        {
+          "action": "move",
+          "word": 54,
+          "edge": "start",
+          "shift_ms": 60,
+          "note": "boundary_start · minor · start 60 ms later"
+        },
+        {
+          "action": "overlap",
+          "word": 58,
+          "edge": "end",
+          "shift_ms": 305,
+          "note": "boundary_end · critical · end 305 ms later · overlaps और"
+        },
+        {
+          "action": "move",
+          "word": 67,
+          "edge": "end",
+          "shift_ms": -112,
+          "note": "boundary_end · major · end 112 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-119",
+      "file_id": "cmv7zhuqd0019djpbdobigvwz",
+      "file_name": "d4854b57c08c4d777fef926603f4f3c4.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 2,
+          "text": "duttoon",
+          "critical": true,
+          "note": "entity_spelling · critical · dutton -> duttoon"
+        },
+        {
+          "action": "add_noise",
+          "after_word": 8,
+          "text": "और",
+          "start": 2.57,
+          "end": 2.82,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'और' over 2.57-2.82; the Hindi decoy also shortens 'तिरानवे' to end at 2.57"
+        },
+        {
+          "action": "move",
+          "word": 18,
+          "edge": "end",
+          "shift_ms": -114,
+          "note": "boundary_end · major · end 114 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 28,
+          "edge": "end",
+          "shift_ms": -178,
+          "note": "boundary_end · critical · end 178 ms earlier"
+        },
+        {
+          "action": "overlap",
+          "word": 35,
+          "edge": "end",
+          "shift_ms": 57,
+          "note": "boundary_end · minor · end 57 ms later · overlaps भी"
+        },
+        {
+          "action": "move",
+          "word": 41,
+          "edge": "end",
+          "shift_ms": -303,
+          "note": "boundary_end · critical · end 303 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-120",
+      "file_id": "cmv7zi88f001jdjpbfyllun9b",
+      "file_name": "f87e153a73257b501e1ae9dcfe4f6295.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 17,
+          "edge": "start",
+          "shift_ms": -67,
+          "note": "boundary_start · minor · start 67 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 21,
+          "text": "vict-",
+          "critical": true,
+          "note": "truncation_introduced · critical · victoria -> vict-"
+        },
+        {
+          "action": "overlap",
+          "word": 24,
+          "edge": "end",
+          "shift_ms": 74,
+          "note": "boundary_end · minor · end 74 ms later · overlaps पर"
+        },
+        {
+          "action": "move",
+          "word": 35,
+          "edge": "start",
+          "shift_ms": -133,
+          "note": "boundary_start · major · start 133 ms earlier"
+        },
+        {
+          "action": "overlap",
+          "word": 60,
+          "edge": "start",
+          "shift_ms": -278,
+          "note": "boundary_start · critical · start 278 ms earlier · overlaps एक"
+        },
+        {
+          "action": "replace",
+          "word": 76,
+          "text": "nahi",
+          "critical": true,
+          "note": "script_swap_devanagari_to_latin · critical · नहीं -> nahi"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-121",
+      "file_id": "cmv7zijww0030djpblchn6whl",
+      "file_name": "70e30f8ed29c4ee8b8a099b9c513232b.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 3,
+          "text": "मिलियन",
+          "critical": true,
+          "note": "script_swap_latin_to_devanagari · critical · million -> मिलियन"
+        },
+        {
+          "action": "overlap",
+          "word": 17,
+          "edge": "start",
+          "shift_ms": -71,
+          "note": "boundary_start · minor · start 71 ms earlier · overlaps उन्हें"
+        },
+        {
+          "action": "delete",
+          "word": 36,
+          "critical": true,
+          "note": "filler_deleted · critical · 'uh' gone"
+        },
+        {
+          "action": "move",
+          "word": 44,
+          "edge": "start",
+          "shift_ms": 294,
+          "note": "boundary_start · critical · start 294 ms later"
+        },
+        {
+          "action": "overlap",
+          "word": 47,
+          "edge": "end",
+          "shift_ms": 141,
+          "note": "boundary_end · major · end 141 ms later · overlaps chief"
+        },
+        {
+          "action": "move",
+          "word": 51,
+          "edge": "start",
+          "shift_ms": -112,
+          "note": "boundary_start · major · start 112 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-122",
+      "file_id": "cmv7zhuqd000sdjpbq81ag9v1",
+      "file_name": "9feaf565ac019a8a9fe1dae87259ce1c.audio.wav",
+      "plants": [
+        {
+          "action": "split",
+          "word": 4,
+          "parts": [
+            "दे",
+            "शभर"
+          ],
+          "at": 1.945,
+          "critical": true,
+          "note": "word_split · critical · देशभर -> दे + शभर"
+        },
+        {
+          "action": "join",
+          "word": 9,
+          "count": 2,
+          "critical": true,
+          "note": "words_merged · critical · regulation agency in one chip (Hindi decoy writes 'regulationagency')"
+        },
+        {
+          "action": "move",
+          "word": 19,
+          "edge": "start",
+          "shift_ms": -173,
+          "note": "boundary_start · critical · start 173 ms earlier"
+        },
+        {
+          "action": "overlap",
+          "word": 27,
+          "edge": "start",
+          "shift_ms": -224,
+          "note": "boundary_start · critical · start 224 ms earlier · overlaps बारह"
+        },
+        {
+          "action": "overlap",
+          "word": 30,
+          "edge": "end",
+          "shift_ms": 61,
+          "note": "boundary_end · minor · end 61 ms later · overlaps एक"
+        },
+        {
+          "action": "overlap",
+          "word": 42,
+          "edge": "start",
+          "shift_ms": -127,
+          "note": "boundary_start · major · start 127 ms earlier · overlaps साथ"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-123",
+      "file_id": "cmv7zi88f002rdjpbr5nam775",
+      "file_name": "e786967e68a931ff89fb91821fd2fbfe.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 1,
+          "critical": true,
+          "note": "word_deletion · critical · 'की' gone"
+        },
+        {
+          "action": "replace",
+          "word": 19,
+          "text": "थ्री",
+          "note": "script_swap_latin_to_devanagari · critical · three -> थ्री"
+        },
+        {
+          "action": "move",
+          "word": 31,
+          "edge": "end",
+          "shift_ms": 79,
+          "note": "boundary_end · minor · end 79 ms later"
+        },
+        {
+          "action": "move",
+          "word": 40,
+          "edge": "start",
+          "shift_ms": 118,
+          "note": "boundary_start · major · start 118 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "overlap",
+          "word": 55,
+          "edge": "end",
+          "shift_ms": 53,
+          "note": "boundary_end · minor · end 53 ms later · overlaps parenthood"
+        },
+        {
+          "action": "replace",
+          "word": 62,
+          "text": "करती",
+          "critical": true,
+          "note": "word_substitution · critical · कहती -> करती"
+        },
+        {
+          "action": "move",
+          "word": 67,
+          "edge": "start",
+          "shift_ms": 203,
+          "note": "boundary_start · critical · start 203 ms later · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "set_flag",
+          "flag": "multi_speaker",
+          "value": false,
+          "note": "multiple_speakers_off · the file has several speakers; served as single-speaker"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-124",
+      "file_id": "cmv7zhuqd000ddjpb90va22vd",
+      "file_name": "816f833bfca0b779f1b190aa63ef70f9.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 2,
+          "text": "projact",
+          "critical": true,
+          "note": "entity_spelling · critical · project -> projact"
+        },
+        {
+          "action": "add_noise",
+          "after_word": 6,
+          "text": "और",
+          "start": 2.626,
+          "end": 2.801,
+          "critical": true,
+          "note": "word_hallucination · critical · extra 'और' over 2.626-2.801; the Hindi decoy also shortens 'वर्ष' to end at 2.626"
+        },
+        {
+          "action": "move",
+          "word": 18,
+          "edge": "start",
+          "shift_ms": 168,
+          "note": "boundary_start · critical · start 168 ms later"
+        },
+        {
+          "action": "move",
+          "word": 29,
+          "edge": "end",
+          "shift_ms": -117,
+          "note": "boundary_end · major · end 117 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 48,
+          "edge": "end",
+          "shift_ms": -97,
+          "note": "boundary_end · major · end 97 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 55,
+          "edge": "start",
+          "shift_ms": 56,
+          "note": "boundary_start · minor · start 56 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "HIDEC-125",
+      "file_id": "cmv7zi88f001hdjpbbpqopxtc",
+      "file_name": "4cf7cff6f7d6a6356ea0ea5c9a00dda3.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 2,
+          "text": "शनि-",
+          "critical": true,
+          "note": "truncation_introduced · critical · शनिवार -> शनि-"
+        },
+        {
+          "action": "split",
+          "word": 10,
+          "parts": [
+            "ऑस्ट्रे",
+            "लियाई"
+          ],
+          "at": 2.394,
+          "critical": true,
+          "note": "word_split · critical · ऑस्ट्रेलियाई -> ऑस्ट्रे + लियाई"
+        },
+        {
+          "action": "move",
+          "word": 17,
+          "edge": "end",
+          "shift_ms": -52,
+          "note": "boundary_end · minor · end 52 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 20,
+          "edge": "start",
+          "shift_ms": 50,
+          "note": "boundary_start · minor · start 50 ms later"
+        },
+        {
+          "action": "move",
+          "word": 23,
+          "edge": "end",
+          "shift_ms": -129,
+          "note": "boundary_end · major · end 129 ms earlier · Hindi decoy leaves a gap here; the platform moves the touching neighbour with it"
+        },
+        {
+          "action": "move",
+          "word": 34,
+          "edge": "start",
+          "shift_ms": -174,
+          "note": "boundary_start · critical · start 174 ms earlier"
+        }
+      ]
+    }
+  ]
+}

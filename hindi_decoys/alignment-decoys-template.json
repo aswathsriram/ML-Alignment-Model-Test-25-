@@ -1,0 +1,137 @@
+{
+  "format": "align-decoys/v1",
+  "instructions": [
+    "`words` is the CORRECT alignment: i = index, w = word, s / e = start / end in seconds. Never change it.",
+    "Fill each decoy's `plants` with 3–6 deliberate mistakes an aligner can only find by listening — fewer on a short clip (even one), since mistakes must stay apart. Mix timing, text and structure mistakes.",
+    "move — {\"action\":\"move\",\"word\":12,\"edge\":\"start\"|\"end\",\"shift_ms\":-300}: moves one edge of word 12. Positive = later. A neighbour touching that edge moves with it. Use 150–700 ms (150–250 subtle, 250–450 moderate, 450+ obvious). Never push an edge past the far edge of the neighbouring word, before 0 or past the audio end.",
+    "overlap — {\"action\":\"overlap\",\"word\":12,\"edge\":\"end\",\"shift_ms\":250}: same as move, but the neighbour does NOT give way, so the two chips overlap (same-speaker overlap). The edge must end up inside the neighbour.",
+    "zero — {\"action\":\"zero\",\"word\":12}: the chip collapses to zero length at its start (\"edge\":\"end\" collapses it at its end). Only on a word at least 0.15 s long.",
+    "replace — {\"action\":\"replace\",\"word\":30,\"text\":\"…\"}: the chip and the transcript say `text` instead of the word. Use it for a word substitution, homophone, spelling slip, wrong name / entity, missing or wrong accent, wrong number form, a word from the wrong language, a truncated word written in full (or a full word written truncated), or a ((guess)) written without its brackets.",
+    "replace_unintelligible — {\"action\":\"replace_unintelligible\",\"word\":31,\"text\":\"…\"}: only on a word written (()) or ((guess)): invented text where the audio is unintelligible.",
+    "delete — {\"action\":\"delete\",\"word\":40}: the word is gone from the transcript AND has no chip (a deleted word, or a dropped filler / backchannel).",
+    "remove — {\"action\":\"remove\",\"word\":40}: the word keeps its text in the transcript but loses its chip (an aligner must add it back).",
+    "absorb — {\"action\":\"absorb\",\"word\":41,\"into\":\"previous\"|\"next\"}: the word (usually a filler) is deleted and its neighbour's chip stretches over its audio.",
+    "join — {\"action\":\"join\",\"word\":7,\"count\":2}: words 7, 8 (… up to count) become one chip — joined words, or spelled letters in one chip. Only where words are separated by spaces (NOT ja_JP or zh_CN), and only when the true boundary is at least 0.2 s away from the middle of the joined chip.",
+    "split — {\"action\":\"split\",\"word\":9,\"parts\":[\"dell'\",\"uscita\"]}: one word over several chips. `parts` is optional for a word with an apostrophe (split after it) or a hyphen (split at it); \"at\" (seconds) sets the split time of two parts.",
+    "add — {\"action\":\"add\",\"after_word\":20,\"text\":\"the\"}: an extra chip in the pause after word 20 (the pause must be at least 0.35 s). Use a word from the same sentence, e.g. a repeat of the word before.",
+    "add_noise — {\"action\":\"add_noise\",\"after_word\":20,\"text\":\"ah\",\"start\":8.1,\"end\":8.4}: an extra chip over a cough, breath or other noise; start and end in seconds are required.",
+    "set_flag — {\"action\":\"set_flag\",\"flag\":\"multi_speaker\"|\"overlap_speech\"|\"synthetic_speech\",\"value\":true}: the file is served with that answer set to `value`, the WRONG answer. `value` must be the opposite of the file's own answer in `file_answers` (synthetic_speech on non-English files only). A file whose answer is synthetic_speech true can carry no other mistake; one whose overlap_speech is true can't carry an overlap mistake.",
+    "Speakers can't be changed in word alignment, so there is no wrong-speaker mistake.",
+    "Keep mistakes at least 3 words apart — mistakes on neighbouring words are refused. Never touch a tag word (text starting with [ or <).",
+    "Mark the 1–2 most obvious mistakes \"critical\": true (must-catch). Optional \"note\" is for you only.",
+    "Instead of `plants`, a decoy may give `decoy_words`: the whole wrong alignment, [{\"w\":\"…\",\"s\":1.2,\"e\":1.5}, …] in spoken order. Every difference from `words` becomes a mistake. A word with no s / e is in the transcript with no chip; a word left out is gone from both; a retyped word changes the transcript too; extra, split and joined chips leave the transcript as it was. Copy tag words exactly. \"critical\": true on an entry makes the mistake on its word must-catch. `plants` may then hold only set_flag edits.",
+    "Return the SAME JSON with only `plants` (or `decoy_words`) filled. Do not add, remove or edit any other field."
+  ],
+  "decoys": [
+    {
+      "decoy_ref": "my-first-decoy",
+      "work_item_id": "<the file's workItemId — from a pack, or File lookup>",
+      "file_name": "<or the file name, if it has no workItemId>",
+      "plants": [
+        {
+          "action": "move",
+          "word": 12,
+          "edge": "end",
+          "shift_ms": 320,
+          "critical": true,
+          "note": "obvious"
+        },
+        {
+          "action": "overlap",
+          "word": 18,
+          "edge": "end",
+          "shift_ms": 250
+        },
+        {
+          "action": "zero",
+          "word": 24
+        },
+        {
+          "action": "replace",
+          "word": 30,
+          "text": "their"
+        },
+        {
+          "action": "replace_unintelligible",
+          "word": 34,
+          "text": "maybe"
+        },
+        {
+          "action": "delete",
+          "word": 40
+        },
+        {
+          "action": "remove",
+          "word": 46
+        },
+        {
+          "action": "absorb",
+          "word": 52,
+          "into": "previous"
+        },
+        {
+          "action": "add",
+          "after_word": 58,
+          "text": "the"
+        },
+        {
+          "action": "add_noise",
+          "after_word": 64,
+          "text": "ah",
+          "start": 21.3,
+          "end": 21.6
+        },
+        {
+          "action": "join",
+          "word": 70,
+          "count": 3
+        },
+        {
+          "action": "split",
+          "word": 78,
+          "parts": [
+            "dell'",
+            "uscita"
+          ]
+        },
+        {
+          "action": "set_flag",
+          "flag": "overlap_speech",
+          "value": true
+        }
+      ]
+    },
+    {
+      "decoy_ref": "open-form-decoy",
+      "work_item_id": "<another file's workItemId>",
+      "decoy_words": [
+        {
+          "w": "the",
+          "s": 0.5,
+          "e": 0.9
+        },
+        {
+          "w": "quick",
+          "s": 0.9,
+          "e": 1.6,
+          "critical": true
+        },
+        {
+          "w": "brawn",
+          "s": 1.6,
+          "e": 1.9
+        },
+        {
+          "w": "fox"
+        }
+      ],
+      "plants": [
+        {
+          "action": "set_flag",
+          "flag": "multi_speaker",
+          "value": true
+        }
+      ]
+    }
+  ]
+}

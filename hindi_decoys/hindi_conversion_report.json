@@ -1,0 +1,1279 @@
+{
+  "files": 125,
+  "errors": 706,
+  "by_error_type": {
+    "boundary_end": 223,
+    "boundary_start": 221,
+    "word_deletion": 27,
+    "word_substitution": 27,
+    "entity_spelling": 27,
+    "script_swap_latin_to_devanagari": 27,
+    "word_hallucination": 27,
+    "truncation_introduced": 27,
+    "word_split": 27,
+    "words_merged": 26,
+    "script_swap_devanagari_to_latin": 26,
+    "filler_deleted": 7,
+    "multiple_speakers_off": 6,
+    "acronym_collapsed": 4,
+    "truncation_completed": 4
+  },
+  "typed_file_reproduces_decoy_exactly": 46,
+  "not_exact_in_typed_form": {
+    "move under 150 ms (template range 150-700)": 296,
+    "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 100,
+    "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 27,
+    "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 27
+  },
+  "files_detail": [
+    {
+      "decoy_ref": "HIDEC-001",
+      "file_id": "cmv7zhuqd000tdjpb2mny534s",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-002",
+      "file_id": "cmv7zi88f002kdjpbi1izm8rc",
+      "errors": 5,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 2,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-003",
+      "file_id": "cmv7zijww002zdjpbrzmtewig",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1,
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-004",
+      "file_id": "cmv7zijww003idjpb74t17epr",
+      "errors": 5,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-005",
+      "file_id": "cmv7zhuqc0001djpb0rj2pb4e",
+      "errors": 8,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1,
+        "move under 150 ms (template range 150-700)": 2,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-006",
+      "file_id": "cmv7zhuqd000edjpbosqlja1b",
+      "errors": 5,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 2,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-007",
+      "file_id": "cmv7zi88f0025djpbw7402fe6",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3,
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-008",
+      "file_id": "cmv7zhuqd0014djpbzsyxrxp2",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-009",
+      "file_id": "cmv7zi88f0026djpbc49jadve",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 2,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-010",
+      "file_id": "cmv7zi88f002cdjpbmquqm9i2",
+      "errors": 5,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "move under 150 ms (template range 150-700)": 2,
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-011",
+      "file_id": "cmv7zi88f002adjpbxulqexc7",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1,
+        "move under 150 ms (template range 150-700)": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-012",
+      "file_id": "cmv7zhuqd000mdjpbqsyrw9o1",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-013",
+      "file_id": "cmv7zi88f002ddjpbsdxdygwx",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1,
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-014",
+      "file_id": "cmv7zhuqd0006djpbgyrphvhh",
+      "errors": 5,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-015",
+      "file_id": "cmv7zhuqd001cdjpbdoz4uxxx",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 2,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-016",
+      "file_id": "cmv7zi88f002edjpbpnrvordn",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-017",
+      "file_id": "cmv7zhuqd000qdjpb194ud0ff",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 2,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-018",
+      "file_id": "cmv7zi88f002qdjpbgux09a13",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-019",
+      "file_id": "cmv7zi88f0029djpb7d0m4x51",
+      "errors": 5,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1,
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-020",
+      "file_id": "cmv7zi88f002jdjpbt20q059x",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-021",
+      "file_id": "cmv7zhuqc0004djpbdshjbbi4",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 2,
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-022",
+      "file_id": "cmv7zhuqd000ndjpb4hrp0pn8",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-023",
+      "file_id": "cmv7zhuqd000udjpbjl3kfcyi",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1,
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-024",
+      "file_id": "cmv7zijww002ydjpbxi5uzasp",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 2,
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-025",
+      "file_id": "cmv7zhuqd001bdjpbesgqgcd4",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-026",
+      "file_id": "cmv7zi88f001sdjpb7yab9mso",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-027",
+      "file_id": "cmv7zi88f002fdjpb0zq4vmdn",
+      "errors": 4,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 1,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-028",
+      "file_id": "cmv7zijww0036djpbpf5acffm",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1,
+        "move under 150 ms (template range 150-700)": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-029",
+      "file_id": "cmv7zhuqd0008djpbx3e9go5s",
+      "errors": 5,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 2,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-030",
+      "file_id": "cmv7zijww003mdjpbxyudcetf",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "move under 150 ms (template range 150-700)": 2,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-031",
+      "file_id": "cmv7zhuqd001ddjpbrw75l79v",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-032",
+      "file_id": "cmv7zijww003ldjpb8jtk8717",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1,
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-033",
+      "file_id": "cmv7zi88f002pdjpbc3kw5btl",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 2,
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-034",
+      "file_id": "cmv7zijww003vdjpb9f3nhgvv",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-035",
+      "file_id": "cmv7zijww003xdjpb1dfa0su6",
+      "errors": 5,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-036",
+      "file_id": "cmv7zijww0039djpbgokp830k",
+      "errors": 4,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-037",
+      "file_id": "cmv7zi88f0023djpbml7cwdcr",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1,
+        "move under 150 ms (template range 150-700)": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-038",
+      "file_id": "cmv7zhuqd000adjpbymdert5v",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-039",
+      "file_id": "cmv7zi88f001gdjpb9eq894t6",
+      "errors": 5,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-040",
+      "file_id": "cmv7zhuqc0003djpb7chij6fi",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "move under 150 ms (template range 150-700)": 2,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-041",
+      "file_id": "cmv7zhuqd000ydjpbulx9zfg2",
+      "errors": 4,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-042",
+      "file_id": "cmv7zi88f001wdjpbz4b0ecoj",
+      "errors": 5,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1,
+        "move under 150 ms (template range 150-700)": 2,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-043",
+      "file_id": "cmv7zijww0031djpblbi8k73k",
+      "errors": 5,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 2,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-044",
+      "file_id": "cmv7zijww003sdjpbmnig66in",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "move under 150 ms (template range 150-700)": 2,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-045",
+      "file_id": "cmv7zi88f002hdjpb066u0bgt",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-046",
+      "file_id": "cmv7zhuqd000idjpbk87fjbsx",
+      "errors": 8,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1,
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-047",
+      "file_id": "cmv7zhuqd000gdjpb8x7gqz3j",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 2,
+        "move under 150 ms (template range 150-700)": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-048",
+      "file_id": "cmv7zhuqd0018djpb2qybtzol",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-049",
+      "file_id": "cmv7zhuqd000kdjpbwovjgw35",
+      "errors": 4,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-050",
+      "file_id": "cmv7zijww002sdjpb9us6busp",
+      "errors": 8,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1,
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-051",
+      "file_id": "cmv7zhuqd000wdjpbbejflleg",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-052",
+      "file_id": "cmv7zijww003hdjpbdixg2q5m",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "move under 150 ms (template range 150-700)": 2,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-053",
+      "file_id": "cmv7zijww003udjpbnlq2sv1k",
+      "errors": 4,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-054",
+      "file_id": "cmv7zhuqd000vdjpba1vrbee3",
+      "errors": 5,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1,
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-055",
+      "file_id": "cmv7zhuqd0012djpb7dtn0bvv",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-056",
+      "file_id": "cmv7zijww003tdjpbugxur0w9",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-057",
+      "file_id": "cmv7zijww003wdjpb0tw4ifge",
+      "errors": 4,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "move under 150 ms (template range 150-700)": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-058",
+      "file_id": "cmv7zi88f0021djpb8wfdo4xv",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-059",
+      "file_id": "cmv7zi88f001odjpbq4e28pyq",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-060",
+      "file_id": "cmv7zi88f001xdjpb44w24he6",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 2,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-061",
+      "file_id": "cmv7zi88f001edjpbp4ym0nzr",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1,
+        "move under 150 ms (template range 150-700)": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-062",
+      "file_id": "cmv7zhuqd0011djpb7uvis0dj",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-063",
+      "file_id": "cmv7zi88f001udjpbjux4pfks",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 2,
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-064",
+      "file_id": "cmv7zijww003gdjpb8f4sa9hs",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-065",
+      "file_id": "cmv7zi88f002ldjpbau9j3gnq",
+      "errors": 8,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-066",
+      "file_id": "cmv7zijww0032djpb4l9e833y",
+      "errors": 5,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 2,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-067",
+      "file_id": "cmv7zi88f001ldjpb3q2tbubl",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1,
+        "move under 150 ms (template range 150-700)": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-068",
+      "file_id": "cmv7zhuqd000bdjpb01pmv968",
+      "errors": 5,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-069",
+      "file_id": "cmv7zijww003fdjpbc28xtp4e",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-070",
+      "file_id": "cmv7zi88f002bdjpb7sz0kw9p",
+      "errors": 5,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "move under 150 ms (template range 150-700)": 2,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-071",
+      "file_id": "cmv7zi88f001ndjpbvmvrf2ol",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-072",
+      "file_id": "cmv7zijww0035djpb2o96r3bu",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1,
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-073",
+      "file_id": "cmv7zijww0038djpb6rpr2pb4",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-074",
+      "file_id": "cmv7zi88f001fdjpbz9k2ltfj",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "move under 150 ms (template range 150-700)": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-075",
+      "file_id": "cmv7zhuqd000ldjpboscydd11",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-076",
+      "file_id": "cmv7zhuqc0002djpbm31cj56p",
+      "errors": 5,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1,
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-077",
+      "file_id": "cmv7zhuqd000xdjpbqz8a2o8l",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-078",
+      "file_id": "cmv7zi88f002odjpb5xb4uro0",
+      "errors": 5,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-079",
+      "file_id": "cmv7zhuqd001adjpb6imdbnwb",
+      "errors": 4,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "move under 150 ms (template range 150-700)": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-080",
+      "file_id": "cmv7zijww003cdjpbj76z99td",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-081",
+      "file_id": "cmv7zijww003jdjpbdm6cqr85",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1,
+        "move under 150 ms (template range 150-700)": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-082",
+      "file_id": "cmv7zi88f001kdjpbggg9qf78",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 2,
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-083",
+      "file_id": "cmv7zhuqd000hdjpbx0nar95h",
+      "errors": 5,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "move under 150 ms (template range 150-700)": 2,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-084",
+      "file_id": "cmv7zijww003rdjpbfsr43det",
+      "errors": 5,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-085",
+      "file_id": "cmv7zijww002wdjpbndtqyr58",
+      "errors": 4,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1,
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-086",
+      "file_id": "cmv7zi88f001zdjpbwtqrmkob",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 3,
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-087",
+      "file_id": "cmv7zi88f001pdjpb43tmqzlg",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-088",
+      "file_id": "cmv7zi88f002ndjpbd35tvdsp",
+      "errors": 5,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "move under 150 ms (template range 150-700)": 2,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-089",
+      "file_id": "cmv7zijww003qdjpb11pcos8v",
+      "errors": 8,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-090",
+      "file_id": "cmv7zhuqd0016djpbbd2gwwzu",
+      "errors": 5,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1,
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-091",
+      "file_id": "cmv7zi88f0020djpbrqdidjpf",
+      "errors": 4,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-092",
+      "file_id": "cmv7zhuqd000rdjpbf3snod0h",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-093",
+      "file_id": "cmv7zi88f001idjpbsuovzx3v",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 2,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-094",
+      "file_id": "cmv7zijww003kdjpbzflo1ffq",
+      "errors": 5,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1,
+        "move under 150 ms (template range 150-700)": 2,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-095",
+      "file_id": "cmv7zhuqc0000djpbt9m40hjo",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-096",
+      "file_id": "cmv7zijww003edjpb08y3unsx",
+      "errors": 4,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-097",
+      "file_id": "cmv7zi88f0024djpb1kvnw755",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-098",
+      "file_id": "cmv7zijww002udjpbyiychyq4",
+      "errors": 5,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1,
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-099",
+      "file_id": "cmv7zi88f001ydjpbyoqhkhih",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-100",
+      "file_id": "cmv7zhuqd0015djpb88wcpu4r",
+      "errors": 4,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 1,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-101",
+      "file_id": "cmv7zi88f001vdjpb221ah8oq",
+      "errors": 5,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-102",
+      "file_id": "cmv7zi88f001mdjpbekx81h8m",
+      "errors": 5,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "move under 150 ms (template range 150-700)": 2,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-103",
+      "file_id": "cmv7zijww0034djpbuu36xnq6",
+      "errors": 5,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-104",
+      "file_id": "cmv7zijww002vdjpboc6mnbc0",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1,
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-105",
+      "file_id": "cmv7zhuqd000jdjpb1b45r8sh",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 2,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-106",
+      "file_id": "cmv7zi88f002idjpbal61ouxu",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-107",
+      "file_id": "cmv7zijww003ddjpbx8kywkkn",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-108",
+      "file_id": "cmv7zijww003adjpbfyu4x43k",
+      "errors": 4,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 2,
+        "move under 150 ms (template range 150-700)": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-109",
+      "file_id": "cmv7zijww0033djpbvg3hpfaz",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-110",
+      "file_id": "cmv7zijww003odjpb5pkky3pi",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-111",
+      "file_id": "cmv7zhuqd0010djpbvvdyraa1",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 2,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-112",
+      "file_id": "cmv7zi88f001tdjpbzj1c1pb2",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-113",
+      "file_id": "cmv7zi88f002mdjpbd4cab972",
+      "errors": 4,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-114",
+      "file_id": "cmv7zi88f001rdjpbxybgtp0z",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-115",
+      "file_id": "cmv7zijww003bdjpbvj0g3fbl",
+      "errors": 4,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "move under 150 ms (template range 150-700)": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-116",
+      "file_id": "cmv7zi88f0028djpbboxzlwum",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-117",
+      "file_id": "cmv7zi88f001qdjpb7x8l36n7",
+      "errors": 4,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1,
+        "move under 150 ms (template range 150-700)": 1
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-118",
+      "file_id": "cmv7zijww002tdjpbp6q97zoa",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-119",
+      "file_id": "cmv7zhuqd0019djpbdobigvwz",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-120",
+      "file_id": "cmv7zi88f001jdjpbfyllun9b",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-121",
+      "file_id": "cmv7zijww0030djpblchn6whl",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-122",
+      "file_id": "cmv7zhuqd000sdjpbq81ag9v1",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": true,
+      "not_exact": {
+        "join where a true boundary is under 0.2 s from the chip's middle (template asks for 0.2 s)": 1,
+        "move under 150 ms (template range 150-700)": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-123",
+      "file_id": "cmv7zi88f002rdjpbr5nam775",
+      "errors": 8,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 2
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-124",
+      "file_id": "cmv7zhuqd000ddjpb90va22vd",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "extra word cut out of the word before it, not in a pause (add needs 0.35 s): sent as add_noise": 1,
+        "move under 150 ms (template range 150-700)": 3
+      }
+    },
+    {
+      "decoy_ref": "HIDEC-125",
+      "file_id": "cmv7zi88f001hdjpbbpqopxtc",
+      "errors": 6,
+      "typed_reproduces_decoy_exactly": false,
+      "not_exact": {
+        "move under 150 ms (template range 150-700)": 3,
+        "move away from a touching neighbour: the platform moves the neighbour too, the Hindi decoy leaves a gap": 2
+      }
+    }
+  ]
+}
