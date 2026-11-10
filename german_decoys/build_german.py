@@ -22,14 +22,10 @@ Error types — the Hindi set, plus German ones from Forced_Alignment_Guidelines
   spoken_form                    replace: reduction written in full or the full word written reduced (Part 5)
   truncation_introduced          replace: a complete word written as cut off (4.3)
   truncation_completed           replace: a cut-off word written in full (4.3)
-  compound_split                 split: a compound over two chips (Part 5: never split a compound)
-  number_split                   split: a number word over several chips (Part 5: a number is one word)
-  words_merged                   join 2 (2.3: one segment holds two words)
-  acronym_collapsed              join: spelled letters in one chip (4.4)
   unintelligible_invented        replace_unintelligible: a word invented over (()) / ((guess)) (2.5)
-  guess_unbracketed              replace: a ((guess)) written without its brackets (2.5)
   multiple_speakers_off          set_flag multi_speaker = false on files with several speakers
-No capitalisation, punctuation or digit errors. 1-6 mistakes per file as its length allows, at least 3 words apart,
+No capitalisation, punctuation, digit, split or join errors (the split / join candidates below are kept but
+not used: they are not in SHARE). 1-6 mistakes per file as its length allows, at least 3 words apart,
 never on a tag ([...] / <...>); timings never touched on (( )) words; 1-2 "critical": true per file.
 
 Run    : python german_decoys/build_german.py [deliveries.zip|folder] [template.json]
@@ -41,10 +37,10 @@ HERE = pathlib.Path(__file__).resolve().parent
 SEED = 20261110
 SIZES = [("minor", 40, 80), ("major", 100, 300), ("critical", 310, 700)]
 TOUCH, KEEP, MIN_PAUSE, GAP_WORDS = 0.0005, 0.03, 0.35, 3
-SHARE = {"move": 0.40, "overlap": 0.04, "zero": 0.03, "delete": 0.06, "remove": 0.06, "add": 0.06, "absorb": 0.01,
-         "word_substitution": 0.06, "spelling_slip": 0.04, "umlaut_replaced": 0.05, "spoken_form": 0.02,
-         "truncation_introduced": 0.03, "truncation_completed": 0.01, "compound_split": 0.04, "number_split": 0.02,
-         "words_merged": 0.03, "acronym_collapsed": 0.01, "unintelligible": 0.01}
+SHARE = {"move": 0.40, "overlap": 0.04, "zero": 0.03, "delete": 0.08, "remove": 0.08, "add": 0.08, "absorb": 0.01,
+         "word_substitution": 0.08, "spelling_slip": 0.04, "umlaut_replaced": 0.07, "spoken_form": 0.02,
+         "truncation_introduced": 0.03, "truncation_completed": 0.01, "unintelligible": 0.01}
+ACCENT_LABEL, REDUCE_LABEL = "umlaut_replaced", "spoken_form"     # language modules (build_portuguese.py) relabel these
 FILLERS = {"äh", "ähm", "öh", "hm", "hmm", "mm", "mhm"}
 HOMOPHONES = [("das", "dass"), ("den", "denn"), ("wen", "wenn"), ("man", "mann"), ("im", "ihm"), ("in", "ihn"),
               ("seit", "seid"), ("war", "wahr"), ("mehr", "meer"), ("viel", "fiel"), ("ist", "isst"), ("wieder", "wider"),
@@ -299,12 +295,12 @@ def candidates(V, dur, kind, rng, ctx, size=None):
         for k in range(n):
             t = None if fixed(words[k]) else umlaut(words[k])
             if t:
-                add({"action": "replace", "word": k, "text": t}, {k}, "umlaut_replaced", "major", f"{words[k]} -> {t}")
+                add({"action": "replace", "word": k, "text": t}, {k}, ACCENT_LABEL, "major", f"{words[k]} -> {t}")
     elif kind == "spoken_form":
         for k in range(n):
             if words[k] in REDUCE:
                 t = REDUCE[words[k]]
-                add({"action": "replace", "word": k, "text": t}, {k}, "spoken_form", "major",
+                add({"action": "replace", "word": k, "text": t}, {k}, REDUCE_LABEL, "major",
                     f"said '{words[k]}', written '{t}'")
     elif kind == "truncation_introduced":
         for k in range(n):
@@ -365,14 +361,10 @@ def candidates(V, dur, kind, rng, ctx, size=None):
                 t = rng.choice(content)
                 add({"action": "replace_unintelligible", "word": k, "text": t}, {k}, "unintelligible_invented",
                     "critical", f"(()) written as an invented '{t}'")
-            elif re.fullmatch(r"\(\(.+\)\)", w):
-                if rng.random() < 0.5 and content:
-                    t = rng.choice(content)
-                    add({"action": "replace_unintelligible", "word": k, "text": t}, {k}, "unintelligible_invented",
-                        "critical", f"{w} written as an invented '{t}'")
-                else:
-                    add({"action": "replace", "word": k, "text": w[2:-2]}, {k}, "guess_unbracketed", "major",
-                        f"{w} written without its brackets")
+            elif re.fullmatch(r"\(\(.+\)\)", w) and content:
+                t = rng.choice([c for c in content if c != w[2:-2]] or content)
+                add({"action": "replace_unintelligible", "word": k, "text": t}, {k}, "unintelligible_invented",
+                    "critical", f"{w} written as an invented '{t}'")
     return out
 
 
@@ -382,7 +374,7 @@ def obviousness(p, sev):
     return {"critical": 600, "major": 350, "minor": 100}[sev] + (50 if p["action"] in ("delete", "add", "replace") else 0)
 
 
-def main(src, template):
+def main(src, template, out_dir=HERE, name="german"):
     tpl = json.loads(pathlib.Path(template).read_text(encoding="utf-8"))
     items = list(load(src))
     vocab = set()
@@ -440,8 +432,8 @@ def main(src, template):
             etypes["multiple_speakers_off"] += 1
         decoys.append({"decoy_ref": task, "work_item_id": wid, "file_name": task, "plants": out})
     res = {"format": tpl["format"], "instructions": tpl["instructions"], "decoys": decoys}
-    (HERE / "german_decoy_plants.json").write_text(json.dumps(res, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    (HERE / "german_skipped.json").write_text(json.dumps(skipped, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (pathlib.Path(out_dir) / f"{name}_decoy_plants.json").write_text(json.dumps(res, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (pathlib.Path(out_dir) / f"{name}_skipped.json").write_text(json.dumps(skipped, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     per = collections.Counter(len(d["plants"]) for d in decoys)
     acts = collections.Counter(p["action"] for d in decoys for p in d["plants"])
     print(f"{len(items)} work items -> {len(decoys)} decoys, {len(skipped)} skipped | {sum(acts.values())} plants")

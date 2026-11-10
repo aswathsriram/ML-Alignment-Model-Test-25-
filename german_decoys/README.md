@@ -12,6 +12,7 @@ checked against both blind passes. Each file gets 1-6 mistakes depending on its 
 on a tag, and 1-2 are marked critical.
 Boundary sizes: minor 40-80 ms, major 100-300 ms, critical 310-700 ms.
 
-Error types are the Hindi set plus German guideline ones: umlaut/ß written ae/oe/ue/ss, compound split, number word
-split, spoken reductions (ist/is, nicht/nich, eine/'ne), homophones (das/dass, seite/saite ...), (( )) handling.
-No capitalisation, punctuation or digit errors.
+Errors: boundary mismatch (move / overlap / zero), missing segment, missing word, hallucinated word, absorbed filler,
+plus German guideline text errors: homophones (das/dass, seite/saite ...), umlaut/ß written ae/oe/ue/ss, spelling slips,
+spoken reductions (ist/is, nicht/nich, eine/'ne), cut-off words, invented text over (( )).
+No capitalisation, punctuation, digit, split or join errors.
