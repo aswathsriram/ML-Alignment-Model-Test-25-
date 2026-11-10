@@ -1,0 +1,6190 @@
+{
+  "format": "align-decoys/v1",
+  "instructions": [
+    "`words` is the CORRECT alignment: i = index, w = word, s / e = start / end in seconds. Never change it.",
+    "Fill each decoy's `plants` with 3–6 deliberate mistakes an aligner can only find by listening — fewer on a short clip (even one), since mistakes must stay apart. Mix timing, text and structure mistakes.",
+    "move — {\"action\":\"move\",\"word\":12,\"edge\":\"start\"|\"end\",\"shift_ms\":-300}: moves one edge of word 12. Positive = later. A neighbour touching that edge moves with it. Use 150–700 ms (150–250 subtle, 250–450 moderate, 450+ obvious). Never push an edge past the far edge of the neighbouring word, before 0 or past the audio end.",
+    "overlap — {\"action\":\"overlap\",\"word\":12,\"edge\":\"end\",\"shift_ms\":250}: same as move, but the neighbour does NOT give way, so the two chips overlap (same-speaker overlap). The edge must end up inside the neighbour.",
+    "zero — {\"action\":\"zero\",\"word\":12}: the chip collapses to zero length at its start (\"edge\":\"end\" collapses it at its end). Only on a word at least 0.15 s long.",
+    "replace — {\"action\":\"replace\",\"word\":30,\"text\":\"…\"}: the chip and the transcript say `text` instead of the word. Use it for a word substitution, homophone, spelling slip, wrong name / entity, missing or wrong accent, wrong number form, a word from the wrong language, a truncated word written in full (or a full word written truncated), or a ((guess)) written without its brackets.",
+    "replace_unintelligible — {\"action\":\"replace_unintelligible\",\"word\":31,\"text\":\"…\"}: only on a word written (()) or ((guess)): invented text where the audio is unintelligible.",
+    "delete — {\"action\":\"delete\",\"word\":40}: the word is gone from the transcript AND has no chip (a deleted word, or a dropped filler / backchannel).",
+    "remove — {\"action\":\"remove\",\"word\":40}: the word keeps its text in the transcript but loses its chip (an aligner must add it back).",
+    "absorb — {\"action\":\"absorb\",\"word\":41,\"into\":\"previous\"|\"next\"}: the word (usually a filler) is deleted and its neighbour's chip stretches over its audio.",
+    "join — {\"action\":\"join\",\"word\":7,\"count\":2}: words 7, 8 (… up to count) become one chip — joined words, or spelled letters in one chip. Only where words are separated by spaces (NOT ja_JP or zh_CN), and only when the true boundary is at least 0.2 s away from the middle of the joined chip.",
+    "split — {\"action\":\"split\",\"word\":9,\"parts\":[\"dell'\",\"uscita\"]}: one word over several chips. `parts` is optional for a word with an apostrophe (split after it) or a hyphen (split at it); \"at\" (seconds) sets the split time of two parts.",
+    "add — {\"action\":\"add\",\"after_word\":20,\"text\":\"the\"}: an extra chip in the pause after word 20 (the pause must be at least 0.35 s). Use a word from the same sentence, e.g. a repeat of the word before.",
+    "add_noise — {\"action\":\"add_noise\",\"after_word\":20,\"text\":\"ah\",\"start\":8.1,\"end\":8.4}: an extra chip over a cough, breath or other noise; start and end in seconds are required.",
+    "set_flag — {\"action\":\"set_flag\",\"flag\":\"multi_speaker\"|\"overlap_speech\"|\"synthetic_speech\",\"value\":true}: the file is served with that answer set to `value`, the WRONG answer. `value` must be the opposite of the file's own answer in `file_answers` (synthetic_speech on non-English files only). A file whose answer is synthetic_speech true can carry no other mistake; one whose overlap_speech is true can't carry an overlap mistake.",
+    "Speakers can't be changed in word alignment, so there is no wrong-speaker mistake.",
+    "Keep mistakes at least 3 words apart — mistakes on neighbouring words are refused. Never touch a tag word (text starting with [ or <).",
+    "Mark the 1–2 most obvious mistakes \"critical\": true (must-catch). Optional \"note\" is for you only.",
+    "Instead of `plants`, a decoy may give `decoy_words`: the whole wrong alignment, [{\"w\":\"…\",\"s\":1.2,\"e\":1.5}, …] in spoken order. Every difference from `words` becomes a mistake. A word with no s / e is in the transcript with no chip; a word left out is gone from both; a retyped word changes the transcript too; extra, split and joined chips leave the transcript as it was. Copy tag words exactly. \"critical\": true on an entry makes the mistake on its word must-catch. `plants` may then hold only set_flag edits.",
+    "Return the SAME JSON with only `plants` (or `decoy_words`) filled. Do not add, remove or edit any other field."
+  ],
+  "decoys": [
+    {
+      "decoy_ref": "b568dd41-783e-44a8-a3b2-248299602e6d_076.wav",
+      "file_id": "e6049b58-7f3b-44be-861b-b75022c30f55",
+      "file_name": "b568dd41-783e-44a8-a3b2-248299602e6d_076.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": -80,
+          "critical": true,
+          "note": "boundary mismatch · minor · siete start 80 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "b8e303f3-25a6-459d-b626-e51eb7a83202_1375.wav",
+      "file_id": "6ace6a95-f4c7-4b8e-8664-15718a1465d9",
+      "file_name": "b8e303f3-25a6-459d-b626-e51eb7a83202_1375.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "178c8542-d40b-4870-b9d5-82b13472400b_044.wav",
+      "file_id": "5f88c129-7d2c-447f-9549-f8efa92810c3",
+      "file_name": "178c8542-d40b-4870-b9d5-82b13472400b_044.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 50,
+          "note": "boundary mismatch · minor · el start 50 ms late"
+        },
+        {
+          "action": "add",
+          "after_word": 4,
+          "text": "el",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'el' in the 0.41 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "abc945b4-add1-4bd0-8c19-32fddbaa62fa_222.wav",
+      "file_id": "651def4c-d402-4cf3-8d1e-92d9f39ae294",
+      "file_name": "abc945b4-add1-4bd0-8c19-32fddbaa62fa_222.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing segment · critical · treinta loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "77d9ec7b-aa0f-43a6-b56a-ebbfb5cbbc9a_124.wav",
+      "file_id": "fd75fc09-d44d-4211-a6ef-55a84d3e5244",
+      "file_name": "77d9ec7b-aa0f-43a6-b56a-ebbfb5cbbc9a_124.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "critical": true,
+          "note": "missing segment · critical · comenzamos loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": -170,
+          "note": "boundary mismatch · major · ochenta end 170 ms early"
+        },
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "start",
+          "shift_ms": 390,
+          "note": "boundary mismatch · critical · mañana start 390 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "aeef7138-3d71-4c5d-a384-78a3985e8c5a_730.wav",
+      "file_id": "13c618eb-c6bf-46ad-8a60-ef90e95fec01",
+      "file_name": "aeef7138-3d71-4c5d-a384-78a3985e8c5a_730.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 120,
+          "critical": true,
+          "note": "boundary mismatch · major · mañana start 120 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "2e7c06db-4515-4f8c-98ac-0017b8147084_080.wav",
+      "file_id": "dea1f816-24e0-4792-a720-c3d16063fd5d",
+      "file_name": "2e7c06db-4515-4f8c-98ac-0017b8147084_080.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": 460,
+          "critical": true,
+          "note": "boundary mismatch · critical · decanato start 460 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "d325fdbe-6dc9-4611-90c8-51e6b90a7596_020.wav",
+      "file_id": "0f1f615c-781d-4d3c-865d-e1c9a04e72f1",
+      "file_name": "d325fdbe-6dc9-4611-90c8-51e6b90a7596_020.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "40d87b38-dd0b-4fd5-b328-559970751977_035.wav",
+      "file_id": "3fd98857-c6aa-4442-a5db-7bd74008d483",
+      "file_name": "40d87b38-dd0b-4fd5-b328-559970751977_035.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing segment · critical · uno loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "d3901f9e-2338-4349-8603-61ea0034e0b0_007.wav",
+      "file_id": "2ee37bc8-0673-48da-a293-8c3d1bbbf63a",
+      "file_name": "d3901f9e-2338-4349-8603-61ea0034e0b0_007.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "4c6619b1-87f4-432a-b42a-d72ee967dfea_095.wav",
+      "file_id": "b557bf1c-e51d-4944-a890-f89c99346f8f",
+      "file_name": "4c6619b1-87f4-432a-b42a-d72ee967dfea_095.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": 540,
+          "critical": true,
+          "note": "boundary mismatch · critical · nueve start 540 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "86ef5fcf-dde7-4830-a976-d27c5fddab6c_189.wav",
+      "file_id": "dc5fd4b7-d022-4b4d-a0a3-77434c227c55",
+      "file_name": "86ef5fcf-dde7-4830-a976-d27c5fddab6c_189.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": 140,
+          "critical": true,
+          "note": "boundary mismatch · major · reyes start 140 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "7599d5ee-d6c0-47e9-bd4e-fb188864265b_120.wav",
+      "file_id": "417bfd21-b2b3-45f4-a8c5-5c4454123b9d",
+      "file_name": "7599d5ee-d6c0-47e9-bd4e-fb188864265b_120.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": -40,
+          "critical": true,
+          "note": "boundary mismatch · minor · de start 40 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "33d2cf9f-b692-4599-90f9-b70e512302ed_249.wav",
+      "file_id": "bd4150ad-141d-46e3-9d52-af5d471c10f6",
+      "file_name": "33d2cf9f-b692-4599-90f9-b70e512302ed_249.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing segment · critical · otra loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "start",
+          "shift_ms": 70,
+          "note": "boundary mismatch · minor · serpa start 70 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "18f4346c-5d0a-46d7-a062-14dce8a74ac2_424.wav",
+      "file_id": "3a079887-5d32-47bf-9241-767f39002071",
+      "file_name": "18f4346c-5d0a-46d7-a062-14dce8a74ac2_424.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "note": "missing segment · major · de loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": -550,
+          "critical": true,
+          "note": "boundary mismatch · critical · gracia end 550 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "363e786f-cb63-4d33-9629-8dda3b0e44b1_016.wav",
+      "file_id": "5c74ad28-5239-4332-b461-ede291dd27e3",
+      "file_name": "363e786f-cb63-4d33-9629-8dda3b0e44b1_016.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 3,
+          "critical": true,
+          "note": "missing segment · critical · traslado loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 8,
+          "edge": "start",
+          "shift_ms": 120,
+          "note": "boundary mismatch · major · toma start 120 ms late"
+        },
+        {
+          "action": "move",
+          "word": 13,
+          "edge": "end",
+          "shift_ms": 490,
+          "note": "boundary mismatch · critical · gesell end 490 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "c8a67aa5-1509-404e-aa85-e4a502d5fd49_636.wav",
+      "file_id": "f1cd652b-59a1-4c62-bc3f-9e608c9c17da",
+      "file_name": "c8a67aa5-1509-404e-aa85-e4a502d5fd49_636.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": 60,
+          "critical": true,
+          "note": "boundary mismatch · minor · eh start 60 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "05f5988b-2618-446b-8635-f74aac5c31f1_238.wav",
+      "file_id": "17238ad8-c68d-4892-a18e-02878e850bbc",
+      "file_name": "05f5988b-2618-446b-8635-f74aac5c31f1_238.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": -50,
+          "note": "boundary mismatch · minor · nos end 50 ms early"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "end",
+          "shift_ms": -140,
+          "critical": true,
+          "note": "boundary mismatch · major · cincuenta end 140 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "aa1bed88-cd11-4a51-9113-c434614af8f4_041.wav",
+      "file_id": "e22cf232-30f9-4d96-823a-e5907ac05113",
+      "file_name": "aa1bed88-cd11-4a51-9113-c434614af8f4_041.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "critical": true,
+          "note": "missing segment · critical · punto loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": -220,
+          "note": "boundary mismatch · major · cuatro end 220 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "32287f67-7dfa-431a-b9bb-67cba8f8c545_005.wav",
+      "file_id": "8d47d7b1-2d22-4102-ab24-66c428e9e1bc",
+      "file_name": "32287f67-7dfa-431a-b9bb-67cba8f8c545_005.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": -360,
+          "note": "boundary mismatch · critical · no start 360 ms early"
+        },
+        {
+          "action": "remove",
+          "word": 7,
+          "critical": true,
+          "note": "missing segment · critical · merecen loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 12,
+          "edge": "start",
+          "shift_ms": 180,
+          "note": "boundary mismatch · major · mañana start 180 ms late"
+        },
+        {
+          "action": "move",
+          "word": 15,
+          "edge": "end",
+          "shift_ms": -80,
+          "note": "boundary mismatch · minor · mensualmente end 80 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "4e59017c-40b3-4b78-aa97-dbbdf2ce6178_302.wav",
+      "file_id": "1537c285-3032-4c5c-93e3-2dfeef804fc0",
+      "file_name": "4e59017c-40b3-4b78-aa97-dbbdf2ce6178_302.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": 320,
+          "critical": true,
+          "note": "boundary mismatch · critical · santiago start 320 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "33f754b6-ba8f-4fb1-81ed-3135022c43ec_043.wav",
+      "file_id": "9f604920-a072-4ba3-8914-d17065773980",
+      "file_name": "33f754b6-ba8f-4fb1-81ed-3135022c43ec_043.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "bd58f7a2-335a-45f0-b52f-8dd5c0a0b9ca_3157.wav",
+      "file_id": "066ee36e-285c-4e01-8060-f4d75b620d8f",
+      "file_name": "bd58f7a2-335a-45f0-b52f-8dd5c0a0b9ca_3157.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 2,
+          "text": "importante",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'importante' in the 0.71 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "c7cd5121-7eec-499e-913e-b2a27e607090_905.wav",
+      "file_id": "701a27c9-5905-4482-8d7c-48d3a7663617",
+      "file_name": "c7cd5121-7eec-499e-913e-b2a27e607090_905.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 3,
+          "text": "especial",
+          "note": "hallucinated segment · major · extra 'especial' in the 0.52 s pause after it"
+        },
+        {
+          "action": "remove",
+          "word": 7,
+          "critical": true,
+          "note": "missing segment · critical · con loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": -240,
+          "note": "boundary mismatch · major · guaira end 240 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "655786d0-0812-4e26-a068-640691f77016_533.wav",
+      "file_id": "2d13f373-be12-4fe8-899a-86a4748761a0",
+      "file_name": "655786d0-0812-4e26-a068-640691f77016_533.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": 50,
+          "critical": true,
+          "note": "boundary mismatch · minor · villavicencio end 50 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "38828d6e-8990-4bd2-a188-b7638be17e97_048.wav",
+      "file_id": "2f4e0a97-012a-47b9-bd5c-12fcf5da38ef",
+      "file_name": "38828d6e-8990-4bd2-a188-b7638be17e97_048.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "39ea1091-9932-4c7e-a734-8b5c00a1a9cb_106.wav",
+      "file_id": "dab8700f-cfbc-45c2-a4e6-b08bbae5f65a",
+      "file_name": "39ea1091-9932-4c7e-a734-8b5c00a1a9cb_106.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": -530,
+          "critical": true,
+          "note": "boundary mismatch · critical · tlacotepec end 530 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "7e5855b6-1466-4c89-81ca-b1f378d01679_020.wav",
+      "file_id": "2920b2ba-2716-42fb-bccd-a9708435e68c",
+      "file_name": "7e5855b6-1466-4c89-81ca-b1f378d01679_020.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing segment · critical · el loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "end",
+          "shift_ms": 590,
+          "note": "boundary mismatch · critical · la end 590 ms late"
+        },
+        {
+          "action": "add",
+          "after_word": 7,
+          "text": "los",
+          "note": "hallucinated segment · major · extra 'los' in the 0.37 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "3dc1bc7e-f90c-45cf-9c61-143d69728c96_076.wav",
+      "file_id": "bf58dd7c-25ea-48c0-8fc2-07a8ab13abd6",
+      "file_name": "3dc1bc7e-f90c-45cf-9c61-143d69728c96_076.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "start",
+          "shift_ms": 130,
+          "note": "boundary mismatch · major · lima start 130 ms late"
+        },
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "end",
+          "shift_ms": -50,
+          "note": "boundary mismatch · minor · lima end 50 ms early"
+        },
+        {
+          "action": "add",
+          "after_word": 10,
+          "text": "familia",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'familia' in the 0.38 s pause after it"
+        },
+        {
+          "action": "add",
+          "after_word": 14,
+          "text": "secundaria",
+          "note": "hallucinated segment · major · extra 'secundaria' in the 0.40 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 19,
+          "edge": "start",
+          "shift_ms": -170,
+          "note": "boundary mismatch · major · de start 170 ms early"
+        },
+        {
+          "action": "remove",
+          "word": 23,
+          "critical": true,
+          "note": "missing segment · critical · lima loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "178c8542-d40b-4870-b9d5-82b13472400b_060.wav",
+      "file_id": "b93519f4-d3dd-432f-b026-3a86c4ee12f7",
+      "file_name": "178c8542-d40b-4870-b9d5-82b13472400b_060.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": 160,
+          "note": "boundary mismatch · major · seguimos end 160 ms late"
+        },
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "end",
+          "shift_ms": -380,
+          "critical": true,
+          "note": "boundary mismatch · critical · dos end 380 ms early"
+        },
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "start",
+          "shift_ms": 70,
+          "note": "boundary mismatch · minor · por start 70 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "48cc4e94-b2f6-455a-b0c3-7c3ca5f7bf3e_050.wav",
+      "file_id": "8f189028-3933-4e23-a8e1-e07d2f025d16",
+      "file_name": "48cc4e94-b2f6-455a-b0c3-7c3ca5f7bf3e_050.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "83acf181-78ba-46c5-b1d7-ed3a0d58f7f9_012.wav",
+      "file_id": "82537468-c67b-4f1b-997a-b8ef484cb650",
+      "file_name": "83acf181-78ba-46c5-b1d7-ed3a0d58f7f9_012.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 3,
+          "critical": true,
+          "note": "missing segment · critical · con loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "4326251f-794e-4e0c-96c5-60b3aa50ca06_155.wav",
+      "file_id": "48b06162-fee9-4c4a-8dd4-5618fc369b9a",
+      "file_name": "4326251f-794e-4e0c-96c5-60b3aa50ca06_155.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 0,
+          "text": "de",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'de' in the 0.42 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "b9d88963-1379-489a-a55e-d48eee630b18_072.wav",
+      "file_id": "3efc0a83-f0b1-4bd5-adcb-2a320d3cc6c1",
+      "file_name": "b9d88963-1379-489a-a55e-d48eee630b18_072.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "4f5bb8ce-c1f8-4667-a7a0-f123695d9ff4_187.wav",
+      "file_id": "e859f03d-d7d5-4821-8dbb-a913150033dc",
+      "file_name": "4f5bb8ce-c1f8-4667-a7a0-f123695d9ff4_187.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "start",
+          "shift_ms": 70,
+          "critical": true,
+          "note": "boundary mismatch · minor · chipiona start 70 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "178c8542-d40b-4870-b9d5-82b13472400b_053.wav",
+      "file_id": "35256dc6-03c6-4a02-b7a6-d8e4610e66ca",
+      "file_name": "178c8542-d40b-4870-b9d5-82b13472400b_053.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 0,
+          "text": "doce",
+          "note": "hallucinated segment · major · extra 'doce' in the 0.35 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "end",
+          "shift_ms": -50,
+          "note": "boundary mismatch · minor · eh end 50 ms early"
+        },
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "end",
+          "shift_ms": -450,
+          "critical": true,
+          "note": "boundary mismatch · critical · fracciones end 450 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "f97e4d9d-a23a-44f4-841f-fa0cc60f806a_014.wav",
+      "file_id": "8701f9ae-278e-43d3-9ee4-543d6a5c10ef",
+      "file_name": "f97e4d9d-a23a-44f4-841f-fa0cc60f806a_014.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 120,
+          "note": "boundary mismatch · major · es start 120 ms late"
+        },
+        {
+          "action": "add",
+          "after_word": 3,
+          "text": "mil",
+          "note": "hallucinated segment · major · extra 'mil' in the 0.87 s pause after it"
+        },
+        {
+          "action": "remove",
+          "word": 7,
+          "critical": true,
+          "note": "missing segment · critical · siete loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "6a865b03-4149-44f8-a69f-f2517eeb3587_164.wav",
+      "file_id": "294c59ac-2134-40c5-8739-c5c39877dd04",
+      "file_name": "6a865b03-4149-44f8-a69f-f2517eeb3587_164.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 380,
+          "note": "boundary mismatch · critical · de start 380 ms late"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "start",
+          "shift_ms": 390,
+          "critical": true,
+          "note": "boundary mismatch · critical · maragua start 390 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "363476a0-a6be-4140-84cc-81d31dca9597_862.wav",
+      "file_id": "194688e7-e6df-40c1-9a63-5cfbdd5b8ae2",
+      "file_name": "363476a0-a6be-4140-84cc-81d31dca9597_862.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing segment · critical · victoria loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "1c42d563-8b7d-4015-bba0-bb8e6b5a5339_102.wav",
+      "file_id": "c3efcccd-d2e3-448a-b7f9-824ab4b46960",
+      "file_name": "1c42d563-8b7d-4015-bba0-bb8e6b5a5339_102.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 80,
+          "critical": true,
+          "note": "boundary mismatch · minor · perder start 80 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "71e1cc48-af6e-4c97-a4cf-39c0869557fc_301.wav",
+      "file_id": "62fa1fe6-4fd3-4640-9412-b034d8c7041b",
+      "file_name": "71e1cc48-af6e-4c97-a4cf-39c0869557fc_301.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": 150,
+          "critical": true,
+          "note": "boundary mismatch · major · una start 150 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "312bfb17-244d-468a-b1d4-caa77eb634ef_028.wav",
+      "file_id": "58328b5f-b378-4085-9a97-707dc4920871",
+      "file_name": "312bfb17-244d-468a-b1d4-caa77eb634ef_028.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": -40,
+          "critical": true,
+          "note": "boundary mismatch · minor · udt end 40 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "a7919f4a-9c77-4480-b0be-ffb71c6affec_098.wav",
+      "file_id": "3915b656-198a-4cb3-86da-ea1c27ca7602",
+      "file_name": "a7919f4a-9c77-4480-b0be-ffb71c6affec_098.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 2,
+          "critical": true,
+          "note": "missing segment · critical · punto loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "end",
+          "shift_ms": -260,
+          "note": "boundary mismatch · major · box end 260 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "29ebbf24-5f1a-43e2-ba60-424eb855c43d_909.wav",
+      "file_id": "4392b959-2c44-4c6c-85b2-b1fd36fcabab",
+      "file_name": "29ebbf24-5f1a-43e2-ba60-424eb855c43d_909.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": 270,
+          "critical": true,
+          "note": "boundary mismatch · major · que end 270 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "fea031d8-e84b-47b9-9ec3-c91ba2ac12ac_192.wav",
+      "file_id": "87bd503f-beb0-4b2c-936b-2c34d8dce3bc",
+      "file_name": "fea031d8-e84b-47b9-9ec3-c91ba2ac12ac_192.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": 50,
+          "note": "boundary mismatch · minor · ah end 50 ms late"
+        },
+        {
+          "action": "remove",
+          "word": 3,
+          "critical": true,
+          "note": "missing segment · critical · anchura loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "16434fdb-495f-49a6-9a4e-206bcf27c518_124.wav",
+      "file_id": "9c2e3543-3607-4bf4-97f3-0915373c6656",
+      "file_name": "16434fdb-495f-49a6-9a4e-206bcf27c518_124.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 190,
+          "note": "boundary mismatch · major · dama start 190 ms late"
+        },
+        {
+          "action": "remove",
+          "word": 3,
+          "critical": true,
+          "note": "missing segment · critical · dos loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "16b11860-edea-43ca-894b-38d549a49cc0_160.wav",
+      "file_id": "2f263b10-49aa-449d-9524-b9e65497ad57",
+      "file_name": "16b11860-edea-43ca-894b-38d549a49cc0_160.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 40,
+          "note": "boundary mismatch · minor · la start 40 ms late"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": 50,
+          "note": "boundary mismatch · minor · salida end 50 ms late"
+        },
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "end",
+          "shift_ms": -60,
+          "critical": true,
+          "note": "boundary mismatch · minor · santa end 60 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "662f1714-efab-48da-98c1-8893c9881c74_004.wav",
+      "file_id": "9784e3bc-6049-452f-8f0a-26186dfa8657",
+      "file_name": "662f1714-efab-48da-98c1-8893c9881c74_004.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "c31119a4-3344-4dae-99b7-e962c16c4b6c_209.wav",
+      "file_id": "a25b074a-3bfe-4cf4-ad8a-cb0546f85e0f",
+      "file_name": "c31119a4-3344-4dae-99b7-e962c16c4b6c_209.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "733ecec6-2006-4372-a94c-1bf1b2ac2482_294.wav",
+      "file_id": "59b76ca1-5e5a-433f-9125-757616d1ca09",
+      "file_name": "733ecec6-2006-4372-a94c-1bf1b2ac2482_294.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing segment · critical · en loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": -370,
+          "note": "boundary mismatch · critical · rochester end 370 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "ff35b39c-e69d-49b1-880a-521cb6f7463e_763.wav",
+      "file_id": "7c0058a9-8fd2-4a39-99be-3ea7f9fc04d3",
+      "file_name": "ff35b39c-e69d-49b1-880a-521cb6f7463e_763.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "11a37ab0-83ce-44f9-bdf5-952da7e56fb7_042.wav",
+      "file_id": "74127a8f-7c5e-4e6c-9ca1-a873e220924a",
+      "file_name": "11a37ab0-83ce-44f9-bdf5-952da7e56fb7_042.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": 100,
+          "note": "boundary mismatch · major · y end 100 ms late"
+        },
+        {
+          "action": "add",
+          "after_word": 4,
+          "text": "pasa",
+          "note": "hallucinated segment · major · extra 'pasa' in the 0.60 s pause after it"
+        },
+        {
+          "action": "remove",
+          "word": 9,
+          "critical": true,
+          "note": "missing segment · critical · lista loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 13,
+          "edge": "end",
+          "shift_ms": 240,
+          "note": "boundary mismatch · major · hay end 240 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "418a5c35-43ce-469a-97a3-f8f375a6119f_191.wav",
+      "file_id": "6312ea98-a357-4f8c-9929-6b2e8f18f960",
+      "file_name": "418a5c35-43ce-469a-97a3-f8f375a6119f_191.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "end",
+          "shift_ms": -620,
+          "critical": true,
+          "note": "boundary mismatch · critical · alimentar end 620 ms early"
+        },
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "end",
+          "shift_ms": -370,
+          "note": "boundary mismatch · critical · hombres end 370 ms early"
+        },
+        {
+          "action": "move",
+          "word": 12,
+          "edge": "start",
+          "shift_ms": 50,
+          "note": "boundary mismatch · minor · que start 50 ms late"
+        },
+        {
+          "action": "remove",
+          "word": 15,
+          "critical": true,
+          "note": "missing segment · critical · contaron loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 20,
+          "edge": "end",
+          "shift_ms": 220,
+          "note": "boundary mismatch · major · hombres end 220 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "8e9fd612-f10c-4744-b278-062cec267fcc_117.wav",
+      "file_id": "415644b8-19fb-4896-968c-8ded44aa27fe",
+      "file_name": "8e9fd612-f10c-4744-b278-062cec267fcc_117.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "4eec07a3-fa86-475c-b590-d5df45e4b4e6_159.wav",
+      "file_id": "3baa6c8d-e1eb-4af3-9a0e-0b57590cadcc",
+      "file_name": "4eec07a3-fa86-475c-b590-d5df45e4b4e6_159.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "end",
+          "shift_ms": -400,
+          "note": "boundary mismatch · critical · d end 400 ms early"
+        },
+        {
+          "action": "remove",
+          "word": 5,
+          "critical": true,
+          "note": "missing segment · critical · fit loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "efb4bfc2-23de-45fb-a63c-2f9e8aabbaf2_069.wav",
+      "file_id": "943588fd-3418-4e5f-b16e-6ceb25932c67",
+      "file_name": "efb4bfc2-23de-45fb-a63c-2f9e8aabbaf2_069.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "end",
+          "shift_ms": -410,
+          "critical": true,
+          "note": "boundary mismatch · critical · veintinueve end 410 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "3eef63a1-416d-4e44-904f-202d484fb6da_122.wav",
+      "file_id": "82d90698-d848-4527-a341-3281e17f9f57",
+      "file_name": "3eef63a1-416d-4e44-904f-202d484fb6da_122.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "end",
+          "shift_ms": -370,
+          "critical": true,
+          "note": "boundary mismatch · critical · cinco end 370 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "c394e074-da92-4aac-b1dd-f1b90d464a40_107.wav",
+      "file_id": "acf6a39e-b2ef-4bf8-bd5f-d487aa593956",
+      "file_name": "c394e074-da92-4aac-b1dd-f1b90d464a40_107.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing segment · critical · escocia loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "96f4aaf9-8a96-4ad6-88fc-930ed017431a_322.wav",
+      "file_id": "7609c792-92dd-4a4d-8892-f748fd0c40f7",
+      "file_name": "96f4aaf9-8a96-4ad6-88fc-930ed017431a_322.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 80,
+          "note": "boundary mismatch · minor · o start 80 ms late"
+        },
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "start",
+          "shift_ms": 360,
+          "critical": true,
+          "note": "boundary mismatch · critical · high start 360 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "a7834884-2603-4078-945a-9c7922c9e9f7_160.wav",
+      "file_id": "b396d385-644e-4c71-9fff-a993ef66eab7",
+      "file_name": "a7834884-2603-4078-945a-9c7922c9e9f7_160.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 40,
+          "note": "boundary mismatch · minor · que start 40 ms late"
+        },
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "start",
+          "shift_ms": 270,
+          "note": "boundary mismatch · major · cuatro start 270 ms late"
+        },
+        {
+          "action": "add",
+          "after_word": 6,
+          "text": "seis",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'seis' in the 0.35 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "2cfbe7eb-d3b6-4d3c-9972-682e48995f71_011.wav",
+      "file_id": "811c5828-55bc-4953-89f1-50e71f4b5468",
+      "file_name": "2cfbe7eb-d3b6-4d3c-9972-682e48995f71_011.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 0,
+          "text": "gol",
+          "note": "hallucinated segment · major · extra 'gol' in the 0.39 s pause after it"
+        },
+        {
+          "action": "remove",
+          "word": 4,
+          "critical": true,
+          "note": "missing segment · critical · torres loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "a6312ac5-6b22-4b61-8ed6-27bfec2b3b82_491.wav",
+      "file_id": "44f22ee8-98fd-4316-8469-79912cf5dc63",
+      "file_name": "a6312ac5-6b22-4b61-8ed6-27bfec2b3b82_491.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "d6458001-2bf5-42e3-abc3-56110a707d82_345.wav",
+      "file_id": "b971d7c2-470b-480e-8a34-2f0ab3e8667c",
+      "file_name": "d6458001-2bf5-42e3-abc3-56110a707d82_345.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 1,
+          "text": "certeza",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'certeza' in the 1.32 s pause after it"
+        },
+        {
+          "action": "add",
+          "after_word": 6,
+          "text": "esperanza",
+          "note": "hallucinated segment · major · extra 'esperanza' in the 0.96 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": -500,
+          "critical": true,
+          "note": "boundary mismatch · critical · sendero end 500 ms early"
+        },
+        {
+          "action": "move",
+          "word": 15,
+          "edge": "end",
+          "shift_ms": -330,
+          "note": "boundary mismatch · critical · vasto end 330 ms early"
+        },
+        {
+          "action": "add",
+          "after_word": 18,
+          "text": "tahuantinsuyo",
+          "note": "hallucinated segment · major · extra 'tahuantinsuyo' in the 0.73 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 23,
+          "edge": "start",
+          "shift_ms": 170,
+          "note": "boundary mismatch · major · incas start 170 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "05d903af-c944-4270-acf4-3a758daa2647_661.wav",
+      "file_id": "78776020-3c4c-47ad-9d1d-d38034164ea0",
+      "file_name": "05d903af-c944-4270-acf4-3a758daa2647_661.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": 40,
+          "note": "boundary mismatch · minor · los end 40 ms late"
+        },
+        {
+          "action": "move",
+          "word": 8,
+          "edge": "end",
+          "shift_ms": -190,
+          "note": "boundary mismatch · major · dios end 190 ms early"
+        },
+        {
+          "action": "remove",
+          "word": 13,
+          "critical": true,
+          "note": "missing segment · critical · mil loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "59ed502f-af21-4543-883b-720f2acaa002_773.wav",
+      "file_id": "0038e802-524a-4c6e-a701-8120394f94ed",
+      "file_name": "59ed502f-af21-4543-883b-720f2acaa002_773.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "end",
+          "shift_ms": -350,
+          "note": "boundary mismatch · critical · destinaba end 350 ms early"
+        },
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "end",
+          "shift_ms": -130,
+          "note": "boundary mismatch · major · turismo end 130 ms early"
+        },
+        {
+          "action": "remove",
+          "word": 11,
+          "critical": true,
+          "note": "missing segment · critical · pocos loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "4fc180c8-0550-4d82-b766-cf3b18971bd3_044.wav",
+      "file_id": "903f2eec-034a-43a3-b343-d01567749e19",
+      "file_name": "4fc180c8-0550-4d82-b766-cf3b18971bd3_044.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 2,
+          "critical": true,
+          "note": "missing segment · critical · ladito loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "end",
+          "shift_ms": 50,
+          "note": "boundary mismatch · minor · matamoros end 50 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "414efb69-6765-4e0e-bb04-a9777bb21f8a_067.wav",
+      "file_id": "0cbee194-e3c6-45dc-8c5d-807d9284d9cc",
+      "file_name": "414efb69-6765-4e0e-bb04-a9777bb21f8a_067.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": 180,
+          "critical": true,
+          "note": "boundary mismatch · major · m. end 180 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "5e782313-cd73-4aad-917a-7959b53a01d0_053.wav",
+      "file_id": "57a2baa9-05ee-4326-9043-382f75936861",
+      "file_name": "5e782313-cd73-4aad-917a-7959b53a01d0_053.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": -80,
+          "note": "boundary mismatch · minor · yo end 80 ms early"
+        },
+        {
+          "action": "add",
+          "after_word": 4,
+          "text": "bueno",
+          "note": "hallucinated segment · major · extra 'bueno' in the 0.62 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 10,
+          "edge": "end",
+          "shift_ms": -500,
+          "critical": true,
+          "note": "boundary mismatch · critical · cinco end 500 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "5b3c3a4b-ff04-4cf4-93ae-392e1de39249_074.wav",
+      "file_id": "92f33cd4-c69a-424d-8908-84b2d765e012",
+      "file_name": "5b3c3a4b-ff04-4cf4-93ae-392e1de39249_074.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 2,
+          "critical": true,
+          "note": "missing segment · critical · treinta loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "6b8ec67b-8327-442b-957f-76d7a12c1f78_739.wav",
+      "file_id": "4ee91ee1-5841-4788-affb-89e4ec13f950",
+      "file_name": "6b8ec67b-8327-442b-957f-76d7a12c1f78_739.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "critical": true,
+          "note": "missing segment · critical · numero loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": 290,
+          "note": "boundary mismatch · major · y end 290 ms late"
+        },
+        {
+          "action": "add",
+          "after_word": 8,
+          "text": "doce",
+          "note": "hallucinated segment · major · extra 'doce' in the 0.71 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "aeb68159-7acf-4686-a07e-963d5e409423_454.wav",
+      "file_id": "c7b9b20f-b717-49b3-97a3-688b75d9b199",
+      "file_name": "aeb68159-7acf-4686-a07e-963d5e409423_454.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": 70,
+          "critical": true,
+          "note": "boundary mismatch · minor · en start 70 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "441530fb-aeba-4bb6-8fa5-77c1f7f133c3_458.wav",
+      "file_id": "61627d16-27bc-4cde-a159-fbbbd565a142",
+      "file_name": "441530fb-aeba-4bb6-8fa5-77c1f7f133c3_458.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "end",
+          "shift_ms": 50,
+          "note": "boundary mismatch · minor · en end 50 ms late"
+        },
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "end",
+          "shift_ms": -340,
+          "note": "boundary mismatch · critical · ganaste end 340 ms early"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "start",
+          "shift_ms": -240,
+          "note": "boundary mismatch · major · en start 240 ms early"
+        },
+        {
+          "action": "move",
+          "word": 16,
+          "edge": "start",
+          "shift_ms": -450,
+          "critical": true,
+          "note": "boundary mismatch · critical · apelaciones start 450 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "02525bf3-492d-4a5f-98df-dd22b6885644_174.wav",
+      "file_id": "c5f995e5-a97d-484a-b3bb-3d5306481d3f",
+      "file_name": "02525bf3-492d-4a5f-98df-dd22b6885644_174.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "critical": true,
+          "note": "missing segment · critical · dominicana loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "84f76289-be9e-4252-848b-75d6614a843d_068.wav",
+      "file_id": "e410c5f7-7f96-481b-b2e7-706f4c0a926e",
+      "file_name": "84f76289-be9e-4252-848b-75d6614a843d_068.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": -150,
+          "critical": true,
+          "note": "boundary mismatch · major · bosque end 150 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "e9dcf3cd-b48c-42a2-93e5-a80f9f66b796_025.wav",
+      "file_id": "21825f50-d78a-47b8-84fb-30ff04144ea7",
+      "file_name": "e9dcf3cd-b48c-42a2-93e5-a80f9f66b796_025.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "critical": true,
+          "note": "missing segment · critical · electricidad loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": -40,
+          "note": "boundary mismatch · minor · del end 40 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "0048a8a8-f223-4487-9eae-dd3efc5eafef_228.wav",
+      "file_id": "ee55b896-d672-4f43-bf09-bd41f0571718",
+      "file_name": "0048a8a8-f223-4487-9eae-dd3efc5eafef_228.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": -310,
+          "critical": true,
+          "note": "boundary mismatch · critical · jota start 310 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "70270b28-431a-4953-ae96-3c31ebe24377_001.wav",
+      "file_id": "546a9989-2bf0-480a-822e-303ab3f0c026",
+      "file_name": "70270b28-431a-4953-ae96-3c31ebe24377_001.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 2,
+          "critical": true,
+          "note": "missing segment · critical · fisica loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "start",
+          "shift_ms": -50,
+          "note": "boundary mismatch · minor · de start 50 ms early"
+        },
+        {
+          "action": "move",
+          "word": 10,
+          "edge": "start",
+          "shift_ms": 180,
+          "note": "boundary mismatch · major · mañana start 180 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "3941f47b-73de-4672-9787-49aff2781bde_011.wav",
+      "file_id": "92b672cf-5d86-4522-ba83-6d1ef4594b13",
+      "file_name": "3941f47b-73de-4672-9787-49aff2781bde_011.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 1,
+          "text": "el",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'el' in the 0.50 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "start",
+          "shift_ms": 190,
+          "note": "boundary mismatch · major · veinte start 190 ms late"
+        },
+        {
+          "action": "move",
+          "word": 12,
+          "edge": "start",
+          "shift_ms": -390,
+          "note": "boundary mismatch · critical · pesa start 390 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "473163bb-d710-4208-a941-7f614e0a39a7_246.wav",
+      "file_id": "50cffb85-295d-496f-8d5d-73d5d52f52ed",
+      "file_name": "473163bb-d710-4208-a941-7f614e0a39a7_246.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "41cdc9ed-63f3-4af3-b2cb-c320ff853297_012.wav",
+      "file_id": "4b8014b3-82a1-426c-8411-6ac4081b726c",
+      "file_name": "41cdc9ed-63f3-4af3-b2cb-c320ff853297_012.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "critical": true,
+          "note": "missing segment · critical · dos loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": -80,
+          "note": "boundary mismatch · minor · una end 80 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "32e2a7a1-7ae8-42a0-bd05-2308b1a00d0b_164.wav",
+      "file_id": "854475df-7eb8-45a0-84a7-c7b087b159fc",
+      "file_name": "32e2a7a1-7ae8-42a0-bd05-2308b1a00d0b_164.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": 200,
+          "critical": true,
+          "note": "boundary mismatch · major · moya start 200 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "c32ffc31-9bd7-4468-b15c-efb927c9a7a3_060.wav",
+      "file_id": "81fe0cd3-5e99-4846-aaa7-16b89e722826",
+      "file_name": "c32ffc31-9bd7-4468-b15c-efb927c9a7a3_060.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing segment · critical · c. loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "start",
+          "shift_ms": -70,
+          "note": "boundary mismatch · minor · n. start 70 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "9c49bf35-4517-48e9-9888-abc522c08f1e_339.wav",
+      "file_id": "250f8fe6-43d3-4d1e-acfe-d55569f53997",
+      "file_name": "9c49bf35-4517-48e9-9888-abc522c08f1e_339.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": -410,
+          "note": "boundary mismatch · critical · en start 410 ms early"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": 430,
+          "critical": true,
+          "note": "boundary mismatch · critical · trajano start 430 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "81d65d5a-67e2-4ec4-ae5b-9d39c5963bc2_256.wav",
+      "file_id": "038a7b6d-7d5c-40f3-8c9a-7b695a027676",
+      "file_name": "81d65d5a-67e2-4ec4-ae5b-9d39c5963bc2_256.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 0,
+          "text": "grabado",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'grabado' in the 0.49 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "end",
+          "shift_ms": -70,
+          "note": "boundary mismatch · minor · g. end 70 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "de2d5d16-1b0d-47e9-8693-8a4b6ca2ceec_047.wav",
+      "file_id": "c2999170-94f3-41de-9acd-0636e2c95b1d",
+      "file_name": "de2d5d16-1b0d-47e9-8693-8a4b6ca2ceec_047.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "critical": true,
+          "note": "missing segment · critical · la loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "0c1835d3-72d4-4c84-b097-4c6cb428a3b0_245.wav",
+      "file_id": "09a72239-93f4-4080-833a-0987d61c5a57",
+      "file_name": "0c1835d3-72d4-4c84-b097-4c6cb428a3b0_245.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 80,
+          "note": "boundary mismatch · minor · el start 80 ms late"
+        },
+        {
+          "action": "add",
+          "after_word": 3,
+          "text": "puebla",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'puebla' in the 0.69 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "end",
+          "shift_ms": -200,
+          "note": "boundary mismatch · major · mismo end 200 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "7ac5343a-ead5-44ab-8b83-6ef2bfc81b96_650.wav",
+      "file_id": "e0021bd4-8ca1-48b4-85c9-327a2c88efe1",
+      "file_name": "7ac5343a-ead5-44ab-8b83-6ef2bfc81b96_650.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": 140,
+          "critical": true,
+          "note": "boundary mismatch · major · comillas start 140 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "92d3a530-3137-4136-b862-863481490a7d_049.wav",
+      "file_id": "8b20c38d-c105-4758-a14d-19d686603532",
+      "file_name": "92d3a530-3137-4136-b862-863481490a7d_049.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "critical": true,
+          "note": "missing segment · critical · la loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "bed46e2f-ae57-4d45-b849-3bf24ce48af9_641.wav",
+      "file_id": "8fa25801-f70c-45e3-9429-97a67059fb3a",
+      "file_name": "bed46e2f-ae57-4d45-b849-3bf24ce48af9_641.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": -50,
+          "note": "boundary mismatch · minor · treinta start 50 ms early"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": -150,
+          "note": "boundary mismatch · major · y start 150 ms early"
+        },
+        {
+          "action": "add",
+          "after_word": 8,
+          "text": "o",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'o' in the 0.45 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "16b11860-edea-43ca-894b-38d549a49cc0_590.wav",
+      "file_id": "e3c3fede-df4d-477d-80dd-5bf6b6137a08",
+      "file_name": "16b11860-edea-43ca-894b-38d549a49cc0_590.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "critical": true,
+          "note": "missing segment · critical · diecisiete loses its timing"
+        },
+        {
+          "action": "add",
+          "after_word": 7,
+          "text": "veinticinco",
+          "note": "hallucinated segment · major · extra 'veinticinco' in the 0.50 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "start",
+          "shift_ms": 350,
+          "note": "boundary mismatch · critical · circuito start 350 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "a238fa4c-8a09-4cc2-9829-595c6bfd112a_005.wav",
+      "file_id": "9282b697-9377-4ab8-8dfc-36a90e665285",
+      "file_name": "a238fa4c-8a09-4cc2-9829-595c6bfd112a_005.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": 590,
+          "critical": true,
+          "note": "boundary mismatch · critical · pesetas start 590 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "e1906ea9-36fc-42ea-988e-216319c4122f_284.wav",
+      "file_id": "19dc2029-d719-4391-a2c5-7f397fd4dbc7",
+      "file_name": "e1906ea9-36fc-42ea-988e-216319c4122f_284.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": -60,
+          "note": "boundary mismatch · minor · el end 60 ms early"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": -430,
+          "note": "boundary mismatch · critical · definitivamente end 430 ms early"
+        },
+        {
+          "action": "remove",
+          "word": 10,
+          "critical": true,
+          "note": "missing segment · critical · manos loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "bd84d93d-137d-48ea-835a-c57ddca88640_791.wav",
+      "file_id": "94fccc34-e432-4ec5-a60d-1a367c6aaed0",
+      "file_name": "bd84d93d-137d-48ea-835a-c57ddca88640_791.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 2,
+          "text": "galicia",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'galicia' in the 0.81 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "end",
+          "shift_ms": -200,
+          "note": "boundary mismatch · major · celta end 200 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "8f35a15c-758e-4d98-a3a1-bbcb5e21fd39_463.wav",
+      "file_id": "c2aa9af6-4d11-48d8-9e90-7154ac5c0643",
+      "file_name": "8f35a15c-758e-4d98-a3a1-bbcb5e21fd39_463.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": -60,
+          "note": "boundary mismatch · minor · de end 60 ms early"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": -470,
+          "critical": true,
+          "note": "boundary mismatch · critical · mañana end 470 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "1410cc6f-b1cf-467e-bb5b-7766025d60f1_105.wav",
+      "file_id": "85e83824-dd84-4e54-8b02-46cbe90ece31",
+      "file_name": "1410cc6f-b1cf-467e-bb5b-7766025d60f1_105.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing segment · critical · mañana loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "a8ae51d8-ed5a-473c-88a9-c2e0b38a99e4_003.wav",
+      "file_id": "7c834847-3b5e-4699-9012-74bdee19a307",
+      "file_name": "a8ae51d8-ed5a-473c-88a9-c2e0b38a99e4_003.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": -360,
+          "critical": true,
+          "note": "boundary mismatch · critical · mañana end 360 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "a17fc259-ffde-40fd-9e7c-8ba822b441f4_045.wav",
+      "file_id": "7fad71a4-40ad-4e31-be65-2b2762894676",
+      "file_name": "a17fc259-ffde-40fd-9e7c-8ba822b441f4_045.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "279ee424-6995-40bb-9a6d-00a8b7ee402c_626.wav",
+      "file_id": "6a4e0c9e-aff1-4f81-85ee-51de7fd4cb67",
+      "file_name": "279ee424-6995-40bb-9a6d-00a8b7ee402c_626.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "end",
+          "shift_ms": -190,
+          "note": "boundary mismatch · major · colegial end 190 ms early"
+        },
+        {
+          "action": "remove",
+          "word": 7,
+          "critical": true,
+          "note": "missing segment · critical · gimnasio loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "cca0a175-5a3d-4326-a8d0-26036fff806e_027.wav",
+      "file_id": "0a3dbc23-2915-44e3-a9d8-caf1f6b0c9a0",
+      "file_name": "cca0a175-5a3d-4326-a8d0-26036fff806e_027.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": -170,
+          "critical": true,
+          "note": "boundary mismatch · major · la end 170 ms early"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "start",
+          "shift_ms": 40,
+          "note": "boundary mismatch · minor · e start 40 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "05bbe589-ae03-4fa6-b245-446d879b63d7_111.wav",
+      "file_id": "dafae5ae-47bf-4b5b-9be9-d6c6aa88710f",
+      "file_name": "05bbe589-ae03-4fa6-b245-446d879b63d7_111.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": 360,
+          "note": "boundary mismatch · critical · del end 360 ms late"
+        },
+        {
+          "action": "remove",
+          "word": 9,
+          "critical": true,
+          "note": "missing segment · critical · de loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 12,
+          "edge": "start",
+          "shift_ms": -40,
+          "note": "boundary mismatch · minor · cinco start 40 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "dbaf0a73-7b60-48c7-a098-266ca46f8cd3_632.wav",
+      "file_id": "b0139435-c702-4aa5-ac27-1b4b644e6e47",
+      "file_name": "dbaf0a73-7b60-48c7-a098-266ca46f8cd3_632.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": 110,
+          "critical": true,
+          "note": "boundary mismatch · major · eh start 110 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "9a89dbb9-f1cb-4f1b-81b7-1f3e41de7472_2571.wav",
+      "file_id": "3fd8480a-223f-4cfe-b774-00a3276fe03b",
+      "file_name": "9a89dbb9-f1cb-4f1b-81b7-1f3e41de7472_2571.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "79e6e798-3e86-4274-b16c-eab5b4c2eb8c_177.wav",
+      "file_id": "122a9944-3386-44eb-892b-d0e46ea766d5",
+      "file_name": "79e6e798-3e86-4274-b16c-eab5b4c2eb8c_177.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "critical": true,
+          "note": "missing segment · critical · maria loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "ee7911f0-d562-4a77-9827-44db121076e4_007.wav",
+      "file_id": "77a25884-1e63-40b3-a219-cb0ffab31e17",
+      "file_name": "ee7911f0-d562-4a77-9827-44db121076e4_007.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": -40,
+          "note": "boundary mismatch · minor · y end 40 ms early"
+        },
+        {
+          "action": "add",
+          "after_word": 3,
+          "text": "defunciones",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'defunciones' in the 0.43 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "7517515f-456b-46d5-921b-1ff4061a7dd0_415.wav",
+      "file_id": "72850ff6-a217-471c-ba25-1613d8a55589",
+      "file_name": "7517515f-456b-46d5-921b-1ff4061a7dd0_415.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": -310,
+          "critical": true,
+          "note": "boundary mismatch · critical · cinco end 310 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "13998813-0c5b-4176-90fe-5ae6e982653c_013.wav",
+      "file_id": "0acb5924-290c-4f77-869d-74628e16e5b1",
+      "file_name": "13998813-0c5b-4176-90fe-5ae6e982653c_013.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 0,
+          "text": "valencia",
+          "note": "hallucinated segment · major · extra 'valencia' in the 0.65 s pause after it"
+        },
+        {
+          "action": "remove",
+          "word": 6,
+          "critical": true,
+          "note": "missing segment · critical · novecientos loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "end",
+          "shift_ms": 200,
+          "note": "boundary mismatch · major · siete end 200 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "813fd601-6351-48a1-a9fe-c737ab709821_243.wav",
+      "file_id": "8b99bcf3-6472-433b-88d5-1d5c7011fc8c",
+      "file_name": "813fd601-6351-48a1-a9fe-c737ab709821_243.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 0,
+          "text": "eh",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'eh' in the 0.35 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "d5eda4b4-043d-4e6d-9aff-edf02fef5cb7_007.wav",
+      "file_id": "f329d27a-db3d-4131-b480-6656e9d5e876",
+      "file_name": "d5eda4b4-043d-4e6d-9aff-edf02fef5cb7_007.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 1,
+          "text": "real",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'real' in the 0.35 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "455a9b3d-ed8b-456b-8f19-103203b3e4aa_053.wav",
+      "file_id": "59fc4097-028d-4cc3-b4d7-7afed30bbd8d",
+      "file_name": "455a9b3d-ed8b-456b-8f19-103203b3e4aa_053.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 60,
+          "critical": true,
+          "note": "boundary mismatch · minor · el start 60 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "043c535c-314a-4a5b-b361-80ef35895299_017.wav",
+      "file_id": "47df6420-7c96-4f1d-acad-901a828054a6",
+      "file_name": "043c535c-314a-4a5b-b361-80ef35895299_017.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": 310,
+          "note": "boundary mismatch · critical · esto start 310 ms late"
+        },
+        {
+          "action": "remove",
+          "word": 5,
+          "critical": true,
+          "note": "missing segment · critical · hacer loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 22,
+          "edge": "end",
+          "shift_ms": -380,
+          "critical": true,
+          "note": "boundary mismatch · critical · principal end 380 ms early"
+        },
+        {
+          "action": "move",
+          "word": 32,
+          "edge": "start",
+          "shift_ms": -50,
+          "note": "boundary mismatch · minor · la start 50 ms early"
+        },
+        {
+          "action": "move",
+          "word": 37,
+          "edge": "start",
+          "shift_ms": -320,
+          "note": "boundary mismatch · critical · y start 320 ms early"
+        },
+        {
+          "action": "move",
+          "word": 42,
+          "edge": "end",
+          "shift_ms": -120,
+          "note": "boundary mismatch · major · mañana end 120 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "d788c312-e719-4df1-837c-c66b349b8646_160.wav",
+      "file_id": "44b0bc88-0a49-49b1-9086-6efe96173598",
+      "file_name": "d788c312-e719-4df1-837c-c66b349b8646_160.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": -220,
+          "critical": true,
+          "note": "boundary mismatch · major · mañana end 220 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "6f95d7da-9001-4199-8d91-0c642b3bb73a_016.wav",
+      "file_id": "2b45b526-ce85-4907-9eb8-754658bcf7c3",
+      "file_name": "6f95d7da-9001-4199-8d91-0c642b3bb73a_016.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "cf4b7643-0ad8-426a-bc4b-3931d2c170b9_118.wav",
+      "file_id": "bc8cdfe2-7681-4f0d-9964-ab120135e11d",
+      "file_name": "cf4b7643-0ad8-426a-bc4b-3931d2c170b9_118.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing segment · critical · doce loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "53cd1d05-6daa-4b71-827a-c7819fcb9a97_012.wav",
+      "file_id": "34aa281a-eb39-48bb-b783-3cabdbf11e65",
+      "file_name": "53cd1d05-6daa-4b71-827a-c7819fcb9a97_012.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 1,
+          "text": "y",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'y' in the 0.68 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "5e65435d-1560-4f89-b1a0-28c02da18681_135.wav",
+      "file_id": "048b7e0d-5ed6-448f-a2b0-c47850645659",
+      "file_name": "5e65435d-1560-4f89-b1a0-28c02da18681_135.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 290,
+          "critical": true,
+          "note": "boundary mismatch · major · punto start 290 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "b42c73a9-af65-4ccf-a6b3-014d0a1156d2_475.wav",
+      "file_id": "ac544afe-56e0-4f92-99ae-7dd61288b287",
+      "file_name": "b42c73a9-af65-4ccf-a6b3-014d0a1156d2_475.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "d3b813e0-4b0a-4ce5-976d-78c0db423a8d_005.wav",
+      "file_id": "8d3bcd44-72a7-4282-af86-a11e38cba904",
+      "file_name": "d3b813e0-4b0a-4ce5-976d-78c0db423a8d_005.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing segment · critical · las loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": -70,
+          "note": "boundary mismatch · minor · esta end 70 ms early"
+        },
+        {
+          "action": "move",
+          "word": 8,
+          "edge": "end",
+          "shift_ms": -330,
+          "note": "boundary mismatch · critical · cincuenta end 330 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "9d4c5cbd-2f5b-4ef6-9283-177b147c0f7e_155.wav",
+      "file_id": "cd59929f-2662-430e-b6ca-88f04e51e3ec",
+      "file_name": "9d4c5cbd-2f5b-4ef6-9283-177b147c0f7e_155.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "a403aeae-7dd8-4620-8579-1a45c831a4d6_034.wav",
+      "file_id": "ab58c719-922b-4cfa-b5c1-61ae600ac3d7",
+      "file_name": "a403aeae-7dd8-4620-8579-1a45c831a4d6_034.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 60,
+          "note": "boundary mismatch · minor · menos start 60 ms late"
+        },
+        {
+          "action": "add",
+          "after_word": 4,
+          "text": "cero",
+          "note": "hallucinated segment · major · extra 'cero' in the 0.65 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 10,
+          "edge": "end",
+          "shift_ms": 420,
+          "critical": true,
+          "note": "boundary mismatch · critical · cuatro end 420 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "3f5be0fa-f0ab-4e27-b1c5-4dd9e93f2511_029.wav",
+      "file_id": "341d556c-badc-46dd-8f62-19bb9c65b294",
+      "file_name": "3f5be0fa-f0ab-4e27-b1c5-4dd9e93f2511_029.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "end",
+          "shift_ms": 130,
+          "note": "boundary mismatch · major · precio end 130 ms late"
+        },
+        {
+          "action": "remove",
+          "word": 7,
+          "critical": true,
+          "note": "missing segment · critical · dos loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "7bbcf16a-8a7e-4e3b-bf35-7117adf81d56_003.wav",
+      "file_id": "90f41199-8678-4287-bac3-4c0424261856",
+      "file_name": "7bbcf16a-8a7e-4e3b-bf35-7117adf81d56_003.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 50,
+          "note": "boundary mismatch · minor · en start 50 ms late"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": 70,
+          "critical": true,
+          "note": "boundary mismatch · minor · nueva end 70 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "b045fed8-8fdc-4d31-b484-2245db32f880_067.wav",
+      "file_id": "5291b785-fa8e-4a5e-9d7f-911888b11a03",
+      "file_name": "b045fed8-8fdc-4d31-b484-2245db32f880_067.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": -230,
+          "note": "boundary mismatch · major · asociada end 230 ms early"
+        },
+        {
+          "action": "remove",
+          "word": 6,
+          "critical": true,
+          "note": "missing segment · critical · cero loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "1aa7182f-a0e0-4312-95bd-874500cfbae1_914.wav",
+      "file_id": "c41fda2b-42fd-49f8-9fd5-a978711eb33e",
+      "file_name": "1aa7182f-a0e0-4312-95bd-874500cfbae1_914.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": 270,
+          "critical": true,
+          "note": "boundary mismatch · major · venezuela end 270 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "92f03920-4f1e-42b6-8c81-daa7bdfb940d_001.wav",
+      "file_id": "5855b832-afa0-449c-b7b9-3897cfee24d0",
+      "file_name": "92f03920-4f1e-42b6-8c81-daa7bdfb940d_001.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": 170,
+          "note": "boundary mismatch · major · una start 170 ms late"
+        },
+        {
+          "action": "remove",
+          "word": 7,
+          "critical": true,
+          "note": "missing segment · critical · nuestro loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": 320,
+          "note": "boundary mismatch · critical · mañana end 320 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "4abc4313-406e-463d-a34f-3d1742644feb_055.wav",
+      "file_id": "8a212d64-2314-410b-bd09-2b60b0b74598",
+      "file_name": "4abc4313-406e-463d-a34f-3d1742644feb_055.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 2,
+          "critical": true,
+          "note": "missing segment · critical · jaque loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "start",
+          "shift_ms": 70,
+          "note": "boundary mismatch · minor · este start 70 ms late"
+        },
+        {
+          "action": "move",
+          "word": 10,
+          "edge": "end",
+          "shift_ms": -340,
+          "note": "boundary mismatch · critical · auspiciado end 340 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "a17fc259-ffde-40fd-9e7c-8ba822b441f4_185.wav",
+      "file_id": "e69e0b51-6ca9-4204-8c8b-e2abf3753b4c",
+      "file_name": "a17fc259-ffde-40fd-9e7c-8ba822b441f4_185.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "2fb789b0-aa24-4491-a7a7-0c3d3d016d25_477.wav",
+      "file_id": "397870f8-a32d-4e8f-9713-9b27f3931b51",
+      "file_name": "2fb789b0-aa24-4491-a7a7-0c3d3d016d25_477.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": 490,
+          "critical": true,
+          "note": "boundary mismatch · critical · en end 490 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "94fb0d48-2617-4367-9e09-9e5b9452ac5f_104.wav",
+      "file_id": "df883bc8-7140-4f16-80ba-3eb65c6546e6",
+      "file_name": "94fb0d48-2617-4367-9e09-9e5b9452ac5f_104.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "critical": true,
+          "note": "missing segment · critical · seis loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "a5af416b-c804-446a-aa5e-942d418a7c86_015.wav",
+      "file_id": "504866fa-11d3-4318-a9bb-9838b4cfbd4b",
+      "file_name": "a5af416b-c804-446a-aa5e-942d418a7c86_015.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": 160,
+          "critical": true,
+          "note": "boundary mismatch · major · h start 160 ms late"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": -50,
+          "note": "boundary mismatch · minor · la start 50 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "bcf44fff-35ac-491a-a0a1-1da6568ac8dd_006.wav",
+      "file_id": "99223de4-a70b-4832-858e-ceea05628260",
+      "file_name": "bcf44fff-35ac-491a-a0a1-1da6568ac8dd_006.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 70,
+          "note": "boundary mismatch · minor · que start 70 ms late"
+        },
+        {
+          "action": "add",
+          "after_word": 5,
+          "text": "bueno",
+          "note": "hallucinated segment · major · extra 'bueno' in the 0.64 s pause after it"
+        },
+        {
+          "action": "add",
+          "after_word": 11,
+          "text": "ano",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'ano' in the 0.45 s pause after it"
+        },
+        {
+          "action": "remove",
+          "word": 15,
+          "critical": true,
+          "note": "missing segment · critical · setenta loses its timing"
+        },
+        {
+          "action": "add",
+          "after_word": 18,
+          "text": "si",
+          "note": "hallucinated segment · major · extra 'si' in the 0.54 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 22,
+          "edge": "start",
+          "shift_ms": 360,
+          "note": "boundary mismatch · critical · cincuenta start 360 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "6c259790-1a31-4329-97bc-0740cb30afc9_104.wav",
+      "file_id": "2a802e79-292d-4eb7-ac2a-ba2280117271",
+      "file_name": "6c259790-1a31-4329-97bc-0740cb30afc9_104.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": 150,
+          "critical": true,
+          "note": "boundary mismatch · major · r start 150 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "ca77a577-0cbe-4af6-aafc-33927bc6e613_421.wav",
+      "file_id": "9a559905-ea5c-4204-8bc0-6b49567d4618",
+      "file_name": "ca77a577-0cbe-4af6-aafc-33927bc6e613_421.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing segment · critical · se loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": -360,
+          "note": "boundary mismatch · critical · dal- start 360 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "e7114bf8-46ce-4ad4-95bb-b1af0b24aa2b_161.wav",
+      "file_id": "bcb0e37d-7167-45ca-8aab-1c63db0e2b1c",
+      "file_name": "e7114bf8-46ce-4ad4-95bb-b1af0b24aa2b_161.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": 50,
+          "note": "boundary mismatch · minor · luego start 50 ms late"
+        },
+        {
+          "action": "add",
+          "after_word": 13,
+          "text": "crecer",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'crecer' in the 0.78 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 27,
+          "edge": "end",
+          "shift_ms": 390,
+          "note": "boundary mismatch · critical · un end 390 ms late"
+        },
+        {
+          "action": "add",
+          "after_word": 32,
+          "text": "los",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'los' in the 0.64 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 40,
+          "edge": "start",
+          "shift_ms": -70,
+          "note": "boundary mismatch · minor · veinte start 70 ms early"
+        },
+        {
+          "action": "move",
+          "word": 46,
+          "edge": "end",
+          "shift_ms": -250,
+          "note": "boundary mismatch · major · pagar end 250 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "99f9962b-6f94-4e2f-961b-1dc8a8284490_554.wav",
+      "file_id": "7299e78d-a8e5-47aa-876b-64a736f14d44",
+      "file_name": "99f9962b-6f94-4e2f-961b-1dc8a8284490_554.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": -60,
+          "note": "boundary mismatch · minor · a start 60 ms early"
+        },
+        {
+          "action": "add",
+          "after_word": 4,
+          "text": "a",
+          "note": "hallucinated segment · major · extra 'a' in the 0.38 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 13,
+          "edge": "start",
+          "shift_ms": 190,
+          "note": "boundary mismatch · major · mañana start 190 ms late"
+        },
+        {
+          "action": "remove",
+          "word": 16,
+          "critical": true,
+          "note": "missing segment · critical · jose loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "b9ab8acb-84d3-4953-91e8-5c30de4334c3_840.wav",
+      "file_id": "83171159-be03-47af-a9d0-e07d0b85951f",
+      "file_name": "b9ab8acb-84d3-4953-91e8-5c30de4334c3_840.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 450,
+          "critical": true,
+          "note": "boundary mismatch · critical · maldonado start 450 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "4ddc713b-accb-4643-8fc4-d3ae5d33321e_039.wav",
+      "file_id": "d4e016b5-a9a2-4be6-b26c-4c46ba738fae",
+      "file_name": "4ddc713b-accb-4643-8fc4-d3ae5d33321e_039.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": -370,
+          "note": "boundary mismatch · critical · claro start 370 ms early"
+        },
+        {
+          "action": "add",
+          "after_word": 4,
+          "text": "tiene",
+          "note": "hallucinated segment · major · extra 'tiene' in the 0.40 s pause after it"
+        },
+        {
+          "action": "remove",
+          "word": 9,
+          "critical": true,
+          "note": "missing segment · critical · cien- loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "3a55f7a0-5390-4832-9864-844479c5e6a0_139.wav",
+      "file_id": "3cbe19de-fb2e-4554-b97a-c9203e262067",
+      "file_name": "3a55f7a0-5390-4832-9864-844479c5e6a0_139.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 2,
+          "text": "bocadura",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'bocadura' in the 0.35 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "5211d1bf-1db5-4832-8747-e34a297ad9d7_130.wav",
+      "file_id": "1f894c89-c0b1-4494-bd35-11478697ec8c",
+      "file_name": "5211d1bf-1db5-4832-8747-e34a297ad9d7_130.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 170,
+          "critical": true,
+          "note": "boundary mismatch · major · la start 170 ms late"
+        },
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "end",
+          "shift_ms": 110,
+          "note": "boundary mismatch · major · la end 110 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "49d3b1d6-75c3-4b35-a4f7-0c5e34493672_202.wav",
+      "file_id": "c1ce3085-2933-42e3-a642-6bf9f9725825",
+      "file_name": "49d3b1d6-75c3-4b35-a4f7-0c5e34493672_202.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "cea354fc-2116-4bb8-af77-eaf92a903258_034.wav",
+      "file_id": "ac861ca4-e2a9-4c5d-934a-6c5ae7b91958",
+      "file_name": "cea354fc-2116-4bb8-af77-eaf92a903258_034.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": -40,
+          "note": "boundary mismatch · minor · mañana start 40 ms early"
+        },
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "end",
+          "shift_ms": 70,
+          "note": "boundary mismatch · minor · en end 70 ms late"
+        },
+        {
+          "action": "move",
+          "word": 14,
+          "edge": "start",
+          "shift_ms": 440,
+          "note": "boundary mismatch · critical · inundan start 440 ms late"
+        },
+        {
+          "action": "remove",
+          "word": 18,
+          "critical": true,
+          "note": "missing segment · critical · la loses its timing"
+        },
+        {
+          "action": "remove",
+          "word": 21,
+          "critical": true,
+          "note": "missing segment · critical · ha loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "1bc79117-80b9-4aa5-9fc1-562ec0a485da_092.wav",
+      "file_id": "2ec21726-afd8-46d1-a0d6-95a014d4168b",
+      "file_name": "1bc79117-80b9-4aa5-9fc1-562ec0a485da_092.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": 40,
+          "note": "boundary mismatch · minor · mañana start 40 ms late"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": -150,
+          "critical": true,
+          "note": "boundary mismatch · major · uruapan start 150 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "9dad1add-62a7-45fc-982c-cfc413b56939_476.wav",
+      "file_id": "d5fbfbc2-9a03-44b0-9b7d-61e485d08aaf",
+      "file_name": "9dad1add-62a7-45fc-982c-cfc413b56939_476.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 3,
+          "note": "missing segment · major · de loses its timing"
+        },
+        {
+          "action": "add",
+          "after_word": 6,
+          "text": "salvador",
+          "note": "hallucinated segment · major · extra 'salvador' in the 0.42 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": -480,
+          "critical": true,
+          "note": "boundary mismatch · critical · senor end 480 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "2baf0af7-cc5c-4d88-8168-d927d8add4d4_028.wav",
+      "file_id": "7701e105-0677-49b8-bb7c-2505e7f92d74",
+      "file_name": "2baf0af7-cc5c-4d88-8168-d927d8add4d4_028.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 12,
+          "text": "aca",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'aca' in the 0.68 s pause after it"
+        },
+        {
+          "action": "add",
+          "after_word": 29,
+          "text": "complica",
+          "note": "hallucinated segment · major · extra 'complica' in the 0.46 s pause after it"
+        },
+        {
+          "action": "add",
+          "after_word": 36,
+          "text": "ejemplo",
+          "note": "hallucinated segment · major · extra 'ejemplo' in the 0.72 s pause after it"
+        },
+        {
+          "action": "add",
+          "after_word": 58,
+          "text": "hexadecimal",
+          "note": "hallucinated segment · major · extra 'hexadecimal' in the 0.57 s pause after it"
+        },
+        {
+          "action": "add",
+          "after_word": 69,
+          "text": "directamente",
+          "note": "hallucinated segment · major · extra 'directamente' in the 0.36 s pause after it"
+        },
+        {
+          "action": "add",
+          "after_word": 88,
+          "text": "unos",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'unos' in the 0.67 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "04454933-1b2a-47d6-a7c3-223e3a115a3b_165.wav",
+      "file_id": "f737c71e-4537-4cde-89c7-837cb117f8e0",
+      "file_name": "04454933-1b2a-47d6-a7c3-223e3a115a3b_165.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 60,
+          "note": "boundary mismatch · minor · conectando start 60 ms late"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": -330,
+          "critical": true,
+          "note": "boundary mismatch · critical · cachiche end 330 ms early"
+        },
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "start",
+          "shift_ms": 240,
+          "note": "boundary mismatch · major · distrito start 240 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "25e4b4da-4a22-47c6-b1f0-dbe4c6127db9_296.wav",
+      "file_id": "8b9c5390-fbdc-4202-bf32-9d9a68d121f4",
+      "file_name": "25e4b4da-4a22-47c6-b1f0-dbe4c6127db9_296.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": 260,
+          "critical": true,
+          "note": "boundary mismatch · major · valor start 260 ms late"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": -160,
+          "note": "boundary mismatch · major · doce end 160 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "f7d733dd-369f-4fb8-a602-b0cb88a342b2_011.wav",
+      "file_id": "d3f42722-c1fd-4dbc-815e-fb1d8541b8ee",
+      "file_name": "f7d733dd-369f-4fb8-a602-b0cb88a342b2_011.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": 40,
+          "critical": true,
+          "note": "boundary mismatch · minor · cuatro end 40 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "13d322a6-ac37-4cac-a4c9-4c1298ce96ce_1041.wav",
+      "file_id": "a18959f5-6047-4ac3-b92b-bbd7a43078b8",
+      "file_name": "13d322a6-ac37-4cac-a4c9-4c1298ce96ce_1041.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "critical": true,
+          "note": "missing segment · critical · es loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "33b1ae17-dcf5-46ee-b974-e261d827675b_037.wav",
+      "file_id": "67fac6e4-5507-46c0-aeac-861c7d4b5aee",
+      "file_name": "33b1ae17-dcf5-46ee-b974-e261d827675b_037.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 340,
+          "critical": true,
+          "note": "boundary mismatch · critical · once start 340 ms late"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "start",
+          "shift_ms": 310,
+          "note": "boundary mismatch · critical · ocho start 310 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "169b2ebe-7795-4363-bc15-cc317ca179a3_087.wav",
+      "file_id": "4023bafa-66ff-4789-bbec-913499bef52c",
+      "file_name": "169b2ebe-7795-4363-bc15-cc317ca179a3_087.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing segment · critical · colocando loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "start",
+          "shift_ms": 130,
+          "note": "boundary mismatch · major · grande start 130 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "9533e1a7-4cf4-428b-af47-d6a0a3cdedc4_030.wav",
+      "file_id": "ab122137-db36-448a-b69b-bac56c44f13c",
+      "file_name": "9533e1a7-4cf4-428b-af47-d6a0a3cdedc4_030.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": -40,
+          "note": "boundary mismatch · minor · voy start 40 ms early"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "end",
+          "shift_ms": 50,
+          "critical": true,
+          "note": "boundary mismatch · minor · en end 50 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "ab19e284-6b09-4f9e-9783-932b5e642fc7_114.wav",
+      "file_id": "6127f0be-c3fb-40f6-aa3c-404239b09d86",
+      "file_name": "ab19e284-6b09-4f9e-9783-932b5e642fc7_114.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 2,
+          "critical": true,
+          "note": "missing segment · critical · fabrica loses its timing"
+        },
+        {
+          "action": "add",
+          "after_word": 5,
+          "text": "artesanales",
+          "note": "hallucinated segment · major · extra 'artesanales' in the 0.66 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 12,
+          "edge": "start",
+          "shift_ms": 230,
+          "note": "boundary mismatch · major · innovamos start 230 ms late"
+        },
+        {
+          "action": "move",
+          "word": 18,
+          "edge": "end",
+          "shift_ms": 430,
+          "note": "boundary mismatch · critical · la end 430 ms late"
+        },
+        {
+          "action": "move",
+          "word": 26,
+          "edge": "start",
+          "shift_ms": -340,
+          "note": "boundary mismatch · critical · para start 340 ms early"
+        },
+        {
+          "action": "remove",
+          "word": 33,
+          "critical": true,
+          "note": "missing segment · critical · cincuenta loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "2e50f2d0-78d7-463b-9cf8-c8456936e7c3_066.wav",
+      "file_id": "3e8c5597-db08-4574-ac3b-d859b5dddc32",
+      "file_name": "2e50f2d0-78d7-463b-9cf8-c8456936e7c3_066.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "start",
+          "shift_ms": 320,
+          "critical": true,
+          "note": "boundary mismatch · critical · chile start 320 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "31ff676f-d213-47d6-9944-fe8300bf36b5_090.wav",
+      "file_id": "9227641b-b3ed-4339-8b4f-24196835429d",
+      "file_name": "31ff676f-d213-47d6-9944-fe8300bf36b5_090.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 0,
+          "text": "viviana",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'viviana' in the 0.40 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "8f6b6c35-1e80-471d-9e20-048adff8ff02_422.wav",
+      "file_id": "15568aff-6818-47c6-8629-7b82e0f5041d",
+      "file_name": "8f6b6c35-1e80-471d-9e20-048adff8ff02_422.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": -110,
+          "critical": true,
+          "note": "boundary mismatch · major · hermanos start 110 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "e8005b23-486f-4c0a-a631-942ac0112f77_034.wav",
+      "file_id": "147c316d-c2a0-45b3-a929-cfa65eeddb32",
+      "file_name": "e8005b23-486f-4c0a-a631-942ac0112f77_034.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "end",
+          "shift_ms": -80,
+          "critical": true,
+          "note": "boundary mismatch · minor · republica end 80 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "a37cb1e9-9bfb-4ec1-b937-18768b2cacb9_051.wav",
+      "file_id": "da53179b-5a0a-4ddf-81f2-92881c2abdda",
+      "file_name": "a37cb1e9-9bfb-4ec1-b937-18768b2cacb9_051.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": -190,
+          "note": "boundary mismatch · major · que start 190 ms early"
+        },
+        {
+          "action": "add",
+          "after_word": 6,
+          "text": "soles",
+          "note": "hallucinated segment · major · extra 'soles' in the 0.56 s pause after it"
+        },
+        {
+          "action": "remove",
+          "word": 10,
+          "critical": true,
+          "note": "missing segment · critical · la loses its timing"
+        },
+        {
+          "action": "remove",
+          "word": 13,
+          "critical": true,
+          "note": "missing segment · critical · debe loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 19,
+          "edge": "start",
+          "shift_ms": -410,
+          "note": "boundary mismatch · critical · mil start 410 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "ea130ddc-af07-4020-8b37-7718d2443cb0_014.wav",
+      "file_id": "e8494544-30c7-4fda-a6ff-6355d7125baf",
+      "file_name": "ea130ddc-af07-4020-8b37-7718d2443cb0_014.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 0,
+          "text": "y",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'y' in the 0.52 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": -310,
+          "note": "boundary mismatch · critical · gastas start 310 ms early"
+        },
+        {
+          "action": "move",
+          "word": 10,
+          "edge": "start",
+          "shift_ms": 130,
+          "note": "boundary mismatch · major · diez start 130 ms late"
+        },
+        {
+          "action": "add",
+          "after_word": 14,
+          "text": "rewards",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'rewards' in the 0.43 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 21,
+          "edge": "start",
+          "shift_ms": 40,
+          "note": "boundary mismatch · minor · carrito start 40 ms late"
+        },
+        {
+          "action": "add",
+          "after_word": 25,
+          "text": "productos",
+          "note": "hallucinated segment · major · extra 'productos' in the 0.39 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "7521812a-cf13-4fe4-949a-d9eb99b76c9f_012.wav",
+      "file_id": "ac084aa5-a681-4d84-99d8-bad3e00eeaae",
+      "file_name": "7521812a-cf13-4fe4-949a-d9eb99b76c9f_012.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 120,
+          "note": "boundary mismatch · major · donde start 120 ms late"
+        },
+        {
+          "action": "add",
+          "after_word": 7,
+          "text": "los",
+          "note": "hallucinated segment · major · extra 'los' in the 0.60 s pause after it"
+        },
+        {
+          "action": "remove",
+          "word": 12,
+          "critical": true,
+          "note": "missing segment · critical · nos loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 18,
+          "edge": "end",
+          "shift_ms": -520,
+          "critical": true,
+          "note": "boundary mismatch · critical · soberania end 520 ms early"
+        },
+        {
+          "action": "move",
+          "word": 22,
+          "edge": "start",
+          "shift_ms": 40,
+          "note": "boundary mismatch · minor · y start 40 ms late"
+        },
+        {
+          "action": "move",
+          "word": 27,
+          "edge": "end",
+          "shift_ms": -80,
+          "note": "boundary mismatch · minor · boyaca end 80 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "1f5a60c5-18dd-4018-b6da-8030d28ad39e_182.wav",
+      "file_id": "8ab450f4-dbe9-437e-a454-b252f069c8eb",
+      "file_name": "1f5a60c5-18dd-4018-b6da-8030d28ad39e_182.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": -50,
+          "critical": true,
+          "note": "boundary mismatch · minor · maria end 50 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "cfbdeaa9-daae-4017-9980-b54449f481cc_263.wav",
+      "file_id": "467e9c92-35b9-4d71-b2f5-e47430931b34",
+      "file_name": "cfbdeaa9-daae-4017-9980-b54449f481cc_263.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": 140,
+          "note": "boundary mismatch · major · vale end 140 ms late"
+        },
+        {
+          "action": "remove",
+          "word": 4,
+          "critical": true,
+          "note": "missing segment · critical · se loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "start",
+          "shift_ms": 100,
+          "note": "boundary mismatch · major · fran start 100 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "114c4d29-5ec5-4186-8f67-824c7fdbd275_313.wav",
+      "file_id": "7396dbed-6819-4ed1-9f8b-92040911c826",
+      "file_name": "114c4d29-5ec5-4186-8f67-824c7fdbd275_313.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": 80,
+          "critical": true,
+          "note": "boundary mismatch · minor · san end 80 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "55367d04-f117-4e72-9b99-64a6638229fe_028.wav",
+      "file_id": "dcaccf0f-a539-45d5-a5f9-d79b0937ced4",
+      "file_name": "55367d04-f117-4e72-9b99-64a6638229fe_028.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": -350,
+          "note": "boundary mismatch · critical · vamos end 350 ms early"
+        },
+        {
+          "action": "add",
+          "after_word": 3,
+          "text": "okey",
+          "note": "hallucinated segment · major · extra 'okey' in the 0.40 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "end",
+          "shift_ms": -40,
+          "note": "boundary mismatch · minor · cuatro end 40 ms early"
+        },
+        {
+          "action": "remove",
+          "word": 12,
+          "critical": true,
+          "note": "missing segment · critical · en loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 25,
+          "edge": "start",
+          "shift_ms": -350,
+          "note": "boundary mismatch · critical · muy start 350 ms early"
+        },
+        {
+          "action": "add",
+          "after_word": 29,
+          "text": "bloque",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'bloque' in the 0.50 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "d63be185-77f6-49f1-a15f-a781c9f1e05b_691.wav",
+      "file_id": "428feabf-b1a0-4ecb-8b5a-3ae6226833a4",
+      "file_name": "d63be185-77f6-49f1-a15f-a781c9f1e05b_691.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "critical": true,
+          "note": "missing segment · critical · nadie loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "54518504-dc4f-4192-97ae-22a6207b02e0_004.wav",
+      "file_id": "df66c4b6-ceb0-44a7-bf50-ecd967fed516",
+      "file_name": "54518504-dc4f-4192-97ae-22a6207b02e0_004.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 50,
+          "note": "boundary mismatch · minor · aqui start 50 ms late"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "start",
+          "shift_ms": -400,
+          "note": "boundary mismatch · critical · de start 400 ms early"
+        },
+        {
+          "action": "add",
+          "after_word": 9,
+          "text": "ocho",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'ocho' in the 0.53 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 16,
+          "edge": "end",
+          "shift_ms": -390,
+          "note": "boundary mismatch · critical · tacuati end 390 ms early"
+        },
+        {
+          "action": "move",
+          "word": 24,
+          "edge": "end",
+          "shift_ms": -100,
+          "note": "boundary mismatch · major · kilometros end 100 ms early"
+        },
+        {
+          "action": "add",
+          "after_word": 35,
+          "text": "madrugada",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'madrugada' in the 0.62 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "4c824886-0f43-48f0-81d7-087b87772047_091.wav",
+      "file_id": "b32b064d-e432-4432-b85c-9db2e59d5b33",
+      "file_name": "4c824886-0f43-48f0-81d7-087b87772047_091.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing segment · critical · san loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "bcdd8ca4-232b-406c-ab2e-27d60f0d860b_130.wav",
+      "file_id": "44a86e47-2d3a-44d8-88d3-e02928a98fde",
+      "file_name": "bcdd8ca4-232b-406c-ab2e-27d60f0d860b_130.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 3,
+          "text": "setenta",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'setenta' in the 0.40 s pause after it"
+        },
+        {
+          "action": "add",
+          "after_word": 32,
+          "text": "nacional",
+          "note": "hallucinated segment · major · extra 'nacional' in the 0.68 s pause after it"
+        },
+        {
+          "action": "add",
+          "after_word": 43,
+          "text": "brasil",
+          "note": "hallucinated segment · major · extra 'brasil' in the 0.37 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 50,
+          "edge": "start",
+          "shift_ms": -180,
+          "note": "boundary mismatch · major · en start 180 ms early"
+        },
+        {
+          "action": "add",
+          "after_word": 54,
+          "text": "abril",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'abril' in the 0.46 s pause after it"
+        },
+        {
+          "action": "add",
+          "after_word": 61,
+          "text": "perdidos",
+          "note": "hallucinated segment · major · extra 'perdidos' in the 0.48 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "fc34fa44-4252-4210-9466-166ad4ae1e37_195.wav",
+      "file_id": "a9af44b3-8de4-4d07-802a-16c3bf4d7318",
+      "file_name": "fc34fa44-4252-4210-9466-166ad4ae1e37_195.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "start",
+          "shift_ms": -140,
+          "note": "boundary mismatch · major · en start 140 ms early"
+        },
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "end",
+          "shift_ms": 50,
+          "note": "boundary mismatch · minor · agraria end 50 ms late"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": -40,
+          "note": "boundary mismatch · minor · pesos end 40 ms early"
+        },
+        {
+          "action": "move",
+          "word": 37,
+          "edge": "start",
+          "shift_ms": 400,
+          "critical": true,
+          "note": "boundary mismatch · critical · crearla start 400 ms late"
+        },
+        {
+          "action": "add",
+          "after_word": 55,
+          "text": "dias",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'dias' in the 0.37 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 71,
+          "edge": "start",
+          "shift_ms": -330,
+          "note": "boundary mismatch · critical · a start 330 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "1b415972-f402-42b1-a9a8-a4a4fbe7252f_427.wav",
+      "file_id": "bb579865-bda9-46a8-afb6-70398d3c739b",
+      "file_name": "1b415972-f402-42b1-a9a8-a4a4fbe7252f_427.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing segment · critical · uno loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "0cebc4ab-1d62-41e6-92c5-640f1c0df8c6_1168.wav",
+      "file_id": "645f8c81-7812-4a3d-b2b6-c54c858eab93",
+      "file_name": "0cebc4ab-1d62-41e6-92c5-640f1c0df8c6_1168.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 2,
+          "critical": true,
+          "note": "missing segment · critical · por loses its timing"
+        },
+        {
+          "action": "add",
+          "after_word": 9,
+          "text": "que",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'que' in the 0.78 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 14,
+          "edge": "end",
+          "shift_ms": -150,
+          "note": "boundary mismatch · major · g end 150 ms early"
+        },
+        {
+          "action": "move",
+          "word": 17,
+          "edge": "end",
+          "shift_ms": -130,
+          "note": "boundary mismatch · major · h end 130 ms early"
+        },
+        {
+          "action": "move",
+          "word": 21,
+          "edge": "end",
+          "shift_ms": -330,
+          "note": "boundary mismatch · critical · miedo end 330 ms early"
+        },
+        {
+          "action": "move",
+          "word": 26,
+          "edge": "start",
+          "shift_ms": 80,
+          "note": "boundary mismatch · minor · puede start 80 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "c1a75085-9695-4e07-88c8-e4f280c75d67_025.wav",
+      "file_id": "f7ec25c9-3857-4e43-bb91-f9d63f92aa03",
+      "file_name": "c1a75085-9695-4e07-88c8-e4f280c75d67_025.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 1,
+          "text": "tres",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'tres' in the 0.50 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "1ab2af0d-3851-4d45-b3b2-c10a0db30d99_188.wav",
+      "file_id": "ec585f9a-3127-4c69-8e5a-a611f4292424",
+      "file_name": "1ab2af0d-3851-4d45-b3b2-c10a0db30d99_188.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": 540,
+          "critical": true,
+          "note": "boundary mismatch · critical · algunos start 540 ms late"
+        },
+        {
+          "action": "add",
+          "after_word": 6,
+          "text": "islas",
+          "note": "hallucinated segment · major · extra 'islas' in the 0.40 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 12,
+          "edge": "start",
+          "shift_ms": -60,
+          "note": "boundary mismatch · minor · de start 60 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "7d6ea310-4931-45bd-89d2-813091a933e7_320.wav",
+      "file_id": "8958ae1f-1148-40d6-8ea4-e8fa4f471ddd",
+      "file_name": "7d6ea310-4931-45bd-89d2-813091a933e7_320.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "123dc529-391d-4cde-b649-b47a778bd404_220.wav",
+      "file_id": "2409cbfb-3098-4e30-9b09-3165f5ad1c4c",
+      "file_name": "123dc529-391d-4cde-b649-b47a778bd404_220.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": -300,
+          "critical": true,
+          "note": "boundary mismatch · major · dos end 300 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "ac42d31b-8766-45b4-8dcc-ea6108e3b4eb_867.wav",
+      "file_id": "dc0b75e1-b322-40e8-a289-2fce7aeea61f",
+      "file_name": "ac42d31b-8766-45b4-8dcc-ea6108e3b4eb_867.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing segment · critical · utilicemos loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": -240,
+          "note": "boundary mismatch · major · y start 240 ms early"
+        },
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "end",
+          "shift_ms": -60,
+          "note": "boundary mismatch · minor · punto end 60 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "45caca2e-b651-4531-92c3-940e142493b9_721.wav",
+      "file_id": "b957004a-a230-4aa4-8a22-31ea8db28668",
+      "file_name": "45caca2e-b651-4531-92c3-940e142493b9_721.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "note": "missing segment · major · vamos loses its timing"
+        },
+        {
+          "action": "remove",
+          "word": 4,
+          "critical": true,
+          "note": "missing segment · critical · rapidamente loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "start",
+          "shift_ms": 510,
+          "note": "boundary mismatch · critical · matlapa start 510 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "2c75fcf7-637e-4398-afc8-dcb89019bdfb_021.wav",
+      "file_id": "098859b4-e83e-480c-aa5f-1fc8768b585e",
+      "file_name": "2c75fcf7-637e-4398-afc8-dcb89019bdfb_021.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": -40,
+          "note": "boundary mismatch · minor · que start 40 ms early"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": -160,
+          "note": "boundary mismatch · major · bien end 160 ms early"
+        },
+        {
+          "action": "move",
+          "word": 10,
+          "edge": "start",
+          "shift_ms": -40,
+          "note": "boundary mismatch · minor · en start 40 ms early"
+        },
+        {
+          "action": "add",
+          "after_word": 13,
+          "text": "saludos",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'saludos' in the 0.64 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 20,
+          "edge": "start",
+          "shift_ms": -250,
+          "critical": true,
+          "note": "boundary mismatch · major · y start 250 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "bae5ae8c-ca0d-497b-8573-25defd38995c_022.wav",
+      "file_id": "c657b6e3-b5bf-40a9-8d7b-61d90823b997",
+      "file_name": "bae5ae8c-ca0d-497b-8573-25defd38995c_022.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "start",
+          "shift_ms": 190,
+          "critical": true,
+          "note": "boundary mismatch · major · pinas start 190 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "069dcf47-bb40-4fad-99b0-a394fbcddbdb_207.wav",
+      "file_id": "e0739a58-22e7-4f60-a8dc-8bb74397fe18",
+      "file_name": "069dcf47-bb40-4fad-99b0-a394fbcddbdb_207.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 2,
+          "critical": true,
+          "note": "missing segment · critical · tres loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "end",
+          "shift_ms": 70,
+          "note": "boundary mismatch · minor · lo end 70 ms late"
+        },
+        {
+          "action": "add",
+          "after_word": 12,
+          "text": "doce",
+          "note": "hallucinated segment · major · extra 'doce' in the 0.45 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "6324cfdd-cce4-4349-a523-1a7de4a6c68d_092.wav",
+      "file_id": "a562249d-3ba0-4e50-b1b1-3ec1986ee535",
+      "file_name": "6324cfdd-cce4-4349-a523-1a7de4a6c68d_092.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": 340,
+          "note": "boundary mismatch · critical · shu end 340 ms late"
+        },
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "end",
+          "shift_ms": -510,
+          "critical": true,
+          "note": "boundary mismatch · critical · sha end 510 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "560afc24-02d4-4530-93e4-ae9cb9012c13_329.wav",
+      "file_id": "a63d2a6d-a4d0-400d-9ed0-3e1a96d024f9",
+      "file_name": "560afc24-02d4-4530-93e4-ae9cb9012c13_329.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing segment · critical · vease loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "7f627a2e-51b9-4e32-8488-dc0f8a8f65da_347.wav",
+      "file_id": "f833145f-b219-4854-8a5e-cdcd78cd9d7a",
+      "file_name": "7f627a2e-51b9-4e32-8488-dc0f8a8f65da_347.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": -440,
+          "critical": true,
+          "note": "boundary mismatch · critical · y end 440 ms early"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "start",
+          "shift_ms": -190,
+          "note": "boundary mismatch · major · era start 190 ms early"
+        },
+        {
+          "action": "add",
+          "after_word": 8,
+          "text": "mil",
+          "note": "hallucinated segment · major · extra 'mil' in the 0.42 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "9eae8ca6-d38c-4b2c-a752-f5a7430def86_060.wav",
+      "file_id": "7b69e03e-6bff-4380-ad8e-22cb086b4559",
+      "file_name": "9eae8ca6-d38c-4b2c-a752-f5a7430def86_060.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "end",
+          "shift_ms": 50,
+          "note": "boundary mismatch · minor · en end 50 ms late"
+        },
+        {
+          "action": "add",
+          "after_word": 7,
+          "text": "estos",
+          "note": "hallucinated segment · major · extra 'estos' in the 0.35 s pause after it"
+        },
+        {
+          "action": "remove",
+          "word": 12,
+          "critical": true,
+          "note": "missing segment · critical · antiguas loses its timing"
+        },
+        {
+          "action": "add",
+          "after_word": 17,
+          "text": "antiguas",
+          "note": "hallucinated segment · major · extra 'antiguas' in the 0.80 s pause after it"
+        },
+        {
+          "action": "remove",
+          "word": 21,
+          "critical": true,
+          "note": "missing segment · critical · santuario loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 25,
+          "edge": "start",
+          "shift_ms": 330,
+          "note": "boundary mismatch · critical · argos start 330 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "af19f861-b5c6-4053-b234-d6310cc1bee6_138.wav",
+      "file_id": "0cd7a2e8-6573-4982-80f1-f3445598a7e0",
+      "file_name": "af19f861-b5c6-4053-b234-d6310cc1bee6_138.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 0,
+          "text": "ah",
+          "note": "hallucinated segment · major · extra 'ah' in the 0.50 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "start",
+          "shift_ms": 530,
+          "critical": true,
+          "note": "boundary mismatch · critical · dos start 530 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "350343ff-c485-4bff-890c-64ffe4e9d01f_767.wav",
+      "file_id": "5debdffa-1153-45ca-ac78-1053f8f26fcd",
+      "file_name": "350343ff-c485-4bff-890c-64ffe4e9d01f_767.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": -250,
+          "critical": true,
+          "note": "boundary mismatch · major · xalapa end 250 ms early"
+        },
+        {
+          "action": "move",
+          "word": 8,
+          "edge": "end",
+          "shift_ms": -80,
+          "note": "boundary mismatch · minor · encuentro end 80 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "4194e5a9-b9ff-421c-8ce7-4dff971a9a31_059.wav",
+      "file_id": "515b01ce-17a6-4d49-bb33-d8f90bbfb972",
+      "file_name": "4194e5a9-b9ff-421c-8ce7-4dff971a9a31_059.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "b8e20cfc-4da0-4f37-9e25-cef9a4da9340_1125.wav",
+      "file_id": "3bc7d574-e1d1-494c-8d0d-d9c2adf56eb6",
+      "file_name": "b8e20cfc-4da0-4f37-9e25-cef9a4da9340_1125.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "37f949bd-5516-496e-8ea3-291df89d1493_010.wav",
+      "file_id": "bf8d1ee9-4991-4b2f-9574-1704e254ea24",
+      "file_name": "37f949bd-5516-496e-8ea3-291df89d1493_010.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "end",
+          "shift_ms": 60,
+          "critical": true,
+          "note": "boundary mismatch · minor · zona end 60 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "cccc3130-b482-4b31-beec-1c0c383c07de_224.wav",
+      "file_id": "8be68132-619d-4ecf-9b5b-7a81a5085792",
+      "file_name": "cccc3130-b482-4b31-beec-1c0c383c07de_224.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 12,
+          "text": "bolsa",
+          "note": "hallucinated segment · major · extra 'bolsa' in the 0.40 s pause after it"
+        },
+        {
+          "action": "add",
+          "after_word": 39,
+          "text": "soles",
+          "note": "hallucinated segment · major · extra 'soles' in the 0.44 s pause after it"
+        },
+        {
+          "action": "add",
+          "after_word": 45,
+          "text": "presente",
+          "note": "hallucinated segment · major · extra 'presente' in the 0.40 s pause after it"
+        },
+        {
+          "action": "add",
+          "after_word": 58,
+          "text": "l",
+          "note": "hallucinated segment · major · extra 'l' in the 0.35 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 66,
+          "edge": "start",
+          "shift_ms": 410,
+          "critical": true,
+          "note": "boundary mismatch · critical · gramos start 410 ms late"
+        },
+        {
+          "action": "add",
+          "after_word": 72,
+          "text": "ml",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'ml' in the 0.49 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "7518cb02-20df-4808-a740-f02370726b90_096.wav",
+      "file_id": "57f7be41-2fce-4273-a145-57c66b917b9c",
+      "file_name": "7518cb02-20df-4808-a740-f02370726b90_096.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 50,
+          "note": "boundary mismatch · minor · nueve start 50 ms late"
+        },
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "end",
+          "shift_ms": 260,
+          "note": "boundary mismatch · major · ciento end 260 ms late"
+        },
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "end",
+          "shift_ms": 440,
+          "critical": true,
+          "note": "boundary mismatch · critical · y end 440 ms late"
+        },
+        {
+          "action": "move",
+          "word": 12,
+          "edge": "end",
+          "shift_ms": 250,
+          "note": "boundary mismatch · major · ciento end 250 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "280a8f54-a700-49a0-a59a-0afe688a0d4f_353.wav",
+      "file_id": "dcec4b22-66ef-43e9-bda4-e055ef957f56",
+      "file_name": "280a8f54-a700-49a0-a59a-0afe688a0d4f_353.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "end",
+          "shift_ms": -320,
+          "note": "boundary mismatch · critical · estuvieron end 320 ms early"
+        },
+        {
+          "action": "remove",
+          "word": 8,
+          "critical": true,
+          "note": "missing segment · critical · urban loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "b38f3272-ff57-4c95-b866-75fe7f501997_664.wav",
+      "file_id": "7300b651-568e-4599-b90f-850b6ecddf4f",
+      "file_name": "b38f3272-ff57-4c95-b866-75fe7f501997_664.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": -270,
+          "note": "boundary mismatch · major · tengamos end 270 ms early"
+        },
+        {
+          "action": "add",
+          "after_word": 5,
+          "text": "de",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'de' in the 0.50 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "15ce3006-ca4e-481e-b2bf-229e3c93d5ca_1269.wav",
+      "file_id": "d19dca48-0e42-4e1c-87de-fb5bb64bb060",
+      "file_name": "15ce3006-ca4e-481e-b2bf-229e3c93d5ca_1269.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": -60,
+          "note": "boundary mismatch · minor · proclaman end 60 ms early"
+        },
+        {
+          "action": "remove",
+          "word": 5,
+          "critical": true,
+          "note": "missing segment · critical · pues loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "b5655048-22e8-4daa-ad2c-e54b5671e923_001.wav",
+      "file_id": "daa2cb5a-1437-465d-b493-d7d340468752",
+      "file_name": "b5655048-22e8-4daa-ad2c-e54b5671e923_001.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "18f636f8-e84f-46c6-8715-01943a7b946f_011.wav",
+      "file_id": "3607b1d3-eca5-474a-b3bb-cc5cda4b5ad2",
+      "file_name": "18f636f8-e84f-46c6-8715-01943a7b946f_011.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": -170,
+          "note": "boundary mismatch · major · un start 170 ms early"
+        },
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "end",
+          "shift_ms": -50,
+          "note": "boundary mismatch · minor · y end 50 ms early"
+        },
+        {
+          "action": "remove",
+          "word": 9,
+          "critical": true,
+          "note": "missing segment · critical · setecientos loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "d426827f-8d35-4554-9a14-2ced1ab381f7_1005.wav",
+      "file_id": "f32618f2-995c-48b6-bec1-5fae0a34bc46",
+      "file_name": "d426827f-8d35-4554-9a14-2ced1ab381f7_1005.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": 140,
+          "critical": true,
+          "note": "boundary mismatch · major · menor start 140 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "f6beb2e9-a03e-4eb6-8619-f408f84c4803_101.wav",
+      "file_id": "84c9fc23-044b-4134-9622-040e5dfc3a30",
+      "file_name": "f6beb2e9-a03e-4eb6-8619-f408f84c4803_101.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": 70,
+          "note": "boundary mismatch · minor · que start 70 ms late"
+        },
+        {
+          "action": "add",
+          "after_word": 8,
+          "text": "c",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'c' in the 0.61 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 13,
+          "edge": "start",
+          "shift_ms": -250,
+          "note": "boundary mismatch · major · y start 250 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "c248224a-bb49-4312-be6e-7e6dab10f69c_049.wav",
+      "file_id": "c2edacc8-ea66-4b34-8f7b-e2314ce6ea56",
+      "file_name": "c248224a-bb49-4312-be6e-7e6dab10f69c_049.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "critical": true,
+          "note": "missing segment · critical · tres loses its timing"
+        },
+        {
+          "action": "add",
+          "after_word": 4,
+          "text": "treinta",
+          "note": "hallucinated segment · major · extra 'treinta' in the 0.35 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 8,
+          "edge": "end",
+          "shift_ms": -40,
+          "note": "boundary mismatch · minor · tres end 40 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "601e5b26-c113-43b6-a174-bd2fce570011_025.wav",
+      "file_id": "9b8baca7-1922-47f3-96f0-7c6ba8772611",
+      "file_name": "601e5b26-c113-43b6-a174-bd2fce570011_025.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 0,
+          "text": "san",
+          "note": "hallucinated segment · major · extra 'san' in the 0.45 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "start",
+          "shift_ms": -520,
+          "critical": true,
+          "note": "boundary mismatch · critical · de start 520 ms early"
+        },
+        {
+          "action": "move",
+          "word": 14,
+          "edge": "end",
+          "shift_ms": -400,
+          "note": "boundary mismatch · critical · lupa end 400 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "2f832810-46d9-4ab1-a7cf-7ccd49f1465b_545.wav",
+      "file_id": "98988be1-1a82-4a11-88ee-6f8795ac4cee",
+      "file_name": "2f832810-46d9-4ab1-a7cf-7ccd49f1465b_545.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "9e1d1879-85ff-4c7b-b8bb-16c770b8bcdc_180.wav",
+      "file_id": "2998052b-1593-4f41-9758-7919695a4eee",
+      "file_name": "9e1d1879-85ff-4c7b-b8bb-16c770b8bcdc_180.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "end",
+          "shift_ms": 390,
+          "critical": true,
+          "note": "boundary mismatch · critical · pesos end 390 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "e8005b23-486f-4c0a-a631-942ac0112f77_037.wav",
+      "file_id": "e27751a7-4f5c-4c60-b2ec-399e3861cf1d",
+      "file_name": "e8005b23-486f-4c0a-a631-942ac0112f77_037.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing segment · critical · de loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "224dde93-d66f-40bd-8425-ec29b974d63d_461.wav",
+      "file_id": "370dac8a-9d09-4fd9-b9e0-91bebf549170",
+      "file_name": "224dde93-d66f-40bd-8425-ec29b974d63d_461.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 1,
+          "text": "tres",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'tres' in the 1.24 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "68d9d695-0fc8-49a4-8995-921734998097_404.wav",
+      "file_id": "7d9284ad-dae5-4280-928a-8ece64474406",
+      "file_name": "68d9d695-0fc8-49a4-8995-921734998097_404.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": -240,
+          "critical": true,
+          "note": "boundary mismatch · major · pepe end 240 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "b9c06fd0-64d1-4562-89e0-0f9e6ec5afea_186.wav",
+      "file_id": "6102921d-67e2-4d9b-8961-e61c8b10c0db",
+      "file_name": "b9c06fd0-64d1-4562-89e0-0f9e6ec5afea_186.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": -40,
+          "note": "boundary mismatch · minor · que start 40 ms early"
+        },
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "start",
+          "shift_ms": 40,
+          "note": "boundary mismatch · minor · de start 40 ms late"
+        },
+        {
+          "action": "move",
+          "word": 12,
+          "edge": "start",
+          "shift_ms": -320,
+          "note": "boundary mismatch · critical · que start 320 ms early"
+        },
+        {
+          "action": "remove",
+          "word": 17,
+          "critical": true,
+          "note": "missing segment · critical · once loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "3d14d869-28f5-4dcb-a8f3-45ae6956cf11_1208.wav",
+      "file_id": "a00eef1d-d9ca-43ff-b439-539ee91977f5",
+      "file_name": "3d14d869-28f5-4dcb-a8f3-45ae6956cf11_1208.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": -210,
+          "note": "boundary mismatch · major · y start 210 ms early"
+        },
+        {
+          "action": "remove",
+          "word": 5,
+          "critical": true,
+          "note": "missing segment · critical · noventa loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 8,
+          "edge": "end",
+          "shift_ms": 40,
+          "note": "boundary mismatch · minor · cie- end 40 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "cb4a068e-50d9-4a4e-9347-bf1531d357be_394.wav",
+      "file_id": "610a4673-8b18-4f03-a6bc-b7acc6f652b5",
+      "file_name": "cb4a068e-50d9-4a4e-9347-bf1531d357be_394.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "start",
+          "shift_ms": -190,
+          "critical": true,
+          "note": "boundary mismatch · major · no start 190 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "2261e7de-d8bc-46cc-b490-286b8a951799_006.wav",
+      "file_id": "82da9a3d-7b39-438a-9e05-91e5d840cccc",
+      "file_name": "2261e7de-d8bc-46cc-b490-286b8a951799_006.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 470,
+          "critical": true,
+          "note": "boundary mismatch · critical · ubicado start 470 ms late"
+        },
+        {
+          "action": "add",
+          "after_word": 4,
+          "text": "de",
+          "note": "hallucinated segment · major · extra 'de' in the 0.43 s pause after it"
+        },
+        {
+          "action": "add",
+          "after_word": 9,
+          "text": "de",
+          "note": "hallucinated segment · major · extra 'de' in the 0.57 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "b60e821b-5e0b-477f-9332-072ca4e326db_262.wav",
+      "file_id": "b5cca256-b544-414c-8683-f0e79422288b",
+      "file_name": "b60e821b-5e0b-477f-9332-072ca4e326db_262.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": -330,
+          "critical": true,
+          "note": "boundary mismatch · critical · betel end 330 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "4c294d56-35f4-456b-930f-b0c99832bbff_562.wav",
+      "file_id": "780c3ce5-1a18-4c83-a2af-555c85143213",
+      "file_name": "4c294d56-35f4-456b-930f-b0c99832bbff_562.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": 350,
+          "note": "boundary mismatch · critical · segunda start 350 ms late"
+        },
+        {
+          "action": "remove",
+          "word": 6,
+          "critical": true,
+          "note": "missing segment · critical · estadio loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "ff89016d-664a-497e-8fdd-c5c062736e33_172.wav",
+      "file_id": "658de014-1281-433b-84a7-334610cdfe3b",
+      "file_name": "ff89016d-664a-497e-8fdd-c5c062736e33_172.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": 50,
+          "critical": true,
+          "note": "boundary mismatch · minor · u start 50 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "d73369ee-2372-42fa-b12b-f6ab14a9b959_765.wav",
+      "file_id": "8254aac1-3b34-462d-b54e-bebf2b2ecd62",
+      "file_name": "d73369ee-2372-42fa-b12b-f6ab14a9b959_765.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing segment · critical · torre loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "7c188cba-7843-4337-a93d-51f2c7781000_093.wav",
+      "file_id": "b9a0f9bb-1e4a-4a67-b8a2-1dbb666f61fc",
+      "file_name": "7c188cba-7843-4337-a93d-51f2c7781000_093.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": -40,
+          "note": "boundary mismatch · minor · una start 40 ms early"
+        },
+        {
+          "action": "add",
+          "after_word": 7,
+          "text": "dos",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'dos' in the 0.43 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": -100,
+          "note": "boundary mismatch · major · mañana end 100 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "dbaaa086-0201-465a-b255-14a487839851_168.wav",
+      "file_id": "8898851b-f018-4d0b-92ef-03a98c265350",
+      "file_name": "dbaaa086-0201-465a-b255-14a487839851_168.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": -150,
+          "note": "boundary mismatch · major · mañana end 150 ms early"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "end",
+          "shift_ms": -200,
+          "note": "boundary mismatch · major · pasaje end 200 ms early"
+        },
+        {
+          "action": "remove",
+          "word": 11,
+          "note": "missing segment · major · que loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 15,
+          "edge": "end",
+          "shift_ms": 510,
+          "critical": true,
+          "note": "boundary mismatch · critical · dos end 510 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "2bc5e153-d81b-471c-8531-d2d60530ea0c_055.wav",
+      "file_id": "905a690d-5f42-4a97-bc2f-5319fc7b4c6d",
+      "file_name": "2bc5e153-d81b-471c-8531-d2d60530ea0c_055.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 2,
+          "critical": true,
+          "note": "missing segment · critical · de loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "start",
+          "shift_ms": 370,
+          "note": "boundary mismatch · critical · millones start 370 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "b567fd73-5904-4421-bceb-580fc64fe862_340.wav",
+      "file_id": "74100be7-b5a8-474c-8758-cff903f34c4e",
+      "file_name": "b567fd73-5904-4421-bceb-580fc64fe862_340.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "start",
+          "shift_ms": -40,
+          "note": "boundary mismatch · minor · me start 40 ms early"
+        },
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "start",
+          "shift_ms": -160,
+          "note": "boundary mismatch · major · bien start 160 ms early"
+        },
+        {
+          "action": "remove",
+          "word": 10,
+          "critical": true,
+          "note": "missing segment · critical · mendeliana loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "461f46c4-30a2-4ab2-b4be-91fb154d6063_019.wav",
+      "file_id": "4914fd14-bc55-4d43-887f-c66dd48963c5",
+      "file_name": "461f46c4-30a2-4ab2-b4be-91fb154d6063_019.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "5632ffb6-425e-486a-b165-3f389c2e56dd_091.wav",
+      "file_id": "56ccbe12-388f-4624-a99d-71ddc45d22b5",
+      "file_name": "5632ffb6-425e-486a-b165-3f389c2e56dd_091.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": -340,
+          "critical": true,
+          "note": "boundary mismatch · critical · cero start 340 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "2fffcb50-2640-4ec6-8b58-56e71fab46b9_158.wav",
+      "file_id": "5c0d320a-4e9a-4f88-aa1e-0ac1c4083f35",
+      "file_name": "2fffcb50-2640-4ec6-8b58-56e71fab46b9_158.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "7b486712-a026-4f70-b428-47211a304d61_182.wav",
+      "file_id": "e9caa901-98d5-43d3-9357-443f53467492",
+      "file_name": "7b486712-a026-4f70-b428-47211a304d61_182.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing segment · critical · calle loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "end",
+          "shift_ms": -40,
+          "note": "boundary mismatch · minor · ayala end 40 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "bec4f400-4a2e-4407-8861-1c1d9954f15c_066.wav",
+      "file_id": "b33eb5ad-a64b-4240-87c3-cfc40e789902",
+      "file_name": "bec4f400-4a2e-4407-8861-1c1d9954f15c_066.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "end",
+          "shift_ms": 520,
+          "critical": true,
+          "note": "boundary mismatch · critical · silva end 520 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "d6faa33e-e78f-41fd-808b-15fc64dc06f7_6187.wav",
+      "file_id": "36becf26-2966-47d7-87d7-a5893834fe5f",
+      "file_name": "d6faa33e-e78f-41fd-808b-15fc64dc06f7_6187.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "dad610f0-2687-4a8d-b3ca-9b1626847a3e_728.wav",
+      "file_id": "0e114a42-264e-4e1c-8196-8e376590d3be",
+      "file_name": "dad610f0-2687-4a8d-b3ca-9b1626847a3e_728.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": -210,
+          "critical": true,
+          "note": "boundary mismatch · major · familia start 210 ms early"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": -60,
+          "note": "boundary mismatch · minor · cuatro start 60 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "46c2d424-cc38-4ccc-a89c-59acae3cb790_294.wav",
+      "file_id": "77194dd2-b4d1-4387-bb54-db88d7c70275",
+      "file_name": "46c2d424-cc38-4ccc-a89c-59acae3cb790_294.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 2,
+          "critical": true,
+          "note": "missing segment · critical · vuelvo loses its timing"
+        },
+        {
+          "action": "add",
+          "after_word": 7,
+          "text": "digo",
+          "note": "hallucinated segment · major · extra 'digo' in the 0.40 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "06721ba0-236c-4170-b41c-0e552742d9a4_415.wav",
+      "file_id": "0e31ee7c-eddb-4284-bfec-942e9cca3de3",
+      "file_name": "06721ba0-236c-4170-b41c-0e552742d9a4_415.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": -80,
+          "note": "boundary mismatch · minor · llegue start 80 ms early"
+        },
+        {
+          "action": "move",
+          "word": 8,
+          "edge": "end",
+          "shift_ms": -240,
+          "note": "boundary mismatch · major · parte end 240 ms early"
+        },
+        {
+          "action": "move",
+          "word": 13,
+          "edge": "start",
+          "shift_ms": -100,
+          "note": "boundary mismatch · major · de start 100 ms early"
+        },
+        {
+          "action": "add",
+          "after_word": 17,
+          "text": "librada",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'librada' in the 0.96 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 26,
+          "edge": "start",
+          "shift_ms": -50,
+          "note": "boundary mismatch · minor · volvere start 50 ms early"
+        },
+        {
+          "action": "add",
+          "after_word": 29,
+          "text": "si",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'si' in the 0.42 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "70720540-c1b5-4512-bf16-1f20f9ee8cd1_301.wav",
+      "file_id": "12bf67b6-502d-4f35-a9a5-36e36c13fc68",
+      "file_name": "70720540-c1b5-4512-bf16-1f20f9ee8cd1_301.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "430ee7eb-821d-4b47-ad96-0f568739ea38_826.wav",
+      "file_id": "9fd7c85f-ed68-47b4-9453-de435849fa0c",
+      "file_name": "430ee7eb-821d-4b47-ad96-0f568739ea38_826.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 2,
+          "critical": true,
+          "note": "missing segment · critical · triple loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "879aa038-4d20-4bb0-807e-afa0abe5e38e_990.wav",
+      "file_id": "ba46bb19-3d57-4308-b60e-26d9c6e527dc",
+      "file_name": "879aa038-4d20-4bb0-807e-afa0abe5e38e_990.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 110,
+          "critical": true,
+          "note": "boundary mismatch · major · impuestos start 110 ms late"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": 40,
+          "note": "boundary mismatch · minor · pesos end 40 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "141acb2c-5958-47dc-b1ac-9cd4eb6cb127_072.wav",
+      "file_id": "868ae156-b650-479a-a81a-be9d0f416bd6",
+      "file_name": "141acb2c-5958-47dc-b1ac-9cd4eb6cb127_072.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "15d487d0-6610-4453-81ca-bbe496495fc8_177.wav",
+      "file_id": "1d15d330-d49e-4576-bf3d-c0e1cb40c910",
+      "file_name": "15d487d0-6610-4453-81ca-bbe496495fc8_177.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "critical": true,
+          "note": "missing segment · critical · ordenes loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": -150,
+          "note": "boundary mismatch · major · quince end 150 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "ed188851-cd83-47eb-8cfa-5c9e9547fe8f_135.wav",
+      "file_id": "8cb1aa98-3ce4-4426-a2d1-67e53f3b376b",
+      "file_name": "ed188851-cd83-47eb-8cfa-5c9e9547fe8f_135.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "end",
+          "shift_ms": -390,
+          "note": "boundary mismatch · critical · temporizador end 390 ms early"
+        },
+        {
+          "action": "remove",
+          "word": 6,
+          "critical": true,
+          "note": "missing segment · critical · cinco loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "start",
+          "shift_ms": 430,
+          "note": "boundary mismatch · critical · cuatro start 430 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "eb5f28af-12cf-4f2d-8045-26efa9129e53_059.wav",
+      "file_id": "ebd8ec3d-e51f-496c-b409-6bd20e6d5fb7",
+      "file_name": "eb5f28af-12cf-4f2d-8045-26efa9129e53_059.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": 310,
+          "critical": true,
+          "note": "boundary mismatch · critical · mañana start 310 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "0cebc4ab-1d62-41e6-92c5-640f1c0df8c6_1300.wav",
+      "file_id": "f55b6b3e-6a78-425e-8e98-56cfb9c6f3e1",
+      "file_name": "0cebc4ab-1d62-41e6-92c5-640f1c0df8c6_1300.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": -80,
+          "note": "boundary mismatch · minor · meses end 80 ms early"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": -320,
+          "note": "boundary mismatch · critical · y start 320 ms early"
+        },
+        {
+          "action": "remove",
+          "word": 9,
+          "critical": true,
+          "note": "missing segment · critical · todos loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "94bf5503-d4be-4043-93d5-cb23779145ac_001.wav",
+      "file_id": "68abb56d-2b4b-42f4-b977-a60e3f015fe7",
+      "file_name": "94bf5503-d4be-4043-93d5-cb23779145ac_001.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 2,
+          "critical": true,
+          "note": "missing segment · critical · setenta loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "end",
+          "shift_ms": 190,
+          "note": "boundary mismatch · major · collins end 190 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "f307b7f6-abad-45c0-a0da-a3cb6f07eef8_232.wav",
+      "file_id": "a18cf504-93a9-4b9f-8ddd-356db7fb031f",
+      "file_name": "f307b7f6-abad-45c0-a0da-a3cb6f07eef8_232.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": 320,
+          "critical": true,
+          "note": "boundary mismatch · critical · de end 320 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "c29729ef-69c6-4326-9107-b1e340f7aad4_086.wav",
+      "file_id": "53a324c7-73dc-4a7e-bf4f-4cf492fcd44a",
+      "file_name": "c29729ef-69c6-4326-9107-b1e340f7aad4_086.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing segment · critical · punto loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "start",
+          "shift_ms": 80,
+          "note": "boundary mismatch · minor · ciento start 80 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "366a1723-229a-4ec7-8411-02e08e70ef72_779.wav",
+      "file_id": "f6cb3f53-b12f-4de0-bcd8-f1ca48eb45cd",
+      "file_name": "366a1723-229a-4ec7-8411-02e08e70ef72_779.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": -60,
+          "note": "boundary mismatch · minor · ahora start 60 ms early"
+        },
+        {
+          "action": "move",
+          "word": 12,
+          "edge": "end",
+          "shift_ms": -210,
+          "note": "boundary mismatch · major · dudas end 210 ms early"
+        },
+        {
+          "action": "move",
+          "word": 22,
+          "edge": "start",
+          "shift_ms": 320,
+          "note": "boundary mismatch · critical · uno start 320 ms late"
+        },
+        {
+          "action": "move",
+          "word": 29,
+          "edge": "start",
+          "shift_ms": -460,
+          "critical": true,
+          "note": "boundary mismatch · critical · de start 460 ms early"
+        },
+        {
+          "action": "remove",
+          "word": 35,
+          "critical": true,
+          "note": "missing segment · critical · te loses its timing"
+        },
+        {
+          "action": "add",
+          "after_word": 43,
+          "text": "alguna",
+          "note": "hallucinated segment · major · extra 'alguna' in the 0.35 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "9e373a0f-2817-4d89-8b1a-7ef3afe06206_054.wav",
+      "file_id": "3b2f0aa7-eefb-41da-be17-4d0137bfb44b",
+      "file_name": "9e373a0f-2817-4d89-8b1a-7ef3afe06206_054.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 0,
+          "text": "uno",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'uno' in the 0.56 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "3501c020-8079-4fa4-baf4-5470105ccff5_025.wav",
+      "file_id": "13e2b4b1-108b-4e4e-a129-00a9cdeee31d",
+      "file_name": "3501c020-8079-4fa4-baf4-5470105ccff5_025.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 2,
+          "text": "cabeza",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'cabeza' in the 0.56 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "da9a36b3-0800-4360-8321-21d3a8682db2_049.wav",
+      "file_id": "650a7ea3-d351-4cc2-b1e5-bfb275e5afc7",
+      "file_name": "da9a36b3-0800-4360-8321-21d3a8682db2_049.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "start",
+          "shift_ms": -40,
+          "note": "boundary mismatch · minor · doce start 40 ms early"
+        },
+        {
+          "action": "add",
+          "after_word": 6,
+          "text": "de",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'de' in the 0.45 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "1d9f70f8-984f-41ce-a6e1-d3c095ba3881_349.wav",
+      "file_id": "784d0135-76a7-47a0-98a2-d06a3db268a5",
+      "file_name": "1d9f70f8-984f-41ce-a6e1-d3c095ba3881_349.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": -280,
+          "critical": true,
+          "note": "boundary mismatch · major · sierva end 280 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "8b48cbec-6afe-400e-bd5f-2eb27ed0ccf0_576.wav",
+      "file_id": "f312d390-12bc-42c2-81bb-e81b87a5314f",
+      "file_name": "8b48cbec-6afe-400e-bd5f-2eb27ed0ccf0_576.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": 50,
+          "critical": true,
+          "note": "boundary mismatch · minor · norman end 50 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "5e65435d-1560-4f89-b1a0-28c02da18681_132.wav",
+      "file_id": "2433a76c-0f78-496d-b0a4-8cf5078ba1c6",
+      "file_name": "5e65435d-1560-4f89-b1a0-28c02da18681_132.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": 430,
+          "critical": true,
+          "note": "boundary mismatch · critical · uno start 430 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "bfe7619c-ee66-42c2-8e79-2e9e5d96a90b_798.wav",
+      "file_id": "c876bff3-fd04-4eb2-a647-15efc7dd32c5",
+      "file_name": "bfe7619c-ee66-42c2-8e79-2e9e5d96a90b_798.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "end",
+          "shift_ms": -120,
+          "critical": true,
+          "note": "boundary mismatch · major · a end 120 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "1cf443be-4ea5-4d70-9348-d61a794b3a5c_126.wav",
+      "file_id": "c4587249-0c8f-4e49-bcfc-dd0f42f57aff",
+      "file_name": "1cf443be-4ea5-4d70-9348-d61a794b3a5c_126.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": 60,
+          "note": "boundary mismatch · minor · pymes end 60 ms late"
+        },
+        {
+          "action": "remove",
+          "word": 5,
+          "critical": true,
+          "note": "missing segment · critical · mañana loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "cfe057f1-a8de-41ff-87d2-1f3f32a0d3fa_212.wav",
+      "file_id": "000bd839-da03-44a7-8c88-0c8722e09144",
+      "file_name": "cfe057f1-a8de-41ff-87d2-1f3f32a0d3fa_212.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "critical": true,
+          "note": "missing segment · critical · ubican loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": -420,
+          "note": "boundary mismatch · critical · consecutivos end 420 ms early"
+        },
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "end",
+          "shift_ms": -180,
+          "note": "boundary mismatch · major · p end 180 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "bd58e959-8105-46c7-b919-426326c70129_896.wav",
+      "file_id": "827da940-33af-4862-8b59-1e60e38045c3",
+      "file_name": "bd58e959-8105-46c7-b919-426326c70129_896.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": -60,
+          "note": "boundary mismatch · minor · guarda end 60 ms early"
+        },
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "start",
+          "shift_ms": 150,
+          "note": "boundary mismatch · major · estados start 150 ms late"
+        },
+        {
+          "action": "remove",
+          "word": 9,
+          "critical": true,
+          "note": "missing segment · critical · york loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "91d1d8c7-0dbd-49da-a309-ea2cce04b1c7_525.wav",
+      "file_id": "2e4b3e72-d6ac-459d-8041-177186b339b0",
+      "file_name": "91d1d8c7-0dbd-49da-a309-ea2cce04b1c7_525.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "end",
+          "shift_ms": 60,
+          "note": "boundary mismatch · minor · cierto end 60 ms late"
+        },
+        {
+          "action": "remove",
+          "word": 8,
+          "critical": true,
+          "note": "missing segment · critical · uno loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": -520,
+          "note": "boundary mismatch · critical · centimetros end 520 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "896d8792-4609-48ef-b2b1-209f0bee03b3_267.wav",
+      "file_id": "cc940553-64cf-4c05-889b-4d7de4a03b30",
+      "file_name": "896d8792-4609-48ef-b2b1-209f0bee03b3_267.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 50,
+          "note": "boundary mismatch · minor · a start 50 ms late"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": 100,
+          "note": "boundary mismatch · major · diga start 100 ms late"
+        },
+        {
+          "action": "remove",
+          "word": 10,
+          "critical": true,
+          "note": "missing segment · critical · tarso loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "372dbd4c-0aae-485d-a8c6-ec0a95401da5_609.wav",
+      "file_id": "a11b73e9-4190-4df3-b984-ecf58075865e",
+      "file_name": "372dbd4c-0aae-485d-a8c6-ec0a95401da5_609.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 2,
+          "critical": true,
+          "note": "missing segment · critical · ambito loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": 40,
+          "note": "boundary mismatch · minor · ciudad start 40 ms late"
+        },
+        {
+          "action": "move",
+          "word": 8,
+          "edge": "end",
+          "shift_ms": -380,
+          "note": "boundary mismatch · critical · aires end 380 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "ecf81e59-ed7f-461b-879b-81a8a077a88c_111.wav",
+      "file_id": "7b8b6dc1-78e0-4621-bb4c-decb6bb411cb",
+      "file_name": "ecf81e59-ed7f-461b-879b-81a8a077a88c_111.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 600,
+          "critical": true,
+          "note": "boundary mismatch · critical · fortaleza start 600 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "1184e4df-1a55-42c2-9a11-e2403f480264_038.wav",
+      "file_id": "7f0051c7-ef31-409b-95e4-828778e2355a",
+      "file_name": "1184e4df-1a55-42c2-9a11-e2403f480264_038.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 15,
+          "edge": "end",
+          "shift_ms": 260,
+          "note": "boundary mismatch · major · los end 260 ms late"
+        },
+        {
+          "action": "move",
+          "word": 27,
+          "edge": "start",
+          "shift_ms": 220,
+          "note": "boundary mismatch · major · rural start 220 ms late"
+        },
+        {
+          "action": "remove",
+          "word": 43,
+          "critical": true,
+          "note": "missing segment · critical · unidad loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 59,
+          "edge": "end",
+          "shift_ms": -330,
+          "note": "boundary mismatch · critical · manga end 330 ms early"
+        },
+        {
+          "action": "add",
+          "after_word": 68,
+          "text": "seccion",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'seccion' in the 0.55 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 74,
+          "edge": "start",
+          "shift_ms": 150,
+          "note": "boundary mismatch · major · nombre start 150 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "ce5f926e-89f8-4002-8fad-4baab905057c_096.wav",
+      "file_id": "e5f175cf-2524-482b-8583-617b8c326efc",
+      "file_name": "ce5f926e-89f8-4002-8fad-4baab905057c_096.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 2,
+          "critical": true,
+          "note": "missing segment · critical · iniciar loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "97d1fb22-4c48-4652-9c89-2bcc70bd0902_655.wav",
+      "file_id": "f04b717b-4e32-4de0-8c97-c51414f8494f",
+      "file_name": "97d1fb22-4c48-4652-9c89-2bcc70bd0902_655.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "end",
+          "shift_ms": -360,
+          "critical": true,
+          "note": "boundary mismatch · critical · argentina end 360 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "e38c6df6-20cc-4e69-85af-be0572342991_187.wav",
+      "file_id": "9a0bb88d-0a76-4b5c-8f1d-97ae66fd18c7",
+      "file_name": "e38c6df6-20cc-4e69-85af-be0572342991_187.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": -60,
+          "critical": true,
+          "note": "boundary mismatch · minor · orlando start 60 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "8d68078e-6504-4019-a3b9-380df0c26490_051.wav",
+      "file_id": "fe25ecd7-13bb-48ac-8d92-89d1699b3d12",
+      "file_name": "8d68078e-6504-4019-a3b9-380df0c26490_051.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "end",
+          "shift_ms": 70,
+          "note": "boundary mismatch · minor · bandas end 70 ms late"
+        },
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "start",
+          "shift_ms": 480,
+          "critical": true,
+          "note": "boundary mismatch · critical · propiedades start 480 ms late"
+        },
+        {
+          "action": "move",
+          "word": 12,
+          "edge": "end",
+          "shift_ms": 270,
+          "note": "boundary mismatch · major · estoy end 270 ms late"
+        },
+        {
+          "action": "remove",
+          "word": 17,
+          "note": "missing segment · major · vez loses its timing"
+        },
+        {
+          "action": "add",
+          "after_word": 25,
+          "text": "comun",
+          "note": "hallucinated segment · major · extra 'comun' in the 0.41 s pause after it"
+        },
+        {
+          "action": "remove",
+          "word": 39,
+          "critical": true,
+          "note": "missing segment · critical · numero loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "cf9a6604-c6b9-4c0d-ae60-8cfc31330857_040.wav",
+      "file_id": "97f165dc-69c8-494a-9808-83ecb9e5ee47",
+      "file_name": "cf9a6604-c6b9-4c0d-ae60-8cfc31330857_040.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": 100,
+          "critical": true,
+          "note": "boundary mismatch · major · y start 100 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "50ec02f4-bb83-4ce2-8d1a-6f3e8315c53e_001.wav",
+      "file_id": "d38ce40f-8e8b-4d42-948e-86d33e7667c3",
+      "file_name": "50ec02f4-bb83-4ce2-8d1a-6f3e8315c53e_001.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "a838a60b-df1c-42a9-b2a6-32b2cea0e345_074.wav",
+      "file_id": "52b9039d-7fe1-494b-81c0-b5972230b9b6",
+      "file_name": "a838a60b-df1c-42a9-b2a6-32b2cea0e345_074.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "critical": true,
+          "note": "missing segment · critical · distintas loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": 40,
+          "note": "boundary mismatch · minor · el end 40 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "4237d82e-adb0-4ac9-8ba3-07871e443e0c_759.wav",
+      "file_id": "2dbb1125-f8c9-433b-94d2-b9de19741972",
+      "file_name": "4237d82e-adb0-4ac9-8ba3-07871e443e0c_759.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": -350,
+          "critical": true,
+          "note": "boundary mismatch · critical · arriba end 350 ms early"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": 110,
+          "note": "boundary mismatch · major · el start 110 ms late"
+        },
+        {
+          "action": "move",
+          "word": 10,
+          "edge": "end",
+          "shift_ms": 80,
+          "note": "boundary mismatch · minor · aire end 80 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "e2a88b81-e31a-4403-a3cb-e243eef2465d_070.wav",
+      "file_id": "22894442-706a-435f-b2e8-07d19049fb9b",
+      "file_name": "e2a88b81-e31a-4403-a3cb-e243eef2465d_070.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": 410,
+          "note": "boundary mismatch · critical · exactamente start 410 ms late"
+        },
+        {
+          "action": "remove",
+          "word": 8,
+          "critical": true,
+          "note": "missing segment · critical · parroquia loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": -390,
+          "note": "boundary mismatch · critical · arcangel end 390 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "7eed4066-12a1-4273-8ce1-dffa6a22ff64_149.wav",
+      "file_id": "1510dbc8-65a6-4aef-aaa1-f85ff31ba055",
+      "file_name": "7eed4066-12a1-4273-8ce1-dffa6a22ff64_149.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing segment · critical · la loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "1d0c1a3d-adea-4a2e-acb3-e354ab39330f_569.wav",
+      "file_id": "fc20971f-eda2-4db9-8951-ab4b75b49ea9",
+      "file_name": "1d0c1a3d-adea-4a2e-acb3-e354ab39330f_569.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 2,
+          "text": "luis",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'luis' in the 0.46 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "d85bc07e-b496-40f7-b22d-b4bad66d9d70_093.wav",
+      "file_id": "3bd39714-cb34-4395-91ab-09a2b7452d7e",
+      "file_name": "d85bc07e-b496-40f7-b22d-b4bad66d9d70_093.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "end",
+          "shift_ms": -280,
+          "critical": true,
+          "note": "boundary mismatch · major · escudo end 280 ms early"
+        },
+        {
+          "action": "move",
+          "word": 8,
+          "edge": "end",
+          "shift_ms": -50,
+          "note": "boundary mismatch · minor · de end 50 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "f3cc3437-b77d-4bbe-8303-10a8292ab8f8_050.wav",
+      "file_id": "d625e485-a888-48d4-af16-90f6f22c13d9",
+      "file_name": "f3cc3437-b77d-4bbe-8303-10a8292ab8f8_050.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": 550,
+          "critical": true,
+          "note": "boundary mismatch · critical · cinco end 550 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "793da083-984e-4565-8664-16735eafd5a1_015.wav",
+      "file_id": "693c6e68-25e6-4784-bd4a-80674f9288ca",
+      "file_name": "793da083-984e-4565-8664-16735eafd5a1_015.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 2,
+          "text": "sitio",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'sitio' in the 0.62 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "end",
+          "shift_ms": -300,
+          "note": "boundary mismatch · major · huerto end 300 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "bd3c9698-c8e4-4f98-95a5-337127aeb11a_002.wav",
+      "file_id": "9122335e-315a-456d-b227-4d30abf8b1f5",
+      "file_name": "bd3c9698-c8e4-4f98-95a5-337127aeb11a_002.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": -190,
+          "note": "boundary mismatch · major · uno end 190 ms early"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "start",
+          "shift_ms": -50,
+          "note": "boundary mismatch · minor · para start 50 ms early"
+        },
+        {
+          "action": "add",
+          "after_word": 7,
+          "text": "infonavit",
+          "note": "hallucinated segment · major · extra 'infonavit' in the 0.47 s pause after it"
+        },
+        {
+          "action": "remove",
+          "word": 12,
+          "critical": true,
+          "note": "missing segment · critical · los loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "af4fee3a-9fe8-43a6-b1bd-a08ba9d55c30_283.wav",
+      "file_id": "3d8bda8a-a20b-42a5-9f01-e4767fa2cde9",
+      "file_name": "af4fee3a-9fe8-43a6-b1bd-a08ba9d55c30_283.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "start",
+          "shift_ms": -80,
+          "critical": true,
+          "note": "boundary mismatch · minor · guatemala start 80 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "514baa10-c745-4fb8-8220-3a92e29709fd_006.wav",
+      "file_id": "51ad4eda-5c90-44be-a42c-9b08aa009fd4",
+      "file_name": "514baa10-c745-4fb8-8220-3a92e29709fd_006.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "critical": true,
+          "note": "missing segment · critical · seis loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "f632b013-b704-445b-bad8-6cbe4c204add_006.wav",
+      "file_id": "2ffe56be-07f2-476c-aeaa-15af7cdc76a5",
+      "file_name": "f632b013-b704-445b-bad8-6cbe4c204add_006.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "65628ddf-b769-46ae-8d1a-9899aa52afa4_070.wav",
+      "file_id": "ae835905-1cce-47f8-9f08-e6915b64a04b",
+      "file_name": "65628ddf-b769-46ae-8d1a-9899aa52afa4_070.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": 310,
+          "critical": true,
+          "note": "boundary mismatch · critical · fe start 310 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "241a16ed-2219-4e77-a2e4-00563751e1cb_231.wav",
+      "file_id": "f20f13b8-9996-4e47-bc8f-52d2a1077c35",
+      "file_name": "241a16ed-2219-4e77-a2e4-00563751e1cb_231.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": -170,
+          "note": "boundary mismatch · major · cuarenta start 170 ms early"
+        },
+        {
+          "action": "remove",
+          "word": 4,
+          "critical": true,
+          "note": "missing segment · critical · sea loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "end",
+          "shift_ms": -40,
+          "note": "boundary mismatch · minor · repito end 40 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "04f0e348-82b4-4e3e-9caf-4963d9bf09d0_077.wav",
+      "file_id": "a7c25443-d2c4-4967-8000-2814e830852c",
+      "file_name": "04f0e348-82b4-4e3e-9caf-4963d9bf09d0_077.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 1,
+          "text": "a",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'a' in the 0.35 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "end",
+          "shift_ms": -190,
+          "note": "boundary mismatch · major · dos end 190 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "fef23e09-384c-466a-9342-beed5ff1a682_066.wav",
+      "file_id": "11e3f647-3e64-4c86-bd94-123f8ad6f23b",
+      "file_name": "fef23e09-384c-466a-9342-beed5ff1a682_066.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": 70,
+          "critical": true,
+          "note": "boundary mismatch · minor · mar start 70 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "f396357c-3334-4497-a592-a6df559d508d_003.wav",
+      "file_id": "57b7697a-7bda-4fa8-a705-9e11fef83ba3",
+      "file_name": "f396357c-3334-4497-a592-a6df559d508d_003.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing segment · critical · ochenta loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "1b937ba9-18f8-4774-b49c-f8dba9d3656b_104.wav",
+      "file_id": "25371a6c-a503-45b8-b511-c25a8b858b34",
+      "file_name": "1b937ba9-18f8-4774-b49c-f8dba9d3656b_104.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 17,
+          "text": "estructura",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'estructura' in the 0.40 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 22,
+          "edge": "end",
+          "shift_ms": 190,
+          "note": "boundary mismatch · major · ella end 190 ms late"
+        },
+        {
+          "action": "move",
+          "word": 32,
+          "edge": "start",
+          "shift_ms": 320,
+          "note": "boundary mismatch · critical · jorge start 320 ms late"
+        },
+        {
+          "action": "add",
+          "after_word": 39,
+          "text": "resulto",
+          "note": "hallucinated segment · major · extra 'resulto' in the 0.56 s pause after it"
+        },
+        {
+          "action": "add",
+          "after_word": 46,
+          "text": "mañana",
+          "note": "hallucinated segment · major · extra 'mañana' in the 0.48 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 51,
+          "edge": "end",
+          "shift_ms": 530,
+          "critical": true,
+          "note": "boundary mismatch · critical · gana end 530 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "3f82683e-8998-4a07-ad50-2f67fa8485b3_550.wav",
+      "file_id": "3f220279-8f94-4069-8ec8-9b13363a6364",
+      "file_name": "3f82683e-8998-4a07-ad50-2f67fa8485b3_550.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 70,
+          "critical": true,
+          "note": "boundary mismatch · minor · mañana start 70 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "e01ca6c3-511c-4fb6-8750-aa620f91dbf2_1058.wav",
+      "file_id": "49237de2-c1c8-44b1-8ecc-ad0ee86edad5",
+      "file_name": "e01ca6c3-511c-4fb6-8750-aa620f91dbf2_1058.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 2,
+          "critical": true,
+          "note": "missing segment · critical · citosol loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": 350,
+          "note": "boundary mismatch · critical · complejo start 350 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "d767f7ee-16e8-406f-ad68-2a21a97cc377_068.wav",
+      "file_id": "ebdc426d-b9b6-4e47-add6-da4ae9228632",
+      "file_name": "d767f7ee-16e8-406f-ad68-2a21a97cc377_068.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 320,
+          "critical": true,
+          "note": "boundary mismatch · critical · uno start 320 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "fe9d9f16-47bf-495c-9121-6c498730a660_094.wav",
+      "file_id": "12cea749-e5a8-4ee0-aa85-905f2e191f10",
+      "file_name": "fe9d9f16-47bf-495c-9121-6c498730a660_094.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 3,
+          "critical": true,
+          "note": "missing segment · critical · municipio loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "end",
+          "shift_ms": 70,
+          "note": "boundary mismatch · minor · porque end 70 ms late"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "start",
+          "shift_ms": 150,
+          "note": "boundary mismatch · major · cesado start 150 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "89c0eff5-fb34-48c2-8a0e-f50df5fce9b4_109.wav",
+      "file_id": "1fbbb6c5-46dc-4223-bb66-e21d95840b47",
+      "file_name": "89c0eff5-fb34-48c2-8a0e-f50df5fce9b4_109.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": -40,
+          "critical": true,
+          "note": "boundary mismatch · minor · albarcas end 40 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "e88d2704-ea3e-49ae-995a-e4a6498a6756_259.wav",
+      "file_id": "4f3ba4e8-fb02-4047-b04c-d840517bf7a5",
+      "file_name": "e88d2704-ea3e-49ae-995a-e4a6498a6756_259.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": -160,
+          "note": "boundary mismatch · major · se start 160 ms early"
+        },
+        {
+          "action": "remove",
+          "word": 5,
+          "critical": true,
+          "note": "missing segment · critical · de loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "d4aaeb91-4947-4a8f-a578-1c28a589581b_066.wav",
+      "file_id": "3be1dab8-0cf7-4ef4-ae27-fc0241cc54e9",
+      "file_name": "d4aaeb91-4947-4a8f-a578-1c28a589581b_066.wav",
+      "plants": []
+    },
+    {
+      "decoy_ref": "12e149c1-50d4-4b2b-a6aa-ae927dcd17b4_024.wav",
+      "file_id": "8b260011-7559-4df7-9023-f8f6110c6ad1",
+      "file_name": "12e149c1-50d4-4b2b-a6aa-ae927dcd17b4_024.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "start",
+          "shift_ms": 420,
+          "note": "boundary mismatch · critical · ahi start 420 ms late"
+        },
+        {
+          "action": "remove",
+          "word": 9,
+          "critical": true,
+          "note": "missing segment · critical · un loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 18,
+          "edge": "end",
+          "shift_ms": -60,
+          "note": "boundary mismatch · minor · usted end 60 ms early"
+        },
+        {
+          "action": "move",
+          "word": 23,
+          "edge": "end",
+          "shift_ms": -300,
+          "note": "boundary mismatch · major · peso end 300 ms early"
+        },
+        {
+          "action": "remove",
+          "word": 27,
+          "critical": true,
+          "note": "missing segment · critical · jugar loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 33,
+          "edge": "end",
+          "shift_ms": -310,
+          "note": "boundary mismatch · critical · pesos end 310 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "ea884fbd-ab26-4174-8597-8ea0b1889aed_017.wav",
+      "file_id": "2ef41659-51e1-4fe6-9703-a3ff6702edcf",
+      "file_name": "ea884fbd-ab26-4174-8597-8ea0b1889aed_017.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": 150,
+          "critical": true,
+          "note": "boundary mismatch · major · f start 150 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "04de1890-f48e-4492-98f3-7c615408be11_2771.wav",
+      "file_id": "a4c99e79-f2e1-4d70-9cb0-91a82e10cdc7",
+      "file_name": "04de1890-f48e-4492-98f3-7c615408be11_2771.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "end",
+          "shift_ms": -50,
+          "critical": true,
+          "note": "boundary mismatch · minor · tres end 50 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "24136b2e-a029-430a-995a-9bcefaab6fef_092.wav",
+      "file_id": "ae154a68-dfbd-4e6c-b1e5-c7dbf74f6c28",
+      "file_name": "24136b2e-a029-430a-995a-9bcefaab6fef_092.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "note": "missing segment · major · mañana loses its timing"
+        },
+        {
+          "action": "remove",
+          "word": 5,
+          "critical": true,
+          "note": "missing segment · critical · tres loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "end",
+          "shift_ms": -270,
+          "note": "boundary mismatch · major · treinta end 270 ms early"
+        },
+        {
+          "action": "move",
+          "word": 14,
+          "edge": "end",
+          "shift_ms": 510,
+          "note": "boundary mismatch · critical · seis end 510 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "98128de4-e2e0-48bb-8708-6e82ab5b26f3_800.wav",
+      "file_id": "1fb74587-9728-486f-bbeb-0e501e5b2a0d",
+      "file_name": "98128de4-e2e0-48bb-8708-6e82ab5b26f3_800.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "start",
+          "shift_ms": 140,
+          "note": "boundary mismatch · major · amba start 140 ms late"
+        },
+        {
+          "action": "move",
+          "word": 8,
+          "edge": "start",
+          "shift_ms": -50,
+          "note": "boundary mismatch · minor · sitio start 50 ms early"
+        },
+        {
+          "action": "remove",
+          "word": 12,
+          "critical": true,
+          "note": "missing segment · critical · punto loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 15,
+          "edge": "start",
+          "shift_ms": 40,
+          "note": "boundary mismatch · minor · ar start 40 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "f48b5a83-c061-44eb-8d76-5288d1d39769_358.wav",
+      "file_id": "e6b8ba0a-4896-4de6-b371-56a567a1bbd6",
+      "file_name": "f48b5a83-c061-44eb-8d76-5288d1d39769_358.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 2,
+          "text": "cero",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'cero' in the 0.35 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "end",
+          "shift_ms": -70,
+          "note": "boundary mismatch · minor · doce end 70 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "0c3c84ac-5199-4c0c-a0c5-1beb34d5526c_626.wav",
+      "file_id": "bec49677-e2cc-4323-bb3d-09e8054a116d",
+      "file_name": "0c3c84ac-5199-4c0c-a0c5-1beb34d5526c_626.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing segment · critical · sale loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": -210,
+          "note": "boundary mismatch · major · de start 210 ms early"
+        },
+        {
+          "action": "move",
+          "word": 10,
+          "edge": "start",
+          "shift_ms": -400,
+          "note": "boundary mismatch · critical · y start 400 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "34e60708-b718-4e46-8c74-9811e94f8b66_084.wav",
+      "file_id": "67bda125-84e7-41b9-b016-f6ebc9267324",
+      "file_name": "34e60708-b718-4e46-8c74-9811e94f8b66_084.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 3,
+          "text": "energia",
+          "note": "hallucinated segment · major · extra 'energia' in the 0.49 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": 610,
+          "critical": true,
+          "note": "boundary mismatch · critical · los end 610 ms late"
+        },
+        {
+          "action": "add",
+          "after_word": 19,
+          "text": "obvias",
+          "critical": true,
+          "note": "hallucinated segment · critical · extra 'obvias' in the 0.54 s pause after it"
+        },
+        {
+          "action": "add",
+          "after_word": 30,
+          "text": "dolares",
+          "note": "hallucinated segment · major · extra 'dolares' in the 0.39 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 38,
+          "edge": "end",
+          "shift_ms": -310,
+          "note": "boundary mismatch · critical · gasolina end 310 ms early"
+        },
+        {
+          "action": "add",
+          "after_word": 44,
+          "text": "mañana",
+          "note": "hallucinated segment · major · extra 'mañana' in the 0.69 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "a2108c69-5bcb-48f0-9a49-dacd7450fb0f_133.wav",
+      "file_id": "bf38b352-94d5-4a3d-8227-0a9e79260327",
+      "file_name": "a2108c69-5bcb-48f0-9a49-dacd7450fb0f_133.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 80,
+          "critical": true,
+          "note": "boundary mismatch · minor · mañana start 80 ms late"
+        },
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "end",
+          "shift_ms": 50,
+          "note": "boundary mismatch · minor · girardot end 50 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "207a7a82-75d3-4e28-85c7-49e6e76d9eac_116.wav",
+      "file_id": "62e15bf2-c7d1-47fe-9571-d67ce5a4c553",
+      "file_name": "207a7a82-75d3-4e28-85c7-49e6e76d9eac_116.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": -230,
+          "critical": true,
+          "note": "boundary mismatch · major · salgado end 230 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "70dc180d-51d0-4d55-aaab-7b9758a0d87f_819.wav",
+      "file_id": "50d3710c-3ff2-4492-9118-99168c6167cd",
+      "file_name": "70dc180d-51d0-4d55-aaab-7b9758a0d87f_819.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 2,
+          "critical": true,
+          "note": "missing segment · critical · la loses its timing"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "35f8c7ae-ba96-4ea2-ab02-c7060e8f9568_032.wav",
+      "file_id": "ca67c462-4ba2-4f2d-af57-6f775fd63ebf",
+      "file_name": "35f8c7ae-ba96-4ea2-ab02-c7060e8f9568_032.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing segment · critical · los loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "end",
+          "shift_ms": -170,
+          "note": "boundary mismatch · major · nissan end 170 ms early"
+        },
+        {
+          "action": "move",
+          "word": 8,
+          "edge": "start",
+          "shift_ms": 320,
+          "note": "boundary mismatch · critical · fernando start 320 ms late"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "99069c70-04c0-4834-b50a-e812c89d4d42_125.wav",
+      "file_id": "0bc1943e-f056-4fce-8fe0-519a523be5c5",
+      "file_name": "99069c70-04c0-4834-b50a-e812c89d4d42_125.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 0,
+          "critical": true,
+          "note": "missing segment · critical · supongo loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": 430,
+          "note": "boundary mismatch · critical · novecientos start 430 ms late"
+        },
+        {
+          "action": "move",
+          "word": 8,
+          "edge": "end",
+          "shift_ms": -210,
+          "note": "boundary mismatch · major · cuatro end 210 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "b88425dc-98ed-4d0a-ad9a-2429cb605794_014.wav",
+      "file_id": "a7fb87c2-faed-4503-96fa-920c64319594",
+      "file_name": "b88425dc-98ed-4d0a-ad9a-2429cb605794_014.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 1,
+          "critical": true,
+          "note": "missing segment · critical · cuarenta loses its timing"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": -550,
+          "note": "boundary mismatch · critical · tres end 550 ms early"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "5ba4928e-4aae-46b7-a756-832ea28ad928_002.wav",
+      "file_id": "8a9b9f02-953a-42e0-a485-76a44c6c266a",
+      "file_name": "5ba4928e-4aae-46b7-a756-832ea28ad928_002.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": 80,
+          "critical": true,
+          "note": "boundary mismatch · minor · miguel start 80 ms late"
+        }
+      ]
+    }
+  ]
+}
