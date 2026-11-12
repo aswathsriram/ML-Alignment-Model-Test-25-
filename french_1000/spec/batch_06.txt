@@ -1,0 +1,100 @@
+b06-001|F|[breathes] Bon, euh, je suis enfin sortie de l'examen de droit civil, quatre heures sans pause, j'ai la tête complètement vide.
+b06-002|M|Bonjour madame, je suis le papa de Lucas, en classe de cinquième, je voulais savoir si on pouvait se voir jeudi après les cours.
+b06-003|M|[sighs] Ben ouais, j'ai encore raté le bus ce matin, du coup je suis arrivé en retard au cours de mathématiques.
+b06-004|F|La bibliothèque municipale ouvre désormais le dimanche matin, de dix heures à treize heures, et l'inscription reste gratuite pour les moins de dix-huit ans.
+b06-005|M|Ma fille apprend l'allemand depuis deux ans, et cet été elle part trois semaines dans une famille près de Munich, elle est ravie.
+b06-006|F|[inhales] Écoute, je t'appelle parce que j'ai oublié mon cahier de chimie chez toi, tu pourrais me le rapporter demain matin?
+b06-007|F|[breathes] Quand j'étais petite, la maîtresse nous lisait une histoire chaque vendredi après-midi, et toute la classe attendait ce moment avec impatience.
+b06-008|M|Hmm, franchement, le chapitre sur les probabilités, j'ai rien compris, tu veux qu'on révise ensemble ce soir à la bibliothèque?
+b06-009|M|[exhales] Bon, voilà, j'ai rendu mon mémoire ce matin, cent douze pages, je suis soulagé mais vraiment épuisé.
+b06-010|F|[inhales] Bonjour, je souhaiterais prolonger l'emprunt de trois livres, je les ai pris il y a deux semaines et je n'ai pas encore terminé.
+b06-011|F|[sighs] Mon fils ne veut plus faire ses devoirs le soir, il dit qu'il est trop fatigué, je ne sais plus trop quoi faire.
+b06-012|M|Le professeur d'histoire nous a demandé un exposé sur la révolution industrielle, pour le quinze mars, en groupe de trois.
+b06-013|F|Ouais, j'ai trouvé une chambre dans une résidence étudiante à Lyon, douze mètres carrés, mais je suis contente, c'est à côté du campus.
+b06-014|M|[breathes] Salut maman, c'est moi, je voulais te dire que j'ai eu quinze sur vingt en philosophie, je suis plutôt fier de moi.
+b06-015|M|[sighs] Pour apprendre une langue, le plus efficace, c'est de parler un peu chaque jour, même dix minutes, plutôt que de tout faire le week-end.
+b06-016|F|Bah, la réunion parents professeurs a duré deux heures, et au final on a surtout parlé de la cantine, c'était un peu long.
+b06-017|M|Bonjour, je vous appelle de la part de l'école primaire Jules Ferry, votre fille a oublié son repas, pourriez-vous passer le déposer à l'accueil avant midi?
+b06-018|F|[inhales] J'ai passé l'oral d'espagnol ce matin, j'étais tellement stressée que j'ai mélangé le subjonctif et l'indicatif, enfin bon.
+b06-019|F|Chaque mercredi, j'emmène ma petite à la médiathèque, elle choisit cinq albums, et le soir on les lit ensemble avant de dormir.
+b06-020|M|[exhales] Euh, tu sais si le partiel d'économie est maintenant lundi ou mardi? J'ai vu deux dates différentes sur le panneau d'affichage.
+b06-021|M|Au début de l'année, le directeur a annoncé que les téléphones seraient interdits dans la cour, et les élèves ont beaucoup protesté.
+b06-022|F|[exhales] Bon, j'ai fini la dissertation à deux heures du matin, j'ai dormi quatre heures, et maintenant j'ai cours jusqu'à dix-huit heures.
+b06-023|M|[breathes] Bonjour monsieur, je suis étudiant en deuxième année de lettres, et je cherche un stage de deux mois dans une maison d'édition.
+b06-024|F|Ma grand-mère était institutrice dans un petit village du Cantal, elle avait une seule classe avec des enfants de six à onze ans.
+b06-025|M|[sighs] Ah, j'ai perdu ma carte d'étudiant, je ne peux plus entrer à la bibliothèque universitaire, il faut que j'en refasse une.
+b06-026|F|[inhales] Ouais, ma colocataire révise toujours avec de la musique très forte, moi j'ai besoin de silence, du coup je pars au café.
+b06-027|F|Bonsoir, c'est la maman de Chloé, je voulais savoir si votre fils pouvait venir réviser chez nous samedi après-midi, ils ont un contrôle lundi.
+b06-028|M|Les épreuves écrites du baccalauréat commencent le seize juin, et les résultats seront affichés début juillet dans chaque lycée.
+b06-029|M|[breathes] Hmm, je crois que je vais changer de filière, la biologie ça m'intéresse pas vraiment, je préférerais faire de l'informatique.
+b06-030|F|[sighs] Le professeur de piano de mon fils est très patient, il lui fait jouer des petits morceaux qu'il aime, et du coup il progresse vite.
+b06-031|M|J'ai commencé à apprendre l'italien avec une application, mais j'ai vite compris qu'il fallait aussi parler avec de vraies personnes.
+b06-032|F|[inhales] Bonjour madame, je suis désolée, je n'ai pas pu rendre le devoir vendredi, j'étais malade, est-ce que je peux vous l'envoyer ce soir?
+b06-033|M|Ben, la cantine de l'université a augmenté ses prix, le repas passe à quatre euros vingt, c'est quand même beaucoup pour nous.
+b06-034|F|[exhales] Dans notre bibliothèque, les lecteurs peuvent maintenant emprunter des jeux de société et des instruments de musique, ça a beaucoup de succès.
+b06-035|M|[exhales] Mon fils entre en sixième en septembre, il est un peu inquiet, il a peur de se perdre dans le collège.
+b06-036|F|Salut, euh, est-ce que tu as pris des notes pendant le cours de sociologie ce matin? J'étais coincée dans le tramway.
+b06-037|M|Quand j'étais au lycée, notre professeur de français nous faisait apprendre un poème par mois, et je me souviens encore de plusieurs.
+b06-038|F|[sighs] Franchement, les devoirs de mathématiques de troisième, j'arrive plus à aider ma fille, j'ai tout oublié depuis le temps.
+b06-039|M|[breathes] Bonjour, je voudrais m'inscrire au cours du soir de portugais, il reste encore des places pour le niveau débutant?
+b06-040|F|J'ai réussi le concours d'entrée à l'école d'infirmières, trois cent vingt candidats pour quarante places, je suis tellement heureuse!
+b06-041|M|[breathes] Bah, ce week-end, je reste à la maison, j'ai trois chapitres de droit constitutionnel à relire avant mardi.
+b06-042|M|Le samedi matin, la bibliothèque organise un atelier de conversation en anglais, gratuit et ouvert à tout le monde, même aux grands débutants.
+b06-043|F|Mon professeur de russe nous fait écouter des chansons en classe, au début ça m'a surprise, mais en fait on retient tout.
+b06-044|F|[inhales] Coucou papa, je suis bien arrivée à Rennes, la résidence est très calme, et j'ai déjà rencontré mes voisins de couloir.
+b06-045|M|[inhales] Notre fille a sauté une classe en primaire, et aujourd'hui elle est la plus jeune de sa promotion, mais elle s'adapte très bien.
+b06-046|M|Euh, attends, le livre de Victor Hugo pour le cours de littérature, c'est bien Quatrevingt-treize ou Les Misérables? Je sais plus.
+b06-047|F|En licence, j'avais un professeur de géographie qui nous emmenait sur le terrain, on marchait des heures dans les Alpes pour observer les glaciers.
+b06-048|M|[sighs] J'ai passé tout l'après-midi à corriger des copies, soixante-trois exactement, et il m'en reste encore une trentaine pour demain.
+b06-049|F|Bonjour, je vous contacte pour un cours particulier de physique pour mon fils, en première, deux heures par semaine si possible.
+b06-050|M|Ouais, la soirée d'intégration était géniale, on a dansé jusqu'à minuit, mais le lendemain j'avais cours à huit heures, c'était dur.
+b06-051|F|[exhales] Mes jumeaux sont dans la même classe cette année, la maîtresse les confond tout le temps, ça les fait beaucoup rire.
+b06-052|M|Le lycée propose désormais un échange avec un établissement de Séville, les élèves partent dix jours en avril et reçoivent leurs correspondants en mai.
+b06-053|F|[sighs] Ah, j'ai trouvé un livre génial au rayon des romans policiers, je l'ai commencé hier soir et je n'arrive plus à le lâcher.
+b06-054|M|Bonjour, j'appelle pour savoir si mon dossier de bourse a bien été reçu, je l'ai envoyé il y a trois semaines.
+b06-055|F|[breathes] Pour mon premier cours, j'étais tellement nerveuse que j'ai écrit mon nom au tableau à l'envers, les élèves étaient morts de rire.
+b06-056|M|Hmm, tu crois que je devrais prendre l'option latin? Mon frère dit que c'est utile, mais j'ai déjà beaucoup de travail.
+b06-057|F|[exhales] Depuis qu'il est petit, mon fils dévore les bandes dessinées, et maintenant il en dessine lui-même pendant les récréations.
+b06-058|F|Je révise mes examens avec la méthode des fiches, une fiche par chapitre, avec les dates importantes et les définitions à connaître par cœur.
+b06-059|F|[sighs] Ben voilà, j'ai encore eu une remarque sur mon carnet de correspondance parce que j'ai bavardé avec ma voisine.
+b06-060|M|Bonsoir, c'est Thomas, je vous rappelle pour le cours de soutien de mercredi, je peux venir à quatorze heures au lieu de quinze?
+b06-061|M|[breathes] Mon voisin est bibliothécaire depuis trente ans, il connaît presque tous les livres par cœur, il vous trouve n'importe quel titre en deux minutes.
+b06-062|F|Ouais, en arrivant à Madrid, je pensais parler correctement espagnol, mais les premiers jours, je ne comprenais vraiment rien du tout.
+b06-063|F|[inhales] Madame Durand, je voulais vous remercier pour tout ce que vous avez fait pour Emma cette année, elle a repris confiance en elle.
+b06-064|M|[exhales] Bon, euh, j'ai eu la moyenne de justesse au partiel de statistiques, dix sur vingt, mais c'est validé, c'est le principal.
+b06-065|F|L'université a ouvert une nouvelle salle de travail en groupe, avec de grandes tables, des tableaux blancs et des prises partout.
+b06-066|M|[inhales] Le matin, je dépose les enfants à l'école à huit heures vingt, puis je file au travail, et c'est leur mère qui les récupère le soir.
+b06-067|F|Bah, j'ai essayé d'apprendre le japonais toute seule l'été dernier, mais les caractères, c'était vraiment trop difficile pour moi.
+b06-068|M|Bonjour madame, j'ai trouvé une trousse bleue dans la salle trois cent deux, je l'ai déposée à l'accueil du bâtiment principal.
+b06-069|M|[breathes] Salut, tu viens au club de lecture jeudi? On parle d'un roman de Marcel Pagnol, et y'a des gâteaux.
+b06-070|F|Ma fille a commencé la flûte à l'école de musique, alors le soir on a droit à un petit concert, pas toujours très juste.
+b06-071|F|Pendant mes études, je travaillais le week-end dans une boulangerie, je me levais à cinq heures, et le lundi j'étais épuisée en cours.
+b06-072|M|[sighs] Euh, je cherche le livre sur l'histoire de la Bretagne, le catalogue indique qu'il est disponible, mais je ne le trouve pas en rayon.
+b06-073|M|[sighs] Les inscriptions en ligne pour le semestre ont planté toute la matinée, j'ai attendu trois heures pour choisir mes options.
+b06-074|F|Bonjour, je suis la maman d'Inès, elle sera absente vendredi pour un mariage dans la famille, je vous prie de bien vouloir l'excuser.
+b06-075|M|Le latin m'a beaucoup aidé à comprendre l'orthographe française, et aussi l'italien, que j'ai appris plus tard en quelques mois seulement.
+b06-076|F|[exhales] J'ai enfin terminé ma thèse, quatre années de travail, et la soutenance est prévue le douze décembre à quatorze heures.
+b06-077|M|Ouais, notre professeur de sport nous fait courir autour du stade même quand il pleut, il dit que ça forge le caractère.
+b06-078|F|[exhales] Quand mon fils a appris à lire, il voulait lire toutes les affiches dans la rue, même les panneaux publicitaires, c'était adorable.
+b06-079|M|Bonjour, je souhaiterais réserver une salle de travail pour quatre personnes, mardi de dix heures à midi, c'est encore possible?
+b06-080|F|[breathes] Hmm, j'hésite entre faire un master à Bordeaux ou partir un an à l'étranger, mes parents me disent de choisir ce qui me plaît.
+b06-081|M|Au lycée, j'étais nul en anglais, et puis j'ai passé six mois à Dublin pour travailler, et maintenant je le parle presque couramment.
+b06-082|M|[inhales] Allô, c'est papa, je suis devant le collège, je t'attends sur le parking, dépêche-toi, on a rendez-vous chez le dentiste.
+b06-083|F|La maîtresse de mon fils a organisé une sortie au musée d'histoire naturelle, et les enfants ont adoré le squelette de baleine dans la grande galerie.
+b06-084|F|Ben, je vais pas te mentir, j'ai pas ouvert un livre de toute la semaine, et l'examen c'est après-demain.
+b06-085|M|[breathes] Le soir, avant de dormir, je relis toujours le vocabulaire de la journée, une vingtaine de mots, et le matin je vérifie ce qui est resté.
+b06-086|M|Bonjour monsieur le proviseur, je vous appelle au sujet du voyage scolaire en Écosse, nous aimerions connaître le montant exact de la participation des familles.
+b06-087|F|[sighs] Ma fille de quinze ans passe des heures sur ses devoirs, elle est très perfectionniste, j'aimerais qu'elle se repose un peu plus.
+b06-088|F|J'ai découvert que la bibliothèque prêtait aussi des liseuses électroniques, alors j'en ai emprunté une pour mes vacances en Corse.
+b06-089|M|Ah, on a eu un remplaçant en mathématiques cette semaine, il explique super bien, j'aimerais bien qu'il reste jusqu'à la fin de l'année.
+b06-090|M|[breathes] Bonjour, je suis nouveau dans l'établissement, je cherche la salle des professeurs, on m'a dit qu'elle était au deuxième étage.
+b06-091|F|Pendant mon année en Allemagne, je vivais dans une colocation avec un Polonais, une Suédoise et un Portugais, on parlait un mélange de toutes les langues.
+b06-092|F|Bonsoir madame, c'est Julie, votre ancienne élève, je voulais vous annoncer que je suis devenue professeure de lettres à mon tour.
+b06-093|M|[inhales] Bah, le restaurant universitaire est fermé pendant les vacances, du coup je mange des pâtes tous les soirs, je commence à saturer.
+b06-094|M|[exhales] Mon fils m'a demandé de l'aide pour son exposé sur les volcans, et finalement c'est moi qui ai appris le plus de choses.
+b06-095|F|La rentrée scolaire aura lieu le premier septembre, les élèves de sixième seront accueillis seuls le matin, et les autres classes arriveront l'après-midi.
+b06-096|F|[inhales] Euh, excusez-moi, est-ce que je peux emprunter un dictionnaire bilingue pour l'examen d'arabe, ou c'est interdit?
+b06-097|M|[sighs] J'ai toujours adoré l'odeur des vieux livres, c'est pour ça que je passe mes samedis chez les bouquinistes le long de la Seine.
+b06-098|M|Ouais, mon colocataire et moi, on a fait un tableau pour le ménage, mais honnêtement, personne ne le respecte vraiment.
+b06-099|F|Bonjour, je suis étudiante en deuxième année de médecine, je propose du soutien scolaire en biologie et en chimie pour les collégiens.
+b06-100|F|[breathes] Mon petit dernier a fait sa rentrée en maternelle ce matin, il n'a pas pleuré du tout, c'est moi qui étais toute émue.

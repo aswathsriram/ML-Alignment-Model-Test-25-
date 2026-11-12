@@ -1,0 +1,506 @@
+{
+ "female": [
+  {
+   "voice_id": "1T2MOlQA0Xp3hNv1dBxp",
+   "name": "Loulou - Social Media Narrator",
+   "gender": "female",
+   "age": "old",
+   "accent": "standard",
+   "use_case": "narrative_story",
+   "category": "professional",
+   "descriptive": "casual"
+  },
+  {
+   "voice_id": "EMuO6fFLrXKOryHzij6K",
+   "name": "Grandma Clo – Warm Storyteller",
+   "gender": "female",
+   "age": "old",
+   "accent": "standard",
+   "use_case": "narrative_story",
+   "category": "professional",
+   "descriptive": "gentle"
+  },
+  {
+   "voice_id": "JgQlYGzpXIS8wtMbmdFv",
+   "name": "Valy - Storyteller",
+   "gender": "female",
+   "age": "old",
+   "accent": "standard",
+   "use_case": "narrative_story",
+   "category": "professional",
+   "descriptive": "confident"
+  },
+  {
+   "voice_id": "d3AXX0BlgJHYFCuH9X88",
+   "name": "Emilie - Podcast Host",
+   "gender": "female",
+   "age": "middle_aged",
+   "accent": "standard",
+   "use_case": "conversational",
+   "category": "professional",
+   "descriptive": "casual"
+  },
+  {
+   "voice_id": "KSyQzmsYhFbuOhqj1Xxv",
+   "name": "Lea - UGC creator",
+   "gender": "female",
+   "age": "middle_aged",
+   "accent": "standard",
+   "use_case": "social_media",
+   "category": "professional",
+   "descriptive": "excited"
+  },
+  {
+   "voice_id": "HuLbOdhRlvQQN8oPP0AJ",
+   "name": "Claire - Customer service",
+   "gender": "female",
+   "age": "young",
+   "accent": "standard",
+   "use_case": "conversational",
+   "category": "professional",
+   "descriptive": "professional"
+  },
+  {
+   "voice_id": "nVPCtAFzgyMX3FZKNzH0",
+   "name": "Anna - Natural and Conversational",
+   "gender": "female",
+   "age": "middle_aged",
+   "accent": "parisian",
+   "use_case": "social_media",
+   "category": "professional",
+   "descriptive": "confident"
+  },
+  {
+   "voice_id": "FFXYdAYPzn8Tw8KiHZqg",
+   "name": "Ingrid - Warm, Calm and Authentic",
+   "gender": "female",
+   "age": "middle_aged",
+   "accent": "standard",
+   "use_case": "conversational",
+   "category": "professional",
+   "descriptive": "casual"
+  },
+  {
+   "voice_id": "fBpCO0Kf0krKLYGOu65w",
+   "name": "Émilie - Customer service advisor",
+   "gender": "female",
+   "age": "young",
+   "accent": "standard",
+   "use_case": "conversational",
+   "category": "professional",
+   "descriptive": "confident"
+  },
+  {
+   "voice_id": "15QsI5RGrPSfyuU4tnvX",
+   "name": "Sophie - Pro Audiobook",
+   "gender": "female",
+   "age": "middle_aged",
+   "accent": "standard",
+   "use_case": "social_media",
+   "category": "professional",
+   "descriptive": "classy"
+  },
+  {
+   "voice_id": "Hy28BjVfgieDVMiyQpQe",
+   "name": "Chloé - Warm, Friendly & UGC Ready",
+   "gender": "female",
+   "age": "middle_aged",
+   "accent": "standard",
+   "use_case": "social_media",
+   "category": "professional",
+   "descriptive": "casual"
+  },
+  {
+   "voice_id": "Pipj99NMS7t8dQEzyxgB",
+   "name": "Marion - Engaging, bright and Positive",
+   "gender": "female",
+   "age": "middle_aged",
+   "accent": "standard",
+   "use_case": "social_media",
+   "category": "professional",
+   "descriptive": "casual"
+  },
+  {
+   "voice_id": "zAvB1CA77BKeZMAepR7x",
+   "name": "Nora - Content Creator",
+   "gender": "female",
+   "age": "middle_aged",
+   "accent": "standard",
+   "use_case": "conversational",
+   "category": "professional",
+   "descriptive": "chill"
+  },
+  {
+   "voice_id": "MmafIMKg28Wr0yMh8CEB",
+   "name": "Laura - Deep and Dynamic",
+   "gender": "female",
+   "age": "middle_aged",
+   "accent": "parisian",
+   "use_case": "social_media",
+   "category": "professional",
+   "descriptive": "deep"
+  },
+  {
+   "voice_id": "D6VK2PsbVdaFL5aALfRc",
+   "name": "Eva - Quiet, Calm and Positive",
+   "gender": "female",
+   "age": "middle_aged",
+   "accent": "standard",
+   "use_case": "social_media",
+   "category": "professional",
+   "descriptive": "calm"
+  },
+  {
+   "voice_id": "EIdfNdxb4fnsE39tEAB1",
+   "name": "Lawrence - Documentary Narrator",
+   "gender": "female",
+   "age": "middle_aged",
+   "accent": "parisian",
+   "use_case": "social_media",
+   "category": "professional",
+   "descriptive": "calm"
+  },
+  {
+   "voice_id": "nVINU9qBIuvNCmO5Vv4b",
+   "name": "Victoria",
+   "gender": "female",
+   "age": "young",
+   "accent": "standard",
+   "use_case": "social_media",
+   "category": "professional",
+   "descriptive": "pleasant"
+  },
+  {
+   "voice_id": "SptHT9PQ49isQvxFm28t",
+   "name": "Agathe - Short-form content",
+   "gender": "female",
+   "age": "young",
+   "accent": "standard",
+   "use_case": "social_media",
+   "category": "professional",
+   "descriptive": "professional"
+  },
+  {
+   "voice_id": "yatuMX0k4Dh41R64sbGj",
+   "name": "Cécile - Interactive Customer Support",
+   "gender": "female",
+   "age": "young",
+   "accent": "standard",
+   "use_case": "conversational",
+   "category": "professional",
+   "descriptive": "pleasant"
+  },
+  {
+   "voice_id": "J2o6r07MidKFMEnchGg5",
+   "name": "Gipsy Paladini - Narration & Conversation",
+   "gender": "female",
+   "age": "middle_aged",
+   "accent": "standard",
+   "use_case": "conversational",
+   "category": "professional",
+   "descriptive": "casual"
+  },
+  {
+   "voice_id": "2oMnSKxLeHBxE0KdeHJD",
+   "name": "Natasha Asher - Soft",
+   "gender": "female",
+   "age": "young",
+   "accent": "parisian",
+   "use_case": "conversational",
+   "category": "professional",
+   "descriptive": "soft"
+  },
+  {
+   "voice_id": "1cNpTcbDy2UA0duXppd5",
+   "name": "Isabelle - French artist",
+   "gender": "female",
+   "age": "middle_aged",
+   "accent": "standard",
+   "use_case": "conversational",
+   "category": "professional",
+   "descriptive": "chill"
+  },
+  {
+   "voice_id": "vUH2A53pJe77Jd2xNGHv",
+   "name": "Shana - Neutral & Professional",
+   "gender": "female",
+   "age": "",
+   "accent": "parisian",
+   "use_case": "conversational",
+   "category": "professional",
+   "descriptive": "confident"
+  },
+  {
+   "voice_id": "txtf1EDouKke753vN8SL",
+   "name": "Jeanne - Narrator",
+   "gender": "female",
+   "age": "young",
+   "accent": "parisian",
+   "use_case": "narrative_story",
+   "category": "professional",
+   "descriptive": "calm"
+  },
+  {
+   "voice_id": "t8BrjWUT5Z23DLLBzbuY",
+   "name": "Sarah - Expressive and Modulated",
+   "gender": "female",
+   "age": "middle_aged",
+   "accent": "standard",
+   "use_case": "narrative_story",
+   "category": "professional",
+   "descriptive": "modulated"
+  }
+ ],
+ "male": [
+  {
+   "voice_id": "59dhv4BKONM60oDSKECM",
+   "name": "HenryD",
+   "gender": "male",
+   "age": "old",
+   "accent": "standard",
+   "use_case": "narrative_story",
+   "category": "professional",
+   "descriptive": "calm"
+  },
+  {
+   "voice_id": "t4fHUMAMZxaaV2inHOnb",
+   "name": "Peter - Podcast Narrator",
+   "gender": "male",
+   "age": "old",
+   "accent": "standard",
+   "use_case": "narrative_story",
+   "category": "high_quality",
+   "descriptive": "professional"
+  },
+  {
+   "voice_id": "5Qfm4RqcAer0xoyWtoHC",
+   "name": "Maxime - Young and Casual",
+   "gender": "male",
+   "age": "young",
+   "accent": "standard",
+   "use_case": "conversational",
+   "category": "professional",
+   "descriptive": "calm"
+  },
+  {
+   "voice_id": "Jrq4GqCKqYpigdQsZRkP",
+   "name": "Anatole - Convincing, Dynamic and Clear",
+   "gender": "male",
+   "age": "young",
+   "accent": "standard",
+   "use_case": "social_media",
+   "category": "professional",
+   "descriptive": "casual"
+  },
+  {
+   "voice_id": "1EmYoP3UnnnwhlJKovEy",
+   "name": "Anthony - Salesman",
+   "gender": "male",
+   "age": "middle_aged",
+   "accent": "parisian",
+   "use_case": "conversational",
+   "category": "professional",
+   "descriptive": "confident"
+  },
+  {
+   "voice_id": "jGpnMdbhtKgQbVrYezOx",
+   "name": "Kev - Young, Dynamic and Bright",
+   "gender": "male",
+   "age": "middle_aged",
+   "accent": "standard",
+   "use_case": "social_media",
+   "category": "professional",
+   "descriptive": "intense"
+  },
+  {
+   "voice_id": "GPAQQPp9dazaB2bl4zg9",
+   "name": "Victor - Casual and Conversational",
+   "gender": "male",
+   "age": "young",
+   "accent": "standard",
+   "use_case": "conversational",
+   "category": "professional",
+   "descriptive": "anxious"
+  },
+  {
+   "voice_id": "IbbR6Av0dWuQJS0b8JVT",
+   "name": "Hugo - Warm and Grounded",
+   "gender": "male",
+   "age": "young",
+   "accent": "standard",
+   "use_case": "conversational",
+   "category": "professional",
+   "descriptive": "casual"
+  },
+  {
+   "voice_id": "EmZGlxI7QPvCEMOkFhB9",
+   "name": "Liam - Sharp, Professional and Energetic",
+   "gender": "male",
+   "age": "young",
+   "accent": "standard",
+   "use_case": "social_media",
+   "category": "professional",
+   "descriptive": "pleasant"
+  },
+  {
+   "voice_id": "eOwAMwUJEGkP44SKOXIH",
+   "name": "Julien - Professional customer service",
+   "gender": "male",
+   "age": "middle_aged",
+   "accent": "standard",
+   "use_case": "conversational",
+   "category": "professional",
+   "descriptive": "professional"
+  },
+  {
+   "voice_id": "GfDgTuUOHHSyKnQXhnYt",
+   "name": "Mathieu - Assertive and Professional",
+   "gender": "male",
+   "age": "middle_aged",
+   "accent": "standard",
+   "use_case": "social_media",
+   "category": "professional",
+   "descriptive": "casual"
+  },
+  {
+   "voice_id": "jsScnYkNNda9Q1NES5nn",
+   "name": "Léo – Energetic & Engaging",
+   "gender": "male",
+   "age": "young",
+   "accent": "standard",
+   "use_case": "social_media",
+   "category": "professional",
+   "descriptive": "confident"
+  },
+  {
+   "voice_id": "gP52hjM48hyNoVCbizxO",
+   "name": "Alexandre - Calm, Warm & Authentic",
+   "gender": "male",
+   "age": "middle_aged",
+   "accent": "parisian",
+   "use_case": "conversational",
+   "category": "professional",
+   "descriptive": "calm"
+  },
+  {
+   "voice_id": "FG8zfqqRYF7D00PJlTzj",
+   "name": "Denis Landrieu - Calm and Coversational",
+   "gender": "male",
+   "age": "middle_aged",
+   "accent": "parisian",
+   "use_case": "conversational",
+   "category": "professional",
+   "descriptive": "calm"
+  },
+  {
+   "voice_id": "odOFTFZU3DvAZ3EV3KHi",
+   "name": "Lucas – Premium French Corporate Narrator",
+   "gender": "male",
+   "age": "young",
+   "accent": "standard",
+   "use_case": "social_media",
+   "category": "professional",
+   "descriptive": "formal"
+  },
+  {
+   "voice_id": "iMij959nvbX8f2SxyrvX",
+   "name": "Gabin - Natural and Warm",
+   "gender": "male",
+   "age": "middle_aged",
+   "accent": "standard",
+   "use_case": "conversational",
+   "category": "professional",
+   "descriptive": "crisp"
+  },
+  {
+   "voice_id": "xclXfpLYbMIBNgiHTm8S",
+   "name": "Kenzy - Premium French Narrator",
+   "gender": "male",
+   "age": "young",
+   "accent": "standard",
+   "use_case": "social_media",
+   "category": "professional",
+   "descriptive": "upbeat"
+  },
+  {
+   "voice_id": "OOiDJrD1goukqfTpiySr",
+   "name": "Greg - Authentic French Voice",
+   "gender": "male",
+   "age": "middle_aged",
+   "accent": "parisian",
+   "use_case": "conversational",
+   "category": "professional",
+   "descriptive": "calm"
+  },
+  {
+   "voice_id": "OKpKhTrwN6S16IfQTHzZ",
+   "name": "Raphael - Ads, shorts & social media",
+   "gender": "male",
+   "age": "middle_aged",
+   "accent": "parisian",
+   "use_case": "social_media",
+   "category": "professional",
+   "descriptive": "casual"
+  },
+  {
+   "voice_id": "kKgyAHjGAbeWHCNd7qoC",
+   "name": "Augustin - Conversational French Voice",
+   "gender": "male",
+   "age": "young",
+   "accent": "standard",
+   "use_case": "conversational",
+   "category": "professional",
+   "descriptive": "casual"
+  },
+  {
+   "voice_id": "0FhJWyi9SuiftDZ6M8fE",
+   "name": "Benjamin - Serious and Intellectual",
+   "gender": "male",
+   "age": "middle_aged",
+   "accent": "parisian",
+   "use_case": "conversational",
+   "category": "professional",
+   "descriptive": "casual"
+  },
+  {
+   "voice_id": "sHDOgYycy7bpotWEX7uh",
+   "name": "Patrick - Mature and Casual",
+   "gender": "male",
+   "age": "middle_aged",
+   "accent": "standard",
+   "use_case": "conversational",
+   "category": "professional",
+   "descriptive": "casual"
+  },
+  {
+   "voice_id": "OSc8NW5kpGzPyeZB3Wjq",
+   "name": "Noah – French Conversational Male",
+   "gender": "male",
+   "age": "middle_aged",
+   "accent": "standard",
+   "use_case": "conversational",
+   "category": "professional",
+   "descriptive": "neutral"
+  },
+  {
+   "voice_id": "xO2Q4ARMEd4BI2sGDH9c",
+   "name": "Edouard - Confident and Polished",
+   "gender": "male",
+   "age": "young",
+   "accent": "standard",
+   "use_case": "conversational",
+   "category": "professional",
+   "descriptive": "confident"
+  },
+  {
+   "voice_id": "6aRkp7Pz4MBOSpUyJCTO",
+   "name": "Rafiki - Life Coach",
+   "gender": "male",
+   "age": "middle_aged",
+   "accent": "standard",
+   "use_case": "conversational",
+   "category": "professional",
+   "descriptive": "casual"
+  }
+ ]
+}

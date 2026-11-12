@@ -1,0 +1,100 @@
+b07-001|F|[sighs] Ben, je suis retournée au magasin pour rendre la robe, et la vendeuse m'a dit qu'ils ne remboursaient plus, seulement un avoir.
+b07-002|M|Bonjour monsieur, j'appelle parce que ma connexion internet coupe tous les soirs vers vingt et une heures, et ça dure depuis presque deux semaines.
+b07-003|F|Quand on ouvre un compte dans une nouvelle banque, il faut généralement apporter une pièce d'identité, un justificatif de domicile et parfois une preuve de revenus.
+b07-004|M|[breathes] Ouais, j'ai enfin trouvé un manteau pour l'hiver, il était à moitié prix, quatre-vingt-dix euros au lieu de cent quatre-vingts.
+b07-005|M|Bonjour madame, je vous laisse ce message au sujet de l'appartement de la rue des Lilas, est-ce qu'il est toujours disponible pour une visite samedi matin ?
+b07-006|F|[exhales] Hmm, la facture d'électricité de ce trimestre est vraiment plus élevée que d'habitude, je crois que je vais appeler pour comprendre.
+b07-007|F|La semaine dernière, je suis allée à la poste pour envoyer un colis à ma sœur, et la file d'attente faisait le tour de la salle.
+b07-008|M|[sighs] Bah, j'ai acheté des chaussures en ligne, mais elles sont trop petites, du coup faut que je les renvoie avant la fin du mois.
+b07-009|F|[inhales] Bonjour, je souhaiterais prendre rendez-vous à la mairie pour refaire ma carte d'identité, quels sont vos horaires d'ouverture le mercredi ?
+b07-010|M|Mon assureur m'a expliqué que la franchise était de cent cinquante euros, donc pour une petite rayure sur la voiture, ça ne vaut pas le coup de déclarer.
+b07-011|M|[sighs] Ah, j'ai oublié mon code de carte bancaire devant la caisse, j'étais tellement gêné, la dame derrière moi soupirait.
+b07-012|F|Salut Julie, c'est moi, je suis devant la boutique de chaussures, ils font moins trente pour cent sur tout, tu veux que je te prenne quelque chose ?
+b07-013|M|Le propriétaire doit rendre le dépôt de garantie dans un délai d'un mois si l'état des lieux de sortie est identique à celui d'entrée.
+b07-014|F|[breathes] Euh, j'ai reçu un avis de passage, le facteur est venu pendant que j'étais au travail, donc je dois aller chercher mon colis demain.
+b07-015|M|[breathes] Bonjour, je vous appelle concernant mon contrat d'assurance habitation, j'ai déménagé le mois dernier et je voudrais mettre à jour mon adresse.
+b07-016|F|[exhales] Ben non, j'ai pas encore reçu le remboursement pour le pantalon, ça fait déjà dix jours que je l'ai renvoyé, c'est long quand même.
+b07-017|M|Ce matin, je suis passé à la banque pour déposer un chèque, et le conseiller m'a proposé un nouveau livret d'épargne, je lui ai dit que j'allais réfléchir.
+b07-018|F|[exhales] Bonjour madame, j'appelle parce que mon téléphone ne capte plus du tout depuis hier soir, même à la fenêtre, je n'ai aucune barre.
+b07-019|M|Hmm, ce pull est joli, mais la couleur ne me va pas trop, tu crois qu'ils l'ont en bleu marine ?
+b07-020|F|À la mairie, on peut aussi inscrire ses enfants à la cantine et demander une place en crèche, mais il vaut mieux venir tôt le matin.
+b07-021|M|[inhales] Allô, oui, bonjour, c'est Thomas Moreau, je vous rappelle pour le rendez-vous de signature du bail, est-ce que jeudi dix-sept heures vous convient ?
+b07-022|F|Ouais, j'ai payé la facture d'eau en retard, du coup ils m'ont ajouté des frais, huit euros, c'est pas énorme mais ça m'énerve.
+b07-023|M|Pour retourner un article commandé sur internet, il suffit en général d'imprimer l'étiquette, de bien refermer le carton et de le déposer dans un point relais.
+b07-024|F|[sighs] J'ai passé quarante minutes au téléphone avec mon fournisseur internet, et à la fin, la ligne a coupé, j'étais furieuse.
+b07-025|M|[exhales] Bonjour, je voudrais envoyer cette lettre en recommandé avec accusé de réception, c'est pour mon ancien propriétaire.
+b07-026|F|Ah, tu sais quoi, la banque m'a enfin accordé le prêt pour la voiture, je suis tellement soulagée.
+b07-027|M|[breathes] Le vendeur m'a conseillé de prendre une taille au-dessus, parce que ces chemises rétrécissent un peu au premier lavage.
+b07-028|F|Bonjour monsieur, je vous appelle au sujet du chauffe-eau de l'appartement, il ne fonctionne plus depuis lundi et je n'ai que de l'eau froide.
+b07-029|M|[sighs] Ben, j'ai voulu changer d'opérateur, mais ils me demandent de payer les quatre derniers mois de mon contrat, c'est un peu abusé, non ?
+b07-030|F|[breathes] Ma grand-mère gardait toujours ses relevés de compte dans une boîte en fer, rangés par année, et elle vérifiait chaque ligne avec un crayon.
+b07-031|M|[exhales] Bonjour madame, j'ai été prélevé deux fois pour le même abonnement ce mois-ci, est-ce que vous pouvez regarder et me rembourser la différence ?
+b07-032|F|Euh, tu peux m'attendre devant la cabine d'essayage ? J'essaie juste la jupe verte et après on va manger.
+b07-033|M|Quand j'étais étudiant, j'ai loué une petite chambre sous les toits, il faisait trente-cinq degrés en été et le propriétaire ne voulait rien entendre.
+b07-034|F|[inhales] Bonjour, je viens de perdre ma carte bancaire, je voudrais faire opposition le plus vite possible, s'il vous plaît.
+b07-035|M|Bah, à la poste, ils m'ont dit que le colis était trop gros pour la boîte aux lettres, donc il faut que j'y retourne avec ma pièce d'identité.
+b07-036|F|En France, beaucoup de gens attendent les soldes de janvier pour acheter leurs vêtements d'hiver, parce que les prix baissent parfois de moitié.
+b07-037|M|[inhales] Bonjour, c'est Julien du troisième étage, je voulais vous prévenir que la boîte aux lettres de l'immeuble est cassée, le courrier traîne par terre.
+b07-038|F|[sighs] Ouais, j'ai fini par résilier mon abonnement à la salle de sport, mais il a fallu envoyer une lettre, j'en reviens pas.
+b07-039|M|[breathes] L'assurance m'a remboursé les lunettes cassées pendant le déménagement, mais j'ai dû fournir trois devis et une déclaration sur l'honneur.
+b07-040|F|Bonjour, je souhaiterais savoir si je peux échanger ce chemisier contre une autre taille, j'ai gardé le ticket de caisse.
+b07-041|M|[breathes] Hein ? Le loyer augmente encore de vingt euros ? Ben ça fait la deuxième fois en deux ans.
+b07-042|F|Ce matin, la conseillère de ma banque m'a appelée pour me proposer une carte avec un plafond plus élevé, je lui ai dit que ça ne m'intéressait pas.
+b07-043|M|[breathes] Bonjour madame, je viens chercher un colis, j'ai reçu un avis hier, voilà ma carte d'identité.
+b07-044|F|Hmm, je sais pas si je garde ces bottes, elles sont belles mais elles me font un peu mal au talon.
+b07-045|M|Pour obtenir un acte de naissance, on peut le demander directement à la mairie de sa ville natale, et en général il arrive par courrier en quelques jours.
+b07-046|F|[exhales] Allô, bonjour monsieur, c'est Claire Dubois, je suis la locataire du deuxième, il y a une fuite sous l'évier de la cuisine, vous pouvez envoyer quelqu'un ?
+b07-047|M|[exhales] Attends, je regarde mon compte, ah ben non, le virement de mon salaire n'est toujours pas arrivé.
+b07-048|F|Quand j'ai emménagé, j'ai mis presque trois semaines à obtenir une ligne internet, alors j'allais travailler à la bibliothèque tous les après-midi.
+b07-049|M|[sighs] Bonjour, j'ai acheté ce grille-pain samedi, il ne chauffe que d'un côté, est-ce que je peux être remboursé ou au moins l'échanger ?
+b07-050|F|[breathes] Ouais, j'ai trouvé une super veste en laine au marché, vingt-cinq euros, la vendeuse était adorable.
+b07-051|M|Mon voisin a déclaré un dégât des eaux la semaine dernière, l'expert de l'assurance passe vendredi pour voir le plafond de sa salle de bains.
+b07-052|F|Bonjour, je voudrais acheter un carnet de timbres et une enveloppe matelassée, s'il vous plaît, c'est pour envoyer des photos.
+b07-053|M|[sighs] Bah, la boutique a fermé avant que je puisse rendre le blouson, maintenant je sais pas du tout à qui m'adresser.
+b07-054|F|Un relevé d'identité bancaire contient le nom du titulaire, le nom de la banque et le numéro du compte, on le demande souvent pour un nouvel employeur.
+b07-055|M|Bonjour madame, je vous appelle parce que j'aimerais savoir si mon assurance couvre aussi le vélo qu'on m'a volé dans la cour de l'immeuble.
+b07-056|F|Ben, la propriétaire est venue faire l'état des lieux, elle a regardé chaque trou dans le mur, j'étais un peu stressée.
+b07-057|M|[exhales] Hier, je suis allé au centre commercial pour acheter un costume pour le mariage de mon cousin, et finalement je suis reparti avec deux cravates seulement.
+b07-058|F|[inhales] Bonjour, je souhaiterais changer la date de prélèvement de mon loyer, est-ce qu'on peut le passer au dix du mois plutôt qu'au premier ?
+b07-059|M|Ah, j'ai vu que le facteur avait laissé un paquet chez la gardienne, je descends le chercher et je reviens tout de suite.
+b07-060|F|[breathes] Pour contester une facture de téléphone, il vaut mieux d'abord appeler le service client, puis envoyer une réclamation écrite si rien ne bouge.
+b07-061|M|[breathes] Bonjour, j'ai rendez-vous à onze heures avec mon conseiller pour parler d'un crédit immobilier, je suis un peu en avance.
+b07-062|F|Euh, tu te souviens du magasin de vaisselle près de la gare ? Ils ferment définitivement, tout est à moins cinquante pour cent.
+b07-063|M|Quand on loue un appartement meublé, le bail dure en général un an, alors que pour un logement vide, c'est souvent trois ans.
+b07-064|F|[sighs] Ouais, la mairie m'a encore demandé un document de plus pour mon dossier, je commence à en avoir marre.
+b07-065|M|Bonjour, je n'ai toujours pas reçu les rideaux commandés il y a trois semaines, votre site indique qu'ils sont livrés, mais je n'ai rien.
+b07-066|F|Le jour où j'ai ouvert mon premier compte en banque, j'avais seize ans, et j'étais très fière de recevoir mon propre chéquier.
+b07-067|M|[breathes] Hmm, je me demande si je prends l'assurance pour le téléphone, ils veulent sept euros par mois, ça me paraît cher pour ce que c'est.
+b07-068|F|Bonjour madame, je viens récupérer mon passeport, on m'a prévenue par téléphone qu'il était prêt depuis lundi.
+b07-069|M|[exhales] Ben j'ai attendu le technicien toute la matinée, il devait venir entre huit heures et midi, et personne n'est venu.
+b07-070|F|Dans la boutique de ma tante, les clients pouvaient payer à crédit, elle notait tout dans un grand cahier rouge derrière le comptoir.
+b07-071|M|Bonjour, je voudrais savoir combien coûte l'envoi d'un colis de trois kilogrammes vers le Canada, en version la plus économique possible.
+b07-072|F|[exhales] Ah, j'ai enfin reçu mon remboursement de l'assurance pour le sac volé, ça fait plaisir, honnêtement je n'y croyais plus.
+b07-073|M|Je suis resté une heure dans la cabine d'essayage à hésiter entre deux pantalons, et au final, je n'ai acheté ni l'un ni l'autre.
+b07-074|F|[breathes] Bonjour, j'ai déménagé à Lyon et je voudrais faire suivre mon courrier pendant six mois, comment est-ce que ça se passe ?
+b07-075|M|Pour éviter les frais bancaires, certains préfèrent les banques en ligne, mais d'autres tiennent à avoir un conseiller qu'ils peuvent voir en agence.
+b07-076|F|Ouais, j'ai payé mes deux factures, le gaz et le téléphone, je respire un peu, ben jusqu'au mois prochain.
+b07-077|M|[inhales] Bonsoir, je laisse un message pour madame Leroy, c'est au sujet de l'appartement du boulevard Voltaire, j'ai tous les papiers prêts pour le dossier.
+b07-078|F|Hier, je suis allée rendre une lampe au magasin de bricolage, et le vendeur m'a fait remplir un formulaire de trois pages pour vingt euros.
+b07-079|M|[inhales] Euh, tu pourrais me prêter un peu d'argent jusqu'à vendredi ? Ma carte est bloquée et la banque met trois jours à en envoyer une nouvelle.
+b07-080|F|Le facteur de mon village connaissait tout le monde, il apportait parfois le pain aux personnes âgées en même temps que les lettres.
+b07-081|M|Bonjour madame, j'aimerais résilier mon abonnement internet, je pars m'installer à l'étranger à la fin du mois prochain.
+b07-082|F|[sighs] Hmm, ces chaussettes sont déjà trouées après deux lavages, je vais quand même pas retourner au magasin pour ça.
+b07-083|M|La taxe foncière, l'assurance de la voiture, l'abonnement du train, franchement, en automne tout tombe en même temps, c'est pénible.
+b07-084|F|Bonjour, je voudrais savoir si je peux payer ma facture d'eau en trois fois, ce mois-ci est un peu compliqué pour moi.
+b07-085|M|[breathes] Ah, au fait, j'ai réussi à me faire rembourser le billet de concert annulé, il suffisait de remplir un formulaire.
+b07-086|F|Quand on signe un contrat d'assurance, on dispose souvent de quatorze jours pour changer d'avis sans avoir à se justifier.
+b07-087|M|[sighs] Ben, j'ai demandé une facture détaillée à mon opérateur, et je découvre que je paye une option que je n'ai jamais demandée.
+b07-088|F|[inhales] Bonjour monsieur, je vous appelle pour vous dire que je quitterai l'appartement fin juin, je vous envoie le préavis par lettre recommandée cette semaine.
+b07-089|M|Dans la petite mercerie de mon quartier, on trouve encore des boutons de toutes les couleurs, et le vendeur recoud même les ourlets.
+b07-090|F|[exhales] Ouais, la vendeuse m'a regardée bizarrement quand j'ai rapporté la robe avec l'étiquette encore dessus, mais bon, j'avais le droit.
+b07-091|M|Bonjour, je souhaiterais déclarer un sinistre, un arbre est tombé sur le toit du garage pendant la tempête de dimanche soir.
+b07-092|F|[breathes] Ah, tu sais, la poste du quartier va fermer à midi le samedi maintenant, faut que je pense à y aller tôt.
+b07-093|M|Hier soir, je suis rentré épuisé de ma journée de courses, j'avais acheté trois chemises, une ceinture et des chaussettes pour toute l'année.
+b07-094|F|Bonjour, je suis nouvelle dans la commune et je voudrais savoir où se trouve le service qui s'occupe des cartes de stationnement pour les résidents.
+b07-095|M|[sighs] Bah, j'ai encore payé des agios ce mois-ci, faut vraiment que j'arrête de dépasser mon découvert.
+b07-096|F|Pour récupérer un colis en point relais, il faut présenter une pièce d'identité et le code reçu par message, sinon le commerçant ne peut rien donner.
+b07-097|M|Bonjour madame, j'ai une question sur ma dernière facture, je vois une ligne appelée frais de dossier, à quoi est-ce que ça correspond exactement ?
+b07-098|F|[inhales] Hmm, je crois que je vais garder mon vieux manteau encore un hiver, les nouveaux sont vraiment trop chers cette année.
+b07-099|M|Quand mon père a acheté sa première maison, il a dû passer à la banque presque toutes les semaines, avec une pochette pleine de papiers.
+b07-100|F|[inhales] Bonjour, je viens d'emménager dans le quartier et je voudrais ouvrir un compte joint avec mon compagnon, est-ce qu'il faut prendre rendez-vous ?

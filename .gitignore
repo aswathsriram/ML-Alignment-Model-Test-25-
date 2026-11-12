@@ -1,3 +1,4 @@
 .env
 __pycache__/
 alignment_decoys/build/
+french_1000/build/

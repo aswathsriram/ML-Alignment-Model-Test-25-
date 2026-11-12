@@ -1,0 +1,100 @@
+b02-001|F|[breathes] Bonjour, c'est Claire du service comptabilité, je voulais savoir si vous aviez reçu les factures que je vous ai envoyées hier après-midi.
+b02-002|M|Ben écoute, la réunion de ce matin a duré presque deux heures, et au final on n'a rien décidé du tout, hein.
+b02-003|M|[sighs] Je suis arrivé au bureau à huit heures moins le quart et l'ascenseur était encore en panne, j'ai monté les six étages à pied.
+b02-004|F|[sighs] Mon nouveau poste commence lundi prochain, et franchement je suis un peu stressée, je ne connais encore personne dans l'équipe.
+b02-005|M|Bonjour madame, je vous appelle pour confirmer mon entretien d'embauche de jeudi à dix heures trente, je serai bien présent.
+b02-006|F|[inhales] Alors pour le télétravail, chaque salarié peut rester chez lui deux jours par semaine, à condition de prévenir son responsable la veille.
+b02-007|M|Ouais, le nouveau collègue est vraiment gentil, il m'a aidé à installer mon ordinateur sans que je lui demande rien.
+b02-008|F|Mon grand-père était menuisier, et quand j'étais petite, je passais des après-midis entiers dans son atelier à ramasser les copeaux de bois.
+b02-009|M|[exhales] Bon, il faut absolument que le dossier soit terminé avant vendredi midi, sinon le client risque d'aller voir ailleurs.
+b02-010|F|Euh, tu sais si la salle de réunion du troisième étage est libre demain matin? J'ai oublié de la réserver.
+b02-011|F|[breathes] Bonjour Julien, c'est Sophie, je t'envoie le compte rendu de la réunion par email ce soir, dis-moi s'il manque quelque chose.
+b02-012|M|[breathes] Le boulanger de mon quartier se lève tous les jours à trois heures du matin pour préparer le pain, et il fait ça depuis trente ans.
+b02-013|M|Ben moi, le télétravail, j'adore, je gagne une heure de transport le matin et je suis beaucoup plus concentré à la maison.
+b02-014|F|[sighs] J'ai passé toute la journée en visioconférence, je ne suis même pas sortie de mon bureau pour déjeuner.
+b02-015|M|Monsieur Lefèvre, je me permets de vous relancer au sujet du devis pour la rénovation de la cuisine, pourriez-vous me rappeler quand vous aurez un moment?
+b02-016|F|[exhales] Pendant l'entretien, ils m'ont demandé de parler de mes défauts, et honnêtement je n'avais rien préparé, j'étais un peu perdue.
+b02-017|M|[inhales] Notre petite entreprise compte aujourd'hui douze employés, alors qu'au début nous n'étions que deux, mon associé et moi, dans un garage à Lyon.
+b02-018|F|Hmm, je crois que la machine à café est encore cassée, quelqu'un a appelé le technicien ou pas?
+b02-019|M|Salut Thomas, c'est Marc, la réunion de quatorze heures est décalée à quinze heures trente, préviens les autres si tu les croises.
+b02-020|F|[breathes] Je suis tellement contente, ils m'ont proposé le poste! Je commence le premier du mois prochain, à Bordeaux.
+b02-021|M|Le plombier est passé ce matin, il a changé le chauffe-eau en moins d'une heure, et il a même nettoyé derrière lui.
+b02-022|F|Ah, au fait, n'oublie pas qu'on a le pot de départ de Martine vendredi à dix-sept heures, à la cafétéria.
+b02-023|M|[sighs] Ouais, j'ai encore reçu trente emails pendant ma pause déjeuner, je ne sais pas comment je vais réussir à tout lire.
+b02-024|F|[inhales] Bonjour, je suis fleuriste à Nantes, et je cherche quelqu'un pour m'aider le samedi matin, surtout pendant la saison des mariages.
+b02-025|M|Quand j'ai commencé comme apprenti chez un ébéniste, il m'a fallu presque un an avant d'avoir le droit de toucher à une vraie commande.
+b02-026|F|[exhales] Bah, la date limite pour le rapport annuel a encore été avancée, on doit tout rendre mercredi au lieu de vendredi.
+b02-027|M|[breathes] Bonjour, j'appelle de la part de l'agence, je voulais savoir si le poste de comptable était toujours disponible.
+b02-028|F|Ma collègue Nadia est partie faire le tour du monde pendant six mois, alors je reprends ses dossiers en plus des miens.
+b02-029|M|[breathes] Le premier jour, mon responsable m'a fait visiter tous les bureaux, et j'ai dû retenir au moins vingt prénoms en une matinée.
+b02-030|M|Euh, est-ce que quelqu'un a vu mon badge? Je crois que je l'ai laissé sur la photocopieuse ce matin.
+b02-031|F|La cordonnerie de la rue Victor Hugo existe depuis mille neuf cent cinquante-deux, et c'est la petite-fille du fondateur qui la tient maintenant.
+b02-032|M|[inhales] Madame Garnier, je vous confirme que votre commande de chaises sera livrée mardi entre neuf heures et midi.
+b02-033|F|Ouais, franchement, travailler depuis la cuisine, c'est pas idéal, le chat passe sur le clavier toutes les dix minutes.
+b02-034|F|[sighs] Je suis restée au bureau jusqu'à vingt et une heures pour finir la présentation, et le client a annulé la réunion ce matin.
+b02-035|M|[inhales] Mon père était serrurier, et moi j'ai repris l'atelier il y a huit ans, mais aujourd'hui on fait surtout des portes blindées.
+b02-036|F|Bonjour monsieur, c'est la boulangerie Martin, votre gâteau d'anniversaire est prêt, vous pouvez passer le chercher à partir de seize heures.
+b02-037|M|Ben, j'ai pas trop compris ce que voulait dire le directeur pendant la réunion, toi tu as saisi quelque chose?
+b02-038|M|[exhales] Après dix ans dans la même banque, j'ai décidé de tout quitter pour ouvrir une petite librairie dans le centre de Dijon.
+b02-039|F|[breathes] Pour bien préparer un entretien, il faut se renseigner sur l'entreprise, relire son parcours et prévoir deux ou trois questions à poser à la fin.
+b02-040|F|Coucou Léa, c'est Camille, est-ce que tu peux me prêter ton chargeur demain? J'ai oublié le mien chez moi, encore une fois.
+b02-041|M|[breathes] Hmm, je pense qu'on devrait découper le projet en trois étapes, sinon on ne tiendra jamais les délais.
+b02-042|F|Le potier du village vend ses bols au marché chaque dimanche, et il faut arriver tôt parce qu'à dix heures il n'en reste plus.
+b02-043|M|Bonjour, je suis bien arrivé à la gare, mais je ne trouve pas l'entrée de vos locaux, vous pouvez me guider?
+b02-044|F|[inhales] Ah, j'ai enfin terminé mon premier mois dans la boîte, et je dois dire que l'ambiance est vraiment agréable.
+b02-045|M|[exhales] Notre équipe est répartie entre Paris, Lille et Marseille, alors on se retrouve tous ensemble une fois par trimestre pour un séminaire.
+b02-046|F|Bonjour, je vous contacte car j'ai vu votre annonce pour un poste d'assistante de direction, et je souhaiterais vous envoyer ma candidature.
+b02-047|M|[sighs] Bah, encore une coupure d'internet, ça fait la troisième fois cette semaine, je vais finir par aller travailler au café.
+b02-048|M|Le couvreur nous a dit que la toiture tiendrait encore une dizaine d'années, mais qu'il fallait remplacer quelques tuiles avant l'hiver.
+b02-049|F|Euh, je voulais te demander, tu pourrais relire mon rapport avant que je l'envoie au patron? Juste pour les fautes.
+b02-050|F|[breathes] Ce matin, j'ai présenté mon projet devant tout le comité de direction, et je suis plutôt fière de moi, ça s'est bien passé.
+b02-051|M|Salut Antoine, je serai en télétravail demain, donc si tu as besoin de moi, appelle-moi directement sur mon portable.
+b02-052|M|[inhales] Dans la petite menuiserie de mon oncle, tout est encore fait à la main, et chaque meuble demande au moins trois semaines de travail.
+b02-053|F|Ben dis donc, le nouveau stagiaire est arrivé avec des croissants pour tout le monde, il a tout compris, hein.
+b02-054|F|[breathes] Bonjour, je suis coiffeuse à domicile, je me déplace dans tout le secteur de Rennes, du mardi au samedi.
+b02-055|M|[exhales] J'ai raté mon train et je vais avoir au moins quarante minutes de retard, est-ce que tu peux commencer la réunion sans moi?
+b02-056|F|Hier, mon chef m'a proposé de prendre la responsabilité d'une nouvelle équipe, mais je ne suis pas sûre d'être prête.
+b02-057|M|Ouais, bon, la réunion du lundi matin, honnêtement, elle pourrait tenir dans un simple email.
+b02-058|M|Le forgeron chauffe le métal jusqu'à ce qu'il devienne orange, puis il le frappe sur l'enclume pour lui donner sa forme.
+b02-059|F|[sighs] Je suis épuisée, j'ai enchaîné cinq entretiens d'embauche cette semaine, et je n'ai toujours aucune réponse.
+b02-060|F|Bonjour madame Rousseau, je vous rappelle au sujet de votre robe, les retouches sont terminées, vous pouvez venir l'essayer quand vous voulez.
+b02-061|M|[breathes] Je viens de signer mon contrat, je commence officiellement le quinze septembre comme technicien de maintenance à Toulouse.
+b02-062|M|Euh, tu as le code pour la photocopieuse? Ils l'ont changé pendant les vacances et personne ne m'a prévenu.
+b02-063|F|[inhales] Chaque matin, la petite équipe se réunit dix minutes debout autour d'une table pour faire le point sur les tâches de la journée.
+b02-064|F|[inhales] Bonjour, ici Laura de l'accueil, il y a un livreur qui vous attend en bas avec un colis assez volumineux.
+b02-065|M|Mon garagiste est d'une honnêteté rare, la dernière fois il m'a dit que la réparation n'était pas nécessaire et il ne m'a rien fait payer.
+b02-066|F|Hmm, je me demande si je ne vais pas demander une augmentation, ça fait trois ans que mon salaire n'a pas bougé.
+b02-067|M|[sighs] Je suis désolé, je n'ai pas eu le temps de finir les tableaux, je te les envoie demain avant neuf heures, promis.
+b02-068|F|[breathes] Ma sœur a ouvert une petite épicerie de produits locaux à Annecy, et après deux ans difficiles, elle commence enfin à gagner sa vie.
+b02-069|M|Bonjour, c'est Pierre Dubois, je suis électricien, je vous appelle pour fixer un rendez-vous concernant l'installation de votre nouveau tableau.
+b02-070|F|[exhales] Bah, j'ai encore oublié de couper mon micro pendant la visioconférence, tout le monde a entendu mon chien aboyer.
+b02-071|M|Au bout de six mois de télétravail complet, je me suis rendu compte que les discussions à la machine à café me manquaient vraiment.
+b02-072|F|Ah, Julie, tu tombes bien, tu peux m'aider à déplacer ces cartons jusqu'à la salle d'archives?
+b02-073|F|[breathes] Pour mon premier jour, je suis arrivée avec une heure d'avance, et j'ai attendu devant la porte fermée avec le gardien.
+b02-074|F|Le maître verrier travaille le verre à plus de mille degrés, et il lui faut des années de pratique pour souffler une carafe parfaitement régulière.
+b02-075|M|Ouais, ben, le chef veut tout pour hier, comme d'habitude, donc je crois que je vais rester tard ce soir.
+b02-076|F|Bonjour monsieur, je vous appelle au nom de l'association des commerçants du quartier pour vous inviter à notre réunion de jeudi soir.
+b02-077|M|[inhales] Dans mon entretien, la question la plus difficile, c'était: où vous voyez-vous dans cinq ans? Je n'ai pas su quoi répondre.
+b02-078|F|Euh, ma nouvelle collègue de bureau écoute de la musique classique toute la journée, et finalement, je trouve ça plutôt reposant.
+b02-079|M|[exhales] Le tapissier a refait les deux fauteuils de ma grand-mère avec un tissu vert, et ils sont comme neufs.
+b02-080|F|[sighs] Il reste deux jours avant la livraison du chantier, et les peintres n'ont toujours pas commencé le dernier appartement.
+b02-081|M|Salut Karim, c'est Julien, on se retrouve devant l'entrée principale à huit heures et quart pour aller ensemble au salon professionnel?
+b02-082|M|[inhales] Je tiens une petite fromagerie depuis quinze ans, et ce que je préfère, c'est conseiller les clients pour leurs repas de fête.
+b02-083|F|[breathes] Ah, je suis ravie, mon équipe a terminé le projet avec trois jours d'avance, on va pouvoir souffler un peu.
+b02-084|F|Bonjour, c'est madame Petit, je souhaiterais décaler mon rendez-vous chez le tailleur de mardi à jeudi, si c'est possible.
+b02-085|M|[exhales] Hmm, je ne suis pas convaincu par ce nouveau logiciel de gestion des congés, il est beaucoup plus lent que l'ancien.
+b02-086|M|Mon voisin est horloger, il répare encore des montres anciennes dans son minuscule atelier, avec une loupe vissée sur l'œil.
+b02-087|F|Bah, la nouvelle directrice a déjà changé trois fois l'organisation des bureaux, on ne sait plus où s'asseoir le matin.
+b02-088|F|[inhales] Je m'appelle Élodie, j'ai vingt-six ans, et je suis titulaire d'un diplôme de commerce obtenu à Montpellier en deux mille vingt-deux.
+b02-089|M|Bonjour, je vous appelle parce que j'ai bien reçu votre proposition, mais j'aimerais en discuter avant de donner ma réponse définitive.
+b02-090|M|[sighs] Ben, entre les bouchons et les travaux, il m'a fallu deux heures pour rentrer hier soir, j'étais complètement lessivé.
+b02-091|F|[sighs] Le jour de mon départ à la retraite, mes collègues m'ont offert un vélo et un énorme bouquet, j'étais très émue.
+b02-092|F|Est-ce que vous pourriez m'envoyer le contrat signé avant la fin de la semaine? Sinon la comptabilité ne pourra pas lancer le paiement.
+b02-093|M|[breathes] Le pâtissier commence par préparer la pâte la veille, la laisse reposer toute la nuit, puis façonne les croissants très tôt le matin.
+b02-094|F|Ouais, la pause déjeuner ici, c'est sacré, tout le monde mange ensemble dans le jardin dès qu'il fait beau.
+b02-095|M|Bonjour, je suis le nouveau gardien de l'immeuble de bureaux, je voulais me présenter et vous laisser mon numéro en cas de problème.
+b02-096|M|Euh, je crois que j'ai envoyé le mauvais fichier au client, tu sais comment on peut annuler un email?
+b02-097|F|[exhales] Après trois semaines, je suis enfin habituée aux horaires, mais j'ai encore du mal à me repérer dans tous ces couloirs.
+b02-098|M|[breathes] Pour devenir charpentier, j'ai fait deux ans de formation en alternance, une semaine à l'école et deux semaines sur les chantiers.
+b02-099|F|Bonjour Marie, c'est Anne, je t'appelle pour te dire que ton entretien s'est très bien passé, ils veulent te revoir lundi.
+b02-100|M|[inhales] Ah, la date limite approche et il nous manque encore les chiffres de Marseille, je vais appeler l'agence tout de suite.

@@ -1,0 +1,100 @@
+b04-001|F|[breathes] Coucou Julien, c'est moi, je suis passée chez le boulanger ce matin mais il n'avait plus de baguettes tradition, alors j'ai pris un pain de campagne.
+b04-002|M|Bonjour, je voudrais réserver une table pour quatre personnes samedi soir, vers vingt heures si possible, au nom de Lefèvre.
+b04-003|M|[sighs] Ben écoute, j'ai encore raté ma pâte à crêpes, elle est pleine de grumeaux, je sais pas ce que je fais de travers.
+b04-004|F|Pour réussir une bonne vinaigrette, on mélange une cuillère de moutarde avec du vinaigre, puis on ajoute l'huile petit à petit en fouettant.
+b04-005|F|Ouais, je suis allée au marché de la place ce matin, les fraises étaient à cinq euros la barquette, c'est un peu cher quand même.
+b04-006|M|[inhales] Mon grand-père faisait son propre fromage de chèvre dans une petite ferme près de Rodez, et toute la famille venait l'aider pendant l'été.
+b04-007|F|Bonsoir, je vous appelle pour savoir si vous livrez encore à cette heure-ci, on aimerait commander deux pizzas et une salade.
+b04-008|M|Hmm, franchement, le vin rouge qu'on a bu hier chez Thomas était excellent, il faudrait que je lui demande le nom du domaine.
+b04-009|F|[exhales] Je suis tellement contente, ma tarte aux pommes a enfin réussi, la pâte est bien dorée et les pommes sont fondantes.
+b04-010|M|Salut Camille, tu veux venir dîner à la maison vendredi? Je prépare un bœuf bourguignon, il y aura aussi Paul et sa copine.
+b04-011|M|[breathes] Le comté est un fromage au lait cru fabriqué dans le Jura, et certaines meules sont affinées pendant plus de vingt-quatre mois.
+b04-012|F|Excusez-moi monsieur, est-ce que ce plat contient des noix? Mon fils est allergique et je préfère vérifier avant de commander.
+b04-013|F|[sighs] Bah, j'ai attendu quarante minutes au restaurant hier soir, et à la fin le serveur s'est trompé de plat, j'étais vraiment déçue.
+b04-014|M|[inhales] Bonjour madame, je voudrais six croissants, deux pains au chocolat et une baguette bien cuite, s'il vous plaît.
+b04-015|M|Ah, au fait, n'oublie pas de sortir le poulet du congélateur ce soir, sinon on ne pourra pas le faire rôtir demain midi.
+b04-016|F|Dans cette recette de ratatouille, il faut cuire chaque légume séparément avant de tout réunir dans la cocotte, c'est plus long mais bien meilleur.
+b04-017|F|[breathes] Allô maman, je suis arrivée au marché, tu voulais des tomates rondes ou des tomates cerises? Je ne me souviens plus du tout.
+b04-018|M|Ben ouais, je suis resté tout l'après-midi en cuisine pour préparer le repas de Noël, et au final tout le monde a surtout mangé le dessert.
+b04-019|M|Bonjour, j'ai commandé un menu à quatorze euros sur votre site il y a une heure, et je n'ai toujours rien reçu, est-ce normal?
+b04-020|F|[exhales] Hmm, tu sais quoi, on pourrait essayer le nouveau restaurant libanais en bas de la rue, Sophie m'a dit que les mezzés étaient délicieux.
+b04-021|F|[inhales] Le pain au levain demande de la patience: on nourrit le levain plusieurs jours avant, puis la pâte repose toute une nuit au frais.
+b04-022|M|[exhales] Je suis désolé pour le retard, j'ai cherché du persil frais dans trois magasins différents et finalement j'en ai trouvé au primeur.
+b04-023|F|[breathes] Bonjour monsieur, ce serait pour un plateau de fromages pour huit personnes, avec un brie, un roquefort et peut-être un saint-nectaire.
+b04-024|M|Euh, attends, tu mets le sel avant ou après avoir fait bouillir l'eau des pâtes? Je fais toujours n'importe quoi avec ça.
+b04-025|M|Chaque dimanche matin, le marché de Saint-Malo se remplit de pêcheurs qui vendent leurs huîtres et leurs crevettes directement sur les étals.
+b04-026|F|[inhales] Coucou, c'est Léa, je voulais te remercier pour le dîner d'hier, j'ai adoré ton gratin dauphinois, il faudra me donner la recette.
+b04-027|F|Bah non, je suis pas fâchée, mais avoue que tu aurais pu me prévenir que tu ne mangeais plus de viande avant que je prépare le rôti.
+b04-028|M|Bonsoir, nous sommes trois, est-ce qu'il vous reste une table en terrasse? Sinon à l'intérieur, ce n'est pas grave.
+b04-029|M|[inhales] Pour faire une mayonnaise maison, tous les ingrédients doivent être à la même température, sinon elle risque de tourner très vite.
+b04-030|F|[sighs] Ouais, alors ce soir c'est raclette, j'ai acheté le fromage, les pommes de terre et la charcuterie, il manque juste les cornichons.
+b04-031|F|Bonjour, je souhaiterais commander un gâteau d'anniversaire au chocolat pour samedi, pour une quinzaine de personnes environ.
+b04-032|M|[sighs] Hmm, je suis allé chez le boucher à dix-neuf heures, c'était déjà fermé, du coup ce sera des œufs au plat ce soir.
+b04-033|M|[exhales] Dans le Bordelais, les vendanges commencent généralement début septembre, et les vignerons embauchent beaucoup de saisonniers pendant quelques semaines.
+b04-034|F|Ah ben tiens, j'ai retrouvé le carnet de recettes de ma grand-mère dans le grenier, il y a même sa fameuse mousse au chocolat.
+b04-035|F|[breathes] Bonjour, je vous appelle parce que j'ai oublié mon écharpe hier soir à votre restaurant, à la table près de la fenêtre.
+b04-036|M|Écoute, si tu passes devant la fromagerie, prends-moi un morceau de beaufort et un petit crottin, je te rembourserai ce soir.
+b04-037|M|Ouais, ben moi je trouve que les huîtres, c'est surfait, je préfère largement un bon plateau de charcuterie avec un verre de rouge.
+b04-038|F|[breathes] Le secret d'une bonne soupe à l'oignon, c'est de laisser caraméliser les oignons très doucement, pendant presque une heure.
+b04-039|F|Je suis ravie de vous accueillir, installez-vous, l'apéritif est servi au salon et le dîner sera prêt dans une vingtaine de minutes.
+b04-040|M|[inhales] Bonjour monsieur, est-ce que vous auriez une bouteille de champagne bien fraîche? C'est pour fêter les fiançailles de ma sœur ce soir.
+b04-041|M|Bah, j'ai voulu faire des macarons pour la première fois, mais ils sont tous craquelés, ils ressemblent à rien, je suis dégoûté.
+b04-042|F|Hier, au petit marché du quartier, une vieille dame m'a appris à choisir un melon: il doit être lourd et sentir bon près de la queue.
+b04-043|F|[inhales] Salut, c'est Inès, on fait un pique-nique au parc dimanche, chacun apporte quelque chose, toi tu pourrais prendre les boissons?
+b04-044|M|Les cannelés sont une spécialité de Bordeaux, ce petit gâteau caramélisé à l'extérieur et moelleux à l'intérieur est parfumé au rhum et à la vanille.
+b04-045|M|[exhales] Je suis rentré épuisé du travail, j'ai juste réchauffé un reste de lasagnes et je me suis endormi devant un film.
+b04-046|F|Euh, pardon, je crois qu'il y a une erreur sur l'addition, on n'a pris que deux cafés et pas trois.
+b04-047|F|[sighs] Ma voisine m'a apporté un énorme panier de courgettes de son jardin, je ne sais plus quoi en faire, j'en mange à tous les repas.
+b04-048|M|[breathes] Bonjour, j'aimerais savoir si votre restaurant propose un menu végétarien, je viens dîner avec des collègues jeudi prochain.
+b04-049|M|Ah, tu verras, les crêpes de cette petite crêperie de Quimper sont incroyables, surtout celle au caramel au beurre salé.
+b04-050|F|[exhales] On commence par faire fondre le beurre dans une casserole, puis on ajoute la farine d'un coup et on remue jusqu'à obtenir une pâte lisse.
+b04-051|F|Hmm, ouais, je suis pas convaincue par ce vin blanc, il est un peu trop sucré pour accompagner le poisson, tu ne trouves pas?
+b04-052|M|[breathes] Allô, oui, c'est pour une livraison, je suis au troisième étage, le code de la porte ne marche pas, appelez-moi en arrivant.
+b04-053|M|Mon oncle tient une petite boulangerie en Auvergne depuis trente ans, il se lève tous les jours à trois heures du matin pour pétrir la pâte.
+b04-054|F|[inhales] Bonjour madame, je voudrais une douzaine d'œufs, un pot de miel de lavande et une botte de radis, s'il vous plaît.
+b04-055|F|Ben voilà, je suis enfin inscrite au cours de cuisine du jeudi soir, la première séance, c'est sur les sauces de base.
+b04-056|M|Euh, je suis un peu perdu, sur la carte il y a écrit tartare, mais c'est du bœuf cru ou du poisson? Je préfère demander.
+b04-057|M|[sighs] Ma femme a invité ses parents dimanche midi, et je suis censé préparer une blanquette de veau, alors que je ne l'ai jamais faite.
+b04-058|F|La fondue savoyarde se prépare avec plusieurs fromages, souvent du beaufort, de l'emmental et du comté, fondus avec un peu de vin blanc.
+b04-059|F|[exhales] Coucou Marc, je suis bien rentrée, merci encore pour ce repas, les côtelettes d'agneau étaient parfaites, on recommence quand tu veux.
+b04-060|M|[sighs] Bonjour, j'appelle pour annuler ma réservation de ce soir, vingt et une heures, au nom de Moreau, désolé de prévenir si tard.
+b04-061|M|Ouais, bah, je suis allé chez le traiteur italien, j'ai pris des antipasti, du jambon et un tiramisu, comme ça on n'a rien à cuisiner.
+b04-062|F|Pour éviter que l'avocat noircisse, il suffit de laisser le noyau dans la purée et d'ajouter quelques gouttes de jus de citron.
+b04-063|F|[breathes] Bonsoir, je voudrais commander un couscous royal à emporter et deux portions de semoule en plus, je passerai le chercher dans une demi-heure.
+b04-064|M|[inhales] Chaque année, en octobre, mon village organise une fête de la châtaigne, on les grille dans de grandes poêles percées sur la place.
+b04-065|M|Hein? Tu as mis du sucre dans la sauce tomate? C'est vrai que ça enlève l'acidité, je savais pas du tout.
+b04-066|F|Je suis désolée, je ne pourrai pas venir à ton dîner samedi, j'ai un mariage en Bretagne, mais on se rattrape très vite, promis.
+b04-067|F|[breathes] Bonjour, je cherche un vin pour accompagner un magret de canard, plutôt autour de quinze euros, qu'est-ce que vous me conseillez?
+b04-068|M|[exhales] Le marché couvert de Lyon rassemble des dizaines de commerçants, et on y trouve les meilleures quenelles et le fameux saucisson brioché.
+b04-069|M|Ah, salut Nicolas, dis, ta mère m'a demandé la recette du clafoutis, tu peux lui dire que je l'envoie par email ce soir?
+b04-070|F|[sighs] Ben franchement, je suis épuisée, j'ai fait trois fournées de biscuits pour la kermesse de l'école, la cuisine est couverte de farine.
+b04-071|F|Excusez-moi, je pourrais avoir une carafe d'eau et un peu plus de pain, s'il vous plaît? Et on aimerait voir la carte des desserts.
+b04-072|M|[exhales] Je suis allé chercher les sushis, mais ils s'étaient trompés dans la commande, j'ai attendu encore vingt minutes sur le trottoir.
+b04-073|M|[breathes] Pour un pot-au-feu réussi, on plonge la viande dans l'eau froide et on la laisse cuire à petits frémissements pendant au moins trois heures.
+b04-074|F|Hmm, attends, je regarde dans le réfrigérateur, il reste des carottes, un peu de crème et du jambon, je peux faire une quiche si tu veux.
+b04-075|F|Au dix-septième siècle, le chocolat était une boisson réservée à la cour, et on le buvait chaud, souvent parfumé à la cannelle.
+b04-076|M|[inhales] Bonjour madame, je viens chercher la commande au nom de Girard, un pâté en croûte et un sac de pommes de terre nouvelles.
+b04-077|M|Bah, je suis content, j'ai enfin trouvé une boulangerie qui fait des vraies chouquettes, avec plein de sucre perlé dessus.
+b04-078|F|[sighs] Ma fille ne veut plus manger de légumes, alors je cache des épinards dans ses crêpes, et pour l'instant elle ne s'est rendu compte de rien.
+b04-079|F|Bonjour, c'est la pâtisserie Lambert? Je voulais vérifier que la pièce montée pour le baptême de dimanche est bien prête pour onze heures.
+b04-080|M|On dit qu'un bon cassoulet doit être cuit au four et que la croûte qui se forme sur le dessus doit être cassée plusieurs fois.
+b04-081|M|[breathes] Euh, salut, c'est Hugo, je suis devant le restaurant, mais je vois personne, vous êtes déjà à l'intérieur ou pas encore arrivés?
+b04-082|F|Ouais, j'ai goûté les bonbons à la violette à Toulouse, c'est très parfumé, presque comme du savon, j'ai pas trop aimé.
+b04-083|F|[exhales] Pour conserver les herbes fraîches plus longtemps, on peut les envelopper dans un torchon humide et les ranger dans le bac à légumes.
+b04-084|M|Bonsoir, je voudrais commander un tajine au poulet et aux citrons confits, et un thé à la menthe, c'est pour emporter.
+b04-085|M|[sighs] Je suis déçu, le petit bistrot où j'allais tous les midis a fermé, le patron est parti à la retraite et personne n'a repris.
+b04-086|F|Bah alors, tu as déjà mangé tout le fromage? J'en avais acheté pour la soirée de demain, c'est pas possible!
+b04-087|F|[inhales] Merci à tous d'être venus ce soir, je suis vraiment touchée, et j'espère que le gâteau vous plaira, c'est ma première pavlova.
+b04-088|M|Bonjour monsieur, une table pour deux, s'il vous plaît, et si possible un peu à l'écart, c'est un dîner d'anniversaire de mariage.
+b04-089|M|Les truffes noires du Périgord se récoltent en hiver, souvent avec l'aide d'un chien dressé, et elles peuvent coûter plus de mille euros.
+b04-090|F|[breathes] Coucou, tu peux passer à l'épicerie en rentrant? Il me faut de la levure, du lait entier et une plaquette de beurre doux.
+b04-091|F|Hmm, je suis partagée, le canard à l'orange me fait envie, mais le risotto aux champignons a l'air délicieux aussi.
+b04-092|M|[exhales] Ben, j'ai renversé toute la béchamel par terre en sortant le plat du four, la cuisine est dans un état incroyable, je suis vraiment maladroit.
+b04-093|M|Le croissant viendrait en fait d'Autriche, mais ce sont les boulangers parisiens qui l'ont transformé en viennoiserie feuilletée au beurre.
+b04-094|F|[inhales] Bonjour, je vous appelle de la part de madame Durand, elle souhaiterait réserver la salle du fond pour un déjeuner de trente personnes.
+b04-095|F|Euh, tu crois que deux bouteilles de vin suffiront pour huit? Moi je dirais qu'il en faut au moins trois, on ne sait jamais.
+b04-096|M|[inhales] Je suis tombé sur un marché de producteurs en traversant la Provence, j'ai rapporté de l'huile d'olive, des olives et du nougat.
+b04-097|M|[exhales] Bonjour, vous faites encore la formule petit déjeuner? Je prendrai un grand crème, une tartine beurrée et un jus d'orange pressé.
+b04-098|F|[sighs] J'avais tout prévu pour le dîner, mais le four est tombé en panne à dix-neuf heures, alors on a fini par commander des pizzas.
+b04-099|F|[breathes] Quand j'étais petite, je passais mes vacances chez ma tante en Normandie, et elle faisait des teurgoules dans de grands plats en terre cuite.
+b04-100|M|Ah, ouais, merci pour l'invitation, je suis ravi de venir, je ramène quoi, du vin, du pain ou un dessert?

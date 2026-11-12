@@ -1,0 +1,100 @@
+b08-001|F|[breathes] Ouais, alors le film d'hier soir, franchement, je suis sortie de la salle un peu déçue, la fin était beaucoup trop rapide.
+b08-002|M|Bonjour, j'appelle pour réserver deux places pour la pièce de samedi soir, si possible au premier rang du balcon.
+b08-003|M|[breathes] Le musée ouvre ses portes à dix heures, et l'entrée est gratuite le premier dimanche de chaque mois pour tout le monde.
+b08-004|F|[sighs] Ben j'ai encore raté mes semis de tomates, je crois que je les ai trop arrosés, c'est la troisième fois cette année.
+b08-005|M|Salut Julien, c'est moi, tu pourrais me rapporter ma perceuse demain? J'en ai besoin pour fixer des étagères dans la cuisine.
+b08-006|F|[sighs] Quand j'étais petite, ma grand-mère m'emmenait au théâtre de marionnettes tous les mercredis, et je crois que c'est là que j'ai découvert ma passion.
+b08-007|F|Hmm, tu as lu le dernier roman de cette autrice? Moi je l'ai commencé hier et je suis déjà arrivée à la moitié.
+b08-008|M|[inhales] Pour réussir une photo de paysage, il faut souvent attendre la lumière douce du matin, juste après le lever du soleil.
+b08-009|F|[inhales] Bonjour madame, je vous laisse un message au sujet du cours de poterie, je voudrais savoir s'il reste des places pour le jeudi soir.
+b08-010|M|Ah, le concert était génial, on est restés debout pendant deux heures et demie, mais je suis rentré complètement épuisé.
+b08-011|M|[exhales] Le jeu se joue à quatre, chaque joueur reçoit sept cartes, et le but est de se débarrasser de toutes ses cartes avant les autres.
+b08-012|F|[exhales] Bon, j'ai fini de repeindre les volets, il m'a fallu tout le week-end, mais je suis plutôt fière du résultat.
+b08-013|M|Coucou, tu viens toujours à la soirée jeux chez Thomas vendredi? Il faudrait que quelqu'un apporte des boissons et de quoi grignoter.
+b08-014|F|[breathes] La série raconte l'histoire d'une famille de vignerons en Bourgogne, sur trois générations, et chaque saison se déroule à une époque différente.
+b08-015|F|Ouais non mais attends, tu vas pas me raconter la fin de la saison, hein, j'ai pas encore regardé les deux derniers épisodes.
+b08-016|M|[breathes] Bonjour, c'est Marc, je vous appelle parce que le livre que j'ai commandé à la librairie n'est toujours pas arrivé.
+b08-017|M|[sighs] Ben moi, le piano, j'ai commencé à quarante ans, et franchement je regrette pas, même si mes voisins sont peut-être pas du même avis.
+b08-018|F|Le jardin botanique de la ville abrite plus de trois mille espèces de plantes, dont certaines viennent d'Amérique du Sud.
+b08-019|M|[inhales] Tu sais quoi? J'ai trouvé un vieux tourne-disque au vide-grenier pour quinze euros, et il marche encore parfaitement.
+b08-020|F|[sighs] Bonjour, je vous appelle pour annuler mon inscription à l'atelier de photographie du mois prochain, je ne serai pas disponible.
+b08-021|F|Bah, le musée était bondé, on voyait rien du tout, j'ai passé plus de temps à regarder les nuques des gens que les tableaux.
+b08-022|M|[breathes] Pour fabriquer un nichoir, il vous faut une planche de sapin, quelques vis, une scie et un peu de patience, surtout pour le toit.
+b08-023|M|Allô maman? Oui, je suis arrivé au théâtre, mais Sophie n'est pas encore là, je l'attends devant l'entrée.
+b08-024|F|Hmm, je sais pas trop quel livre emporter en vacances, j'hésite entre un polar et un gros roman historique.
+b08-025|F|[exhales] Pendant la projection, une panne de courant a plongé toute la salle dans le noir, et les spectateurs ont fini par applaudir quand le film a repris.
+b08-026|M|[inhales] Salut, c'est Paul, je voulais savoir si tu avais encore ton jeu d'échecs en bois, mon fils aimerait apprendre à jouer.
+b08-027|F|Ah ouais, ce groupe-là, je les ai vus en concert à Lyon il y a deux ans, j'étais tellement contente que j'ai pleuré.
+b08-028|M|[breathes] Le tricot revient à la mode, et de plus en plus de jeunes se retrouvent le dimanche dans les cafés pour tricoter ensemble.
+b08-029|M|Bonjour monsieur, je voudrais savoir si vous réparez les guitares, une des cordes a cassé et le manche est un peu tordu.
+b08-030|F|[breathes] Le photographe a passé six mois dans les montagnes pour saisir ces images, et l'exposition présente une soixantaine de tirages en noir et blanc.
+b08-031|F|Euh, tu pourrais m'aider à monter la bibliothèque samedi? Toute seule, j'y arriverai jamais, la notice est incompréhensible.
+b08-032|M|Bah ouais, j'ai abandonné le dessin au bout de trois semaines, j'étais pas assez patient, mais je vais peut-être réessayer.
+b08-033|F|[inhales] Bonsoir, c'est Claire, je vous rappelle pour la chorale, je serai bien présente à la répétition de mardi prochain.
+b08-034|M|Ce soir, la chaîne diffuse un documentaire sur les châteaux de la Loire, il commence à vingt et une heures dix.
+b08-035|M|[exhales] Franchement, ce puzzle de mille pièces, je suis dessus depuis trois jours, et il me manque encore tout le ciel.
+b08-036|F|[exhales] Pour bouturer un rosier, on coupe une tige d'environ vingt centimètres, on retire les feuilles du bas, et on la plante dans un sol humide.
+b08-037|F|Coucou Léa, je suis passée à la médiathèque, ils avaient le film que tu cherchais, je te l'ai emprunté pour trois semaines.
+b08-038|M|Hmm, j'ai pas trop aimé la mise en scène, les acteurs criaient tout le temps, mais les costumes étaient superbes, ça je dois l'avouer.
+b08-039|F|[inhales] Ma tante collectionne les timbres depuis quarante ans, elle en a plusieurs milliers, rangés par pays dans des albums.
+b08-040|M|Bonjour, je souhaiterais acheter un abonnement annuel pour le musée, est-ce qu'il existe un tarif réduit pour les familles?
+b08-041|F|Ben écoute, le jeu de société que tu m'as offert, on y a joué tout le week-end, même mon père s'est pris au jeu.
+b08-042|M|[breathes] Le festival de musique se tient chaque été dans les ruines d'une abbaye, et les concerts commencent quand le soleil se couche.
+b08-043|M|Salut Antoine, je suis devant la boutique de photo, tu te souviens quel objectif tu m'avais conseillé?
+b08-044|F|[sighs] Ouais, j'ai voulu changer le robinet de la salle de bain moi-même, et bien sûr j'ai inondé tout le couloir.
+b08-045|F|[inhales] Au dix-neuvième siècle, ce théâtre accueillait les plus grandes troupes de Paris, et sa salle rouge et or a été restaurée récemment.
+b08-046|M|Bonjour madame, je vous appelle de la part de l'association de jardinage, la distribution des graines aura lieu samedi matin.
+b08-047|F|Ah, j'adore ce morceau, ça me rappelle l'été où j'ai appris à jouer de la guitare au bord de la mer.
+b08-048|M|[breathes] Bah moi je préfère lire sur papier, j'aime bien sentir les pages, et puis j'ai l'impression de mieux retenir.
+b08-049|M|Pour développer ses propres photos argentiques, il faut une pièce totalement sombre, trois bains chimiques et beaucoup de rigueur.
+b08-050|F|[breathes] Allô? Oui, c'est Nadia, je voulais te dire que la séance de cinéma est à vingt heures quinze et pas à vingt heures.
+b08-051|M|Euh, tu as vu la nouvelle saison? Moi je l'ai regardée d'une traite dimanche, je suis resté sur le canapé toute la journée.
+b08-052|F|La broderie demande une grande précision, chaque point doit être de la même taille, sinon le motif paraît irrégulier.
+b08-053|F|Bonjour, je vous appelle au sujet de la visite guidée de l'exposition sur les impressionnistes, est-ce qu'il faut réserver à l'avance?
+b08-054|M|[exhales] Ouais, alors ce concert, c'était spécial, le chanteur a oublié les paroles deux fois, mais le public a chanté à sa place.
+b08-055|F|[inhales] Hier je suis allée cueillir des framboises dans le jardin de ma voisine, on en a ramassé presque deux paniers pleins.
+b08-056|M|Le club d'astronomie se réunit le premier vendredi du mois, et quand le ciel est dégagé, on installe les télescopes dans le champ derrière la mairie.
+b08-057|M|[sighs] Hmm, je me demande si je vais pas me mettre à la pêche, mon voisin y va tous les dimanches et il a l'air tellement serein.
+b08-058|F|Coucou, c'est Émilie, tu pourras me rendre mon appareil photo avant jeudi? Je pars en Bretagne et je voudrais l'emporter.
+b08-059|F|[exhales] La bande dessinée occupe une place importante en France, et le festival d'Angoulême attire chaque hiver des centaines de milliers de visiteurs.
+b08-060|M|Bonjour, j'aurais voulu savoir à quelle heure ferme la quincaillerie le samedi, j'ai besoin de peinture et de pinceaux.
+b08-061|F|Bah, j'ai essayé la méditation en musique, mais au bout de cinq minutes je me suis endormie sur le tapis, alors bon.
+b08-062|M|[breathes] Mon grand-père m'a appris à tailler les arbres fruitiers, il disait toujours qu'il fallait couper en biseau, juste au-dessus d'un bourgeon.
+b08-063|F|[breathes] Le conservatoire propose des cours de violon pour adultes débutants, à raison d'une heure par semaine, le mardi ou le mercredi soir.
+b08-064|M|Salut, je suis désolé, je pourrai pas venir à la répétition ce soir, ma voiture refuse de démarrer depuis ce matin.
+b08-065|M|Ouais, la visite du musée de la mine, je te la conseille vraiment, on descend à plus de cent mètres sous terre avec un ancien mineur.
+b08-066|F|[sighs] Bonjour monsieur, j'ai acheté un puzzle chez vous la semaine dernière, et il manque au moins une dizaine de pièces dans la boîte.
+b08-067|F|Pour bien conserver les livres anciens, il vaut mieux les garder à l'abri de la lumière et de l'humidité, et ne pas trop serrer les rayonnages.
+b08-068|M|[inhales] Ah ben ça, je m'y attendais pas, j'ai gagné la partie de tarot contre mon oncle, alors qu'il joue depuis cinquante ans.
+b08-069|F|Euh, tu préfères qu'on aille voir la comédie ou le film d'animation? Moi je suis un peu fatiguée, alors un truc léger, ce serait bien.
+b08-070|M|Coucou, c'est Yann, j'ai trouvé deux billets pour le concert de piano au théâtre de Marseille, ça te dirait de venir avec moi?
+b08-071|M|[inhales] La céramique demande beaucoup de patience, une pièce doit sécher plusieurs jours avant de passer au four, à plus de mille degrés.
+b08-072|F|[sighs] Ben non, j'ai pas encore fini la série, j'en suis à la troisième saison et franchement elle devient un peu longue.
+b08-073|F|Bonjour, c'est madame Durand, je vous appelle pour savoir si mes cadres sont prêts, vous m'aviez dit qu'ils seraient terminés mardi.
+b08-074|M|Hier soir, au théâtre, un comédien est tombé de la scène, mais il s'est relevé en riant, et toute la salle l'a applaudi.
+b08-075|M|Bah, mes courgettes ont tellement poussé cette année que j'en donne à tout le quartier, je sais plus quoi en faire.
+b08-076|F|[exhales] Ce peintre a passé sa vie en Provence, et ses toiles montrent les champs de lavande sous toutes les lumières de la journée.
+b08-077|F|[breathes] Salut Margot, je pars au vide-grenier demain matin à sept heures, si tu veux venir, je passe te chercher.
+b08-078|M|Hmm, je trouve que les films d'aujourd'hui sont trop longs, deux heures quarante pour une histoire aussi simple, c'est vraiment trop.
+b08-079|M|Bonjour, je vous appelle pour inscrire ma fille au stage de théâtre des vacances de printemps, elle a neuf ans.
+b08-080|F|[inhales] Pour tailler la lavande, on attend la fin de la floraison, puis on coupe environ un tiers de la plante, sans toucher au vieux bois.
+b08-081|F|Ah ouais, ton atelier de reliure, ça m'intéresse, je suis curieuse de voir comment tu couds les cahiers à la main.
+b08-082|M|[breathes] Mon frère a construit une maquette de bateau qui mesure presque un mètre, il y a passé tous ses soirs pendant un an.
+b08-083|M|Coucou, je voulais te prévenir, la librairie organise une rencontre avec l'auteur jeudi soir, je t'ai gardé une place à côté de moi.
+b08-084|F|Ouais, j'ai enfin réussi à faire mon premier pain au levain, il est un peu plat mais je suis super fière de moi.
+b08-085|F|La photographie de rue consiste à saisir des moments spontanés, sans mise en scène, et beaucoup de photographes travaillent avec un objectif fixe.
+b08-086|M|Bonjour madame, je suis passé ce matin pour la carte de la bibliothèque, mais il me manquait un justificatif de domicile.
+b08-087|M|[exhales] Ben je te dis, ce jeu de rôle, c'est pas compliqué, tu crées ton personnage, et après tu te laisses porter par l'histoire.
+b08-088|F|[inhales] Bonjour, c'est Sandrine, je vous appelle parce que j'ai oublié mon écharpe hier au vestiaire du musée, une écharpe bleue en laine.
+b08-089|F|La chorale du village compte une trentaine de membres, et elle donne chaque année un concert de Noël dans l'église.
+b08-090|M|Hmm, je sais pas si tu connais ce chanteur, il chante en breton, et même si je comprends rien, j'adore sa voix.
+b08-091|F|[sighs] Bah, j'ai voulu rempoter mes plantes sur le balcon, il y a de la terre partout, je suis complètement découragée.
+b08-092|M|[breathes] Au cours de sa carrière, ce réalisateur a tourné plus de vingt longs métrages, presque tous dans la région où il a grandi.
+b08-093|M|Salut Hugo, c'est moi, tu peux réserver la table du fond au bar à jeux pour samedi? On sera six, je pense.
+b08-094|F|Euh, pour le cadeau d'anniversaire de Luc, j'avais pensé à un coffret de peinture à l'aquarelle, tu en penses quoi?
+b08-095|F|Bonjour, je souhaiterais réserver une visite de l'atelier de vitrail pour un groupe de douze personnes, le samedi vingt-trois.
+b08-096|M|[exhales] Ah ouais, la soirée karaoké, je suis rentré sans voix, j'ai chanté toutes les chansons des années quatre-vingt.
+b08-097|M|[inhales] Pour accorder une guitare à l'oreille, on part de la corde la plus grave, puis on compare chaque corde avec la précédente.
+b08-098|F|Coucou papa, je suis bien arrivée au festival, il fait super beau, je te rappelle ce soir après le concert.
+b08-099|F|[sighs] Ben ouais, je me suis inscrite au club de lecture de la médiathèque, on se voit une fois par mois pour parler d'un roman.
+b08-100|M|Bonjour, je vous appelle parce que la tondeuse que j'ai achetée chez vous fait un bruit bizarre depuis la première utilisation.

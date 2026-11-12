@@ -1,0 +1,100 @@
+b09-001|F|[breathes] Quand j'étais petite, ma grand-mère m'emmenait cueillir des mûres le long du chemin, et on revenait toujours avec les doigts tout violets.
+b09-002|M|Ben tu sais, l'hiver dernier, j'ai vu un renard traverser le jardin à six heures du matin, il s'est arrêté, il m'a regardé, puis il est reparti tranquillement.
+b09-003|M|Les arènes de Nîmes ont été construites par les Romains il y a presque deux mille ans, et on y organise encore des spectacles aujourd'hui.
+b09-004|F|Salut Julien, c'est Camille, je t'appelle pour savoir si tu veux venir avec nous au marché aux fleurs dimanche matin, rappelle-moi quand tu peux.
+b09-005|M|[inhales] Pourquoi le ciel est bleu ? En fait, la lumière du soleil contient toutes les couleurs, mais l'air disperse beaucoup plus le bleu que le rouge.
+b09-006|F|Ah ouais, je me souviens, on passait toutes les vacances chez mon oncle en Bretagne, et j'étais persuadée qu'il y avait des pirates cachés dans les rochers.
+b09-007|F|Au printemps, les hirondelles reviennent d'Afrique, elles retrouvent souvent le même nid que l'année précédente, sous le toit de la même grange.
+b09-008|M|Bonjour madame, je voudrais réserver deux places pour la visite guidée des remparts de Saint-Malo samedi après-midi, s'il vous plaît.
+b09-009|M|[sighs] Bah moi, petit, j'avais une peur bleue du grenier, j'étais sûr qu'un hibou géant y vivait, en fait c'était juste le vent dans les tuiles.
+b09-010|F|Le hérisson passe l'hiver à dormir dans un tas de feuilles, son cœur ralentit énormément et il vit sur les réserves qu'il a faites pendant l'automne.
+b09-011|M|Coucou, c'est Thomas, je suis à Carcassonne avec les enfants, la cité est magnifique, on t'envoie une photo des remparts ce soir.
+b09-012|F|[exhales] Hmm, l'odeur du pain chaud le matin, ça me rappelle la boulangerie en bas de chez mes parents, j'y allais toute seule à sept ans, j'étais super fière.
+b09-013|M|Quand il y a de l'orage, on peut compter les secondes entre l'éclair et le tonnerre, trois secondes correspondent à peu près à un kilomètre.
+b09-014|F|Il était une fois un petit meunier qui vivait au bord d'une rivière, et chaque soir il racontait à son âne les histoires du village.
+b09-015|M|Ouais, alors cette année les cerisiers ont fleuri super tôt, fin février, du coup j'ai peur qu'une gelée tardive abîme toutes les fleurs.
+b09-016|F|Bonjour, je suis la maman de Léa, je voulais savoir à quelle heure le car revient de la sortie au zoo de Beauval jeudi.
+b09-017|M|À Lyon, au dix-neuvième siècle, des milliers d'ouvriers de la soie, qu'on appelait les canuts, travaillaient sur des métiers à tisser dans le quartier de la Croix-Rousse.
+b09-018|F|[breathes] Tu te rappelles la tempête de décembre ? Ben le vieux chêne au fond du parc est tombé, ça m'a fait vraiment de la peine.
+b09-019|M|La levure est un tout petit champignon vivant, elle mange le sucre de la farine et produit du gaz, c'est pour ça que la pâte gonfle.
+b09-020|F|Salut maman, je suis bien arrivée à Annecy, il fait un temps magnifique, le lac est d'un bleu incroyable, je t'appelle demain soir.
+b09-021|M|[inhales] Mon grand-père était facteur dans un petit village du Jura, il faisait sa tournée à vélo, même sous la neige, et tout le monde l'attendait.
+b09-022|F|Les abeilles butinent des milliers de fleurs pour fabriquer un seul pot de miel, c'est un travail énorme quand on y pense.
+b09-023|M|Euh, dis donc, t'as vu les feuilles du marronnier ? Elles sont déjà toutes jaunes, l'automne arrive vraiment vite cette année.
+b09-024|F|Bonjour monsieur, j'ai trouvé un jeune merle tombé du nid dans mon jardin, je voulais savoir si je dois le ramasser ou le laisser.
+b09-025|M|Le Pont du Gard est un ancien aqueduc romain, il transportait l'eau des sources d'Uzès jusqu'à la ville de Nîmes, sur une cinquantaine de kilomètres.
+b09-026|F|[sighs] Ah, les étés chez ma tante, on mangeait des tomates du potager, on dormait la fenêtre ouverte et on entendait les grillons toute la nuit.
+b09-027|M|Les marées sont surtout causées par la Lune, qui attire l'eau des océans, et c'est pour ça que la mer monte et descend deux fois par jour.
+b09-028|F|Coucou Inès, j'ai retrouvé dans un carton notre vieux carnet de colonie de vacances, tu vas rire en voyant nos dessins, passe à la maison ce week-end.
+b09-029|M|Ben un jour, en classe de neige, je suis tombé dans un énorme tas de poudreuse, tout le monde riait, et moi j'étais coincé jusqu'aux épaules.
+b09-030|F|À Grasse, dans l'arrière-pays niçois, on cultive le jasmin et la rose depuis des siècles pour fabriquer des parfums.
+b09-031|M|[exhales] Bonsoir, je vous appelle pour la sortie ornithologique de dimanche, est-ce qu'il faut apporter des jumelles ou est-ce que le club en prête ?
+b09-032|F|Hmm, en ce moment, à la tombée de la nuit, y'a une chouette qui chante dans le grand tilleul, je reste à l'écouter depuis le balcon.
+b09-033|F|Si la glace flotte sur l'eau, c'est parce qu'en gelant, l'eau prend plus de place, elle devient donc un peu plus légère que l'eau liquide.
+b09-034|M|Le Mont-Saint-Michel est entouré par des marées parmi les plus fortes d'Europe, la mer peut s'y retirer sur plus de dix kilomètres.
+b09-035|F|[inhales] Le premier jour de neige, mon frère et moi, on avait construit un bonhomme tellement grand qu'on avait dû monter sur une chaise pour poser la tête.
+b09-036|M|Salut Antoine, c'est Paul, on part ramasser des champignons demain en forêt de Fontainebleau, si ça te dit, on passe te prendre à huit heures.
+b09-037|M|Bah tu vois, le vélo tient debout parce qu'on avance, dès qu'on s'arrête, il tombe, c'est un peu magique quand on est petit.
+b09-038|F|À Strasbourg, la flèche de la cathédrale a été pendant plus de deux siècles le plus haut bâtiment du monde, ce qui est assez impressionnant.
+b09-039|F|Bonjour, j'appelle la mairie parce qu'un grand platane est tombé sur le chemin près de l'école, je voulais vous prévenir avant ce soir.
+b09-040|M|[breathes] Dans les Alpes, la marmotte siffle pour prévenir les autres quand un aigle approche, et toute la famille disparaît dans son terrier en une seconde.
+b09-041|M|Ah ouais, je me souviens de mon premier jour à l'école, j'étais terrifié, j'avais gardé mon cartable sur le dos toute la matinée.
+b09-042|F|La mer est salée parce que les rivières y apportent depuis des millions d'années des minéraux arrachés aux roches, et l'eau s'évapore en laissant le sel.
+b09-043|M|Coucou mamie, c'est Hugo, j'ai planté les bulbes de tulipes que tu m'as donnés, normalement elles devraient sortir au mois d'avril.
+b09-044|F|[sighs] Franchement, l'automne c'est ma saison préférée, les couleurs de la forêt, les châtaignes grillées, et puis on ressort les gros pulls.
+b09-045|M|À Avignon, au quatorzième siècle, les papes ont quitté Rome pour s'installer dans la ville, et ils y ont fait construire un immense palais.
+b09-046|F|Il était une fois une petite fille qui voulait attraper la Lune, alors elle a grimpé sur le toit avec une épuisette et un panier.
+b09-047|M|Bonjour monsieur, je me suis inscrit à l'atelier sur les étoiles à la médiathèque, je voulais confirmer que c'est bien mardi à vingt heures.
+b09-048|F|Ben tu sais quoi, ce matin j'ai vu un écureuil enterrer des noisettes dans le pot de géranium, j'étais morte de rire.
+b09-049|M|Un arc-en-ciel apparaît quand le soleil brille derrière nous et qu'il pleut devant, chaque goutte d'eau sépare la lumière en plusieurs couleurs.
+b09-050|F|[exhales] Mon père m'apprenait à reconnaître les oiseaux à leur chant, le pinson, la mésange, le rouge-gorge, et moi je notais tout dans un petit cahier.
+b09-051|M|Ouais, l'été dernier à Arles, on a suivi le parcours sur les traces de Van Gogh, c'est fou de voir les endroits qu'il a peints.
+b09-052|F|Salut Mathilde, c'est Claire, on a une portée de chatons à la ferme, si ta fille en veut un, venez les voir samedi.
+b09-053|M|Les feuilles changent de couleur en automne parce que l'arbre arrête de fabriquer la chlorophylle, le vert disparaît et laisse voir le jaune et l'orange.
+b09-054|F|[inhales] À Honfleur, au dix-neuvième siècle, beaucoup de peintres venaient travailler au bord de l'estuaire, attirés par la lumière changeante de la Normandie.
+b09-055|M|Hein ? Tu savais pas que les saumons remontent la rivière où ils sont nés ? Ils font parfois des centaines de kilomètres à contre-courant.
+b09-056|F|Bonjour, je vous appelle de la part de l'association des Amis du Vieux Rouen, on organise une conférence sur Jeanne d'Arc le mois prochain.
+b09-057|M|[sighs] Petit, je passais des heures au bord de l'étang à attraper des têtards dans un bocal, et ma mère me grondait parce que je rentrais trempé.
+b09-058|F|Les saisons existent parce que la Terre est penchée sur son axe, alors pendant une partie de l'année, notre hémisphère reçoit les rayons du soleil plus directement.
+b09-059|M|Coucou Sophie, je suis passé devant la vieille maison de ta grand-mère, ils ont repeint les volets en vert, ça lui va plutôt bien.
+b09-060|F|Bah moi, le printemps, j'adore, mais j'éternue toute la journée à cause des pollens, du coup je me promène avec des mouchoirs partout.
+b09-061|M|À Marseille, la ville a été fondée par des marins grecs venus de Phocée, il y a plus de deux mille six cents ans.
+b09-062|F|[breathes] L'histoire du loup et du berger, ma grand-mère la racontait toujours au coin du feu, en changeant la fin à chaque fois pour nous surprendre.
+b09-063|M|Bonjour, c'est Nicolas de la ferme pédagogique, je vous confirme la visite de la classe vendredi, les enfants pourront nourrir les chèvres et les lapins.
+b09-064|F|Hmm, tu sais que les escargots sortent surtout après la pluie ? Ils ont besoin d'humidité, sinon ils se dessèchent très vite.
+b09-065|M|Un réfrigérateur ne fabrique pas de froid, en réalité il retire la chaleur de l'intérieur et la rejette à l'arrière, c'est pour ça que la grille est chaude.
+b09-066|F|Ah, la première fois que j'ai vu la mer, j'avais six ans, je suis restée plantée sur le sable sans bouger, complètement émerveillée.
+b09-067|M|[exhales] Ouais, en novembre, j'aime bien marcher dans les vignes de Bourgogne, les feuilles deviennent rouges et dorées, et y'a presque personne.
+b09-068|F|Bonjour monsieur, je voudrais savoir si le musée de la dentelle au Puy-en-Velay est ouvert le lundi, je passe dans la région avec ma mère.
+b09-069|M|L'écho, c'est simplement le son qui rebondit sur une paroi, comme une balle contre un mur, et qui revient jusqu'à nos oreilles un peu plus tard.
+b09-070|F|Il paraît qu'un pêcheur de Concarneau avait apprivoisé une mouette, elle le suivait chaque matin jusqu'au port et attendait sa part de sardines.
+b09-071|M|Ben l'hiver, quand j'étais gamin, on faisait des glissades sur la cour gelée de l'école, le directeur nous criait dessus mais on recommençait.
+b09-072|F|[inhales] Salut Lucas, n'oublie pas qu'on va voir les cigognes au parc ornithologique en Alsace dimanche, prends un chapeau, il va faire chaud.
+b09-073|M|Les vers de terre sont précieux pour le jardin, ils creusent des galeries qui aèrent la terre et ils transforment les feuilles mortes en engrais naturel.
+b09-074|F|Dans le village de Laguiole, en Aveyron, on fabrique des couteaux depuis le dix-neuvième siècle, et leur petite abeille est reconnue partout.
+b09-075|M|[sighs] Mon chien Filou est mort l'an dernier, mais je pense encore à lui à chaque balade, il courait toujours après les papillons sans jamais les attraper.
+b09-076|F|Ouais, le mois de mai, c'est le mois des cerises chez nous, on grimpait dans l'arbre avec mes cousines et on mangeait plus qu'on ramassait.
+b09-077|M|Bonjour madame, je suis le voisin du dessus, je voulais vous dire qu'un couple de mésanges a fait son nid dans votre boîte aux lettres.
+b09-078|F|L'aimant attire le fer parce que ses minuscules particules sont toutes orientées dans le même sens, elles créent ensemble une force invisible.
+b09-079|M|À Chartres, les vitraux de la cathédrale sont célèbres pour leur bleu très profond, que les artisans du Moyen Âge savaient fabriquer avec beaucoup de soin.
+b09-080|F|[breathes] Ben je me rappelle surtout du jardin de mon grand-père, il me laissait arroser les salades avec un arrosoir presque aussi gros que moi.
+b09-081|M|Salut Karim, j'ai vu qu'il va neiger ce week-end dans les Vosges, ça te tente une balade en raquettes avec les enfants ?
+b09-082|F|Les chauves-souris s'orientent dans le noir grâce aux ultrasons, elles poussent des petits cris et écoutent l'écho qui revient des obstacles.
+b09-083|M|Ah ouais, c'est vrai, à Dijon, la moutarde était faite à l'origine avec du jus de raisin pas encore mûr, qu'on appelle le verjus.
+b09-084|F|Bonjour, c'est Hélène, je suis désolée, je ne pourrai pas venir à la randonnée de samedi, mon fils a un tournoi de football.
+b09-085|M|[inhales] Il était une fois, dans un petit port breton, un vieux marin qui affirmait parler aux phoques, et personne au village n'osait le contredire.
+b09-086|F|Hmm, en été, j'adore m'allonger dans l'herbe la nuit pour regarder les étoiles filantes, surtout vers le milieu du mois d'août.
+b09-087|M|Les castors construisent des barrages avec des branches et de la boue, ils créent ainsi des petits lacs où ils peuvent nager en sécurité.
+b09-088|F|[exhales] Quand j'étais en primaire, on avait élevé des phasmes dans la classe, et j'étais tellement fière le jour où j'ai pu les ramener à la maison pour les vacances.
+b09-089|M|Coucou, c'est Mathieu, je suis au bord de la Loire, y'a des centaines d'oiseaux sur les bancs de sable, je t'appelle quand je rentre.
+b09-090|F|À Roquefort, le fromage est affiné dans des caves naturelles creusées dans la roche, où de petites fissures laissent passer un air frais et humide.
+b09-091|M|Bah franchement, le mois de mars, je le trouve bizarre, un jour il fait presque chaud et le lendemain il grêle, on sait jamais comment s'habiller.
+b09-092|F|Bonjour madame, j'organise l'anniversaire de ma fille sur le thème des dinosaures, est-ce que votre musée propose des ateliers pour les enfants de huit ans ?
+b09-093|M|Le son voyage beaucoup plus vite dans l'eau que dans l'air, c'est pour ça que les baleines peuvent communiquer sur de très longues distances.
+b09-094|F|[sighs] Ah, je me souviens du vieux manège de la place, ma mère me donnait une pièce, et je choisissais toujours le cheval blanc avec la crinière dorée.
+b09-095|M|Ouais, ce matin y'avait un brouillard tellement épais sur la Garonne que je voyais même plus l'autre rive, c'était vraiment beau.
+b09-096|F|Bonjour, je suis nouvelle dans le quartier et je voudrais m'inscrire au jardin partagé, il reste encore des parcelles disponibles ?
+b09-097|M|[breathes] À Amiens, la cathédrale est la plus vaste de France, et on raconte que deux Notre-Dame de Paris pourraient presque y tenir.
+b09-098|F|Les arbres communiquent un peu entre eux grâce aux champignons de leurs racines, ils peuvent même s'échanger des nutriments à travers ce réseau souterrain.
+b09-099|M|Salut papa, c'est Bastien, j'ai retrouvé le vieux télescope au grenier, on pourrait regarder Saturne ensemble ce soir si le ciel est dégagé ?
+b09-100|F|Et voilà comment la petite tortue, sans jamais se presser, est arrivée la première au sommet de la colline, devant tous les animaux de la forêt.

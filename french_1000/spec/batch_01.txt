@@ -1,0 +1,100 @@
+b01-001|F|[breathes] Coucou maman, c'est moi, je voulais te dire que je passerai dimanche midi avec les enfants, on apportera le dessert, ne t'embête pas.
+b01-002|M|Ouais, ben, j'ai enfin fini de monter l'armoire de la chambre, ça m'a pris tout l'après-midi, je suis complètement crevé.
+b01-003|F|Bonjour monsieur, je suis votre nouvelle voisine du troisième étage, je voulais simplement me présenter et vous laisser mon numéro en cas de souci.
+b01-004|M|[sighs] Le chat a encore renversé le pot de fleurs sur le balcon, il y a de la terre partout jusque dans le salon.
+b01-005|M|[breathes] Salut Julien, c'est Thomas, tu pourrais me rappeler ce soir pour qu'on organise le déménagement de samedi ? J'ai besoin de savoir combien on sera.
+b01-006|F|[inhales] Chaque dimanche matin, ma grand-mère préparait une grande tarte aux pommes, et toute la famille se retrouvait autour de la table de la cuisine.
+b01-007|F|Euh, tu sais si quelqu'un a sorti les poubelles hier soir ? Parce que le camion est déjà passé et la poubelle jaune est encore pleine.
+b01-008|M|[exhales] Dans notre colocation, on a fait un tableau pour les tâches ménagères, chacun s'occupe de la vaisselle deux soirs par semaine.
+b01-009|F|Bonjour, j'appelle pour le chien que j'ai trouvé ce matin devant mon immeuble, il porte un collier bleu mais aucune médaille.
+b01-010|M|Hmm, je crois qu'on devrait repeindre la chambre du petit avant l'hiver, le papier peint commence vraiment à se décoller.
+b01-011|F|[breathes] Ce week-end, on pense partir à la campagne chez mes beaux-parents, il paraît qu'il va faire beau jusqu'à lundi.
+b01-012|M|[sighs] Mon voisin du dessus fait des travaux depuis trois semaines, et chaque matin à huit heures pile, la perceuse recommence.
+b01-013|F|Ah, j'ai oublié de te dire, le propriétaire passe jeudi à dix-sept heures pour vérifier la chaudière, tu seras là ?
+b01-014|M|[sighs] Ben franchement, ranger le garage tout seul, c'est pas une partie de plaisir, il y a des cartons qui datent d'au moins quinze ans.
+b01-015|F|Mon fils a eu un lapin pour son anniversaire, et maintenant il passe ses soirées à lui construire des petites maisons en carton.
+b01-016|M|Bonjour madame Martin, c'est votre voisin du rez-de-chaussée, votre colis est arrivé chez moi par erreur, vous pouvez passer le chercher quand vous voulez.
+b01-017|F|[inhales] Quand nous avons emménagé à Nantes, je ne connaissais personne, alors je suis allée à toutes les fêtes de quartier pour rencontrer du monde.
+b01-018|M|Ouais, je suis d'accord pour la soirée de samedi, mais faut qu'on prévienne les voisins avant, la dernière fois ils ont pas trop apprécié.
+b01-019|F|[inhales] Rappelle-toi de racheter du liquide vaisselle et des éponges en rentrant, il n'en reste plus du tout sous l'évier.
+b01-020|M|[breathes] Mon père m'a appris à réparer un robinet qui fuit quand j'avais douze ans, et depuis, c'est toujours moi qu'on appelle dans la famille.
+b01-021|F|Salut Camille, c'est Léa, tu pourrais nourrir mes poissons pendant que je suis à Lyon ? Je te laisse les clés dans la boîte aux lettres.
+b01-022|M|Hmm, le canapé ne passera jamais par l'escalier, il va falloir le monter par la fenêtre avec une corde, ou alors le démonter.
+b01-023|F|[sighs] Je suis épuisée, j'ai passé toute la journée à faire des cartons, et il m'en reste encore une bonne vingtaine pour la cuisine.
+b01-024|M|[exhales] Le dimanche, chez nous, c'est mon frère qui fait les crêpes, et on les mange devant un film avec toute la famille.
+b01-025|M|Bonsoir, je suis le nouveau colocataire de Sophie, elle m'a dit que je pouvais récupérer la clé de la cave chez vous.
+b01-026|F|Bah, si tu veux mon avis, on devrait adopter un chat plutôt qu'un chien, avec nos horaires, ce serait beaucoup plus simple.
+b01-027|F|[exhales] Les déménageurs arrivent demain à sept heures trente, donc ce soir il faut absolument démonter le lit et vider le frigo.
+b01-028|M|[sighs] Mes enfants se disputent tous les matins pour savoir qui va utiliser la salle de bains en premier, ça devient un vrai casse-tête.
+b01-029|F|Bonjour, c'est la voisine du deuxième, je pars en vacances pendant dix jours, pourriez-vous arroser mes plantes de temps en temps ?
+b01-030|M|[inhales] Euh, j'ai cassé un verre en faisant la vaisselle, mais t'inquiète pas, j'en rachèterai un pareil demain au marché.
+b01-031|F|Ma sœur vient d'avoir des jumeaux, alors ce week-end, je suis allée l'aider à préparer leur chambre et à laver tous les petits vêtements.
+b01-032|M|[sighs] Le lave-linge a encore inondé la salle de bains, j'ai dû éponger pendant une heure avant d'appeler le plombier.
+b01-033|F|Hmm, on pourrait inviter les voisins pour un apéritif dans le jardin vendredi soir, qu'est-ce que tu en penses ?
+b01-034|M|Salut maman, je suis bien arrivé dans mon nouvel appartement, il est plus petit que prévu mais la vue sur les toits est magnifique.
+b01-035|F|[breathes] Tous les samedis matin, je fais le marché avec mon père, on achète des légumes, du fromage et toujours un bouquet de fleurs pour ma mère.
+b01-036|M|Excusez-moi madame, votre chien aboie dès que vous partez travailler, et ça dure souvent toute la matinée, je voulais simplement vous prévenir gentiment.
+b01-037|F|Ouais, j'ai vu le message de Paul dans le groupe de la colocation, il propose qu'on achète un aspirateur ensemble, moi ça me va.
+b01-038|M|[exhales] Hier soir, mon grand-père nous a raconté comment il avait construit sa maison lui-même, pierre après pierre, pendant presque deux ans.
+b01-039|F|Bonjour, je vous appelle parce que je déménage le trente et un mai, et je voudrais transférer mon contrat d'électricité vers ma nouvelle adresse.
+b01-040|M|Ah, ben, t'as encore oublié de fermer la porte du frigo, tout le beurre a fondu et le lait sent bizarre.
+b01-041|F|[breathes] Quand j'étais petite, on avait un vieux chien qui dormait toujours au pied de mon lit, il s'appelait Caramel.
+b01-042|M|Ce samedi, je vais enfin trier les jouets des enfants, on donnera ceux qui ne servent plus à l'association du quartier.
+b01-043|F|[inhales] Coucou, c'est Manon, je suis en bas de l'immeuble mais l'interphone ne marche pas, tu peux descendre m'ouvrir s'il te plaît ?
+b01-044|M|Euh, je sais pas si on aura le temps d'aller chez tes parents dimanche, j'ai promis à Karim de l'aider à déménager son piano.
+b01-045|M|[breathes] Mon colocataire cuisine des plats incroyables, hier il nous a préparé un couscous pour huit personnes avec des légumes du marché.
+b01-046|F|[inhales] Pour garder une maison propre sans y passer des heures, le secret, c'est de faire un petit peu de ménage chaque jour plutôt que tout le samedi.
+b01-047|F|Bah, je suis pas convaincue que ce soit une bonne idée de prendre un deuxième chat, le premier est déjà assez jaloux comme ça.
+b01-048|M|Bonjour monsieur, je suis le fils de madame Petit, elle m'a demandé de récupérer le double de ses clés que vous gardez pour elle.
+b01-049|F|[sighs] Les voisins d'en face ont encore fait la fête jusqu'à trois heures du matin, je n'ai presque pas dormi de la nuit.
+b01-050|M|[exhales] Mon fils de six ans m'a demandé pourquoi le ciel était bleu pendant que je faisais la vaisselle, et j'avoue que j'ai eu du mal à répondre.
+b01-051|M|[exhales] Ouais, on a enfin trouvé un appartement à Bordeaux, trois pièces avec un balcon, on signe le bail la semaine prochaine.
+b01-052|F|Bonjour, c'est madame Durand, je voudrais savoir si la camionnette de déménagement est toujours disponible pour samedi matin.
+b01-053|M|[breathes] Ma femme et moi, on a décidé que les enfants auraient chacun une tâche, ma fille met la table et mon fils nourrit le poisson rouge.
+b01-054|F|[breathes] Hier, ma petite voisine de cinq ans a sonné chez moi pour m'offrir un dessin, j'étais tellement touchée que je l'ai accroché sur le frigo.
+b01-055|M|Hmm, faudrait qu'on achète une nouvelle machine à café, celle-ci fait un bruit horrible le matin et réveille toute la maison.
+b01-056|F|Ce week-end, avec mon copain, on veut aller pique-niquer au bord de la Loire, si jamais tu veux venir, apporte juste une couverture.
+b01-057|M|[sighs] J'ai passé deux heures à chercher mes clés partout dans l'appartement, et finalement elles étaient dans la poche de mon manteau.
+b01-058|F|Salut, c'est Inès, je suis désolée mais je ne pourrai pas garder ton chat ce week-end, ma mère vient d'arriver à la maison.
+b01-059|M|Avant de déménager, pensez à prévenir la poste, la banque et votre assurance, sinon votre courrier continuera d'arriver à l'ancienne adresse.
+b01-060|F|[inhales] Ben moi, je trouve que la cuisine est bien plus agréable depuis qu'on a enlevé ce vieux buffet, on a enfin de la place pour respirer.
+b01-061|M|[inhales] Mon oncle habite une ferme en Bretagne, et chaque été, nous y passions trois semaines à nous occuper des poules et des vaches.
+b01-062|F|Bonsoir, je suis la colocataire de Hugo, il n'est pas encore rentré, voulez-vous que je lui laisse un message ?
+b01-063|M|Ah, au fait, j'ai réservé une table au restaurant du coin pour l'anniversaire de ta mère, samedi à vingt heures, on sera neuf.
+b01-064|F|[exhales] Notre chienne a eu quatre chiots la nuit dernière, les enfants sont restés éveillés jusqu'à minuit pour les regarder.
+b01-065|M|[exhales] Le dimanche soir, je prépare toujours les repas de la semaine à l'avance, ça me fait gagner un temps fou les jours de travail.
+b01-066|F|Euh, est-ce que quelqu'un a vu mon parapluie rouge ? Je l'avais laissé dans l'entrée hier et il a complètement disparu.
+b01-067|M|[breathes] Ça fait dix ans que j'habite dans cet immeuble, et je connais le prénom de presque tous les voisins, même celui du chat de la gardienne.
+b01-068|F|Ma belle-mère vient dormir à la maison vendredi, il faudrait préparer le canapé-lit et libérer un peu de place dans l'armoire.
+b01-069|M|Bonjour, j'appelle pour la fuite d'eau dans ma cuisine, elle coule sous l'évier depuis ce matin et je n'arrive pas à trouver le robinet principal.
+b01-070|F|Hmm, ouais, je veux bien m'occuper de la salle de bains si tu fais les vitres, mais alors cette fois on s'y met dès dix heures.
+b01-071|M|[sighs] Mon petit frère a emprunté ma voiture pour son déménagement, et il me l'a rendue avec le réservoir vide et des miettes partout.
+b01-072|F|[breathes] Après le déménagement, le plus difficile, ce n'est pas de vider les cartons, c'est de décider où ranger chaque objet pour de bon.
+b01-073|M|Salut Nicolas, c'est Antoine, on fait un barbecue chez moi dimanche, viens avec ta femme et les enfants, il y aura de la place pour tout le monde.
+b01-074|F|[inhales] Ma grand-mère vivait seule dans une petite maison au bord de la mer, et je suis restée chez elle tous les étés jusqu'à mes quinze ans.
+b01-075|M|Bah, je suis pas fâché, mais j'aimerais bien que tu ranges tes chaussures au lieu de les laisser au milieu du couloir.
+b01-076|F|Bonjour, je cherche une chambre en colocation près de la gare de Lille, je suis étudiante, plutôt calme et très ordonnée.
+b01-077|M|[breathes] Ce matin, j'ai trouvé un hérisson dans le jardin, je lui ai laissé une petite assiette d'eau et il est reparti tranquillement sous la haie.
+b01-078|F|Ah, n'oublie pas qu'on a promis à mamie de passer l'aider à décrocher les rideaux du salon samedi après-midi.
+b01-079|F|[sighs] Ben voilà, le chien a mangé la moitié du gâteau que j'avais préparé pour ce soir, il va falloir en refaire un en vitesse.
+b01-080|M|[inhales] Quand on vit en colocation, il vaut mieux fixer quelques règles dès le début, par exemple sur le bruit, les invités et le partage des courses.
+b01-081|F|Coucou papa, je suis bien rentrée, le trajet s'est bien passé, je t'appelle demain pour te raconter la visite de l'appartement.
+b01-082|M|[exhales] Euh, désolé pour le bruit hier soir, c'était l'anniversaire de mon colocataire et on a un peu perdu la notion du temps.
+b01-083|F|Ma fille veut absolument un hamster pour Noël, mais je lui ai expliqué qu'il faudrait nettoyer la cage elle-même toutes les semaines.
+b01-084|M|Bonjour madame, je suis le gardien de la résidence, je vous informe que l'eau sera coupée demain entre neuf heures et midi pour des travaux.
+b01-085|F|[inhales] Le samedi, après le ménage, je m'installe sur le balcon avec un thé et un bon livre, c'est mon petit moment à moi.
+b01-086|M|Ouais, j'ai trouvé un camion de location pas cher, quatre-vingt-dix euros la journée, par contre il faut le rendre avant dix-huit heures.
+b01-087|F|Je suis tellement contente, mes parents ont enfin accepté de venir passer Noël chez nous, ce sera la première fois dans notre nouvelle maison.
+b01-088|M|[breathes] Mon voisin et moi, on partage un petit potager derrière l'immeuble, cette année, on a récolté plus de tomates qu'on pouvait en manger.
+b01-089|F|Hmm, je me demande si on ne devrait pas laisser la clé chez la voisine, au cas où l'un de nous oublierait la sienne.
+b01-090|M|Salut, c'est Lucas, je serai en retard pour le dîner, la réunion de copropriété n'en finit pas, commencez sans moi.
+b01-091|F|[exhales] J'ai enfin réussi à convaincre mon mari de vider la cave, on a trouvé des lettres de son arrière-grand-père datant de mille neuf cent vingt.
+b01-092|M|[exhales] Le chat de mes parents a dix-sept ans, il dort presque toute la journée, mais il se réveille toujours pile à l'heure du repas.
+b01-093|F|Bonjour monsieur, je suis l'ancienne locataire de l'appartement, est-ce que du courrier serait arrivé à mon nom depuis mon départ ?
+b01-094|M|[sighs] Bah, on a voulu faire une surprise à ma mère en repeignant sa cuisine, mais on a choisi un vert beaucoup trop foncé.
+b01-095|F|[breathes] Dimanche, si le temps le permet, j'aimerais bien qu'on fasse une grande balade en forêt avec les enfants et le chien.
+b01-096|M|Ma voisine âgée m'a appris à faire des confitures, et maintenant, chaque automne, je lui apporte des pots de prunes en remerciement.
+b01-097|F|[breathes] Euh, j'ai regardé les horaires de la déchetterie, elle est ouverte samedi jusqu'à dix-sept heures, on pourra y déposer le vieux matelas.
+b01-098|M|[inhales] Je suis ravi de vous accueillir dans l'immeuble, si vous avez besoin d'une perceuse ou d'une échelle, n'hésitez surtout pas à frapper chez moi.
+b01-099|F|Salut Chloé, c'est Emma, la propriétaire a accepté qu'on garde le chaton, alors je suis passée à l'animalerie acheter une litière et des croquettes.
+b01-100|M|[inhales] Le jour où on a quitté notre première maison, mon père a fait le tour de chaque pièce en silence, puis il a refermé la porte doucement.

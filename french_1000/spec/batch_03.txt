@@ -1,0 +1,100 @@
+b03-001|F|[breathes] Bonjour monsieur, excusez-moi, je cherche la gare routière, on m'a dit qu'elle était derrière la mairie mais je tourne en rond depuis vingt minutes.
+b03-002|M|[inhales] Alors, euh, le train pour Bordeaux part à quatorze heures douze, mais franchement je crois qu'on devrait prendre celui d'après, on sera moins pressés.
+b03-003|F|Bonsoir, j'ai réservé une chambre double pour trois nuits au nom de Lefèvre, et je voulais savoir si le petit déjeuner était compris dans le prix.
+b03-004|M|[sighs] Ben voilà, mon vol pour Nice est annulé, je suis coincé à l'aéroport et personne ne sait me dire quand le prochain va partir.
+b03-005|F|[breathes] Le village d'Eguisheim est construit en cercles autour de son château, et au printemps toutes les fenêtres sont couvertes de fleurs rouges et blanches.
+b03-006|F|Salut Julien, c'est Camille, je suis bien arrivée à Annecy, le lac est magnifique, je te rappelle ce soir quand je serai installée à l'hôtel.
+b03-007|M|Ouais, ouais, on a fait la route d'une traite jusqu'à Biarritz, huit heures de voiture, j'étais complètement lessivé en arrivant.
+b03-008|M|[inhales] Bonjour madame, je voudrais deux billets aller-retour pour Rouen samedi matin, en seconde classe, et si possible côté fenêtre.
+b03-009|F|Pour aller au musée, vous prenez la deuxième rue à gauche, vous passez devant la boulangerie, et c'est juste après le pont, sur votre droite.
+b03-010|M|[exhales] Hier soir le bus de nuit est tombé en panne au milieu de la campagne, et on a attendu presque une heure qu'un autre vienne nous chercher.
+b03-011|F|[exhales] Bah, l'hôtel était correct, mais la chambre donnait sur la rue et avec les poubelles à cinq heures du matin, j'ai pas beaucoup dormi.
+b03-012|M|Coucou maman, je suis à la gare de Lyon, mon train a quarante minutes de retard, donc ne m'attends pas pour dîner, je mangerai un sandwich.
+b03-013|M|[breathes] Carcassonne possède une cité médiévale entourée de deux enceintes et de cinquante-deux tours, c'est l'une des plus grandes forteresses d'Europe.
+b03-014|F|[inhales] Bonjour, je vous appelle parce que j'ai oublié une écharpe bleue dans la chambre deux cent quatorze, est-ce que quelqu'un l'aurait trouvée ?
+b03-015|F|Hmm, tu crois qu'on a le temps de passer par Saint-Malo avant de rentrer ? J'aimerais tellement voir les remparts au coucher du soleil.
+b03-016|M|[breathes] Excusez-moi, monsieur, c'est bien ce quai pour le train de Strasbourg ? Le panneau affiche deux destinations différentes et je suis un peu perdu.
+b03-017|F|On a quitté Nantes à l'aube, on a longé la Loire jusqu'à Saumur, et on a déjeuné dans une petite guinguette au bord de l'eau.
+b03-018|M|Ah, la dune du Pilat, j'y suis monté pieds nus, le sable était brûlant, mais la vue sur le bassin d'Arcachon valait vraiment le coup.
+b03-019|M|[exhales] Bonjour, je souhaite modifier ma réservation, j'arriverai finalement jeudi et non mercredi, est-ce que ça pose un problème pour la chambre ?
+b03-020|F|[sighs] Ouais, la queue au contrôle de sécurité faisait au moins cent mètres, j'ai cru que j'allais rater l'embarquement, j'ai couru comme une folle.
+b03-021|F|Le Mont-Saint-Michel est entouré par la mer deux fois par jour lors des grandes marées, et il faut bien vérifier les horaires avant de traverser la baie.
+b03-022|M|[breathes] Écoute, si tu te perds en sortant du métro, tu remontes l'avenue jusqu'au rond-point et tu m'appelles, je viendrai te chercher à pied.
+b03-023|F|Ben moi, les vacances au camping, j'adore, mais cette année on a pris un gîte en Ardèche, avec une piscine et une vue sur les gorges.
+b03-024|M|[inhales] Bonjour, ici Thomas Garnier, je loue une voiture chez vous à partir de vendredi, et je voudrais ajouter un deuxième conducteur au contrat.
+b03-025|F|Quand j'étais petite, on passait tous les étés chez ma grand-mère à Quimper, et on allait à la plage à vélo avec mes cousins.
+b03-026|M|Hein ? Le dernier bus pour le centre-ville part à vingt-deux heures quinze ? Bah, il faut qu'on se dépêche alors, il est déjà moins dix.
+b03-027|M|[breathes] Le canal du Midi relie Toulouse à la mer Méditerranée, et beaucoup de gens le parcourent en péniche, tranquillement, à la vitesse d'un piéton.
+b03-028|F|[exhales] Bonjour madame, est-ce que vous pourriez me dire où se trouve le guichet pour les objets trouvés ? J'ai laissé mon sac dans le train de Lille.
+b03-029|F|[breathes] Franchement, Colmar en décembre, c'est féerique, les marchés de Noël, les maisons à colombages, le vin chaud, je suis tombée amoureuse de la ville.
+b03-030|M|[exhales] Salut, c'est Hugo, je viens d'atterrir à Marseille, je récupère ma valise et je prends la navette, je serai chez toi dans une heure environ.
+b03-031|M|Ouais bon, le gîte était sympa, mais il n'y avait aucun réseau et pour appeler, il fallait monter sur la colline derrière la grange.
+b03-032|F|Pour rejoindre l'île de Ré depuis La Rochelle, on traverse un grand pont de près de trois kilomètres, et ensuite on peut tout faire à vélo.
+b03-033|F|[inhales] Bonsoir, je suis désolée de vous déranger si tard, mais la clé de ma chambre ne fonctionne plus, je suis bloquée dans le couloir.
+b03-034|M|[exhales] Ah, enfin arrivé ! Six heures de car depuis Clermont-Ferrand, avec un chauffeur qui écoutait la radio à fond, j'en peux plus.
+b03-035|M|À Amboise, on peut visiter le château royal puis marcher jusqu'au Clos Lucé, la dernière demeure de Léonard de Vinci, en une dizaine de minutes.
+b03-036|F|Excusez-moi, il faut composter le billet avant de monter, ou bien on peut le montrer directement au contrôleur dans le train ?
+b03-037|F|Euh, attends, je regarde la carte, on est sur la départementale, et normalement il faut tourner à droite après le prochain village, enfin je crois.
+b03-038|M|[breathes] Bonjour, je voudrais savoir s'il reste des places sur le bateau pour Ajaccio le douze juillet, nous sommes quatre adultes avec une voiture.
+b03-039|M|Mon premier voyage seul, c'était à dix-huit ans, j'ai pris le train de nuit pour Briançon avec un sac à dos énorme et presque pas d'argent.
+b03-040|F|[sighs] Hmm, l'agence nous avait promis une chambre avec vue sur la mer, et on se retrouve face au parking, je suis un peu déçue quand même.
+b03-041|F|[breathes] Gordes est un village perché sur une colline du Luberon, avec des maisons en pierre sèche, et en juillet les champs de lavande tout autour sont superbes.
+b03-042|M|Allô, oui, c'est pour le taxi, je suis devant le terminal deux, porte six, avec une valise grise, je porte une veste verte.
+b03-043|M|Bah écoute, si tu veux mon avis, prends plutôt le train jusqu'à Grenoble, et loue une voiture là-bas, les routes de montagne sont plus faciles en été.
+b03-044|F|[inhales] Bonjour, je voudrais un plan de la ville, s'il vous plaît, et peut-être quelques conseils pour un restaurant typique pas trop cher près du port.
+b03-045|F|La vieille ville de Bonifacio est posée au bord d'une falaise blanche, et on y accède en montant un escalier taillé directement dans la roche.
+b03-046|M|[breathes] Ben, j'ai raté la correspondance à Dijon de trois minutes, le contrôleur m'a dit d'attendre le suivant, ça fait deux heures que je suis assis ici.
+b03-047|F|[exhales] Coucou Léa, petit message pour te dire que je suis rentrée de Bretagne, j'ai plein de photos à te montrer, on se voit quand tu veux.
+b03-048|M|Pour le petit déjeuner, la salle est au rez-de-chaussée, à gauche de l'accueil, et le service commence à sept heures, jusqu'à dix heures trente.
+b03-049|M|Ah ouais, Étretat, les falaises sont impressionnantes, on a marché jusqu'à l'aiguille, mais attention, le vent souffle tellement fort qu'on tient à peine debout.
+b03-050|F|Madame, s'il vous plaît, je crois que vous êtes assise à ma place, j'ai le siège quarante-trois dans la voiture douze, côté couloir.
+b03-051|F|[inhales] Bonjour monsieur, je voudrais déclarer une valise perdue, je suis arrivée de Toulouse ce matin et elle n'est jamais apparue sur le tapis.
+b03-052|M|On avait loué un camping-car pour faire le tour de la Corse, et chaque soir on se garait face à la mer, c'étaient les meilleures vacances de ma vie.
+b03-053|M|[sighs] Bon, euh, je pense qu'on va dormir à Limoges ce soir, il est tard, et rouler de nuit sur ces petites routes, ça ne me dit rien.
+b03-054|F|Strasbourg est traversée par l'Ill, et le quartier de la Petite France, avec ses canaux et ses anciennes maisons de tanneurs, attire des milliers de visiteurs.
+b03-055|F|Bonjour, je vous appelle de la part de mes parents, ils voudraient réserver une chambre au calme pour une semaine en septembre, au rez-de-chaussée si possible.
+b03-056|M|[sighs] La gare était fermée pour travaux, aucun panneau, aucune information, et on a fini par prendre un taxi qui nous a coûté soixante-dix euros.
+b03-057|M|Salut ma puce, petit message de l'aéroport, l'embarquement commence dans dix minutes, je t'appelle dès que j'atterris à Brest, je t'embrasse fort.
+b03-058|F|Ouais, ben, le guide nous a fait monter les trois cent quarante-cinq marches du beffroi, j'étais épuisée, mais la vue sur la ville était géniale.
+b03-059|F|[breathes] Avant de partir sur l'autoroute, pensez à vérifier la pression des pneus et le niveau d'huile, surtout si la voiture est chargée pour les vacances.
+b03-060|F|Excusez-moi, vous savez à quelle heure ferme la billetterie du téléphérique ? On voudrait monter à l'Aiguille du Midi avant la fin de l'après-midi.
+b03-061|M|Ben l'année dernière, on est allés à Sète pour la fête de la Saint-Louis, avec les joutes nautiques sur le canal, c'était vraiment sympa à voir.
+b03-062|M|[exhales] Bonjour, j'ai une réservation pour ce soir, mais mon train est bloqué à Poitiers, je risque d'arriver après minuit, est-ce que la réception sera encore ouverte ?
+b03-063|F|[inhales] Dans le Périgord, Sarlat a gardé son centre médiéval presque intact, et le samedi matin, le marché envahit toutes les ruelles autour de la cathédrale.
+b03-064|F|Hmm, je sais pas, le bus est moins cher, mais il met presque quatre heures, alors que le train fait le trajet en une heure et demie.
+b03-065|M|[breathes] Excusez-moi, madame, je cherche l'office de tourisme, je suis passé deux fois devant l'église, mais je ne vois aucun panneau.
+b03-066|M|Je suis parti à Lille avec mes collègues pour un séminaire, et on en a profité pour goûter les gaufres fourrées et la carbonade flamande, un vrai régal.
+b03-067|F|[breathes] Allô Marc, c'est Sophie, on a crevé un pneu sur l'autoroute près de Valence, on attend la dépanneuse, ne t'inquiète pas, tout le monde va bien.
+b03-068|F|Le train jaune traverse les Pyrénées catalanes entre Villefranche-de-Conflent et Latour-de-Carol, sur des viaducs vertigineux, et en été on peut voyager dans des voitures découvertes.
+b03-069|M|Ah, tu vas adorer Lyon, ben, monte à Fourvière le matin, descends par les traboules du Vieux Lyon, et le soir, mange dans un bouchon.
+b03-070|M|[sighs] Bonjour, la chambre est très bien, mais la climatisation fait un bruit terrible, est-ce qu'il serait possible de changer de chambre ce soir ?
+b03-071|F|[sighs] Le vol a été retardé trois fois, et quand on a enfin pu monter dans l'avion, on a attendu une heure sur la piste, j'étais à bout.
+b03-072|F|Bonjour, c'est pour savoir si votre gîte accepte les animaux, je voyage avec un petit chien très calme, et je pensais venir début août.
+b03-073|M|En Bourgogne, on a suivi la route des grands crus de Dijon jusqu'à Beaune, en s'arrêtant dans des petits villages entourés de vignes.
+b03-074|M|[exhales] Hein, c'est pas possible, le distributeur de billets ne prend que les cartes, et j'ai que des pièces, bon, je vais faire la queue au guichet.
+b03-075|F|Pour vous rendre à l'aéroport, le plus simple, c'est la navette qui part toutes les vingt minutes devant la gare, comptez environ trente-cinq minutes de trajet.
+b03-076|F|Salut, on se retrouve devant l'horloge de la gare à huit heures moins le quart, et surtout n'oublie pas ta carte d'identité pour l'hôtel.
+b03-077|M|[inhales] Je me souviens de mon arrivée à Bastia en bateau, au petit matin, la ville était encore toute rose, et ça sentait le maquis.
+b03-078|M|[breathes] Euh, désolé, je ne suis pas d'ici, mais je crois que la poste est sur la place du marché, demandez peut-être au pharmacien juste là.
+b03-079|F|À Nice, la promenade des Anglais longe la baie des Anges sur plusieurs kilomètres, et le soir les habitants viennent y marcher ou faire du vélo.
+b03-080|F|[exhales] Ouais, je suis arrivée à l'hôtel, mais ils ont perdu ma réservation, la réceptionniste cherche une solution, je te tiens au courant.
+b03-081|M|Bonsoir, je suis en panne d'essence sur la nationale, à environ dix kilomètres de Rodez, est-ce que vous pouvez m'envoyer quelqu'un rapidement ?
+b03-082|M|Le pont du Gard est un aqueduc romain construit il y a presque deux mille ans, et on peut se baigner juste en dessous, dans le Gardon.
+b03-083|F|[breathes] Bah, moi je préfère voyager en train, on regarde le paysage, on lit, on discute, alors qu'en voiture, je passe mon temps à surveiller la route.
+b03-084|F|Bonjour, est-ce que ce bus s'arrête près du château ? Je dois descendre à l'arrêt le plus proche, vous pourrez me prévenir, s'il vous plaît ?
+b03-085|M|[breathes] Alors, pour les vacances de février, j'hésite entre les Alpes et les Vosges, les Vosges c'est plus près, mais j'ai peur qu'il n'y ait pas assez de neige.
+b03-086|M|[sighs] Je viens de recevoir un message, notre train de demain est supprimé à cause de travaux sur la voie, il va falloir trouver une autre solution assez vite.
+b03-087|F|Au Pays basque, chaque village a son fronton pour la pelote, et les maisons blanches aux volets rouges ressemblent toutes un peu à des cartes postales.
+b03-088|F|Ah, je suis trop contente, on a trouvé une petite chambre d'hôtes à Honfleur, juste à côté du vieux bassin, et la propriétaire est adorable.
+b03-089|M|[inhales] Bonjour monsieur, à quelle heure faut-il libérer la chambre demain ? Mon avion décolle en fin d'après-midi, alors je voudrais laisser mes bagages ici.
+b03-090|M|Hmm, d'après le plan, la sortie du parc est de l'autre côté du lac, on peut soit faire le tour à pied, soit prendre le petit bateau.
+b03-091|F|[sighs] Quand je suis arrivée à Rennes pour mes études, je ne connaissais personne, alors chaque week-end je prenais le car pour découvrir un nouveau coin de Bretagne.
+b03-092|F|Mesdames et messieurs, le train à destination de Montpellier partira avec un retard d'environ quinze minutes, nous vous prions de nous excuser pour la gêne occasionnée.
+b03-093|M|Euh, ouais, j'ai garé la voiture au parking de la plage, mais je ne me rappelle plus si c'était le niveau moins un ou moins deux.
+b03-094|M|[breathes] Les gorges du Verdon sont les plus profondes d'Europe, et l'eau turquoise du lac de Sainte-Croix attire chaque été des milliers de kayaks et de pédalos.
+b03-095|F|Bonjour madame, je voudrais acheter une carte d'abonnement pour le tramway, je reste un mois en ville pour un stage, quelle formule me conseillez-vous ?
+b03-096|M|[inhales] Bonjour, je suis bien arrivé à l'hôtel, mais le code de la porte du parking ne fonctionne pas, vous pourriez me le redonner, s'il vous plaît ?
+b03-097|F|Ben, à Arles, on a vu les arènes romaines, le théâtre antique, et on a fini la journée en Camargue, au milieu des flamants roses et des chevaux blancs.
+b03-098|M|[exhales] Si vous continuez tout droit sur cette route, vous arriverez à Rocamadour en un quart d'heure, mais garez-vous en haut, en bas il n'y a jamais de place.
+b03-099|F|[breathes] Excusez-moi, je suis complètement perdue, je dois aller à l'auberge de jeunesse, rue Sainte-Catherine, c'est encore loin d'ici à pied ?
+b03-100|M|[inhales] Ah, ces vacances à Collioure, on se baignait le matin, on faisait la sieste l'après-midi, et le soir on mangeait des anchois sur le port.

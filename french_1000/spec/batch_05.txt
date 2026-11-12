@@ -1,0 +1,100 @@
+b05-001|F|[breathes] Bon, ben je viens de finir mes dix kilomètres, je suis crevée mais super fière, j'ai couru sans m'arrêter une seule fois.
+b05-002|M|Bonjour, je voudrais prendre rendez-vous avec le kinésithérapeute pour la semaine prochaine, de préférence le mardi ou le jeudi en fin d'après-midi.
+b05-003|F|Le club de natation de notre quartier ouvre ses portes le samedi matin, et les enfants peuvent essayer gratuitement pendant deux semaines.
+b05-004|M|[sighs] Ouais, le match d'hier soir, franchement, j'y croyais plus du tout, et puis on marque à la quatre-vingt-dixième minute, j'étais debout sur le canapé.
+b05-005|M|Salut Julien, c'est Thomas, tu viens toujours faire la sortie vélo dimanche? On part de la place de l'église à huit heures et demie.
+b05-006|F|[exhales] Hmm, j'ai essayé de me coucher plus tôt cette semaine, vers vingt-deux heures, et honnêtement je me sens déjà beaucoup moins fatiguée le matin.
+b05-007|F|[breathes] Quand j'étais petite, mon père m'emmenait tous les dimanches au stade, on prenait des sandwichs et on restait jusqu'au coup de sifflet final.
+b05-008|M|Bonjour madame, j'aimerais savoir s'il reste des places pour le cours d'aquagym du mercredi soir, ma femme et moi voudrions nous inscrire.
+b05-009|M|[inhales] Bah, la randonnée était plus dure que prévu, on a grimpé pendant trois heures, mais la vue sur le lac, en haut, valait vraiment le coup.
+b05-010|F|Bonsoir, je vous appelle pour décaler mon rendez-vous de jeudi chez l'ostéopathe, j'ai une réunion qui tombe pile au même moment.
+b05-011|M|Le Tour de France passe à côté de chez mes parents cette année, alors toute la famille va pique-niquer au bord de la route pour voir les coureurs.
+b05-012|F|[breathes] Ah, la piscine était quasiment vide ce matin, j'ai pu nager mes quarante longueurs tranquillement, sans personne dans mon couloir.
+b05-013|M|[exhales] Moi, après une longue course, je bois beaucoup d'eau, je mange une banane et je m'étire doucement pendant une dizaine de minutes.
+b05-014|F|Coucou Léa, je suis inscrite à la course des Lumières le vingt et un décembre, tu veux venir courir avec moi? On pourrait s'entraîner ensemble le soir.
+b05-015|M|[sighs] Euh, je crois que j'ai un peu trop forcé sur les jambes hier à la salle, ce matin j'ai du mal à descendre les escaliers.
+b05-016|F|[inhales] Ma grand-mère a soixante-dix-huit ans et elle marche encore six kilomètres chaque matin le long du canal, elle dit que c'est son secret.
+b05-017|M|Bonjour, je souhaiterais résilier mon abonnement à la salle de sport, je déménage à Bordeaux le mois prochain et il n'y a pas de club là-bas.
+b05-018|F|[exhales] Ouais, ben le yoga du dimanche, au début je trouvais ça ennuyeux, mais maintenant c'est le seul moment de la semaine où je me sens vraiment calme.
+b05-019|M|L'équipe de mon fils a gagné le tournoi régional samedi, il était tellement content qu'il a dormi avec sa médaille autour du cou.
+b05-020|F|Bonjour monsieur, est-ce que vous avez encore un créneau pour une séance d'essai de natation pour adultes cette semaine? Je suis débutante.
+b05-021|M|[breathes] Hmm, ce matin j'ai fait le tour du lac en courant, il faisait encore frais, les canards dormaient, franchement c'était parfait.
+b05-022|F|[breathes] On a randonné quatre jours dans les Pyrénées avec ma sœur, on dormait dans des refuges et on se levait à six heures pour voir le soleil se lever.
+b05-023|M|Salut, c'est Karim, je ne pourrai pas venir à l'entraînement de football ce soir, je suis coincé au bureau, dis au reste de l'équipe que je suis désolé.
+b05-024|F|[sighs] Bah, j'ai encore mal dormi cette nuit, les voisins ont fait la fête jusqu'à deux heures du matin, je suis complètement épuisée.
+b05-025|M|Le vélodrome de la ville organise une journée portes ouvertes dimanche prochain, avec des initiations gratuites pour les petits à partir de six ans.
+b05-026|F|Bonjour, c'est madame Durand, j'aurais besoin d'un rendez-vous chez le dentiste pour mon fils, si possible un mercredi après-midi, il n'a pas école.
+b05-027|M|[inhales] Ah, j'ai enfin réussi à monter le col du Galibier sans poser le pied à terre, j'en rêvais depuis trois ans, je suis épuisé mais heureux.
+b05-028|F|[exhales] Tu sais, depuis que je vais au travail à pied, une demi-heure aller et une demi-heure retour, je me sens beaucoup plus détendue en arrivant.
+b05-029|M|[sighs] Ouais, ben moi je suis supporteur de Lens depuis tout petit, alors forcément, quand ils perdent, mon dimanche est un peu gâché.
+b05-030|F|Le marathon de Paris a lieu chaque année au mois d'avril, et des dizaines de milliers de coureurs traversent la ville en passant devant les monuments.
+b05-031|M|Bonjour, je voudrais réserver un court de tennis pour samedi matin, vers dix heures, pour deux personnes, est-ce que c'est possible?
+b05-032|F|[breathes] Euh, je ne sais pas si je vais réussir à me lever demain pour la piscine, mais si je n'y vais pas, je vais culpabiliser toute la journée.
+b05-033|M|Quand j'avais vingt ans, je jouais au rugby dans un petit club du Sud-Ouest, et après chaque match, on mangeait tous ensemble chez le président.
+b05-034|F|Coucou maman, je suis bien arrivée au gîte, la marche de cet après-midi était magnifique, on a même croisé des chamois près du sentier.
+b05-035|M|[exhales] Hmm, faut que je trouve une nouvelle paire de chaussures de course, les miennes sont complètement usées, j'ai fait presque mille kilomètres avec.
+b05-036|F|La salle de sport ferme exceptionnellement à quinze heures le jour de Noël, et elle sera fermée toute la journée le premier janvier.
+b05-037|M|Salut Antoine, j'ai deux places pour le match de samedi au Parc des Princes, ça te dit de venir avec moi? Réponds-moi vite, sinon je les propose à mon frère.
+b05-038|F|[sighs] Ben franchement, la sieste de vingt minutes après le déjeuner, ça a changé ma vie, je suis beaucoup plus concentrée l'après-midi.
+b05-039|M|Bonjour, j'appelle pour savoir si le cabinet est ouvert le samedi, je voudrais prendre rendez-vous pour un contrôle de la vue.
+b05-040|F|Le club de randonnée part tous les premiers dimanches du mois, et chacun apporte quelque chose à partager pour le pique-nique de midi.
+b05-041|M|[breathes] Euh, aujourd'hui j'ai battu mon record sur cinq kilomètres, vingt-deux minutes et quelques secondes, je n'en reviens toujours pas.
+b05-042|F|[inhales] J'ai commencé à nager l'année dernière, à quarante ans, et au début je ne savais même pas mettre la tête sous l'eau, maintenant je fais mille mètres sans m'arrêter.
+b05-043|M|Bonsoir, c'est Paul du club cycliste, je vous rappelle que la sortie de demain est annulée à cause de la pluie, on se retrouve la semaine prochaine.
+b05-044|F|[inhales] Ouais, j'ai testé le cours de boxe avec Camille hier soir, j'étais morte de rire au début, mais franchement on a transpiré comme jamais.
+b05-045|M|Mon voisin descend la rue en roller tous les matins pour aller au travail, il dit que c'est plus rapide que le bus et beaucoup plus amusant.
+b05-046|F|Bonjour, je souhaiterais annuler ma séance de massage de vendredi, je suis désolée, j'ai un imprévu familial. Est-ce que je peux la reporter?
+b05-047|M|[sighs] Bah, je me suis encore endormi devant la télévision, je me suis réveillé à trois heures avec un torticolis, faut vraiment que j'arrête.
+b05-048|F|[breathes] L'été dernier, on a fait le tour de la Corse à vélo en dix jours, avec les sacoches, le camping et les montées interminables sous le soleil.
+b05-049|M|Salut, je cherche quelqu'un pour courir avec moi le dimanche matin dans le bois de Vincennes, à un rythme tranquille, si ça t'intéresse, appelle-moi.
+b05-050|F|[exhales] Hmm, je crois que je vais arrêter de regarder mon téléphone au lit, je m'endors toujours beaucoup trop tard à cause de ça.
+b05-051|M|Le stade de mon village a été entièrement rénové cet été, avec une nouvelle pelouse et des tribunes couvertes pour les jours de pluie.
+b05-052|F|Bonjour, je voudrais inscrire ma fille au cours de gymnastique du samedi, elle a huit ans, est-ce qu'il faut un certificat ou juste la fiche d'inscription?
+b05-053|M|[breathes] Ah, ben voilà, j'ai enfin terminé mon premier triathlon, la natation était horrible, mais la course à pied, à la fin, je volais.
+b05-054|F|[exhales] Je me suis levée à cinq heures pour voir le lever du soleil depuis le sommet du puy de Dôme, et franchement ça valait chaque minute de montée.
+b05-055|M|Coucou ma chérie, je rentre un peu plus tard ce soir, je passe à la salle après le boulot, garde-moi une assiette au chaud, s'il te plaît.
+b05-056|F|[sighs] Euh, ma montre dit que j'ai fait huit mille pas aujourd'hui, mais j'ai l'impression d'avoir couru un marathon, je suis vidée.
+b05-057|M|Bonjour, j'appelle pour confirmer mon rendez-vous de lundi à neuf heures quinze chez le médecin, et je voulais savoir s'il fallait apporter ma carte vitale.
+b05-058|F|Au club, on organise un tournoi de pétanque chaque été sur la place du marché, et tout le monde peut participer, même les débutants.
+b05-059|M|[inhales] Ouais, alors moi, le ski de fond, j'adore, c'est calme, on entend juste le bruit des skis sur la neige, c'est presque de la méditation.
+b05-060|F|[inhales] Ma colocataire a commencé l'escalade il y a deux mois, et maintenant elle grimpe sur tous les murs, même ceux du salon.
+b05-061|M|Bonsoir, je voulais vous prévenir que je serai absent au cours de natation de jeudi, je suis en déplacement à Lyon pour le travail toute la semaine.
+b05-062|F|[breathes] Bon, j'ai décidé de m'inscrire au semi-marathon de Nice en mars, il me reste quatre mois pour m'entraîner, je suis un peu stressée.
+b05-063|M|[breathes] Le dimanche, avec mes copains, on joue au football sur le terrain derrière l'école, on est souvent une dizaine, et l'équipe qui perd paie les cafés.
+b05-064|F|Bonjour madame, j'aimerais prendre rendez-vous chez le coiffeur pour samedi matin, une coupe et une couleur, vers onze heures si c'est possible.
+b05-065|M|[exhales] Hmm, j'ai essayé la méditation avant de dormir, dix minutes avec une application, et je dois dire que je m'endors plus vite qu'avant.
+b05-066|F|[sighs] Quand j'étais au lycée, j'étais gardienne de but dans l'équipe de handball, et je me souviens encore de la finale qu'on avait perdue d'un seul point.
+b05-067|M|Salut Nicolas, tu peux me prêter ta pompe à vélo? J'ai un pneu à plat et je dois aller au boulot demain matin, je passe chez toi vers sept heures.
+b05-068|F|[sighs] Bah, la salle était tellement pleine ce soir qu'il fallait attendre pour chaque machine, je suis repartie au bout de quarante minutes.
+b05-069|M|La piscine municipale propose des cours pour apprendre à nager aux adultes, en petits groupes de six, le mardi et le vendredi à midi.
+b05-070|F|Bonjour, c'est Sophie Martin, je vous appelle pour prendre rendez-vous chez l'ophtalmologue, mon médecin m'a dit qu'il fallait le faire avant la fin de l'année.
+b05-071|M|[breathes] Ouais, ben on a fait la randonnée des trois lacs avec les enfants, dix-huit kilomètres, et c'est moi qui étais le plus fatigué à la fin.
+b05-072|F|Les cyclistes se sont regroupés au pied de la montagne, ils ont attendu le signal du départ, puis ils ont attaqué la première côte sous les applaudissements.
+b05-073|M|Bonjour, je voulais savoir si vous louez des vélos électriques à la journée, on aimerait faire le tour de l'île de Ré samedi avec ma femme.
+b05-074|F|[inhales] Ah, j'ai enfin trouvé une habitude qui marche, je fais vingt minutes d'étirements le matin et je bois un grand verre d'eau avant mon café.
+b05-075|M|[inhales] Mon oncle a couru le marathon de New York à soixante ans, et il raconte encore l'ambiance dans les rues comme si c'était hier.
+b05-076|F|Coucou, tu as vu le résumé du match? Je suis tellement déçue, on menait deux à zéro à la mi-temps et on a fini par perdre trois à deux.
+b05-077|M|[sighs] Euh, je suis allé nager à la mer ce matin, l'eau était glaciale, je suis resté cinq minutes et je suis ressorti en courant.
+b05-078|F|Bonjour, est-ce que vous pouvez me rappeler pour fixer un rendez-vous avec la diététicienne? Je suis disponible tous les jours après dix-sept heures.
+b05-079|M|Le sentier commence derrière la chapelle, il monte doucement à travers la forêt, et au bout d'une heure, on arrive à une petite cascade.
+b05-080|F|[exhales] Bon, ben je me suis réveillée à six heures sans réveil ce matin, je me sentais en pleine forme, j'espère que ça va durer.
+b05-081|M|Salut Romain, je t'appelle parce que le club cherche un arbitre pour le match des moins de douze ans samedi, tu serais disponible?
+b05-082|F|[breathes] J'ai découvert le kayak de mer cet été en Bretagne, on a longé la côte jusqu'à une petite crique, et un phoque est venu nager à côté de nous.
+b05-083|M|[breathes] Hmm, j'ai mis le réveil une demi-heure plus tôt pour aller courir avant le travail, et franchement je suis de bien meilleure humeur au bureau.
+b05-084|F|Bonjour, je vous appelle de la part de mon mari, il voudrait déplacer son rendez-vous de mardi chez le podologue à vendredi matin, si c'est possible.
+b05-085|M|Le premier club de football de la ville a été fondé il y a plus de cent ans par des ouvriers de l'usine textile, et il existe encore aujourd'hui.
+b05-086|F|[sighs] Ouais, j'avoue, j'ai sauté la séance de sport ce matin, il pleuvait des cordes et mon lit était beaucoup trop confortable.
+b05-087|M|Bonjour, j'ai réservé un vélo pour la balade guidée de dimanche, mais finalement nous serons trois au lieu de deux, est-ce que vous avez encore de la place?
+b05-088|F|[exhales] Pendant les vacances, je me baigne tous les matins dans la Méditerranée avant que les plages se remplissent, c'est le meilleur moment de la journée.
+b05-089|M|[inhales] Ah, ben j'ai enfin réussi à faire dix tractions d'affilée, il y a six mois je n'en faisais pas une seule, je suis plutôt content de moi.
+b05-090|F|[inhales] Salut Manon, ça te dirait une petite marche demain midi au parc? On pourrait prendre un sandwich et profiter du soleil avant que l'hiver arrive.
+b05-091|M|Ce soir, je me couche tôt, demain je pars à quatre heures du matin pour la course de montagne, quarante-deux kilomètres et deux mille mètres de dénivelé.
+b05-092|F|[breathes] Euh, je ne suis pas très sportive, mais je me suis mise à la danse le jeudi soir, et je dois dire que j'adore ça.
+b05-093|M|Bonjour madame, je vous appelle pour réserver une place au stage d'escalade des vacances de février pour mon fils de onze ans.
+b05-094|F|[breathes] Ma voisine promène son chien trois fois par jour, quel que soit le temps, et elle dit que ça lui fait plus de bien que n'importe quelle salle de sport.
+b05-095|M|[exhales] Bah, j'ai regardé la finale jusqu'à minuit et demi, je me suis couché tard, et ce matin, franchement, j'ai du mal à garder les yeux ouverts.
+b05-096|F|Bonjour, je voudrais savoir quels sont les horaires de la piscine pendant les vacances scolaires, j'aimerais y emmener mes neveux un après-midi.
+b05-097|M|Chaque année au mois de juin, toute la ville se retrouve pour la course des familles, cinq kilomètres le long de la Loire, avec un goûter à l'arrivée.
+b05-098|F|[sighs] Hmm, j'ai oublié mon maillot de bain à la maison, je suis arrivée devant la piscine et j'ai dû faire demi-tour, quelle idiote.
+b05-099|M|Salut, c'est Hugo, je t'envoie l'itinéraire de la randonnée ce soir par email, on se retrouve au parking du col à sept heures, n'oublie pas tes bâtons.
+b05-100|F|Bonjour, j'appelle pour savoir si vous proposez des cours particuliers de natation pour les enfants qui ont peur de l'eau, ma fille a sept ans.

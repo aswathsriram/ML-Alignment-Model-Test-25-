@@ -1,0 +1,100 @@
+b10-001|F|[breathes] Coucou Julie, euh, je suis bloquée dans les bouchons sur le périphérique, je pense arriver vers dix-neuf heures quinze, commencez l'apéritif sans moi.
+b10-002|M|Bonjour monsieur, j'appelle parce que mon abonnement au parking de la gare a été débité deux fois ce mois-ci, soit cent vingt euros au lieu de soixante.
+b10-003|M|[sighs] Ben franchement, il pleut depuis trois jours, j'ai les chaussures trempées et mon parapluie s'est retourné ce matin devant la boulangerie.
+b10-004|F|[breathes] Pour trier les déchets à la maison, on garde une poubelle jaune pour les emballages, une verte pour le verre, et un petit seau pour le compost.
+b10-005|F|[inhales] Salut Thomas, c'est Claire. Tu pourrais m'aider à installer la nouvelle imprimante samedi? Je n'arrive pas à la connecter à mon ordinateur.
+b10-006|M|[sighs] Ouais, ouais, je sais, j'ai encore oublié l'anniversaire de ma sœur, je vais lui envoyer des fleurs demain matin pour me faire pardonner.
+b10-007|F|Le mariage de ma cousine aura lieu le quatorze juin dans un petit château près d'Angers, et je suis très émue d'être son témoin.
+b10-008|M|[exhales] Bon, j'ai enfin trouvé une place pour me garer, mais à vingt minutes à pied de chez toi, donc je serai un peu en retard.
+b10-009|M|[inhales] Bonjour madame, je vous contacte au sujet du ramassage des encombrants, j'ai un vieux canapé et deux chaises à faire enlever devant mon immeuble.
+b10-010|F|Hmm, je crois que mon téléphone a un problème, la batterie se vide en deux heures alors qu'il est tout neuf, c'est vraiment agaçant.
+b10-011|F|[breathes] Quand je suis arrivée à Lyon il y a cinq ans, je ne connaissais personne, et c'est au club de randonnée que j'ai rencontré mes meilleures amies.
+b10-012|M|[breathes] Selon la météo, il fera vingt-huit degrés cet après-midi à Marseille, avec un vent assez fort et quelques nuages en fin de journée.
+b10-013|M|Ah, au fait, pour la fête des voisins, j'apporte une tarte aux pommes et des boissons, tu peux t'occuper des chaises pliantes?
+b10-014|F|[exhales] Bonsoir, c'est Nathalie, je voulais savoir si tu avais reçu l'invitation pour les quarante ans de Sophie, la fête est prévue le samedi vingt et un.
+b10-015|M|[sighs] Bah, encore une amende de stationnement, trente-cinq euros, alors que j'étais garé seulement dix minutes pour décharger les courses.
+b10-016|F|Depuis que j'ai installé une application pour suivre ma consommation d'électricité, je fais beaucoup plus attention aux lumières allumées et aux appareils en veille.
+b10-017|M|[inhales] Dans notre quartier, le marché du dimanche est devenu un vrai lieu de rencontre, on y croise les voisins, on discute, et les enfants jouent sur la place.
+b10-018|F|[inhales] Euh, tu sais si la déchetterie est ouverte le lundi? J'ai des cartons et un vieux micro-ondes à déposer.
+b10-019|M|Bonjour, je suis le voisin du troisième, votre voiture bloque la sortie du garage, est-ce que vous pourriez la déplacer, s'il vous plaît?
+b10-020|F|[breathes] Je suis tellement contente, on a enfin fixé la date de notre mariage, ce sera le six septembre, en Bretagne, au bord de la mer.
+b10-021|M|[breathes] Hier soir, l'orage a coupé le courant dans tout l'immeuble, alors on a dîné aux bougies avec les voisins du palier, c'était plutôt sympa.
+b10-022|F|Ouais, bof, la nouvelle mise à jour de l'ordinateur a tout changé, je ne retrouve plus mes dossiers ni mes photos de vacances.
+b10-023|M|[exhales] Salut Karim, c'est Julien, tu viens toujours pour mon anniversaire vendredi? On se retrouve à vingt heures trente au restaurant italien de la rue Victor Hugo.
+b10-024|F|Chaque matin, je prends le vélo pour aller au bureau, ça me prend un quart d'heure, et je suis beaucoup moins stressée qu'en voiture.
+b10-025|M|[exhales] Ben, je suis désolé, j'ai complètement oublié notre rendez-vous de midi, mon réveil n'a pas sonné et mon téléphone était éteint.
+b10-026|F|[inhales] La ville de Strasbourg a installé des composteurs collectifs dans plusieurs parcs, et chaque habitant peut y apporter ses épluchures de légumes.
+b10-027|M|Bonjour madame, j'ai acheté un ordinateur portable chez vous la semaine dernière, et l'écran reste noir quand je l'allume, que dois-je faire?
+b10-028|F|[sighs] Ah, il fait un froid de canard ce matin, moins quatre degrés, et bien sûr j'ai oublié mes gants à la maison.
+b10-029|M|[sighs] Mon meilleur ami habite maintenant au Canada, mais on s'appelle tous les dimanches soir, malgré les six heures de décalage horaire.
+b10-030|M|Hmm, tu crois qu'on devrait offrir un cadeau commun pour le départ à la retraite de Martine? On pourrait mettre vingt euros chacun.
+b10-031|F|[breathes] Bonjour, je vous appelle pour réserver une salle pour le baptême de ma fille, nous serons environ cinquante personnes, le dimanche dix-sept mai.
+b10-032|M|Pendant la canicule de l'été dernier, on fermait les volets dès huit heures du matin et on ne sortait qu'après le coucher du soleil.
+b10-033|F|[exhales] Euh, dis-moi, comment on fait pour partager une photo avec toute la famille sur le groupe de discussion? J'ai appuyé partout et rien ne marche.
+b10-034|M|[inhales] Le nouveau tramway passe juste en bas de chez moi, alors j'ai vendu ma voiture, et franchement, je ne regrette pas du tout.
+b10-035|F|Salut ma belle, c'est Léa, je suis passée chez toi mais tu n'étais pas là, je t'ai laissé ton cadeau d'anniversaire chez la gardienne.
+b10-036|M|[sighs] Ouais, alors le parking souterrain est complet, je fais encore un tour du quartier et si je ne trouve rien, je me gare au centre commercial.
+b10-037|F|Il paraît qu'il va neiger ce week-end dans les Alpes, alors on a décidé de partir vendredi soir pour profiter des pistes dès samedi matin.
+b10-038|M|[sighs] Bonjour, je vous appelle parce que notre poubelle de tri n'a pas été vidée depuis deux semaines, et elle déborde complètement dans la cour.
+b10-039|F|[breathes] Ma grand-mère a appris à utiliser la tablette à quatre-vingt-deux ans, et maintenant elle nous appelle en vidéo tous les mercredis.
+b10-040|M|Ah, ben voilà, la pluie s'est arrêtée juste au moment où on rentrait, c'est typique.
+b10-041|F|[exhales] J'ai organisé une petite fête surprise pour les trente ans de mon mari, tous ses amis d'enfance sont venus, il était vraiment ému.
+b10-042|M|[inhales] Je voudrais signaler un lampadaire en panne au coin de la rue des Lilas, c'est très sombre le soir et les piétons ne voient rien.
+b10-043|F|Bah, moi je préfère acheter en vrac, j'apporte mes bocaux en verre au magasin bio, et je n'ai presque plus de plastique à jeter.
+b10-044|M|[breathes] Quand on était étudiants à Toulouse, avec Antoine, on partageait un minuscule appartement sous les toits, et on se disputait toujours pour la vaisselle.
+b10-045|F|Bonsoir, c'est Margaux, je voulais te prévenir que le dîner de samedi est décalé à dimanche midi, Isabelle a un empêchement.
+b10-046|F|Hmm, le ciel est vraiment gris, tu crois qu'il faut prendre un parapluie ou pas?
+b10-047|F|[sighs] Bonjour, j'ai un souci avec mon abonnement internet, la connexion coupe plusieurs fois par jour depuis lundi, et je travaille à la maison.
+b10-048|M|[inhales] Pour le mariage de mon frère, j'ai préparé un petit discours, j'espère que je ne vais pas pleurer devant les deux cents invités.
+b10-049|F|Dans mon immeuble, on a créé un groupe d'entraide, on se prête des outils, on garde les plantes pendant les vacances, et on s'invite pour l'apéritif.
+b10-050|M|[exhales] Ouais, la circulation est complètement bloquée sur le pont, il y a eu un accrochage entre deux camionnettes, je pense en avoir pour une bonne demi-heure.
+b10-051|M|Chaque année, pour mon anniversaire, mes parents préparent un énorme gâteau au chocolat avec autant de bougies que d'années, et cette fois, il y en avait trente-sept.
+b10-052|F|[sighs] Ben je suis désolée, j'ai cassé l'écran de ton téléphone en le faisant tomber dans l'escalier, je vais évidemment payer la réparation.
+b10-053|M|[breathes] Le brouillard était si épais ce matin sur la route de Rennes qu'on ne voyait pas à plus de cinquante mètres devant la voiture.
+b10-054|F|Salut Camille, tu veux venir avec moi au vide-grenier dimanche? Je voudrais vendre des vêtements et des jouets plutôt que de les jeter.
+b10-055|M|[exhales] Bon, je suis rentré du travail à pied, il y avait une grève des bus, une heure de marche sous la pluie, je suis épuisé.
+b10-056|F|Mon voisin du dessus m'a aidée à monter mes cartons le jour du déménagement, et depuis, on est devenus vraiment amis.
+b10-057|M|[inhales] Bonjour madame, je souhaiterais savoir comment obtenir une carte de stationnement résident, je viens d'emménager dans le quartier Saint-Michel.
+b10-058|F|Euh, attends, je crois que j'ai mis le verre dans la mauvaise poubelle, hein, il faut que je le ressorte avant le passage du camion.
+b10-059|M|Ma femme et moi, on fête nos vingt-cinq ans de mariage le mois prochain, et les enfants nous ont réservé un week-end surprise à Biarritz.
+b10-060|F|[breathes] Le soir, je coupe mon téléphone à vingt et une heures, je lis un peu, et je m'endors beaucoup plus facilement qu'avant.
+b10-061|M|Ah ouais, il fait trop chaud dans ce bureau, la climatisation est encore en panne, et dehors il fait déjà trente et un degrés.
+b10-062|F|[sighs] Bonjour, j'appelle pour la livraison de mon nouveau réfrigérateur, le livreur devait passer entre quatorze heures et dix-huit heures, mais personne n'est venu.
+b10-063|M|Pour le nouvel an, on avait loué une grande maison à la campagne avec une quinzaine d'amis, et on a dansé jusqu'à cinq heures du matin.
+b10-064|F|[inhales] Le vent a soufflé si fort cette nuit qu'une branche est tombée sur la voiture du voisin, heureusement il n'y a eu aucun blessé.
+b10-065|M|Euh, Paul, tu pourrais me rappeler quand tu as une minute? J'ai besoin de ton avis pour choisir un nouvel ordinateur, je suis complètement perdu.
+b10-066|F|À Paris, je ne prends presque jamais la voiture, entre le métro, le bus et la marche, je vais partout sans problème.
+b10-067|M|[sighs] Ben voilà, le parcmètre n'accepte plus les pièces, il faut payer avec le téléphone, et évidemment, je n'ai plus de batterie.
+b10-068|F|Ma meilleure amie s'est mariée à Lisbonne l'été dernier, j'étais demoiselle d'honneur, et j'ai dansé toute la nuit avec des chaussures beaucoup trop petites.
+b10-069|M|[breathes] Bonjour monsieur, nous organisons une collecte de vêtements pour l'association du quartier, vous pouvez déposer vos sacs à la mairie jusqu'à vendredi.
+b10-070|F|Hmm, tu as vu le coucher de soleil ce soir? Le ciel était tout rose au-dessus de la Garonne, c'était magnifique.
+b10-071|M|[breathes] Depuis que je travaille à la maison, je suis devenu un vrai expert des visioconférences, mais mes collègues me manquent quand même un peu.
+b10-072|F|Salut, c'est Émilie, je suis arrivée à la gare, mais il n'y a aucun taxi, tu pourrais venir me chercher en voiture?
+b10-073|M|Le quartier a beaucoup changé en dix ans, les vieux ateliers sont devenus des cafés, et la rue principale est maintenant réservée aux piétons.
+b10-074|F|[exhales] Bah, j'ai encore oublié mon mot de passe, ça fait la troisième fois cette semaine, je vais finir par l'écrire sur un papier.
+b10-075|M|Bonsoir, c'est Olivier, on organise un barbecue samedi chez mes parents pour l'anniversaire de mon père, Lucie et toi, vous êtes les bienvenus.
+b10-076|F|[inhales] Pour réduire nos déchets, on a arrêté d'acheter des bouteilles d'eau, on boit l'eau du robinet avec une carafe filtrante, et ça marche très bien.
+b10-077|M|Ouais, franchement, la neige à Paris, c'est joli pendant une heure, et après, c'est de la boue partout sur les trottoirs.
+b10-078|F|Bonjour madame, je suis la maman de Lucas, je voulais savoir si je pouvais apporter des crêpes à l'école pour fêter son anniversaire jeudi.
+b10-079|M|[inhales] Je me souviens de mon premier téléphone portable, il était énorme, il ne faisait que les appels, et la batterie tenait une semaine entière.
+b10-080|F|Ah, tu es déjà rentré de Bordeaux? Je pensais que tu restais jusqu'à mardi, on pourrait déjeuner ensemble demain si tu es libre.
+b10-081|M|Bonjour, je vous appelle parce que la borne de recharge de ma voiture électrique ne fonctionne plus, dans le parking de la résidence des Tilleuls.
+b10-082|F|[breathes] Le printemps est enfin arrivé, les cerisiers sont en fleurs dans le parc, et les terrasses des cafés sont pleines dès midi.
+b10-083|M|Mon collègue et moi, on fait du covoiturage depuis septembre, on partage l'essence, et on économise environ quatre-vingts euros par mois chacun.
+b10-084|F|Euh, bon, je pense qu'on va annuler le pique-nique, ils annoncent des orages pour tout l'après-midi, on le fera la semaine prochaine.
+b10-085|M|[sighs] Je suis vraiment déçu, mon meilleur ami ne pourra pas venir à mon mariage, il sera en mission à l'étranger à ce moment-là.
+b10-086|F|[exhales] Salut Hugo, c'est Inès, est-ce que tu as gardé les cartons de ton déménagement? J'en aurais besoin d'une dizaine pour ranger le grenier.
+b10-087|M|Hmm, j'ai l'impression que l'aspirateur robot tourne en rond dans le salon, il évite toujours la même zone sous le canapé.
+b10-088|F|Dans notre rue, on a installé des bacs à fleurs à la place de trois places de stationnement, et les voisins se relaient pour les arroser.
+b10-089|M|[exhales] Bon, la soirée était super, mais je suis rentré à trois heures du matin, et là, j'ai vraiment du mal à me concentrer au travail.
+b10-090|F|Bonjour, je voudrais savoir si vous reprenez les vieux téléphones pour les recycler, j'en ai trois qui traînent dans un tiroir.
+b10-091|M|Quand j'étais petit, chez mes grands-parents, on fêtait Noël avec toute la famille, au moins trente personnes autour d'une immense table.
+b10-092|F|[inhales] Ouais, je suis sortie sans manteau ce matin parce qu'il faisait beau, et à midi il grêlait, je suis gelée.
+b10-093|M|Bonsoir madame, je suis désolé de vous déranger, mais votre alarme de voiture sonne depuis vingt minutes dans la rue.
+b10-094|F|Avec mes amies du lycée, on part en week-end ensemble chaque année au mois de mai, cette fois, on a choisi la côte basque.
+b10-095|M|Ah, ben tiens, j'ai reçu un message de la banque, il faut que je télécharge leur nouvelle application pour valider mes paiements, quelle galère.
+b10-096|F|[sighs] Il y a des travaux sur l'avenue depuis six mois, le bruit commence à sept heures, et la poussière entre partout dans l'appartement.
+b10-097|M|Salut Nicolas, c'est Bertrand, pour le cadeau de mariage de Chloé et Maxime, on a choisi une machine à café, tu participes?
+b10-098|F|Ce matin, la radio annonçait des records de chaleur pour un mois d'octobre, on a même déjeuné en terrasse en manches courtes.
+b10-099|M|[breathes] Je suis allé à la mairie pour récupérer un composteur gratuit, et maintenant mes enfants s'amusent à nourrir les vers de terre chaque soir.
+b10-100|F|Merci à tous d'être venus, je suis tellement heureuse de fêter mes soixante ans entourée de ma famille et de mes amis les plus chers.
