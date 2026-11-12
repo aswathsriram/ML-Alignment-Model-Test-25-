@@ -10,7 +10,9 @@ Every file is natural, human-sounding speech (no synthetic files) and carries 3-
   WRONG-WORD 12.5 %  WS: homophone (vert -> verre, A2), small form change (le -> les, A3), different word (A1),
                      complete word written cut off (gestion -> gest-, A1), spelling slip (A3), spoken form (ça -> cela, A2)
   GUIDELINE 12.5 %   G-ACCENT: accent / cedilla dropped (A3) · G-BACKCH: filler misspelt (euh -> heu, A3)
-No split, join, capital-letter, punctuation or digit errors. Errors uses the injector, scorer and self-test of
+No split, join, capital-letter, punctuation or digit errors. Placement follows the align-decoys/v1 rules so the same
+errors can be imported as plants (export_deliverables.py): at least 3 words apart, hallucinated words only between two
+words, no edge moved inward next to a word it touches. Errors uses the injector, scorer and self-test of
 alignment_decoys/build_alignment_decoys.py; weights: each part's 100 points spread A1 3 : A2 2 : A3 1 within a group.
 
 Input  : french_1000/transcripts.jsonl, french_1000/build/items/*.json, french_1000/build/wav/*.wav
@@ -108,6 +110,38 @@ def guide_cands(c):
     return out
 
 
+TOUCH = 0.0005
+
+
+def take(self, *ks):
+    """Errors at least 3 words apart (the align-decoys/v1 rule): block two words either side."""
+    for k in ks:
+        for j in range(k - 2, k + 3):
+            self.blocked.add(j)
+
+
+bad.FileCtx.take = take
+
+
+def wh_cands(c, rng):
+    """Hallucinated words only between two words (the platform adds them after a word), in a pause of 0.40 s or more."""
+    return [x for x in bad.wh_cands(c, rng) if 0 < x[1] < c.n]
+
+
+def bnd_cands(c, kind, rng):
+    """No edge moved inward next to a word it touches: on import the platform would move that word too."""
+    out = []
+    for fam, k, info in bad.bnd_cands(c, kind, rng):
+        if fam in ("BND-MINOR", "BND-MAJOR"):
+            e, sh = info["edge"], info["shift"]
+            if e == "start" and sh > 0 and k > 0 and abs(c.w[k - 1]["end"] - c.w[k]["start"]) < TOUCH:
+                continue
+            if e == "end" and sh < 0 and k + 1 < c.n and abs(c.w[k + 1]["start"] - c.w[k]["end"]) < TOUCH:
+                continue
+        out.append((fam, k, info))
+    return out
+
+
 def plan(ctxs, rng, vocab):
     n = len(ctxs)
     per_file = [(3, 2)] * (n // 5) + [(1, 2)] * (n // 5) + [(2, 2)] * (n - 2 * (n // 5))
@@ -128,7 +162,7 @@ def plan(ctxs, rng, vocab):
                 if cat == "WD":
                     cs = bad.wd_cands(c)
                 elif cat == "WH":
-                    cs = bad.wh_cands(c, rng)
+                    cs = wh_cands(c, rng)
                 elif cat == "WS":
                     d = ws_cands(c, vocab, rng)
                     tot = sum(ws_have.values()) + 1
@@ -162,7 +196,7 @@ def plan(ctxs, rng, vocab):
                 break
             tot = sum(bnd_have.values()) + 1
             for kind in sorted(BND_SHARE, key=lambda k: (bnd_have[k] / tot - BND_SHARE[k] / 40, rng.random())):
-                cs = bad.bnd_cands(c, kind, rng)
+                cs = bnd_cands(c, kind, rng)
                 if cs:
                     fam, k, info = rng.choice(cs)
                     c.take(k)
