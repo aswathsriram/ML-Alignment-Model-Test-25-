@@ -29,7 +29,28 @@ KEY = os.environ.get("ELEVENLABS_API_KEY", "").strip()
 FILLERS = {"euh", "ben", "bah", "hein", "bof", "ouais", "ah", "hmm", "heu", "hm", "mm", "oh", "hum", "mmh", "mh", "bon", "eh"}
 FILLER_SPELLINGS = FILLERS - {"ouais", "bon"}         # speech-to-text writes these sounds in several ways (ben -> bah ...)
 NUMS = set("""zéro un une deux trois quatre cinq six sept huit neuf dix onze douze treize quatorze quinze seize vingt trente
-quarante cinquante soixante cent cents mille million millions milliard et virgule""".split())
+quarante cinquante soixante cent cents vingts mille million millions milliard et virgule premier première""".split())
+
+
+def ordinal(x):
+    return x in NUMS or x.endswith("ième")
+
+
+def sound(tokens):
+    """Rough French sound key: accents off, silent endings off, au / aux / eau -> o, spaces off."""
+    import unicodedata
+    out = []
+    for t in tokens:
+        t = "".join(c for c in unicodedata.normalize("NFD", t) if not unicodedata.combining(c)).replace("'", "")
+        t = re.sub(r"eaux?$|aux?$", "o", t)
+        t = {"ils": "il", "elles": "elle"}.get(t, t)                   # ils ferment = il ferme
+        if len(t) > 3:                                                 # short words keep their ending: le / les differ
+            t = re.sub(r"[sx]$", "", t)
+            if len(t) > 4:
+                t = re.sub(r"ent$", "", t)
+            t = re.sub(r"[sxtde]+$", "", t) or t
+        out.append(t.replace("au", "o"))
+    return "".join(out)
 LOCK = threading.Lock()
 
 
@@ -83,13 +104,8 @@ def norm(t):
     t = t.lower().replace("’", "'")
     t = re.sub(r"\([^)]*\)|\[[^\]]*\]", " ", t)                       # (rires), [breathes]
     t = re.sub(r"[^\w' ]", " ", t.replace("-", " "))
-    t = t.replace("y'a", "il y a")
-    toks = t.split()
-    out = []
-    for i, x in enumerate(toks):                                       # "il il y a" after the replace
-        if not (x == "il" and toks[i + 1:i + 2] == ["il"]):
-            out.append(x)
-    return out
+    t = re.sub(r"\bil y a\b", "y a", t.replace("y'a", "y a"))
+    return t.split()
 
 
 def compare(said_words, heard_text):
@@ -104,6 +120,10 @@ def compare(said_words, heard_text):
         if any(re.search(r"\d", x) for x in B) and all(re.search(r"\d", x) or x in ("h", "heures", "heure", "euros", "pour", "cent")
                                                          for x in B) and all(x in NUMS | {"heures", "heure", "euros", "pour"} for x in A):
             continue                                                   # quatorze heures -> 14 h, trente euros -> 30 euros
+        if A and B and all(re.fullmatch(r"[ivxlcdm]+(e|er|ème)|\d+(e|er|ème)", x) for x in B) and all(ordinal(x) for x in A):
+            continue                                                   # dix-neuvième -> xixe, premier -> 1er
+        if A and B and (sound(A) == sound(B) or sound(["".join(A)]) == sound(["".join(B)])):
+            continue                                                   # bains / bain, carol / carole, e mail / email
         if A and B and len(A) == len(B) and all(x in FILLER_SPELLINGS for x in A + B):
             continue                                                   # ben / bah, hmm / hum: the same sound
         if not B and all(x in FILLERS for x in A):
@@ -153,7 +173,7 @@ def make(row, voices):
         if diffs:
             continue
         times = snap(pcm, align(pcm, row["words"]))
-        short = [t["word"] for t in times if t["end"] - t["start"] < 0.03]
+        short = [t["word"] for t in times if t["end"] - t["start"] < 0.02]
         if short or any(a["end"] > b["start"] for a, b in zip(times, times[1:])):
             tries[-1]["diffs"] = [("alignment", short, [])]          # a word with (almost) no length: new take
             continue

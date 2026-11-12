@@ -26,7 +26,7 @@ b05-025|M|Le vélodrome de la ville organise une journée portes ouvertes dimanc
 b05-026|F|Bonjour, c'est madame Durand, j'aurais besoin d'un rendez-vous chez le dentiste pour mon fils, si possible un mercredi après-midi, il n'a pas école.
 b05-027|M|[inhales] Ah, j'ai enfin réussi à monter le col du Galibier sans poser le pied à terre, j'en rêvais depuis trois ans, je suis épuisé mais heureux.
 b05-028|F|[exhales] Tu sais, depuis que je vais au travail à pied, une demi-heure aller et une demi-heure retour, je me sens beaucoup plus détendue en arrivant.
-b05-029|M|[sighs] Ouais, ben moi je suis supporteur de Lens depuis tout petit, alors forcément, quand ils perdent, mon dimanche est un peu gâché.
+b05-029|M|[sighs] Ouais, ben moi je suis supporter de Lens depuis tout petit, alors forcément, quand ils perdent, mon dimanche est un peu gâché.
 b05-030|F|Le marathon de Paris a lieu chaque année au mois d'avril, et des dizaines de milliers de coureurs traversent la ville en passant devant les monuments.
 b05-031|M|Bonjour, je voudrais réserver un court de tennis pour samedi matin, vers dix heures, pour deux personnes, est-ce que c'est possible?
 b05-032|F|[breathes] Euh, je ne sais pas si je vais réussir à me lever demain pour la piscine, mais si je n'y vais pas, je vais culpabiliser toute la journée.
