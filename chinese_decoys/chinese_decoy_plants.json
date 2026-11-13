@@ -1,0 +1,2410 @@
+{
+  "format": "align-decoys/v1",
+  "instructions": [
+    "`words` is the CORRECT alignment: i = index, w = word, s / e = start / end in seconds. Never change it.",
+    "Fill each decoy's `plants` with 3–6 deliberate mistakes an aligner can only find by listening — fewer on a short clip (even one), since mistakes must stay apart. Mix timing, text and structure mistakes.",
+    "move — {\"action\":\"move\",\"word\":12,\"edge\":\"start\"|\"end\",\"shift_ms\":-300}: moves one edge of word 12. Positive = later. A neighbour touching that edge moves with it. Use 150–700 ms (150–250 subtle, 250–450 moderate, 450+ obvious). Never push an edge past the far edge of the neighbouring word, before 0 or past the audio end.",
+    "overlap — {\"action\":\"overlap\",\"word\":12,\"edge\":\"end\",\"shift_ms\":250}: same as move, but the neighbour does NOT give way, so the two chips overlap (same-speaker overlap). The edge must end up inside the neighbour.",
+    "zero — {\"action\":\"zero\",\"word\":12}: the chip collapses to zero length at its start (\"edge\":\"end\" collapses it at its end). Only on a word at least 0.15 s long.",
+    "replace — {\"action\":\"replace\",\"word\":30,\"text\":\"…\"}: the chip and the transcript say `text` instead of the word. Use it for a word substitution, homophone, spelling slip, wrong name / entity, missing or wrong accent, wrong number form, a word from the wrong language, a truncated word written in full (or a full word written truncated), or a ((guess)) written without its brackets.",
+    "replace_unintelligible — {\"action\":\"replace_unintelligible\",\"word\":31,\"text\":\"…\"}: only on a word written (()) or ((guess)): invented text where the audio is unintelligible.",
+    "delete — {\"action\":\"delete\",\"word\":40}: the word is gone from the transcript AND has no chip (a deleted word, or a dropped filler / backchannel).",
+    "remove — {\"action\":\"remove\",\"word\":40}: the word keeps its text in the transcript but loses its chip (an aligner must add it back).",
+    "absorb — {\"action\":\"absorb\",\"word\":41,\"into\":\"previous\"|\"next\"}: the word (usually a filler) is deleted and its neighbour's chip stretches over its audio.",
+    "join — {\"action\":\"join\",\"word\":7,\"count\":2}: words 7, 8 (… up to count) become one chip — joined words, or spelled letters in one chip. Only where words are separated by spaces (NOT ja_JP or zh_CN), and only when the true boundary is at least 0.2 s away from the middle of the joined chip.",
+    "split — {\"action\":\"split\",\"word\":9,\"parts\":[\"dell'\",\"uscita\"]}: one word over several chips. `parts` is optional for a word with an apostrophe (split after it) or a hyphen (split at it); \"at\" (seconds) sets the split time of two parts.",
+    "add — {\"action\":\"add\",\"after_word\":20,\"text\":\"the\"}: an extra chip in the pause after word 20 (the pause must be at least 0.35 s). Use a word from the same sentence, e.g. a repeat of the word before.",
+    "add_noise — {\"action\":\"add_noise\",\"after_word\":20,\"text\":\"ah\",\"start\":8.1,\"end\":8.4}: an extra chip over a cough, breath or other noise; start and end in seconds are required.",
+    "set_flag — {\"action\":\"set_flag\",\"flag\":\"multi_speaker\"|\"overlap_speech\"|\"synthetic_speech\",\"value\":true}: the file is served with that answer set to `value`, the WRONG answer. `value` must be the opposite of the file's own answer in `file_answers` (synthetic_speech on non-English files only). A file whose answer is synthetic_speech true can carry no other mistake; one whose overlap_speech is true can't carry an overlap mistake.",
+    "Speakers can't be changed in word alignment, so there is no wrong-speaker mistake.",
+    "Keep mistakes at least 3 words apart — mistakes on neighbouring words are refused. Never touch a tag word (text starting with [ or <).",
+    "Mark the 1–2 most obvious mistakes \"critical\": true (must-catch). Optional \"note\" is for you only.",
+    "Instead of `plants`, a decoy may give `decoy_words`: the whole wrong alignment, [{\"w\":\"…\",\"s\":1.2,\"e\":1.5}, …] in spoken order. Every difference from `words` becomes a mistake. A word with no s / e is in the transcript with no chip; a word left out is gone from both; a retyped word changes the transcript too; extra, split and joined chips leave the transcript as it was. Copy tag words exactly. \"critical\": true on an entry makes the mistake on its word must-catch. `plants` may then hold only set_flag edits.",
+    "Return the SAME JSON with only `plants` (or `decoy_words`) filled. Do not add, remove or edit any other field."
+  ],
+  "decoys": [
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_c06304b5b370e9e3d67627c9148bfe1b954afe95f968a3126b97ec3dd5e0246a_0-72491b14.audio.wav",
+      "work_item_id": "9334ef26-a9c7-4f7f-a6d6-41a41ee2284f",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_c06304b5b370e9e3d67627c9148bfe1b954afe95f968a3126b97ec3dd5e0246a_0-72491b14.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 5,
+          "note": "word_deletion · critical · '美' gone from transcript and chips"
+        },
+        {
+          "action": "move",
+          "word": 12,
+          "edge": "end",
+          "shift_ms": 120,
+          "note": "boundary_end · major · 章 end 120 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 94,
+          "text": "再",
+          "critical": true,
+          "note": "word_substitution · critical · 在 -> 再"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_c0ef51306002d34672f45705bc972b70970ee7639e45f76c7cebb07b59d43352_2-cdf52a83.audio.wav",
+      "work_item_id": "f0fe6de9-cb10-440d-a7a9-acf0798a7801",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_c0ef51306002d34672f45705bc972b70970ee7639e45f76c7cebb07b59d43352_2-cdf52a83.audio.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 20,
+          "text": "癌",
+          "critical": true,
+          "note": "word_hallucination · critical · extra '癌' in the 0.62 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 45,
+          "edge": "end",
+          "shift_ms": -350,
+          "note": "boundary_end · critical · 零 end 350 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 52,
+          "edge": "start",
+          "shift_ms": 40,
+          "note": "boundary_start · minor · 数 start 40 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_ae3212b64508fe7b10effc854899d321504c0558eeb6d6707974bd7cd2f7e3d5_10-f7bd6d4f.audio.wav",
+      "work_item_id": "b0242bb9-767d-4e59-9d98-12f90f5d0069",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_ae3212b64508fe7b10effc854899d321504c0558eeb6d6707974bd7cd2f7e3d5_10-f7bd6d4f.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 5,
+          "text": "來",
+          "critical": true,
+          "note": "traditional_character · major · 来 -> 來"
+        },
+        {
+          "action": "remove",
+          "word": 12,
+          "note": "missing_segment · major · 看 keeps its text but has no chip"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_3c1876b042dd229591829da8cbec65e1b47919e2a26c247f9100160ddbee5bcf_5-c399ae9f.audio.wav",
+      "work_item_id": "2ae44c31-9db6-47dd-b936-c6b07af5257c",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_3c1876b042dd229591829da8cbec65e1b47919e2a26c247f9100160ddbee5bcf_5-c399ae9f.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 21,
+          "text": "地",
+          "critical": true,
+          "note": "word_substitution · critical · 的 -> 地"
+        },
+        {
+          "action": "move",
+          "word": 24,
+          "edge": "end",
+          "shift_ms": -40,
+          "note": "boundary_end · minor · 年 end 40 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 59,
+          "edge": "start",
+          "shift_ms": 130,
+          "note": "boundary_start · major · 和 start 130 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_c3453e555d2ddeb7b383c5938e9f56015630e6832735511562effbea28d199db_2-4a980ac2.audio.wav",
+      "work_item_id": "885032d4-8e71-464e-a6e3-7d0f26e26aef",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_c3453e555d2ddeb7b383c5938e9f56015630e6832735511562effbea28d199db_2-4a980ac2.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 58,
+          "critical": true,
+          "note": "word_deletion · critical · '克' gone from transcript and chips"
+        },
+        {
+          "action": "move",
+          "word": 65,
+          "edge": "start",
+          "shift_ms": -60,
+          "note": "boundary_start · minor · 尼 start 60 ms earlier"
+        },
+        {
+          "action": "add",
+          "after_word": 116,
+          "text": "说",
+          "note": "word_hallucination · major · extra '说' in the 0.35 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_25a7bddbba657ef7b9a4b3eeea365a3c7810d590b2ef1aaba4523be6f2a553a7_0-e671692f.audio.wav",
+      "work_item_id": "a676de3f-e170-44c6-af6a-c0a780ae79ce",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_25a7bddbba657ef7b9a4b3eeea365a3c7810d590b2ef1aaba4523be6f2a553a7_0-e671692f.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 15,
+          "text": "對",
+          "note": "traditional_character · major · 对 -> 對"
+        },
+        {
+          "action": "move",
+          "word": 27,
+          "edge": "end",
+          "shift_ms": 520,
+          "critical": true,
+          "note": "boundary_end · critical · 的 end 520 ms later"
+        },
+        {
+          "action": "move",
+          "word": 40,
+          "edge": "end",
+          "shift_ms": -430,
+          "note": "boundary_end · critical · 眼 end 430 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_9ba8fa3f55dd57609b98d172f6a513beac1f2d4e49d836f66c377b2cb90b0cc8_0-f8782372.audio.wav",
+      "work_item_id": "ddc14c01-2bee-43f8-ad83-803efcdeea24",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_9ba8fa3f55dd57609b98d172f6a513beac1f2d4e49d836f66c377b2cb90b0cc8_0-f8782372.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "end",
+          "shift_ms": 190,
+          "note": "boundary_end · major · 手 end 190 ms later"
+        },
+        {
+          "action": "remove",
+          "word": 11,
+          "note": "missing_segment · major · 码 keeps its text but has no chip"
+        },
+        {
+          "action": "delete",
+          "word": 20,
+          "critical": true,
+          "note": "word_deletion · critical · '秒' gone from transcript and chips"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_4e4aa9fc62a0fe3e5b590a6a3a73c5e03d62b7e20aef948706e47a34e374ad57_1-483650de.audio.wav",
+      "work_item_id": "063efbd3-a5b3-4fc5-a47f-97459d5bf16b",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_4e4aa9fc62a0fe3e5b590a6a3a73c5e03d62b7e20aef948706e47a34e374ad57_1-483650de.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 18,
+          "edge": "start",
+          "shift_ms": 60,
+          "note": "boundary_start · minor · 六 start 60 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 31,
+          "text": "道",
+          "critical": true,
+          "note": "word_substitution · critical · 到 -> 道"
+        },
+        {
+          "action": "add",
+          "after_word": 43,
+          "text": "个",
+          "note": "word_hallucination · major · extra '个' in the 0.38 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_b98a0c2379d1944b6a3b7ad6735cffb1a1acee0b7989db18f81eec0e5c571d3a_49-2ecf4707.audio.wav",
+      "work_item_id": "edcd6ec0-ddd6-4f4b-a097-4e4f96e3ab79",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_b98a0c2379d1944b6a3b7ad6735cffb1a1acee0b7989db18f81eec0e5c571d3a_49-2ecf4707.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 90,
+          "edge": "end",
+          "shift_ms": 380,
+          "note": "boundary_end · critical · 好 end 380 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 101,
+          "text": "國",
+          "critical": true,
+          "note": "traditional_character · major · 国 -> 國"
+        },
+        {
+          "action": "move",
+          "word": 114,
+          "edge": "end",
+          "shift_ms": 160,
+          "note": "boundary_end · major · 星 end 160 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_e13f470ad98d8911e6d2a2877ffecce8e13d0cd1694f6ee53c873a186c442232_2-c5de8f9d.audio.wav",
+      "work_item_id": "2d41c44e-87c6-4450-8337-5bc35ab66c4a",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_e13f470ad98d8911e6d2a2877ffecce8e13d0cd1694f6ee53c873a186c442232_2-c5de8f9d.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 10,
+          "note": "word_deletion · critical · '地' gone from transcript and chips"
+        },
+        {
+          "action": "replace",
+          "word": 45,
+          "text": "期",
+          "critical": true,
+          "note": "word_substitution · critical · 其 -> 期"
+        },
+        {
+          "action": "move",
+          "word": 99,
+          "edge": "start",
+          "shift_ms": -170,
+          "note": "boundary_start · major · 它 start 170 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_3cf0419d86f6ea475f5b03709f34f9d6bc449c2d86c5a68c4bc5aa53716aa835_2-aac0f7d4.audio.wav",
+      "work_item_id": "2ad77f66-2ae2-4d60-a884-3fa1e9ba8884",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_3cf0419d86f6ea475f5b03709f34f9d6bc449c2d86c5a68c4bc5aa53716aa835_2-aac0f7d4.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": -660,
+          "critical": true,
+          "note": "boundary_start · critical · 签 start 660 ms earlier"
+        },
+        {
+          "action": "add",
+          "after_word": 11,
+          "text": "角",
+          "note": "word_hallucination · critical · extra '角' in the 2.12 s pause after it"
+        },
+        {
+          "action": "remove",
+          "word": 18,
+          "note": "missing_segment · major · 项 keeps its text but has no chip"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_6288bbc5b5ffa6d3977bcc27ff02ba44175a9aadd88ec9ac3786a8d7280e2c68_0-b01f2aa6.audio.wav",
+      "work_item_id": "9792b42b-1c69-4357-bbb8-5e3ad12f3827",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_6288bbc5b5ffa6d3977bcc27ff02ba44175a9aadd88ec9ac3786a8d7280e2c68_0-b01f2aa6.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 8,
+          "text": "起",
+          "critical": true,
+          "note": "word_substitution · critical · 气 -> 起"
+        },
+        {
+          "action": "move",
+          "word": 61,
+          "edge": "end",
+          "shift_ms": 80,
+          "note": "boundary_end · minor · 天 end 80 ms later"
+        },
+        {
+          "action": "move",
+          "word": 115,
+          "edge": "start",
+          "shift_ms": -60,
+          "note": "boundary_start · minor · 里 start 60 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_2603e439d5a8c991d47ff53cc63db68288c508a3747503f2d2008493d150432b_1-a987b406.audio.wav",
+      "work_item_id": "9b6a575c-fe30-4a39-af13-5c59bdfa543c",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_2603e439d5a8c991d47ff53cc63db68288c508a3747503f2d2008493d150432b_1-a987b406.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": 450,
+          "note": "boundary_end · critical · adobe end 450 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 13,
+          "text": "過",
+          "note": "traditional_character · major · 过 -> 過"
+        },
+        {
+          "action": "delete",
+          "word": 110,
+          "critical": true,
+          "note": "word_deletion · critical · '那' gone from transcript and chips"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_1e473ddd2e3f5ceadd32c1c564a64b665e46d91ce06fd40238e5796b9afdd70b_29-43a072a0.audio.wav",
+      "work_item_id": "89fb401f-c035-4584-a69a-5f71b2bec408",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_1e473ddd2e3f5ceadd32c1c564a64b665e46d91ce06fd40238e5796b9afdd70b_29-43a072a0.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 41,
+          "edge": "start",
+          "shift_ms": 170,
+          "note": "boundary_start · major · 传 start 170 ms later"
+        },
+        {
+          "action": "move",
+          "word": 59,
+          "edge": "start",
+          "shift_ms": 540,
+          "critical": true,
+          "note": "boundary_start · critical · 在 start 540 ms later"
+        },
+        {
+          "action": "add",
+          "after_word": 109,
+          "text": "思",
+          "note": "word_hallucination · major · extra '思' in the 0.48 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_0db5404c119172f452dc588a669e9e81098d51048539b8d56e19fd607176f8c5_0-73f75385.audio.wav",
+      "work_item_id": "5b77de1d-442c-4022-8852-0a0ebf9c0ddd",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_0db5404c119172f452dc588a669e9e81098d51048539b8d56e19fd607176f8c5_0-73f75385.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 24,
+          "text": "地",
+          "critical": true,
+          "note": "word_substitution · critical · 的 -> 地"
+        },
+        {
+          "action": "remove",
+          "word": 38,
+          "note": "missing_segment · major · 百 keeps its text but has no chip"
+        },
+        {
+          "action": "move",
+          "word": 49,
+          "edge": "end",
+          "shift_ms": -160,
+          "note": "boundary_end · major · 在 end 160 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_0bbb7392d1c68c872d73ee3b3c4d93c34275e573af3a57832001dd521a5713d2_8-78e08231.audio.wav",
+      "work_item_id": "05abf6d3-9155-4356-80b6-bcda88609e95",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_0bbb7392d1c68c872d73ee3b3c4d93c34275e573af3a57832001dd521a5713d2_8-78e08231.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 14,
+          "critical": true,
+          "note": "word_deletion · critical · '打' gone from transcript and chips"
+        },
+        {
+          "action": "move",
+          "word": 30,
+          "edge": "start",
+          "shift_ms": -80,
+          "note": "boundary_start · minor · 嗯 start 80 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 41,
+          "text": "沒",
+          "note": "traditional_character · major · 没 -> 沒"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_48751bb1a34f07058515b98c6abfe824eca214a7a7ffee1f50f09998957d52db_46-d9481710.audio.wav",
+      "work_item_id": "fc8493cd-9c18-43ea-8729-2916d2a20eab",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_48751bb1a34f07058515b98c6abfe824eca214a7a7ffee1f50f09998957d52db_46-d9481710.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 16,
+          "edge": "end",
+          "shift_ms": -80,
+          "note": "boundary_end · minor · 位 end 80 ms earlier"
+        },
+        {
+          "action": "add",
+          "after_word": 72,
+          "text": "零",
+          "note": "word_hallucination · major · extra '零' in the 0.40 s pause after it"
+        },
+        {
+          "action": "replace",
+          "word": 85,
+          "text": "地",
+          "critical": true,
+          "note": "word_substitution · critical · 的 -> 地"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_19dd9347f99f0ff8046a64f8f36467ea914815310c9bac58ee72b8b17db05b42_1-debf82da.audio.wav",
+      "work_item_id": "9316db53-b873-43ff-9af6-dc837ef50fa5",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_19dd9347f99f0ff8046a64f8f36467ea914815310c9bac58ee72b8b17db05b42_1-debf82da.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 48,
+          "critical": true,
+          "note": "word_deletion · critical · '内' gone from transcript and chips"
+        },
+        {
+          "action": "move",
+          "word": 60,
+          "edge": "start",
+          "shift_ms": 150,
+          "note": "boundary_start · major · 等 start 150 ms later"
+        },
+        {
+          "action": "move",
+          "word": 83,
+          "edge": "end",
+          "shift_ms": 360,
+          "note": "boundary_end · critical · 了 end 360 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_b60483ce88e9d8d75725077ce163c934796eb5d163814d50d949ced076f25405_0-9de1acee.audio.wav",
+      "work_item_id": "8efb3b60-f915-48f5-a0a4-bab93e2c88f4",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_b60483ce88e9d8d75725077ce163c934796eb5d163814d50d949ced076f25405_0-9de1acee.audio.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 9,
+          "text": "来",
+          "critical": true,
+          "note": "word_hallucination · major · extra '来' in the 0.46 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 28,
+          "edge": "end",
+          "shift_ms": -50,
+          "note": "boundary_end · minor · 手 end 50 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 93,
+          "text": "話",
+          "note": "traditional_character · major · 话 -> 話"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_85b48898c6b3d950a96dffef0c3622746355f3e946624f52de82bd55ffcf3e99_2-e0a40b94.audio.wav",
+      "work_item_id": "b374bbf6-0f14-4f1b-9331-37b657fd0002",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_85b48898c6b3d950a96dffef0c3622746355f3e946624f52de82bd55ffcf3e99_2-e0a40b94.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "start",
+          "shift_ms": -630,
+          "note": "boundary_start · critical · 韩 start 630 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 20,
+          "text": "意",
+          "critical": true,
+          "note": "word_substitution · critical · 议 -> 意"
+        },
+        {
+          "action": "remove",
+          "word": 56,
+          "note": "missing_segment · major · 数 keeps its text but has no chip"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_e432e7621fb0b60ae6b6a8ef44e15ec7e2c51379cb4c48ad7a2fd0bdca1dc374_1-4fb153ad.audio.wav",
+      "work_item_id": "426392fa-47aa-43ac-834b-b8616ab81ddc",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_e432e7621fb0b60ae6b6a8ef44e15ec7e2c51379cb4c48ad7a2fd0bdca1dc374_1-4fb153ad.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "end",
+          "shift_ms": 240,
+          "note": "boundary_end · major · 克 end 240 ms later"
+        },
+        {
+          "action": "move",
+          "word": 14,
+          "edge": "start",
+          "shift_ms": -290,
+          "note": "boundary_start · major · 现 start 290 ms earlier"
+        },
+        {
+          "action": "delete",
+          "word": 18,
+          "critical": true,
+          "note": "word_deletion · critical · '八' gone from transcript and chips"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_c4dbb958bf0ec28ddb266f4687f2983fc62dacdfd53463b98fe630c349f135ee_0-7d55bed2.audio.wav",
+      "work_item_id": "70bcfe53-7cd1-4426-a0de-8cb94afe8524",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_c4dbb958bf0ec28ddb266f4687f2983fc62dacdfd53463b98fe630c349f135ee_0-7d55bed2.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 0,
+          "critical": true,
+          "note": "word_deletion · critical · '五' gone from transcript and chips"
+        },
+        {
+          "action": "remove",
+          "word": 3,
+          "note": "missing_segment · major · 二 keeps its text but has no chip"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_88cd3795737afa3fe9ccdf67a83f18df5928a5f4b01fd9ea6bcb7efbc6a381ee_3-ed47b4e0.audio.wav",
+      "work_item_id": "f71993e6-1648-4d12-b4d1-ee19cc7bec62",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_88cd3795737afa3fe9ccdf67a83f18df5928a5f4b01fd9ea6bcb7efbc6a381ee_3-ed47b4e0.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "end",
+          "shift_ms": -60,
+          "note": "boundary_end · minor · 步 end 60 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 44,
+          "edge": "start",
+          "shift_ms": 340,
+          "note": "boundary_start · critical · 些 start 340 ms later"
+        },
+        {
+          "action": "add",
+          "after_word": 69,
+          "text": "率",
+          "critical": true,
+          "note": "word_hallucination · critical · extra '率' in the 0.63 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_a927f5eb863ae12d86f3131ae899676d2829630f7ff78912baf78ad56ce598b8_0-1b0dc638.audio.wav",
+      "work_item_id": "22cf2275-ced0-4e42-badd-0f2cb8970fbb",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_a927f5eb863ae12d86f3131ae899676d2829630f7ff78912baf78ad56ce598b8_0-1b0dc638.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": -160,
+          "note": "boundary_end · major · 香 end 160 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 9,
+          "text": "地",
+          "critical": true,
+          "note": "word_substitution · critical · 的 -> 地"
+        },
+        {
+          "action": "replace",
+          "word": 15,
+          "text": "學",
+          "note": "traditional_character · major · 学 -> 學"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_697d84dc9c194418d68906e62e63e125eb77f14df8cc4b81f76ab0c5d7ebc88a_1-4bbe1d90.audio.wav",
+      "work_item_id": "0e1fd6a3-b43d-471c-a82f-7391306d80ed",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_697d84dc9c194418d68906e62e63e125eb77f14df8cc4b81f76ab0c5d7ebc88a_1-4bbe1d90.audio.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 7,
+          "text": "米",
+          "critical": true,
+          "note": "word_hallucination · major · extra '米' in the 0.39 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 61,
+          "edge": "end",
+          "shift_ms": 370,
+          "note": "boundary_end · critical · 了 end 370 ms later"
+        },
+        {
+          "action": "move",
+          "word": 94,
+          "edge": "end",
+          "shift_ms": 60,
+          "note": "boundary_end · minor · 超 end 60 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_142a35198ef34593f4ad6ea50cff8e4e8968c5ebc99e893039b80e7aa45b7e54_3-65e70159.audio.wav",
+      "work_item_id": "60334b71-cf92-4719-9a10-75cfd8632b6c",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_142a35198ef34593f4ad6ea50cff8e4e8968c5ebc99e893039b80e7aa45b7e54_3-65e70159.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 14,
+          "text": "事",
+          "critical": true,
+          "note": "word_substitution · critical · 是 -> 事"
+        },
+        {
+          "action": "replace",
+          "word": 28,
+          "text": "現",
+          "note": "traditional_character · major · 现 -> 現"
+        },
+        {
+          "action": "move",
+          "word": 105,
+          "edge": "end",
+          "shift_ms": 60,
+          "note": "boundary_end · minor · 一 end 60 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_7d3bf10a7e5b906cac7793e94e99df02c74399a993659c443a5ea8486851c493_2-a3b37d6e.audio.wav",
+      "work_item_id": "eed98d25-ce68-4001-8205-e00952957b02",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_7d3bf10a7e5b906cac7793e94e99df02c74399a993659c443a5ea8486851c493_2-a3b37d6e.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": -160,
+          "note": "boundary_end · major · 概 end 160 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 41,
+          "edge": "end",
+          "shift_ms": -380,
+          "note": "boundary_end · critical · 高 end 380 ms earlier"
+        },
+        {
+          "action": "delete",
+          "word": 49,
+          "critical": true,
+          "note": "word_deletion · critical · '毫' gone from transcript and chips"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_152bc21ffecc59eb775c1c2feb4a3328d1318e2152a3e06f6a5567f2d3d0f03b_4-8090dbf8.audio.wav",
+      "work_item_id": "30567069-19d3-4ab4-9657-2fa26fb06491",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_152bc21ffecc59eb775c1c2feb4a3328d1318e2152a3e06f6a5567f2d3d0f03b_4-8090dbf8.audio.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 5,
+          "text": "杖",
+          "note": "word_hallucination · major · extra '杖' in the 0.43 s pause after it"
+        },
+        {
+          "action": "replace",
+          "word": 10,
+          "text": "地",
+          "critical": true,
+          "note": "word_substitution · critical · 的 -> 地"
+        },
+        {
+          "action": "move",
+          "word": 41,
+          "edge": "start",
+          "shift_ms": -410,
+          "note": "boundary_start · critical · 那 start 410 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_75acadf81fa98ff54e2db7a90c7d29be26a37dedb5323500077f9788c6fb6eb5_4-5ed6c74e.audio.wav",
+      "work_item_id": "a0d44dce-3f6b-429c-8613-38ef5e97860f",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_75acadf81fa98ff54e2db7a90c7d29be26a37dedb5323500077f9788c6fb6eb5_4-5ed6c74e.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 5,
+          "text": "時",
+          "critical": true,
+          "note": "traditional_character · major · 时 -> 時"
+        },
+        {
+          "action": "move",
+          "word": 57,
+          "edge": "end",
+          "shift_ms": 40,
+          "note": "boundary_end · minor · 行 end 40 ms later"
+        },
+        {
+          "action": "remove",
+          "word": 83,
+          "note": "missing_segment · major · 喜 keeps its text but has no chip"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_7f89ce25039fe90b3aa21fdbdb887207d3dc968b009ecdbc12a9d5cd5db9fa00_2-505d6c2e.audio.wav",
+      "work_item_id": "5c1d999c-be49-46c7-8811-bdef98bfecba",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_7f89ce25039fe90b3aa21fdbdb887207d3dc968b009ecdbc12a9d5cd5db9fa00_2-505d6c2e.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": 300,
+          "note": "boundary_start · major · 能 start 300 ms later"
+        },
+        {
+          "action": "move",
+          "word": 65,
+          "edge": "end",
+          "shift_ms": -60,
+          "note": "boundary_end · minor · 几 end 60 ms earlier"
+        },
+        {
+          "action": "delete",
+          "word": 130,
+          "critical": true,
+          "note": "word_deletion · critical · '是' gone from transcript and chips"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_62ead669deae28a7329e8b1b9e8acb60bda70518c184ae8c03ae1bd3e4cfab7c_0-0fbf5dd7.audio.wav",
+      "work_item_id": "4ac9e6f6-9a8f-4e27-8e8b-deedeec1d0d0",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_62ead669deae28a7329e8b1b9e8acb60bda70518c184ae8c03ae1bd3e4cfab7c_0-0fbf5dd7.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 35,
+          "edge": "end",
+          "shift_ms": 500,
+          "note": "boundary_end · critical · 一 end 500 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 42,
+          "text": "合",
+          "critical": true,
+          "note": "word_substitution · critical · 和 -> 合"
+        },
+        {
+          "action": "add",
+          "after_word": 62,
+          "text": "到",
+          "note": "word_hallucination · major · extra '到' in the 0.58 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_128cdd76d365f56b927bb6c1e9cf341ae41045a6cb568f8261b4288ea71b4793_0-9015f3b9.audio.wav",
+      "work_item_id": "f1c894cc-8b53-4f19-8b76-55fc294ca0a7",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_128cdd76d365f56b927bb6c1e9cf341ae41045a6cb568f8261b4288ea71b4793_0-9015f3b9.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 14,
+          "text": "會",
+          "note": "traditional_character · major · 会 -> 會"
+        },
+        {
+          "action": "move",
+          "word": 88,
+          "edge": "start",
+          "shift_ms": 140,
+          "note": "boundary_start · major · 有 start 140 ms later"
+        },
+        {
+          "action": "remove",
+          "word": 99,
+          "critical": true,
+          "note": "missing_segment · critical · 是 keeps its text but has no chip"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_01436092e2814411d040836de855b7de48f8374c8eab622d4f8f88e076c2e183_5-2eb8b4b2.audio.wav",
+      "work_item_id": "19bbce04-d9db-4aaa-99a6-8f242392ada8",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_01436092e2814411d040836de855b7de48f8374c8eab622d4f8f88e076c2e183_5-2eb8b4b2.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": -80,
+          "note": "boundary_start · minor · 外 start 80 ms earlier"
+        },
+        {
+          "action": "delete",
+          "word": 4,
+          "critical": true,
+          "note": "word_deletion · critical · '刚' gone from transcript and chips"
+        },
+        {
+          "action": "move",
+          "word": 36,
+          "edge": "start",
+          "shift_ms": 150,
+          "note": "boundary_start · major · 新 start 150 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_fe005dda91c05a85826762eaf7fa64719cee75a719ee4200fb8317124460e420_1-31962a9a.audio.wav",
+      "work_item_id": "9fa48ed0-a743-457b-b348-4a33b6e80456",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_fe005dda91c05a85826762eaf7fa64719cee75a719ee4200fb8317124460e420_1-31962a9a.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": 350,
+          "note": "boundary_end · critical · 是 end 350 ms later"
+        },
+        {
+          "action": "add",
+          "after_word": 10,
+          "text": "量",
+          "critical": true,
+          "note": "word_hallucination · critical · extra '量' in the 0.71 s pause after it"
+        },
+        {
+          "action": "replace",
+          "word": 63,
+          "text": "地",
+          "note": "word_substitution · critical · 的 -> 地"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_b4f06170311efd55206b43039aedc3f0e592b09a87bea80c7268fe29c27583a4_3-12806cb0.audio.wav",
+      "work_item_id": "b0d6b990-6f13-48be-b8a9-0370a313de8e",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_b4f06170311efd55206b43039aedc3f0e592b09a87bea80c7268fe29c27583a4_3-12806cb0.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 3,
+          "note": "word_deletion · critical · '着' gone from transcript and chips"
+        },
+        {
+          "action": "replace",
+          "word": 11,
+          "text": "合",
+          "critical": true,
+          "note": "word_substitution · critical · 和 -> 合"
+        },
+        {
+          "action": "move",
+          "word": 30,
+          "edge": "start",
+          "shift_ms": -370,
+          "note": "boundary_start · critical · 一 start 370 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_e59a26b2008149058738a05e71231b4c6367365c385398f8921952a644520397_52-b53a3fad.audio.wav",
+      "work_item_id": "6bc169ed-b527-4482-bf13-13cfa1535628",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_e59a26b2008149058738a05e71231b4c6367365c385398f8921952a644520397_52-b53a3fad.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 56,
+          "edge": "start",
+          "shift_ms": 190,
+          "note": "boundary_start · major · 适 start 190 ms later"
+        },
+        {
+          "action": "move",
+          "word": 94,
+          "edge": "start",
+          "shift_ms": -50,
+          "note": "boundary_start · minor · 水 start 50 ms earlier"
+        },
+        {
+          "action": "add",
+          "after_word": 101,
+          "text": "目",
+          "critical": true,
+          "note": "word_hallucination · major · extra '目' in the 0.39 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_717abfe7ff5b7dccb89e737c44ba0a17257c2d06e20dbfe5fa9088d4204aac64_45-9b8dc3ac.audio.wav",
+      "work_item_id": "9976a4a3-9f2b-4e72-a613-3e4ade5f68e2",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_717abfe7ff5b7dccb89e737c44ba0a17257c2d06e20dbfe5fa9088d4204aac64_45-9b8dc3ac.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 36,
+          "text": "產",
+          "critical": true,
+          "note": "traditional_character · major · 产 -> 產"
+        },
+        {
+          "action": "remove",
+          "word": 47,
+          "note": "missing_segment · major · 达 keeps its text but has no chip"
+        },
+        {
+          "action": "move",
+          "word": 60,
+          "edge": "end",
+          "shift_ms": -120,
+          "note": "boundary_end · major · 首 end 120 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_e754e6da29af3c8c029b869dae32f8cd0cee992447b4864819197d5507c0bd7e_5-1624cfce.audio.wav",
+      "work_item_id": "8f181eca-3e68-423d-a519-eafcf02469b7",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_e754e6da29af3c8c029b869dae32f8cd0cee992447b4864819197d5507c0bd7e_5-1624cfce.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 63,
+          "text": "的",
+          "critical": true,
+          "note": "word_substitution · critical · 得 -> 的"
+        },
+        {
+          "action": "add",
+          "after_word": 71,
+          "text": "是",
+          "note": "word_hallucination · major · extra '是' in the 0.59 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 88,
+          "edge": "start",
+          "shift_ms": -400,
+          "note": "boundary_start · critical · 呃 start 400 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_6c16b17d74499f69fdb4bc62afb587d1e8c3c0399e400a5f46db2abe1af69815_22-3db627e7.audio.wav",
+      "work_item_id": "6789eb79-f606-4f9e-b88d-0fa8d03febd0",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_6c16b17d74499f69fdb4bc62afb587d1e8c3c0399e400a5f46db2abe1af69815_22-3db627e7.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 19,
+          "critical": true,
+          "note": "word_deletion · critical · '车' gone from transcript and chips"
+        },
+        {
+          "action": "move",
+          "word": 31,
+          "edge": "start",
+          "shift_ms": 70,
+          "note": "boundary_start · minor · 知 start 70 ms later"
+        },
+        {
+          "action": "move",
+          "word": 77,
+          "edge": "start",
+          "shift_ms": -50,
+          "note": "boundary_start · minor · 面 start 50 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_17ffbccd72455c73606838a36c0c37b3974f57de9e963b766e18d10a904d1fba_0-a7efe7ab.audio.wav",
+      "work_item_id": "52ef8793-9c49-43df-a953-1de6aa45b068",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_17ffbccd72455c73606838a36c0c37b3974f57de9e963b766e18d10a904d1fba_0-a7efe7ab.audio.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 33,
+          "critical": true,
+          "note": "missing_segment · critical · two keeps its text but has no chip"
+        },
+        {
+          "action": "move",
+          "word": 43,
+          "edge": "start",
+          "shift_ms": 330,
+          "note": "boundary_start · critical · two start 330 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 49,
+          "text": "點",
+          "note": "traditional_character · major · 点 -> 點"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_d78827009b233f16ba2654d45ad6a71e8978e9e9f970a1c3624d3b0330b7c9e5_1-701cc05c.audio.wav",
+      "work_item_id": "34c360ad-0603-4570-a0d0-7e2a5724a44d",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_d78827009b233f16ba2654d45ad6a71e8978e9e9f970a1c3624d3b0330b7c9e5_1-701cc05c.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": -120,
+          "note": "boundary_start · major · 含 start 120 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 35,
+          "text": "道",
+          "critical": true,
+          "note": "word_substitution · critical · 到 -> 道"
+        },
+        {
+          "action": "delete",
+          "word": 55,
+          "note": "word_deletion · critical · '疾' gone from transcript and chips"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_d60576e421d41d73475ead7f775abe6ff4155cc674334014ad10d8fcd769d533_0-2572474f.audio.wav",
+      "work_item_id": "294fb93e-bfbc-4b4b-9ee2-8ed41d1d8285",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_d60576e421d41d73475ead7f775abe6ff4155cc674334014ad10d8fcd769d533_0-2572474f.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 46,
+          "edge": "start",
+          "shift_ms": 110,
+          "note": "boundary_start · major · 陕 start 110 ms later"
+        },
+        {
+          "action": "move",
+          "word": 66,
+          "edge": "start",
+          "shift_ms": -330,
+          "note": "boundary_start · critical · 没 start 330 ms earlier"
+        },
+        {
+          "action": "add",
+          "after_word": 133,
+          "text": "位",
+          "critical": true,
+          "note": "word_hallucination · major · extra '位' in the 0.53 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_9349477ac4540255b2fd1e921d0a47bd8b4c2585500e156c1070a7ecb7b0defb_8-1b76426e.audio.wav",
+      "work_item_id": "900f6174-cc65-4686-bedf-bed7079b08b0",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_9349477ac4540255b2fd1e921d0a47bd8b4c2585500e156c1070a7ecb7b0defb_8-1b76426e.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 3,
+          "text": "國",
+          "note": "traditional_character · major · 国 -> 國"
+        },
+        {
+          "action": "replace",
+          "word": 25,
+          "text": "业",
+          "critical": true,
+          "note": "word_substitution · critical · 也 -> 业"
+        },
+        {
+          "action": "move",
+          "word": 46,
+          "edge": "end",
+          "shift_ms": -50,
+          "note": "boundary_end · minor · 中 end 50 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_9ac702514a82fb9520e930a486ffc0431d0060ab777e4b7b32f9ce61abf5889b_3-0d4a3ddc.audio.wav",
+      "work_item_id": "23b5a8b5-2ac0-433b-bcf0-0418395cf03d",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_9ac702514a82fb9520e930a486ffc0431d0060ab777e4b7b32f9ce61abf5889b_3-0d4a3ddc.audio.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 22,
+          "text": "平",
+          "note": "word_hallucination · major · extra '平' in the 0.42 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 53,
+          "edge": "end",
+          "shift_ms": -220,
+          "note": "boundary_end · major · 果 end 220 ms earlier"
+        },
+        {
+          "action": "delete",
+          "word": 90,
+          "critical": true,
+          "note": "word_deletion · critical · '尿' gone from transcript and chips"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_abcb0a0821d9d65f7cdb177e7950b39a81c6bc816a60792b41255487685caa26_5-4f5caede.audio.wav",
+      "work_item_id": "47c28972-3338-48c8-9f6d-5e2114cff5a3",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_abcb0a0821d9d65f7cdb177e7950b39a81c6bc816a60792b41255487685caa26_5-4f5caede.audio.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 25,
+          "critical": true,
+          "note": "missing_segment · critical · 木 keeps its text but has no chip"
+        },
+        {
+          "action": "move",
+          "word": 31,
+          "edge": "start",
+          "shift_ms": -370,
+          "note": "boundary_start · critical · 前 start 370 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 70,
+          "edge": "end",
+          "shift_ms": -80,
+          "note": "boundary_end · minor · 城 end 80 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_d077349f020de4ac94864b7cb02440b10da3e3323378b8cea6fc847067b154ce_25-9f860cd0.audio.wav",
+      "work_item_id": "ea2cd4f4-2328-4e9a-9574-5f279463cbe5",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_d077349f020de4ac94864b7cb02440b10da3e3323378b8cea6fc847067b154ce_25-9f860cd0.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": -80,
+          "note": "boundary_end · minor · 度 end 80 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 26,
+          "text": "议",
+          "critical": true,
+          "note": "word_substitution · critical · 意 -> 议"
+        },
+        {
+          "action": "replace",
+          "word": 56,
+          "text": "這",
+          "note": "traditional_character · major · 这 -> 這"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_fcd8dcf21b69797c0070ae31e13283d8e732284210f32f1162740d94e862aaa0_1-e22b9306.audio.wav",
+      "work_item_id": "033c5d0c-084c-4cc8-a4ef-57cc0b1ce4c2",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_fcd8dcf21b69797c0070ae31e13283d8e732284210f32f1162740d94e862aaa0_1-e22b9306.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 34,
+          "edge": "start",
+          "shift_ms": 150,
+          "note": "boundary_start · major · 叫 start 150 ms later"
+        },
+        {
+          "action": "add",
+          "after_word": 39,
+          "text": "五",
+          "note": "word_hallucination · major · extra '五' in the 0.49 s pause after it"
+        },
+        {
+          "action": "delete",
+          "word": 84,
+          "critical": true,
+          "note": "word_deletion · critical · '点' gone from transcript and chips"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_885e0a90a74a7db9fa601c0028680f61a785205d19b0c00bd5878b24086877c7_1-72958230.audio.wav",
+      "work_item_id": "842c1d57-89ff-459b-b937-4fdf92780990",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_885e0a90a74a7db9fa601c0028680f61a785205d19b0c00bd5878b24086877c7_1-72958230.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 35,
+          "text": "硕",
+          "critical": true,
+          "note": "word_substitution · critical · 说 -> 硕"
+        },
+        {
+          "action": "move",
+          "word": 114,
+          "edge": "end",
+          "shift_ms": 400,
+          "note": "boundary_end · critical · 票 end 400 ms later"
+        },
+        {
+          "action": "move",
+          "word": 145,
+          "edge": "start",
+          "shift_ms": -490,
+          "note": "boundary_start · critical · 他 start 490 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_5cbd85e2da519e25b6f4e6e3cdc0ca8da87429764fcb406de71b89c90541db0f_2-e6b19dd3.audio.wav",
+      "work_item_id": "c3389d61-ac60-4496-b741-43882c824eef",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_5cbd85e2da519e25b6f4e6e3cdc0ca8da87429764fcb406de71b89c90541db0f_2-e6b19dd3.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 14,
+          "text": "個",
+          "critical": true,
+          "note": "traditional_character · major · 个 -> 個"
+        },
+        {
+          "action": "remove",
+          "word": 22,
+          "note": "missing_segment · major · 话 keeps its text but has no chip"
+        },
+        {
+          "action": "move",
+          "word": 30,
+          "edge": "start",
+          "shift_ms": 60,
+          "note": "boundary_start · minor · 到 start 60 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_a5618f07baec00eefc2b33ab237b739b3a70705de2881737e93d2f45e1b59155_17-6490c986.audio.wav",
+      "work_item_id": "d169d301-2dd1-48a7-a49c-76852901b962",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_a5618f07baec00eefc2b33ab237b739b3a70705de2881737e93d2f45e1b59155_17-6490c986.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 43,
+          "edge": "start",
+          "shift_ms": 140,
+          "note": "boundary_start · major · 些 start 140 ms later"
+        },
+        {
+          "action": "add",
+          "after_word": 98,
+          "text": "的",
+          "note": "word_hallucination · major · extra '的' in the 0.42 s pause after it"
+        },
+        {
+          "action": "delete",
+          "word": 123,
+          "critical": true,
+          "note": "word_deletion · critical · '套' gone from transcript and chips"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_aea998992f266b488c31966ff3e08f200a402cb8b4662fca024c5017409ef9d8_14-4ea652f3.audio.wav",
+      "work_item_id": "1914c7f2-8e82-4ad7-a228-b520089b6380",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_aea998992f266b488c31966ff3e08f200a402cb8b4662fca024c5017409ef9d8_14-4ea652f3.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 76,
+          "text": "到",
+          "critical": true,
+          "note": "word_substitution · critical · 道 -> 到"
+        },
+        {
+          "action": "move",
+          "word": 123,
+          "edge": "start",
+          "shift_ms": -340,
+          "note": "boundary_start · critical · 结 start 340 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 133,
+          "edge": "start",
+          "shift_ms": -100,
+          "note": "boundary_start · major · 众 start 100 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_1859ae197a7fbca8693dc72300e02cda432f92d9ac1da7c58510c44eb03bbc0d_73-be321166.audio.wav",
+      "work_item_id": "605b17d4-11ce-43a6-9455-32a7fbd716b8",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_1859ae197a7fbca8693dc72300e02cda432f92d9ac1da7c58510c44eb03bbc0d_73-be321166.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 24,
+          "critical": true,
+          "note": "word_deletion · critical · '播' gone from transcript and chips"
+        },
+        {
+          "action": "move",
+          "word": 63,
+          "edge": "end",
+          "shift_ms": -70,
+          "note": "boundary_end · minor · 纳 end 70 ms earlier"
+        },
+        {
+          "action": "add",
+          "after_word": 71,
+          "text": "论",
+          "note": "word_hallucination · major · extra '论' in the 0.41 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_665c2ac0d6ed3524b83146f518e0bd23dff261ba9ca56471c0429a1acd6dc9b5_1-58effdf0.audio.wav",
+      "work_item_id": "4fa03e79-576d-4505-a71d-7ec59504035b",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_665c2ac0d6ed3524b83146f518e0bd23dff261ba9ca56471c0429a1acd6dc9b5_1-58effdf0.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 32,
+          "edge": "end",
+          "shift_ms": 180,
+          "note": "boundary_end · major · 度 end 180 ms later"
+        },
+        {
+          "action": "move",
+          "word": 36,
+          "edge": "start",
+          "shift_ms": 80,
+          "note": "boundary_start · minor · 于 start 80 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 96,
+          "text": "應",
+          "critical": true,
+          "note": "traditional_character · major · 应 -> 應"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_ac1cbb29a3fc7245067fed9c76e80649c62010ac3a544b07716e6ffebe3a613c_0-41e71485.audio.wav",
+      "work_item_id": "be0630e3-3598-4d7e-a660-1b281c08d124",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_ac1cbb29a3fc7245067fed9c76e80649c62010ac3a544b07716e6ffebe3a613c_0-41e71485.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 12,
+          "edge": "end",
+          "shift_ms": 470,
+          "note": "boundary_end · critical · 西 end 470 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 36,
+          "text": "事",
+          "critical": true,
+          "note": "word_substitution · critical · 是 -> 事"
+        },
+        {
+          "action": "remove",
+          "word": 45,
+          "note": "missing_segment · major · 号 keeps its text but has no chip"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_0aa6998ae18ca6c6e9d959e96bdf4f4295fd6d937cea48fd5293c918dea89d1f_1-a635485e.audio.wav",
+      "work_item_id": "3f2b6fae-4907-447a-b0ee-33bdc215e68e",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_0aa6998ae18ca6c6e9d959e96bdf4f4295fd6d937cea48fd5293c918dea89d1f_1-a635485e.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 12,
+          "critical": true,
+          "note": "word_deletion · critical · '三' gone from transcript and chips"
+        },
+        {
+          "action": "move",
+          "word": 15,
+          "edge": "end",
+          "shift_ms": 60,
+          "note": "boundary_end · minor · 牛 end 60 ms later"
+        },
+        {
+          "action": "add",
+          "after_word": 24,
+          "text": "组",
+          "note": "word_hallucination · critical · extra '组' in the 1.25 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_4ecbe322a5063759dc9ba8fbc4a32ed183e33fe764b9d8b91ca11730d8938ca8_1-2a3af297.audio.wav",
+      "work_item_id": "6da37e81-b974-4d33-8d43-340da4aab932",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_4ecbe322a5063759dc9ba8fbc4a32ed183e33fe764b9d8b91ca11730d8938ca8_1-2a3af297.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "end",
+          "shift_ms": 100,
+          "note": "boundary_end · major · go end 100 ms later"
+        },
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "end",
+          "shift_ms": -180,
+          "critical": true,
+          "note": "boundary_end · major · 一 end 180 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_b2862015536dd24630d9b3d8606a676abefc3fe302f6eb2bc3f77b3dcf31816b_18-0bdd9760.audio.wav",
+      "work_item_id": "bcb8195d-5563-43e6-9840-138da9c724f0",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_b2862015536dd24630d9b3d8606a676abefc3fe302f6eb2bc3f77b3dcf31816b_18-0bdd9760.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 12,
+          "text": "再",
+          "critical": true,
+          "note": "word_substitution · critical · 在 -> 再"
+        },
+        {
+          "action": "move",
+          "word": 19,
+          "edge": "start",
+          "shift_ms": 500,
+          "note": "boundary_start · critical · 呃 start 500 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 29,
+          "text": "這",
+          "note": "traditional_character · major · 这 -> 這"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_f0bca7590b3e9a014ab55db411eb6c89179aa9a54625c7834294284294cced8e_1-0367ff4d.audio.wav",
+      "work_item_id": "2c61f2a8-e774-42ae-81ef-afefed3aa35c",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_f0bca7590b3e9a014ab55db411eb6c89179aa9a54625c7834294284294cced8e_1-0367ff4d.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 27,
+          "edge": "end",
+          "shift_ms": 580,
+          "note": "boundary_end · critical · 的 end 580 ms later"
+        },
+        {
+          "action": "remove",
+          "word": 56,
+          "note": "missing_segment · major · 疾 keeps its text but has no chip"
+        },
+        {
+          "action": "delete",
+          "word": 75,
+          "critical": true,
+          "note": "word_deletion · critical · '估' gone from transcript and chips"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_adc3a622ead66d41eb7f403394d1a3109d13ce1e319ea301d1a445dbdc8ba7e3_8-beb4caea.audio.wav",
+      "work_item_id": "37142d06-ded0-4260-a923-038207efa37b",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_adc3a622ead66d41eb7f403394d1a3109d13ce1e319ea301d1a445dbdc8ba7e3_8-beb4caea.audio.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 11,
+          "text": "了",
+          "critical": true,
+          "note": "word_hallucination · critical · extra '了' in the 1.04 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 33,
+          "edge": "start",
+          "shift_ms": 70,
+          "note": "boundary_start · minor · 觉 start 70 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 55,
+          "text": "地",
+          "note": "word_substitution · critical · 的 -> 地"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_565c5434fb40526d69ba224e4eb1ab58ae60e6a5764bc2c268b980d2be0240ca_1-9b448a58.audio.wav",
+      "work_item_id": "27ca5f24-4e1b-42e3-ad67-50f990c025f4",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_565c5434fb40526d69ba224e4eb1ab58ae60e6a5764bc2c268b980d2be0240ca_1-9b448a58.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "end",
+          "shift_ms": 350,
+          "note": "boundary_end · critical · 四 end 350 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 26,
+          "text": "麼",
+          "critical": true,
+          "note": "traditional_character · major · 么 -> 麼"
+        },
+        {
+          "action": "move",
+          "word": 32,
+          "edge": "start",
+          "shift_ms": 130,
+          "note": "boundary_start · major · 谁 start 130 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_f5fa00deca680bd001a65dcb00c13995d5eb7de9a724ac88ca1278c0276c66fb_1-d53bade5.audio.wav",
+      "work_item_id": "50e57278-3b7d-47ae-b8f0-fd6267d7ff36",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_f5fa00deca680bd001a65dcb00c13995d5eb7de9a724ac88ca1278c0276c66fb_1-d53bade5.audio.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 20,
+          "text": "施",
+          "note": "word_hallucination · major · extra '施' in the 0.56 s pause after it"
+        },
+        {
+          "action": "delete",
+          "word": 64,
+          "critical": true,
+          "note": "word_deletion · critical · '中' gone from transcript and chips"
+        },
+        {
+          "action": "move",
+          "word": 99,
+          "edge": "start",
+          "shift_ms": 60,
+          "note": "boundary_start · minor · 商 start 60 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_cd0133097d444bcc2a330c18514a4010321defdd6e3e43f4fd948d8b984989bb_0-fa5715aa.audio.wav",
+      "work_item_id": "32d30e06-a953-49f5-9571-c67675e5eda9",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_cd0133097d444bcc2a330c18514a4010321defdd6e3e43f4fd948d8b984989bb_0-fa5715aa.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 14,
+          "edge": "start",
+          "shift_ms": 390,
+          "note": "boundary_start · critical · 变 start 390 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 28,
+          "text": "响",
+          "critical": true,
+          "note": "word_substitution · critical · 想 -> 响"
+        },
+        {
+          "action": "remove",
+          "word": 57,
+          "note": "missing_segment · critical · 拥 keeps its text but has no chip"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_c836391bfd318587eb6dd13c9e04f91d77a363e9cde37438db72cd53c8486193_2-cd2b4b2f.audio.wav",
+      "work_item_id": "d869a36d-e92c-4263-9eba-94d6de744e8d",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_c836391bfd318587eb6dd13c9e04f91d77a363e9cde37438db72cd53c8486193_2-cd2b4b2f.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 28,
+          "text": "錢",
+          "critical": true,
+          "note": "traditional_character · major · 钱 -> 錢"
+        },
+        {
+          "action": "move",
+          "word": 106,
+          "edge": "end",
+          "shift_ms": -130,
+          "note": "boundary_end · major · 毒 end 130 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 117,
+          "edge": "end",
+          "shift_ms": 40,
+          "note": "boundary_end · minor · 百 end 40 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_7c9eb63568a077d73f9a52070ce56bc1a214c74a5e507e80df6643ba29136333_0-debbadc1.audio.wav",
+      "work_item_id": "32f622cb-d1e1-4c70-a085-7239c4b9c98a",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_7c9eb63568a077d73f9a52070ce56bc1a214c74a5e507e80df6643ba29136333_0-debbadc1.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 42,
+          "critical": true,
+          "note": "word_deletion · critical · '蓝' gone from transcript and chips"
+        },
+        {
+          "action": "add",
+          "after_word": 55,
+          "text": "择",
+          "note": "word_hallucination · major · extra '择' in the 0.41 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 102,
+          "edge": "end",
+          "shift_ms": 500,
+          "note": "boundary_end · critical · 吧 end 500 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_d95a07ee1802db43969115d9810324a82bb0678c8b78926c53232ea80f0913d1_1-d7b6214f.audio.wav",
+      "work_item_id": "d81ac0d7-e472-41fa-a088-a40819c484b1",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_d95a07ee1802db43969115d9810324a82bb0678c8b78926c53232ea80f0913d1_1-d7b6214f.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 23,
+          "edge": "end",
+          "shift_ms": -130,
+          "note": "boundary_end · major · 最 end 130 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 30,
+          "text": "地",
+          "critical": true,
+          "note": "word_substitution · critical · 的 -> 地"
+        },
+        {
+          "action": "move",
+          "word": 35,
+          "edge": "end",
+          "shift_ms": -70,
+          "note": "boundary_end · minor · 皮 end 70 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_a1abe009e314e6123f0acf2302e1998f8941c255e18e8587314fea7baf31b5c5_2-c50b9997.audio.wav",
+      "work_item_id": "32616f75-f66e-4692-9e2d-cb2578eef60a",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_a1abe009e314e6123f0acf2302e1998f8941c255e18e8587314fea7baf31b5c5_2-c50b9997.audio.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 79,
+          "note": "missing_segment · major · 往 keeps its text but has no chip"
+        },
+        {
+          "action": "replace",
+          "word": 92,
+          "text": "經",
+          "critical": true,
+          "note": "traditional_character · major · 经 -> 經"
+        },
+        {
+          "action": "move",
+          "word": 114,
+          "edge": "end",
+          "shift_ms": -50,
+          "note": "boundary_end · minor · 升 end 50 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_95ea4a5bcdd047531b1628a2889df671165fc828ee33ce54cd50476180418a4c_2-77629212.audio.wav",
+      "work_item_id": "5a7f6e63-986f-483f-9f54-c6b2f9929680",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_95ea4a5bcdd047531b1628a2889df671165fc828ee33ce54cd50476180418a4c_2-77629212.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 8,
+          "edge": "end",
+          "shift_ms": -480,
+          "note": "boundary_end · critical · 收 end 480 ms earlier"
+        },
+        {
+          "action": "add",
+          "after_word": 22,
+          "text": "示",
+          "note": "word_hallucination · major · extra '示' in the 0.40 s pause after it"
+        },
+        {
+          "action": "delete",
+          "word": 117,
+          "critical": true,
+          "note": "word_deletion · critical · '元' gone from transcript and chips"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_7d1b0ddbac99044a3237e547226ba3584ad68b17d5620973cd8fd610ed8e6d94_7-8228c5e2.audio.wav",
+      "work_item_id": "7dea6a1a-c2b2-4b88-a4b0-605cc7a86dd1",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_7d1b0ddbac99044a3237e547226ba3584ad68b17d5620973cd8fd610ed8e6d94_7-8228c5e2.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 6,
+          "text": "地",
+          "critical": true,
+          "note": "word_substitution · critical · 的 -> 地"
+        },
+        {
+          "action": "move",
+          "word": 12,
+          "edge": "end",
+          "shift_ms": -80,
+          "note": "boundary_end · minor · 百 end 80 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 16,
+          "edge": "end",
+          "shift_ms": 100,
+          "note": "boundary_end · major · 十 end 100 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_0b77097ca22dc89f2e6fb238ad4c00ec55a837c00b1379b51644846792e580e2_1-c7724e74.audio.wav",
+      "work_item_id": "7a98b2ef-a6a9-4d4e-8888-2cc3042d45e1",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_0b77097ca22dc89f2e6fb238ad4c00ec55a837c00b1379b51644846792e580e2_1-c7724e74.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 13,
+          "text": "再",
+          "critical": true,
+          "note": "word_substitution · critical · 在 -> 再"
+        },
+        {
+          "action": "move",
+          "word": 39,
+          "edge": "end",
+          "shift_ms": -360,
+          "note": "boundary_end · critical · 后 end 360 ms earlier"
+        },
+        {
+          "action": "add",
+          "after_word": 73,
+          "text": "加",
+          "note": "word_hallucination · critical · extra '加' in the 1.04 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_2b1640bf5c649b8e6cf77e057d96b3b35aa392673bc3eb932c16bfd41886b279_1-6a99ae30.audio.wav",
+      "work_item_id": "597bfd4d-4589-4f5d-89b8-bc06a9b6e32e",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_2b1640bf5c649b8e6cf77e057d96b3b35aa392673bc3eb932c16bfd41886b279_1-6a99ae30.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 10,
+          "text": "統",
+          "note": "traditional_character · major · 统 -> 統"
+        },
+        {
+          "action": "delete",
+          "word": 99,
+          "critical": true,
+          "note": "word_deletion · critical · '保' gone from transcript and chips"
+        },
+        {
+          "action": "move",
+          "word": 107,
+          "edge": "end",
+          "shift_ms": -100,
+          "note": "boundary_end · major · 些 end 100 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_895d94b73275cc3db27a4bbf06168404a1c8d24ac2fd01de7c05f9c0a9e882ff_9-06e62682.audio.wav",
+      "work_item_id": "d7bc6c43-f22d-46f2-b3a8-3adf43360757",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_895d94b73275cc3db27a4bbf06168404a1c8d24ac2fd01de7c05f9c0a9e882ff_9-06e62682.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 65,
+          "edge": "start",
+          "shift_ms": -550,
+          "critical": true,
+          "note": "boundary_start · critical · 各 start 550 ms earlier"
+        },
+        {
+          "action": "remove",
+          "word": 81,
+          "note": "missing_segment · major · 七 keeps its text but has no chip"
+        },
+        {
+          "action": "move",
+          "word": 86,
+          "edge": "start",
+          "shift_ms": -150,
+          "note": "boundary_start · major · 代 start 150 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_de061fd7e556ad25bb8d78542e35c88313ebdd8fd06fc803258ebea6cc5b3941_4-932b640d.audio.wav",
+      "work_item_id": "750d9d45-905a-4a15-b1f0-8ec6a693ddce",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_de061fd7e556ad25bb8d78542e35c88313ebdd8fd06fc803258ebea6cc5b3941_4-932b640d.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 48,
+          "edge": "end",
+          "shift_ms": -80,
+          "note": "boundary_end · minor · 零 end 80 ms earlier"
+        },
+        {
+          "action": "delete",
+          "word": 57,
+          "note": "word_deletion · critical · '糖' gone from transcript and chips"
+        },
+        {
+          "action": "replace",
+          "word": 72,
+          "text": "钱",
+          "critical": true,
+          "note": "word_substitution · critical · 前 -> 钱"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_3525e7561b929a5932130f6ebf7dfc1269f672daf5908e0ebbad26e6c375c79e_70-93a15f69.audio.wav",
+      "work_item_id": "bea0f0bd-48e6-4429-8389-cfd39d7cb042",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_3525e7561b929a5932130f6ebf7dfc1269f672daf5908e0ebbad26e6c375c79e_70-93a15f69.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 18,
+          "edge": "end",
+          "shift_ms": -60,
+          "note": "boundary_end · minor · 命 end 60 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 106,
+          "text": "務",
+          "note": "traditional_character · major · 务 -> 務"
+        },
+        {
+          "action": "add",
+          "after_word": 115,
+          "text": "击",
+          "critical": true,
+          "note": "word_hallucination · major · extra '击' in the 0.59 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_a04ff22b5e2f825018aff75780327d1624e0208822eef55e50c097a73c4a0a97_3-29b093b8.audio.wav",
+      "work_item_id": "7384e271-6965-4f6b-b3bf-258bf882670f",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_a04ff22b5e2f825018aff75780327d1624e0208822eef55e50c097a73c4a0a97_3-29b093b8.audio.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 2,
+          "critical": true,
+          "note": "missing_segment · major · 供 keeps its text but has no chip"
+        },
+        {
+          "action": "move",
+          "word": 7,
+          "edge": "end",
+          "shift_ms": -120,
+          "note": "boundary_end · major · 一 end 120 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_eb41af9b3c866ed607c1e6c18c86ee73bb77a07721603a9969df81d315e45869_2-b6eee535.audio.wav",
+      "work_item_id": "d3965e67-e117-44e6-affe-3421fe9ba99c",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_eb41af9b3c866ed607c1e6c18c86ee73bb77a07721603a9969df81d315e45869_2-b6eee535.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 30,
+          "text": "实",
+          "critical": true,
+          "note": "word_substitution · critical · 时 -> 实"
+        },
+        {
+          "action": "add",
+          "after_word": 72,
+          "text": "网",
+          "note": "word_hallucination · major · extra '网' in the 0.51 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 108,
+          "edge": "end",
+          "shift_ms": -430,
+          "note": "boundary_end · critical · environment end 430 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_87dfdb14a0cedc4f6d5020b7c0f908f3a3e3b902615f27ba7585c4ae7ec89093_0-14f0a7ff.audio.wav",
+      "work_item_id": "d19b560c-ae34-4963-8d3a-bbb11d14d681",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_87dfdb14a0cedc4f6d5020b7c0f908f3a3e3b902615f27ba7585c4ae7ec89093_0-14f0a7ff.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 3,
+          "critical": true,
+          "note": "word_deletion · critical · '生' gone from transcript and chips"
+        },
+        {
+          "action": "move",
+          "word": 46,
+          "edge": "start",
+          "shift_ms": 40,
+          "note": "boundary_start · minor · 百 start 40 ms later"
+        },
+        {
+          "action": "move",
+          "word": 59,
+          "edge": "start",
+          "shift_ms": -380,
+          "note": "boundary_start · critical · 偏 start 380 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_47a8bc35cbf6bb95ef052c0df2e89912e332fbbd853e55394c9c3358d4e623a0_2-ef17e14b.audio.wav",
+      "work_item_id": "3e9c66d0-9822-4ec6-aedd-4451e4ed99c1",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_47a8bc35cbf6bb95ef052c0df2e89912e332fbbd853e55394c9c3358d4e623a0_2-ef17e14b.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 10,
+          "edge": "start",
+          "shift_ms": -300,
+          "note": "boundary_start · major · 一 start 300 ms earlier"
+        },
+        {
+          "action": "add",
+          "after_word": 14,
+          "text": "九",
+          "note": "word_hallucination · major · extra '九' in the 0.50 s pause after it"
+        },
+        {
+          "action": "replace",
+          "word": 21,
+          "text": "間",
+          "critical": true,
+          "note": "traditional_character · major · 间 -> 間"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_2601f703d881c0a0d70bfd1d2d2ef373680eb1d7d90b1c3fd9601be93f12a6e4_2-aba7394b.audio.wav",
+      "work_item_id": "31ed474a-563e-47b3-8ea6-7121cbaa6a47",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_2601f703d881c0a0d70bfd1d2d2ef373680eb1d7d90b1c3fd9601be93f12a6e4_2-aba7394b.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 19,
+          "text": "地",
+          "critical": true,
+          "note": "word_substitution · critical · 的 -> 地"
+        },
+        {
+          "action": "move",
+          "word": 22,
+          "edge": "start",
+          "shift_ms": -610,
+          "note": "boundary_start · critical · 据 start 610 ms earlier"
+        },
+        {
+          "action": "delete",
+          "word": 58,
+          "note": "word_deletion · critical · '增' gone from transcript and chips"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_1c59089b9ee29a928877f7325df2cf2f9d2cedcb6751e7ae78dc55b11b979388_4-068b086e.audio.wav",
+      "work_item_id": "8e7eb749-4d4c-4433-80af-b1e65c7dfb6b",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_1c59089b9ee29a928877f7325df2cf2f9d2cedcb6751e7ae78dc55b11b979388_4-068b086e.audio.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 84,
+          "critical": true,
+          "note": "missing_segment · major · 到 keeps its text but has no chip"
+        },
+        {
+          "action": "move",
+          "word": 94,
+          "edge": "start",
+          "shift_ms": 120,
+          "note": "boundary_start · major · 会 start 120 ms later"
+        },
+        {
+          "action": "move",
+          "word": 98,
+          "edge": "start",
+          "shift_ms": 50,
+          "note": "boundary_start · minor · 一 start 50 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_2fabb2e0cbeb854046c021ecfe2959b9c1bf0986e2072b2db0f2a845f65a54b5_2-bcb165b1.audio.wav",
+      "work_item_id": "ba637a59-6de0-4502-9f7e-6ec0aa54406c",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_2fabb2e0cbeb854046c021ecfe2959b9c1bf0986e2072b2db0f2a845f65a54b5_2-bcb165b1.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 38,
+          "edge": "start",
+          "shift_ms": -500,
+          "note": "boundary_start · critical · 服 start 500 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 44,
+          "text": "地",
+          "critical": true,
+          "note": "word_substitution · critical · 的 -> 地"
+        },
+        {
+          "action": "replace",
+          "word": 77,
+          "text": "時",
+          "note": "traditional_character · major · 时 -> 時"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_62ad44032d942d58243967fff4ec7eeabb91e997f32cdf7c7196c79f0cf97a0d_1-68beda15.audio.wav",
+      "work_item_id": "a0ecd1d2-746e-42ac-bdce-5d7a7da5217f",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_62ad44032d942d58243967fff4ec7eeabb91e997f32cdf7c7196c79f0cf97a0d_1-68beda15.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 18,
+          "edge": "end",
+          "shift_ms": -60,
+          "note": "boundary_end · minor · 九 end 60 ms earlier"
+        },
+        {
+          "action": "add",
+          "after_word": 34,
+          "text": "来",
+          "critical": true,
+          "note": "word_hallucination · critical · extra '来' in the 0.62 s pause after it"
+        },
+        {
+          "action": "delete",
+          "word": 136,
+          "note": "word_deletion · critical · '歌' gone from transcript and chips"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_dc983f5c45b0a0bc3801fbbba34b5b5113b6d5b879244d05b190dedafa7c03bc_6-b6c7e4b9.audio.wav",
+      "work_item_id": "52d84662-141f-4f90-bcd1-5134b8968dc2",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_dc983f5c45b0a0bc3801fbbba34b5b5113b6d5b879244d05b190dedafa7c03bc_6-b6c7e4b9.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 66,
+          "edge": "start",
+          "shift_ms": 60,
+          "note": "boundary_start · minor · 把 start 60 ms later"
+        },
+        {
+          "action": "move",
+          "word": 103,
+          "edge": "end",
+          "shift_ms": -150,
+          "note": "boundary_end · major · 交 end 150 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 115,
+          "text": "事",
+          "critical": true,
+          "note": "word_substitution · critical · 是 -> 事"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_eedabdab795806465f0faa42e268e8d410a42e3e4990396a615b07fb99a87c22_2-cf4a325e.audio.wav",
+      "work_item_id": "3b345d94-c18d-40cd-b9c2-51d30d876622",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_eedabdab795806465f0faa42e268e8d410a42e3e4990396a615b07fb99a87c22_2-cf4a325e.audio.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 38,
+          "note": "missing_segment · major · 血 keeps its text but has no chip"
+        },
+        {
+          "action": "move",
+          "word": 92,
+          "edge": "start",
+          "shift_ms": -450,
+          "critical": true,
+          "note": "boundary_start · critical · b start 450 ms earlier"
+        },
+        {
+          "action": "replace",
+          "word": 97,
+          "text": "統",
+          "note": "traditional_character · major · 统 -> 統"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_c4585439157e2deee7e4e1c0dd41ba16c30025001a7db31e83718202e138f292_1-207a1666.audio.wav",
+      "work_item_id": "c6507697-9e35-468e-9ea3-ca0ee06c02cc",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_c4585439157e2deee7e4e1c0dd41ba16c30025001a7db31e83718202e138f292_1-207a1666.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 19,
+          "critical": true,
+          "note": "word_deletion · critical · '织' gone from transcript and chips"
+        },
+        {
+          "action": "add",
+          "after_word": 28,
+          "text": "准",
+          "note": "word_hallucination · major · extra '准' in the 0.58 s pause after it"
+        },
+        {
+          "action": "move",
+          "word": 87,
+          "edge": "start",
+          "shift_ms": -240,
+          "note": "boundary_start · major · 口 start 240 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_506643f71ceb6386a0e2e800ec5d6184ddaadab87850ebe069f26d7993d73e5b_82-a2299915.audio.wav",
+      "work_item_id": "8b6ce8dc-3d04-47a4-be36-8c5a63f376de",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_506643f71ceb6386a0e2e800ec5d6184ddaadab87850ebe069f26d7993d73e5b_82-a2299915.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 12,
+          "text": "近",
+          "critical": true,
+          "note": "word_substitution · critical · 进 -> 近"
+        },
+        {
+          "action": "move",
+          "word": 40,
+          "edge": "end",
+          "shift_ms": -270,
+          "note": "boundary_end · major · 呃 end 270 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 61,
+          "edge": "end",
+          "shift_ms": -310,
+          "note": "boundary_end · critical · 呃 end 310 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_c6c6f3bc350faadd5572e5d84b80e0be999ee0e5b14e762c71608247527d6d96_2-36cc40a7.audio.wav",
+      "work_item_id": "c3a82a47-ee1e-461f-b827-757fb9f24c88",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_c6c6f3bc350faadd5572e5d84b80e0be999ee0e5b14e762c71608247527d6d96_2-36cc40a7.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 4,
+          "note": "word_deletion · critical · '方' gone from transcript and chips"
+        },
+        {
+          "action": "move",
+          "word": 48,
+          "edge": "end",
+          "shift_ms": -80,
+          "note": "boundary_end · minor · 费 end 80 ms earlier"
+        },
+        {
+          "action": "add",
+          "after_word": 60,
+          "text": "右",
+          "critical": true,
+          "note": "word_hallucination · critical · extra '右' in the 0.85 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_3bf4f1dd07e033f0eed465981a972c664ba4637a3f56d7df0600e10620766818_1-d9387d35.audio.wav",
+      "work_item_id": "def64a89-6f5d-41eb-909b-d366822349cb",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_3bf4f1dd07e033f0eed465981a972c664ba4637a3f56d7df0600e10620766818_1-d9387d35.audio.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 12,
+          "text": "這",
+          "critical": true,
+          "note": "traditional_character · major · 这 -> 這"
+        },
+        {
+          "action": "move",
+          "word": 18,
+          "edge": "end",
+          "shift_ms": -110,
+          "note": "boundary_end · major · 百 end 110 ms earlier"
+        },
+        {
+          "action": "move",
+          "word": 38,
+          "edge": "start",
+          "shift_ms": 40,
+          "note": "boundary_start · minor · 层 start 40 ms later"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_2aea71f270e136203e926ab1355ca333172be3d4a52bd97b1a3d40379e424ad5_0-0916ef3a.audio.wav",
+      "work_item_id": "92e4eca8-b4f9-4e38-b827-6773c42b7ac8",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_2aea71f270e136203e926ab1355ca333172be3d4a52bd97b1a3d40379e424ad5_0-0916ef3a.audio.wav",
+      "plants": [
+        {
+          "action": "remove",
+          "word": 6,
+          "note": "missing_segment · major · 看 keeps its text but has no chip"
+        },
+        {
+          "action": "replace",
+          "word": 12,
+          "text": "理",
+          "note": "word_substitution · critical · 里 -> 理"
+        },
+        {
+          "action": "move",
+          "word": 23,
+          "edge": "start",
+          "shift_ms": -680,
+          "critical": true,
+          "note": "boundary_start · critical · 多 start 680 ms earlier"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_f6a13cc2e9801175f03864d2482801d03fe132fd2857aee91c386eabeb6d2e62_24-68b18f61.audio.wav",
+      "work_item_id": "20c80957-d734-4f9a-a184-a472e2b54f2a",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_f6a13cc2e9801175f03864d2482801d03fe132fd2857aee91c386eabeb6d2e62_24-68b18f61.audio.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 5,
+          "critical": true,
+          "note": "word_deletion · critical · '是' gone from transcript and chips"
+        },
+        {
+          "action": "move",
+          "word": 18,
+          "edge": "start",
+          "shift_ms": 80,
+          "note": "boundary_start · minor · 是 start 80 ms later"
+        },
+        {
+          "action": "add",
+          "after_word": 67,
+          "text": "十",
+          "note": "word_hallucination · major · extra '十' in the 0.41 s pause after it"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_df2bac433e7cbf497850c56460f8535ad4807cf951c2be5d959a7e86d61ce9c9_3-0ab23742.audio.wav",
+      "work_item_id": "e583a676-e46a-443d-b3da-6149b324337d",
+      "file_name": "amazonbot_general_web_crawl_v7_SFW_2024_05_31_v1_2_amazonbot_video_df2bac433e7cbf497850c56460f8535ad4807cf951c2be5d959a7e86d61ce9c9_3-0ab23742.audio.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "start",
+          "shift_ms": 160,
+          "note": "boundary_start · major · 呃 start 160 ms later"
+        },
+        {
+          "action": "move",
+          "word": 78,
+          "edge": "end",
+          "shift_ms": 390,
+          "note": "boundary_end · critical · 升 end 390 ms later"
+        },
+        {
+          "action": "replace",
+          "word": 116,
+          "text": "們",
+          "critical": true,
+          "note": "traditional_character · major · 们 -> 們"
+        }
+      ]
+    }
+  ]
+}

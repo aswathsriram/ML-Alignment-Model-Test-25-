@@ -41,6 +41,10 @@ SHARE = {"move": 0.40, "overlap": 0.04, "zero": 0.03, "delete": 0.08, "remove": 
          "word_substitution": 0.08, "spelling_slip": 0.04, "umlaut_replaced": 0.07, "spoken_form": 0.02,
          "truncation_introduced": 0.03, "truncation_completed": 0.01, "unintelligible": 0.01}
 ACCENT_LABEL, REDUCE_LABEL = "umlaut_replaced", "spoken_form"     # language modules (build_portuguese.py) relabel these
+MIN_WORD_LEN = 2          # shortest word that may be deleted / lose its chip (Chinese: 1, one character per segment)
+TARGET_FN = None          # mistakes per file from the word count (default below: 1-6 as the file's length allows)
+SPEAKER_FLAG = True       # also plant multiple_speakers_off on files with several speakers
+RETRIES = 1               # other placements to try when a file gets fewer mistakes than its target
 FILLERS = {"äh", "ähm", "öh", "hm", "hmm", "mm", "mhm"}
 HOMOPHONES = [("das", "dass"), ("den", "denn"), ("wen", "wenn"), ("man", "mann"), ("im", "ihm"), ("in", "ihn"),
               ("seit", "seid"), ("war", "wahr"), ("mehr", "meer"), ("viel", "fiel"), ("ist", "isst"), ("wieder", "wider"),
@@ -257,13 +261,13 @@ def candidates(V, dur, kind, rng, ctx, size=None):
                     "critical" if dmin(k) >= 0.3 else "major", f"{words[k]} collapses to zero length at its {edge}")
     elif kind == "delete":
         for k in range(n):
-            if not fixed(words[k]) and dmin(k) >= 0.12 and len(words[k]) >= 2:
+            if not fixed(words[k]) and dmin(k) >= 0.12 and len(words[k]) >= MIN_WORD_LEN:
                 filler = words[k] in FILLERS
                 add({"action": "delete", "word": k}, {k}, "filler_deleted" if filler else "word_deletion",
                     "major" if filler else "critical", f"'{words[k]}' gone from transcript and chips")
     elif kind == "remove":
         for k in range(n):
-            if not fixed(words[k]) and dmin(k) >= 0.12 and len(words[k]) >= 2:
+            if not fixed(words[k]) and dmin(k) >= 0.12 and len(words[k]) >= MIN_WORD_LEN:
                 add({"action": "remove", "word": k}, {k}, "missing_segment", "critical" if dmin(k) >= 0.3 else "major",
                     f"{words[k]} keeps its text but has no chip")
     elif kind == "add":
@@ -395,38 +399,47 @@ def main(src, template, out_dir=HERE, name="german"):
         assert all([w["w"] for w in X] == [w["w"] for w in V[0]] for X in V), wid
         W = V[0]
         dur = max(X[-1]["e"] for X in V)
-        rng = random.Random(f"{SEED}-{wid}")
         n = len(W)
-        target = 1 if n < 8 else 2 if n < 16 else 3 if n < 30 else 4 if n < 45 else 5 if n < 60 else 6
+        target = TARGET_FN(n) if TARGET_FN else 1 if n < 8 else 2 if n < 16 else 3 if n < 30 else 4 if n < 45 else 5 if n < 60 else 6
         ctx = {"vocab": vocab, "overlap_speech": chosen["overlapping_speech"]}
-        plants, taken = [], []
-        while len(plants) < target:
-            total = sum(have.values()) + 1
-            placed = False
-            for kind in sorted(SHARE, key=lambda a: (have[a] / total - SHARE[a], rng.random())):
-                order = sorted([s for s, _, _ in SIZES], key=lambda s: (sizes[s], rng.random())) if kind == "move" else [None]
-                for size in order:
-                    cands = [c for c in candidates(V, dur, kind, rng, ctx, size)
-                             if all(abs(a - b) >= GAP_WORDS for t in taken for a in t for b in c[1])]
-                    if cands:
-                        p, aff, note, sev = rng.choice(cands)
-                        plants.append((dict(p, note=note), sev)); taken.append(aff); have[kind] += 1
-                        etypes[note.split(" · ")[0]] += 1
-                        if size:
-                            sizes[size] += 1
-                        placed = True
+        best = None
+        for attempt in range(RETRIES):                    # attempt 0 = the original plan; others only if it falls short
+            rng = random.Random(f"{SEED}-{wid}" + (f"-{attempt}" if attempt else ""))
+            h, sz, et = collections.Counter(have), collections.Counter(sizes), collections.Counter(etypes)
+            plants, taken = [], []
+            while len(plants) < target:
+                total = sum(h.values()) + 1
+                placed = False
+                key = (lambda a: (h[a] / total - SHARE[a], rng.random())) if attempt == 0 else (lambda a: rng.random())
+                for kind in sorted(SHARE, key=key):
+                    order = sorted([s for s, _, _ in SIZES], key=lambda s: (sz[s], rng.random())) if kind == "move" else [None]
+                    for size in order:
+                        cands = [c for c in candidates(V, dur, kind, rng, ctx, size)
+                                 if all(abs(a - b) >= GAP_WORDS for t in taken for a in t for b in c[1])]
+                        if cands:
+                            p, aff, note, sev = rng.choice(cands)
+                            plants.append((dict(p, note=note), sev)); taken.append(aff); h[kind] += 1
+                            et[note.split(" · ")[0]] += 1
+                            if size:
+                                sz[size] += 1
+                            placed = True
+                            break
+                    if placed:
                         break
-                if placed:
+                if not placed:
                     break
-            if not placed:
+            if best is None or len(plants) > len(best[0]):
+                best = (plants, h, sz, et)
+            if len(plants) >= target:
                 break
+        plants, have, sizes, etypes = best
         if plants:
             ranked = sorted(range(len(plants)), key=lambda i: -obviousness(*plants[i]))
             for i in ranked[:2 if len(plants) >= 5 else 1]:
                 plants[i][0]["critical"] = True
         out = [{**{k: v for k, v in p.items() if k != "note"}, "note": p["note"]} for p, _ in plants]
         out.sort(key=lambda p: p.get("word", p.get("after_word")))
-        if chosen["multiple_speakers"]:
+        if SPEAKER_FLAG and chosen["multiple_speakers"]:
             out.append({"action": "set_flag", "flag": "multi_speaker", "value": False,
                         "note": "multiple_speakers_off · critical · the file has several speakers; served as single-speaker"})
             etypes["multiple_speakers_off"] += 1
