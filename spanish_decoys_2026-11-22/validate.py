@@ -68,15 +68,19 @@ def apply(words, plants):
     return out
 
 
-def main(src):
-    doc = json.loads((HERE / "es_ES_decoy_plants.json").read_text(encoding="utf-8"))
+def main(src, folder=HERE, prefix="es_ES", letters="a-zñáéíóúü", plain="a-zñ", unique="first"):
+    """letters: what a plain word is made of in this language; plain: the same without accent marks;
+    unique: a deleted word is said once in the first pass ("first") or in every pass ("all")."""
+    folder = pathlib.Path(folder)
+    WORD, PLAIN4 = re.compile(f"[{letters}]+"), re.compile(f"[{plain}]{{4,}}")
+    doc = json.loads((folder / f"{prefix}_decoy_plants.json").read_text(encoding="utf-8"))
     tpl = json.loads((HERE / "alignment-decoys-template.json").read_text(encoding="utf-8"))
     assert doc["format"] == tpl["format"] == "align-decoys/v1" and doc["instructions"] == tpl["instructions"]
     assert set(doc) == {"format", "instructions", "decoys"}
     P = passes(src)
     decoys = doc["decoys"]
     assert len(decoys) <= 1000, "more than 1000 decoys in one upload"
-    assert (HERE / "es_ES_decoy_plants.json").stat().st_size < 50 * 1024 * 1024
+    assert (folder / f"{prefix}_decoy_plants.json").stat().st_size < 50 * 1024 * 1024
     assert len({d["work_item_id"] for d in decoys}) == len(decoys) == len({d["decoy_ref"] for d in decoys})
     n_plants, checks = 0, collections.Counter()
     for d in decoys:
@@ -105,7 +109,7 @@ def main(src):
                         assert j < len(v) and j < len(V[0]) and v[j][0] == V[0][j][0], ("passes differ near the plant", d["decoy_ref"], k)
                 for j in (k - 1, k, k + 1):
                     if 0 <= j < len(v):
-                        assert re.fullmatch(r"[a-zñáéíóúü]+", v[j][0]), ("tag / (( )) / cut-off next to a plant (17)", v[j][0])
+                        assert WORD.fullmatch(v[j][0]), ("tag / (( )) / cut-off next to a plant (17)", v[j][0])
                         assert not v[j][0].startswith(TAG)
             word = V[0][k][0]
             assert f"'{word}'" in p["note"], ("note names another word", word, p["note"])
@@ -136,7 +140,7 @@ def main(src):
                             assert k + 1 == len(v) or v[k + 1][1] - en >= 0.10 - EPS, "a touching neighbour would move too"
                 checks["move: 150-700 ms, never past its own other edge, a neighbour, 0 or the audio end"] += 1
             elif a == "delete":
-                assert re.fullmatch(r"[a-zñ]{4,}", word) and sum(x[0] == word for x in V[0]) == 1
+                assert PLAIN4.fullmatch(word) and all(sum(x[0] == word for x in v) == 1 for v in (V if unique == "all" else V[:1]))
                 for v in V:
                     assert 0 < k < len(v) - 1 and v[k][2] - v[k][1] >= 0.25 - EPS
                     left, right = v[k][1] - v[k - 1][2], v[k + 1][1] - v[k][2]
@@ -146,10 +150,10 @@ def main(src):
                 for v in V:
                     assert k + 1 < len(v) and v[k + 1][1] - v[k][2] >= 0.40 - EPS, ("pause under 0.35 s (13)", v[k + 1][1] - v[k][2])
                 assert p["text"] in [x[0] for x in V[0]], "not a word of the same clip (13)"
-                assert re.fullmatch(r"[a-zñáéíóúü]+", p["text"])
+                assert WORD.fullmatch(p["text"])
                 checks["add: a word of the clip in a pause of 0.40 s or more"] += 1
             else:
-                assert p["text"] != word and re.fullmatch(r"[a-zñáéíóúü]+", p["text"]), "replace text must differ (6)"
+                assert p["text"] != word and WORD.fullmatch(p["text"]), "replace text must differ (6)"
                 assert len(p["text"]) == len(word) and sum(x != y for x, y in zip(p["text"], word)) == 1, "one letter only"
                 checks["replace: exactly one letter differs"] += 1
             touched.append(idx)
@@ -174,4 +178,4 @@ def main(src):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1] if len(sys.argv) > 1 else HERE / "deliveries")
+    main(*(sys.argv[1:] or [HERE / "deliveries"]))

@@ -1,0 +1,5 @@
+928 work items -> 789 decoys, 139 dropped | 1350 mistakes | per file {1: 228, 2: 561}
+kinds    {'boundary mismatch': 746, 'missing word': 238, 'hallucinated word': 132, 'accent error': 160, 'wrong word': 74}
+bands    {'major': 275, 'minor': 278, 'critical': 193}
+shapes   {'end earlier': 300, 'end later': 161, 'start earlier': 103, 'start later': 182}
+dropped  {'overlapping speech': 42, 'no place where every pass agrees on word and timing': 89, 'no segments (entirely synthetic / discarded)': 8}

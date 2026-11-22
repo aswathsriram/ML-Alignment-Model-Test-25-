@@ -1,0 +1,140 @@
+﻿work_item_id,file_name,batch,words,reason
+d7591f5e-a16d-4bc0-824a-531e3cb2d5f0,31bb7102-92f6-4f67-aef5-051e04a60440_462.wav,614e9151,25,overlapping speech
+858927b4-8899-4d56-b96a-950ee5e32af0,a587eb95-0a7f-4d3a-a76b-7172ea03c78f_432.wav,614e9151,61,no place where every pass agrees on word and timing
+b5881ec4-8759-43a7-99a2-065a5035ef34,2032da9d-bdd4-4083-817d-9ec1b1a0a04c_030.wav,614e9151,5,no place where every pass agrees on word and timing
+bf0a5ed2-98b4-4d19-af76-85fff3485083,44643a3f-5bb4-45a0-8260-f4c82e1c59f3_011.wav,614e9151,44,no place where every pass agrees on word and timing
+804ee151-0b06-4bab-8811-340bbe55687e,ea6f2a63-f341-49ff-9bfc-557c2e5331f7_723.wav,614e9151,0,no segments (entirely synthetic / discarded)
+003bade7-f34b-4f90-800a-532717b561b7,948d6615-4990-4b3f-b367-732bed1e22e3_093.wav,614e9151,6,no place where every pass agrees on word and timing
+06394a10-89bd-4e6e-b3b1-c3820303fb69,c1cde0ea-ea0f-4f56-8cfe-1d693d3aafe2_010.wav,614e9151,4,no place where every pass agrees on word and timing
+6fd74961-e9a8-42c5-840e-a97e29245a57,768de504-48b6-44e6-ac1a-c22dd8e5ecb8_094.wav,614e9151,84,overlapping speech
+fcaba667-2b7d-40bc-990b-793bda2ed70d,9dbbe6be-710d-456b-ba33-965e3041abd5_081.wav,614e9151,8,no place where every pass agrees on word and timing
+eb137580-5215-433e-9c68-a49fdc91ebef,fce87952-7364-48a5-b412-f7ed96a032e7_1193.wav,614e9151,82,overlapping speech
+78cf31bb-7e8f-48fa-b524-f4cbec21657f,dc632941-a0da-4078-9597-7125ca3922e4_420.wav,614e9151,17,overlapping speech
+8145cb8b-fbf3-47d9-8a32-79160a5991ae,87cbcb19-e15b-4d93-a756-f9b13edff0d7_834.wav,614e9151,67,no place where every pass agrees on word and timing
+d46bef64-2d16-4697-8b3b-6ea4fc445c51,36825859-f8dd-4ff7-8b08-55c91f9a5f57_140.wav,614e9151,2,no place where every pass agrees on word and timing
+408a48ad-2818-4b86-971a-d10f7c8f0021,ab8f1bb9-8193-4792-bcb3-bd350dbd151e_030.wav,614e9151,51,overlapping speech
+c0eb28f0-2fe2-4cc4-90f5-3f92c0c584b9,8dd1fef4-a7c8-4f5d-a61f-53d1f7af29dd_037.wav,614e9151,8,no place where every pass agrees on word and timing
+746657ae-7758-4f4a-baf3-c9911e4cdd24,945447f4-c718-4ae3-bd71-f06890d5f829_247.wav,614e9151,4,no place where every pass agrees on word and timing
+f9aa447d-02f1-417a-818c-eb168495c64b,db32c0f8-88d0-487f-ae41-533bd2b12b7a_289.wav,614e9151,62,overlapping speech
+4e1b18da-a699-4bfc-a921-8c0f4574ba80,1ec36156-a06a-49dc-8fbd-dff76c232e1d_309.wav,614e9151,13,no place where every pass agrees on word and timing
+3e35faa7-ab52-44a9-9a32-039547dca1c0,091c6cea-d701-46f6-848a-cadd53a5bd10_007.wav,614e9151,28,overlapping speech
+22a6a7be-7ee6-4714-bbe7-bc92c79d4039,595b4472-c8e5-4722-8d20-9b686e18e905_359.wav,614e9151,51,overlapping speech
+64a5713d-50b4-4123-b7e4-1483d5b4ccb3,2019d7cc-cbe2-4f08-a823-f5d3ce4237d5_080.wav,614e9151,6,no place where every pass agrees on word and timing
+49553460-f6c9-4b3e-aeaf-b6753d8b210a,d54ad42e-d0ef-4b8b-8c64-a4a3d0e3cfb9_516.wav,614e9151,7,no place where every pass agrees on word and timing
+e47eb5bc-e26d-4878-a80f-fec2ba63ab19,117facdd-bca3-4150-8e7d-f721d3a2b469_063.wav,614e9151,6,no place where every pass agrees on word and timing
+b16c281a-a0fe-460a-91f9-e0337e2b8ebe,afb168e5-43b2-49e0-972b-1ce3691b5738_694.wav,614e9151,0,no segments (entirely synthetic / discarded)
+eb6284e7-722a-4026-bf0c-da3ffaf41f5d,f240f021-3d23-4bc0-9860-9b70af0951fa_069.wav,614e9151,3,no place where every pass agrees on word and timing
+259e0d66-e532-4772-ba45-f076852ef43a,13d761ea-1d53-4867-af26-05cb9ff54742_026.wav,614e9151,13,overlapping speech
+65fd58d6-3e85-4c16-93c5-199903acbe37,8820f566-79c6-4a1a-80a0-b3e1279bb72d_720.wav,614e9151,7,overlapping speech
+7828d31d-97bc-4626-bab8-e294461225ae,7032a891-05c2-4f3f-a8f8-ae9ff64a46d5_025.wav,614e9151,12,no place where every pass agrees on word and timing
+f1d49f78-a86d-41a9-9bd3-4642877ef219,c12b8b21-8698-42f4-bbd0-e16b52b52194_014.wav,614e9151,77,overlapping speech
+bf9a3e22-fa4b-42fb-868c-19d2a7f487c0,b14d0ab0-b51f-44b9-9299-8ef52f8155e8_034.wav,614e9151,3,no place where every pass agrees on word and timing
+bd5161e2-05c4-4ba1-b1c8-e73a2270b1a5,2445810b-a73d-41ad-96c1-57791fffbb2c_121.wav,614e9151,106,overlapping speech
+771f1282-f685-4f4b-879a-5ee2a23dc7bd,fce87952-7364-48a5-b412-f7ed96a032e7_1678.wav,614e9151,67,overlapping speech
+652f9102-0589-4171-b0df-87b8f69e79fd,70d9002b-722f-4a06-85a5-d2618c4511ea_258.wav,614e9151,16,no place where every pass agrees on word and timing
+e52b4fcb-2a2e-4d8a-b7be-e81c7b3dcbf8,36e2ba71-f15a-4120-bb62-c69905dddf9b_054.wav,614e9151,1,no place where every pass agrees on word and timing
+97ffd963-0324-450b-96e6-2c4ca44d5221,426207da-7f48-412b-b2fb-be0988d1482a_334.wav,614e9151,50,no place where every pass agrees on word and timing
+e331ae24-b233-43ea-aa70-108dc36d775c,024580b3-e21d-4bd6-a29b-1a66be88303a_199.wav,614e9151,9,no place where every pass agrees on word and timing
+a4547b37-0835-4ffd-9180-61734c4334d5,267b77c4-24b0-4212-a61a-12bea261685d_067.wav,614e9151,7,no place where every pass agrees on word and timing
+d5ee9478-78e0-4cb6-8a0b-803ea3b1f17e,f9659468-793b-4eb1-919c-d9427a58d41a_004.wav,614e9151,5,no place where every pass agrees on word and timing
+e80f80d2-d958-4308-bdbb-b74a6eddb378,ac097ba9-a45f-4fc3-a383-63864d5f2bdb_001.wav,614e9151,63,no place where every pass agrees on word and timing
+90829346-7d83-4021-ae3b-e62a5a9c2735,1145b05f-f328-43e3-ae76-c19e19f8cd76_034.wav,614e9151,5,no place where every pass agrees on word and timing
+76cac5d6-c38b-448c-9950-90dee5b19861,15b2ad39-932f-4a59-be83-51344cb55875_008.wav,614e9151,8,no place where every pass agrees on word and timing
+89359383-b29c-4ea5-b26d-47e8af4a7a50,5f95c204-35be-4a97-8577-57375f1baf04_015.wav,614e9151,4,no place where every pass agrees on word and timing
+0f9ec44c-9ec1-48b0-8180-f353ff87d211,26b05445-faed-4c13-859a-7228c36d4ad4_401.wav,614e9151,3,no place where every pass agrees on word and timing
+957f6380-878d-4fed-a65a-4eec555b476c,57e82cfe-d966-4680-94bc-95c1a0c29147_120.wav,614e9151,5,no place where every pass agrees on word and timing
+77802e8d-a0cb-4887-9252-bc37ecba6aad,3acafba8-1ef6-4861-9810-2d28e3653bb2_091.wav,614e9151,3,no place where every pass agrees on word and timing
+73e3bbbf-28d1-4f13-9610-14abac079c14,688d8197-8fad-40df-9942-157e87005c99_198.wav,614e9151,42,overlapping speech
+d0970c83-1cc8-4995-9663-6d47100e86c2,62da2b55-c1c8-4db3-9462-b3f73a4265d5_061.wav,614e9151,0,no segments (entirely synthetic / discarded)
+873f8c99-2cb1-478c-8d8b-84cc9a31dca2,fe03645e-f335-43bc-9fde-8f7663723a70_074.wav,614e9151,9,no place where every pass agrees on word and timing
+b0bb28ee-0a79-43bd-9bfe-4e63cf6c70d2,694c623e-0fb3-4d26-a5b7-6a6e37aa0af3_133.wav,614e9151,2,no place where every pass agrees on word and timing
+fa20de9a-2371-4a07-aa03-096c33b9bbae,de816246-7ef4-44e6-a87c-20b0dd3ab0c4_1044.wav,614e9151,76,overlapping speech
+2ccfbbbf-ab5a-494b-bfe1-46b2201fae03,32f855d6-6923-4884-92f3-b1f69f5167e4_428.wav,cb32dcec,2,no place where every pass agrees on word and timing
+261da7d2-9ba3-4ccf-8cfa-b13a24b2478f,ef036592-ae05-4b2f-b125-80a6a631ccdc_159.wav,cb32dcec,6,no place where every pass agrees on word and timing
+9b6e1397-359f-4d18-86aa-ee067b45c67f,9e229430-7de8-45be-bd81-3658dfd49e5a_067.wav,f37a5b11,5,no place where every pass agrees on word and timing
+e415d3eb-d2b5-4bad-99ed-72217a1f268d,f2439831-3ef8-47ef-a22b-c79b8c813f09_017.wav,f37a5b11,93,overlapping speech
+e891e99d-fc83-46dc-9a2a-c205394ce156,ceb36445-4ab5-4b22-9ba9-fc3b4b0d2163_113.wav,f37a5b11,74,no place where every pass agrees on word and timing
+354960dc-569f-4898-9297-9f25df5e3aaf,c5bf3ea6-d4e7-4d05-8be0-521a141c9e39_426.wav,f37a5b11,7,no place where every pass agrees on word and timing
+1ed9f4e3-673e-45c6-8f11-e091caf831b1,92bef4a0-839e-4f89-b7d6-1b9eee536efa_824.wav,f37a5b11,78,overlapping speech
+806ccaa2-5b4f-4f7f-a50d-a21f890b5e26,8817d68f-ed5d-46ec-9a7d-89911d50e8ec_326.wav,f37a5b11,0,no segments (entirely synthetic / discarded)
+10c1cf8e-127a-456e-bbdd-100a31380e4c,70d9002b-722f-4a06-85a5-d2618c4511ea_284.wav,f37a5b11,154,overlapping speech
+72f19f14-85bb-42a9-bd96-930a07ba73f7,14e4b15b-b828-438f-b962-65e103f7baa0_365.wav,f37a5b11,2,no place where every pass agrees on word and timing
+d1cf8931-4710-4d90-9ac7-f0fa64f6c398,29275d71-cce3-45c6-a271-cd923305a6b6_000.wav,f37a5b11,3,no place where every pass agrees on word and timing
+f36f7f13-796b-49da-a438-ab66aa1c58eb,b18d1cce-db27-4513-92c7-66197b3c2af2_052.wav,f37a5b11,16,no place where every pass agrees on word and timing
+11dd04ae-1d8d-4975-97bb-43741499e8b1,f41c2578-b99f-442d-9362-cf8b4a0bba38_003.wav,f37a5b11,3,no place where every pass agrees on word and timing
+9c8065e9-c340-4eda-9a8d-89084fa2d9ee,30e4c97f-5f7e-4d4f-8586-e6f474004fde_032.wav,f37a5b11,34,overlapping speech
+6bddabef-223c-4cc6-9564-d36908b39464,1263d473-cea1-4e07-8ee8-31fb3da7942e_004.wav,f37a5b11,0,no segments (entirely synthetic / discarded)
+ef748b49-3cb6-4ca9-89e9-c9a5c8412f40,48225a8e-52e7-41c8-bb5c-d684adf12158_009.wav,f37a5b11,3,no place where every pass agrees on word and timing
+761914c7-118c-43fc-a555-ca2026141da6,ccd032d7-ba60-4d28-b843-74458fdf7b3a_1566.wav,f37a5b11,40,overlapping speech
+8f0c0687-fd0e-46e7-8af8-b6d2891cf2b1,550624b9-1fd5-4516-88d5-0dcbbe419ab1_190.wav,f37a5b11,1,no place where every pass agrees on word and timing
+ae51125d-56bc-42e2-a459-5ec0e211f955,a2ef77c6-00a9-487d-8057-67ce120e3c7c_984.wav,f37a5b11,75,overlapping speech
+6e02eef1-1710-4a86-87c6-0c343f0e0573,143d248e-2b74-49e4-a3cd-680cead955b6_053.wav,f37a5b11,11,no place where every pass agrees on word and timing
+aea0088d-ca65-4d06-8696-468717d573d2,9bb3d5db-df92-47ad-9e4a-c7ce1ccb2605_000.wav,f37a5b11,88,overlapping speech
+9c13142b-aa76-4054-946d-b642fc81e809,18b3cfb1-2b7a-47c9-be06-1c8239b0762e_064.wav,f37a5b11,33,overlapping speech
+063e8042-842d-4e2a-8b0d-5433310db236,2445810b-a73d-41ad-96c1-57791fffbb2c_117.wav,f37a5b11,71,overlapping speech
+7e5be93c-94bf-4119-8e56-786b01279621,9e2e2395-93ab-4e9c-abd0-d819539b5233_107.wav,f37a5b11,52,no place where every pass agrees on word and timing
+f0bdab13-8d29-41f6-bf07-a159a250324b,3363a856-bccb-4609-b4d4-8401d43f5f4b_114.wav,f37a5b11,5,no place where every pass agrees on word and timing
+11a0b58e-80f8-47ba-854f-1ecf0476ca9f,d6a15f84-6c1a-4fe7-a278-6128f1e33bf4_563.wav,f37a5b11,86,overlapping speech
+b117fa63-a6b6-4417-b6db-85c137f9072a,aeb2ee84-b83c-4785-9978-1d56560f83a7_017.wav,f37a5b11,35,overlapping speech
+317d0585-fa2c-4bda-8038-468280480514,410a0d3c-13f9-4a2a-9627-fc5b1b80de15_1004.wav,f37a5b11,40,no place where every pass agrees on word and timing
+ae138577-1ea5-49b6-8a1d-bf0efb103588,8aad3728-dc8d-4c2b-8c98-342c8b53241e_103.wav,f37a5b11,7,no place where every pass agrees on word and timing
+d247d2ea-01c7-4645-b531-cba1af6a5118,cb59d164-68a8-4bb6-a32b-30c8f90e65ef_222.wav,f37a5b11,88,overlapping speech
+081a1e14-eb87-4be6-9178-5a1f6eb95b57,12f69e66-a438-4363-b973-872c35ecf1bf_152.wav,f37a5b11,43,no place where every pass agrees on word and timing
+42a2c8ea-7724-41d3-8e8a-4a6641f5a869,31998cae-d68c-4370-866e-f7044b5e3cd9_1620.wav,f37a5b11,33,overlapping speech
+8d3873a1-9907-475d-b48f-f285fe1ef5c4,9e2af1ef-4c62-4fd3-aa11-6a88c32ddd4a_3789.wav,f37a5b11,16,overlapping speech
+acc7a5f7-d7e5-4bea-8e72-f060e934b14e,707a499d-9680-4f9b-bb5f-ff6c2e61c6db_052.wav,f37a5b11,130,overlapping speech
+c59c4b9c-54e0-4249-95e2-93d25c3af604,d790f320-855e-4d50-9ab0-4e948e14627f_1221.wav,f37a5b11,8,no place where every pass agrees on word and timing
+e9248e94-a908-467f-b6e5-e3fc0c9e44e7,11aecf4b-8550-4d66-ace6-1b9a6b1308c6_324.wav,f37a5b11,3,no place where every pass agrees on word and timing
+2f888b39-4f0b-46a7-b3cd-97f33ad2f093,696aad65-be87-416a-a61f-6d166bcfe220_770.wav,f37a5b11,104,overlapping speech
+f64a964d-8891-4a54-a7df-3e632be502bc,aaf01660-208c-459e-940b-9515fee8ba97_207.wav,f37a5b11,4,no place where every pass agrees on word and timing
+596a2da5-b366-44d9-9b11-a146043d6af1,502978f8-a10b-4fb4-a8d6-f1cec8fb9855_084.wav,f37a5b11,3,no place where every pass agrees on word and timing
+00309675-4663-4ac7-8d76-7e01fa4f2370,9ec2dd48-1810-4cff-879b-c9870bdcb357_571.wav,f37a5b11,14,no place where every pass agrees on word and timing
+9dd2bec6-e7e7-4a2a-96db-e626c98e2f06,db32c0f8-88d0-487f-ae41-533bd2b12b7a_043.wav,f37a5b11,99,no place where every pass agrees on word and timing
+382c02ff-d0ab-409f-bf73-726687dbfab2,060d46d2-8b4f-4202-9194-50d751be0cd1_129.wav,f37a5b11,40,overlapping speech
+ce0abc74-9c14-4a20-8e30-024240d0cf0b,cfb22a31-451f-494b-adb8-ad2117209b60_200.wav,f37a5b11,1,no place where every pass agrees on word and timing
+26190c5c-843a-4ed9-8de6-2e44e6e764db,6a1fcc3a-506c-403d-a2b9-4ad1a8d89d85_229.wav,f37a5b11,0,no segments (entirely synthetic / discarded)
+8ce42e49-51b6-4ad6-8654-c7b149a7bb4c,ccf292ae-eb6e-4649-8883-cb83936dac3f_020.wav,f37a5b11,23,no place where every pass agrees on word and timing
+33802745-9550-4531-b4f5-50ebcbebeeca,174e1135-1db0-44cb-9ee8-8499a1af1801_012.wav,f37a5b11,29,no place where every pass agrees on word and timing
+ac3b55ef-d492-434c-9719-1bfef7f28d1c,bbaf95f1-1ac3-4e81-b3cd-deb83766e060_661.wav,f37a5b11,32,no place where every pass agrees on word and timing
+84a5377e-3440-41d1-8c50-e4598a0d9e7f,3ab73215-a963-483a-a752-1f16f92f2d20_149.wav,f37a5b11,6,no place where every pass agrees on word and timing
+ba5dd7a6-f3fc-4c81-9c45-35f9aecec3a2,c9fb25e4-c947-4147-bb2a-8510d58f5b1a_794.wav,f37a5b11,8,no place where every pass agrees on word and timing
+e4f6dca8-9ba7-4341-9817-6e56361fc949,ba3a7e26-5115-47ae-9bd7-da325eccc2d5_118.wav,f37a5b11,6,no place where every pass agrees on word and timing
+a4ee0b45-fde8-4233-b7f4-4a39d71cb039,aa3bd6f5-1910-40c2-a7eb-0442ffd869cb_1762.wav,f37a5b11,4,no place where every pass agrees on word and timing
+0ba521ad-c0de-4a08-9fc5-005eb01ef1e1,1a38ac29-c6ec-4a67-a42d-5714e2c8dc76_008.wav,f37a5b11,4,no place where every pass agrees on word and timing
+51c24a91-3a45-46fb-b041-dd5d22afb129,826e198a-6155-46aa-94c1-ac5c479c06a5_232.wav,f37a5b11,4,no place where every pass agrees on word and timing
+554cafdb-091b-4f2d-a3fb-7fb1e303a3d3,814a8b3c-de20-43be-a88e-3ebe169ddbba_090.wav,f37a5b11,12,overlapping speech
+c5e98719-5a4b-49c9-aaa9-b474cdecafbf,8d890241-63b4-4c7f-9d5d-0a528e8b3239_040.wav,f37a5b11,6,no place where every pass agrees on word and timing
+91f45a77-2c73-431b-95cd-b539ddc052b1,c9fb25e4-c947-4147-bb2a-8510d58f5b1a_1400.wav,f37a5b11,12,no place where every pass agrees on word and timing
+77f2401c-5e53-4a00-842a-d230ead141f2,196d1dc3-3d53-4cb7-b98d-871dd57eae78_167.wav,f37a5b11,3,no place where every pass agrees on word and timing
+d16be4b7-8028-4951-9cf2-47901804c4b6,bf833e56-83dd-4b5e-9075-3ec41ed696b9_035.wav,f37a5b11,26,no place where every pass agrees on word and timing
+fd4ae8ad-5d32-47f7-83d3-b9f0cc0f99b5,c65c1e3f-ca53-4060-a7ff-b439c7225e54_068.wav,f37a5b11,12,no place where every pass agrees on word and timing
+da19201b-bc3c-4965-ab50-518c345fec7b,95b0228e-ce63-40d2-9a39-d2c55a736ad8_001.wav,f37a5b11,39,no place where every pass agrees on word and timing
+a70010fd-4e63-418d-88cb-f7ab5f6498b5,c0d92085-2663-4ad5-ac53-9ac19fa77802_278.wav,f37a5b11,2,no place where every pass agrees on word and timing
+c0e1dc37-9baa-49ff-9561-d8e2109e7834,442914cb-5a47-46ed-9a37-f45bd2da4bdd_029.wav,f37a5b11,5,no place where every pass agrees on word and timing
+10e1223c-3cb7-4c0a-92f9-37fc9e581773,98224fc6-8d02-4948-b83d-8a8c59ecab23_338.wav,f37a5b11,5,no place where every pass agrees on word and timing
+ebd69690-24c8-4a16-bdef-a9e0b4f2a9c5,869b7378-c5d8-4992-820e-f85eb4147806_041.wav,f37a5b11,9,no place where every pass agrees on word and timing
+bc541f8f-0e75-49d8-9a23-d6b16d14da1b,4ee11d0a-d8e6-4b0a-b19c-e982bd934520_327.wav,f37a5b11,7,no place where every pass agrees on word and timing
+c85e3c04-2eda-4090-9144-bbd944fc07a9,2d0e5438-864c-42f5-b0bd-30e80fbbcd92_012.wav,f37a5b11,74,overlapping speech
+abedc69b-44d2-4751-98fc-e440d243e7c5,cb82d2e3-f115-478e-b0cb-1836eef32113_002.wav,f37a5b11,49,overlapping speech
+84ce4243-3214-4c5d-bc46-420e8e7974aa,1cd69934-d193-4ada-9337-d45c47381c9b_329.wav,f37a5b11,57,overlapping speech
+a65ea7c1-ad78-4d41-89df-1fc57daae54b,d5535235-aeec-40ac-9cc3-51230be5dfb7_043.wav,f37a5b11,1,no place where every pass agrees on word and timing
+08179303-dc70-4317-9c9a-6feb5710418e,87cbcb19-e15b-4d93-a756-f9b13edff0d7_578.wav,f37a5b11,11,no place where every pass agrees on word and timing
+25f12c79-05eb-424b-baa7-750c914e7bd2,35deb772-a512-49e1-9d91-bee67955f243_619.wav,f618854c,42,overlapping speech
+ed5ffe7f-e325-4f72-af36-27c3fe3ec1de,7d577923-7997-4f69-8cf4-c3705abac9bc_333.wav,f618854c,2,no place where every pass agrees on word and timing
+bd75dd98-3198-484d-aa37-043cd39bd18a,4b7f31bb-eac1-4195-a3cf-f1fa3a90c42c_035.wav,f618854c,33,no place where every pass agrees on word and timing
+a01ff15f-a937-4f75-85b5-5335f0c87320,a01b9d43-d82e-4ec8-a618-df90c9a7e51e_071.wav,f618854c,2,no place where every pass agrees on word and timing
+48630867-d430-4c9c-b631-30685b2770ff,eb9900e0-0d5e-4947-beb5-97bd8cdae9cd_024.wav,f618854c,1,no place where every pass agrees on word and timing
+a8ea6ce1-e749-4031-972e-618b0b250b7e,5a4cb7ab-0276-45d2-a60c-88b5ad66256e_363.wav,f618854c,4,no place where every pass agrees on word and timing
+0521f0ec-7f51-4863-83ff-56831ab8a86a,1d5b2913-7d3b-4988-919d-6070a8f58491_302.wav,f618854c,16,no place where every pass agrees on word and timing
+e562e119-b04a-4363-9fbd-7306f1f64f00,1c9de1a3-3599-4bb4-8509-415eafc5ea49_539.wav,f618854c,31,no place where every pass agrees on word and timing
+29f78563-6fde-467b-aaf2-4d28e5d4267d,0527fb2d-281d-4ad4-a40e-7625f96bb1e1_889.wav,f618854c,49,overlapping speech
+1e4c8901-0174-42f3-bbbc-1621a1dd18de,5c198529-6086-4b6b-bee6-22aa088b3049_660.wav,f618854c,17,overlapping speech
+d4518701-821f-4bda-891e-c41c68e566e3,abe7e1db-ba0e-464e-ac6c-48d978d33420_010.wav,f618854c,21,no place where every pass agrees on word and timing
+578ea204-9571-4df7-83de-b1f833226aab,f1389f90-44f5-4457-b4ee-8f241870fd62_036.wav,f618854c,5,no place where every pass agrees on word and timing
+96eb6671-8931-47c6-a381-08273f3d0228,933f73f7-b2e3-4b74-96a8-24cdd4994d75_027.wav,f618854c,18,overlapping speech
+57999954-897d-442f-b6be-e9be365237fc,0c465881-465f-4387-a765-b412911c2f9d_339.wav,f618854c,70,overlapping speech
+7d3bbaef-8084-48fa-873d-ca0c72a43e61,022e3575-f50c-411b-af43-2195802d9d48_150.wav,f618854c,73,overlapping speech
+8414fb65-533d-4705-9d89-4f48cac287c0,e3520812-2341-4948-8d76-f9b7074145f6_002.wav,f618854c,0,no segments (entirely synthetic / discarded)
+51982613-ec79-46fc-b8a9-d3670dd9278c,cb849862-4cc0-429c-aea7-070e0144018f_013.wav,f618854c,0,no segments (entirely synthetic / discarded)
+69a868df-8493-4814-af06-a8a32fcab06b,3a044023-d13f-49b9-86cd-5094baf93320_013.wav,f618854c,5,no place where every pass agrees on word and timing
+86387f4a-ac1b-472e-959b-0a6f967f18ea,c1b7ad41-6037-464c-8483-750bb5ee1d94_018.wav,f618854c,6,no place where every pass agrees on word and timing

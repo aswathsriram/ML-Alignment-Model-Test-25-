@@ -47,7 +47,10 @@ from wordfreq import zipf_frequency
 
 HERE = pathlib.Path(__file__).resolve().parent
 SEED = 20261122
+LANG = "es"                # wordfreq language; the tables below are the Spanish ones (build_portuguese_strict.py swaps them)
 PLAIN = re.compile(r"[a-zñáéíóúü]+")
+TARGET = re.compile(r"[a-zñ]{4,}")          # a word that may be deleted / swapped: plain letters, no accent mark
+LETTERS = "abcdefgijlmnñoprstuv"            # letters a wrong word may get (none that only change the spelling)
 FILLERS = set("eh em ehm mmm mm m ah oh mjm ajá aja hmm hm uh um uf uy ay bah ey ejem".split())
 FUNC = "y de a en que la el los las un una con por para del se lo es no".split()
 AGREE_EDGE = 0.03          # passes must agree on a moved edge within this (s)
@@ -74,7 +77,14 @@ ADDED_ACCENT = {"fue": "fué", "fui": "fuí", "dio": "dió", "vio": "vió", "ti"
 NUMBERS = set("""cero uno una dos tres cuatro cinco seis siete ocho nueve diez once doce trece catorce quince veinte treinta
 cuarenta cincuenta sesenta setenta ochenta noventa cien ciento mil millón millones primero primera segundo segunda""".split())
 STRIP = str.maketrans("áéíóú", "aeiou")
-ACUTE = dict(zip("aeiou", "áéíóú"))
+ACCENT_MARKS = "áéíóú"                      # accent marks an accent error may drop
+ACCENT_MIN_LEN = 4                          # shortest word an accent is dropped from
+REPEAT_PENALTY = 0.0                        # lowers a text mistake's rank each time its word was already used
+USED = collections.Counter()
+PAIR_AVOID = set()                          # (word, replacement) pairs a wrong-word mistake never uses
+UNIQUE_IN_EVERY_PASS = False                # a deleted word is said once in every pass (off: once in the reference
+                                            # pass, which reproduces the delivered Spanish file; 1 of its 218 deletes differs)
+ACCENTED = {"a": "á", "e": "é", "i": "í", "o": "ó", "u": "ú"}      # letter -> its accented forms
 FINAL_ACCENT_OK = set("aquí allí allá ahí así café perú josé bogotá panamá sofá menú".split())
 # never deleted / swapped: proper names and brands (spelling and capitals vary), words with two accepted spellings,
 # and words that sound like another word or like two words (every candidate word of this delivery was read through)
@@ -93,7 +103,12 @@ def secs(x):
 
 
 def zipf(w):
-    return zipf_frequency(w, "es")
+    return zipf_frequency(w, LANG)
+
+
+def drop_accent(w):
+    """The word with its accent mark dropped (Spanish words carry one at most)."""
+    return w.translate(STRIP)
 
 
 def special(w):
@@ -256,7 +271,9 @@ def missing_candidates(F):
         w = F.words[k]
         if not F.stable(k) or not F.clean(k) or w in FILLERS or w in NUMBERS or w in AVOID or F.count[w] != 1:
             continue
-        if not re.fullmatch(r"[a-zñ]{4,}", w) or zipf(w) < 4.0 or w in DIACRITIC or homophone_risk(w) or accent_twin(w) or foreign(w):
+        if UNIQUE_IN_EVERY_PASS and any(sum(x["w"] == w for x in v) != 1 for v in F.V):
+            continue                                            # said once in every pass, not only in the reference
+        if not TARGET.fullmatch(w) or zipf(w) < 4.0 or w in DIACRITIC or homophone_risk(w) or accent_twin(w) or foreign(w):
             continue
         if k not in F.machine_ok or any(x in FILLERS or x in AVOID or zipf(x) < 3.3 for x in (F.words[k - 1], F.words[k + 1])):
             continue                                            # ordinary words either side (no names, fillers, rare terms)
@@ -302,11 +319,11 @@ def accent_candidates(F):
         w = F.words[k]
         if not F.stable(k) or not F.clean(k) or w in DIACRITIC:
             continue
-        if re.search("[áéíóú]", w) and len(w) >= 4:
-            t = w.translate(STRIP)
-            if t in DIACRITIC or zipf(w) < 4.3 or zipf(w) - zipf(t) < 0.75:
+        if any(ch in ACCENT_MARKS for ch in w) and len(w) >= ACCENT_MIN_LEN:
+            t = drop_accent(w)
+            if not t or t in DIACRITIC or zipf(w) < 4.3 or zipf(w) - zipf(t) < 0.75:
                 continue                                        # the bare form must be only a misspelling
-            if w[-1] in "áéíóú" and w not in FINAL_ACCENT_OK:
+            if w[-1] in ACCENT_MARKS and w not in FINAL_ACCENT_OK:
                 continue                                        # habló / hablo, estará / estara: both are verb forms
             out.append({"type": "ACC", "k": k, "aff": {k}, "text": t, "how": "accent dropped", "score": 2.5 + zipf(w) / 10})
         elif w in ADDED_ACCENT:
@@ -317,7 +334,7 @@ def accent_candidates(F):
 
 def accent_twin(w):
     """True when the same letters with one accent are a common word too (quedo / quedó, trabajo / trabajó)."""
-    return any(zipf(w[:i] + ACUTE[ch] + w[i + 1:]) >= 4.0 for i, ch in enumerate(w) if ch in ACUTE)
+    return any(zipf(w[:i] + a + w[i + 1:]) >= 4.0 for i, ch in enumerate(w) for a in ACCENTED.get(ch, ""))
 
 
 def foreign(t):
@@ -326,7 +343,7 @@ def foreign(t):
 
 def misspelling(t):
     """True when a commoner word is the same letters with an accent (habia < había): not a real replacement."""
-    return any(zipf(t[:i] + ACUTE[ch] + t[i + 1:]) > zipf(t) for i, ch in enumerate(t) if ch in ACUTE)
+    return any(zipf(t[:i] + a + t[i + 1:]) > zipf(t) for i, ch in enumerate(t) for a in ACCENTED.get(ch, ""))
 
 
 def word_candidates(F):
@@ -335,16 +352,16 @@ def word_candidates(F):
         w = F.words[k]
         if not F.stable(k) or not F.clean(k) or k not in F.machine_ok or w in NUMBERS or w in DIACRITIC or w in AVOID:
             continue
-        if not re.fullmatch(r"[a-zñ]{4,}", w) or zipf(w) < (4.3 if len(w) >= 5 else 4.8) or homophone_risk(w) or F.dur(k) < 0.25:
+        if not TARGET.fullmatch(w) or zipf(w) < (4.3 if len(w) >= 5 else 4.8) or homophone_risk(w) or F.dur(k) < 0.25:
             continue
         if accent_twin(w) or foreign(w):
             continue
         alikes = sound_alikes(w)
         best = None
         for i in range(len(w) - 2):                             # never the last two letters (gender / number / mood)
-            for c in "abcdefgijlmnñoprstuv":
+            for c in LETTERS:
                 t = w[:i] + c + w[i + 1:]
-                if t == w or t in alikes or t in F.count or t in DIACRITIC or t in NUMBERS or t in AVOID:
+                if t == w or t in alikes or t in F.count or t in DIACRITIC or t in NUMBERS or t in AVOID or (w, t) in PAIR_AVOID:
                     continue
                 if (w[i] in "aeiou") != (c in "aeiou") or w[i + 1:] == "mos":
                     continue                                    # vowel for vowel, consonant for consonant; not -amos / -emos
@@ -385,7 +402,7 @@ def choose(F, rng, have, bands, shapes):
     cands = {t: g(F) for t, g in GENERATORS.items()}
     for cs in cands.values():
         for c in cs:
-            c["rank"] = c["score"] + rng.random() * 0.6
+            c["rank"] = c["score"] + rng.random() * 0.6 - REPEAT_PENALTY * USED[(c["type"], F.words[c["k"]])]
     tb, ts = sum(bands.values()) + 1, sum(shapes.values()) + 1
     want_band = min(BANDS, key=lambda b: bands[b[0]] / tb)
     for c in cands["BND"]:                                      # favour the band and the shape that are behind
@@ -450,7 +467,8 @@ def finish(F, c, rng, bands):
     return plant, note, row
 
 
-def main(src, template):
+def main(src, template, out_dir=HERE, prefix="es_ES"):
+    out_dir = pathlib.Path(out_dir)
     tpl = json.loads(pathlib.Path(template).read_text(encoding="utf-8"))
     have, bands, shapes = collections.Counter(), collections.Counter(), collections.Counter()
     decoys, review, dropped = [], [], []
@@ -469,6 +487,7 @@ def main(src, template):
             plant, note, row = finish(F, c, rng, bands)
             row["agree"] = c.get("agree_ms", "")
             have[c["type"]] += 1
+            USED[(c["type"], F.words[c["k"]])] += 1
             if c["type"] == "BND":
                 shapes[(c["edge"], c["sign"])] += 1
             built.append((plant, note, row))
@@ -488,9 +507,9 @@ def main(src, template):
                            "action": plant["action"]})
         decoys.append({"decoy_ref": item["task"], "work_item_id": item["wid"], "file_name": item["task"], "plants": plants})
     out = {"format": tpl["format"], "instructions": tpl["instructions"], "decoys": decoys}
-    (HERE / "es_ES_decoy_plants.json").write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    for name, rows in (("es_ES_decoy_review.csv", review), ("es_ES_dropped.csv", dropped)):
-        with open(HERE / name, "w", newline="", encoding="utf-8-sig") as fh:
+    (out_dir / f"{prefix}_decoy_plants.json").write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    for name, rows in ((f"{prefix}_decoy_review.csv", review), (f"{prefix}_dropped.csv", dropped)):
+        with open(out_dir / name, "w", newline="", encoding="utf-8-sig") as fh:
             wr = csv.DictWriter(fh, fieldnames=list(rows[0])); wr.writeheader(); wr.writerows(rows)
     per = collections.Counter(len(d["plants"]) for d in decoys)
     print(f"{len(decoys) + len(dropped)} work items -> {len(decoys)} decoys, {len(dropped)} dropped | "

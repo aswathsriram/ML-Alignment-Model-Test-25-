@@ -54,3 +54,6 @@ pip install wordfreq
 python spanish_decoys_2026-11-22/build_spanish_strict.py <deliveries.zip|folder>   # seeded: same output every run
 python spanish_decoys_2026-11-22/validate.py <deliveries.zip|folder>
 ```
+
+The builder takes its language tables from the top of the file; `portuguese_decoys_2026-11-22/` reuses it with the
+Portuguese ones. The Spanish output is unchanged by that (checked byte for byte).
