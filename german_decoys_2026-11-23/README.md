@@ -10,6 +10,24 @@ the updated template (`../spanish_decoys_2026-11-22/alignment-decoys-template.js
 | `de_DE_dropped.csv` | The 217 work items left out, each with its reason |
 | `validation_report.txt` | Output of the independent validator: every mistake re-checked against the template rules |
 
+## Second batch (added the same day)
+
+A second delivery zip brought 126 more work items (batches 7d1a00a0 / 867fb4dd, none of them in the first zip).
+They were built on their own with the same rules, so the first batch's decoys stay exactly as delivered:
+
+| File | What it is |
+|---|---|
+| `de_DE_all_decoy_plants.json` | **Both batches in one upload: 360 decoys, 629 mistakes** (the first 284 are `de_DE_decoy_plants.json` unchanged) |
+| `de_DE_part2_decoy_plants.json` | Only the second batch: 76 decoys, 130 mistakes — upload this one if the first file is already in |
+| `de_DE_all_decoy_review.csv`, `de_DE_all_dropped.csv` | Review sheet and dropped list for both batches (also per part) |
+| `validation_report_all.txt`, `validation_report_part2.txt` | Validator output for the combined file and for the second batch |
+
+Both batches together: 627 work items, 360 decoys (269 with two mistakes, 91 with one), 267 dropped (234 with no
+transcript, 33 with no place where every pass agrees). Mistakes: boundary 377 (minor 126, major 127, critical 124),
+missing word 93, accent 66, hallucinated word 59, wrong word 34.
+
+The sections below describe the first batch.
+
 ## What is planted
 
 499 mistakes: two per file in 215 files, one in 69 (clips too short for two mistakes 3 words apart, or with a single
@@ -56,4 +74,7 @@ timing.
 pip install wordfreq
 python german_decoys_2026-11-23/build_german_strict.py <deliveries.zip|folder>      # seeded: same output every run
 python spanish_decoys_2026-11-22/validate.py <deliveries> german_decoys_2026-11-23 de_DE "a-zäöüß" "a-z" all
+# second batch, then both in one file
+python german_decoys_2026-11-23/build_german_strict.py <deliveries_part2> spanish_decoys_2026-11-22/alignment-decoys-template.json de_DE_part2
+python german_decoys_2026-11-23/combine_german.py
 ```

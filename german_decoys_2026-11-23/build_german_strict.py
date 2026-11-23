@@ -19,8 +19,10 @@ exactly one letter. This file only swaps in the German language tables:
                  written as two (zurzeit, sodass, kennenlernen — the guideline leaves that open); number words; words
                  that sound like another spelling (das / dass, seit / seid, mehr / meer, wieder / wider, stadt / statt).
 
-Run    : pip install wordfreq ; python german_decoys_2026-11-23/build_german_strict.py [deliveries.zip|folder]
-Output : de_DE_decoy_plants.json, de_DE_decoy_review.csv, de_DE_dropped.csv (next to this script)
+Run    : pip install wordfreq ; python german_decoys_2026-11-23/build_german_strict.py [deliveries.zip|folder] [template] [prefix]
+Output : <prefix>_decoy_plants.json, <prefix>_decoy_review.csv, <prefix>_dropped.csv next to this script (prefix: de_DE)
+The second batch (deliveries_part2/, 126 work items) is built on its own as de_DE_part2 so that the first batch's
+decoys stay exactly as delivered; combine_german.py writes both into de_DE_all_decoy_plants.json.
 """
 import pathlib, re, sys
 
@@ -119,13 +121,15 @@ okay zuhause nachhause soviel sowieso genauso ebenso nochmal erstmal kennenlerne
 deinen deiner seines meines deines ihres unserem unserer ihnen innen dies aller wegen weder nein lang lange
 wahl wal mahl
 katharina lena siemens williams schleswig friedrich sachsen hans peter anhalt schweden weber kiel heide
-geil dumme benannt""".split())
+geil dumme benannt
+apple city deal franken indien foto solange solchen island irland polen denen deren somit womit""".split())   # 2nd batch
 # near-synonyms: either could be read as right
-eng.PAIR_AVOID = {("gerechnet", "berechnet"), ("benutzt", "genutzt"), ("bezahlt", "gezahlt"), ("erhielt", "erzielt")}
+eng.PAIR_AVOID = {("gerechnet", "berechnet"), ("benutzt", "genutzt"), ("bezahlt", "gezahlt"), ("erhielt", "erzielt"),
+                  ("behalten", "gehalten")}
 eng.drop_accent = drop_accent
 eng.sound_alikes = sound_alikes
 
 if __name__ == "__main__":
     eng.main(sys.argv[1] if len(sys.argv) > 1 else HERE / "deliveries",
              sys.argv[2] if len(sys.argv) > 2 else HERE.parent / "spanish_decoys_2026-11-22" / "alignment-decoys-template.json",
-             HERE, "de_DE")
+             HERE, sys.argv[3] if len(sys.argv) > 3 else "de_DE")

@@ -1,0 +1,1478 @@
+{
+  "format": "align-decoys/v1",
+  "instructions": [
+    "`words` is the CORRECT alignment: i = index, w = word, s / e = start / end in seconds. Never change it.",
+    "Fill each decoy's `plants` with 3–6 deliberate mistakes an aligner can only find by listening — fewer on a short clip (even one), since mistakes must stay apart. Mix timing, text and structure mistakes.",
+    "move — {\"action\":\"move\",\"word\":12,\"edge\":\"start\"|\"end\",\"shift_ms\":-300}: moves one edge of word 12. Positive = later. A neighbour touching that edge moves with it. Use 150–700 ms (150–250 subtle, 250–450 moderate, 450+ obvious). Never push an edge past the far edge of the neighbouring word (check its s / e), past the word's own other edge, before 0 or past the audio end.",
+    "overlap — {\"action\":\"overlap\",\"word\":12,\"edge\":\"end\",\"shift_ms\":250}: same as move, but the neighbour does NOT give way, so the two chips overlap (same-speaker overlap). The edge must end up inside the neighbour, and the shift be at least 150 ms: for \"end\", shift_ms between (next word's s − this e) and (next word's e − this e), and at least 150 — mind any gap between the two words.",
+    "zero — {\"action\":\"zero\",\"word\":12}: the chip collapses to zero length at its start (\"edge\":\"end\" collapses it at its end). Only on a word at least 0.15 s long.",
+    "replace — {\"action\":\"replace\",\"word\":30,\"text\":\"…\"}: the chip and the transcript say `text` instead of the word. Use it for a word substitution, homophone, spelling slip, wrong name / entity, missing or wrong accent, wrong number form, a word from the wrong language, a truncated word written in full (or a full word written truncated), or a ((guess)) written without its brackets. `text` must differ from the word — the same word again is no mistake.",
+    "replace_unintelligible — {\"action\":\"replace_unintelligible\",\"word\":31,\"text\":\"…\"}: only on a word written (()) or ((guess)): invented text where the audio is unintelligible.",
+    "delete — {\"action\":\"delete\",\"word\":40}: the word is gone from the transcript AND has no chip (a deleted word, or a dropped filler / backchannel).",
+    "remove — {\"action\":\"remove\",\"word\":40}: the word keeps its text in the transcript but loses its chip (an aligner must add it back).",
+    "absorb — {\"action\":\"absorb\",\"word\":41,\"into\":\"previous\"|\"next\"}: the word (usually a filler) is deleted and its neighbour's chip stretches over its audio.",
+    "join — {\"action\":\"join\",\"word\":7,\"count\":2}: words 7, 8 (… up to count) become one chip — joined words, or spelled letters in one chip. Only where words are separated by spaces (NOT ja_JP or zh_CN), and only when the true boundary is at least 0.2 s away from the middle of the joined chip.",
+    "split — {\"action\":\"split\",\"word\":9,\"parts\":[\"dell'\",\"uscita\"]}: one word over several chips. `parts` joined must spell the word exactly as written (no respelling — use replace for that); it is optional for a word with an apostrophe (split after it) or a hyphen (split at it); \"at\" (seconds) sets the split time of two parts.",
+    "add — {\"action\":\"add\",\"after_word\":20,\"text\":\"the\"}: an extra chip in the pause after word 20 (the pause must be at least 0.35 s). Use a word from the same sentence, e.g. a repeat of the word before.",
+    "add_noise — {\"action\":\"add_noise\",\"after_word\":20,\"text\":\"ah\"}: an extra chip over a breath, cough or other noise in a pause. It goes in the pause after word 20, or the nearest one within 3 words (at least 0.15 s between a word's e and the next word's s); optional \"start\" / \"end\" (seconds) are kept where they fall inside that pause. Pick a word followed by a pause.",
+    "set_flag — {\"action\":\"set_flag\",\"flag\":\"multi_speaker\"|\"overlap_speech\"|\"synthetic_speech\",\"value\":true}: the file is served with that answer set to `value`, the WRONG answer. `value` must be the opposite of the file's own answer in `file_answers` (synthetic_speech on non-English files only). A file whose answer is synthetic_speech true can carry no other mistake; one whose overlap_speech is true can't carry an overlap mistake.",
+    "Speakers can't be changed in word alignment, so there is no wrong-speaker mistake.",
+    "Keep mistakes at least 3 words apart — mistakes on neighbouring words are refused. Never touch a tag word (text starting with [ or <).",
+    "Mark the 1–2 most obvious mistakes \"critical\": true (must-catch). Optional \"note\" is for you only.",
+    "Instead of `plants`, a decoy may give `decoy_words`: the whole wrong alignment, [{\"w\":\"…\",\"s\":1.2,\"e\":1.5}, …] in spoken order. Every difference from `words` becomes a mistake. A word with no s / e is in the transcript with no chip; a word left out is gone from both; a retyped word changes the transcript too; extra, split and joined chips leave the transcript as it was. Copy tag words exactly. \"critical\": true on an entry makes the mistake on its word must-catch. `plants` may then hold only set_flag edits.",
+    "Return the SAME JSON with only `plants` (or `decoy_words`) filled. Do not add, remove or edit any other field."
+  ],
+  "decoys": [
+    {
+      "decoy_ref": "d405a9ca-3d1e-4d66-bf40-0234135f72c6_488.wav",
+      "work_item_id": "f1e9fd47-2c19-4e81-b8a4-dd6b4449a926",
+      "file_name": "d405a9ca-3d1e-4d66-bf40-0234135f72c6_488.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "end",
+          "shift_ms": -430,
+          "critical": true,
+          "note": "boundary mismatch · major · 'sechsundfünfzig' ends too early, the end of the word is cut off (430 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "d60e89c6-9f03-49ec-a34a-a367a5962c74_012.wav",
+      "work_item_id": "a0f8b1a5-a639-4224-a161-fef47949ff69",
+      "file_name": "d60e89c6-9f03-49ec-a34a-a367a5962c74_012.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 4,
+          "text": "die",
+          "critical": true,
+          "note": "hallucinated word · extra 'die' in the 0.40 s pause between 'mehr' and 'einhundertneunundzwanzig' (a short word of the same sentence)"
+        },
+        {
+          "action": "move",
+          "word": 10,
+          "edge": "end",
+          "shift_ms": -190,
+          "note": "boundary mismatch · minor · 'fünfundneunzig' ends too early, the end of the word is cut off (190 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "3c250b68-794c-4670-91b6-61ffab6f9b89_053.wav",
+      "work_item_id": "77b328a8-2a36-452d-b5b3-4ce7b13d870d",
+      "file_name": "3c250b68-794c-4670-91b6-61ffab6f9b89_053.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 14,
+          "critical": true,
+          "note": "missing word · 'anfang' is gone from the transcript and has no chip (spoken between 'der' and 'ist'; hole pinned by both neighbours)"
+        },
+        {
+          "action": "move",
+          "word": 29,
+          "edge": "end",
+          "shift_ms": 170,
+          "note": "boundary mismatch · minor · 'widersprüchen' ends too late, in the silence after the word (170 ms later)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "937e2c70-5a15-4fc1-83ab-97627666f8fa_056.wav",
+      "work_item_id": "db6c508a-81de-45e3-8092-92b64d9fee6d",
+      "file_name": "937e2c70-5a15-4fc1-83ab-97627666f8fa_056.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 3,
+          "text": "jahrlich",
+          "note": "accent error · umlaut dots dropped · 'jährlich' is written 'jahrlich'"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": 560,
+          "critical": true,
+          "note": "boundary mismatch · critical · 'hinzu' ends too late, in the silence after the word (560 ms later)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "80dfeb2f-523c-44c2-ab56-dec4eb3f5211_008.wav",
+      "work_item_id": "24ac6728-1b96-4a3c-b5d0-5dcd5021e17d",
+      "file_name": "80dfeb2f-523c-44c2-ab56-dec4eb3f5211_008.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 1,
+          "text": "der",
+          "critical": true,
+          "note": "hallucinated word · extra 'der' in the 1.01 s pause between 'panther' and 'im' (a short word of the same sentence)"
+        },
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "end",
+          "shift_ms": -280,
+          "note": "boundary mismatch · major · 'paris' ends too early, the end of the word is cut off (280 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "6157902e-61c0-48db-9964-09b030b9cbda_194.wav",
+      "work_item_id": "90444ae1-a6bc-470c-b86c-d4c1c45769e6",
+      "file_name": "6157902e-61c0-48db-9964-09b030b9cbda_194.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "start",
+          "shift_ms": -490,
+          "note": "boundary mismatch · critical · 'seine' starts too early, in the silence before the word (490 ms earlier)"
+        },
+        {
+          "action": "delete",
+          "word": 26,
+          "critical": true,
+          "note": "missing word · 'schwer' is gone from the transcript and has no chip (spoken between 'ist' and 'bei'; hole pinned by both neighbours)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "63620071-8f7b-4c0a-a7e6-017262b33a15_118.wav",
+      "work_item_id": "cf5891ee-0a39-4e4e-9bd0-73b0e67f39cf",
+      "file_name": "63620071-8f7b-4c0a-a7e6-017262b33a15_118.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 4,
+          "text": "nacht",
+          "note": "wrong word · one letter changed · 'macht' is written 'nacht'"
+        },
+        {
+          "action": "move",
+          "word": 15,
+          "edge": "start",
+          "shift_ms": 280,
+          "critical": true,
+          "note": "boundary mismatch · major · 'zwei' starts too late, the beginning of the word is cut off (280 ms later)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "e95dc37c-5a81-4ccc-997d-d8bf46aef1f5_127.wav",
+      "work_item_id": "bfdb5454-895d-4983-a653-fb639f868a84",
+      "file_name": "e95dc37c-5a81-4ccc-997d-d8bf46aef1f5_127.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 8,
+          "text": "reise",
+          "critical": true,
+          "note": "wrong word · one letter changed · 'leise' is written 'reise'"
+        },
+        {
+          "action": "move",
+          "word": 17,
+          "edge": "end",
+          "shift_ms": -190,
+          "note": "boundary mismatch · minor · 'mich' ends too early, the end of the word is cut off (190 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "4ca31ec3-e30f-4c4a-bf73-a649ab93282f_219.wav",
+      "work_item_id": "c024e971-6643-4dc0-a508-b5628b45e43b",
+      "file_name": "4ca31ec3-e30f-4c4a-bf73-a649ab93282f_219.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": -340,
+          "critical": true,
+          "note": "boundary mismatch · major · 'dreizehn' ends too early, the end of the word is cut off (340 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "b8b47e54-b49c-4bf0-9718-be88aaaa773b_202.wav",
+      "work_item_id": "8d8caa46-9c75-43c2-bb0a-0adb782adc20",
+      "file_name": "b8b47e54-b49c-4bf0-9718-be88aaaa773b_202.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 220,
+          "critical": true,
+          "note": "boundary mismatch · minor · 'sie' starts too late, the beginning of the word is cut off (220 ms later)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "b0936074-3089-49f7-b30a-caf41267b2e2_005.wav",
+      "work_item_id": "a5728e38-2315-4361-bbcc-574b74bbcfde",
+      "file_name": "b0936074-3089-49f7-b30a-caf41267b2e2_005.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 18,
+          "critical": true,
+          "note": "missing word · 'design' is gone from the transcript and has no chip (spoken between 'vom' and 'ein'; hole pinned by both neighbours)"
+        },
+        {
+          "action": "move",
+          "word": 41,
+          "edge": "end",
+          "shift_ms": 150,
+          "note": "boundary mismatch · minor · 'eins' ends too late, in the silence after the word (150 ms later)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "c708fc91-039c-46db-a470-e29a9320e25b_002.wav",
+      "work_item_id": "e4b01ca0-1e47-42ba-9c83-e94ec46008af",
+      "file_name": "c708fc91-039c-46db-a470-e29a9320e25b_002.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": -300,
+          "critical": true,
+          "note": "boundary mismatch · major · 'easy' ends too early, the end of the word is cut off (300 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "9b284f21-23f0-4fea-ae3a-6bf64afb6039_082.wav",
+      "work_item_id": "854f3625-a0da-4bce-81fb-6b50f10fa6c4",
+      "file_name": "9b284f21-23f0-4fea-ae3a-6bf64afb6039_082.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 3,
+          "text": "buro",
+          "note": "accent error · umlaut dots dropped · 'büro' is written 'buro'"
+        },
+        {
+          "action": "move",
+          "word": 39,
+          "edge": "end",
+          "shift_ms": 450,
+          "critical": true,
+          "note": "boundary mismatch · critical · 'abschließen' ends too late, in the silence after the word (450 ms later)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "8355415a-780e-4c99-a5fa-3b4848c9e6e8_055.wav",
+      "work_item_id": "7106e715-016f-4267-b574-28272a41b43b",
+      "file_name": "8355415a-780e-4c99-a5fa-3b4848c9e6e8_055.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 1,
+          "text": "gekommen",
+          "critical": true,
+          "note": "wrong word · one letter changed · 'bekommen' is written 'gekommen'"
+        },
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "end",
+          "shift_ms": -250,
+          "note": "boundary mismatch · minor · 'heraus' ends too early, the end of the word is cut off (250 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "75538383-9ed4-47a4-b654-8a403573eafa_123.wav",
+      "work_item_id": "61d87297-740c-47dd-b918-e2d20f53b78b",
+      "file_name": "75538383-9ed4-47a4-b654-8a403573eafa_123.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 14,
+          "text": "das",
+          "critical": true,
+          "note": "hallucinated word · extra 'das' in the 0.48 s pause between 'deaktiviert' and 'gleichzeitig' (a short word of the same sentence)"
+        },
+        {
+          "action": "move",
+          "word": 37,
+          "edge": "start",
+          "shift_ms": -150,
+          "note": "boundary mismatch · minor · 'michael' starts too early, in the silence before the word (150 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "6112b348-6db5-4b8a-b27d-257518a6b9af_091.wav",
+      "work_item_id": "bf0bc725-2f00-44af-85db-d9883de1b230",
+      "file_name": "6112b348-6db5-4b8a-b27d-257518a6b9af_091.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 13,
+          "edge": "end",
+          "shift_ms": 450,
+          "note": "boundary mismatch · critical · 'nehmen' ends too late, in the silence after the word (450 ms later)"
+        },
+        {
+          "action": "delete",
+          "word": 26,
+          "critical": true,
+          "note": "missing word · 'medikamente' is gone from the transcript and has no chip (spoken between 'für' and 'und'; hole pinned by both neighbours)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "05bd33d2-343e-46df-96c8-3b550991b8c1_062.wav",
+      "work_item_id": "3b36a0e7-8dbf-4f0f-94df-3dae118e88e5",
+      "file_name": "05bd33d2-343e-46df-96c8-3b550991b8c1_062.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 3,
+          "text": "spater",
+          "note": "accent error · umlaut dots dropped · 'später' is written 'spater'"
+        },
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "end",
+          "shift_ms": 480,
+          "critical": true,
+          "note": "boundary mismatch · critical · 'hangdong' ends too late, in the silence after the word (480 ms later)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "6afa8a77-b1b9-4f58-a1c6-5fb7c2a2f722_069.wav",
+      "work_item_id": "da5066b6-0764-4b28-a770-71dd36c449a6",
+      "file_name": "6afa8a77-b1b9-4f58-a1c6-5fb7c2a2f722_069.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 8,
+          "text": "oberflache",
+          "note": "accent error · umlaut dots dropped · 'oberfläche' is written 'oberflache'"
+        },
+        {
+          "action": "move",
+          "word": 13,
+          "edge": "end",
+          "shift_ms": -450,
+          "critical": true,
+          "note": "boundary mismatch · critical · 'planitia' ends too early, the end of the word is cut off (450 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "d8215c60-a306-4386-aa41-519cffb58bb2_215.wav",
+      "work_item_id": "b637d3b7-9401-4d1b-99eb-43e7ef9e82ac",
+      "file_name": "d8215c60-a306-4386-aa41-519cffb58bb2_215.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 420,
+          "critical": true,
+          "note": "boundary mismatch · major · 'einundzwanzig' starts too late, the beginning of the word is cut off (420 ms later)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "752b1800-8159-4d42-bdf1-7de2c1571224_6628.wav",
+      "work_item_id": "f53ddd35-6ee9-4702-9b2e-4b01e6d42b19",
+      "file_name": "752b1800-8159-4d42-bdf1-7de2c1571224_6628.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 150,
+          "critical": true,
+          "note": "boundary mismatch · minor · 'sie' starts too late, the beginning of the word is cut off (150 ms later)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "869fb132-63d2-44bb-9103-c815238c2553_003.wav",
+      "work_item_id": "1dcb9023-dcdc-41fc-8fa8-9901d3dcd2a8",
+      "file_name": "869fb132-63d2-44bb-9103-c815238c2553_003.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 370,
+          "note": "boundary mismatch · major · 'gleichgesichtig' starts too late, the beginning of the word is cut off (370 ms later)"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": -540,
+          "critical": true,
+          "note": "boundary mismatch · critical · 'mengersgrund' ends too early, the end of the word is cut off (540 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "a1ed61e6-9c17-4618-a508-43575b175864_4383.wav",
+      "work_item_id": "af7f94a6-85c1-4301-bcbc-d1c9b1aa77b5",
+      "file_name": "a1ed61e6-9c17-4618-a508-43575b175864_4383.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 0,
+          "text": "hande",
+          "note": "accent error · umlaut dots dropped · 'hände' is written 'hande'"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": -460,
+          "critical": true,
+          "note": "boundary mismatch · critical · 'alfadas' ends too early, the end of the word is cut off (460 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "09767e41-5c6d-43a4-9b22-b7389fb07567_040.wav",
+      "work_item_id": "d29bc5b7-a4ae-4454-ba13-e7db38e2b210",
+      "file_name": "09767e41-5c6d-43a4-9b22-b7389fb07567_040.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 4,
+          "text": "tagen",
+          "critical": true,
+          "note": "wrong word · one letter changed · 'sagen' is written 'tagen'"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "b9b4c0de-c103-4d48-b301-23c710d0be5a_1023.wav",
+      "work_item_id": "9ecc23b8-af66-44a1-8aa7-f700442e69ae",
+      "file_name": "b9b4c0de-c103-4d48-b301-23c710d0be5a_1023.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 410,
+          "critical": true,
+          "note": "boundary mismatch · major · 'mordor' starts too late, the beginning of the word is cut off (410 ms later)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "8d949512-f4df-4868-a361-0f88813363ed_035.wav",
+      "work_item_id": "23c90c5a-764b-4434-ae87-8421f708f0c8",
+      "file_name": "8d949512-f4df-4868-a361-0f88813363ed_035.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 150,
+          "note": "boundary mismatch · minor · 'lange' starts too late, the beginning of the word is cut off (150 ms later)"
+        },
+        {
+          "action": "add",
+          "after_word": 18,
+          "text": "zu",
+          "critical": true,
+          "note": "hallucinated word · extra 'zu' in the 0.52 s pause between 'fest' and 'sie' (a short word of the same sentence)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "b3f3a69c-caf6-4f23-a83f-6d86fa58a1f2_075.wav",
+      "work_item_id": "6497b096-fbd7-4c3c-ba23-95f820eea9af",
+      "file_name": "b3f3a69c-caf6-4f23-a83f-6d86fa58a1f2_075.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 7,
+          "critical": true,
+          "note": "missing word · 'geheimnis' is gone from the transcript and has no chip (spoken between 'das' and 'und'; hole pinned by both neighbours)"
+        },
+        {
+          "action": "move",
+          "word": 11,
+          "edge": "end",
+          "shift_ms": 300,
+          "note": "boundary mismatch · major · 'weiterleben' ends too late, in the silence after the word (300 ms later)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "16e8618e-d279-4923-9464-e7517d4015a7_108.wav",
+      "work_item_id": "6810b9e0-bf3d-4a94-b375-b647db7bb7e3",
+      "file_name": "16e8618e-d279-4923-9464-e7517d4015a7_108.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 10,
+          "edge": "start",
+          "shift_ms": -320,
+          "critical": true,
+          "note": "boundary mismatch · major · 'geben' starts too early, in the silence before the word (320 ms earlier)"
+        },
+        {
+          "action": "replace",
+          "word": 22,
+          "text": "vollstandig",
+          "note": "accent error · umlaut dots dropped · 'vollständig' is written 'vollstandig'"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "84f108b3-8f3d-4fab-9abe-06c6b8ec73dd_044.wav",
+      "work_item_id": "29161553-f6b7-4112-8052-2baf33d0dd39",
+      "file_name": "84f108b3-8f3d-4fab-9abe-06c6b8ec73dd_044.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "end",
+          "shift_ms": 170,
+          "note": "boundary mismatch · minor · 'sagte' ends too late, in the silence after the word (170 ms later)"
+        },
+        {
+          "action": "replace",
+          "word": 10,
+          "text": "gelesen",
+          "critical": true,
+          "note": "wrong word · one letter changed · 'gewesen' is written 'gelesen'"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "0a2b6b1c-868d-422e-bd40-42efa6ae7c88_247.wav",
+      "work_item_id": "c39bf557-a1af-4123-a3ac-4e7d4ce6a2aa",
+      "file_name": "0a2b6b1c-868d-422e-bd40-42efa6ae7c88_247.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 15,
+          "critical": true,
+          "note": "missing word · 'menschen' is gone from the transcript and has no chip (spoken between 'kleinsten' and 'die'; hole pinned by both neighbours)"
+        },
+        {
+          "action": "move",
+          "word": 52,
+          "edge": "end",
+          "shift_ms": -260,
+          "note": "boundary mismatch · major · 'glaubst' ends too early, the end of the word is cut off (260 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "f346201c-f325-4636-acdc-a04f48f9155b_036.wav",
+      "work_item_id": "51837c46-9224-41ed-b70c-28fa05835de2",
+      "file_name": "f346201c-f325-4636-acdc-a04f48f9155b_036.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": -240,
+          "note": "boundary mismatch · minor · 'lukas' starts too early, in the silence before the word (240 ms earlier)"
+        },
+        {
+          "action": "delete",
+          "word": 21,
+          "critical": true,
+          "note": "missing word · 'leute' is gone from the transcript and has no chip (spoken between 'die' and 'besonders'; hole pinned by both neighbours)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "de1239d3-0a51-40ec-b0d3-36226998be95_015.wav",
+      "work_item_id": "95d122e5-5a24-4704-98de-3d6a10c4c9d1",
+      "file_name": "de1239d3-0a51-40ec-b0d3-36226998be95_015.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 12,
+          "critical": true,
+          "note": "missing word · 'organisiert' is gone from the transcript and has no chip (spoken between 'gemeinsam' and 'von'; hole pinned by both neighbours)"
+        },
+        {
+          "action": "move",
+          "word": 47,
+          "edge": "end",
+          "shift_ms": 280,
+          "note": "boundary mismatch · major · 'aus' ends too late, in the silence after the word (280 ms later)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "6f56a024-0968-4bac-a7a5-64ee0542b48a_009.wav",
+      "work_item_id": "306db9f0-3f12-4ced-9417-5f40de536857",
+      "file_name": "6f56a024-0968-4bac-a7a5-64ee0542b48a_009.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 16,
+          "text": "den",
+          "critical": true,
+          "note": "hallucinated word · extra 'den' in the 0.56 s pause between 'mehrfach' and 'in' (a short word of the same sentence)"
+        },
+        {
+          "action": "move",
+          "word": 37,
+          "edge": "start",
+          "shift_ms": -520,
+          "note": "boundary mismatch · critical · 'mehrfach' starts too early, in the silence before the word (520 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "28d1b996-f864-439f-a6c8-2141bd0cb82a_001.wav",
+      "work_item_id": "0a716684-ebcd-4ef3-b15b-814df237f178",
+      "file_name": "28d1b996-f864-439f-a6c8-2141bd0cb82a_001.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 20,
+          "critical": true,
+          "note": "missing word · 'deutscher' is gone from the transcript and has no chip (spoken between 'überwachung' and 'bürger'; hole pinned by both neighbours)"
+        },
+        {
+          "action": "move",
+          "word": 56,
+          "edge": "start",
+          "shift_ms": -170,
+          "note": "boundary mismatch · minor · 'dann' starts too early, in the silence before the word (170 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "9b534a02-b3e4-4097-b44f-155d085d0b2a_000.wav",
+      "work_item_id": "28cc6214-4566-465d-89c9-a8201667f741",
+      "file_name": "9b534a02-b3e4-4097-b44f-155d085d0b2a_000.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 21,
+          "edge": "end",
+          "shift_ms": -470,
+          "critical": true,
+          "note": "boundary mismatch · critical · 'paradies' ends too early, the end of the word is cut off (470 ms earlier)"
+        },
+        {
+          "action": "replace",
+          "word": 42,
+          "text": "wahrend",
+          "note": "accent error · umlaut dots dropped · 'während' is written 'wahrend'"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "9983a80b-a1c7-4dbc-a396-0f4ed139cbee_000.wav",
+      "work_item_id": "2df44bae-3491-4cf1-adb4-b98c0f2a566d",
+      "file_name": "9983a80b-a1c7-4dbc-a396-0f4ed139cbee_000.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 13,
+          "critical": true,
+          "note": "missing word · 'erfahren' is gone from the transcript and has no chip (spoken between 'wirst' and 'was'; hole pinned by both neighbours)"
+        },
+        {
+          "action": "move",
+          "word": 17,
+          "edge": "end",
+          "shift_ms": 220,
+          "note": "boundary mismatch · minor · 'macht' ends too late, in the silence after the word (220 ms later)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "a387ae8a-ed0e-41d6-a180-5ba432ef04a2_009.wav",
+      "work_item_id": "4dec4a27-b747-4ac0-b1ea-17364d633397",
+      "file_name": "a387ae8a-ed0e-41d6-a180-5ba432ef04a2_009.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": 460,
+          "critical": true,
+          "note": "boundary mismatch · critical · 'eins' ends too late, in the silence after the word (460 ms later)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "fc6658bd-507d-43c8-a50d-531244628d2e_372.wav",
+      "work_item_id": "1dadb7a3-ed43-4e6d-8e0f-8287a7b6159d",
+      "file_name": "fc6658bd-507d-43c8-a50d-531244628d2e_372.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 280,
+          "critical": true,
+          "note": "boundary mismatch · major · 'berlin' starts too late, the beginning of the word is cut off (280 ms later)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "1283a97f-08d0-4014-b5a6-cab9dfd2e884_001.wav",
+      "work_item_id": "f0e44be9-417d-4418-9986-a3eacf68468b",
+      "file_name": "1283a97f-08d0-4014-b5a6-cab9dfd2e884_001.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": -280,
+          "critical": true,
+          "note": "boundary mismatch · major · 'auheim' ends too early, the end of the word is cut off (280 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "2311fc79-9850-4739-af4d-fc1d5275dcce_005.wav",
+      "work_item_id": "e51947af-850c-4549-8542-37eaa20c93ff",
+      "file_name": "2311fc79-9850-4739-af4d-fc1d5275dcce_005.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": -160,
+          "critical": true,
+          "note": "boundary mismatch · minor · 'sie' ends too early, the end of the word is cut off (160 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "4e5bb444-2a1f-49bf-a778-6e06c2ac118d_276.wav",
+      "work_item_id": "87742ba5-0838-4eaa-95c2-5f9a9c56b0a3",
+      "file_name": "4e5bb444-2a1f-49bf-a778-6e06c2ac118d_276.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 17,
+          "critical": true,
+          "note": "missing word · 'blick' is gone from the transcript and has no chip (spoken between 'ersten' and 'nur'; hole pinned by both neighbours)"
+        },
+        {
+          "action": "move",
+          "word": 27,
+          "edge": "end",
+          "shift_ms": -230,
+          "note": "boundary mismatch · minor · 'feldweg' ends too early, the end of the word is cut off (230 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "0651cbc4-a282-47bf-a571-49b131369fe5_110.wav",
+      "work_item_id": "463b1be9-e759-438c-999d-16800c52edcb",
+      "file_name": "0651cbc4-a282-47bf-a571-49b131369fe5_110.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 15,
+          "edge": "end",
+          "shift_ms": 450,
+          "note": "boundary mismatch · critical · 'kaufen' ends too late, in the silence after the word (450 ms later)"
+        },
+        {
+          "action": "add",
+          "after_word": 38,
+          "text": "der",
+          "critical": true,
+          "note": "hallucinated word · extra 'der' in the 0.80 s pause between 'kalifornien' and 'das' (a short word of the same sentence)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "1c47d297-aec5-41d6-a064-d95f1cdd7bb3_058.wav",
+      "work_item_id": "d7e35ded-b198-4fb4-849a-7a98e09c2321",
+      "file_name": "1c47d297-aec5-41d6-a064-d95f1cdd7bb3_058.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 550,
+          "critical": true,
+          "note": "boundary mismatch · critical · 'dreitausend' starts too late, the beginning of the word is cut off (550 ms later)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "115aa9d5-f87f-46c8-ad35-64fc1d21ca9b_586.wav",
+      "work_item_id": "d6a21e58-1fbe-4cef-a2cf-fe9dc6f779cb",
+      "file_name": "115aa9d5-f87f-46c8-ad35-64fc1d21ca9b_586.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 21,
+          "critical": true,
+          "note": "missing word · 'polizei' is gone from the transcript and has no chip (spoken between 'die' and 'traf'; hole pinned by both neighbours)"
+        },
+        {
+          "action": "move",
+          "word": 59,
+          "edge": "end",
+          "shift_ms": 510,
+          "note": "boundary mismatch · critical · 'bestätigte' ends too late, in the silence after the word (510 ms later)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "6f8da9ff-c890-4066-abc0-fd14f4cc6363_852.wav",
+      "work_item_id": "1321f607-abfe-4058-8138-c1bb3404b521",
+      "file_name": "6f8da9ff-c890-4066-abc0-fd14f4cc6363_852.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 1,
+          "text": "nachsten",
+          "note": "accent error · umlaut dots dropped · 'nächsten' is written 'nachsten'"
+        },
+        {
+          "action": "move",
+          "word": 24,
+          "edge": "start",
+          "shift_ms": 270,
+          "critical": true,
+          "note": "boundary mismatch · major · 'erkundigungen' starts too late, the beginning of the word is cut off (270 ms later)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "e5d533a0-2de3-4285-a5bc-2427cf7ebc55_103.wav",
+      "work_item_id": "684989ea-dbb8-4e94-8d2e-5b09dca0ea59",
+      "file_name": "e5d533a0-2de3-4285-a5bc-2427cf7ebc55_103.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 8,
+          "critical": true,
+          "note": "missing word · 'jeweils' is gone from the transcript and has no chip (spoken between 'um' and 'fast'; hole pinned by both neighbours)"
+        },
+        {
+          "action": "move",
+          "word": 62,
+          "edge": "start",
+          "shift_ms": -150,
+          "note": "boundary mismatch · minor · 'eine' starts too early, in the silence before the word (150 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "2612fc99-9c5e-4fd4-a65a-20014c8b7d54_176.wav",
+      "work_item_id": "8030c926-689f-4930-b77a-3234d505346d",
+      "file_name": "2612fc99-9c5e-4fd4-a65a-20014c8b7d54_176.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 6,
+          "text": "den",
+          "critical": true,
+          "note": "hallucinated word · extra 'den' in the 0.54 s pause between 'mitgearbeitet' and 'das' (a short word of the same sentence)"
+        },
+        {
+          "action": "move",
+          "word": 36,
+          "edge": "start",
+          "shift_ms": -180,
+          "note": "boundary mismatch · minor · 'und' starts too early, in the silence before the word (180 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "56d6dd79-0214-4239-af20-fe05523ac121_596.wav",
+      "work_item_id": "d1a76776-ed3a-4a4f-bb20-e472e43e969b",
+      "file_name": "56d6dd79-0214-4239-af20-fe05523ac121_596.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 28,
+          "critical": true,
+          "note": "missing word · 'rechts' is gone from the transcript and has no chip (spoken between 'gleich' and 'abbiegen'; hole pinned by both neighbours)"
+        },
+        {
+          "action": "move",
+          "word": 48,
+          "edge": "end",
+          "shift_ms": 260,
+          "note": "boundary mismatch · major · 'ruhte' ends too late, in the silence after the word (260 ms later)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "70ca3ab0-23d8-4442-9aac-c7cb5786de08_071.wav",
+      "work_item_id": "412b9a09-3f8f-4140-a8d8-e1024cb13741",
+      "file_name": "70ca3ab0-23d8-4442-9aac-c7cb5786de08_071.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "end",
+          "shift_ms": -510,
+          "critical": true,
+          "note": "boundary mismatch · critical · 'goldschmidtstraße' ends too early, the end of the word is cut off (510 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "bd579d6a-d694-4e52-910f-408854355861_014.wav",
+      "work_item_id": "abdba5fa-f702-427e-a249-4130748d30c2",
+      "file_name": "bd579d6a-d694-4e52-910f-408854355861_014.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 5,
+          "text": "fur",
+          "note": "accent error · umlaut dots dropped · 'für' is written 'fur'"
+        },
+        {
+          "action": "move",
+          "word": 42,
+          "edge": "start",
+          "shift_ms": -310,
+          "critical": true,
+          "note": "boundary mismatch · major · 'familie' starts too early, in the silence before the word (310 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "5470d787-3aca-474d-a5a5-b91ca7a7cd9c_116.wav",
+      "work_item_id": "792d3d08-964d-4a12-9b4a-94c627982332",
+      "file_name": "5470d787-3aca-474d-a5a5-b91ca7a7cd9c_116.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": -490,
+          "note": "boundary mismatch · critical · 'perfekt' starts too early, in the silence before the word (490 ms earlier)"
+        },
+        {
+          "action": "add",
+          "after_word": 32,
+          "text": "und",
+          "critical": true,
+          "note": "hallucinated word · extra 'und' in the 1.02 s pause between 'sich' and 'ja' (a short word of the same sentence)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "6b12946b-930a-4c17-8081-5f3036aec459_014.wav",
+      "work_item_id": "cd6c658d-06f5-429a-8985-78d0f10d3a88",
+      "file_name": "6b12946b-930a-4c17-8081-5f3036aec459_014.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 180,
+          "critical": true,
+          "note": "boundary mismatch · minor · 'darin' starts too late, the beginning of the word is cut off (180 ms later)"
+        },
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "end",
+          "shift_ms": 190,
+          "note": "boundary mismatch · minor · 'owig' ends too late, in the silence after the word (190 ms later)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "4f70d5e9-98ec-4790-89bb-2f518c9929ed_000.wav",
+      "work_item_id": "e420684f-a4d7-44b1-8a7b-b960ba010aec",
+      "file_name": "4f70d5e9-98ec-4790-89bb-2f518c9929ed_000.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": -260,
+          "note": "boundary mismatch · major · 'surah' starts too early, in the silence before the word (260 ms earlier)"
+        },
+        {
+          "action": "move",
+          "word": 3,
+          "edge": "end",
+          "shift_ms": -490,
+          "critical": true,
+          "note": "boundary mismatch · critical · 'waqia' ends too early, the end of the word is cut off (490 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "c3002485-d83f-4ea4-a962-7c9d1268efde_004.wav",
+      "work_item_id": "663770cd-cd3e-44a9-be27-c58b13fd3596",
+      "file_name": "c3002485-d83f-4ea4-a962-7c9d1268efde_004.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 2,
+          "edge": "start",
+          "shift_ms": 460,
+          "critical": true,
+          "note": "boundary mismatch · critical · 'dreiunddreißig' starts too late, the beginning of the word is cut off (460 ms later)"
+        },
+        {
+          "action": "replace",
+          "word": 7,
+          "text": "funf",
+          "note": "accent error · umlaut dots dropped · 'fünf' is written 'funf'"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "175aa2b4-d6fb-4c94-9db9-759c219c7bc1_724.wav",
+      "work_item_id": "a0e7c1df-666a-4385-ac26-9642d42405ad",
+      "file_name": "175aa2b4-d6fb-4c94-9db9-759c219c7bc1_724.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 27,
+          "edge": "end",
+          "shift_ms": -460,
+          "note": "boundary mismatch · critical · 'zauberwald' ends too early, the end of the word is cut off (460 ms earlier)"
+        },
+        {
+          "action": "delete",
+          "word": 46,
+          "critical": true,
+          "note": "missing word · 'wolken' is gone from the transcript and has no chip (spoken between 'die' and 'zu'; hole pinned by both neighbours)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "22691529-4fef-4073-b77b-e22b99fa763c_1233.wav",
+      "work_item_id": "0abfe688-6818-49fb-a442-d61491915d78",
+      "file_name": "22691529-4fef-4073-b77b-e22b99fa763c_1233.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": -350,
+          "critical": true,
+          "note": "boundary mismatch · major · 'frankreich' ends too early, the end of the word is cut off (350 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "b6cd1b03-aa1e-4cec-bf59-5ed992da968a_086.wav",
+      "work_item_id": "bb78748c-dfb5-4c15-bb7a-a10530a73b8f",
+      "file_name": "b6cd1b03-aa1e-4cec-bf59-5ed992da968a_086.wav",
+      "plants": [
+        {
+          "action": "replace",
+          "word": 2,
+          "text": "spater",
+          "critical": true,
+          "note": "accent error · umlaut dots dropped · 'später' is written 'spater'"
+        },
+        {
+          "action": "move",
+          "word": 10,
+          "edge": "end",
+          "shift_ms": -150,
+          "note": "boundary mismatch · minor · 'nacht' ends too early, the end of the word is cut off (150 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "5ff20cea-4668-499f-898e-b75504834206_003.wav",
+      "work_item_id": "2fec1230-7e5d-401c-a04f-bbb850743248",
+      "file_name": "5ff20cea-4668-499f-898e-b75504834206_003.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 13,
+          "edge": "end",
+          "shift_ms": 480,
+          "note": "boundary mismatch · critical · 'tageszeitung' ends too late, in the silence after the word (480 ms later)"
+        },
+        {
+          "action": "add",
+          "after_word": 24,
+          "text": "der",
+          "critical": true,
+          "note": "hallucinated word · extra 'der' in the 0.60 s pause between 'app' and 'durch' (a short word of the same sentence)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "88f55718-201d-425b-8b4b-e9c7ed46cb8b_001.wav",
+      "work_item_id": "99aa9ceb-c6a7-45df-875f-6ffdd2549ecb",
+      "file_name": "88f55718-201d-425b-8b4b-e9c7ed46cb8b_001.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 4,
+          "critical": true,
+          "note": "missing word · 'produkt' is gone from the transcript and has no chip (spoken between 'ein' and 'der'; hole pinned by both neighbours)"
+        },
+        {
+          "action": "move",
+          "word": 16,
+          "edge": "end",
+          "shift_ms": -410,
+          "note": "boundary mismatch · major · 'zweiundzwanzig' ends too early, the end of the word is cut off (410 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "9ea9aac9-205c-42d8-8cee-a9949130aa94_136.wav",
+      "work_item_id": "c8898a89-3e2d-4eb8-8a6f-130b4f66aa2d",
+      "file_name": "9ea9aac9-205c-42d8-8cee-a9949130aa94_136.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "start",
+          "shift_ms": 290,
+          "critical": true,
+          "note": "boundary mismatch · major · 'verschiedene' starts too late, the beginning of the word is cut off (290 ms later)"
+        },
+        {
+          "action": "move",
+          "word": 4,
+          "edge": "end",
+          "shift_ms": -240,
+          "note": "boundary mismatch · minor · 'bayern' ends too early, the end of the word is cut off (240 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "f8f009ec-ec9e-45f9-bdad-b3007e5d213d_095.wav",
+      "work_item_id": "6aa93144-a0b6-4179-a7a1-78fb9294efe3",
+      "file_name": "f8f009ec-ec9e-45f9-bdad-b3007e5d213d_095.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 520,
+          "critical": true,
+          "note": "boundary mismatch · critical · 'maranello' starts too late, the beginning of the word is cut off (520 ms later)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "5f742b2d-7498-4d2b-8b3f-47ca69156a88_097.wav",
+      "work_item_id": "d9b758bf-b4e6-45a4-84f0-6105d9dd4e73",
+      "file_name": "5f742b2d-7498-4d2b-8b3f-47ca69156a88_097.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 270,
+          "critical": true,
+          "note": "boundary mismatch · major · 'london' starts too late, the beginning of the word is cut off (270 ms later)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "1b58e9ca-d178-4bc2-9e3d-5481ca0bb058_196.wav",
+      "work_item_id": "b690bd1b-c14e-4268-a6b7-531dc3d30b4c",
+      "file_name": "1b58e9ca-d178-4bc2-9e3d-5481ca0bb058_196.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 28,
+          "edge": "end",
+          "shift_ms": 160,
+          "note": "boundary mismatch · minor · 'anhalten' ends too late, in the silence after the word (160 ms later)"
+        },
+        {
+          "action": "delete",
+          "word": 56,
+          "critical": true,
+          "note": "missing word · 'auto' is gone from the transcript and has no chip (spoken between 'das' and 'zugelassen'; hole pinned by both neighbours)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "b142949c-42a5-47b6-a04d-ccaa4b267d62_356.wav",
+      "work_item_id": "55729b54-31c6-41d0-8bdc-1b9dbbb1970b",
+      "file_name": "b142949c-42a5-47b6-a04d-ccaa4b267d62_356.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 11,
+          "text": "das",
+          "critical": true,
+          "note": "hallucinated word · extra 'das' in the 0.65 s pause between 'hatte' and 'geld' (a short word of the same sentence)"
+        },
+        {
+          "action": "move",
+          "word": 21,
+          "edge": "start",
+          "shift_ms": -510,
+          "note": "boundary mismatch · critical · 'ich' starts too early, in the silence before the word (510 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "0bdc253d-77d6-42d4-a5b5-8e11ed76ca29_350.wav",
+      "work_item_id": "512e7ea9-2588-4d6d-b759-938e3e7b3e00",
+      "file_name": "0bdc253d-77d6-42d4-a5b5-8e11ed76ca29_350.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 5,
+          "edge": "start",
+          "shift_ms": 310,
+          "critical": true,
+          "note": "boundary mismatch · major · 'island' starts too late, the beginning of the word is cut off (310 ms later)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "22691529-4fef-4073-b77b-e22b99fa763c_709.wav",
+      "work_item_id": "68e0ce30-e67f-49e6-b59f-883a30e14d1a",
+      "file_name": "22691529-4fef-4073-b77b-e22b99fa763c_709.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 470,
+          "critical": true,
+          "note": "boundary mismatch · critical · 'librivox' starts too late, the beginning of the word is cut off (470 ms later)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "d405a9ca-3d1e-4d66-bf40-0234135f72c6_632.wav",
+      "work_item_id": "6f514706-bed9-4035-bf8b-b9ba2da901b5",
+      "file_name": "d405a9ca-3d1e-4d66-bf40-0234135f72c6_632.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 170,
+          "critical": true,
+          "note": "boundary mismatch · minor · 'hadith' starts too late, the beginning of the word is cut off (170 ms later)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "8cbe3b02-d2a3-4968-a616-8c911c68e216_410.wav",
+      "work_item_id": "699d5284-5bb4-4a20-9458-5dc8aa351d51",
+      "file_name": "8cbe3b02-d2a3-4968-a616-8c911c68e216_410.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "end",
+          "shift_ms": -150,
+          "critical": true,
+          "note": "boundary mismatch · minor · 'aber' ends too early, the end of the word is cut off (150 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "fbe98048-eed5-4dd8-9153-a778a5b848e8_002.wav",
+      "work_item_id": "04cb8e18-16bb-43ed-b1f3-02b264837f70",
+      "file_name": "fbe98048-eed5-4dd8-9153-a778a5b848e8_002.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 14,
+          "critical": true,
+          "note": "missing word · 'bereits' is gone from the transcript and has no chip (spoken between 'die' and 'seit'; hole pinned by both neighbours)"
+        },
+        {
+          "action": "move",
+          "word": 38,
+          "edge": "start",
+          "shift_ms": -560,
+          "note": "boundary mismatch · critical · 'immer' starts too early, in the silence before the word (560 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "efd94ebf-364d-4da1-93af-a6ab7964cd11_1059.wav",
+      "work_item_id": "3bd5baa4-6278-4b48-ad55-d6ead38c5f4d",
+      "file_name": "efd94ebf-364d-4da1-93af-a6ab7964cd11_1059.wav",
+      "plants": [
+        {
+          "action": "delete",
+          "word": 21,
+          "critical": true,
+          "note": "missing word · 'minuten' is gone from the transcript and has no chip (spoken between 'zwanzig' and 'hat'; hole pinned by both neighbours)"
+        },
+        {
+          "action": "move",
+          "word": 30,
+          "edge": "start",
+          "shift_ms": -260,
+          "note": "boundary mismatch · major · 'wo' starts too early, in the silence before the word (260 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "c75e0026-69ba-4715-a232-715f8d0e85f2_006.wav",
+      "work_item_id": "bc86b7d9-4e7e-45d8-b37c-050dab8e0d15",
+      "file_name": "c75e0026-69ba-4715-a232-715f8d0e85f2_006.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 6,
+          "edge": "start",
+          "shift_ms": -210,
+          "critical": true,
+          "note": "boundary mismatch · minor · 'findest' starts too early, in the silence before the word (210 ms earlier)"
+        },
+        {
+          "action": "move",
+          "word": 14,
+          "edge": "end",
+          "shift_ms": -220,
+          "note": "boundary mismatch · minor · 'com' ends too early, the end of the word is cut off (220 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "db57506c-b8ed-48af-8723-c0b56905b5f0_048.wav",
+      "work_item_id": "69d96918-ec30-40d5-9450-d6dc0d0555ef",
+      "file_name": "db57506c-b8ed-48af-8723-c0b56905b5f0_048.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 15,
+          "edge": "end",
+          "shift_ms": 260,
+          "critical": true,
+          "note": "boundary mismatch · major · 'hatten' ends too late, in the silence after the word (260 ms later)"
+        },
+        {
+          "action": "replace",
+          "word": 45,
+          "text": "uberhaupt",
+          "note": "accent error · umlaut dots dropped · 'überhaupt' is written 'uberhaupt'"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "9b96c399-2e68-4256-b296-b4b758b1f134_022.wav",
+      "work_item_id": "8efd04cf-facc-481e-b603-cece0ed20ce8",
+      "file_name": "9b96c399-2e68-4256-b296-b4b758b1f134_022.wav",
+      "plants": [
+        {
+          "action": "add",
+          "after_word": 13,
+          "text": "in",
+          "critical": true,
+          "note": "hallucinated word · extra 'in' in the 0.52 s pause between 'verbindung' and 'das' (a short word of the same sentence)"
+        },
+        {
+          "action": "move",
+          "word": 25,
+          "edge": "end",
+          "shift_ms": 510,
+          "note": "boundary mismatch · critical · 'newfane' ends too late, in the silence after the word (510 ms later)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "8c760aa2-eb45-4241-9f97-20d5c8409242_2568.wav",
+      "work_item_id": "79b35efb-f973-41f9-84cd-874e19acf43d",
+      "file_name": "8c760aa2-eb45-4241-9f97-20d5c8409242_2568.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 160,
+          "critical": true,
+          "note": "boundary mismatch · minor · 'seine' starts too late, the beginning of the word is cut off (160 ms later)"
+        },
+        {
+          "action": "move",
+          "word": 9,
+          "edge": "end",
+          "shift_ms": -180,
+          "note": "boundary mismatch · minor · 'strich' ends too early, the end of the word is cut off (180 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "632beefb-cbfe-4018-bd1c-eace2c07a473_004.wav",
+      "work_item_id": "012b4d88-937b-409e-b044-3498cc2382cd",
+      "file_name": "632beefb-cbfe-4018-bd1c-eace2c07a473_004.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 0,
+          "edge": "start",
+          "shift_ms": 620,
+          "critical": true,
+          "note": "boundary mismatch · critical · 'aussichtsplattform' starts too late, the beginning of the word is cut off (620 ms later)"
+        },
+        {
+          "action": "move",
+          "word": 14,
+          "edge": "end",
+          "shift_ms": -300,
+          "note": "boundary mismatch · major · 'zweitausendeinhundertelf' ends too early, the end of the word is cut off (300 ms earlier)"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "bcc030d6-297b-425a-82cf-63c5fe48d612_553.wav",
+      "work_item_id": "ac98671c-0cec-45fa-af7f-c4fc90720a63",
+      "file_name": "bcc030d6-297b-425a-82cf-63c5fe48d612_553.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 10,
+          "edge": "end",
+          "shift_ms": -430,
+          "critical": true,
+          "note": "boundary mismatch · major · 'kanalzone' ends too early, the end of the word is cut off (430 ms earlier)"
+        },
+        {
+          "action": "replace",
+          "word": 23,
+          "text": "hund",
+          "note": "wrong word · one letter changed · 'rund' is written 'hund'"
+        }
+      ]
+    },
+    {
+      "decoy_ref": "ac95e565-1ada-44cf-88d8-b8b9504c0937_001.wav",
+      "work_item_id": "9818ca91-8534-4cfe-b3bc-76f15aa220ef",
+      "file_name": "ac95e565-1ada-44cf-88d8-b8b9504c0937_001.wav",
+      "plants": [
+        {
+          "action": "move",
+          "word": 1,
+          "edge": "end",
+          "shift_ms": -280,
+          "critical": true,
+          "note": "boundary mismatch · major · 'andorra' ends too early, the end of the word is cut off (280 ms earlier)"
+        }
+      ]
+    }
+  ]
+}
