@@ -79,15 +79,20 @@ def main(src, folder=HERE, prefix="es_ES", letters="a-zñáéíóúü", plain="a
     assert doc["format"] == tpl["format"] == "align-decoys/v1" and doc["instructions"] == tpl["instructions"]
     assert set(doc) == {"format", "instructions", "decoys"}
     P = passes(src)
+    name_users = collections.Counter(n for f in P.values() for n in f["task"])
     decoys = doc["decoys"]
     assert len(decoys) <= 1000, "more than 1000 decoys in one upload"
     assert (folder / f"{prefix}_decoy_plants.json").stat().st_size < 50 * 1024 * 1024
     assert len({d["work_item_id"] for d in decoys}) == len(decoys) == len({d["decoy_ref"] for d in decoys})
     n_plants, checks = 0, collections.Counter()
     for d in decoys:
-        assert set(d) == {"decoy_ref", "work_item_id", "file_name", "plants"}, d.keys()
+        assert {"decoy_ref", "work_item_id", "plants"} <= set(d) <= {"decoy_ref", "work_item_id", "file_name", "plants"}, d.keys()
         f = P[d["work_item_id"]]
-        assert d["file_name"] in f["task"] and d["decoy_ref"] == d["file_name"]
+        users = max(name_users[n] for n in f["task"])              # work items that share this audio file name
+        if "file_name" in d:
+            assert d["file_name"] in f["task"] and d["decoy_ref"] == d["file_name"] and users == 1
+        else:                                                       # a shared name is left out: the id alone names the file
+            assert users > 1 and any(d["decoy_ref"].startswith(n) for n in f["task"]) and d["work_item_id"][:8] in d["decoy_ref"]
         V, plants = f["V"], d["plants"]
         assert all(V), "a pass has no segments"
         assert not any(a.get("overlapping_speech") or a.get("audio_synthetic") for a in f["flags"])

@@ -86,6 +86,8 @@ EXTRA_TARGET_CHECK = None                   # language hook: False for a word th
 HOMOPHONE_ZIPF = 3.8                        # a same-sounding spelling this common is another word (French: 3.0)
 MISS_RISK = None                            # language hook (F, k) -> True when the word at k could be spelled another way
 WORD_RISK = None                            # language hook (word) -> True when a swapped word could be spelled another way
+MOOD_TAILS = ("mos",)                       # no vowel swap right before these endings (hablamos / hablemos: one verb)
+REPLACEMENT_CHECK = None                    # language hook (word) -> False for a word that is never used as the wrong word
 REPEAT_PENALTY = 0.0                        # lowers a text mistake's rank each time its word was already used
 USED = collections.Counter()
 PAIR_AVOID = set()                          # (word, replacement) pairs a wrong-word mistake never uses
@@ -375,7 +377,9 @@ def word_candidates(F):
                 t = w[:i] + c + w[i + 1:]
                 if t == w or t in alikes or t in F.count or t in DIACRITIC or t in NUMBERS or t in AVOID or (w, t) in PAIR_AVOID:
                     continue
-                if (w[i] in "aeiou") != (c in "aeiou") or w[i + 1:] == "mos" or (not VOWEL_SWAPS and w[i] in "aeiou"):
+                if (w[i] in "aeiou") != (c in "aeiou") or w[i + 1:] in MOOD_TAILS or (not VOWEL_SWAPS and w[i] in "aeiou"):
+                    continue
+                if REPLACEMENT_CHECK and not REPLACEMENT_CHECK(t):
                     continue                                    # vowel for vowel, consonant for consonant; not -amos / -emos
                 z = zipf(t)
                 if z >= 4.0 and not misspelling(t) and not risk(t) and not foreign(t) and (best is None or z > best[0]):
@@ -484,7 +488,9 @@ def main(src, template, out_dir=HERE, prefix="es_ES"):
     tpl = json.loads(pathlib.Path(template).read_text(encoding="utf-8"))
     have, bands, shapes = collections.Counter(), collections.Counter(), collections.Counter()
     decoys, review, dropped = [], [], []
-    for item in load(src):
+    items = list(load(src))
+    shared = {t for t, c in collections.Counter(i["task"] for i in items).items() if c > 1}
+    for item in items:
         F = File(item)
         why = F.reason_to_drop()
         picks = [] if why else choose(F, random.Random(f"{SEED}-{item['wid']}"), have, bands, shapes)
@@ -517,7 +523,10 @@ def main(src, template, out_dir=HERE, prefix="es_ES"):
                            "what_was_changed": row["change"], "served_as": row["served"], "how_to_fix": row["fix"],
                            "annotator_passes": len(F.V), "passes_agree_within_ms": row["agree"],
                            "action": plant["action"]})
-        decoys.append({"decoy_ref": item["task"], "work_item_id": item["wid"], "file_name": item["task"], "plants": plants})
+        if item["task"] in shared:        # several work items use this audio file name: only the id names the file
+            decoys.append({"decoy_ref": f"{item['task']} [{item['wid'][:8]}]", "work_item_id": item["wid"], "plants": plants})
+        else:
+            decoys.append({"decoy_ref": item["task"], "work_item_id": item["wid"], "file_name": item["task"], "plants": plants})
     out = {"format": tpl["format"], "instructions": tpl["instructions"], "decoys": decoys}
     (out_dir / f"{prefix}_decoy_plants.json").write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     for name, rows in ((f"{prefix}_decoy_review.csv", review), (f"{prefix}_dropped.csv", dropped)):
