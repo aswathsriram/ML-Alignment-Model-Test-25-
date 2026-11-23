@@ -79,6 +79,10 @@ cuarenta cincuenta sesenta setenta ochenta noventa cien ciento mil millón millo
 STRIP = str.maketrans("áéíóú", "aeiou")
 ACCENT_MARKS = "áéíóú"                      # accent marks an accent error may drop
 ACCENT_MIN_LEN = 4                          # shortest word an accent is dropped from
+ACCENT_GAP = 0.75                           # how much rarer (zipf) the bare form must be: then it is only a misspelling
+ACCENT_HOW = "accent dropped"               # how the review sheet names it
+VOWEL_SWAPS = True                          # a wrong word may change a vowel (German: no — finden / fanden is one verb)
+EXTRA_TARGET_CHECK = None                   # language hook: False for a word that must not be deleted / swapped
 REPEAT_PENALTY = 0.0                        # lowers a text mistake's rank each time its word was already used
 USED = collections.Counter()
 PAIR_AVOID = set()                          # (word, replacement) pairs a wrong-word mistake never uses
@@ -275,6 +279,8 @@ def missing_candidates(F):
             continue                                            # said once in every pass, not only in the reference
         if not TARGET.fullmatch(w) or zipf(w) < 4.0 or w in DIACRITIC or homophone_risk(w) or accent_twin(w) or foreign(w):
             continue
+        if EXTRA_TARGET_CHECK and not EXTRA_TARGET_CHECK(w):
+            continue
         if k not in F.machine_ok or any(x in FILLERS or x in AVOID or zipf(x) < 3.3 for x in (F.words[k - 1], F.words[k + 1])):
             continue                                            # ordinary words either side (no names, fillers, rare terms)
         d = F.dur(k)
@@ -321,11 +327,11 @@ def accent_candidates(F):
             continue
         if any(ch in ACCENT_MARKS for ch in w) and len(w) >= ACCENT_MIN_LEN:
             t = drop_accent(w)
-            if not t or t in DIACRITIC or zipf(w) < 4.3 or zipf(w) - zipf(t) < 0.75:
+            if not t or t in DIACRITIC or zipf(w) < 4.3 or zipf(w) - zipf(t) < ACCENT_GAP:
                 continue                                        # the bare form must be only a misspelling
             if w[-1] in ACCENT_MARKS and w not in FINAL_ACCENT_OK:
                 continue                                        # habló / hablo, estará / estara: both are verb forms
-            out.append({"type": "ACC", "k": k, "aff": {k}, "text": t, "how": "accent dropped", "score": 2.5 + zipf(w) / 10})
+            out.append({"type": "ACC", "k": k, "aff": {k}, "text": t, "how": ACCENT_HOW, "score": 2.5 + zipf(w) / 10})
         elif w in ADDED_ACCENT:
             out.append({"type": "ACC", "k": k, "aff": {k}, "text": ADDED_ACCENT[w], "how": "wrong accent added",
                         "score": 2.0 + zipf(w) / 10})
@@ -354,7 +360,7 @@ def word_candidates(F):
             continue
         if not TARGET.fullmatch(w) or zipf(w) < (4.3 if len(w) >= 5 else 4.8) or homophone_risk(w) or F.dur(k) < 0.25:
             continue
-        if accent_twin(w) or foreign(w):
+        if accent_twin(w) or foreign(w) or (EXTRA_TARGET_CHECK and not EXTRA_TARGET_CHECK(w)):
             continue
         alikes = sound_alikes(w)
         best = None
@@ -363,7 +369,7 @@ def word_candidates(F):
                 t = w[:i] + c + w[i + 1:]
                 if t == w or t in alikes or t in F.count or t in DIACRITIC or t in NUMBERS or t in AVOID or (w, t) in PAIR_AVOID:
                     continue
-                if (w[i] in "aeiou") != (c in "aeiou") or w[i + 1:] == "mos":
+                if (w[i] in "aeiou") != (c in "aeiou") or w[i + 1:] == "mos" or (not VOWEL_SWAPS and w[i] in "aeiou"):
                     continue                                    # vowel for vowel, consonant for consonant; not -amos / -emos
                 z = zipf(t)
                 if z >= 4.0 and not misspelling(t) and not homophone_risk(t) and not foreign(t) and (best is None or z > best[0]):
