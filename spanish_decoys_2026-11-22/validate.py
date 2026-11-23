@@ -72,7 +72,8 @@ def main(src, folder=HERE, prefix="es_ES", letters="a-zñáéíóúü", plain="a
     """letters: what a plain word is made of in this language; plain: the same without accent marks;
     unique: a deleted word is said once in the first pass ("first") or in every pass ("all")."""
     folder = pathlib.Path(folder)
-    WORD, PLAIN4 = re.compile(f"[{letters}]+"), re.compile(f"[{plain}]{{4,}}")
+    WORD = re.compile(letters[3:] if letters.startswith("re:") else f"[{letters}]+")     # "re:<pattern>" = a full pattern
+    PLAIN4 = re.compile(f"[{plain}]{{4,}}")
     doc = json.loads((folder / f"{prefix}_decoy_plants.json").read_text(encoding="utf-8"))
     tpl = json.loads((HERE / "alignment-decoys-template.json").read_text(encoding="utf-8"))
     assert doc["format"] == tpl["format"] == "align-decoys/v1" and doc["instructions"] == tpl["instructions"]

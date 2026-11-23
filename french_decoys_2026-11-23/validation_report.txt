@@ -1,0 +1,6 @@
+OK: 585 decoys, 1005 mistakes, every one checked on every pass of its file
+    611  move: 150-700 ms, never past its own other edge, a neighbour, 0 or the audio end
+    174  replace: exactly one letter differs
+     99  add: a word of the clip in a pause of 0.40 s or more
+    121  delete: a plain word said once, 0.25 s or longer, touching both neighbours
+  spacing: every pair at least 3 words apart; one must-catch per file; no tag or (( )) word touched

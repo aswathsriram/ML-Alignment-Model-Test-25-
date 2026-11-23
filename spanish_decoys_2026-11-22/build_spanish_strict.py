@@ -83,6 +83,9 @@ ACCENT_GAP = 0.75                           # how much rarer (zipf) the bare for
 ACCENT_HOW = "accent dropped"               # how the review sheet names it
 VOWEL_SWAPS = True                          # a wrong word may change a vowel (German: no — finden / fanden is one verb)
 EXTRA_TARGET_CHECK = None                   # language hook: False for a word that must not be deleted / swapped
+HOMOPHONE_ZIPF = 3.8                        # a same-sounding spelling this common is another word (French: 3.0)
+MISS_RISK = None                            # language hook (F, k) -> True when the word at k could be spelled another way
+WORD_RISK = None                            # language hook (word) -> True when a swapped word could be spelled another way
 REPEAT_PENALTY = 0.0                        # lowers a text mistake's rank each time its word was already used
 USED = collections.Counter()
 PAIR_AVOID = set()                          # (word, replacement) pairs a wrong-word mistake never uses
@@ -133,7 +136,7 @@ def sound_alikes(w):
 
 
 def homophone_risk(w):
-    return any(zipf(v) >= 3.8 for v in sound_alikes(w))
+    return any(zipf(v) >= HOMOPHONE_ZIPF for v in sound_alikes(w))
 
 
 def load(src):
@@ -277,7 +280,9 @@ def missing_candidates(F):
             continue
         if UNIQUE_IN_EVERY_PASS and any(sum(x["w"] == w for x in v) != 1 for v in F.V):
             continue                                            # said once in every pass, not only in the reference
-        if not TARGET.fullmatch(w) or zipf(w) < 4.0 or w in DIACRITIC or homophone_risk(w) or accent_twin(w) or foreign(w):
+        if not TARGET.fullmatch(w) or zipf(w) < 4.0 or w in DIACRITIC or accent_twin(w) or foreign(w):
+            continue
+        if MISS_RISK(F, k) if MISS_RISK else homophone_risk(w):
             continue
         if EXTRA_TARGET_CHECK and not EXTRA_TARGET_CHECK(w):
             continue
@@ -358,7 +363,8 @@ def word_candidates(F):
         w = F.words[k]
         if not F.stable(k) or not F.clean(k) or k not in F.machine_ok or w in NUMBERS or w in DIACRITIC or w in AVOID:
             continue
-        if not TARGET.fullmatch(w) or zipf(w) < (4.3 if len(w) >= 5 else 4.8) or homophone_risk(w) or F.dur(k) < 0.25:
+        risk = WORD_RISK or homophone_risk
+        if not TARGET.fullmatch(w) or zipf(w) < (4.3 if len(w) >= 5 else 4.8) or risk(w) or F.dur(k) < 0.25:
             continue
         if accent_twin(w) or foreign(w) or (EXTRA_TARGET_CHECK and not EXTRA_TARGET_CHECK(w)):
             continue
@@ -372,7 +378,7 @@ def word_candidates(F):
                 if (w[i] in "aeiou") != (c in "aeiou") or w[i + 1:] == "mos" or (not VOWEL_SWAPS and w[i] in "aeiou"):
                     continue                                    # vowel for vowel, consonant for consonant; not -amos / -emos
                 z = zipf(t)
-                if z >= 4.0 and not misspelling(t) and not homophone_risk(t) and not foreign(t) and (best is None or z > best[0]):
+                if z >= 4.0 and not misspelling(t) and not risk(t) and not foreign(t) and (best is None or z > best[0]):
                     best = (z, t)
         if best:
             out.append({"type": "WORD", "k": k, "aff": {k}, "text": best[1], "how": "one letter changed",
